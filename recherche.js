@@ -102,7 +102,6 @@
       appliquerCouchesDonnees,
       remonterCouchesDonnees,
       ouvrirPopupDepuisResultatRecherche,
-      naviguerVersCoordonneesArrierePlan,
       fermerMenuFiltres,
       fermerMenuFonds,
       definirConservationFichePendantNavigation

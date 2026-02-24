@@ -1,14 +1,15 @@
 {
-  "id": "/",
+  "id": "./",
   "name": "ALICE",
   "short_name": "ALICE",
-  "description": "Application de Localisation des Installations de Conduite des EALE.",
-  "start_url": "./index.html",
+  "description": "Application de Localisation des Installations de Conduite EALE",
+  "lang": "fr",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "orientation": "portrait-primary",
-  "background_color": "#ffffff",
-  "theme_color": "#5068f5",
+  "orientation": "portrait",
+  "background_color": "#0b1726",
+  "theme_color": "#0b1726",
   "icons": [
     {
       "src": "./icons/icon-192.png",
@@ -31,18 +32,6 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "Carte",
-      "short_name": "Carte",
-      "url": "./index.html"
-    },
-    {
-      "name": "Tableau blanc",
-      "short_name": "Tableau",
-      "url": "./tableau.html"
     }
   ]
 }

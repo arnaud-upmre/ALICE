@@ -32,10 +32,6 @@ const SOURCE_LIGNES = "openrailwaymap-source";
 const COUCHE_LIGNES = "openrailwaymap-lignes";
 const SOURCE_VITESSE_LIGNE = "openrailwaymap-maxspeed-source";
 const COUCHE_VITESSE_LIGNE = "openrailwaymap-maxspeed";
-// Version manuelle des tuiles OpenRailwayMap:
-// garder la meme valeur pour conserver le cache, la changer uniquement
-// quand tu veux forcer un rafraichissement global.
-const VERSION_CACHE_ORM = "stable-2026-02";
 const SOURCE_MESURE = "mesure-source";
 const COUCHE_MESURE_LIGNES = "mesure-lignes";
 const COUCHE_MESURE_POINTS = "mesure-points";
@@ -115,6 +111,8 @@ const stylePlanOsm = {
 
 const URL_TUILES_SATELLITE_IGN =
   "https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/jpeg&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}";
+const URL_TUILES_PLAN_IGN =
+  "https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/png&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}";
 
 // Style raster des orthophotos IGN (satellite).
 const styleSatelliteIgn = {
@@ -133,6 +131,27 @@ const styleSatelliteIgn = {
       id: "satelliteIgn",
       type: "raster",
       source: "satelliteIgn"
+    }
+  ]
+};
+
+// Fallback raster pour le Plan IGN si le style vectoriel officiel n'est pas disponible.
+const stylePlanIgnRasterFallback = {
+  version: 8,
+  sources: {
+    planIgnRaster: {
+      type: "raster",
+      tiles: [URL_TUILES_PLAN_IGN],
+      tileSize: 256,
+      maxzoom: 18,
+      attribution: "© IGN, © OpenStreetMap contributors"
+    }
+  },
+  layers: [
+    {
+      id: "planIgnRaster",
+      type: "raster",
+      source: "planIgnRaster"
     }
   ]
 };
@@ -228,7 +247,7 @@ function clonerStyle(style) {
 }
 
 async function chargerStyleJsonDepuisUrl(url) {
-  const reponse = await fetch(url, { cache: "no-store" });
+  const reponse = await fetch(url, { cache: "default" });
   if (!reponse.ok) {
     throw new Error(`HTTP ${reponse.status}`);
   }
@@ -343,6 +362,32 @@ async function obtenirStyleFond(nomFond) {
   const style = fondsCartographiques[nomFond];
   if (!style) {
     return null;
+  }
+
+  if (nomFond === "planIgn") {
+    if (stylesFondsVectorielsPrepares.has(nomFond)) {
+      return clonerStyle(stylesFondsVectorielsPrepares.get(nomFond));
+    }
+
+    if (!promessesStylesFondsVectoriels.has(nomFond)) {
+      const promesse = chargerStyleJsonDepuisUrl(URL_STYLE_PLAN_IGN)
+        .then((styleJson) => {
+          const styleCorrige = corrigerAttributionsStyleFond(styleJson);
+          stylesFondsVectorielsPrepares.set(nomFond, styleCorrige);
+          return styleCorrige;
+        })
+        .catch((erreur) => {
+          console.warn("Style vectoriel Plan IGN indisponible, fallback raster active.", erreur);
+          return stylePlanIgnRasterFallback;
+        })
+        .finally(() => {
+          promessesStylesFondsVectoriels.delete(nomFond);
+        });
+      promessesStylesFondsVectoriels.set(nomFond, promesse);
+    }
+
+    const stylePrepare = await promessesStylesFondsVectoriels.get(nomFond);
+    return clonerStyle(stylePrepare);
   }
 
   if (nomFond !== "positron" && nomFond !== "voyager") {
@@ -933,6 +978,8 @@ const menuLegendeCarte = document.getElementById("menu-legende-carte");
 const boutonFermerLegende = document.getElementById("bouton-fermer-legende");
 const modalApropos = document.getElementById("modal-apropos");
 const boutonFermerModalApropos = document.getElementById("modal-apropos-fermer");
+const boutonInstallerPwa = document.getElementById("bouton-installer-pwa");
+const messageInstallerPwa = document.getElementById("message-installer-pwa");
 let modalFiche = document.getElementById("modal-fiche");
 let modalFicheContenu = document.getElementById("modal-fiche-contenu");
 let boutonFermerModalFiche = document.getElementById("modal-fiche-fermer");
@@ -950,6 +997,7 @@ let moduleLocalisation = null;
 let promesseChargementModuleLocalisation = null;
 let rafMiseAJourPk = null;
 let marqueursPk = [];
+let evenementInstallationPwaDiffere = null;
 
 class ControleActionsCarte {
   onAdd() {
@@ -1996,6 +2044,37 @@ function basculerMenuLegende() {
   ouvrirMenuLegende();
 }
 
+function applicationDejaInstallee() {
+  const estStandalone = window.matchMedia?.("(display-mode: standalone)")?.matches;
+  const estStandaloneIos = window.navigator?.standalone === true;
+  return Boolean(estStandalone || estStandaloneIos);
+}
+
+function mettreAJourEtatInstallationPwa() {
+  if (!boutonInstallerPwa || !messageInstallerPwa) {
+    return;
+  }
+
+  if (applicationDejaInstallee()) {
+    boutonInstallerPwa.hidden = true;
+    boutonInstallerPwa.disabled = true;
+    messageInstallerPwa.textContent = "ALICE est déjà installée sur cet appareil.";
+    return;
+  }
+
+  if (evenementInstallationPwaDiffere) {
+    boutonInstallerPwa.hidden = false;
+    boutonInstallerPwa.disabled = false;
+    boutonInstallerPwa.textContent = "Installer ALICE";
+    messageInstallerPwa.textContent = "Ajoutez ALICE sur l'écran d'accueil pour un accès rapide.";
+    return;
+  }
+
+  boutonInstallerPwa.hidden = true;
+  boutonInstallerPwa.disabled = true;
+  messageInstallerPwa.textContent = "Installez ALICE via le menu du navigateur (Partager ou Installer l'application).";
+}
+
 function ouvrirModalApropos() {
   if (!modalApropos) {
     return;
@@ -2006,6 +2085,7 @@ function ouvrirModalApropos() {
   }
   modalApropos.classList.add("est-visible");
   modalApropos.setAttribute("aria-hidden", "false");
+  mettreAJourEtatInstallationPwa();
   fermerMenuLegende();
   window.requestAnimationFrame(() => {
     boutonFermerModalApropos?.focus({ preventScroll: true });
@@ -2040,6 +2120,48 @@ function doitAfficherModalAproposPremiereVisite() {
     return true;
   }
 }
+
+if (boutonInstallerPwa) {
+  boutonInstallerPwa.addEventListener("click", async () => {
+    if (!evenementInstallationPwaDiffere) {
+      mettreAJourEtatInstallationPwa();
+      return;
+    }
+
+    const evenement = evenementInstallationPwaDiffere;
+    evenementInstallationPwaDiffere = null;
+    boutonInstallerPwa.disabled = true;
+    boutonInstallerPwa.textContent = "Installation...";
+    messageInstallerPwa.textContent = "Confirmation demandée par le navigateur.";
+
+    try {
+      await evenement.prompt();
+      const resultat = await evenement.userChoice;
+      if (resultat?.outcome === "accepted") {
+        messageInstallerPwa.textContent = "Installation lancée.";
+      } else {
+        messageInstallerPwa.textContent = "Installation annulée.";
+      }
+    } catch {
+      messageInstallerPwa.textContent = "Impossible de lancer l'installation.";
+    }
+
+    mettreAJourEtatInstallationPwa();
+  });
+}
+
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+  evenementInstallationPwaDiffere = event;
+  mettreAJourEtatInstallationPwa();
+});
+
+window.addEventListener("appinstalled", () => {
+  evenementInstallationPwaDiffere = null;
+  mettreAJourEtatInstallationPwa();
+});
+
+mettreAJourEtatInstallationPwa();
 
 async function localiserUtilisateurCarte(options = {}) {
   try {
@@ -2516,7 +2638,6 @@ function ouvrirPopupSurvolInfo(feature, options = {}) {
     }
     return;
   }
-  signaturePopupSurvolInfo = signature;
   fermerPopupSurvolInfo();
   signaturePopupSurvolInfo = signature;
   if (options.verrouiller === true) {
@@ -2664,9 +2785,9 @@ function appliquerCouchesDonnees() {
     carte.addSource(SOURCE_LIGNES, {
       type: "raster",
       tiles: [
-        `https://a.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png?v=${VERSION_CACHE_ORM}`,
-        `https://b.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png?v=${VERSION_CACHE_ORM}`,
-        `https://c.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png?v=${VERSION_CACHE_ORM}`
+        "https://a.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png",
+        "https://b.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png",
+        "https://c.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png"
       ],
       tileSize: 256,
       attribution: "© OpenRailwayMap, © OpenStreetMap contributors",
@@ -2689,9 +2810,9 @@ function appliquerCouchesDonnees() {
     carte.addSource(SOURCE_VITESSE_LIGNE, {
       type: "raster",
       tiles: [
-        `https://a.tiles.openrailwaymap.org/maxspeed/{z}/{x}/{y}.png?v=${VERSION_CACHE_ORM}`,
-        `https://b.tiles.openrailwaymap.org/maxspeed/{z}/{x}/{y}.png?v=${VERSION_CACHE_ORM}`,
-        `https://c.tiles.openrailwaymap.org/maxspeed/{z}/{x}/{y}.png?v=${VERSION_CACHE_ORM}`
+        "https://a.tiles.openrailwaymap.org/maxspeed/{z}/{x}/{y}.png",
+        "https://b.tiles.openrailwaymap.org/maxspeed/{z}/{x}/{y}.png",
+        "https://c.tiles.openrailwaymap.org/maxspeed/{z}/{x}/{y}.png"
       ],
       tileSize: 256,
       attribution: "© OpenRailwayMap, © OpenStreetMap contributors",
@@ -3004,7 +3125,7 @@ async function chargerDonneesAppareils() {
   }
 
   if (!promesseChargementAppareils) {
-    promesseChargementAppareils = fetch("./appareils.geojson", { cache: "no-store" })
+    promesseChargementAppareils = fetch("./appareils.geojson", { cache: "default" })
       .then((reponse) => {
         if (!reponse.ok) {
           throw new Error(`HTTP ${reponse.status}`);
@@ -3047,7 +3168,7 @@ async function chargerDonneesAcces() {
   }
 
   if (!promesseChargementAcces) {
-    promesseChargementAcces = fetch("./acces.geojson", { cache: "no-store" })
+    promesseChargementAcces = fetch("./acces.geojson", { cache: "default" })
       .then((reponse) => {
         if (!reponse.ok) {
           throw new Error(`HTTP ${reponse.status}`);
@@ -3074,7 +3195,7 @@ async function chargerDonneesPostes() {
   }
 
   if (!promesseChargementPostes) {
-    promesseChargementPostes = fetch("./postes.geojson", { cache: "no-store" })
+    promesseChargementPostes = fetch("./postes.geojson", { cache: "default" })
       .then((reponse) => {
         if (!reponse.ok) {
           throw new Error(`HTTP ${reponse.status}`);
@@ -5314,65 +5435,6 @@ function naviguerVersCoordonneesPuisOuvrirPopup(longitude, latitude, ouvrirPopup
   return true;
 }
 
-function naviguerVersCoordonneesArrierePlan(longitude, latitude, options = {}) {
-  if (!Number.isFinite(longitude) || !Number.isFinite(latitude)) {
-    return false;
-  }
-
-  const { distancePixels, cibleDansZoneConfort } = calculerContexteDeplacement(longitude, latitude);
-  const forcerZoom = Boolean(options.forceZoom);
-  if (!forcerZoom && cibleDansZoneConfort && distancePixels < 210) {
-    return true;
-  }
-
-  const conserverPopupOuvert = Boolean(options.conserverPopupOuvert);
-  if (conserverPopupOuvert) {
-    conserverFichePendantNavigation = true;
-  }
-  demarrerNavigationPopupProgrammatique();
-
-  let fallback = null;
-  const terminer = () => {
-    terminerNavigationPopupProgrammatique();
-    if (conserverPopupOuvert) {
-      conserverFichePendantNavigation = false;
-    }
-    if (fallback) {
-      clearTimeout(fallback);
-      fallback = null;
-    }
-  };
-
-  carte.once("moveend", terminer);
-
-  if (distancePixels < 520) {
-    carte.easeTo({
-      center: [longitude, latitude],
-      zoom: forcerZoom ? Math.max(carte.getZoom(), Number(options.zoomMin) || 14.2) : carte.getZoom(),
-      duration: Number(options.durationDouxMs) || 460,
-      easing: (t) => 1 - Math.pow(1 - t, 3),
-      essential: true
-    });
-  } else {
-    carte.flyTo({
-      center: [longitude, latitude],
-      zoom: Math.max(carte.getZoom(), Number(options.zoomMin) || 14.2),
-      speed: Number(options.speed) || 1.05,
-      curve: Number(options.curve) || 1.15,
-      essential: true
-    });
-  }
-
-  fallback = setTimeout(() => {
-    if (carte.isMoving()) {
-      return;
-    }
-    terminer();
-  }, Number(options.fallbackMs) || (distancePixels < 520 ? 980 : 1500));
-
-  return true;
-}
-
 function ouvrirPopupAvecAnimationDepuisObjets(objets, options = {}) {
   if (!Array.isArray(objets) || !objets.length) {
     return false;
@@ -5694,7 +5756,6 @@ function activerInteractionsCarte() {
   let temporisationAppuiLong = null;
   let survolCurseurPlanifie = false;
   let dernierPointCurseur = null;
-  let microZoomSelectionMobileEnCours = false;
   const couchesInteractivesSurvolPrioritaires = [
     COUCHE_POSTES,
     COUCHE_POSTES_GROUPES,
@@ -5705,9 +5766,6 @@ function activerInteractionsCarte() {
   ];
   const estInteractionMobile = () => window.matchMedia?.("(hover: none), (pointer: coarse)")?.matches;
   const RAYON_TOLERANCE_TAP_MOBILE_PX = 20;
-  const DELTA_MICRO_ZOOM_SELECTION = 0.9;
-  const ZOOM_MAX_MICRO_SELECTION = 18.6;
-  const SEUIL_COLLISION_MICRO_ZOOM = 2;
   const PRIORITE_COUCHE_SELECTION = {
     [COUCHE_APPAREILS]: 0,
     [COUCHE_ACCES]: 1,
@@ -5782,20 +5840,6 @@ function activerInteractionsCarte() {
     return candidats[0]?.objet || null;
   };
 
-  const doitDeclencherMicroZoomMobile = (objets) => {
-    if (!estInteractionMobile()) {
-      return false;
-    }
-    if (microZoomSelectionMobileEnCours) {
-      return false;
-    }
-    const uniques = dedupliquerObjetsSelection(objets);
-    if (uniques.length < SEUIL_COLLISION_MICRO_ZOOM) {
-      return false;
-    }
-    return carte.getZoom() < ZOOM_MAX_MICRO_SELECTION;
-  };
-
   carte.on("click", (event) => {
     fermerMenuContextuel();
 
@@ -5811,31 +5855,6 @@ function activerInteractionsCarte() {
 
     const objets = interrogerObjetsDepuisTap(event.point, couchesDisponibles);
     if (!objets.length) {
-      return;
-    }
-
-    if (doitDeclencherMicroZoomMobile(objets)) {
-      microZoomSelectionMobileEnCours = true;
-      carte.once("moveend", () => {
-        microZoomSelectionMobileEnCours = false;
-        const couchesMaj = couchesInteractives.filter((id) => Boolean(carte.getLayer(id)));
-        if (!couchesMaj.length) {
-          return;
-        }
-        const objetsApresZoom = interrogerObjetsDepuisTap(event.point, couchesMaj);
-        const meilleurObjetApresZoom = choisirMeilleurObjetDepuisTap(objetsApresZoom, event.point);
-        if (!meilleurObjetApresZoom) {
-          return;
-        }
-        ouvrirPopupDepuisObjetsCarte([meilleurObjetApresZoom]);
-      });
-      carte.easeTo({
-        center: [event.lngLat.lng, event.lngLat.lat],
-        zoom: Math.min(ZOOM_MAX_MICRO_SELECTION, carte.getZoom() + DELTA_MICRO_ZOOM_SELECTION),
-        duration: 190,
-        easing: (t) => 1 - Math.pow(1 - t, 3),
-        essential: true
-      });
       return;
     }
 
@@ -6782,7 +6801,6 @@ moduleRechercheAlice =
         appliquerCouchesDonnees,
         remonterCouchesDonnees,
         ouvrirPopupDepuisResultatRecherche,
-        naviguerVersCoordonneesArrierePlan,
         fermerMenuFiltres,
         fermerMenuFonds,
         definirConservationFichePendantNavigation: (valeur) => {

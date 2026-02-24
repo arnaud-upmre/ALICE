@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#5068f5" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="ALICE" />
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <title>ALICE</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./icons/icon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+    <link
+      href="https://unpkg.com/maplibre-gl@5.1.0/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="map"></div>
+    <div class="controle-recherche" id="controle-recherche">
+      <label class="recherche-champ-wrap" for="champ-recherche">
+        <img src="./alice.webp" alt="Logo ALICE" class="recherche-logo" onerror="this.style.display='none';" />
+        <input
+          id="champ-recherche"
+          class="recherche-champ"
+          type="search"
+          autocomplete="off"
+          placeholder="Rechercher un poste, appareil, acces..."
+          aria-label="Rechercher un poste, un appareil ou un acces"
+        />
+      </label>
+      <ul class="recherche-resultats" id="recherche-resultats" aria-label="Resultats de recherche"></ul>
+    </div>
+    <div class="info-vitesse-ligne" id="info-vitesse-ligne" aria-live="polite" aria-hidden="true">
+      ⚠️ Vitesse affichée à titre indicatif. Se référer aux documents réglementaires internes pour les vitesses de ligne applicables.
+    </div>
+    <div class="info-pk" id="info-pk" aria-live="polite" aria-hidden="true">
+      🔍 Zoomez pour afficher les PK.
+    </div>
+
+    <div class="controle-filtres" id="controle-filtres">
+      <button
+        class="bouton-filtres bouton-localisation-mobile"
+        id="bouton-localisation-mobile"
+        type="button"
+        aria-label="Me localiser"
+        title="Me localiser"
+      >
+        <svg class="icone-localisation-mobile" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 8.8A3.2 3.2 0 1 0 12 15.2 3.2 3.2 0 1 0 12 8.8z" />
+          <path d="M20.5 11h-1.64a6.94 6.94 0 0 0-5.86-5.86V3.5a1 1 0 1 0-2 0v1.64A6.94 6.94 0 0 0 5.14 11H3.5a1 1 0 1 0 0 2h1.64a6.94 6.94 0 0 0 5.86 5.86v1.64a1 1 0 1 0 2 0v-1.64A6.94 6.94 0 0 0 18.86 13h1.64a1 1 0 1 0 0-2zM12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10z" />
+        </svg>
+      </button>
+      <button
+        class="bouton-filtres bouton-itineraire"
+        id="bouton-itineraire"
+        type="button"
+        aria-label="Comparer deux postes"
+        title="Comparer 2 postes"
+      >
+        <span class="icone-itineraire" aria-hidden="true">&lt;&gt;</span>
+      </button>
+      <a
+        class="bouton-filtres bouton-tableau"
+        id="bouton-tableau"
+        href="./tableau.html"
+        aria-label="Ouvrir le tableau blanc"
+        title="Tableau blanc"
+      >
+        <svg class="icone-tableau" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 4h7v7H4V4zm9 0h7v7h-7V4zM4 13h7v7H4v-7zm9 0h7v7h-7v-7z" />
+        </svg>
+      </a>
+      <button
+        class="bouton-filtres"
+        id="bouton-filtres"
+        type="button"
+        aria-label="Afficher les filtres"
+        aria-expanded="false"
+      >
+        <svg class="icone-burger" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z" />
+        </svg>
+      </button>
+
+      <form class="menu-filtres" aria-label="Filtres de couches">
+        <label class="option-filtre">
+          <input type="checkbox" name="filtre-appareils" />
+          <span>Appareils <span class="filtre-compteur" id="compteur-appareils">(0)</span></span>
+        </label>
+        <label class="option-filtre">
+          <input type="checkbox" name="filtre-acces" />
+          <span>Acces voiture <span class="filtre-compteur" id="compteur-acces">(0)</span></span>
+        </label>
+        <label class="option-filtre">
+          <input type="checkbox" name="filtre-postes" />
+          <span>Postes <span class="filtre-compteur" id="compteur-postes">(0)</span></span>
+        </label>
+        <label class="option-filtre">
+          <input type="checkbox" name="filtre-pk" />
+          <span>PK</span>
+        </label>
+        <label class="option-filtre">
+          <input type="checkbox" name="filtre-pn" />
+          <span>Passages a niveau</span>
+        </label>
+        <label class="option-filtre">
+          <input type="checkbox" name="filtre-lignes" />
+          <span>Ligne</span>
+        </label>
+        <label class="option-filtre">
+          <input type="checkbox" name="filtre-vitesse-ligne" />
+          <span>Vitesse de ligne</span>
+        </label>
+        <div class="menu-filtres-separateur" role="presentation"></div>
+        <button class="bouton-filtres-legende" id="bouton-legende-filtres" type="button">Légende</button>
+      </form>
+    </div>
+
+    <div class="controle-fonds" id="controle-fonds">
+      <button
+        class="bouton-fonds"
+        id="bouton-fonds"
+        type="button"
+        aria-label="Choisir le fond de carte"
+        aria-expanded="false"
+      >
+        <svg class="icone-couches" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2 1 7l11 5 11-5-11-5zm0 9L1 6v2l11 5 11-5V6l-11 5zm0 4L1 10v2l11 5 11-5v-2l-11 5z" />
+        </svg>
+      </button>
+
+      <form class="menu-fonds" role="radiogroup" aria-label="Fond de carte">
+        <label class="option-fond">
+          <input type="radio" name="fond" value="ignAuto" checked />
+          <span>Auto Voyager + Satellite IGN</span>
+        </label>
+        <label class="option-fond">
+          <input type="radio" name="fond" value="positron" />
+          <span>Positron</span>
+        </label>
+        <label class="option-fond">
+          <input type="radio" name="fond" value="voyager" />
+          <span>Voyager</span>
+        </label>
+        <label class="option-fond">
+          <input type="radio" name="fond" value="planIgn" />
+          <span>Plan IGN</span>
+        </label>
+        <label class="option-fond">
+          <input type="radio" name="fond" value="osm" />
+          <span>OSM Standard</span>
+        </label>
+        <label class="option-fond">
+          <input type="radio" name="fond" value="satelliteIgn" />
+          <span>Satellite IGN</span>
+        </label>
+      </form>
+    </div>
+
+    <div class="panneau-mesure" id="panneau-mesure" aria-live="polite">
+      <pre class="panneau-mesure-texte" id="panneau-mesure-texte"></pre>
+    </div>
+    <button class="bouton-sortie-mesure" id="bouton-sortie-mesure" type="button">
+      ❌ Quitter le traçage
+    </button>
+    <div class="menu-legende-carte" id="menu-legende-carte" aria-hidden="true">
+      <div class="menu-legende-entete">
+        <h2 class="menu-legende-titre">Légende</h2>
+        <button class="menu-legende-fermer" id="bouton-fermer-legende" type="button" aria-label="Fermer la légende">
+          ×
+        </button>
+      </div>
+      <div class="menu-legende-section">
+        <p class="menu-legende-section-titre">Objets carte</p>
+        <ul class="menu-legende-liste">
+          <li class="menu-legende-item"><span class="menu-legende-pastille pastille-acces"></span>Accès voiture</li>
+          <li class="menu-legende-item"><span class="menu-legende-pastille pastille-poste"></span>Postes</li>
+          <li class="menu-legende-item"><span class="menu-legende-pastille pastille-pn"></span>Passages à niveau</li>
+          <li class="menu-legende-item"><span class="menu-legende-pastille pastille-hp"></span>Hors patrimoine</li>
+        </ul>
+      </div>
+      <div class="menu-legende-section">
+        <p class="menu-legende-section-titre">Couleurs appareils</p>
+        <ul class="menu-legende-liste">
+          <li class="menu-legende-item"><span class="menu-legende-pastille pastille-app-du"></span>Dispositif d'urgence</li>
+          <li class="menu-legende-item"><span class="menu-legende-pastille pastille-app-si"></span>Interrupteur</li>
+          <li class="menu-legende-item"><span class="menu-legende-pastille pastille-app-tt"></span>Transformateur</li>
+          <li class="menu-legende-item"><span class="menu-legende-pastille pastille-app-t"></span>Sectionneur</li>
+          <li class="menu-legende-item"><span class="menu-legende-pastille pastille-app-alim"></span>Alimentation</li>
+          <li class="menu-legende-item"><span class="menu-legende-pastille pastille-app-autre"></span>Autres</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="menu-contextuel-carte" id="menu-contextuel-carte" role="menu" aria-hidden="true">
+      <button class="menu-contextuel-item menu-contextuel-coord" id="ctx-coord" type="button">📍 0.00000, 0.00000</button>
+      <button class="menu-contextuel-item" id="ctx-share" type="button">🔗 Partager la position</button>
+      <button class="menu-contextuel-item" id="ctx-itin" type="button">🚗 Itinéraire vers ici</button>
+      <div class="menu-contextuel-sousmenu" id="ctx-submenu-itin" aria-hidden="true">
+        <button class="menu-contextuel-sousitem" id="ctx-gmaps" type="button">🚙 Google Maps</button>
+        <button class="menu-contextuel-sousitem" id="ctx-waze" type="button">🚙 Waze</button>
+        <button class="menu-contextuel-sousitem" id="ctx-apple" type="button">🚙 Apple Plans</button>
+      </div>
+      <div class="menu-contextuel-separateur"></div>
+      <button class="menu-contextuel-item" id="ctx-regle" type="button">📏 Règle / Traçage</button>
+      <div class="menu-contextuel-separateur"></div>
+      <button class="menu-contextuel-item" id="ctx-gmaps-marker" type="button">📌 Google Maps</button>
+      <button class="menu-contextuel-item" id="ctx-street" type="button">🌍 Street View</button>
+      <button class="menu-contextuel-item" id="ctx-imajnet" type="button">🛣️ Imajnet</button>
+      <div class="menu-contextuel-separateur"></div>
+      <button class="menu-contextuel-item" id="ctx-add-appareil" type="button">📍 Ajouter un appareil ici</button>
+    </div>
+    <div
+      class="modal-itineraire"
+      id="modal-itineraire"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Calculer un trajet"
+      aria-hidden="true"
+    >
+      <div class="modal-itineraire-carte">
+        <button class="modal-itineraire-fermer" id="modal-itineraire-fermer" type="button" aria-label="Fermer le calcul trajet">×</button>
+        <h2 class="modal-itineraire-titre">Calculer un trajet</h2>
+        <p class="modal-itineraire-sous-titre">Sélectionnez un départ et une arrivée</p>
+
+        <div class="modal-itineraire-champs">
+          <div class="modal-itineraire-champ">
+            <label for="itineraire-depart">Départ</label>
+            <input id="itineraire-depart" type="search" autocomplete="off" placeholder="Rechercher un accès" />
+            <ul class="modal-itineraire-resultats" id="itineraire-depart-resultats" aria-label="Résultats départ"></ul>
+          </div>
+          <div class="modal-itineraire-champ">
+            <label for="itineraire-arrivee">Arrivée</label>
+            <input id="itineraire-arrivee" type="search" autocomplete="off" placeholder="Rechercher un accès" />
+            <ul class="modal-itineraire-resultats" id="itineraire-arrivee-resultats" aria-label="Résultats arrivée"></ul>
+          </div>
+        </div>
+
+        <div class="modal-itineraire-etat" id="itineraire-etat">Choisissez un départ et une arrivée.</div>
+
+        <section class="modal-itineraire-resume" id="itineraire-resume" aria-live="polite">
+          <div class="modal-itineraire-resume-tete">
+            <strong>Résumé du trajet</strong>
+            <span>Temps et distance estimés</span>
+          </div>
+          <div class="modal-itineraire-cartes">
+            <div class="modal-itineraire-carte-kpi">
+              <strong id="itineraire-distance">-</strong>
+              <span>Distance</span>
+            </div>
+            <div class="modal-itineraire-carte-kpi">
+              <strong id="itineraire-duree">-</strong>
+              <span>Temps estimé</span>
+            </div>
+          </div>
+        </section>
+
+        <div class="modal-itineraire-actions">
+          <a class="popup-bouton-itineraire" id="itineraire-google" href="#" target="_blank" rel="noopener noreferrer">🗺️ Google Maps</a>
+          <a class="popup-bouton-itineraire" id="itineraire-apple" href="#" target="_blank" rel="noopener noreferrer">🍎 Plans</a>
+          <a class="popup-bouton-itineraire" id="itineraire-waze" href="#" target="_blank" rel="noopener noreferrer">🚗 Waze</a>
+        </div>
+
+        <button class="modal-itineraire-toggle-carte" id="itineraire-toggle-carte" type="button" aria-expanded="false">
+          Afficher la carte
+        </button>
+        <div class="modal-itineraire-apercu" id="itineraire-apercu" aria-hidden="true">
+          <div id="itineraire-carte"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-fiche" id="modal-fiche" role="dialog" aria-modal="true" aria-label="Fiche" aria-hidden="true">
+      <div class="modal-fiche-carte">
+        <button class="modal-fiche-partager" id="modal-fiche-partager" type="button" aria-label="Partager la fiche">
+          <svg class="modal-fiche-partager-icone" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12" />
+            <path d="M8.5 6.5 12 3l3.5 3.5" />
+            <path d="M6 10.5v7a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-7" />
+          </svg>
+        </button>
+        <button class="modal-fiche-fermer" id="modal-fiche-fermer" type="button" aria-label="Fermer la fiche">×</button>
+        <div class="modal-fiche-contenu maplibregl-popup-content" id="modal-fiche-contenu"></div>
+      </div>
+    </div>
+    <div class="modal-apropos" id="modal-apropos" role="dialog" aria-modal="true" aria-label="À propos" aria-hidden="true">
+      <div class="modal-apropos-carte">
+        <button class="modal-apropos-fermer" id="modal-apropos-fermer" type="button" aria-label="Fermer la fenêtre À propos">×</button>
+        <div class="modal-apropos-entete">
+          <img src="./alice.webp" alt="Logo ALICE" class="modal-apropos-logo" onerror="this.style.display='none';" />
+          <h2 class="modal-apropos-titre">À propos d'ALICE</h2>
+        </div>
+        <p class="modal-apropos-texte">
+          ALICE est une <strong>A</strong>pplication interne de <strong>L</strong>ocalisation des <strong>I</strong>nstallations de <strong>C</strong>onduite <strong>E</strong>ALE, conçue pour faciliter le repérage, l’analyse et l’accès aux informations d’exploitation pour les équipes de maintenance, travaux, groupe technique, régulation et encadrement.
+        </p>
+        <p class="modal-apropos-texte">
+          Application développée par <a href="mailto:ALICEGrpO365@sncf.onmicrosoft.com">A. Debaecker</a>.
+        </p>
+        <h3 class="modal-apropos-sous-titre">Sources de données</h3>
+        <ul class="modal-apropos-liste">
+          <li>SNCF Open Data — licence Open Database License (ODbL) (<a href="https://data.sncf.com/pages/licence/" target="_blank" rel="noopener noreferrer">détails SNCF</a>).</li>
+          <li>PK complémentaires: extras-opendata-sncf-reseau (selon couches actives), licence ODbL-1.0.</li>
+          <li>OpenStreetMap contributors: licence ODbL 1.0.</li>
+          <li>Fond cartographique: CARTO, IGN, OpenRailwayMap (selon fond/couches).</li>
+        </ul>
+        <h3 class="modal-apropos-sous-titre">Réutilisation</h3>
+        <p class="modal-apropos-texte">© ALICE – Données internes : réutilisation interdite sans autorisation.</p>
+        <p class="modal-apropos-note">
+          Les données Open Data tierces restent soumises à leurs licences respectives.
+        </p>
+      </div>
+    </div>
+    <div
+      class="modal-localisation"
+      id="modal-localisation"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Résultats autour de vous"
+      aria-hidden="true"
+    >
+      <div class="modal-localisation-carte">
+        <div class="modal-localisation-entete">
+          <button class="modal-localisation-fermer" id="modal-localisation-fermer" type="button" aria-label="Fermer la localisation">×</button>
+          <h2 class="modal-localisation-titre">Autour de vous</h2>
+          <p class="modal-localisation-sous-titre">Résultats proches de votre position actuelle</p>
+          <div class="modal-localisation-etat" id="localisation-etat" aria-live="polite">Appuyez sur "Me localiser".</div>
+        </div>
+        <ul class="modal-localisation-resultats" id="localisation-resultats" aria-label="Résultats autour de vous"></ul>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/maplibre-gl@5.1.0/dist/maplibre-gl.js"></script>
+    <script src="./rss-numeros.js"></script>
+    <script src="./code.js"></script>
+    <script src="./recherche.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

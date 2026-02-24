@@ -1,0 +1,7339 @@
+{
+  "type": "FeatureCollection",
+  "name": "postes",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Ablaincourt-Pressoir",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "107,989",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.82677,
+          49.83425
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Abscon",
+        "type": "SS",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "B",
+        "contact": "",
+        "lignes": "BUSIGNY à SOMAIN",
+        "numero_ligne": 250000,
+        "pk": "230,460",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.28792,
+          50.35576
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Achiet",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "90kV / PAS900",
+        "rss": "C",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "174,758",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.78181,
+          50.13921
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Achiet",
+        "type": "SST",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "90kV / PAS900",
+        "rss": "C",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.780311,
+          50.12881
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Alleux",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "technique_schema": "https://sncf.sharepoint.com/:f:/r/sites/InfrapleNord-PasdeCalaisGrpO365/Documents%20partages/UP%20MRE/GROUPE%20TECHNIQUE%20ET%20PATRIMOINE/SCHEMAS%20ELECTRIQUES/Sch%C3%A9mas%20%C3%A9lectriques%20UP%20EALE%20Lille/ALLEUX%20%23?csf=1&web=1&e=MCADex",
+        "technique_consigne": "",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "114,400",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.79856,
+          50.91462
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Alleux",
+        "type": "SP",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "",
+        "numero_ligne": "",
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.805222,
+          50.910937
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Alleux",
+        "type": "SP",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "",
+        "numero_ligne": "",
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.8016643,
+          50.9136001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Alleux",
+        "type": "SP",
+        "SAT": "SAT3",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "",
+        "numero_ligne": "",
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.80375,
+          50.91273
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Alleux",
+        "type": "SP",
+        "SAT": "SAT4",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "",
+        "numero_ligne": "",
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.79274,
+          50.91795
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Amiens (Équipe)",
+        "type": "",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "",
+        "contact": "",
+        "lignes": "",
+        "numero_ligne": "",
+        "pk": "",
+        "special": true,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.34307,
+          49.87597
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Armentières",
+        "type": "SS",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à LES FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "20,240",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8756749,
+          50.6804814
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Arneke",
+        "type": "SSP",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "ARRAS à DUNKERQUE",
+        "numero_ligne": 301000,
+        "pk": "280,901",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.40833,
+          50.83115
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Arques",
+        "type": "P",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à LES FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "62,755",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.31656,
+          50.74559
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "A2000",
+        "type": "Atelier",
+        "description": "",
+        "rss": "A",
+        "contact": "Répartiteur : 03 28 55 60 94",
+        "secure": "https://sncf.sharepoint.com/:w:/s/NonoMapsGrpO3652/EQHLnJC-VopPpZZ-lr3_8VQBSf7V_one6vt6bKlfDo4LQg?e=QsfHXP",
+        "lignes": "FIVES à ABBEVILLE",
+        "numero_ligne": 289000,
+        "pk": "250,300",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08766,
+          50.62029
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lens",
+        "type": "Atelier",
+        "description": "",
+        "rss": "C",
+        "contact": "",
+        "secure": "https://sncf.sharepoint.com/:w:/s/NonoMapsGrpO3652/IQCOhP3H6oVQTocln3szH5OtAWksPvdRn8ezHmu84qgE70o?e=nVNePb",
+        "lignes": "ARRAS à DUNKERQUE",
+        "numero_ligne": 301000,
+        "pk": "211,0200",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.85218,
+          50.40688
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Audruicq",
+        "type": "L",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à LES FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "85,166",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1010619,
+          50.8720082
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bailleul Sir Bethoult",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "⚡️Sectionneurs à manœuvrer à Avion pour les consignations (208-16 et 209-3) ",
+        "description_telecommande": "PAS900",
+        "rss": "C",
+        "contact": "",
+        "lignes": "ARRAS à DUNKERQUE",
+        "numero_ligne": 301000,
+        "pk": "200,290",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.84087,
+          50.3351
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Baisieux",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "➡️ PA sur TT <br> Débouclage de IMP Froyen et IL1 sur Max I manque U TT5235 et débouclage de IMP Froyen et IL2 sur Max I manque U TT A",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FIVES à BAISIEUX",
+        "numero_ligne": 269000,
+        "pk": "14,602",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.26318,
+          50.61742
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Berlaimont",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "B",
+        "contact": "",
+        "lignes": "FIVES à HIRSON ",
+        "numero_ligne": 267000,
+        "pk": "77,312",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.78801,
+          50.20385
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bethune",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "C",
+        "contact": "Agent E : 03 21 57 31 72",
+        "lignes": "ARRAS à DUNKERQUE",
+        "numero_ligne": 301000,
+        "pk": "229,0700",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.6425767,
+          50.5202459
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bethune",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "C",
+        "contact": "",
+        "lignes": "ARRAS à DUNKERQUE",
+        "numero_ligne": 301000,
+        "pk": "230,760",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.6299574,
+          50.5247694
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bethune SUD",
+        "type": "SS",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "C",
+        "contact": "Agent E : 03 21 57 31 72",
+        "lignes": "FIVES à ABBEVILLE",
+        "numero_ligne": 289000,
+        "pk": "40,006",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.64589,
+          50.51913
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Beuvry",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "C",
+        "contact": "",
+        "lignes": "FIVES à ABBEVILLE",
+        "numero_ligne": 289000,
+        "pk": "35,465",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.70018,
+          50.53345
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bif coulogne",
+        "type": "L",
+        "description": "",
+        "description_telecommande": "IP / ACS21",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à LES FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "103,900",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.85811,
+          50.93477
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bif Coupvent",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "A",
+        "contact": "",
+        "lignes": "COUDEKERQUE-BRANCHE à LES FONTINETTES",
+        "numero_ligne": 304000,
+        "pk": "14,900",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.21833,
+          50.96906
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bif puyt houck ouest",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "A",
+        "contact": "",
+        "lignes": "COUDEKERQUE-BRANCHE à LES FONTINETTES",
+        "numero_ligne": 304000,
+        "pk": "10,375",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2622015,
+          50.9928108
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Billy",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "B",
+        "contact": "",
+        "lignes": "LENS à OSTRICOURT",
+        "numero_ligne": 284000,
+        "pk": "215,547",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.9200598,
+          50.4154166
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Boisleux",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "C",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "200,0290",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.77185,
+          50.21049
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Boisleux",
+        "type": "SSP",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "C",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.7700311,
+          50.2129054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Boisleux",
+        "type": "SSP",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "C",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.7760539,
+          50.2067159
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bollaert",
+        "type": "SSP",
+        "description": "⚙️ Fonction RAP",
+        "description_telecommande": "ACS21",
+        "rss": "C",
+        "contact": "",
+        "lignes": "ARRAS à DUNKERQUE",
+        "numero_ligne": 301000,
+        "pk": "211,700",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.82333,
+          50.42868
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Botiaux",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "183,687",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.98058,
+          50.48075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bourbourg",
+        "type": "S",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "IP / ACS21",
+        "rss": "A",
+        "contact": "",
+        "lignes": "COUDEKERQUE-BRANCHE à LES FONTINETTES",
+        "numero_ligne": 304000,
+        "pk": "18,450",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.18408,
+          50.95307
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Brearde",
+        "type": "SP",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "53,547",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.54817,
+          50.75791
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Broxeele",
+        "type": "P",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "68,359",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.35391,
+          50.80769
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Busigny",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "63kV / PAS900",
+        "rss": "B",
+        "contact": "",
+        "lignes": "CREIL à JEUMONT",
+        "numero_ligne": 242000,
+        "pk": "182,251",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.45816,
+          50.05486
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Caffiers",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": 314000,
+        "pk": "277,710",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.8130708,
+          50.8459206
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Caffiers",
+        "type": "L",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": 314000,
+        "pk": "278,220",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.81153,
+          50.85033
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Caffiers",
+        "type": "L",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": 314000,
+        "pk": "278,860",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.80472,
+          50.85397
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Cassel",
+        "type": "S",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "59,146",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4730762,
+          50.7804883
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Cassel",
+        "type": "S",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.475778,
+          50.7779977
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Cassel",
+        "type": "S",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4697211,
+          50.7831982
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coquelles",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": 314000,
+        "pk": "290,0500",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.8340766,
+          50.9263379
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coquelles",
+        "type": "L",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": 314000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.8265219,
+          50.9229094
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coquelles",
+        "type": "L",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": 314000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.8291523,
+          50.9242639
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coquelles",
+        "type": "L",
+        "SAT": "SAT3",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": 314000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.833571,
+          50.9266608
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coquelles",
+        "type": "L",
+        "SAT": "SAT4",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": 314000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.8373747,
+          50.9286998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coquelles",
+        "type": "L",
+        "SAT": "SAT5",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": 314000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.836196,
+          50.9274108
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coudekerque",
+        "type": "SST",
+        "description": "",
+        "description_telecommande": "90kV / ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "ARRAS à DUNKERQUE",
+        "numero_ligne": 301000,
+        "pk": "300,521",
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.39038,
+          50.99503
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coudekerque",
+        "type": "SST",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "90kV / ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "ARRAS à DUNKERQUE",
+        "numero_ligne": 301000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.38239,
+          51.00245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coudekerque",
+        "type": "SST",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "90kV / ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "ARRAS à DUNKERQUE",
+        "numero_ligne": 301000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.37995,
+          51.00647
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coulogne",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "Alim du SAT1 dans le poste",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à LES FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "103,900",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.85815,
+          50.93473
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coulogne",
+        "type": "SP",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "Alim du SAT1 dans le poste",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à LES FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.86169,
+          50.93227
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coulogne",
+        "type": "SP",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à LES FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.8496275,
+          50.9357924
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coulogne",
+        "type": "SP",
+        "SAT": "SAT3",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à LES FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.8494559,
+          50.935167
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coulogne",
+        "type": "SP",
+        "SAT": "SAT4",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à LES FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.8544386,
+          50.936077
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Curie",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à LES FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "104,810",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.85014,
+          50.94061
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Curie",
+        "type": "SSP",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à LES FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.84798,
+          50.94207
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Curie",
+        "type": "SSP",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à LES FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.8490988,
+          50.9415922
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Curie",
+        "type": "SSP",
+        "SAT": "SAT3",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à LES FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.84732,
+          50.9424372
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Curie",
+        "type": "SSP",
+        "SAT": "SAT4",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à LES FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.8411439,
+          50.9457199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Dannes",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LONGUEAU à BOULOGNE-VILLE",
+        "numero_ligne": 311000,
+        "pk": "234,000",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.61453,
+          50.57973
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Delivrance",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "225kV / IP / ACS25",
+        "rss": "B",
+        "contact": "Agent E du poste 1 : 03 28 55 72 28   09 71 92 25 31",
+        "secure": "https://sncf.sharepoint.com/:w:/s/NonoMapsGrpO3652/ETCmzTe1tkxBpe-eNXbD9uYBLNKLW6iZnYpVpQVb-cslog?e=PR72lg",
+        "lignes": "HAUBOURDIN à SAINT-ANDRÉ",
+        "numero_ligne": 292000,
+        "pk": "14,869",
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.99177,
+          50.62769
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Denain",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "B",
+        "contact": "",
+        "lignes": "LOURCHES à VALENCIENNES",
+        "numero_ligne": 254000,
+        "pk": "230,298",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.41484,
+          50.33344
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Don Sainghin",
+        "type": "SS",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "B",
+        "contact": "",
+        "lignes": "FIVES à ABBEVILLE",
+        "numero_ligne": 289000,
+        "pk": "18,850",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.9156441,
+          50.5526596
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Don Sainghin",
+        "type": "SS",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "B",
+        "contact": "",
+        "lignes": "",
+        "numero_ligne": "",
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.9083832,
+          50.5491543
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Don Sainghin",
+        "type": "SS",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "B",
+        "contact": "",
+        "lignes": "",
+        "numero_ligne": "",
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.9059613,
+          50.5473607
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Don Sainghin",
+        "type": "SS",
+        "SAT": "SAT3",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "B",
+        "contact": "",
+        "lignes": "",
+        "numero_ligne": "",
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.9180516,
+          50.5537713
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Douai",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "B",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "217,750",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0904274,
+          50.3743867
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Dunkerque",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "Agent E : 03 28 24 81 77",
+        "lignes": "ARRAS à DUNKERQUE",
+        "numero_ligne": 301000,
+        "pk": "304,572",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.36966,
+          51.02856
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Erquinghem",
+        "type": "PRCI",
+        "description": "",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "31,503",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.82736,
+          50.67208
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Esquelbecq",
+        "type": "SS",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "ARRAS à DUNKERQUE",
+        "numero_ligne": 301000,
+        "pk": "287,404",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.41228,
+          50.88948
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Etaples",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LONGUEAU à BOULOGNE-VILLE",
+        "numero_ligne": 311000,
+        "pk": "226,900",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.6365417,
+          50.5197701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Etaples",
+        "type": "SSP",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LONGUEAU à BOULOGNE-VILLE",
+        "numero_ligne": 311000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.64443,
+          50.50692
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Etaples",
+        "type": "SSP",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LONGUEAU à BOULOGNE-VILLE",
+        "numero_ligne": 311000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.64452,
+          50.51214
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Etinchelle",
+        "type": "SST",
+        "description": "",
+        "description_telecommande": "225kV / IP / ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "164,195",
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.90491,
+          50.32616
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fampoux",
+        "type": "S",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "Raccordement d'Arras-Nord",
+        "numero_ligne": 226309,
+        "pk": "0,245",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.88298,
+          50.30039
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fampoux",
+        "type": "S",
+        "SAT": "SAT I21",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "198,500",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.86814,
+          50.29511
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fampoux",
+        "type": "S",
+        "SAT": "SAT I16",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "199,255",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.87565,
+          50.29765
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fives",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "secure": "https://sncf.sharepoint.com/:w:/r/sites/NonoMapsGrpO3652/Document/Fives.docx?d=wb5e6241634fe45fe8c9c9761c5491320&csf=1&web=1&e=OkSPum",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "248,006",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0908137,
+          50.6215949
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fives",
+        "type": "SSPA",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "secure": "https://sncf.sharepoint.com/:w:/r/sites/NonoMapsGrpO3652/Document/Fives.docx?d=wb5e6241634fe45fe8c9c9761c5491320&csf=1&web=1&e=OkSPum",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0913776,
+          50.6187456
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fives",
+        "type": "SSPA",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0887834,
+          50.6238498
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fives",
+        "type": "SSPA",
+        "SAT": "SAT3",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0865176,
+          50.6260044
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fives",
+        "type": "SSPA",
+        "SAT": "SAT4",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "",
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.110761,
+          50.6218485
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fives",
+        "type": "SSPA",
+        "SAT": "SAT5",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1017956,
+          50.6111406
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fives",
+        "type": "SSPA",
+        "SAT": "SAT6",
+        "acces": "",
+        "description": "IA5 voir avec Agent E",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "Agent E Lille :  03 28 55 71 07",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08441,
+          50.62775
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Flamengrie",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "225kV / IP / ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "25,795",
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.89664,
+          50.6454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fouilloy",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "90kV / ACS21",
+        "rss": "C",
+        "contact": "",
+        "lignes": "Saint-Roch à Darnétal-Bifurcation",
+        "numero_ligne": 321000,
+        "pk": "043,700",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.8287,
+          49.73796
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fourmies",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "63kV / IP / ACS25",
+        "rss": "B",
+        "contact": "",
+        "lignes": "FIVES à HIRSON",
+        "numero_ligne": 267000,
+        "pk": "108,934",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.05258,
+          50.02229
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Gannes",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "63kV / ACS21",
+        "rss": "C",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "89,088",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.41992,
+          49.58262
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Grande Synthe IA2",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "description": "Le DU se trouve au Poste 7",
+        "rss": "A",
+        "contact": "Agent E de Dunkerque 8 au 0328248177",
+        "lignes": "COUDEKERQUE-BRANCHE à LES FONTINETTES",
+        "numero_ligne": 304000,
+        "pk": "6,760",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.31157,
+          51.00212
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Gravelines",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "IP / ACS21",
+        "rss": "A",
+        "contact": "Agent E  Fréthun 03 21 46 82 34",
+        "lignes": "COUDEKERQUE-BRANCHE à LES FONTINETTES",
+        "numero_ligne": 304000,
+        "pk": "23,700",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1225921,
+          50.9786499
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Gravelines",
+        "type": "L",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "IP / ACS21",
+        "rss": "A",
+        "contact": "",
+        "lignes": "COUDEKERQUE-BRANCHE à LES FONTINETTES",
+        "numero_ligne": 304000,
+        "pk": "23,170",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1302745,
+          50.978107
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Gravelines",
+        "type": "L",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "IP / ACS21",
+        "rss": "A",
+        "contact": "",
+        "lignes": "COUDEKERQUE-BRANCHE à LES FONTINETTES",
+        "numero_ligne": 304000,
+        "pk": "23,882",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1201756,
+          50.9788961
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Gravelines",
+        "type": "L",
+        "SAT": "SAT3",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "IP / ACS21",
+        "rss": "A",
+        "contact": "",
+        "lignes": "COUDEKERQUE-BRANCHE à LES FONTINETTES",
+        "numero_ligne": 304000,
+        "pk": "24,870",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1060996,
+          50.9774895
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Guines",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "106,0712",
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.84751,
+          50.85431
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Harponlieu",
+        "type": "L-A",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "B",
+        "contact": "Agent E Dourges PIVOS : 0321695992",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "228,600",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.01434,
+          50.45655
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Haute Loge",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à Les FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "48,772",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.50539,
+          50.72991
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hauteville",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "Agent E : 03 91 90 13 17",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": 314000,
+        "pk": "254,140",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.6134,
+          50.72123
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hauteville",
+        "type": "SSPA",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "Agent E : 03 91 90 13 17",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": 314000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.6043048,
+          50.7064902
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hauteville",
+        "type": "SSPA",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "Agent E : 03 91 90 13 17",
+        "secure": "https://sncf.sharepoint.com/:w:/s/NonoMapsGrpO3652/EdJda7x_wGNMttoIIW3XvZQBGT6oubBAuTxWv2O2Ft4-Cw?e=FJPTEX",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": 314000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.6082651,
+          50.7129492
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hauteville",
+        "type": "SSPA",
+        "SAT": "SAT3",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "Agent E : 03 91 90 13 17",
+        "secure": "https://sncf.sharepoint.com/:w:/s/NonoMapsGrpO3652/EdJda7x_wGNMttoIIW3XvZQBGT6oubBAuTxWv2O2Ft4-Cw?e=FJPTEX",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": 314000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.6124626,
+          50.717426
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hautmont",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "45kV / PAS900",
+        "rss": "B",
+        "contact": "",
+        "lignes": "CREIL à JEUMONT",
+        "numero_ligne": 242000,
+        "pk": "225,591",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.93034,
+          50.26534
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hazebrouck (Équipe)",
+        "description": "",
+        "contact": "Arnaud : 06 99 16 77 66",
+        "special": true,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.55261,
+          50.71821
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hazebrouck",
+        "type": "SSPA",
+        "description": "⚠️ Il faut traverser les voies ADF pour acceder au poste (attention circulation)",
+        "description_telecommande": "ACS25",
+        "technique_schema": "https://sncf.sharepoint.com/:f:/r/sites/InfrapleNord-PasdeCalaisGrpO365/Documents%20partages/UP%20MRE/GROUPE%20TECHNIQUE%20ET%20PATRIMOINE/SCHEMAS%20ELECTRIQUES/Sch%C3%A9mas%20%C3%A9lectriques%20UP%20EALE%20Lille/HAZEBROUCK%20%23?csf=1&web=1&e=XT7ybU",
+        "technique_consigne": "",
+        "technique_s11": "https://digidocplus.sncf.fr/fi/reference?ref=EIC HDF IN70529",
+        "particularites_consigne": "https://digidocplus.sncf.fr/fi/reference?ref=OP40967",
+        "particularites_vitesses": "https://digidocplus.sncf.fr/fi/reference?ref=OP40945",
+        "particularites_pistes": "https://digidocplus.sncf.fr/fi/reference?ref=OP41198",
+        "rss": "A",
+        "contact": "Agent E : 03 28 43 77 57",
+        "lignes": "ARRAS à DUNKERQUE",
+        "numero_ligne": 301000,
+        "pk": "263,430",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.54908,
+          50.72384
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hellu",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "6,695",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1139317,
+          50.6025713
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hirson",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "B",
+        "contact": "",
+        "lignes": "HIRSON à AMAGNE-LUCQUY",
+        "numero_ligne": 212000,
+        "pk": "0,783",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.07688,
+          49.90953
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hondeghem",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "56,214",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.51244,
+          50.7661
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Honnechy",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "B",
+        "contact": "",
+        "lignes": "CREIL à JEUMONT",
+        "numero_ligne": 242000,
+        "pk": "183,0313",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.46951,
+          50.06064
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Justice",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FIVES à ABBEVILLE",
+        "numero_ligne": 289000,
+        "pk": "3,905",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0817305,
+          50.6112819
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Justice",
+        "type": "SSP",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "Alimentation SE",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FIVES à ABBEVILLE",
+        "numero_ligne": 289000,
+        "pk": "4,900",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.06731,
+          50.61433
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Justice",
+        "type": "SSP",
+        "SAT": "SAT3",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "",
+        "numero_ligne": "",
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0824434,
+          50.611115
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "La madeleine",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à Les FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "5,805",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0697984,
+          50.6605998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "La madeleine",
+        "type": "L",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à Les FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.07783,
+          50.66074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "La madeleine",
+        "type": "L",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à Les FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0584348,
+          50.6606965
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "La Tortue",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "IP / ACS25",
+        "rss": "B",
+        "contact": "",
+        "lignes": "FIVES à ABBEVILLE",
+        "numero_ligne": 289000,
+        "pk": "11,940",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.97572,
+          50.59966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lambersart",
+        "type": "LGV",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "secure": "https://sncf.sharepoint.com/:w:/s/NonoMapsGrpO3652/EdP81maRqTNDvoK6gZzr-FgB5ereRCPZ6IC5SIbLIHIdUw?e=NnnkKX",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "16,123",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0238654,
+          50.6595295
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lambersart",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "A",
+        "contact": "",
+        "secure": "https://sncf.sharepoint.com/:w:/s/NonoMapsGrpO3652/EdP81maRqTNDvoK6gZzr-FgB5ereRCPZ6IC5SIbLIHIdUw?e=NnnkKX",
+        "lignes": "",
+        "numero_ligne": "",
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.02475,
+          50.65928
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lambersart",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "secure": "https://sncf.sharepoint.com/:w:/s/NonoMapsGrpO3652/EdP81maRqTNDvoK6gZzr-FgB5ereRCPZ6IC5SIbLIHIdUw?e=NnnkKX",
+        "lignes": "LILLE à Les FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "9,503",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0233049,
+          50.6596897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lambersart",
+        "type": "SSP",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "",
+        "numero_ligne": "",
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0328341,
+          50.6568967
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lambersart",
+        "type": "SSP",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "",
+        "numero_ligne": "",
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0138328,
+          50.6620902
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "90kV / ACS25",
+        "rss": "C",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "132,232",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.41282,
+          49.88638
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Le Riez",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "192,491",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0487,
+          50.54039
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Leet",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "39,986",
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.72011,
+          50.70584
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lens",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "C",
+        "contact": "Agent E :  03 21 79 73 54",
+        "secure": "https://sncf.sharepoint.com/:w:/r/sites/NonoMapsGrpO3652/Document/Lens%20A.docx?d=w73c6e4ae420c4801ad7433db61a94a34&csf=1&web=1&e=AnOXRA",
+        "lignes": "ARRAS à DUNKERQUE",
+        "numero_ligne": 301000,
+        "pk": "210,820",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.83406,
+          50.42404
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lens",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "C",
+        "contact": "",
+        "lignes": "ARRAS à DUNKERQUE",
+        "numero_ligne": 301000,
+        "pk": "210,0310",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.84592,
+          50.41647
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lesquin",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "B",
+        "contact": "",
+        "lignes": "FIVES à HIRSON",
+        "numero_ligne": 267000,
+        "pk": "4,930",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1099532,
+          50.6011174
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lesquin",
+        "type": "SP",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "B",
+        "contact": "",
+        "lignes": "FIVES à HIRSON",
+        "numero_ligne": 267000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.11737,
+          50.59149
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Leval",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "B",
+        "contact": "",
+        "lignes": "FIVES à HIRSON",
+        "numero_ligne": 267000,
+        "pk": "83,398",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.83512,
+          50.18579
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lille Europe",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "A",
+        "contact": "",
+        "secure": "https://sncf.sharepoint.com/:w:/s/NonoMapsGrpO3652/Eed-LEigEfVHrmwVjlwWT38Bt4h8ufe4rAp6KOB_JvRJtw?e=RiGZdL",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "010,694",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.083174228333746,
+          50.63200029228037
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lille Gare",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "A",
+        "contact": "Agent E : 03 28 55 71 07",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "250,300",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.07812,
+          50.63474
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lille Sud",
+        "type": "S",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "IP / ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FIVES à ABBEVILLE",
+        "numero_ligne": 289000,
+        "pk": "5,890",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.05455,
+          50.61673
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lille",
+        "type": "VR GP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "secure": "https://sncf.sharepoint.com/:w:/s/NonoMapsGrpO3652/EURPe44Z-btNn-ro_rZdgaoBaTat7716eG2tNpcuPN7AGQ?e=cINyHp",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "10,841",
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0831,
+          50.63191
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lillers",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "⚠️ Un accident du travail a eu lieu sur le puit de terre, assurez-vous de la stabilité du couvercle avant d'intervenir.",
+        "description_telecommande": "PAS900",
+        "rss": "C",
+        "contact": "",
+        "lignes": "ARRAS à DUNKERQUE",
+        "numero_ligne": 301000,
+        "pk": "242,616",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.47946,
+          50.56106
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lion dor",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FIVES à MOUSCRON",
+        "numero_ligne": 278000,
+        "pk": "2,526",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.09531,
+          50.64566
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lion dor",
+        "type": "SSP",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FIVES à MOUSCRON",
+        "numero_ligne": 278000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.10427,
+          50.65303
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lion dor",
+        "type": "SSP",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FIVES à MOUSCRON",
+        "numero_ligne": 278000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.09663,
+          50.65458
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Loison",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "IP / ACS25",
+        "rss": "B",
+        "contact": "",
+        "lignes": "LENS à DON-SAINGHIN",
+        "numero_ligne": "286000",
+        "pk": "214,998",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.86181,
+          50.45381
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lomme",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "B",
+        "contact": "",
+        "lignes": "HAUBOURDIN à SAINT-ANDRÉ",
+        "numero_ligne": 292000,
+        "pk": "18,290",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0199253,
+          50.6524609
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lomme",
+        "type": "SP",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "B",
+        "contact": "",
+        "lignes": "",
+        "numero_ligne": "",
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0235102,
+          50.6544009
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Maing",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "63kV / PAS900",
+        "rss": "B",
+        "contact": "",
+        "lignes": "FIVES à HIRSON",
+        "numero_ligne": 267000,
+        "pk": "53,370",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.50169,
+          50.31207
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Maison Rouge",
+        "type": "L-A",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "B",
+        "contact": "",
+        "lignes": "LENS à OSTRICOURT",
+        "numero_ligne": 284000,
+        "pk": "223,000",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.01117,
+          50.44299
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Maison Rouge",
+        "type": "L-A",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "B",
+        "contact": "",
+        "lignes": "LENS à OSTRICOURT",
+        "numero_ligne": 284000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.993821,
+          50.435204
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Maison Rouge",
+        "type": "L-A",
+        "SAT": "SAT IA1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "B",
+        "contact": "",
+        "lignes": "LENS à OSTRICOURT",
+        "numero_ligne": 284000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.998256,
+          50.442766
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Maison Rouge",
+        "type": "L-A",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "B",
+        "contact": "",
+        "lignes": "LENS à OSTRICOURT",
+        "numero_ligne": 284000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.99942,
+          50.4381
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Maison Rouge",
+        "type": "L-A",
+        "SAT": "SAT3",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "B",
+        "contact": "",
+        "lignes": "LENS à OSTRICOURT",
+        "numero_ligne": 284000,
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.01725,
+          50.445722
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Marquise",
+        "type": "SSP",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": "314000",
+        "pk": "269,803",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.7280862,
+          50.8057342
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Marquise",
+        "type": "SSP",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": "314000",
+        "pk": "270,487",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.7380236,
+          50.8055248
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Marquise",
+        "type": "SSP",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": "314000",
+        "pk": "270,836",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.7426714,
+          50.806745
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Mercatel",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "Raccordement d'ARRAS-SUD",
+        "numero_ligne": "226306",
+        "pk": "8,055",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.77582,
+          50.23185
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Mercatel",
+        "type": "SP",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "Raccordement d'ARRAS-SUD",
+        "numero_ligne": "226306",
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.7664,
+          50.24239
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Mercatel",
+        "type": "SP",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "Raccordement d'ARRAS-SUD",
+        "numero_ligne": "226306",
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.76505,
+          50.25198
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Mercatel",
+        "type": "SP",
+        "SAT": "SAT3",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "secure": "https://sncf.sharepoint.com/:w:/s/NonoMapsGrpO3652/EYmaaLtGs6NFt9O1NqGokYABQpNM3sXq0dZ6TBQd2Ybu6g?e=rfH2Qa",
+        "lignes": "Raccordement d'ARRAS-SUD",
+        "numero_ligne": "226306",
+        "pk": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.76388,
+          50.27163
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Moulin",
+        "type": "S",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "111,146",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.81576,
+          50.89641
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Moulin",
+        "type": "S",
+        "SAT": "SAT5",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "112.4",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.8133972,
+          50.8991214
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Moulin",
+        "type": "S",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "  ",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "111",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.819481,
+          50.8873848
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Moulin",
+        "type": "S",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": 314000,
+        "pk": "285,421",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.81373,
+          50.8889835
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Moulin",
+        "type": "S",
+        "SAT": "SAT3",
+        "acces": "V1",
+        "description": "  ",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "111.5",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.8178309,
+          50.8915667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Moulin",
+        "type": "S",
+        "SAT": "SAT4",
+        "acces": "V2",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "110.2",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.8227985,
+          50.8794477
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Nortkerque",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à LES FONTINETTES ",
+        "numero_ligne": 295000,
+        "pk": "89,433",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.04124,
+          50.88065
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Noyelles",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "175,135",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.98283,
+          50.4067
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Oignies",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "182,0539",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.97594,
+          50.47095
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Orchies",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "B",
+        "contact": "",
+        "lignes": "FIVES à HIRSON",
+        "numero_ligne": 267000,
+        "pk": "20,912",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.237,
+          50.48413
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Ostricourt",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "B",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "227,400",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0281,
+          50.44795
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Pays Blanc",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "113,453",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.8065524,
+          50.9083245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Pays Blanc",
+        "type": "P",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "113",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.80975,
+          50.90403
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Pays Blanc",
+        "type": "P",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": 314000,
+        "pk": "287,528",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.80862,
+          50.90694
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Pays Blanc",
+        "type": "P",
+        "SAT": "SAT3",
+        "acces": "",
+        "description": "   ",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "Raccordement nord de Frethun",
+        "numero_ligne": "216312",
+        "pk": "xx",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.80595,
+          50.9104
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "PE3 Bif Coupvent",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "COUDEKERQUE-BRANCHE à LES FONTINETTES",
+        "numero_ligne": 304000,
+        "pk": "14,938",
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.21834,
+          50.96908
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "PE4 Pondereux",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "COUDEKERQUE-BRANCHE à LES FONTINETTES",
+        "numero_ligne": 304000,
+        "pk": "9,418",
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.27591,
+          50.9931754
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "PE5 Mardyck",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "COUDEKERQUE-BRANCHE à LES FONTINETTES",
+        "numero_ligne": 304000,
+        "pk": "10,480",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.26125,
+          50.99305
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Phalempin",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "B",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "236,0522",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.02297,
+          50.52425
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Pont de briques",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "90kV / ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LONGUEAU à BOULOGNE-VILLE",
+        "numero_ligne": 311000,
+        "pk": "248,536",
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.62416,
+          50.68354
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Pont de briques",
+        "type": "SST",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "90kV / ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LONGUEAU à BOULOGNE-VILLE",
+        "numero_ligne": 311000,
+        "pk": "248,817",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.62154,
+          50.68523
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Puyt Houck",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "COUDEKERQUE-BRANCHE à LES FONTINETTES",
+        "numero_ligne": 304000,
+        "pk": "9,388",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2758878,
+          50.9931754
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Quevy",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "B",
+        "contact": "",
+        "lignes": "HAUTMONT à FEIGNIES (Frontière) et MONS",
+        "numero_ligne": "247000",
+        "pk": "233,017",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.9095434,
+          50.3398621
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Quilleval",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "80,849",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.19144,
+          50.84411
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Rang",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LONGUEAU à BOULOGNE-VILLE",
+        "numero_ligne": 311000,
+        "pk": "215,200",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.6480278,
+          50.4163991
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": 314000,
+        "pk": "291,503",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.8449,
+          50.9316
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": 314000,
+        "pk": "291,429",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.84357,
+          50.93157
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Rodelinghem",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "description": "TVP présent pour aller jusqu'au PRCI",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "100,188",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.9289311,
+          50.8262393
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Roeux",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "162,019",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.89192,
+          50.30824
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Roeux",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "Alimentation SE",
+        "description_telecommande": "ACS21",
+        "rss": "A",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "201,0230",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.90081,
+          50.30517
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Ronchin",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "247,400",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08771,
+          50.611
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Ronchin",
+        "type": "P",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "  ",
+        "description_telecommande": "PAS900",
+        "rss": "",
+        "contact": "",
+        "secure": "https://sncf.sharepoint.com/:w:/s/NonoMapsGrpO3652/Ee22dE0W0FlMihELlYoFdOABXKGjNG69Iwo9IArFtJ545w?e=sBoMCh",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "247,616",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.089374,
+          50.6125749
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Roubaix",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FIVES à MOUSCRON",
+        "numero_ligne": 278000,
+        "pk": "11,450",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.16268,
+          50.71051
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Rue verte",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": 314000,
+        "pk": "289,500",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.8116,
+          50.91441
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Rue verte",
+        "type": "L",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": 314000,
+        "pk": "288,348",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.8101758,
+          50.9137055
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Rue verte",
+        "type": "L",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": 314000,
+        "pk": "288,415",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.81114,
+          50.91389
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Rue verte",
+        "type": "L",
+        "SAT": "SAT3",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": 314000,
+        "pk": "288,687",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.81412,
+          50.91544
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Rue verte",
+        "type": "L",
+        "SAT": "SAT4",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": 314000,
+        "pk": "288,898",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.8162583,
+          50.9167565
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Rue verte",
+        "type": "L",
+        "SAT": "SAT5",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": 314000,
+        "pk": "288,910",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.8161042,
+          50.9169776
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Rumes",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "209,0705",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.31384,
+          50.565
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "225kV /IP / ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "80,584",
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.19484,
+          50.84457
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Saint Eloi",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "IP / ACS25",
+        "rss": "B",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "215,0440",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08393,
+          50.35684
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Saint Eloi",
+        "type": "SSP",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "IP / ACS25",
+        "rss": "B",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "214,257",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.07013,
+          50.35077
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Saint Omer",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à LES FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "66,0352",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2620473,
+          50.7558154
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Saint Omer",
+        "type": "L",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à LES FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "65,624",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.27643,
+          50.7508005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Saint Omer",
+        "type": "L",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à LES FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "65,904",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.272768,
+          50.7518093
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Saint Omer",
+        "type": "L",
+        "SAT": "SAT3",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à LES FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "67,182",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2580918,
+          50.7580464
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Saint Sauveur",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "description": "Le 230V~ et le 24V= proviennent du SE (le 24 V alimente uniquement le coffret IA). Le 48V= est fourni par le SLAT. Le défaut SA= indique donc une absence de 48V, pas de 24V.",
+        "rss": "A",
+        "contact": "Agent E : 03 28 55 71 08",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "248,0200",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0897629,
+          50.6149781
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Saint Sauveur",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "249,001",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08619,
+          50.62325
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Sassegnies",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "B",
+        "contact": "",
+        "lignes": "CREIL à JEUMONT",
+        "numero_ligne": 242000,
+        "pk": "213,0812",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.82397,
+          50.18895
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Seclin",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "IP / ACS25",
+        "rss": "B",
+        "contact": "",
+        "secure": "https://sncf.sharepoint.com/:w:/s/NonoMapsGrpO3652/EQ3LJ153xT1Phwztrur8T1wBM6oKnJVpjtz65OKqrQI_RQ?e=uQtLhu",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "239,0366",
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.03567,
+          50.54811
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Avion",
+        "acces": "",
+        "description": "Sectionneur à manœuvrer pour les consignations C de Bailleul sir Berthoult",
+        "rss": "A",
+        "contact": "",
+        "lignes": "",
+        "numero_ligne": "",
+        "pk": "",
+        "hors_patrimoine": true,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": []
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bethune",
+        "acces": "230-37A",
+        "description": "A manœuvrer lors de consignation du TT l'IA de Bethune à la demande du RSS",
+        "rss": "C",
+        "contact": "",
+        "lignes": "",
+        "numero_ligne": "",
+        "pk": "",
+        "hors_patrimoine": true,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": []
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Sin le noble",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "B",
+        "contact": "",
+        "lignes": "SAINT-JUST à DOUAI",
+        "numero_ligne": "259000",
+        "pk": "217,0016",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.10542,
+          50.35807
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Somain",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "B",
+        "contact": "",
+        "lignes": "DOUAI à BLANC-MISSERON",
+        "numero_ligne": "262000",
+        "pk": "229,450",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.26171,
+          50.3551676
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Steenwerck",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à LES FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "27,544",
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.78619,
+          50.71342
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Strazeele",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à LES FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "36,523",
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.67578,
+          50.70816
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Strazeele",
+        "type": "SP",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à LES FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "36,745",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.67262,
+          50.70822
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Strazeele",
+        "type": "SP",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "A",
+        "contact": "",
+        "lignes": "LILLE à LES FONTINETTES",
+        "numero_ligne": 295000,
+        "pk": "36,022",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.68289,
+          50.70861
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Tergnier",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "63kV / ACS25",
+        "rss": "B",
+        "contact": "",
+        "lignes": "CREIL à JEUMONT",
+        "numero_ligne": 242000,
+        "pk": "130,450",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.29544,
+          49.65294
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Terres Noires",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "225kV / ACS21",
+        "rss": "B",
+        "contact": "",
+        "lignes": "DOUAI à BLANC-MISSERON",
+        "numero_ligne": "262000",
+        "pk": "219,154",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.13492,
+          50.35941
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Thiennes",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "⚡️ Sectionneur 263-16 (se situe à Hazebrouck) à manœuvrer sur demande du régulateur pour les consignations C",
+        "description_telecommande": "ACS25",
+        "rss": "C",
+        "contact": "",
+        "lignes": "ARRAS à DUNKERQUE",
+        "numero_ligne": 301000,
+        "pk": "253,0935",
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4802,
+          50.65805
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Tourcoing Gare",
+        "type": "L-A",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "Agent E : 03 20 11 68 07  03 20 11 68 20",
+        "secure": "https://sncf.sharepoint.com/:w:/s/NonoMapsGrpO3652/IQCLyVRbE3UzQ68fr1PSN2A0AeZix-TuReKCpVRo7GBCT3Y?e=ut7lkN",
+        "lignes": "FIVES à MOUSCRON",
+        "numero_ligne": 278000,
+        "pk": "13,090",
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.17764,
+          50.71849
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Tourcoing Frontière",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FIVES à MOUSCRON",
+        "numero_ligne": 278000,
+        "pk": "14,394",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.19441,
+          50.72135
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Tricat",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
+        "numero_ligne": 314000,
+        "pk": "284,612",
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.81146,
+          50.88192
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Valenciennes (Équipe)",
+        "description": "",
+        "contact": "",
+        "special": true,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.52088,
+          50.3661
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Valenciennes",
+        "type": "SS",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "B",
+        "contact": "",
+        "secure": "https://sncf.sharepoint.com/:w:/s/NonoMapsGrpO3652/EXSy0I7kI41EsscWigQYAy0Bm1zfH7E_YnXUMz4dy5Qeew?e=fGtyPM",
+        "lignes": "FIVES à HIRSON",
+        "numero_ligne": 267000,
+        "pk": "45,854",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.523896,
+          50.3753064
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Verquigneul",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "90kV / ACS25",
+        "rss": "C",
+        "contact": "",
+        "lignes": "ARRAS à DUNKERQUE",
+        "numero_ligne": 301000,
+        "pk": "226,556",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.66275,
+          50.49626
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Volck Veld",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "🗝️ Historique : mise en service du postes en juillet 1962",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "ARRAS à DUNKERQUE",
+        "numero_ligne": 301000,
+        "pk": "269,607",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.50042,
+          50.73917
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Wancourt",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "153,586",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.85293,
+          50.23802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Wannehain",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "208,699",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.26354,
+          50.57433
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Wattignies",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "B",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "244,860",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.062718,
+          50.5945631
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Yeuse",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "96,684",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.97678,
+          50.8189
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Aouste",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "B",
+        "contact": "",
+        "lignes": "HIRSON à AMAGNE-LUCQUY",
+        "numero_ligne": 212000,
+        "pk": "22,516",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.29321,
+          49.79969
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Gamand",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "FRETIN à FRÉTHUN (LGV)",
+        "numero_ligne": 216000,
+        "pk": "3,850",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.14133,
+          50.58556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Frise",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "118,130",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.85054,
+          49.92361
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Chaulnes",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "110,0820",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.83114,
+          49.85186
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Combles",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "128,150",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.87603,
+          50.01133
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Mory",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "141,044",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.87077,
+          50.12668
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Beuvraignes",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "87,500",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.76327,
+          49.65794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lessart",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "96,000",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.78901,
+          49.74863
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Beugnatre",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "143,321",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.87154,
+          50.1471
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Croisilles",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "149,208",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.86585,
+          50.19965
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Izel",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "167,482",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.93815,
+          50.34643
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Criquiers",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "A",
+        "contact": "",
+        "lignes": "Saint-Roch à Darnétal-Bifurcation",
+        "numero_ligne": 321000,
+        "pk": "57,852",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.70003,
+          49.64701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Abancourt",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "A",
+        "contact": "",
+        "lignes": "Saint-Roch à Darnétal-Bifurcation",
+        "numero_ligne": 321000,
+        "pk": "50,500",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.77699,
+          49.6882
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Abancourt",
+        "type": "L",
+        "SAT": "SATa",
+        "acces": "",
+        "description": "1 bon km pâture !",
+        "rss": "A",
+        "contact": "",
+        "secure": "",
+        "lignes": "Saint-Roch à Darnétal-Bifurcation",
+        "numero_ligne": 321000,
+        "pk": "49,330",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.785,
+          49.69739
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Abancourt",
+        "type": "L",
+        "SAT": "SATb",
+        "acces": "",
+        "description": "",
+        "rss": "A",
+        "contact": "",
+        "secure": "",
+        "lignes": "Saint-Roch à Darnétal-Bifurcation",
+        "numero_ligne": 321000,
+        "pk": "51,457",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.77043,
+          49.68086
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Abancourt",
+        "type": "L",
+        "SAT": "SATc",
+        "acces": "",
+        "description": "",
+        "rss": "A",
+        "contact": "",
+        "secure": "",
+        "lignes": "Saint-Roch à Darnétal-Bifurcation",
+        "numero_ligne": 321000,
+        "pk": "52,856",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.757276,
+          49.671655
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Abancourt",
+        "type": "L",
+        "SAT": "SATd",
+        "acces": "",
+        "description": "",
+        "rss": "A",
+        "contact": "",
+        "secure": "",
+        "lignes": "Saint-Roch à Darnétal-Bifurcation",
+        "numero_ligne": 321000,
+        "pk": "0,090",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.77553,
+          49.6863
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hellemmes",
+        "type": "Atelier",
+        "SAT": "",
+        "acces": "",
+        "description": "Plan de prevention et s'enregistrer à l'accueil.",
+        "rss": "A",
+        "contact": "Agent E du technicentre : 06 17 01 92 65",
+        "lignes": "FIVES à HIRSON ",
+        "numero_ligne": 267000,
+        "pk": "003,0000",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.10852,
+          50.62176
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Templemars",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "IP / ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "242,999",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.05143,
+          50.57906
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bachy",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "209,703",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.27759,
+          50.57245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Cysoing",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "207,301",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.24402,
+          50.57663
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Sainghin",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "201,394",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.11728,
+          50.55695
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Jeumont",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "B",
+        "contact": "",
+        "secure": "https://sncf.sharepoint.com/:w:/s/NonoMapsGrpO3652/EUYkxXpPebpJr7ssA_qAfn0BhHp0DRJSSiPNslb9eoVJHA?e=cSbPN7",
+        "lignes": "CREIL à JEUMONT",
+        "numero_ligne": 242000,
+        "pk": "237,867",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.07655,
+          50.29163
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Sambre",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "B",
+        "contact": "",
+        "lignes": "CREIL à JEUMONT",
+        "numero_ligne": 242000,
+        "pk": "219,684",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.8824,
+          50.22362
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Avesnes",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "B",
+        "contact": "",
+        "lignes": "FIVES à HIRSON ",
+        "numero_ligne": 267000,
+        "pk": "93,707",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.93351,
+          50.1266
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bachant",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "B",
+        "contact": "",
+        "lignes": "CREIL à JEUMONT",
+        "numero_ligne": 242000,
+        "pk": "217,203",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.85922,
+          50.20713
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Aulnoye",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "B",
+        "contact": "",
+        "lignes": "CREIL à JEUMONT",
+        "numero_ligne": 242000,
+        "pk": "215,499",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.84174,
+          50.19675
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Landrecies",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "B",
+        "contact": "",
+        "lignes": "CREIL à JEUMONT",
+        "numero_ligne": 242000,
+        "pk": "199,837",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.66562,
+          50.11891
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Valenciennes",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "B",
+        "contact": "",
+        "lignes": "FIVES à HIRSON ",
+        "numero_ligne": 267000,
+        "pk": "47,000",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.51944,
+          50.36629
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Noyon",
+        "type": "SS",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "B",
+        "contact": "",
+        "lignes": "CREIL à JEUMONT",
+        "numero_ligne": 242000,
+        "pk": "107,500",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.01316,
+          49.57717
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Appilly",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "B",
+        "contact": "",
+        "lignes": "CREIL à JEUMONT",
+        "numero_ligne": 242000,
+        "pk": "115,300",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1218,
+          49.58084
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Saint Just",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "C",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "80,500",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.43506,
+          49.51155
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "La Faloise",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "C",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "102,800",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.34038,
+          49.6856
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Ailly sur Noye",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "C",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "111,160",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.36455,
+          49.75519
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Longueau",
+        "type": "SA",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "C",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "124,500",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.37187,
+          49.86065
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Saint Quentin",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "B",
+        "contact": "",
+        "lignes": "CREIL à JEUMONT",
+        "numero_ligne": 242000,
+        "pk": "153,200",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.29916,
+          49.8406
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Morcourt",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "IP / ACS25",
+        "rss": "B",
+        "contact": "",
+        "lignes": "CREIL à JEUMONT",
+        "numero_ligne": 242000,
+        "pk": "156,700",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3209,
+          49.86452
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fresnoy le grand",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "B",
+        "contact": "",
+        "lignes": "CREIL à JEUMONT",
+        "numero_ligne": 242000,
+        "pk": "171,400",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.43631,
+          49.96001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Iwuy",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "B",
+        "contact": "",
+        "lignes": "BUSIGNY à SOMAIN",
+        "numero_ligne": 250000,
+        "pk": "212,185",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.31357,
+          50.21725
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Cambrai",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "B",
+        "contact": "",
+        "lignes": "BUSIGNY à SOMAIN",
+        "numero_ligne": 250000,
+        "pk": "204,620",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.25999,
+          50.16679
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Cambrai",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "B",
+        "contact": "",
+        "lignes": "BUSIGNY à SOMAIN",
+        "numero_ligne": 250000,
+        "pk": "205,892",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.25474,
+          50.17746
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lourches",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "B",
+        "contact": "",
+        "lignes": "LOURCHES à VALENCIENNES",
+        "numero_ligne": 254000,
+        "pk": "224,242",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.34179,
+          50.31671
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lourches",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "B",
+        "contact": "",
+        "lignes": "BUSIGNY à SOMAIN",
+        "numero_ligne": 250000,
+        "pk": "223,710",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.34292,
+          50.31168
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lourches",
+        "type": "L",
+        "SAT": "SAT1",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "B",
+        "contact": "",
+        "lignes": "BUSIGNY à SOMAIN",
+        "numero_ligne": 250000,
+        "pk": "222,850",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.34591,
+          50.30459
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Siege Exploitation Eurotunnel",
+        "description": "Service badge",
+        "contact": "",
+        "special": true,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.80791,
+          50.92398
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Blangy Est",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "C",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "195,001",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.82708,
+          50.29494
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Blangy Nord",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "C",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "195,000",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.82074,
+          50.29752
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Mericourt",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "C",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "146,800",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.57239,
+          49.95541
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Erre",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "B",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "232,557",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.31787,
+          50.36813
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Faubourg",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "B",
+        "contact": "",
+        "lignes": "FIVES à HIRSON ",
+        "numero_ligne": 267000,
+        "pk": "48,000",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.51631,
+          50.35285
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Le Quesnoy",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "B",
+        "contact": "",
+        "lignes": "FIVES à HIRSON ",
+        "numero_ligne": 267000,
+        "pk": "65,890",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.64578,
+          50.25073
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Corbie",
+        "type": "SS",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "C",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "139,400",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.49975,
+          49.91202
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Aveluy",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "C",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "159,0800",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.6627,
+          50.04567
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Aveluy",
+        "type": "SP",
+        "SAT": "SAT",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "C",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "159,258",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.66022,
+          50.04033
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Arras",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "C",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "191,0912",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.77903,
+          50.28566
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "C2MI",
+        "description": "",
+        "contact": "",
+        "secure": "https://sncf.sharepoint.com/:w:/s/NonoMapsGrpO3652/EdZKj_CiL6JPtZGtZgMZ0KsBPoKWnNA72JHqx04EIdc3og?e=uCoe4j",
+        "special": true,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.77236,
+          50.2806
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Namps",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "C",
+        "contact": "",
+        "lignes": "Saint-Roch à Darnétal-Bifurcation",
+        "numero_ligne": 321000,
+        "pk": "018,0400",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1155,
+          49.80964
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Maurois",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "B",
+        "contact": "",
+        "lignes": "BUSIGNY à SOMAIN",
+        "numero_ligne": 250000,
+        "pk": "183,210",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.45626,
+          50.06712
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Transloy",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "129,900",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.87224,
+          50.06296
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Essigny Le Grand",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "B",
+        "contact": "",
+        "lignes": "CREIL à JEUMONT",
+        "numero_ligne": 242000,
+        "pk": "143,900",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.257934,
+          49.765996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Amiens CU",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "description": "Alim SE Poste 1 amiens",
+        "description_telecommande": "ACS21",
+        "rss": "C",
+        "contact": "",
+        "secure": "https://sncf.sharepoint.com/:w:/s/NonoMapsGrpO3652/EaqevJIFoK9HppfuCNzjExQBR1v29v0jleC_1DauReq-5Q?e=AB6LQo",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "129,316",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.32658,
+          49.88789
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Amiens CU",
+        "type": "L",
+        "SAT": "SATa",
+        "acces": "",
+        "description": "Alim SE - Coffret support 1434 proximité coffret Tr Ra",
+        "description_telecommande": "ACS21",
+        "rss": "C",
+        "contact": "",
+        "lignes": "PARIS-NORD à LILLE",
+        "numero_ligne": 272000,
+        "pk": "128,000",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3387081857947383,
+          49.87985084012555
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Poix",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "C",
+        "contact": "",
+        "lignes": "Saint-Roch à Darnétal-Bifurcation",
+        "numero_ligne": 321000,
+        "pk": "30,300",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.988871,
+          49.778478
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Poix",
+        "type": "SSP",
+        "SAT": "SAT",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "C",
+        "contact": "",
+        "lignes": "Saint-Roch à Darnétal-Bifurcation",
+        "numero_ligne": 321000,
+        "pk": "30,022",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.99261,
+          49.77647
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Saint Roch",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "C",
+        "contact": "",
+        "secure": "https://sncf.sharepoint.com/:w:/s/NonoMapsGrpO3652/ERuLOJrADLRPpJS4PVe4Ac8B43amjLpbfMzGkCg80tGDcw?e=4pJ9md",
+        "lignes": "Saint-Roch à Darnétal-Bifurcation",
+        "numero_ligne": 321000,
+        "pk": "1,900",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.285882,
+          49.89251
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Saint Roch",
+        "type": "SSP",
+        "SAT": "SATa",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "C",
+        "contact": "",
+        "secure": "",
+        "lignes": "Saint-Roch à Darnétal-Bifurcation",
+        "numero_ligne": 321000,
+        "pk": "131,238",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.300535,
+          49.888155
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Essigny le Petit",
+        "type": "SS",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "PAS900",
+        "rss": "B",
+        "contact": "",
+        "secure": "",
+        "lignes": "CREIL à JEUMONT",
+        "numero_ligne": 242000,
+        "pk": "162,230",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.366077,
+          49.89751
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Blecourt",
+        "type": "S",
+        "SAT": "",
+        "acces": "",
+        "description": " ",
+        "description_telecommande": "PAS900",
+        "rss": "B",
+        "contact": "",
+        "secure": "",
+        "lignes": "SAINT-JUST à DOUAI",
+        "numero_ligne": "259000",
+        "pk": "200,525",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.203522,
+          50.219083
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Agent E (Dunkerque P8)",
+        "description": "",
+        "rss": "A",
+        "contact": "Agent E : 03 28 24 81 77",
+        "special": true,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.27986,
+          50.99362
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Agent E (Delivrance)",
+        "description": "",
+        "rss": "B",
+        "contact": "Agent E : 03 28 55 72 28",
+        "special": true,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.983567,
+          50.622899
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Agent E (Frethun)",
+        "description": "",
+        "rss": "A",
+        "contact": "Agent E : 03 21 46 82 34",
+        "special": true,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.84125,
+          50.93139
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Agent E (Hazebrouck)",
+        "description": "",
+        "rss": "A",
+        "contact": "Agent E : 03.28.43.77.57",
+        "special": true,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.54797,
+          50.72414
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Agent E (Hellemmes)",
+        "description": "Pour la manoeuvre de l'IA2 et du SIA2 de Fives SSP / SAT4",
+        "rss": "A",
+        "contact": "Agent E : 06 17 01 92 65",
+        "special": true,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.10901,
+          50.62196
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Agent E (Saint Sauveur)",
+        "description": "Autre nom : Champs de Mars",
+        "rss": "A",
+        "contact": "Agent E : 03 28 55 71 08",
+        "special": true,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08938,
+          50.61531
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Agent E (Tourcoing)",
+        "description": "",
+        "rss": "A",
+        "contact": "Agent E : 03 20 11 68 07  03 20 11 68 20",
+        "secure": "https://sncf.sharepoint.com/:w:/s/NonoMapsGrpO3652/IQCLyVRbE3UzQ68fr1PSN2A0AeZix-TuReKCpVRo7GBCT3Y?e=ut7lkN",
+        "special": true,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.17659,
+          50.71817
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Siège UP",
+        "description": "",
+        "contact": "",
+        "special": true,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.07074,
+          50.63596
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Amiens",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "C",
+        "contact": "",
+        "lignes": "LONGUEAU à BOULOGNE-VILLE",
+        "numero_ligne": 311000,
+        "pk": "130,268",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.31291,
+          49.88971
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Amiens",
+        "type": "SSPA",
+        "SAT": "SAT",
+        "acces": "",
+        "description": "",
+        "rss": "C",
+        "contact": "",
+        "lignes": "LONGUEAU à BOULOGNE-VILLE",
+        "numero_ligne": 311000,
+        "pk": "130,021",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.316408,
+          49.889496
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hazebrouck",
+        "acces": "263-16",
+        "description": "",
+        "rss": "A",
+        "contact": "",
+        "lignes": "ARRAS à DUNKERQUE",
+        "numero_ligne": 301000,
+        "pk": "263,303",
+        "hors_patrimoine": true,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": []
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bohain",
+        "type": "type?",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS21",
+        "rss": "B",
+        "contact": "",
+        "lignes": "CREIL à JEUMONT",
+        "numero_ligne": 242000,
+        "pk": "174,0453",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.44294,
+          49.98792
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Aubigny Au Bac",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "",
+        "rss": "B",
+        "contact": "",
+        "lignes": "Ligne de Saint-Just-en-Chaussée à Douai",
+        "numero_ligne": 259000,
+        "pk": "209,0034",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.15938,
+          50.2705
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Avelin",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "rss": "A",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "193,998",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.06927,
+          50.54302
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Beuvrage",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "",
+        "rss": "B",
+        "contact": "",
+        "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
+        "numero_ligne": 226000,
+        "pk": "246,820",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.5130278958056063,
+          50.38813683742428
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lens",
+        "acces": "sectionneur",
+        "description": "Sectionneur 210-50 et 210-55A à manœuvrer pour les consignations C de Bollaert",
+        "rss": "C",
+        "contact": "",
+        "secure": "https://sncf.sharepoint.com/:w:/r/sites/NonoMapsGrpO3652/Document/Lens%20A.docx?d=w73c6e4ae420c4801ad7433db61a94a34&csf=1&web=1&e=AnOXRA",
+        "lignes": "",
+        "numero_ligne": "",
+        "pk": "",
+        "hors_patrimoine": true,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": []
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Cabinet Medical de Dunkerque",
+        "description": "",
+        "contact": "0328248169",
+        "special": true,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.36629,
+          51.0309
+        ]
+      }
+    }
+  ]
+}

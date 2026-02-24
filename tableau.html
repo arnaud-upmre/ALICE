@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>ALICE - Application de Localisation des Installations de Conduite des EALE.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#5068f5">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="ALICE">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+
+<style>
+
+/* Reset sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Variables theme clair */
+:root {
+  --bg: #ffffff;
+  --card-bg: #ffffff;
+
+  /* Texte */
+  --text: #3c3732;
+  --muted: #6b7280;
+
+  /* Pills */
+  --pill-bg: #eaf4fb;
+  --pill-text: #264fc4;
+
+  /* SAT */
+  --sat-bg: #f6e4b5;
+  --sat-text: #de511d;
+
+  /* Hors patrimoine */
+  --hp-bg: rgba(200, 14, 14, 0.12);
+  --hp-text: #c80e0e;
+
+  /* Accent / bordure / ombre */
+  --accent: #5068f5;
+  --border: #b0cc93;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --card-bg: rgba(28, 28, 28, 0.75);
+
+    --text: #ffffff;
+    --muted: #9ca3af;
+
+    --pill-bg: #1e2a44;
+    --pill-text: #8fa8ff;
+
+    --sat-bg: #2a1e12;
+    --sat-text: #ffb784;
+
+    --hp-bg: rgba(200, 14, 14, 0.25);
+    --hp-text: #ff8a8a;
+
+    --accent: #5068f5;
+    --border: #2a2a2a;
+    --shadow: rgba(0, 0, 0, 0.6);
+  }
+
+  .board-header {
+    background: rgba(20, 20, 20, 0.75);
+    border: 1px solid var(--border);
+  }
+
+  .type-pill {
+    background: #1f2937;
+    color: #d1d5db;
+    border-color: #374151;
+  }
+
+  .ville-card {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+}
+
+/* Header */
+.board-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.board-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: 0;
+  background: #e5e7eb;
+  color: #111827;
+  text-decoration: none;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.board-close:hover {
+  background: #d1d5db;
+}
+
+.board-close:focus-visible {
+  background: #d1d5db;
+  outline: none;
+}
+
+.board-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.board-logo {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.board-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+#counters {
+  opacity: 0.9;
+}
+
+/* Layout */
+body {
+  font-family: Inter, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.board-row {
+  margin-top: 18px;
+}
+
+/* Liens cliquables */
+.section-title,
+.sat-pill {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+/* Pills */
+.pill,
+.sat-pill,
+.section-title,
+.type-pill {
+  display: inline-block;
+}
+
+.pill {
+  padding: 4px 8px;
+  background: var(--pill-bg);
+  color: var(--pill-text);
+  border-radius: 10px;
+  font-size: 12px;
+  margin: 4px 6px 4px 0;
+  cursor: pointer;
+  transition: 0.15s;
+  text-decoration: none;
+}
+
+.pill:hover,
+.sat-pill:hover,
+.section-title:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 3px 10px var(--shadow);
+}
+
+.type-pill {
+  background: #e6ecef;
+  color: #3c3732;
+  border: 1px solid #b0cc93;
+  padding: 3px 10px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  margin-left: 6px;
+}
+
+.sat-pill,
+.section-title {
+  background: var(--sat-bg);
+  color: var(--sat-text);
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.hp .pill {
+  background: var(--hp-bg);
+  color: var(--hp-text);
+}
+
+/* Cartes / grille */
+.post-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 14px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.45s ease forwards;
+}
+
+.card.hp-poste{
+  background: linear-gradient(135deg, #fff1f1, #ffe4e4);
+  border: 1px solid #ef9a9a;
+  box-shadow: 0 6px 16px rgba(200, 14, 14, 0.18);
+}
+
+@media (prefers-color-scheme: dark){
+  .card.hp-poste{
+    background: linear-gradient(135deg, rgba(120,20,20,0.45), rgba(80,10,10,0.35));
+    border: 1px solid rgba(255,138,138,0.55);
+    box-shadow: 0 6px 18px rgba(255, 80, 80, 0.18);
+  }
+}
+
+
+.card-title {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.sat-block {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Recherche */
+#search {
+  width: 100%;
+  padding: 12px 18px;
+  font-size: 15px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+}
+
+#search:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(80, 104, 245, 0.18);
+}
+
+/* Filtres */
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.filters button {
+  padding: 8px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text);
+  transition: all 0.15s ease;
+  backdrop-filter: blur(6px);
+}
+
+.filters button:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.filters button.activeFilter {
+  background: linear-gradient(135deg, #5b6eff, #5068f5);
+  color: #ffffff;
+  border-color: #5068f5;
+  box-shadow: 0 6px 18px rgba(80, 104, 245, 0.35);
+}
+
+.pill:focus-visible,
+.sat-pill:focus-visible,
+.section-title:focus-visible,
+.filters button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Header container */
+.board-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  margin-bottom: 16px;
+  padding: 14px;
+  border-radius: 18px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 26px var(--shadow);
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .card {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
+
+  .pill {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .sat-pill,
+  .section-title {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+}
+
+/* Desktop compact: densite proche de l'ancienne capture */
+@media (min-width: 1200px) {
+  .post-container {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .card-title {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .pill,
+  .sat-pill,
+  .section-title {
+    font-size: 11px;
+  }
+
+  .type-pill {
+    font-size: 10px;
+  }
+}
+
+ 
+</style>
+
+    
+</head>
+<body>
+<div class="board-header">
+  <a class="board-close" href="index.html" aria-label="Fermer le tableau blanc et revenir à la page principale" title="Fermer">×</a>
+  <div class="board-title-wrap">
+    <div class="board-title">
+      <img src="alice.webp" alt="Logo ALICE" class="board-logo">
+      <span>Tableau blanc</span>
+    </div>
+
+  <div class="board-meta">
+      <span id="counters">Chargement…</span>
+    </div>
+
+ <div class="board-row">
+    <input id="search" type="text" placeholder="Rechercher..." aria-label="Rechercher un poste, SAT ou appareil" autocomplete="off">
+  </div>
+</div>
+</div>
+
+<div class="filters">
+    <button data-sort="az">A → Z</button>
+    <button data-sort="za">Z → A</button>
+    <button data-sort="appmax">+ appareils</button>
+    <button data-sort="appmin">- appareils</button>
+</div>
+
+<div id="postesZone" class="post-container"></div>
+
+<script>
+
+const URL_POSTES = "postes.geojson";
+const URL_APPAREILS = "appareils.geojson";
+const postesZone = document.getElementById("postesZone");
+const searchEl = document.getElementById("search");
+const countersEl = document.getElementById("counters");
+
+// Helpers
+const norm = (v) => (v ?? "").toString().trim();
+const normKey = (s) => norm(s).toLowerCase().replace(/\s+/g, " ");
+const makePosteKey = (nom, type) => `${normKey(nom)}__${normKey(type)}`;
+const toRecords = (payload) => {
+  if (Array.isArray(payload)) return payload;
+  if (Array.isArray(payload?.features)) {
+    return payload.features.map((f) => f?.properties || {}).filter((p) => Object.keys(p).length > 0);
+  }
+  return [];
+};
+
+// Données en mémoire
+let postesMap = {};         
+let postesList = [];      
+let viewKeys = [];       
+let triActif = "az"; 
+  let hpPosteKeys = new Set();
+
+
+const estHP = (a) => {
+  const v = a?.hors_patrimoine;
+  return v === true || String(v).toLowerCase() === "true" || String(v) === "1";
+};
+
+
+async function chargerPostes(){
+ const res = await fetch(URL_POSTES, { cache: "no-store" });
+  if (!res.ok) throw new Error(`Impossible de charger ${URL_POSTES} (${res.status})`);
+let postes = toRecords(await res.json());
+
+hpPosteKeys = new Set(
+  postes
+    .filter(estHP)
+    .map(p => makePosteKey(p.nom, p.type))
+);
+
+
+postes = postes.filter(p => p.special !== true);
+
+
+  const map = {};
+
+  postes.forEach(p => {
+    const nom = norm(p.nom);
+    const type = norm(p.type); // peut être ""
+    const sat = norm(p.SAT);
+
+    const key = makePosteKey(nom, type);
+    if(!map[key]){
+      map[key] = {
+        key,
+        nom,
+        type,
+        sats: new Set(),
+        principal: [],
+        satApp: {},
+        appCount: 0
+      };
+    }
+
+    if(sat){
+      map[key].sats.add(sat);
+      if(!map[key].satApp[sat]) map[key].satApp[sat] = [];
+    }
+  });
+
+  postesMap = map;
+
+  postesList = Object.values(postesMap)
+    .sort((a,b) =>
+      `${a.nom} ${a.type}`.localeCompare(`${b.nom} ${b.type}`, "fr", { sensitivity:"base" })
+    );
+
+  viewKeys = postesList.map(p => p.key);
+}
+
+// 2) Charger appareils.json et injecter
+async function chargerAppareils(){
+  const res = await fetch(URL_APPAREILS, { cache: "no-store" });
+  if (!res.ok) throw new Error(`Impossible de charger ${URL_APPAREILS} (${res.status})`);
+const appareils = toRecords(await res.json());
+
+
+  appareils.forEach(a => {
+    const nom = norm(a.nom);
+    const type = norm(a.type);     // peut être ""
+    const sat = norm(a.SAT);       // "" => principal
+
+    const key = makePosteKey(nom, type);
+
+
+if(!postesMap[key]){
+  return;
+}
+
+
+    const poste = postesMap[key];
+
+    if(sat){
+      poste.sats.add(sat);
+      if(!poste.satApp[sat]) poste.satApp[sat] = [];
+      poste.satApp[sat].push(a);
+      poste.appCount++;
+    }else{
+      poste.principal.push(a);
+      poste.appCount++;
+    }
+
+  });
+
+  // retri
+  postesList = Object.values(postesMap)
+    .sort((a,b) => `${a.nom} ${a.type}`.localeCompare(`${b.nom} ${b.type}`, "fr", { sensitivity:"base" }));
+
+  postesList.forEach(preparerTriPourAffichage);
+
+  viewKeys = postesList.map(p => p.key);
+}
+
+function preparerTriPourAffichage(poste){
+  poste.principalSorted = [...poste.principal].sort((a,b) =>
+    norm(a.appareil).localeCompare(norm(b.appareil), "fr", { sensitivity:"base" })
+  );
+
+  poste.satNamesSorted = Array.from(poste.sats).sort((a,b) =>
+    a.localeCompare(b, "fr", { sensitivity:"base" })
+  );
+
+  poste.satAppSorted = {};
+  poste.satNamesSorted.forEach(sat => {
+    poste.satAppSorted[sat] = (poste.satApp[sat] || []).slice().sort((a,b) =>
+      norm(a.appareil).localeCompare(norm(b.appareil), "fr", { sensitivity:"base" })
+    );
+  });
+}
+
+// Liens vers index
+function hrefPoste(nom, type){
+  const id = `${norm(nom)} ${norm(type)}`.trim();
+  return `index.html?id=${encodeURIComponent(id)}`;
+}
+function hrefSat(nom, type, sat){
+  const id = `${norm(nom)} ${norm(type)} ${norm(sat)}`.trim();
+  return `index.html?id=${encodeURIComponent(id)}`;
+}
+function hrefAppareil(appareil, nom, type, sat){
+  const id = `${norm(appareil)} ${norm(nom)} ${norm(type)} ${norm(sat)}`.trim();
+  return `index.html?id=${encodeURIComponent(id)}`;
+}
+
+// UI builders
+function pillHtml(a){
+  const label = norm(a.appareil) || "Appareil";
+  const sat = norm(a.SAT);
+const hp = estHP(a);
+
+  const inner = `<a class="pill" href="${hrefAppareil(label, a.nom, a.type, sat)}">${escapeHtml(label)}</a>`;
+  return hp ? `<span class="hp">${inner}</span>` : inner;
+}
+
+function escapeHtml(s){
+  return (s ?? "").toString()
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+   function trierKeys(keys){
+  return [...keys].sort((ka, kb) => {
+    const a = postesMap[ka];
+    const b = postesMap[kb];
+
+    if(triActif === "az"){
+      return `${a.nom} ${a.type}`.localeCompare(
+        `${b.nom} ${b.type}`, "fr", { sensitivity:"base" }
+      );
+    }
+
+    if(triActif === "za"){
+      return `${b.nom} ${b.type}`.localeCompare(
+        `${a.nom} ${a.type}`, "fr", { sensitivity:"base" }
+      );
+    }
+
+    if(triActif === "appmax") return b.appCount - a.appCount;
+    if(triActif === "appmin") return a.appCount - b.appCount;
+
+    return 0;
+  });
+}
+
+function render(){
+  let html = "";
+  let nbPostes = 0;
+  let nbSats = 0;
+  let nbApp = 0;
+  let nbHp = 0;
+
+  if(viewKeys.length === 0){
+    postesZone.innerHTML = `<div class="card"><div class="card-title">Aucun résultat</div></div>`;
+countersEl.textContent = "Postes : 0 • SAT : 0 • Appareils : 0 dont 0 hors patrimoine";
+
+    return;
+  }
+
+  trierKeys(viewKeys).forEach(key => {
+    const p = postesMap[key];
+    if(!p) return;
+
+if (!hpPosteKeys.has(key)) {
+  nbPostes++;
+}
+
+    nbSats += (p.satNamesSorted || []).length;
+    nbApp += (p.principalSorted || []).length;
+    nbHp += (p.principalSorted || []).filter(estHP).length;
+
+    (p.satNamesSorted || []).forEach(sat => {
+      const list = (p.satAppSorted && p.satAppSorted[sat]) ? p.satAppSorted[sat] : [];
+      nbApp += list.length;
+      nbHp += list.filter(estHP).length;
+    });
+
+    html += renderPosteCard(p);
+  });
+
+  postesZone.innerHTML = html;
+countersEl.textContent = `Postes : ${nbPostes} • SAT : ${nbSats} • Appareils : ${nbApp} dont ${nbHp} hors patrimoine`;
+
+}
+
+
+
+function renderPosteCard(p){
+const hasType = !!norm(p.type);
+const isHpPoste = hpPosteKeys.has(p.key);
+
+
+  const title = hasType
+    ? `${escapeHtml(p.nom)} <span class="type-pill">${escapeHtml(p.type)}</span>`
+    : `${escapeHtml(p.nom)} (Ville de)`;
+
+  // principal : déjà trié au chargement
+  const principal = p.principalSorted || [];
+  const principalPills = principal.map(pillHtml).join("");
+
+  // SAT : déjà trié au chargement
+  const satNames = p.satNamesSorted || [];
+
+let html = `
+   <div class="card ${hasType ? "" : "ville-card"} ${isHpPoste ? "hp-poste" : ""}">
+
+      <div class="card-title">${title}</div>
+
+  ${hasType
+  ? `<a class="section-title" href="${hrefPoste(p.nom, p.type)}">Poste principal</a>
+     ${principalPills}`
+  : principalPills
+}
+  `;
+   
+  satNames.forEach((sat) => {
+    const list = (p.satAppSorted && p.satAppSorted[sat]) ? p.satAppSorted[sat] : [];
+
+    const pills = list.map(pillHtml).join("");
+
+    html += `
+      <div class="sat-block">
+        <a class="sat-pill" href="${hrefSat(p.nom, p.type, sat)}">${escapeHtml(sat)}</a>
+        ${pills}
+      </div>
+    `;
+
+  });
+
+  html += `</div>`;
+  return html;
+}
+
+/* =========================Recherche========================= */
+function appliquerRecherche(){
+  const q = norm(searchEl.value).toLowerCase();
+  if(!q){
+    viewKeys = postesList.map(p => p.key);
+    render();
+    return;
+  }
+
+  const hits = [];
+  postesList.forEach(p => {
+    const hayPoste = `${p.nom} ${p.type}`.toLowerCase();
+
+    // match poste/type direct
+    let ok = hayPoste.includes(q);
+
+    // match sat
+    if(!ok){
+      for(const sat of p.sats){
+        if(sat.toLowerCase().includes(q)){ ok = true; break; }
+      }
+    }
+
+    // match appareils principal
+    if(!ok){
+      ok = p.principal.some(a => (norm(a.appareil).toLowerCase().includes(q)));
+    }
+
+    // match appareils SAT
+    if(!ok){
+      for(const sat of Object.keys(p.satApp)){
+        if(p.satApp[sat].some(a => (norm(a.appareil).toLowerCase().includes(q)))){
+          ok = true; break;
+        }
+      }
+    }
+
+    if(ok) hits.push(p.key);
+  });
+
+  viewKeys = hits;
+  render();
+}
+
+let searchTimer;
+searchEl?.addEventListener("input", () => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(appliquerRecherche, 150);
+});
+
+/* =========================Lancement========================= */
+(async function init(){
+  try{
+    countersEl.textContent = "Chargement…";
+    await chargerPostes();     // affiche les postes/SAT même vides
+    await chargerAppareils();  // injecte les appareils
+    render();
+  }catch(e){
+    console.error(e);
+    countersEl.textContent = "Erreur de chargement (postes/appareils).";
+  }
+})();
+
+   // =========================Boutons de tri ========================= //
+const sortButtons = document.querySelectorAll(".filters button");
+
+sortButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    // reset visuel
+    sortButtons.forEach(b => b.classList.remove("activeFilter"));
+
+    // activation du bouton cliqué
+    btn.classList.add("activeFilter");
+
+    // mode de tri actif
+    triActif = btn.dataset.sort;
+
+    // re-render avec le tri
+    render();
+  });
+});
+
+// A → Z actif par défaut
+document
+  .querySelector('[data-sort="az"]')
+  ?.classList.add("activeFilter");
+
+</script>
+</body>
+</html>

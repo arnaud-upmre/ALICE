@@ -1,0 +1,6216 @@
+{
+  "type": "FeatureCollection",
+  "name": "acces",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "A2000",
+        "type": "Atelier",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08726,
+          50.6203
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Abancourt",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.7768,
+          49.68836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Abancourt",
+        "type": "L",
+        "SAT": "SATa",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.790036,
+          49.706051
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Abancourt",
+        "type": "L",
+        "SAT": "SATb",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.767463,
+          49.677472
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Abancourt",
+        "type": "L",
+        "SAT": "SATc",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.759137,
+          49.672897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Abancourt",
+        "type": "L",
+        "SAT": "SATd",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.773787,
+          49.683035
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Ablaincourt-Pressoir",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.82555,
+          49.83359
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Abscon",
+        "type": "SS",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.285046,
+          50.35538
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Achiet",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.780442,
+          50.13866
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Achiet",
+        "type": "SST",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.779952,
+          50.131653
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Agent E (Delivrance)",
+        "type": "",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.983871,
+          50.623062
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Agent E (Dunkerque P8)",
+        "type": "",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.27973,
+          50.99328
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Agent E (Frethun)",
+        "type": "",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.839949,
+          50.931476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Agent E (Hazebrouck)",
+        "type": "",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.543193,
+          50.724571
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Agent E (Hellemmes)",
+        "type": "",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.10786,
+          50.62342
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Agent E (Saint Sauveur)",
+        "type": "",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08902,
+          50.6152
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Agent E (Tourcoing)",
+        "type": "",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1774752,
+          50.7189629
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Ailly sur Noye",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.36441,
+          49.75464
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Alleux",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.80514,
+          50.90838
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Alleux",
+        "type": "SP",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.81026,
+          50.90913
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Alleux",
+        "type": "SP",
+        "SAT": "SAT2",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.839949,
+          50.931476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Alleux",
+        "type": "SP",
+        "SAT": "SAT3",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.839949,
+          50.931476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Alleux",
+        "type": "SP",
+        "SAT": "SAT4",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.80514,
+          50.90838
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Amiens",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.31432,
+          49.88918
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Amiens",
+        "type": "SSPA",
+        "SAT": "SAT",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.31432,
+          49.88918
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Amiens (Équipe)",
+        "type": "",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3439634,
+          49.8766396
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Amiens CU",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.326579,
+          49.88886
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Amiens CU",
+        "type": "L",
+        "SAT": "SATa",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3415388512579742,
+          49.877483278210676
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Aouste",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.29306,
+          49.79982
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Appilly",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.12081,
+          49.58103
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Armentières",
+        "type": "SS",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.87623,
+          50.68003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Arneke",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.40845,
+          50.83125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Arques",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.31635,
+          50.74569
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Arras",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.77976,
+          50.28651
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Aubigny Au Bac",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.15964,
+          50.27188
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Audruicq",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.10028,
+          50.87213
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Aulnoye",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.8415,
+          50.19668
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Avelin",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.06977,
+          50.54338
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Aveluy",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.66314,
+          50.04619
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Aveluy",
+        "type": "SP",
+        "SAT": "SAT",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.66314,
+          50.04619
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Avesnes",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.93313,
+          50.12665
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Avion",
+        "type": "",
+        "SAT": "",
+        "acces": "208-16",
+        "hors_patrimoine": true,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.83331,
+          50.40705
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Avion",
+        "type": "",
+        "SAT": "",
+        "acces": "209-3",
+        "hors_patrimoine": true,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.835957,
+          50.40928
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bachant",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.85838,
+          50.20737
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bachy",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.27866,
+          50.57287
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bailleul Sir Bethoult",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.839832,
+          50.33494
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Baisieux",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.2631,
+          50.6167
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Berlaimont",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.787232,
+          50.20409
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bethune",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.63606,
+          50.52139
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bethune",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.63011,
+          50.52467
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bethune",
+        "type": "",
+        "SAT": "",
+        "acces": "230-37A",
+        "hors_patrimoine": true,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.63011,
+          50.52467
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bethune SUD",
+        "type": "SS",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.63606,
+          50.52139
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Beugnatre",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.86852,
+          50.14911
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Beuvrage",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.5169661045074467,
+          50.38722220627007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Beuvraignes",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.75505,
+          49.64698
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Beuvry",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.70011,
+          50.53336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bif coulogne",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.85672,
+          50.93494
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bif Coupvent",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.21841,
+          50.96917
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bif puyt houck ouest",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.26646,
+          50.99267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Billy",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.918608,
+          50.41549
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Blangy Est",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.82486,
+          50.29651
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Blangy Nord",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.82105,
+          50.29721
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Blecourt",
+        "type": "S",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.209655,
+          50.222074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bohain",
+        "type": "type?",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.44319,
+          49.98822
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Boisleux",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.772019,
+          50.2105
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Boisleux",
+        "type": "SSP",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.770477,
+          50.21242
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Boisleux",
+        "type": "SSP",
+        "SAT": "SAT1",
+        "acces": "n°2",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.770975,
+          50.21021
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Boisleux",
+        "type": "SSP",
+        "SAT": "SAT2",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.77998,
+          50.2076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bollaert",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.82307,
+          50.42889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Botiaux",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.97136,
+          50.46613
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Bourbourg",
+        "type": "S",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.18403,
+          50.95322
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Brearde",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.55443,
+          50.75496
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Broxeele",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.35351,
+          50.80804
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Busigny",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.45259,
+          50.04771
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "C2MI",
+        "type": "",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.77277,
+          50.28057
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Cabinet Medical de Dunkerque",
+        "type": "",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.36651,
+          51.02978
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Caffiers",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.81277,
+          50.8497
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Caffiers",
+        "type": "L",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.8116,
+          50.85015
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Caffiers",
+        "type": "L",
+        "SAT": "SAT2",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.805,
+          50.85407
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Cambrai",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.25902,
+          50.16717
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Cambrai",
+        "type": "L",
+        "SAT": "",
+        "acces": "I83502",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.25753,
+          50.16927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Cambrai",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.25427,
+          50.17684
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Cassel",
+        "type": "S",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.47405,
+          50.78164
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Cassel",
+        "type": "S",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.47405,
+          50.78164
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Cassel",
+        "type": "S",
+        "SAT": "SAT2",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.47365,
+          50.78139
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Chaulnes",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.83075,
+          49.84614
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Combles",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.87424,
+          50.01076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coquelles",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.83396,
+          50.92621
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coquelles",
+        "type": "L",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.839949,
+          50.931476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coquelles",
+        "type": "L",
+        "SAT": "SAT2",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.839949,
+          50.931476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coquelles",
+        "type": "L",
+        "SAT": "SAT3",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.839949,
+          50.931476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coquelles",
+        "type": "L",
+        "SAT": "SAT4",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.839949,
+          50.931476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coquelles",
+        "type": "L",
+        "SAT": "SAT5",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.83633,
+          50.92738
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Corbie",
+        "type": "SS",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.5001,
+          49.91218
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coudekerque",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.39034,
+          50.99517
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coudekerque",
+        "type": "SST",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.38353,
+          51.00197
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coudekerque",
+        "type": "SST",
+        "SAT": "SAT2",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.37428,
+          51.01106
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coulogne",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.85672,
+          50.93494
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coulogne",
+        "type": "SP",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.86172,
+          50.93233
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coulogne",
+        "type": "SP",
+        "SAT": "SAT1",
+        "acces": "I5429",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.86233,
+          50.93179
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coulogne",
+        "type": "SP",
+        "SAT": "SAT2",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.85033,
+          50.93525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coulogne",
+        "type": "SP",
+        "SAT": "SAT3",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.85033,
+          50.93525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Coulogne",
+        "type": "SP",
+        "SAT": "SAT4",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.85537,
+          50.93496
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Criquiers",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.69978,
+          49.64706
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Croisilles",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.86619,
+          50.19842
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Curie",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.85027,
+          50.94073
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Curie",
+        "type": "SSP",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.84929,
+          50.94088
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Curie",
+        "type": "SSP",
+        "SAT": "SAT2",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.85027,
+          50.94073
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Curie",
+        "type": "SSP",
+        "SAT": "SAT3",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.84929,
+          50.94088
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Curie",
+        "type": "SSP",
+        "SAT": "SAT4",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.84089,
+          50.94565
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Cysoing",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.24315,
+          50.57681
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Dannes",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.61442,
+          50.5761
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Delivrance",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.99342,
+          50.62746
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Denain",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.4146,
+          50.33367
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Don Sainghin",
+        "type": "SS",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.91516,
+          50.55251
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Don Sainghin",
+        "type": "SS",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.90457,
+          50.54833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Don Sainghin",
+        "type": "SS",
+        "SAT": "SAT2",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.90489,
+          50.54747
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Don Sainghin",
+        "type": "SS",
+        "SAT": "SAT3",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.91516,
+          50.55251
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Douai",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.089757,
+          50.37458
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Dunkerque",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.36975,
+          51.02868
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Erquinghem",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.82542,
+          50.67246
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Erre",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.31796,
+          50.36802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Esquelbecq",
+        "type": "SS",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.41255,
+          50.88953
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Essigny Le Grand",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.273352,
+          49.763028
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Essigny le Petit",
+        "type": "SS",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.366197,
+          49.897676
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Etaples",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.63236,
+          50.52182
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Etaples",
+        "type": "SSP",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.64404,
+          50.51287
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Etaples",
+        "type": "SSP",
+        "SAT": "SAT2",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.64404,
+          50.51287
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Etinchelle",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.9056,
+          50.3264
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fampoux",
+        "type": "S",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.88313,
+          50.30057
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fampoux",
+        "type": "S",
+        "SAT": "SAT I21",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.87374,
+          50.297
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fampoux",
+        "type": "S",
+        "SAT": "SAT I16",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.87374,
+          50.297
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Faubourg",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.51599,
+          50.35178
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fives",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.09427,
+          50.61666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fives",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "S5064-358",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08324,
+          50.63237
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fives",
+        "type": "SSPA",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.09427,
+          50.61666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fives",
+        "type": "SSPA",
+        "SAT": "SAT2",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0885974119979664,
+          50.621958802981766
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fives",
+        "type": "SSPA",
+        "SAT": "SAT3",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0885974119979664,
+          50.621958802981766
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fives",
+        "type": "SSPA",
+        "SAT": "SAT4",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1131,
+          50.62222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fives",
+        "type": "SSPA",
+        "SAT": "SAT5",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1061,
+          50.60647
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fives",
+        "type": "SSPA",
+        "SAT": "SAT5",
+        "acces": "n°2",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.09427,
+          50.61666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fives",
+        "type": "SSPA",
+        "SAT": "SAT6",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0885974119979664,
+          50.621958802981766
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Flamengrie",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.89574,
+          50.64574
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fouilloy",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.82787,
+          49.73775
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fourmies",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.05295,
+          50.02076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Fresnoy le grand",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.43638,
+          49.96001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Frise",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.84689,
+          49.92188
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Gamand",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.14155,
+          50.58547
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Gannes",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.41845,
+          49.58228
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Grande Synthe IA2",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.31363,
+          51.00232
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Gravelines",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.12322,
+          50.97897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Gravelines",
+        "type": "L",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.12909,
+          50.97798
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Gravelines",
+        "type": "L",
+        "SAT": "SAT2",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.12036,
+          50.97889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Gravelines",
+        "type": "L",
+        "SAT": "SAT3",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.10702,
+          50.978
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Guines",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.849,
+          50.8522
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Harponlieu",
+        "type": "L-A",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.012803,
+          50.45753
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Harponlieu",
+        "type": "L-A",
+        "SAT": "",
+        "acces": "I1037",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.019872,
+          50.452943
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Haute Loge",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.50458,
+          50.73001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Haute Loge",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "sectionneur",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.51927,
+          50.7285
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hauteville",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.6131,
+          50.72107
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hauteville",
+        "type": "SSPA",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.60412,
+          50.70574
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hauteville",
+        "type": "SSPA",
+        "SAT": "SAT2",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.61336,
+          50.71684
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hauteville",
+        "type": "SSPA",
+        "SAT": "SAT3",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.61336,
+          50.71684
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hautmont",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.93299,
+          50.26566
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hazebrouck",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.543193,
+          50.724571
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hazebrouck",
+        "type": "",
+        "SAT": "",
+        "acces": "263-16",
+        "hors_patrimoine": true,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.543193,
+          50.724571
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hazebrouck (Équipe)",
+        "type": "",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.55197,
+          50.71785
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hellemmes",
+        "type": "Atelier",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.10786,
+          50.62342
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hellu",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.10628,
+          50.60639
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hirson",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0838,
+          49.91437
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hondeghem",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.51596,
+          50.76495
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hondeghem",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "I608",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.47886,
+          50.77567
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Hondeghem",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "I611",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.49755,
+          50.76744
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Honnechy",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.47007,
+          50.06383
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Iwuy",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.31093,
+          50.2162
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Izel",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.93062,
+          50.3481
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Jeumont",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.07505,
+          50.29047
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Justice",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08054,
+          50.61123
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Justice",
+        "type": "SSP",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0622908,
+          50.616002
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Justice",
+        "type": "SSP",
+        "SAT": "SAT3",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08054,
+          50.61123
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "La Faloise",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.33967,
+          49.6849
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "La madeleine",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.07221,
+          50.6605
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "La madeleine",
+        "type": "L",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08042,
+          50.66066
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "La madeleine",
+        "type": "L",
+        "SAT": "SAT2",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.07221,
+          50.6605
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "La Tortue",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.97665,
+          50.59995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lambersart",
+        "type": "LGV",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.03032,
+          50.65763
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lambersart",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.03032,
+          50.65763
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lambersart",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "I549",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.04592,
+          50.65367
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lambersart",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "I553",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.01636,
+          50.662
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lambersart",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.03032,
+          50.65763
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lambersart",
+        "type": "SSP",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0293,
+          50.65793
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lambersart",
+        "type": "SSP",
+        "SAT": "SAT2",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0139,
+          50.662
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.39569,
+          49.88525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Landrecies",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.66436,
+          50.11949
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Le Quesnoy",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.64478,
+          50.25302
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Le Riez",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.04998,
+          50.53876
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Leet",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.72167,
+          50.70689
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lens",
+        "type": "Atelier",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.85233,
+          50.40689
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lens",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.83377,
+          50.42474
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lens",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.84613,
+          50.41642
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lens",
+        "type": "",
+        "SAT": "",
+        "acces": "sectionneur",
+        "hors_patrimoine": true,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.83377,
+          50.42474
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lesquin",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.11391,
+          50.59582
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lesquin",
+        "type": "SP",
+        "SAT": "",
+        "acces": "n°2 - par la ferme",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.10879,
+          50.59874
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lesquin",
+        "type": "SP",
+        "SAT": "SAT1",
+        "acces": "I18",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1128,
+          50.59255
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lesquin",
+        "type": "SP",
+        "SAT": "SAT1",
+        "acces": "I14",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1128,
+          50.59255
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lesquin",
+        "type": "SP",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.11775,
+          50.59102
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lessart",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.785583,
+          49.759545
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Leval",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.83642,
+          50.18456
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lille",
+        "type": "VR GP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08324,
+          50.63237
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lille Europe",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08324,
+          50.63237
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lille Gare",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.07861,
+          50.63468
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lille Gare",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "S5082",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.07963,
+          50.63313
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lille Sud",
+        "type": "S",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0622908,
+          50.616002
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lillers",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.47982,
+          50.56119
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lion dor",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.09215,
+          50.64232
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lion dor",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "F IL3",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.10686,
+          50.65531
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lion dor",
+        "type": "SSP",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.10686,
+          50.65531
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lion dor",
+        "type": "SSP",
+        "SAT": "SAT2",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.09628,
+          50.65451
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Loison",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.85695,
+          50.45093
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lomme",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.02056,
+          50.65298
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lomme",
+        "type": "SP",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.02365,
+          50.65453
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Longueau",
+        "type": "SA",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.371,
+          49.86072
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lourches",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.34226,
+          50.31894
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lourches",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.34303,
+          50.31061
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lourches",
+        "type": "L",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.34714,
+          50.30664
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Maing",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.502,
+          50.31163
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Maison Rouge",
+        "type": "L-A",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.011121,
+          50.44316
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Maison Rouge",
+        "type": "L-A",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.995531,
+          50.435645
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Maison Rouge",
+        "type": "L-A",
+        "SAT": "SAT1",
+        "acces": "n°2",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.993743,
+          50.435421
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Maison Rouge",
+        "type": "L-A",
+        "SAT": "SAT IA1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.998094,
+          50.441352
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Maison Rouge",
+        "type": "L-A",
+        "SAT": "SAT2",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.998094,
+          50.441352
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Maison Rouge",
+        "type": "L-A",
+        "SAT": "SAT3",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.011385,
+          50.443151
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Marquise",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.72958,
+          50.80576
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Marquise",
+        "type": "SSP",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.73025,
+          50.8058
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Marquise",
+        "type": "SSP",
+        "SAT": "SAT2",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.73025,
+          50.8058
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Maurois",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.45597,
+          50.06725
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Mercatel",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.77734,
+          50.23139
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Mercatel",
+        "type": "SP",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.76643,
+          50.24218
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Mercatel",
+        "type": "SP",
+        "SAT": "SAT2",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.764586,
+          50.25037
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Mercatel",
+        "type": "SP",
+        "SAT": "SAT3",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.77277,
+          50.28057
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Mericourt",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.57175,
+          49.95533
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Morcourt",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.31832,
+          49.86364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Mory",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.87015,
+          50.12636
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Moulin",
+        "type": "S",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.81608,
+          50.89642
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Moulin",
+        "type": "S",
+        "SAT": "SAT5",
+        "acces": "V2",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.80842,
+          50.90695
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Moulin",
+        "type": "S",
+        "SAT": "SAT5",
+        "acces": "V1",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.80945,
+          50.90004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Moulin",
+        "type": "S",
+        "SAT": "SAT2",
+        "acces": "V2",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.81963,
+          50.88869
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Moulin",
+        "type": "S",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.81385,
+          50.89113
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Moulin",
+        "type": "S",
+        "SAT": "SAT2",
+        "acces": "V1",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.82057,
+          50.88275
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Moulin",
+        "type": "S",
+        "SAT": "SAT3",
+        "acces": "V1",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.81625,
+          50.89384
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Moulin",
+        "type": "S",
+        "SAT": "SAT4",
+        "acces": "V2",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.82354,
+          50.87884
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Namps",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.11521,
+          49.80947
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Nortkerque",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.04122,
+          50.88074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Noyelles",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.98216,
+          50.40649
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Noyon",
+        "type": "SS",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.01283,
+          49.57689
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Oignies",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.97136,
+          50.46613
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Oignies",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "I449",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.9716,
+          50.46588
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Orchies",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.237234,
+          50.484
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Ostricourt",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.028227,
+          50.44792
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Pays Blanc",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.80514,
+          50.90838
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Pays Blanc",
+        "type": "P",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.80965,
+          50.90254
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Pays Blanc",
+        "type": "P",
+        "SAT": "SAT2",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.80842,
+          50.90695
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Pays Blanc",
+        "type": "P",
+        "SAT": "SAT3",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.81026,
+          50.90913
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "PE3 Bif Coupvent",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.21841,
+          50.96917
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "PE4 Pondereux",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.27973,
+          50.99328
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "PE5 Mardyck",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.25687,
+          50.99837
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "PE5 Mardyck",
+        "type": "A",
+        "SAT": "",
+        "acces": "n°2",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.26646,
+          50.99267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Phalempin",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.021735,
+          50.52328
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Poix",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.989939,
+          49.777739
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Poix",
+        "type": "SSP",
+        "SAT": "SAT",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.9948,
+          49.7755
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Pont de briques",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.62699,
+          50.68181
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Pont de briques",
+        "type": "SST",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.62699,
+          50.68181
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Puyt Houck",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.27973,
+          50.99328
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Quevy",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.909734,
+          50.33962
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Quilleval",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.19101,
+          50.84418
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Quilleval",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "I625",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.18123,
+          50.8432
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Rang",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.64755,
+          50.41705
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.84943,
+          50.93394
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.839949,
+          50.931476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "TT7371",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.839949,
+          50.931476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Rodelinghem",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "I628",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.93076,
+          50.82622
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Rodelinghem",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "I629",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.93818,
+          50.82388
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Rodelinghem",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "TT629",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.93818,
+          50.82388
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Rodelinghem",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "I631",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.9214,
+          50.82646
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Roeux",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8904,
+          50.30525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Roeux",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "I417",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.88809,
+          50.30523
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Roeux",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "I415",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.88809,
+          50.30523
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Roeux",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "TT415",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.88809,
+          50.30523
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Roeux",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.89495,
+          50.30328
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Ronchin",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0877,
+          50.61104
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Ronchin",
+        "type": "P",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.09427,
+          50.61666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Roubaix",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.16269,
+          50.71052
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Rue verte",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.839949,
+          50.931476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Rue verte",
+        "type": "L",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.839949,
+          50.931476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Rue verte",
+        "type": "L",
+        "SAT": "SAT2",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.839949,
+          50.931476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Rue verte",
+        "type": "L",
+        "SAT": "SAT3",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.839949,
+          50.931476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Rue verte",
+        "type": "L",
+        "SAT": "SAT4",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.839949,
+          50.931476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Rue verte",
+        "type": "L",
+        "SAT": "SAT5",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.839949,
+          50.931476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Rumes",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.31106,
+          50.56443
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.19582,
+          50.84462
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Sainghin",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.11842,
+          50.55783
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Saint Eloi",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.082571,
+          50.35633
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Saint Eloi",
+        "type": "SSP",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.070216,
+          50.35077
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Saint Just",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.43483,
+          49.51282
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Saint Omer",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2652234,
+          50.7535739
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Saint Omer",
+        "type": "L",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2741785,
+          50.7511606
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Saint Omer",
+        "type": "L",
+        "SAT": "SAT2",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2741785,
+          50.7511606
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Saint Omer",
+        "type": "L",
+        "SAT": "SAT3",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2582956,
+          50.7580472
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Saint Quentin",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.29909,
+          49.84075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Saint Roch",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.28705,
+          49.89234
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Saint Roch",
+        "type": "SSP",
+        "SAT": "SATa",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.302023,
+          49.888388
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Saint Sauveur",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08902,
+          50.6152
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Saint Sauveur",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0885974119979664,
+          50.621958802981766
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Sambre",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.88161,
+          50.22326
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Sassegnies",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.823426,
+          50.18866
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Seclin",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.036255,
+          50.54875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Siege Exploitation Eurotunnel",
+        "type": "",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.80846,
+          50.92426
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Sin le noble",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.106706,
+          50.35781
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Siège UP",
+        "type": "",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.07186,
+          50.63507
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Somain",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.263358,
+          50.35537
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Steenwerck",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.7864455,
+          50.7134384
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Strazeele",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.67587,
+          50.70812
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Strazeele",
+        "type": "SP",
+        "SAT": "SAT1",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.67278,
+          50.7082
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Strazeele",
+        "type": "SP",
+        "SAT": "SAT2",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.68322,
+          50.70867
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Templemars",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.05147,
+          50.57915
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Tergnier",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.29395,
+          49.65161
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Terres Noires",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.136648,
+          50.3617
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Thiennes",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.47997,
+          50.65803
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Tourcoing Frontière",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1935409,
+          50.72275
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Tourcoing Gare",
+        "type": "L-A",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1774752,
+          50.7189629
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Transloy",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.87241,
+          50.051312
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Tricat",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.8114974,
+          50.8827577
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Valenciennes",
+        "type": "SS",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.521082,
+          50.37136
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Valenciennes",
+        "type": "SS",
+        "SAT": "",
+        "acces": "n°2",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.22836,
+          50.37174
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Valenciennes",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.52115,
+          50.36588
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Valenciennes (Équipe)",
+        "type": "",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.52115,
+          50.36588
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Verquigneul",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.6623814,
+          50.4965516
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Volck Veld",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.500813,
+          50.7385505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Wancourt",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.85399,
+          50.23461
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Wannehain",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.26223,
+          50.57473
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Wannehain",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "TT513",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.25675,
+          50.57525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Wannehain",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "I510",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.25535,
+          50.57496
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Wattignies",
+        "type": "SP",
+        "SAT": "",
+        "acces": "n°1",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.062777,
+          50.59791
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Wattignies",
+        "type": "SP",
+        "SAT": "",
+        "acces": "n°2",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.059612,
+          50.5932
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Yeuse",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.9766565,
+          50.8189184
+        ]
+      }
+    }
+  ]
+}

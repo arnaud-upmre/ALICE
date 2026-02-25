@@ -3785,6 +3785,24 @@
     {
       "type": "Feature",
       "properties": {
+        "nom": "Lille Europe",
+        "type": "PRCI",
+        "SAT": "",
+        "acces": "TT630",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0867281534099504,
+          50.62753663140714
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "nom": "Lille Gare",
         "type": "SSPA",
         "SAT": "",

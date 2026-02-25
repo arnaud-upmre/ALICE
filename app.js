@@ -164,10 +164,10 @@ const URL_STYLE_PLAN_IGN =
   "https://data.geopf.fr/annexes/ressources/vectorTiles/styles/PLAN.IGN/standard.json";
 const FOND_IGN_AUTOMATIQUE = "ignAuto";
 const FOND_BASE_IGN_AUTOMATIQUE = "voyager";
-const ZOOM_PASSAGE_SATELLITE_IGN = 15;
-const ZOOM_RETOUR_PLAN_IGN = 14.5;
+const ZOOM_PASSAGE_SATELLITE_IGN = 14;
+const ZOOM_RETOUR_PLAN_IGN = 13.5;
 const ZOOM_DEBUT_FONDU_IGN_AUTO = ZOOM_PASSAGE_SATELLITE_IGN;
-const ZOOM_FIN_FONDU_IGN_AUTO = ZOOM_MAX - 1;
+const ZOOM_FIN_FONDU_IGN_AUTO = ZOOM_MAX - 2;
 const OPACITE_MAX_SATELLITE_IGN_AUTO = 1;
 const SOURCE_SATELLITE_IGN_AUTO = "satellite-ign-auto-source";
 const COUCHE_SATELLITE_IGN_AUTO = "satellite-ign-auto-layer";

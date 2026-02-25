@@ -360,6 +360,135 @@ body {
   box-shadow: 0 10px 26px var(--shadow);
 }
 
+/* Surimpression d'accueil */
+.welcome-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(11, 23, 38, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.welcome-overlay[hidden] {
+  display: none;
+}
+
+.welcome-modal {
+  position: relative;
+  width: min(560px, 100%);
+  border-radius: 18px;
+  padding: 22px;
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.97), rgba(242, 247, 255, 0.96));
+  border: 1px solid rgba(80, 104, 245, 0.25);
+  box-shadow: 0 18px 40px rgba(11, 23, 38, 0.28);
+  color: #1f2937;
+}
+
+.welcome-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(31, 41, 55, 0.1);
+  color: #111827;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.welcome-close:hover {
+  background: rgba(31, 41, 55, 0.18);
+}
+
+.welcome-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #264fc4;
+  background: #eaf1ff;
+  border-radius: 999px;
+  padding: 5px 10px;
+}
+
+.welcome-title {
+  margin: 10px 0 8px;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.welcome-text {
+  margin: 0;
+  color: #374151;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.welcome-list {
+  margin: 14px 0 0;
+  padding: 0 0 0 18px;
+  color: #374151;
+  font-size: 14px;
+}
+
+.welcome-actions {
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.welcome-cta {
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #5b6eff, #5068f5);
+  box-shadow: 0 8px 20px rgba(80, 104, 245, 0.32);
+  cursor: pointer;
+}
+
+.welcome-cta:hover {
+  transform: translateY(-1px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .welcome-modal {
+    background: linear-gradient(165deg, rgba(17, 24, 39, 0.96), rgba(13, 20, 34, 0.95));
+    border-color: rgba(143, 168, 255, 0.35);
+    color: #f3f4f6;
+  }
+
+  .welcome-close {
+    background: rgba(243, 244, 246, 0.12);
+    color: #f9fafb;
+  }
+
+  .welcome-close:hover {
+    background: rgba(243, 244, 246, 0.22);
+  }
+
+  .welcome-badge {
+    color: #9fb4ff;
+    background: rgba(37, 53, 90, 0.9);
+  }
+
+  .welcome-text,
+  .welcome-list {
+    color: #d1d5db;
+  }
+}
+
 /* Mobile */
 @media (max-width: 480px) {
   .card {
@@ -416,6 +545,25 @@ body {
     
 </head>
 <body>
+<div class="welcome-overlay" id="welcome-overlay" hidden>
+  <div class="welcome-modal" role="dialog" aria-modal="true" aria-labelledby="welcome-title" aria-describedby="welcome-text">
+    <button class="welcome-close" id="welcome-close" type="button" aria-label="Fermer">×</button>
+    <span class="welcome-badge">Nouveau mode de vue</span>
+    <h2 class="welcome-title" id="welcome-title">Bienvenue sur le tableau blanc ALICE</h2>
+    <p class="welcome-text" id="welcome-text">
+      Une lecture différente de la carte : postes, SAT et appareils sont regroupés dans une vue mixte, plus rapide à parcourir.
+    </p>
+    <ul class="welcome-list">
+      <li>Recherchez un poste, un SAT ou un appareil.</li>
+      <li>Triez la vue selon vos besoins.</li>
+      <li>Cliquez pour ouvrir la fiche directement sur la carte.</li>
+    </ul>
+    <div class="welcome-actions">
+      <button class="welcome-cta" id="welcome-cta" type="button">Commencer</button>
+    </div>
+  </div>
+</div>
+
 <div class="board-header">
   <a class="board-close" href="index.html" aria-label="Fermer le tableau blanc et revenir à la page principale" title="Fermer">×</a>
   <div class="board-title-wrap">
@@ -447,9 +595,13 @@ body {
 
 const URL_POSTES = "postes.geojson";
 const URL_APPAREILS = "appareils.geojson";
+const CLE_WELCOME_VU = "alice.tableau.welcome.v1";
 const postesZone = document.getElementById("postesZone");
 const searchEl = document.getElementById("search");
 const countersEl = document.getElementById("counters");
+const welcomeOverlay = document.getElementById("welcome-overlay");
+const welcomeClose = document.getElementById("welcome-close");
+const welcomeCta = document.getElementById("welcome-cta");
 
 // Helpers
 const norm = (v) => (v ?? "").toString().trim();
@@ -783,9 +935,37 @@ searchEl?.addEventListener("input", () => {
   searchTimer = setTimeout(appliquerRecherche, 150);
 });
 
+function fermerWelcome(){
+  if (!welcomeOverlay) return;
+  welcomeOverlay.hidden = true;
+  try {
+    localStorage.setItem(CLE_WELCOME_VU, "1");
+  } catch (_) {}
+}
+
+function initialiserWelcome(){
+  if (!welcomeOverlay) return;
+  let dejaVu = false;
+  try {
+    dejaVu = localStorage.getItem(CLE_WELCOME_VU) === "1";
+  } catch (_) {}
+  if (!dejaVu) {
+    welcomeOverlay.hidden = false;
+  }
+  welcomeClose?.addEventListener("click", fermerWelcome);
+  welcomeCta?.addEventListener("click", fermerWelcome);
+  welcomeOverlay.addEventListener("click", (event) => {
+    if (event.target === welcomeOverlay) fermerWelcome();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !welcomeOverlay.hidden) fermerWelcome();
+  });
+}
+
 /* =========================Lancement========================= */
 (async function init(){
   try{
+    initialiserWelcome();
     countersEl.textContent = "Chargement…";
     await chargerPostes();     // affiche les postes/SAT même vides
     await chargerAppareils();  // injecte les appareils

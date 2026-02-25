@@ -3133,7 +3133,7 @@ async function chargerDonneesAppareils() {
   }
 
   if (!promesseChargementAppareils) {
-    promesseChargementAppareils = fetch("./appareils.geojson", { cache: "default" })
+    promesseChargementAppareils = fetch("./appareils.geojson", { cache: "no-store" })
       .then((reponse) => {
         if (!reponse.ok) {
           throw new Error(`HTTP ${reponse.status}`);
@@ -3176,7 +3176,7 @@ async function chargerDonneesAcces() {
   }
 
   if (!promesseChargementAcces) {
-    promesseChargementAcces = fetch("./acces.geojson", { cache: "default" })
+    promesseChargementAcces = fetch("./acces.geojson", { cache: "no-store" })
       .then((reponse) => {
         if (!reponse.ok) {
           throw new Error(`HTTP ${reponse.status}`);
@@ -3203,7 +3203,7 @@ async function chargerDonneesPostes() {
   }
 
   if (!promesseChargementPostes) {
-    promesseChargementPostes = fetch("./postes.geojson", { cache: "default" })
+    promesseChargementPostes = fetch("./postes.geojson", { cache: "no-store" })
       .then((reponse) => {
         if (!reponse.ok) {
           throw new Error(`HTTP ${reponse.status}`);

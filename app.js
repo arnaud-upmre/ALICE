@@ -2096,14 +2096,22 @@ function fermerModalApropos() {
   if (!modalApropos) {
     return;
   }
-  const actif = document.activeElement;
-  if (actif instanceof HTMLElement && modalApropos.contains(actif)) {
+  const actifAvantFermeture = document.activeElement;
+  if (actifAvantFermeture instanceof HTMLElement && modalApropos.contains(actifAvantFermeture)) {
     if (elementRetourFocusModalApropos instanceof HTMLElement && elementRetourFocusModalApropos.isConnected) {
       elementRetourFocusModalApropos.focus({ preventScroll: true });
+    } else if (champRecherche instanceof HTMLElement) {
+      champRecherche.focus({ preventScroll: true });
     } else {
-      actif.blur();
+      actifAvantFermeture.blur();
     }
   }
+
+  const actifApresRestauration = document.activeElement;
+  if (actifApresRestauration instanceof HTMLElement && modalApropos.contains(actifApresRestauration)) {
+    actifApresRestauration.blur();
+  }
+
   modalApropos.classList.remove("est-visible");
   modalApropos.setAttribute("aria-hidden", "true");
   try {

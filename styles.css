@@ -38,21 +38,27 @@
   box-sizing: border-box;
 }
 
-html {
-  height: -webkit-fill-available;
+html,
+body,
+#map {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: "Manrope", "Avenir Next", "Segoe UI", sans-serif;
 }
 
+html,
 body {
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
-  margin: 0;
   overflow: hidden;
   overscroll-behavior: none;
 }
 
 #map {
-  position: fixed;
-  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+}
+
+#map {
   touch-action: none;
 }
 

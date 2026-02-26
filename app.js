@@ -7017,3 +7017,46 @@ document.addEventListener("keydown", (event) => {
     }
   }
 });
+
+(function debugViewportIos() {
+  const box = document.createElement("div");
+  box.style.cssText = [
+    "position:fixed",
+    "left:8px",
+    "bottom:8px",
+    "z-index:2147483647",
+    "background:rgba(0,0,0,.78)",
+    "color:#fff",
+    "padding:8px 10px",
+    "border-radius:10px",
+    "font:12px/1.35 monospace",
+    "white-space:pre-line",
+    "pointer-events:none"
+  ].join(";");
+
+  function render() {
+    const vv = window.visualViewport;
+    const dm = window.matchMedia?.("(display-mode: standalone)")?.matches ? "standalone" : "browser";
+    const iosStandalone = window.navigator?.standalone === true;
+    box.textContent =
+      "innerHeight: " + window.innerHeight + "\n" +
+      "clientHeight: " + document.documentElement.clientHeight + "\n" +
+      "vv.height: " + (vv ? Math.round(vv.height) : "n/a") + "\n" +
+      "vv.offsetTop: " + (vv ? Math.round(vv.offsetTop) : "n/a") + "\n" +
+      "screen.height: " + window.screen.height + "\n" +
+      "display-mode: " + dm + "\n" +
+      "navigator.standalone: " + iosStandalone;
+  }
+
+  document.body.appendChild(box);
+  render();
+
+  window.addEventListener("resize", render, { passive: true });
+  window.addEventListener("orientationchange", render, { passive: true });
+  window.addEventListener("pageshow", render, { passive: true });
+  document.addEventListener("visibilitychange", render);
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener("resize", render, { passive: true });
+    window.visualViewport.addEventListener("scroll", render, { passive: true });
+  }
+})();

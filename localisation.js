@@ -71,7 +71,9 @@
       if (!zoneEtat) {
         return;
       }
-      zoneEtat.textContent = message;
+      const texte = String(message || "").trim();
+      zoneEtat.textContent = texte;
+      zoneEtat.hidden = texte.length === 0;
       zoneEtat.classList.toggle("est-erreur", Boolean(estErreur));
     }
 
@@ -346,7 +348,7 @@
           return;
         }
 
-        definirEtat(`${tousResultats.length} resultats proches trouves.`);
+        definirEtat("");
         afficherResultats();
       } catch (erreur) {
         const message = String(erreur?.message || "Impossible de recuperer votre position.");

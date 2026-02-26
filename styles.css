@@ -272,6 +272,7 @@ body {
   width: 30px;
   height: 30px;
   flex: 0 0 30px;
+  margin-left: auto;
   border: 0;
   border-radius: 999px;
   background: rgba(15, 23, 42, 0.08);
@@ -285,6 +286,7 @@ body {
   width: 30px;
   height: 30px;
   flex: 0 0 30px;
+  margin-left: auto;
   border: 0;
   border-radius: 999px;
   background: rgba(15, 23, 42, 0.08);

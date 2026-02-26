@@ -2245,10 +2245,12 @@ document.addEventListener("visibilitychange", () => {
 window.addEventListener("focus", recalerCarteIosPwa, { passive: true });
 window.addEventListener("resize", () => {
   actualiserPlaceholderRecherche();
+  recalerCarteIosPwa();
   planifierResizeCarte();
   planifierMiseAJourPk();
 }, { passive: true });
 window.addEventListener("orientationchange", () => {
+  recalerCarteIosPwa();
   planifierResizeCarte();
   planifierMiseAJourPk();
 }, { passive: true });

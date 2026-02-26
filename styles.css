@@ -262,6 +262,12 @@ body {
   min-width: 0;
 }
 
+.modal-itineraire-entete {
+  position: relative;
+  display: block;
+  padding: 12px 52px 12px 12px;
+}
+
 .modal-apropos-carte {
   position: relative;
   width: min(540px, calc(100vw - 28px));
@@ -275,10 +281,13 @@ body {
 }
 
 .modal-itineraire-fermer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
   width: 30px;
   height: 30px;
   flex: 0 0 30px;
-  margin-left: auto;
+  margin-left: 0;
   border: 0;
   border-radius: 999px;
   background: rgba(15, 23, 42, 0.08);
@@ -2587,6 +2596,10 @@ body {
 
   .modal-localisation-entete {
     margin: 0 0 12px;
+    padding: 11px 50px 11px 11px;
+  }
+
+  .modal-itineraire-entete {
     padding: 11px 50px 11px 11px;
   }
 

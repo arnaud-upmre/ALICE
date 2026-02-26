@@ -1062,23 +1062,6 @@ function planifierResizeCarte() {
 }
 
 function recalerCarteIosPwa() {
-  const mapEl = document.getElementById("map");
-  if (!mapEl) {
-    return;
-  }
-
-  const estStandalone =
-    window.matchMedia?.("(display-mode: standalone)")?.matches ||
-    window.navigator.standalone === true;
-
-  const hauteur = estStandalone
-    ? Math.max(window.screen.height || 0, window.screen.width || 0)
-    : Math.max(window.innerHeight || 0, window.visualViewport?.height || 0);
-
-  if (hauteur > 0) {
-    mapEl.style.height = `${hauteur}px`;
-  }
-
   window.requestAnimationFrame(() => {
     carte.resize();
   });

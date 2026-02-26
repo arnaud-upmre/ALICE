@@ -1063,10 +1063,13 @@ function planifierResizeCarte() {
 
 function recalerCarteIosPwa() {
   const vv = window.visualViewport;
-  const hauteur = Math.max(
-    Number(window.innerHeight) || 0,
-    Number(vv?.height) || 0
-  );
+  const estStandalone = window.matchMedia?.("(display-mode: standalone)")?.matches || window.navigator?.standalone === true;
+  const hauteur = estStandalone
+    ? Math.max(Number(window.screen?.height) || 0, Number(window.screen?.width) || 0)
+    : Math.max(
+      Number(window.innerHeight) || 0,
+      Number(vv?.height) || 0
+    );
   if (Number.isFinite(hauteur) && hauteur > 0) {
     const elementCarte = document.getElementById("map");
     if (elementCarte) {

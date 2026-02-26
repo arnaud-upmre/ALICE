@@ -1061,6 +1061,18 @@ function planifierResizeCarte() {
   });
 }
 
+function recalerCarteIosPwa() {
+  window.requestAnimationFrame(() => {
+    carte.resize();
+  });
+  window.setTimeout(() => {
+    carte.resize();
+  }, 120);
+  window.setTimeout(() => {
+    carte.resize();
+  }, 380);
+}
+
 function obtenirDateLocaleDuJour() {
   const maintenant = new Date();
   const annee = maintenant.getFullYear();
@@ -2223,6 +2235,14 @@ async function partagerPositionContextuelle() {
 }
 
 actualiserPlaceholderRecherche();
+carte.on("load", recalerCarteIosPwa);
+window.addEventListener("pageshow", recalerCarteIosPwa, { passive: true });
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") {
+    recalerCarteIosPwa();
+  }
+});
+window.addEventListener("focus", recalerCarteIosPwa, { passive: true });
 window.addEventListener("resize", () => {
   actualiserPlaceholderRecherche();
   planifierResizeCarte();
@@ -2234,10 +2254,12 @@ window.addEventListener("orientationchange", () => {
 }, { passive: true });
 if (window.visualViewport) {
   window.visualViewport.addEventListener("resize", () => {
+    recalerCarteIosPwa();
     planifierResizeCarte();
     planifierMiseAJourPk();
   }, { passive: true });
   window.visualViewport.addEventListener("scroll", () => {
+    recalerCarteIosPwa();
     planifierResizeCarte();
     planifierMiseAJourPk();
   }, { passive: true });

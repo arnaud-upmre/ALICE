@@ -1062,6 +1062,18 @@ function planifierResizeCarte() {
 }
 
 function recalerCarteIosPwa() {
+  const vv = window.visualViewport;
+  const hauteur = Math.max(
+    Number(window.innerHeight) || 0,
+    Number(vv?.height) || 0
+  );
+  if (Number.isFinite(hauteur) && hauteur > 0) {
+    const elementCarte = document.getElementById("map");
+    if (elementCarte) {
+      elementCarte.style.height = `${Math.round(hauteur)}px`;
+    }
+  }
+
   window.requestAnimationFrame(() => {
     carte.resize();
   });
@@ -2245,10 +2257,12 @@ document.addEventListener("visibilitychange", () => {
 window.addEventListener("focus", recalerCarteIosPwa, { passive: true });
 window.addEventListener("resize", () => {
   actualiserPlaceholderRecherche();
+  recalerCarteIosPwa();
   planifierResizeCarte();
   planifierMiseAJourPk();
 }, { passive: true });
 window.addEventListener("orientationchange", () => {
+  recalerCarteIosPwa();
   planifierResizeCarte();
   planifierMiseAJourPk();
 }, { passive: true });

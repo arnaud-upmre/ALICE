@@ -21,7 +21,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
     <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
     <link href="./vendor/maplibre/maplibre-gl.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=TEST1" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4602CPKFWF"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -31,6 +31,9 @@
     </script>
   </head>
   <body>
+    <div style="position:fixed;z-index:2147483647;top:50%;left:50%;transform:translate(-50%,-50%);background:#111;color:#fff;padding:10px 14px;border-radius:12px;font:700 16px sans-serif;">
+      BUILD TEST1
+    </div>
     <div id="map"></div>
     <div class="controle-recherche" id="controle-recherche">
       <label class="recherche-champ-wrap" for="champ-recherche">
@@ -235,9 +238,13 @@
       aria-hidden="true"
     >
       <div class="modal-itineraire-carte">
-        <button class="modal-itineraire-fermer" id="modal-itineraire-fermer" type="button" aria-label="Fermer le calcul trajet">×</button>
-        <h2 class="modal-itineraire-titre">Calculer un trajet</h2>
-        <p class="modal-itineraire-sous-titre">Sélectionnez un départ et une arrivée</p>
+        <div class="modal-cadre-entete modal-itineraire-entete">
+          <div class="modal-cadre-titres">
+            <h2 class="modal-itineraire-titre">Calculer un trajet</h2>
+            <p class="modal-itineraire-sous-titre">Sélectionnez un départ et une arrivée</p>
+          </div>
+          <button class="modal-itineraire-fermer" id="modal-itineraire-fermer" type="button" aria-label="Fermer le calcul trajet">×</button>
+        </div>
 
         <div class="modal-itineraire-champs">
           <div class="modal-itineraire-champ">
@@ -341,11 +348,13 @@
     >
       <div class="modal-localisation-carte">
         <div class="modal-localisation-entete">
+          <div class="modal-cadre-titres">
+            <h2 class="modal-localisation-titre">Autour de vous</h2>
+            <p class="modal-localisation-sous-titre">Résultats proches de votre position actuelle</p>
+          </div>
           <button class="modal-localisation-fermer" id="modal-localisation-fermer" type="button" aria-label="Fermer la localisation">×</button>
-          <h2 class="modal-localisation-titre">Autour de vous</h2>
-          <p class="modal-localisation-sous-titre">Résultats proches de votre position actuelle</p>
-          <div class="modal-localisation-etat" id="localisation-etat" aria-live="polite">Appuyez sur "Me localiser".</div>
         </div>
+        <div class="modal-localisation-etat" id="localisation-etat" aria-live="polite">Appuyez sur "Me localiser".</div>
         <ul class="modal-localisation-resultats" id="localisation-resultats" aria-label="Résultats autour de vous"></ul>
       </div>
     </div>

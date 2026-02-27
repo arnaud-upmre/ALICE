@@ -1,10 +1,10 @@
 {
-  "id": "/ALICE/",
+  "id": "/ALICE/v2/",
   "name": "ALICE",
   "short_name": "ALICE",
   "description": "Application de Localisation des Installations de Conduite EALE",
   "lang": "fr",
-  "start_url": "https://arnaud-upmre.github.io/ALICE/index.html",
+  "start_url": "https://arnaud-upmre.github.io/ALICE/index.html?v=2",
   "scope": "https://arnaud-upmre.github.io/ALICE/",
   "display": "standalone",
   "orientation": "portrait",

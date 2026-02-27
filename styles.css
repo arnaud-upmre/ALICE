@@ -2695,3 +2695,15 @@ body {
     gap: 6px;
   }
 }
+
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 900px) {
+    .controle-filtres {
+      bottom: calc(8px + env(safe-area-inset-bottom));
+    }
+
+    .menu-legende-carte {
+      bottom: calc(8px + env(safe-area-inset-bottom));
+    }
+  }
+}

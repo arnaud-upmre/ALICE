@@ -54,19 +54,12 @@ body {
   overscroll-behavior: none;
 }
 
-body {
-  outline: 3px solid red !important;
-}
 
 #map {
   width: 100vw;
   height: var(--app-viewport-height, 100dvh);
-  outline: 3px solid blue !important;
 }
 
-.maplibregl-canvas-container {
-  outline: 3px solid lime !important;
-}
 
 #map {
   touch-action: none;

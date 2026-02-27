@@ -6,7 +6,7 @@
   "lang": "fr",
   "start_url": "https://arnaud-upmre.github.io/ALICE/index.html",
   "scope": "https://arnaud-upmre.github.io/ALICE/",
-  "display": "fullscreen",
+  "display": "standalone",
   "orientation": "portrait",
   "background_color": "#0b1726",
   "theme_color": "#0b1726",

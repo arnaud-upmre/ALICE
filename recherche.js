@@ -560,10 +560,22 @@
     }
 
     function compterParType(resultats) {
+      const compterAppareils = (resultat) => {
+        if (resultat?.type !== "appareils") {
+          return 0;
+        }
+        const count = Number(resultat?.appareilsCount);
+        if (Number.isFinite(count) && count > 0) {
+          return count;
+        }
+        const lignes = Array.isArray(resultat?.appareilsLignesUniques) ? resultat.appareilsLignesUniques.length : 0;
+        return lignes > 0 ? lignes : 1;
+      };
+
       return {
         acces: resultats.filter((r) => r.type === "acces").length,
         postes: resultats.filter((r) => r.type === "postes").length,
-        appareils: resultats.filter((r) => r.type === "appareils").length
+        appareils: resultats.reduce((total, resultat) => total + compterAppareils(resultat), 0)
       };
     }
 

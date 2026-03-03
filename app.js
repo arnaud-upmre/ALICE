@@ -2131,6 +2131,7 @@ function fermerModalApropos() {
   } catch {
     // Ignore les erreurs de stockage.
   }
+  document.dispatchEvent(new CustomEvent("alice:apropos-ferme"));
 }
 
 function doitAfficherModalAproposPremiereVisite() {

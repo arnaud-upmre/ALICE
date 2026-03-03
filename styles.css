@@ -823,6 +823,69 @@ body {
   transform: translate(-50%, 0);
 }
 
+.notification-banniere {
+  position: absolute;
+  left: 50%;
+  top: calc(56px + env(safe-area-inset-top));
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: min(760px, calc(100vw - 16px - env(safe-area-inset-left) - env(safe-area-inset-right)));
+  padding: 10px 12px;
+  border: 1px solid rgba(30, 64, 175, 0.3);
+  border-radius: 12px;
+  background: rgba(239, 246, 255, 0.97);
+  color: #1e3a8a;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.18);
+  font-size: 0.84rem;
+  font-weight: 600;
+  line-height: 1.35;
+  transform: translate(-50%, -10px);
+  opacity: 0;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.notification-banniere.est-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.notification-banniere--warning {
+  border-color: rgba(146, 64, 14, 0.25);
+  background: rgba(255, 251, 235, 0.97);
+  color: #7c2d12;
+}
+
+.notification-banniere--critical {
+  border-color: rgba(185, 28, 28, 0.3);
+  background: rgba(254, 242, 242, 0.98);
+  color: #991b1b;
+}
+
+.notification-banniere-message {
+  flex: 1;
+  min-width: 0;
+}
+
+.notification-banniere-fermer {
+  border: 0;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.08);
+  color: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+}
+
+.notification-banniere-fermer:hover,
+.notification-banniere-fermer:focus-visible {
+  background: rgba(15, 23, 42, 0.14);
+  outline: none;
+}
+
 .controle-recherche {
   position: absolute;
   top: calc(8px + env(safe-area-inset-top));

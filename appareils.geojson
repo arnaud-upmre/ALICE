@@ -14873,6 +14873,96 @@
         "appareil": "TT 5732",
         "description": "S.sr Pont de briques - Hauteville V2"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.36975,
+          51.02845
+        ]
+      },
+      "properties": {
+        "nom": "Dunkerque",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IL2",
+        "description": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.36974,
+          51.02847
+        ]
+      },
+      "properties": {
+        "nom": "Dunkerque",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IL1",
+        "description": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.36972,
+          51.0285
+        ]
+      },
+      "properties": {
+        "nom": "Dunkerque",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IA1",
+        "description": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.36972,
+          51.0285
+        ]
+      },
+      "properties": {
+        "nom": "Dunkerque",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT IA1",
+        "description": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.36972,
+          51.0285
+        ]
+      },
+      "properties": {
+        "nom": "Dunkerque",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TC IA1",
+        "description": ""
+      }
     }
   ]
 }

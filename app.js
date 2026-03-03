@@ -5135,7 +5135,7 @@ function construirePopupDepuisFeatures(longitude, latitude, featurePostes, featu
   });
   actionsExplorerEquipements.push({
     label: "Power BI",
-    html: '<span class="popup-bouton-itineraire popup-bouton-desactive" aria-disabled="true">⚡️ Patrimoine SPOT</span>'
+    html: '<a class="popup-bouton-itineraire" href="https://app.powerbi.com/groups/me/reports/24acac4b-a393-4b44-ba9c-d22cae4170a3?ctid=4a7c8238-5799-4b16-9fc6-9ad8fce5a7d9&pbi_source=linkShare" target="_blank" rel="noopener noreferrer">⚡️ Patrimoine SPOT</a>'
   });
   const actionsExploreesTriees = actionsExplorerEquipements
     .sort((a, b) => a.label.localeCompare(b.label, "fr", { sensitivity: "base", numeric: true }))
@@ -5242,7 +5242,7 @@ function construirePopupDepuisFeatures(longitude, latitude, featurePostes, featu
     : "";
   const sectionLocaliser = featurePostes || estVueAppareilsSeule || estVueAccesSeule
     ? ""
-    : '<section class="popup-section popup-section-localiser"><div class="popup-itineraires popup-itineraires-poste-actions"><button class="popup-bouton-itineraire popup-bouton-localiser" id="popup-localiser-carte" type="button" data-lng="${longitude}" data-lat="${latitude}">📍 Localiser sur la carte</button><span class="popup-bouton-itineraire popup-bouton-desactive" aria-disabled="true">⚡️ Patrimoine SPOT</span></div></section>';
+    : '<section class="popup-section popup-section-localiser"><div class="popup-itineraires popup-itineraires-poste-actions"><button class="popup-bouton-itineraire popup-bouton-localiser" id="popup-localiser-carte" type="button" data-lng="${longitude}" data-lat="${latitude}">📍 Localiser sur la carte</button><a class="popup-bouton-itineraire" href="https://app.powerbi.com/groups/me/reports/24acac4b-a393-4b44-ba9c-d22cae4170a3?ctid=4a7c8238-5799-4b16-9fc6-9ad8fce5a7d9&pbi_source=linkShare" target="_blank" rel="noopener noreferrer">⚡️ Patrimoine SPOT</a></div></section>';
   const sectionRssFinale = estVueAccesSeule ? "" : sectionRssAssocieDepuisAcces;
   const contenuFiche = `<div class="popup-carte">${sections.join("")}${sectionConsigneRssAcces}${sectionRssFinale}${sectionItineraire}${sectionExplorerAcces}${sectionActionsPoste}${sectionTerrain}${sectionCodesAvecPills}${sectionLocaliser}${sectionRetourPoste}${modalStreetView}</div>`;
 

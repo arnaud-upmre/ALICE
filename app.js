@@ -4875,6 +4875,45 @@ function trouverPosteCibleDepuisFeaturePostes(featurePostes, cibleSatCourante = 
   return posteCible || null;
 }
 
+function trouverPostePrincipalDepuisListePostes(postesListe = []) {
+  if (!Array.isArray(postesListe) || !postesListe.length) {
+    return null;
+  }
+  const principal = postesListe.find((poste) => !normaliserTexteRecherche(champCompletOuVide(poste?.SAT)));
+  return principal || postesListe[0] || null;
+}
+
+function trouverPostePrincipalDepuisPosteAssocie(posteAssocie = null) {
+  if (!posteAssocie || !donneesPostes?.features?.length) {
+    return posteAssocie || null;
+  }
+  const cleNomType = construireCleNomType(posteAssocie);
+  if (!cleNomType) {
+    return posteAssocie;
+  }
+
+  let fallback = null;
+  for (const featurePostes of donneesPostes.features) {
+    const postesListe = extraireListeDepuisFeature(featurePostes, "postes_liste_json");
+    if (!postesListe.length) {
+      continue;
+    }
+    const correspondants = postesListe.filter((poste) => construireCleNomType(poste) === cleNomType);
+    if (!correspondants.length) {
+      continue;
+    }
+    const principal = trouverPostePrincipalDepuisListePostes(correspondants);
+    if (principal) {
+      return principal;
+    }
+    if (!fallback) {
+      fallback = correspondants[0];
+    }
+  }
+
+  return fallback || posteAssocie;
+}
+
 function normaliserCodesArmen(valeur) {
   const valeurs = Array.isArray(valeur) ? valeur : [valeur];
   const uniques = [];
@@ -5126,9 +5165,9 @@ function construirePopupDepuisFeatures(longitude, latitude, featurePostes, featu
   const activerSectionEquipements = Boolean(featurePostes || estVueAppareilsSeule);
   const actionsExplorerEquipements = [];
   const posteCibleFiche = estVuePosteSeule && featurePostes
-    ? trouverPosteCibleDepuisFeaturePostes(featurePostes, cibleSatCourante)
+    ? trouverPostePrincipalDepuisListePostes(extraireListeDepuisFeature(featurePostes, "postes_liste_json"))
     : estVueAppareilsSeule
-      ? posteAssocieDepuisAppareil
+      ? trouverPostePrincipalDepuisPosteAssocie(posteAssocieDepuisAppareil)
       : null;
   const lienPowerBiPatrimoineSpot = construireLienPowerBiPatrimoineSpot(posteCibleFiche);
   const lienAjoutAppareilDepuisPoste = (() => {

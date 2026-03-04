@@ -378,6 +378,28 @@ body {
   flex: 0 0 34px;
 }
 
+.modal-apropos-version-pill {
+  margin-left: auto;
+  margin-right: 34px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  background: rgba(59, 130, 246, 0.12);
+  color: #1d4ed8;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-decoration: none;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.modal-apropos-version-pill:hover,
+.modal-apropos-version-pill:focus-visible {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: rgba(37, 99, 235, 0.5);
+  outline: none;
+}
+
 .modal-apropos-sous-titre {
   margin: 14px 0 6px;
   color: #334155;
@@ -2716,6 +2738,12 @@ body {
   .modal-apropos-fermer {
     top: calc(8px + env(safe-area-inset-top));
     right: 9px;
+  }
+
+  .modal-apropos-version-pill {
+    margin-right: 40px;
+    padding: 5px 9px;
+    font-size: 0.74rem;
   }
 
   .modal-itineraire-cartes {

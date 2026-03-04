@@ -1,0 +1,1005 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ALICE - Chronologie versions</title>
+    <style>
+      :root {
+        --bg: #cfd6e2;
+        --card: #f8fafc;
+        --line: #c2ccdc;
+        --text: #14253f;
+        --muted: #516789;
+        --accent: #1f4fd8;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Manrope", "Segoe UI", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+      .page {
+        min-height: 100vh;
+        padding: 24px 14px;
+      }
+      .panel {
+        max-width: 1180px;
+        margin: 0 auto;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        box-shadow: 0 10px 28px rgba(20, 37, 63, 0.08);
+        position: relative;
+        overflow: hidden;
+      }
+      .close-btn {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: 36px;
+        height: 36px;
+        border-radius: 999px;
+        border: 0;
+        background: #e2e8f4;
+        color: #1d3558;
+        font-size: 1.45rem;
+        line-height: 1;
+        cursor: pointer;
+      }
+      .close-btn:hover { background: #d7e0ef; }
+
+      .head {
+        padding: 22px 24px 10px;
+        border-bottom: 1px solid #dbe3f0;
+      }
+      .head-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .head-logo {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+        object-position: center;
+        flex: 0 0 auto;
+      }
+      .timeline-actions {
+        margin-top: 10px;
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .action-btn {
+        border: 0;
+        border-radius: 999px;
+        background: #e9eef8;
+        color: #2a4164;
+        font-size: 0.8rem;
+        font-weight: 800;
+        padding: 6px 10px;
+        cursor: pointer;
+      }
+      .action-btn:hover {
+        background: #dfe8f6;
+      }
+      h1 {
+        margin: 0;
+        font-size: clamp(1.35rem, 2.6vw, 2rem);
+        letter-spacing: 0.01em;
+      }
+
+      .timeline {
+        list-style: none;
+        margin: 0;
+        padding: 18px 22px 24px;
+        display: grid;
+        gap: 12px;
+      }
+      .item {
+        background: #fff;
+        border: 1px solid #d7e0ee;
+        border-radius: 16px;
+        padding: 12px 14px;
+      }
+      .item-head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+        cursor: pointer;
+      }
+      .date {
+        font-weight: 800;
+        font-size: 1.02rem;
+      }
+      .commit {
+        display: inline-flex;
+        align-items: center;
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: #e6eeff;
+        color: var(--accent);
+        font-weight: 800;
+        font-size: 0.76rem;
+      }
+      .item ul {
+        margin: 0;
+        padding-left: 18px;
+      }
+      .item li {
+        margin: 4px 0;
+        color: #253c5d;
+      }
+      .toggle {
+        margin-left: auto;
+        border: 0;
+        border-radius: 999px;
+        background: #e9eef8;
+        color: #2a4164;
+        font-size: 0.72rem;
+        font-weight: 800;
+        padding: 4px 8px;
+        cursor: pointer;
+      }
+      .item.is-collapsed ul {
+        display: none;
+      }
+      .item.is-collapsed .item-head {
+        margin-bottom: 0;
+      }
+
+      .footer {
+        padding: 0 24px 18px;
+        color: var(--muted);
+        font-size: 0.84rem;
+      }
+
+      @media (max-width: 640px) {
+        .panel { border-radius: 18px; }
+        .head { padding: 18px 14px 10px; }
+        .head-logo { width: 42px; height: 42px; }
+        .timeline { padding: 14px 12px 16px; }
+        .footer { padding: 0 14px 14px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="panel" id="versions-panel">
+        <button class="close-btn" type="button" aria-label="Fermer" id="btn-close">×</button>
+
+        <header class="head">
+          <div class="head-title">
+            <img class="head-logo" src="./alice.webp" alt="Logo ALICE" onerror="this.style.display='none';" />
+            <h1>Historique de version</h1>
+          </div>
+          <div class="timeline-actions">
+            <button class="action-btn" type="button" id="btn-expand-all">Tout déplier</button>
+            <button class="action-btn" type="button" id="btn-collapse-all">Tout replier</button>
+          </div>
+        </header>
+
+        <ol class="timeline">
+          <li class="item" data-date="2026-03-04">
+            <div class="item-head">
+              <span class="date">04 mars 2026</span>
+              <span class="commit">V2.0.12</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🔗 Accès Patrimoine SPOT amélioré, en étroite collaboration avec l’Assistant M : ouverture directe sur le bon poste.</li>
+              <li>🧭 La fermeture involontaire de "Calculer un trajet" lors d’un clic en dehors de la fenêtre a été corrigée (mode sélection).</li>
+              <li>🎯 À la demande des agents, le filtre "Accès" est désormais activé par défaut dans la recherche.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2026-03-03">
+            <div class="item-head">
+              <span class="date">03 mars 2026</span>
+              <span class="commit">V2.0.11</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>⚡ Depuis une fiche, vous pouvez maintenant ouvrir Patrimoine SPOT en un clic.</li>
+              <li>🔔 Les notifications en bannière sont de retour dans ALICE.</li>
+              <li>📍 5 appareils ont été ajoutés sur le secteur de Dunkerque SSPA.</li>
+              <li>🔎 Le nombre de résultats affiché dans la recherche d'appareils est maintenant correct.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2026-02-27">
+            <div class="item-head">
+              <span class="date">27 février 2026</span>
+              <span class="commit">V2.0.10</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>📱 Sur mobile, les textes sont plus lisibles et les boutons plus simples à utiliser.</li>
+              <li>🧩 La carte réagit mieux au quotidien : filtres et fenêtres d'information fonctionnent plus proprement.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2026-02-26">
+            <div class="item-head">
+              <span class="date">26 février 2026</span>
+              <span class="commit">V2.0.9</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🚀 L'application se lance plus facilement, y compris après une mise à jour.</li>
+              <li>👀 L'écran principal est plus clair et plus agréable à lire.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2026-02-25">
+            <div class="item-head">
+              <span class="date">25 février 2026</span>
+              <span class="commit">V2.0.8</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>📦 Ouverture d'ALICE plus cohérente entre le navigateur et l'application installée.</li>
+              <li>🗺️ Données terrain mises à jour sur les accès et les appareils.</li>
+              <li>📋 Lecture du tableau blanc améliorée.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2026-02-24">
+            <div class="item-head">
+              <span class="date">24 février 2026</span>
+              <span class="commit">V2.0.7</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>📲 ALICE peut maintenant être installée comme application sur mobile.</li>
+              <li>➕ Un bouton "Installer ALICE" a été ajouté dans la fenêtre "À propos".</li>
+              <li>✅ Le parcours d'installation est guidé étape par étape.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2026-02-23">
+            <div class="item-head">
+              <span class="date">23 février 2026</span>
+              <span class="commit">V2.0.6</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🎨 L'interface a été simplifiée pour mieux lire et mieux chercher les informations.</li>
+              <li>📐 L'affichage a été amélioré pour une utilisation plus confortable sur mobile.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2026-02-22">
+            <div class="item-head">
+              <span class="date">22 février 2026</span>
+              <span class="commit">V2.0.5</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🧭 Un bouton "Légende" a été ajouté pour comprendre rapidement les couleurs et les symboles.</li>
+              <li>ℹ️ Une fenêtre "À propos" a été ajoutée avec les informations utiles sur ALICE.</li>
+              <li>🚧 Les passages à niveau (PN) sont maintenant intégrés dans les données.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2026-02-21">
+            <div class="item-head">
+              <span class="date">21 février 2026</span>
+              <span class="commit">V2.0.4</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🧠 La recherche a été revue pour être plus simple et plus efficace.</li>
+              <li>🎯 Les résultats sont plus pertinents pour trouver plus vite un poste, un appareil ou un accès.</li>
+              <li>📝 Le parcours "Ajouter un appareil" a été mis en place.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2026-02-20">
+            <div class="item-head">
+              <span class="date">20 février 2026</span>
+              <span class="commit">V2.0.3</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🧹 Les données ont été nettoyées : postes et accès sont mieux alignés.</li>
+              <li>🔩 Première phase de fiabilisation de la carte pour limiter les anomalies d'affichage.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2026-02-19">
+            <div class="item-head">
+              <span class="date">19 février 2026</span>
+              <span class="commit">V2.0.2</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>✨ Les fenêtres d'information et la lecture ont été améliorées pour un usage plus confortable.</li>
+              <li>💨 L'interface est plus fluide dans l'utilisation quotidienne.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2026-02-18">
+            <div class="item-head">
+              <span class="date">18 février 2026</span>
+              <span class="commit">V2.0.1</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🧾 Ajout du "Tableau blanc" pour voir rapidement les informations poste/SAT/appareils.</li>
+              <li>🧭 Ajout d'un module itinéraire pour comparer un trajet entre départ et arrivée.</li>
+              <li>📍 Les données d'appareils ont été enrichies.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2026-02-17">
+            <div class="item-head">
+              <span class="date">17 février 2026</span>
+              <span class="commit">V2.0.0</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>✨ Nono Maps devient ALICE : interface repensée, plus simple, plus claire et plus professionnelle.</li>
+              <li>🚀 Mise en service de la première version d'ALICE avec carte, recherche, filtres et données principales.</li>
+              <li>🧰 Ajout du menu terrain : partage, itinéraire, règle, Street View, Imajnet et ajout d'appareil.</li>
+              <li>🔄 Certaines fonctionnalités présentes en V1 ne sont pas encore toutes visibles en V2 : elles seront réintroduites progressivement de manière plus fiable et plus intuitive.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2026-02-15">
+            <div class="item-head">
+              <span class="date">15 février 2026</span>
+              <span class="commit">v1.15.1</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>📍 Les PK arrivent dans l'application, avec un affichage intelligent selon la zone visible et le niveau de zoom.</li>
+              <li>🧠 Le chargement est filtré pour éviter de surcharger la carte et garder une navigation fluide.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2026-02-14">
+            <div class="item-head">
+              <span class="date">14 février 2026</span>
+              <span class="commit">v1.15</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>⚡ Gain global de performance sur l'index, la carte et le tableau blanc.</li>
+              <li>🔎 Recherche plus fluide à la saisie, résultats mieux triés et meilleure tenue sur réseau lent.</li>
+              <li>🗺️ Navigation carte plus agréable (liens partagés, zoom, déplacements et rendu).</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2026-02-12">
+            <div class="item-head">
+              <span class="date">12 février 2026</span>
+              <span class="commit">v1.14.3</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🧩 Correction de l'ordre d'affichage dans les fiches postes et SAT.</li>
+              <li>✅ Le rendu des fiches redevient cohérent pour la lecture terrain.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2026-02-10">
+            <div class="item-head">
+              <span class="date">10 février 2026</span>
+              <span class="commit">v1.14.2</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🧩 Intégration de la base des postes dans le tableau blanc.</li>
+              <li>📍 Les appareils liés au poste sont remontés automatiquement.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2026-02-03">
+            <div class="item-head">
+              <span class="date">03 février 2026</span>
+              <span class="commit">v1.14.1</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🧭 Dans le tableau blanc, le poste principal et les SAT deviennent cliquables pour ouvrir directement les fiches.</li>
+              <li>🎨 Ajustements d'affichage pour une lecture plus claire.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2026-01-26">
+            <div class="item-head">
+              <span class="date">26 janvier 2026</span>
+              <span class="commit">v1.14</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🧾 Création du tableau blanc des appareils pour une vue globale, en complément de la carte.</li>
+              <li>🔧 Correction d'un cas rare d'affichage de fiche et normalisation des données HTML/JSON.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2026-01-24">
+            <div class="item-head">
+              <span class="date">24 janvier 2026</span>
+              <span class="commit">v1.13.7</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>📍 Fiabilisation de la fonction "Localiser" sur Android et iOS.</li>
+              <li>✅ Recentrage GPS plus stable et plus rapide.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-12-09">
+            <div class="item-head">
+              <span class="date">09 décembre 2025</span>
+              <span class="commit">v1.13.6</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🔎 Recherche dédiée "HP / hors patrimoine" via la barre de recherche.</li>
+              <li>🧩 Normalisation du champ hors patrimoine pour un affichage plus fiable des appareils HP.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-11-22">
+            <div class="item-head">
+              <span class="date">22 novembre 2025</span>
+              <span class="commit">v1.13.5</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>➕ Ajout d'appareils simplifié : un seul champ intelligent au lieu de plusieurs champs.</li>
+              <li>📍 Coordonnées GPS récupérées automatiquement depuis la carte.</li>
+              <li>🆕 Les appareils hors patrimoine sont mieux visibles dans la recherche et les fiches.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-11-19">
+            <div class="item-head">
+              <span class="date">19 novembre 2025</span>
+              <span class="commit">v1.13.4</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>📍 Correction de la récupération GPS lors de l'ajout de postes et SAT depuis la carte.</li>
+              <li>✅ Les coordonnées reflètent désormais exactement le point sélectionné.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-11-19">
+            <div class="item-head">
+              <span class="date">19 novembre 2025</span>
+              <span class="commit">v1.13.3</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>✔️ Après un ajout, poste et type sont pré-validés pour accélérer la saisie suivante.</li>
+              <li>⚡ Un clic de moins à chaque nouvel appareil.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-11-19">
+            <div class="item-head">
+              <span class="date">19 novembre 2025</span>
+              <span class="commit">v1.13.2</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>📏 Ajout de l'outil règle/traçage pour mesurer des distances sur la carte.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-11-19">
+            <div class="item-head">
+              <span class="date">19 novembre 2025</span>
+              <span class="commit">v1.13.1</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>📍 Correction de la récupération GPS lors de l'ajout d'appareils depuis la carte.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-11-17">
+            <div class="item-head">
+              <span class="date">17 novembre 2025</span>
+              <span class="commit">v1.13</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🖱️ Nouveau menu contextuel (clic droit/appui long) pour accéder rapidement aux actions terrain.</li>
+              <li>🧭 Itinéraire, Street View, Imajnet et ajout d'objets sont regroupés au même endroit.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-11-15">
+            <div class="item-head">
+              <span class="date">15 novembre 2025</span>
+              <span class="commit">v1.12</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>📝 Sur mobile, ajout d'un accès direct à la carte.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-11-13">
+            <div class="item-head">
+              <span class="date">13 novembre 2025</span>
+              <span class="commit">v1.11.2</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🛠️ Priorité donnée au lien Imajnet dans la carte quand il est disponible.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-11-12">
+            <div class="item-head">
+              <span class="date">12 novembre 2025</span>
+              <span class="commit">v1.11.1</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>📝 Ajustements des fiches popups pour améliorer la lecture.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-11-12">
+            <div class="item-head">
+              <span class="date">12 novembre 2025</span>
+              <span class="commit">v1.11</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🔁 Migration des tracés ferroviaires vers OpenRailwayMap.</li>
+              <li>🎛️ Ajout des indicateurs de télécommande sur la carte et amélioration de la lisibilité des clusters.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-11-09">
+            <div class="item-head">
+              <span class="date">09 novembre 2025</span>
+              <span class="commit">v1.10.13</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🛠️ Correction du module "À proximité" sur mobile (iOS et Android).</li>
+              <li>✨ Nettoyage CSS pour un rendu plus léger et plus cohérent.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-11-09">
+            <div class="item-head">
+              <span class="date">09 novembre 2025</span>
+              <span class="commit">v1.10.12</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>📡 Ajout des pills télécommande, modifiables depuis la fiche appareil.</li>
+              <li>🗂️ Refonte interne de la base (séparation postes/accès) et correction d'affichage de certaines fiches.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-11-03">
+            <div class="item-head">
+              <span class="date">03 novembre 2025</span>
+              <span class="commit">v1.10.11</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🗂️ Évolution des fiches génériques pour préparer l'affichage progressif des agents E.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-11-01">
+            <div class="item-head">
+              <span class="date">01 novembre 2025</span>
+              <span class="commit">v1.10.10</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>📄 Les popups gèrent mieux les retours à la ligne pour une lecture plus claire.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-10-20">
+            <div class="item-head">
+              <span class="date">20 octobre 2025</span>
+              <span class="commit">v1.10.9</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🔑 Correction des fiches génériques : le lien "Afficher les codes d'accès" s'affiche correctement.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-10-16">
+            <div class="item-head">
+              <span class="date">16 octobre 2025</span>
+              <span class="commit">v1.10.8</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🎯 Correction d'un décalage de marqueurs selon le niveau de zoom.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-10-15">
+            <div class="item-head">
+              <span class="date">15 octobre 2025</span>
+              <span class="commit">v1.10.7</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🔔 Les notifications font leur entrée dans l'application.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-10-12">
+            <div class="item-head">
+              <span class="date">12 octobre 2025</span>
+              <span class="commit">v1.10.6</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🚆 Ajout des lignes SNCF régionales par type et intégration Imajnet sur les lignes.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-10-10">
+            <div class="item-head">
+              <span class="date">10 octobre 2025</span>
+              <span class="commit">v1.10.5</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>⚙️ Optimisation en profondeur : application plus légère et plus rapide au chargement.</li>
+              <li>📡 Arrivée des données Open Data SNCF à la demande via API.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-10-08">
+            <div class="item-head">
+              <span class="date">08 octobre 2025</span>
+              <span class="commit">v1.10.4</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>📍 Correction d'un bug de zoom intempestif sur les clusters d'appareils proches.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-10-05">
+            <div class="item-head">
+              <span class="date">05 octobre 2025</span>
+              <span class="commit">v1.10.3</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🔒 Mise à jour technique de sécurité et enrichissement des bases postes/appareils.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-10-04">
+            <div class="item-head">
+              <span class="date">04 octobre 2025</span>
+              <span class="commit">v1.10.2</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🔐 Sécurisation renforcée des informations sensibles après authentification SNCF.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-10-03">
+            <div class="item-head">
+              <span class="date">03 octobre 2025</span>
+              <span class="commit">v1.10.1</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>✏️ Ajout de la fonction de modification d'un appareil.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-10-02">
+            <div class="item-head">
+              <span class="date">02 octobre 2025</span>
+              <span class="commit">v1.10.0</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🧭 Nouveau menu "Filtres" sur la carte pour choisir rapidement les éléments visibles.</li>
+              <li>🌐 Intégration des passages à niveau issus de l'Open Data SNCF.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-09-28">
+            <div class="item-head">
+              <span class="date">28 septembre 2025</span>
+              <span class="commit">v1.9.1</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>ℹ️ Mode "Informations" enrichi et ajout d'un lien Imajnet supplémentaire.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-09-27">
+            <div class="item-head">
+              <span class="date">27 septembre 2025</span>
+              <span class="commit">v1.9</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🆕 Boutons Imajnet ajoutés dans les fiches postes et appareils.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-09-27">
+            <div class="item-head">
+              <span class="date">27 septembre 2025</span>
+              <span class="commit">v1.8.4</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🔙 Le bouton "Retour à la fiche principale" suit mieux le bon rattachement (SAT, accès ou poste).</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-09-26">
+            <div class="item-head">
+              <span class="date">26 septembre 2025</span>
+              <span class="commit">v1.8.3</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>📺 Ajout de vidéos explicatives en overlay et mise à jour de points GPS.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-09-24">
+            <div class="item-head">
+              <span class="date">24 septembre 2025</span>
+              <span class="commit">v1.8.2</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🛠️ Correctifs du formulaire d'ajout de poste/SAT et coordonnées mises à jour en temps réel.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-09-24">
+            <div class="item-head">
+              <span class="date">24 septembre 2025</span>
+              <span class="commit">v1.8.1</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>📱 Correction de lisibilité et de mise en page sur mobile.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-09-24">
+            <div class="item-head">
+              <span class="date">24 septembre 2025</span>
+              <span class="commit">v1.8.0</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🔤 Tri alphabétique des appareils et navigation clavier.</li>
+              <li>🔗 Appareils liés visibles sur les fiches SAT et retour à la fiche principale amélioré.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-09-23">
+            <div class="item-head">
+              <span class="date">23 septembre 2025</span>
+              <span class="commit">v1.7.0</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🗂️ Première page "Historique des versions".</li>
+              <li>⚡ Optimisations de rapidité/fiabilité sur l'ajout d'appareils et amélioration mobile.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-09-22">
+            <div class="item-head">
+              <span class="date">22 septembre 2025</span>
+              <span class="commit">v1.6.0</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🗺️ Fond IGN amélioré (netteté/zoom), formulaires simplifiés et Street View intégré dans les fiches postes.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-09-21">
+            <div class="item-head">
+              <span class="date">21 septembre 2025</span>
+              <span class="commit">v1.5.2</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🛠️ Correctifs CSS des popups et meilleure compatibilité iOS/Android.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-09-21">
+            <div class="item-head">
+              <span class="date">21 septembre 2025</span>
+              <span class="commit">v1.5.1</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🎨 Lisibilité des popups et séparation des appareils proches améliorées.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-09-20">
+            <div class="item-head">
+              <span class="date">20 septembre 2025</span>
+              <span class="commit">v1.5.0</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>👁️ Overlay Street View sur la carte, stabilisation des interactions et navigation mobile plus stable.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-09-19">
+            <div class="item-head">
+              <span class="date">19 septembre 2025</span>
+              <span class="commit">v1.4.3</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🌍 Lien "Voir la carte" et optimisations des gestes tactiles.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-09-18">
+            <div class="item-head">
+              <span class="date">18 septembre 2025</span>
+              <span class="commit">v1.4.2</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🖼️ Nouvelles icônes appareils, calques par type et meilleure lisibilité.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-09-16">
+            <div class="item-head">
+              <span class="date">16 septembre 2025</span>
+              <span class="commit">v1.4.1</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🛠️ Correction du zoom initial et retouches d'affichage sur petits écrans.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-09-15">
+            <div class="item-head">
+              <span class="date">mi-septembre 2025</span>
+              <span class="commit">v1.4.0</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🌍 Nouvelle base IGN, page Itinéraires et navigation interne postes/appareils.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-08-25">
+            <div class="item-head">
+              <span class="date">fin août 2025</span>
+              <span class="commit">v1.3.0</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>📱 Optimisation mobile Android/iOS et réduction du poids des fichiers.</li>
+              <li>📍 Amélioration de la précision des coordonnées et ajustements visuels.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-08-12">
+            <div class="item-head">
+              <span class="date">mi-août 2025</span>
+              <span class="commit">v1.2.0</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🔎 Fusion des champs de recherche (postes + appareils).</li>
+              <li>📄 Création des fiches poste/appareil et liens internes vers les fiches.</li>
+              <li>🧹 Nettoyage des JSON (syntaxe et entrées vides).</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-07-28">
+            <div class="item-head">
+              <span class="date">fin juillet 2025</span>
+              <span class="commit">v1.1.0</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🧱 Mise en place du socle HTML/CSS/JS et premiers popups lisibles.</li>
+              <li>🗂️ Import des premiers jeux de données postes, accès et appareils.</li>
+            </ul>
+          </li>
+
+          <li class="item" data-date="2025-07-15">
+            <div class="item-head">
+              <span class="date">juillet 2025</span>
+              <span class="commit">v1.0.0</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>🚀 Lancement du projet avec page d'accueil, recherche et premières données postes/accès/appareils.</li>
+            </ul>
+          </li>
+        </ol>
+
+        <div class="footer"></div>
+      </section>
+    </main>
+
+    <script>
+      const closeBtn = document.getElementById("btn-close");
+      const expandAllBtn = document.getElementById("btn-expand-all");
+      const collapseAllBtn = document.getElementById("btn-collapse-all");
+      closeBtn?.addEventListener("click", () => {
+        window.location.href = "./index.html";
+      });
+
+      const DUREE_REPLI_JOURS = 30;
+      const MS_PAR_JOUR = 24 * 60 * 60 * 1000;
+      const maintenant = new Date();
+
+      function setCollapsed(item, collapsed) {
+        const btn = item.querySelector(".toggle");
+        item.classList.toggle("is-collapsed", collapsed);
+        if (btn) {
+          btn.textContent = collapsed ? "Déplier" : "Replier";
+        }
+      }
+      const allItems = Array.from(document.querySelectorAll(".timeline .item"));
+
+      allItems.forEach((item) => {
+        const iso = item.getAttribute("data-date");
+        const dateItem = iso ? new Date(`${iso}T00:00:00`) : null;
+        const ancien = dateItem instanceof Date && !Number.isNaN(dateItem.getTime())
+          ? ((maintenant.getTime() - dateItem.getTime()) / MS_PAR_JOUR) > DUREE_REPLI_JOURS
+          : false;
+
+        setCollapsed(item, ancien);
+
+        const head = item.querySelector(".item-head");
+        const btn = item.querySelector(".toggle");
+        const toggle = () => setCollapsed(item, !item.classList.contains("is-collapsed"));
+
+        head?.addEventListener("click", (event) => {
+          if (event.target === btn) return;
+          toggle();
+        });
+        btn?.addEventListener("click", toggle);
+      });
+
+      expandAllBtn?.addEventListener("click", () => {
+        allItems.forEach((item) => setCollapsed(item, false));
+      });
+
+      collapseAllBtn?.addEventListener("click", () => {
+        allItems.forEach((item) => setCollapsed(item, true));
+      });
+    </script>
+  </body>
+</html>

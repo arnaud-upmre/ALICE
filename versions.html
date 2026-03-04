@@ -12,6 +12,36 @@
         --text: #14253f;
         --muted: #516789;
         --accent: #1f4fd8;
+        --head-bg: rgba(248, 250, 252, 0.94);
+        --item-bg: #ffffff;
+        --btn-bg: #e2e8f4;
+        --btn-bg-hover: #d7e0ef;
+        --chip-bg: #e6eeff;
+        --chip-text: #1f4fd8;
+        --soft-btn-bg: #e9eef8;
+        --soft-btn-bg-hover: #dfe8f6;
+        --soft-btn-text: #2a4164;
+        --item-line: #d7e0ee;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0f172a;
+          --card: #111c31;
+          --line: #2a3b57;
+          --text: #e2e8f0;
+          --muted: #9fb2cc;
+          --accent: #7aa2ff;
+          --head-bg: rgba(17, 28, 49, 0.92);
+          --item-bg: #15233d;
+          --btn-bg: #253651;
+          --btn-bg-hover: #2f4568;
+          --chip-bg: #243958;
+          --chip-text: #a7c0ff;
+          --soft-btn-bg: #21344f;
+          --soft-btn-bg-hover: #2a4364;
+          --soft-btn-text: #d6e2f5;
+          --item-line: #2c4160;
+        }
       }
       * { box-sizing: border-box; }
       body {
@@ -35,24 +65,29 @@
         overflow: hidden;
       }
       .close-btn {
-        position: absolute;
-        top: 14px;
-        right: 14px;
         width: 36px;
         height: 36px;
         border-radius: 999px;
         border: 0;
-        background: #e2e8f4;
-        color: #1d3558;
+        background: var(--btn-bg);
+        color: var(--text);
         font-size: 1.45rem;
         line-height: 1;
         cursor: pointer;
+        margin-left: auto;
+        flex: 0 0 36px;
       }
-      .close-btn:hover { background: #d7e0ef; }
+      .close-btn:hover { background: var(--btn-bg-hover); }
 
       .head {
         padding: 22px 24px 10px;
         border-bottom: 1px solid #dbe3f0;
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: var(--head-bg);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
       }
       .head-title {
         display: flex;
@@ -75,15 +110,15 @@
       .action-btn {
         border: 0;
         border-radius: 999px;
-        background: #e9eef8;
-        color: #2a4164;
+        background: var(--soft-btn-bg);
+        color: var(--soft-btn-text);
         font-size: 0.8rem;
         font-weight: 800;
         padding: 6px 10px;
         cursor: pointer;
       }
       .action-btn:hover {
-        background: #dfe8f6;
+        background: var(--soft-btn-bg-hover);
       }
       h1 {
         margin: 0;
@@ -99,8 +134,8 @@
         gap: 12px;
       }
       .item {
-        background: #fff;
-        border: 1px solid #d7e0ee;
+        background: var(--item-bg);
+        border: 1px solid var(--item-line);
         border-radius: 16px;
         padding: 12px 14px;
       }
@@ -121,8 +156,8 @@
         align-items: center;
         padding: 4px 8px;
         border-radius: 999px;
-        background: #e6eeff;
-        color: var(--accent);
+        background: var(--chip-bg);
+        color: var(--chip-text);
         font-weight: 800;
         font-size: 0.76rem;
       }
@@ -138,8 +173,8 @@
         margin-left: auto;
         border: 0;
         border-radius: 999px;
-        background: #e9eef8;
-        color: #2a4164;
+        background: var(--soft-btn-bg);
+        color: var(--soft-btn-text);
         font-size: 0.72rem;
         font-weight: 800;
         padding: 4px 8px;
@@ -170,12 +205,11 @@
   <body>
     <main class="page">
       <section class="panel" id="versions-panel">
-        <button class="close-btn" type="button" aria-label="Fermer" id="btn-close">×</button>
-
         <header class="head">
           <div class="head-title">
             <img class="head-logo" src="./alice.webp" alt="Logo ALICE" onerror="this.style.display='none';" />
             <h1>Historique de version</h1>
+            <button class="close-btn" type="button" aria-label="Fermer" id="btn-close">×</button>
           </div>
           <div class="timeline-actions">
             <button class="action-btn" type="button" id="btn-expand-all">Tout déplier</button>

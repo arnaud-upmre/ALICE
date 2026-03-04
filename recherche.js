@@ -111,7 +111,8 @@
     let promesseChargementRecherche = null;
     let dernierTexteRecherche = "";
     let derniersResultatsRecherche = [];
-    let filtreTypeActif = "tous";
+    let filtreTypeActif = "acces";
+    let filtreChoisiManuellement = false;
 
     const obtenirPrioriteTypeRecherche = (type) => {
       if (type === "acces") return 0;
@@ -673,6 +674,9 @@
       const texte = String(options.texte || dernierTexteRecherche || "");
       const intention = determinerIntentionRecherche(texte);
       const compteurs = compterParType(resultats);
+      if (!intention.typeForce && !filtreChoisiManuellement && filtreTypeActif === "tous") {
+        filtreTypeActif = "acces";
+      }
 
       if (!resultats.length) {
         listeResultatsRecherche.innerHTML = '<li class="recherche-resultat-vide">Aucun resultat</li>';
@@ -698,7 +702,7 @@
       dernierTexteRecherche = texteNettoye;
       derniersResultatsRecherche = resultats;
       if (texteModifie && determinerIntentionRecherche(texteNettoye).typeForce) {
-        filtreTypeActif = "tous";
+        filtreTypeActif = "acces";
       }
       afficherResultatsRecherche(resultats, { texte: texteNettoye });
       return resultats;
@@ -727,7 +731,8 @@
     function reinitialiserEtatRecherche() {
       dernierTexteRecherche = "";
       derniersResultatsRecherche = [];
-      filtreTypeActif = "tous";
+      filtreTypeActif = "acces";
+      filtreChoisiManuellement = false;
     }
 
     function initialiser() {
@@ -793,7 +798,8 @@
 
         const action = boutonResultat.dataset.action || "ouvrir-resultat";
         if (action === "set-filtre") {
-          filtreTypeActif = boutonResultat.dataset.filtre || "tous";
+          filtreTypeActif = boutonResultat.dataset.filtre || "acces";
+          filtreChoisiManuellement = true;
           afficherResultatsRecherche(derniersResultatsRecherche, { texte: dernierTexteRecherche });
           return;
         }

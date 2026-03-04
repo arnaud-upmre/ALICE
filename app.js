@@ -5127,7 +5127,9 @@ function construirePopupDepuisFeatures(longitude, latitude, featurePostes, featu
   const actionsExplorerEquipements = [];
   const posteCibleFiche = estVuePosteSeule && featurePostes
     ? trouverPosteCibleDepuisFeaturePostes(featurePostes, cibleSatCourante)
-    : null;
+    : estVueAppareilsSeule
+      ? posteAssocieDepuisAppareil
+      : null;
   const lienPowerBiPatrimoineSpot = construireLienPowerBiPatrimoineSpot(posteCibleFiche);
   const lienAjoutAppareilDepuisPoste = (() => {
     if (!featurePostes || !estVuePosteSeule) {

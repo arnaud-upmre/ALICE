@@ -4849,6 +4849,62 @@ function normaliserTexteRecherche(valeur) {
     .trim();
 }
 
+const LIEN_POWER_BI_PATRIMOINE_SPOT =
+  "https://app.powerbi.com/groups/me/reports/24acac4b-a393-4b44-ba9c-d22cae4170a3?ctid=4a7c8238-5799-4b16-9fc6-9ad8fce5a7d9&pbi_source=linkShare";
+
+function trouverPosteCibleDepuisFeaturePostes(featurePostes, cibleSatCourante = "") {
+  const postesListe = extraireListeDepuisFeature(featurePostes, "postes_liste_json");
+  if (!postesListe.length) {
+    return null;
+  }
+
+  let posteCible = postesListe[0];
+  if (cibleSatCourante) {
+    const filtresSat = postesListe.filter((poste) => {
+      const satNorm = normaliserTexteRecherche(champCompletOuVide(poste?.SAT));
+      if (cibleSatCourante === "poste") {
+        return !satNorm;
+      }
+      return satNorm === cibleSatCourante;
+    });
+    if (filtresSat.length) {
+      posteCible = filtresSat[0];
+    }
+  }
+
+  return posteCible || null;
+}
+
+function normaliserCodesArmen(valeur) {
+  const valeurs = Array.isArray(valeur) ? valeur : [valeur];
+  const uniques = [];
+  for (const element of valeurs) {
+    if (element === null || element === undefined) {
+      continue;
+    }
+    const brut = String(element);
+    const codes = brut.match(/\d{6,}/g) || [];
+    for (const code of codes) {
+      if (!uniques.includes(code)) {
+        uniques.push(code);
+      }
+    }
+  }
+  return uniques;
+}
+
+function construireLienPowerBiPatrimoineSpot(poste = null) {
+  const codesArmen = normaliserCodesArmen(poste?.armen);
+  if (!codesArmen.length) {
+    return LIEN_POWER_BI_PATRIMOINE_SPOT;
+  }
+
+  const filtre = codesArmen.length === 1
+    ? `PATRIMOINE/Ancetre eq '${codesArmen[0]}'`
+    : `PATRIMOINE/Ancetre in (${codesArmen.map((code) => `'${code}'`).join(",")})`;
+  return `${LIEN_POWER_BI_PATRIMOINE_SPOT}&filter=${encodeURIComponent(filtre)}`;
+}
+
 function fermerResultatsRecherche() {
   moduleRechercheAlice?.fermerResultatsRecherche?.();
 }
@@ -5069,28 +5125,18 @@ function construirePopupDepuisFeatures(longitude, latitude, featurePostes, featu
   const libelleSectionActionsPoste = "Explorer les équipements";
   const activerSectionEquipements = Boolean(featurePostes || estVueAppareilsSeule);
   const actionsExplorerEquipements = [];
+  const posteCibleFiche = estVuePosteSeule && featurePostes
+    ? trouverPosteCibleDepuisFeaturePostes(featurePostes, cibleSatCourante)
+    : null;
+  const lienPowerBiPatrimoineSpot = construireLienPowerBiPatrimoineSpot(posteCibleFiche);
   const lienAjoutAppareilDepuisPoste = (() => {
     if (!featurePostes || !estVuePosteSeule) {
       return "";
     }
 
-    const postesListe = extraireListeDepuisFeature(featurePostes, "postes_liste_json");
-    if (!postesListe.length) {
+    const posteCible = trouverPosteCibleDepuisFeaturePostes(featurePostes, cibleSatCourante);
+    if (!posteCible) {
       return "";
-    }
-
-    let posteCible = postesListe[0];
-    if (cibleSatCourante) {
-      const filtresSat = postesListe.filter((poste) => {
-        const satNorm = normaliserTexteRecherche(champCompletOuVide(poste?.SAT));
-        if (cibleSatCourante === "poste") {
-          return !satNorm;
-        }
-        return satNorm === cibleSatCourante;
-      });
-      if (filtresSat.length) {
-        posteCible = filtresSat[0];
-      }
     }
 
     const nomPoste = champCompletOuVide(posteCible?.nom);
@@ -5136,7 +5182,7 @@ function construirePopupDepuisFeatures(longitude, latitude, featurePostes, featu
   });
   actionsExplorerEquipements.push({
     label: "Power BI",
-    html: '<a class="popup-bouton-itineraire" href="https://app.powerbi.com/groups/me/reports/24acac4b-a393-4b44-ba9c-d22cae4170a3?ctid=4a7c8238-5799-4b16-9fc6-9ad8fce5a7d9&pbi_source=linkShare" target="_blank" rel="noopener noreferrer">⚡️ Patrimoine SPOT</a>'
+    html: `<a class="popup-bouton-itineraire" href="${echapperHtml(lienPowerBiPatrimoineSpot)}" target="_blank" rel="noopener noreferrer">⚡️ Patrimoine SPOT</a>`
   });
   const actionsExploreesTriees = actionsExplorerEquipements
     .sort((a, b) => a.label.localeCompare(b.label, "fr", { sensitivity: "base", numeric: true }))
@@ -5243,7 +5289,7 @@ function construirePopupDepuisFeatures(longitude, latitude, featurePostes, featu
     : "";
   const sectionLocaliser = featurePostes || estVueAppareilsSeule || estVueAccesSeule
     ? ""
-    : '<section class="popup-section popup-section-localiser"><div class="popup-itineraires popup-itineraires-poste-actions"><button class="popup-bouton-itineraire popup-bouton-localiser" id="popup-localiser-carte" type="button" data-lng="${longitude}" data-lat="${latitude}">📍 Localiser sur la carte</button><a class="popup-bouton-itineraire" href="https://app.powerbi.com/groups/me/reports/24acac4b-a393-4b44-ba9c-d22cae4170a3?ctid=4a7c8238-5799-4b16-9fc6-9ad8fce5a7d9&pbi_source=linkShare" target="_blank" rel="noopener noreferrer">⚡️ Patrimoine SPOT</a></div></section>';
+    : `<section class="popup-section popup-section-localiser"><div class="popup-itineraires popup-itineraires-poste-actions"><button class="popup-bouton-itineraire popup-bouton-localiser" id="popup-localiser-carte" type="button" data-lng="${longitude}" data-lat="${latitude}">📍 Localiser sur la carte</button><a class="popup-bouton-itineraire" href="${echapperHtml(lienPowerBiPatrimoineSpot)}" target="_blank" rel="noopener noreferrer">⚡️ Patrimoine SPOT</a></div></section>`;
   const sectionRssFinale = estVueAccesSeule ? "" : sectionRssAssocieDepuisAcces;
   const contenuFiche = `<div class="popup-carte">${sections.join("")}${sectionConsigneRssAcces}${sectionRssFinale}${sectionItineraire}${sectionExplorerAcces}${sectionActionsPoste}${sectionTerrain}${sectionCodesAvecPills}${sectionLocaliser}${sectionRetourPoste}${modalStreetView}</div>`;
 

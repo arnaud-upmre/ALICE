@@ -16,7 +16,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "107,989",
-        "code": false
+        "code": false,
+        "armen": "74046890"
       },
       "geometry": {
         "type": "Point",
@@ -40,7 +41,8 @@
         "lignes": "BUSIGNY à SOMAIN",
         "numero_ligne": 250000,
         "pk": "230,460",
-        "code": false
+        "code": false,
+        "armen": "74352677"
       },
       "geometry": {
         "type": "Point",
@@ -64,7 +66,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "174,758",
-        "code": false
+        "code": false,
+        "armen": "74352829"
       },
       "geometry": {
         "type": "Point",
@@ -88,7 +91,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74352829"
       },
       "geometry": {
         "type": "Point",
@@ -114,7 +118,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "114,400",
-        "code": false
+        "code": false,
+        "armen": "74351565"
       },
       "geometry": {
         "type": "Point",
@@ -138,7 +143,8 @@
         "lignes": "",
         "numero_ligne": "",
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74351565"
       },
       "geometry": {
         "type": "Point",
@@ -162,7 +168,8 @@
         "lignes": "",
         "numero_ligne": "",
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74351565"
       },
       "geometry": {
         "type": "Point",
@@ -186,7 +193,8 @@
         "lignes": "",
         "numero_ligne": "",
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74351565"
       },
       "geometry": {
         "type": "Point",
@@ -210,7 +218,8 @@
         "lignes": "",
         "numero_ligne": "",
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74351565"
       },
       "geometry": {
         "type": "Point",
@@ -256,7 +265,8 @@
         "lignes": "LILLE à LES FONTINETTES",
         "numero_ligne": 295000,
         "pk": "20,240",
-        "code": false
+        "code": false,
+        "armen": "74352693"
       },
       "geometry": {
         "type": "Point",
@@ -278,7 +288,8 @@
         "lignes": "ARRAS à DUNKERQUE",
         "numero_ligne": 301000,
         "pk": "280,901",
-        "code": false
+        "code": false,
+        "armen": "74353503"
       },
       "geometry": {
         "type": "Point",
@@ -300,7 +311,8 @@
         "lignes": "LILLE à LES FONTINETTES",
         "numero_ligne": 295000,
         "pk": "62,755",
-        "code": false
+        "code": false,
+        "armen": "74351269"
       },
       "geometry": {
         "type": "Point",
@@ -322,7 +334,8 @@
         "lignes": "FIVES à ABBEVILLE",
         "numero_ligne": 289000,
         "pk": "250,300",
-        "code": false
+        "code": false,
+        "armen": "74354415"
       },
       "geometry": {
         "type": "Point",
@@ -344,7 +357,8 @@
         "lignes": "ARRAS à DUNKERQUE",
         "numero_ligne": 301000,
         "pk": "211,0200",
-        "code": false
+        "code": false,
+        "armen": "74354155"
       },
       "geometry": {
         "type": "Point",
@@ -366,7 +380,8 @@
         "lignes": "LILLE à LES FONTINETTES",
         "numero_ligne": 295000,
         "pk": "85,166",
-        "code": false
+        "code": false,
+        "armen": "74351719"
       },
       "geometry": {
         "type": "Point",
@@ -390,7 +405,8 @@
         "lignes": "ARRAS à DUNKERQUE",
         "numero_ligne": 301000,
         "pk": "200,290",
-        "code": false
+        "code": false,
+        "armen": "74352059"
       },
       "geometry": {
         "type": "Point",
@@ -414,7 +430,8 @@
         "lignes": "FIVES à BAISIEUX",
         "numero_ligne": 269000,
         "pk": "14,602",
-        "code": false
+        "code": false,
+        "armen": "74353577"
       },
       "geometry": {
         "type": "Point",
@@ -438,7 +455,8 @@
         "lignes": "FIVES à HIRSON ",
         "numero_ligne": 267000,
         "pk": "77,312",
-        "code": false
+        "code": false,
+        "armen": "74352035"
       },
       "geometry": {
         "type": "Point",
@@ -461,7 +479,8 @@
         "lignes": "ARRAS à DUNKERQUE",
         "numero_ligne": 301000,
         "pk": "229,0700",
-        "code": false
+        "code": false,
+        "armen": "74350961"
       },
       "geometry": {
         "type": "Point",
@@ -485,7 +504,8 @@
         "lignes": "ARRAS à DUNKERQUE",
         "numero_ligne": 301000,
         "pk": "230,760",
-        "code": false
+        "code": false,
+        "armen": "74353601"
       },
       "geometry": {
         "type": "Point",
@@ -509,7 +529,8 @@
         "lignes": "FIVES à ABBEVILLE",
         "numero_ligne": 289000,
         "pk": "40,006",
-        "code": false
+        "code": false,
+        "armen": "171663592"
       },
       "geometry": {
         "type": "Point",
@@ -533,7 +554,8 @@
         "lignes": "FIVES à ABBEVILLE",
         "numero_ligne": 289000,
         "pk": "35,465",
-        "code": false
+        "code": false,
+        "armen": "171663675"
       },
       "geometry": {
         "type": "Point",
@@ -555,7 +577,8 @@
         "lignes": "LILLE à LES FONTINETTES",
         "numero_ligne": 295000,
         "pk": "103,900",
-        "code": false
+        "code": false,
+        "armen": "179082618"
       },
       "geometry": {
         "type": "Point",
@@ -578,7 +601,8 @@
         "lignes": "COUDEKERQUE-BRANCHE à LES FONTINETTES",
         "numero_ligne": 304000,
         "pk": "14,900",
-        "code": false
+        "code": false,
+        "armen": "176553536"
       },
       "geometry": {
         "type": "Point",
@@ -602,7 +626,8 @@
         "lignes": "COUDEKERQUE-BRANCHE à LES FONTINETTES",
         "numero_ligne": 304000,
         "pk": "10,375",
-        "code": false
+        "code": false,
+        "armen": "176553254"
       },
       "geometry": {
         "type": "Point",
@@ -626,7 +651,8 @@
         "lignes": "LENS à OSTRICOURT",
         "numero_ligne": 284000,
         "pk": "215,547",
-        "code": false
+        "code": false,
+        "armen": "74352083"
       },
       "geometry": {
         "type": "Point",
@@ -650,7 +676,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "200,0290",
-        "code": false
+        "code": false,
+        "armen": "74353649"
       },
       "geometry": {
         "type": "Point",
@@ -674,7 +701,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74353649"
       },
       "geometry": {
         "type": "Point",
@@ -698,7 +726,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74353649"
       },
       "geometry": {
         "type": "Point",
@@ -720,7 +749,8 @@
         "lignes": "ARRAS à DUNKERQUE",
         "numero_ligne": 301000,
         "pk": "211,700",
-        "code": false
+        "code": false,
+        "armen": "171663746"
       },
       "geometry": {
         "type": "Point",
@@ -744,7 +774,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "183,687",
-        "code": false
+        "code": false,
+        "armen": "74351293"
       },
       "geometry": {
         "type": "Point",
@@ -768,7 +799,8 @@
         "lignes": "COUDEKERQUE-BRANCHE à LES FONTINETTES",
         "numero_ligne": 304000,
         "pk": "18,450",
-        "code": false
+        "code": false,
+        "armen": "179081676"
       },
       "geometry": {
         "type": "Point",
@@ -790,7 +822,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "53,547",
-        "code": false
+        "code": false,
+        "armen": "74352531"
       },
       "geometry": {
         "type": "Point",
@@ -812,7 +845,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "68,359",
-        "code": false
+        "code": false,
+        "armen": "74351317"
       },
       "geometry": {
         "type": "Point",
@@ -836,7 +870,8 @@
         "lignes": "CREIL à JEUMONT",
         "numero_ligne": 242000,
         "pk": "182,251",
-        "code": false
+        "code": false,
+        "armen": "74352869"
       },
       "geometry": {
         "type": "Point",
@@ -860,7 +895,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": 314000,
         "pk": "277,710",
-        "code": false
+        "code": false,
+        "armen": "74351603"
       },
       "geometry": {
         "type": "Point",
@@ -884,7 +920,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": 314000,
         "pk": "278,220",
-        "code": false
+        "code": false,
+        "armen": "74351603"
       },
       "geometry": {
         "type": "Point",
@@ -908,7 +945,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": 314000,
         "pk": "278,860",
-        "code": false
+        "code": false,
+        "armen": "74351603"
       },
       "geometry": {
         "type": "Point",
@@ -932,7 +970,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "59,146",
-        "code": false
+        "code": false,
+        "armen": "171663814"
       },
       "geometry": {
         "type": "Point",
@@ -956,7 +995,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "171663814"
       },
       "geometry": {
         "type": "Point",
@@ -980,7 +1020,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "171663814"
       },
       "geometry": {
         "type": "Point",
@@ -1004,7 +1045,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": 314000,
         "pk": "290,0500",
-        "code": false
+        "code": false,
+        "armen": "74351623"
       },
       "geometry": {
         "type": "Point",
@@ -1028,7 +1070,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": 314000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74351623"
       },
       "geometry": {
         "type": "Point",
@@ -1052,7 +1095,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": 314000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74351623"
       },
       "geometry": {
         "type": "Point",
@@ -1076,7 +1120,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": 314000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74351623"
       },
       "geometry": {
         "type": "Point",
@@ -1100,7 +1145,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": 314000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74351623"
       },
       "geometry": {
         "type": "Point",
@@ -1124,7 +1170,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": 314000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74351623"
       },
       "geometry": {
         "type": "Point",
@@ -1146,7 +1193,8 @@
         "lignes": "ARRAS à DUNKERQUE",
         "numero_ligne": 301000,
         "pk": "300,521",
-        "code": true
+        "code": true,
+        "armen": "74352925"
       },
       "geometry": {
         "type": "Point",
@@ -1170,7 +1218,8 @@
         "lignes": "ARRAS à DUNKERQUE",
         "numero_ligne": 301000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74352925"
       },
       "geometry": {
         "type": "Point",
@@ -1194,7 +1243,8 @@
         "lignes": "ARRAS à DUNKERQUE",
         "numero_ligne": 301000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74352925"
       },
       "geometry": {
         "type": "Point",
@@ -1218,7 +1268,8 @@
         "lignes": "LILLE à LES FONTINETTES",
         "numero_ligne": 295000,
         "pk": "103,900",
-        "code": false
+        "code": false,
+        "armen": "74352559"
       },
       "geometry": {
         "type": "Point",
@@ -1242,7 +1293,8 @@
         "lignes": "LILLE à LES FONTINETTES",
         "numero_ligne": 295000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74352559"
       },
       "geometry": {
         "type": "Point",
@@ -1266,7 +1318,8 @@
         "lignes": "LILLE à LES FONTINETTES",
         "numero_ligne": 295000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74352559"
       },
       "geometry": {
         "type": "Point",
@@ -1290,7 +1343,8 @@
         "lignes": "LILLE à LES FONTINETTES",
         "numero_ligne": 295000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74352559"
       },
       "geometry": {
         "type": "Point",
@@ -1314,7 +1368,8 @@
         "lignes": "LILLE à LES FONTINETTES",
         "numero_ligne": 295000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74352559"
       },
       "geometry": {
         "type": "Point",
@@ -1338,7 +1393,8 @@
         "lignes": "LILLE à LES FONTINETTES",
         "numero_ligne": 295000,
         "pk": "104,810",
-        "code": false
+        "code": false,
+        "armen": "171663957"
       },
       "geometry": {
         "type": "Point",
@@ -1362,7 +1418,8 @@
         "lignes": "LILLE à LES FONTINETTES",
         "numero_ligne": 295000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "171663957"
       },
       "geometry": {
         "type": "Point",
@@ -1386,7 +1443,8 @@
         "lignes": "LILLE à LES FONTINETTES",
         "numero_ligne": 295000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "171663957"
       },
       "geometry": {
         "type": "Point",
@@ -1410,7 +1468,8 @@
         "lignes": "LILLE à LES FONTINETTES",
         "numero_ligne": 295000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "171663957"
       },
       "geometry": {
         "type": "Point",
@@ -1434,7 +1493,8 @@
         "lignes": "LILLE à LES FONTINETTES",
         "numero_ligne": 295000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "171663957"
       },
       "geometry": {
         "type": "Point",
@@ -1458,7 +1518,8 @@
         "lignes": "LONGUEAU à BOULOGNE-VILLE",
         "numero_ligne": 311000,
         "pk": "234,000",
-        "code": false
+        "code": false,
+        "armen": "171663525"
       },
       "geometry": {
         "type": "Point",
@@ -1483,7 +1544,8 @@
         "lignes": "HAUBOURDIN à SAINT-ANDRÉ",
         "numero_ligne": 292000,
         "pk": "14,869",
-        "code": true
+        "code": true,
+        "armen": "74352973"
       },
       "geometry": {
         "type": "Point",
@@ -1507,7 +1569,8 @@
         "lignes": "LOURCHES à VALENCIENNES",
         "numero_ligne": 254000,
         "pk": "230,298",
-        "code": false
+        "code": false,
+        "armen": "74352107"
       },
       "geometry": {
         "type": "Point",
@@ -1531,7 +1594,8 @@
         "lignes": "FIVES à ABBEVILLE",
         "numero_ligne": 289000,
         "pk": "18,850",
-        "code": false
+        "code": false,
+        "armen": "171664214"
       },
       "geometry": {
         "type": "Point",
@@ -1555,7 +1619,8 @@
         "lignes": "",
         "numero_ligne": "",
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "171664214"
       },
       "geometry": {
         "type": "Point",
@@ -1579,7 +1644,8 @@
         "lignes": "",
         "numero_ligne": "",
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "171664214"
       },
       "geometry": {
         "type": "Point",
@@ -1603,7 +1669,8 @@
         "lignes": "",
         "numero_ligne": "",
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "171664214"
       },
       "geometry": {
         "type": "Point",
@@ -1627,7 +1694,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "217,750",
-        "code": false
+        "code": false,
+        "armen": "74353697"
       },
       "geometry": {
         "type": "Point",
@@ -1651,7 +1719,8 @@
         "lignes": "ARRAS à DUNKERQUE",
         "numero_ligne": 301000,
         "pk": "304,572",
-        "code": false
+        "code": false,
+        "armen": "74353727"
       },
       "geometry": {
         "type": "Point",
@@ -1672,7 +1741,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "31,503",
-        "code": false
+        "code": false,
+        "armen": "74351793"
       },
       "geometry": {
         "type": "Point",
@@ -1696,7 +1766,8 @@
         "lignes": "ARRAS à DUNKERQUE",
         "numero_ligne": 301000,
         "pk": "287,404",
-        "code": false
+        "code": false,
+        "armen": "74352755"
       },
       "geometry": {
         "type": "Point",
@@ -1720,7 +1791,8 @@
         "lignes": "LONGUEAU à BOULOGNE-VILLE",
         "numero_ligne": 311000,
         "pk": "226,900",
-        "code": false
+        "code": false,
+        "armen": "171663499"
       },
       "geometry": {
         "type": "Point",
@@ -1744,7 +1816,8 @@
         "lignes": "LONGUEAU à BOULOGNE-VILLE",
         "numero_ligne": 311000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "171663499"
       },
       "geometry": {
         "type": "Point",
@@ -1768,7 +1841,8 @@
         "lignes": "LONGUEAU à BOULOGNE-VILLE",
         "numero_ligne": 311000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "171663499"
       },
       "geometry": {
         "type": "Point",
@@ -1790,7 +1864,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "164,195",
-        "code": true
+        "code": true,
+        "armen": "74353299"
       },
       "geometry": {
         "type": "Point",
@@ -1814,7 +1889,8 @@
         "lignes": "Raccordement d'Arras-Nord",
         "numero_ligne": 226309,
         "pk": "0,245",
-        "code": false
+        "code": false,
+        "armen": "74351993"
       },
       "geometry": {
         "type": "Point",
@@ -1838,7 +1914,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "198,500",
-        "code": false
+        "code": false,
+        "armen": "74351993"
       },
       "geometry": {
         "type": "Point",
@@ -1862,7 +1939,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "199,255",
-        "code": false
+        "code": false,
+        "armen": "74351993"
       },
       "geometry": {
         "type": "Point",
@@ -1887,7 +1965,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "248,006",
-        "code": false
+        "code": false,
+        "armen": "171663127"
       },
       "geometry": {
         "type": "Point",
@@ -1912,7 +1991,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "171663127"
       },
       "geometry": {
         "type": "Point",
@@ -1936,7 +2016,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "171663127"
       },
       "geometry": {
         "type": "Point",
@@ -1960,7 +2041,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "171663127"
       },
       "geometry": {
         "type": "Point",
@@ -1985,7 +2067,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "",
-        "code": true
+        "code": true,
+        "armen": "171663127"
       },
       "geometry": {
         "type": "Point",
@@ -2009,7 +2092,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "171663127"
       },
       "geometry": {
         "type": "Point",
@@ -2033,7 +2117,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "171663127"
       },
       "geometry": {
         "type": "Point",
@@ -2057,7 +2142,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "25,795",
-        "code": true
+        "code": true,
+        "armen": "74353343"
       },
       "geometry": {
         "type": "Point",
@@ -2081,7 +2167,11 @@
         "lignes": "Saint-Roch à Darnétal-Bifurcation",
         "numero_ligne": 321000,
         "pk": "043,700",
-        "code": false
+        "code": false,
+        "armen": [
+          "171754128",
+          "74046608"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -2105,7 +2195,8 @@
         "lignes": "FIVES à HIRSON",
         "numero_ligne": 267000,
         "pk": "108,934",
-        "code": false
+        "code": false,
+        "armen": "74353019"
       },
       "geometry": {
         "type": "Point",
@@ -2129,7 +2220,11 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "89,088",
-        "code": false
+        "code": false,
+        "armen": [
+          "171753097",
+          "74046634"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -2152,7 +2247,8 @@
         "lignes": "COUDEKERQUE-BRANCHE à LES FONTINETTES",
         "numero_ligne": 304000,
         "pk": "6,760",
-        "code": false
+        "code": false,
+        "armen": "74351017"
       },
       "geometry": {
         "type": "Point",
@@ -2176,7 +2272,8 @@
         "lignes": "COUDEKERQUE-BRANCHE à LES FONTINETTES",
         "numero_ligne": 304000,
         "pk": "23,700",
-        "code": false
+        "code": false,
+        "armen": "179082957"
       },
       "geometry": {
         "type": "Point",
@@ -2200,7 +2297,8 @@
         "lignes": "COUDEKERQUE-BRANCHE à LES FONTINETTES",
         "numero_ligne": 304000,
         "pk": "23,170",
-        "code": false
+        "code": false,
+        "armen": "179082957"
       },
       "geometry": {
         "type": "Point",
@@ -2224,7 +2322,8 @@
         "lignes": "COUDEKERQUE-BRANCHE à LES FONTINETTES",
         "numero_ligne": 304000,
         "pk": "23,882",
-        "code": false
+        "code": false,
+        "armen": "179082957"
       },
       "geometry": {
         "type": "Point",
@@ -2248,7 +2347,8 @@
         "lignes": "COUDEKERQUE-BRANCHE à LES FONTINETTES",
         "numero_ligne": 304000,
         "pk": "24,870",
-        "code": false
+        "code": false,
+        "armen": "179082957"
       },
       "geometry": {
         "type": "Point",
@@ -2272,7 +2372,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "106,0712",
-        "code": true
+        "code": true,
+        "armen": "74352591"
       },
       "geometry": {
         "type": "Point",
@@ -2296,7 +2397,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "228,600",
-        "code": false
+        "code": false,
+        "armen": "74354433"
       },
       "geometry": {
         "type": "Point",
@@ -2320,7 +2422,8 @@
         "lignes": "LILLE à Les FONTINETTES",
         "numero_ligne": 295000,
         "pk": "48,772",
-        "code": false
+        "code": false,
+        "armen": "74353835"
       },
       "geometry": {
         "type": "Point",
@@ -2344,7 +2447,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": 314000,
         "pk": "254,140",
-        "code": false
+        "code": false,
+        "armen": "74353887"
       },
       "geometry": {
         "type": "Point",
@@ -2368,7 +2472,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": 314000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74353887"
       },
       "geometry": {
         "type": "Point",
@@ -2393,7 +2498,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": 314000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74353887"
       },
       "geometry": {
         "type": "Point",
@@ -2418,7 +2524,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": 314000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74353887"
       },
       "geometry": {
         "type": "Point",
@@ -2442,7 +2549,8 @@
         "lignes": "CREIL à JEUMONT",
         "numero_ligne": 242000,
         "pk": "225,591",
-        "code": false
+        "code": false,
+        "armen": "74353069"
       },
       "geometry": {
         "type": "Point",
@@ -2487,7 +2595,8 @@
         "lignes": "ARRAS à DUNKERQUE",
         "numero_ligne": 301000,
         "pk": "263,430",
-        "code": false
+        "code": false,
+        "armen": "74353911"
       },
       "geometry": {
         "type": "Point",
@@ -2511,7 +2620,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "6,695",
-        "code": false
+        "code": false,
+        "armen": "74352619"
       },
       "geometry": {
         "type": "Point",
@@ -2535,7 +2645,8 @@
         "lignes": "HIRSON à AMAGNE-LUCQUY",
         "numero_ligne": 212000,
         "pk": "0,783",
-        "code": false
+        "code": false,
+        "armen": "74353863"
       },
       "geometry": {
         "type": "Point",
@@ -2558,7 +2669,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "56,214",
-        "code": false
+        "code": false,
+        "armen": "74351805"
       },
       "geometry": {
         "type": "Point",
@@ -2582,7 +2694,8 @@
         "lignes": "CREIL à JEUMONT",
         "numero_ligne": 242000,
         "pk": "183,0313",
-        "code": false
+        "code": false,
+        "armen": "177960273"
       },
       "geometry": {
         "type": "Point",
@@ -2606,7 +2719,8 @@
         "lignes": "FIVES à ABBEVILLE",
         "numero_ligne": 289000,
         "pk": "3,905",
-        "code": false
+        "code": false,
+        "armen": "74354077"
       },
       "geometry": {
         "type": "Point",
@@ -2630,7 +2744,8 @@
         "lignes": "FIVES à ABBEVILLE",
         "numero_ligne": 289000,
         "pk": "4,900",
-        "code": false
+        "code": false,
+        "armen": "74354077"
       },
       "geometry": {
         "type": "Point",
@@ -2654,7 +2769,8 @@
         "lignes": "",
         "numero_ligne": "",
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74354077"
       },
       "geometry": {
         "type": "Point",
@@ -2678,7 +2794,8 @@
         "lignes": "LILLE à Les FONTINETTES",
         "numero_ligne": 295000,
         "pk": "5,805",
-        "code": false
+        "code": false,
+        "armen": "74351641"
       },
       "geometry": {
         "type": "Point",
@@ -2702,7 +2819,8 @@
         "lignes": "LILLE à Les FONTINETTES",
         "numero_ligne": 295000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74351641"
       },
       "geometry": {
         "type": "Point",
@@ -2726,7 +2844,8 @@
         "lignes": "LILLE à Les FONTINETTES",
         "numero_ligne": 295000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74351641"
       },
       "geometry": {
         "type": "Point",
@@ -2750,7 +2869,8 @@
         "lignes": "FIVES à ABBEVILLE",
         "numero_ligne": 289000,
         "pk": "11,940",
-        "code": false
+        "code": false,
+        "armen": "74354351"
       },
       "geometry": {
         "type": "Point",
@@ -2775,7 +2895,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "16,123",
-        "code": false
+        "code": false,
+        "armen": "74351413"
       },
       "geometry": {
         "type": "Point",
@@ -2799,7 +2920,8 @@
         "lignes": "",
         "numero_ligne": "",
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74351829"
       },
       "geometry": {
         "type": "Point",
@@ -2824,7 +2946,8 @@
         "lignes": "LILLE à Les FONTINETTES",
         "numero_ligne": 295000,
         "pk": "9,503",
-        "code": false
+        "code": false,
+        "armen": "74353963"
       },
       "geometry": {
         "type": "Point",
@@ -2848,7 +2971,8 @@
         "lignes": "",
         "numero_ligne": "",
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74353963"
       },
       "geometry": {
         "type": "Point",
@@ -2872,7 +2996,8 @@
         "lignes": "",
         "numero_ligne": "",
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74353963"
       },
       "geometry": {
         "type": "Point",
@@ -2896,7 +3021,11 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "132,232",
-        "code": false
+        "code": false,
+        "armen": [
+          "171753744",
+          "74046738"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -2920,7 +3049,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "192,491",
-        "code": false
+        "code": false,
+        "armen": "74352639"
       },
       "geometry": {
         "type": "Point",
@@ -2944,7 +3074,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "39,986",
-        "code": true
+        "code": true,
+        "armen": "74351389"
       },
       "geometry": {
         "type": "Point",
@@ -2968,7 +3099,8 @@
         "lignes": "ARRAS à DUNKERQUE",
         "numero_ligne": 301000,
         "pk": "210,820",
-        "code": false
+        "code": false,
+        "armen": "74351041"
       },
       "geometry": {
         "type": "Point",
@@ -2992,7 +3124,8 @@
         "lignes": "ARRAS à DUNKERQUE",
         "numero_ligne": 301000,
         "pk": "210,0310",
-        "code": false
+        "code": false,
+        "armen": "74354155"
       },
       "geometry": {
         "type": "Point",
@@ -3016,7 +3149,8 @@
         "lignes": "FIVES à HIRSON",
         "numero_ligne": 267000,
         "pk": "4,930",
-        "code": false
+        "code": false,
+        "armen": "74352249"
       },
       "geometry": {
         "type": "Point",
@@ -3040,7 +3174,8 @@
         "lignes": "FIVES à HIRSON",
         "numero_ligne": 267000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74352249"
       },
       "geometry": {
         "type": "Point",
@@ -3064,7 +3199,8 @@
         "lignes": "FIVES à HIRSON",
         "numero_ligne": 267000,
         "pk": "83,398",
-        "code": false
+        "code": false,
+        "armen": "74352271"
       },
       "geometry": {
         "type": "Point",
@@ -3088,7 +3224,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "010,694",
-        "code": false
+        "code": false,
+        "armen": "74351841"
       },
       "geometry": {
         "type": "Point",
@@ -3112,7 +3249,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "250,300",
-        "code": false
+        "code": false,
+        "armen": "74353993"
       },
       "geometry": {
         "type": "Point",
@@ -3161,7 +3299,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "10,841",
-        "code": true
+        "code": true,
+        "armen": "74352017"
       },
       "geometry": {
         "type": "Point",
@@ -3185,7 +3324,8 @@
         "lignes": "ARRAS à DUNKERQUE",
         "numero_ligne": 301000,
         "pk": "242,616",
-        "code": false
+        "code": false,
+        "armen": "74354025"
       },
       "geometry": {
         "type": "Point",
@@ -3209,7 +3349,8 @@
         "lignes": "FIVES à MOUSCRON",
         "numero_ligne": 278000,
         "pk": "2,526",
-        "code": false
+        "code": false,
+        "armen": "74354109"
       },
       "geometry": {
         "type": "Point",
@@ -3233,7 +3374,8 @@
         "lignes": "FIVES à MOUSCRON",
         "numero_ligne": 278000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74354109"
       },
       "geometry": {
         "type": "Point",
@@ -3257,7 +3399,8 @@
         "lignes": "FIVES à MOUSCRON",
         "numero_ligne": 278000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74354109"
       },
       "geometry": {
         "type": "Point",
@@ -3281,7 +3424,8 @@
         "lignes": "LENS à DON-SAINGHIN",
         "numero_ligne": "286000",
         "pk": "214,998",
-        "code": false
+        "code": false,
+        "armen": "74352179"
       },
       "geometry": {
         "type": "Point",
@@ -3305,7 +3449,8 @@
         "lignes": "HAUBOURDIN à SAINT-ANDRÉ",
         "numero_ligne": 292000,
         "pk": "18,290",
-        "code": false
+        "code": false,
+        "armen": "74352227"
       },
       "geometry": {
         "type": "Point",
@@ -3329,7 +3474,8 @@
         "lignes": "",
         "numero_ligne": "",
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74352227"
       },
       "geometry": {
         "type": "Point",
@@ -3353,7 +3499,8 @@
         "lignes": "FIVES à HIRSON",
         "numero_ligne": 267000,
         "pk": "53,370",
-        "code": false
+        "code": false,
+        "armen": "74353117"
       },
       "geometry": {
         "type": "Point",
@@ -3377,7 +3524,8 @@
         "lignes": "LENS à OSTRICOURT",
         "numero_ligne": 284000,
         "pk": "223,000",
-        "code": false
+        "code": false,
+        "armen": "74354435"
       },
       "geometry": {
         "type": "Point",
@@ -3401,7 +3549,8 @@
         "lignes": "LENS à OSTRICOURT",
         "numero_ligne": 284000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74354435"
       },
       "geometry": {
         "type": "Point",
@@ -3425,7 +3574,8 @@
         "lignes": "LENS à OSTRICOURT",
         "numero_ligne": 284000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74354435"
       },
       "geometry": {
         "type": "Point",
@@ -3449,7 +3599,8 @@
         "lignes": "LENS à OSTRICOURT",
         "numero_ligne": 284000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74354435"
       },
       "geometry": {
         "type": "Point",
@@ -3473,7 +3624,8 @@
         "lignes": "LENS à OSTRICOURT",
         "numero_ligne": 284000,
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74354435"
       },
       "geometry": {
         "type": "Point",
@@ -3495,7 +3647,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": "314000",
         "pk": "269,803",
-        "code": false
+        "code": false,
+        "armen": "74354181"
       },
       "geometry": {
         "type": "Point",
@@ -3519,7 +3672,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": "314000",
         "pk": "270,487",
-        "code": false
+        "code": false,
+        "armen": "74354181"
       },
       "geometry": {
         "type": "Point",
@@ -3543,7 +3697,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": "314000",
         "pk": "270,836",
-        "code": false
+        "code": false,
+        "armen": "74354181"
       },
       "geometry": {
         "type": "Point",
@@ -3567,7 +3722,8 @@
         "lignes": "Raccordement d'ARRAS-SUD",
         "numero_ligne": "226306",
         "pk": "8,055",
-        "code": false
+        "code": false,
+        "armen": "74352293"
       },
       "geometry": {
         "type": "Point",
@@ -3591,7 +3747,8 @@
         "lignes": "Raccordement d'ARRAS-SUD",
         "numero_ligne": "226306",
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74352293"
       },
       "geometry": {
         "type": "Point",
@@ -3615,7 +3772,8 @@
         "lignes": "Raccordement d'ARRAS-SUD",
         "numero_ligne": "226306",
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74352293"
       },
       "geometry": {
         "type": "Point",
@@ -3640,7 +3798,8 @@
         "lignes": "Raccordement d'ARRAS-SUD",
         "numero_ligne": "226306",
         "pk": "",
-        "code": false
+        "code": false,
+        "armen": "74352293"
       },
       "geometry": {
         "type": "Point",
@@ -3664,7 +3823,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "111,146",
-        "code": false
+        "code": false,
+        "armen": "74351657"
       },
       "geometry": {
         "type": "Point",
@@ -3688,7 +3848,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "112.4",
-        "code": false
+        "code": false,
+        "armen": "74351657"
       },
       "geometry": {
         "type": "Point",
@@ -3712,7 +3873,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "111",
-        "code": false
+        "code": false,
+        "armen": "74351657"
       },
       "geometry": {
         "type": "Point",
@@ -3736,7 +3898,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": 314000,
         "pk": "285,421",
-        "code": false
+        "code": false,
+        "armen": "74351657"
       },
       "geometry": {
         "type": "Point",
@@ -3760,7 +3923,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "111.5",
-        "code": false
+        "code": false,
+        "armen": "74351657"
       },
       "geometry": {
         "type": "Point",
@@ -3784,7 +3948,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "110.2",
-        "code": false
+        "code": false,
+        "armen": "74351657"
       },
       "geometry": {
         "type": "Point",
@@ -3808,7 +3973,8 @@
         "lignes": "LILLE à LES FONTINETTES ",
         "numero_ligne": 295000,
         "pk": "89,433",
-        "code": false
+        "code": false,
+        "armen": "74351457"
       },
       "geometry": {
         "type": "Point",
@@ -3832,7 +3998,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "175,135",
-        "code": false
+        "code": false,
+        "armen": "74351481"
       },
       "geometry": {
         "type": "Point",
@@ -3855,7 +4022,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "182,0539",
-        "code": false
+        "code": false,
+        "armen": "74351853"
       },
       "geometry": {
         "type": "Point",
@@ -3879,7 +4047,8 @@
         "lignes": "FIVES à HIRSON",
         "numero_ligne": 267000,
         "pk": "20,912",
-        "code": false
+        "code": false,
+        "armen": "74352325"
       },
       "geometry": {
         "type": "Point",
@@ -3903,7 +4072,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "227,400",
-        "code": false
+        "code": false,
+        "armen": "74354205"
       },
       "geometry": {
         "type": "Point",
@@ -3927,7 +4097,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "113,453",
-        "code": false
+        "code": false,
+        "armen": "74351217"
       },
       "geometry": {
         "type": "Point",
@@ -3951,7 +4122,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "113",
-        "code": false
+        "code": false,
+        "armen": "74351217"
       },
       "geometry": {
         "type": "Point",
@@ -3975,7 +4147,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": 314000,
         "pk": "287,528",
-        "code": false
+        "code": false,
+        "armen": "74351217"
       },
       "geometry": {
         "type": "Point",
@@ -3999,7 +4172,8 @@
         "lignes": "Raccordement nord de Frethun",
         "numero_ligne": "216312",
         "pk": "xx",
-        "code": false
+        "code": false,
+        "armen": "74351217"
       },
       "geometry": {
         "type": "Point",
@@ -4023,7 +4197,8 @@
         "lignes": "COUDEKERQUE-BRANCHE à LES FONTINETTES",
         "numero_ligne": 304000,
         "pk": "14,938",
-        "code": true
+        "code": true,
+        "armen": "182880265"
       },
       "geometry": {
         "type": "Point",
@@ -4047,7 +4222,8 @@
         "lignes": "COUDEKERQUE-BRANCHE à LES FONTINETTES",
         "numero_ligne": 304000,
         "pk": "9,418",
-        "code": true
+        "code": true,
+        "armen": "182880200"
       },
       "geometry": {
         "type": "Point",
@@ -4071,7 +4247,8 @@
         "lignes": "COUDEKERQUE-BRANCHE à LES FONTINETTES",
         "numero_ligne": 304000,
         "pk": "10,480",
-        "code": false
+        "code": false,
+        "armen": "182880274"
       },
       "geometry": {
         "type": "Point",
@@ -4095,7 +4272,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "236,0522",
-        "code": false
+        "code": false,
+        "armen": "74352349"
       },
       "geometry": {
         "type": "Point",
@@ -4119,7 +4297,8 @@
         "lignes": "LONGUEAU à BOULOGNE-VILLE",
         "numero_ligne": 311000,
         "pk": "248,536",
-        "code": true
+        "code": true,
+        "armen": "74353161"
       },
       "geometry": {
         "type": "Point",
@@ -4143,7 +4322,8 @@
         "lignes": "LONGUEAU à BOULOGNE-VILLE",
         "numero_ligne": 311000,
         "pk": "248,817",
-        "code": false
+        "code": false,
+        "armen": "74353161"
       },
       "geometry": {
         "type": "Point",
@@ -4167,7 +4347,8 @@
         "lignes": "COUDEKERQUE-BRANCHE à LES FONTINETTES",
         "numero_ligne": 304000,
         "pk": "9,388",
-        "code": false
+        "code": false,
+        "armen": "74354229"
       },
       "geometry": {
         "type": "Point",
@@ -4191,7 +4372,8 @@
         "lignes": "HAUTMONT à FEIGNIES (Frontière) et MONS",
         "numero_ligne": "247000",
         "pk": "233,017",
-        "code": false
+        "code": false,
+        "armen": "74354251"
       },
       "geometry": {
         "type": "Point",
@@ -4214,7 +4396,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "80,849",
-        "code": false
+        "code": false,
+        "armen": "74351865"
       },
       "geometry": {
         "type": "Point",
@@ -4238,7 +4421,8 @@
         "lignes": "LONGUEAU à BOULOGNE-VILLE",
         "numero_ligne": 311000,
         "pk": "215,200",
-        "code": false
+        "code": false,
+        "armen": "74354437"
       },
       "geometry": {
         "type": "Point",
@@ -4262,7 +4446,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": 314000,
         "pk": "291,503",
-        "code": false
+        "code": false,
+        "armen": "74354273"
       },
       "geometry": {
         "type": "Point",
@@ -4286,7 +4471,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": 314000,
         "pk": "291,429",
-        "code": false
+        "code": false,
+        "armen": "74354273"
       },
       "geometry": {
         "type": "Point",
@@ -4309,7 +4495,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "100,188",
-        "code": false
+        "code": false,
+        "armen": "74351877"
       },
       "geometry": {
         "type": "Point",
@@ -4332,7 +4519,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "162,019",
-        "code": false
+        "code": false,
+        "armen": "74351889"
       },
       "geometry": {
         "type": "Point",
@@ -4356,7 +4544,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "201,0230",
-        "code": false
+        "code": false,
+        "armen": "171662315"
       },
       "geometry": {
         "type": "Point",
@@ -4380,7 +4569,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "247,400",
-        "code": false
+        "code": false,
+        "armen": "74351245"
       },
       "geometry": {
         "type": "Point",
@@ -4405,7 +4595,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "247,616",
-        "code": false
+        "code": false,
+        "armen": "74351245"
       },
       "geometry": {
         "type": "Point",
@@ -4429,7 +4620,8 @@
         "lignes": "FIVES à MOUSCRON",
         "numero_ligne": 278000,
         "pk": "11,450",
-        "code": false
+        "code": false,
+        "armen": "74352795"
       },
       "geometry": {
         "type": "Point",
@@ -4453,7 +4645,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": 314000,
         "pk": "289,500",
-        "code": false
+        "code": false,
+        "armen": "74351681"
       },
       "geometry": {
         "type": "Point",
@@ -4477,7 +4670,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": 314000,
         "pk": "288,348",
-        "code": false
+        "code": false,
+        "armen": "74351681"
       },
       "geometry": {
         "type": "Point",
@@ -4501,7 +4695,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": 314000,
         "pk": "288,415",
-        "code": false
+        "code": false,
+        "armen": "74351681"
       },
       "geometry": {
         "type": "Point",
@@ -4525,7 +4720,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": 314000,
         "pk": "288,687",
-        "code": false
+        "code": false,
+        "armen": "74351681"
       },
       "geometry": {
         "type": "Point",
@@ -4549,7 +4745,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": 314000,
         "pk": "288,898",
-        "code": false
+        "code": false,
+        "armen": "74351681"
       },
       "geometry": {
         "type": "Point",
@@ -4573,7 +4770,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": 314000,
         "pk": "288,910",
-        "code": false
+        "code": false,
+        "armen": "74351681"
       },
       "geometry": {
         "type": "Point",
@@ -4597,7 +4795,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "209,0705",
-        "code": false
+        "code": false,
+        "armen": "172033265"
       },
       "geometry": {
         "type": "Point",
@@ -4621,7 +4820,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "80,584",
-        "code": true
+        "code": true,
+        "armen": "74353391"
       },
       "geometry": {
         "type": "Point",
@@ -4645,7 +4845,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "215,0440",
-        "code": false
+        "code": false,
+        "armen": "74352369"
       },
       "geometry": {
         "type": "Point",
@@ -4669,7 +4870,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "214,257",
-        "code": false
+        "code": false,
+        "armen": "74352369"
       },
       "geometry": {
         "type": "Point",
@@ -4693,7 +4895,8 @@
         "lignes": "LILLE à LES FONTINETTES",
         "numero_ligne": 295000,
         "pk": "66,0352",
-        "code": false
+        "code": false,
+        "armen": "74351921"
       },
       "geometry": {
         "type": "Point",
@@ -4717,7 +4920,8 @@
         "lignes": "LILLE à LES FONTINETTES",
         "numero_ligne": 295000,
         "pk": "65,624",
-        "code": false
+        "code": false,
+        "armen": "74351921"
       },
       "geometry": {
         "type": "Point",
@@ -4741,7 +4945,8 @@
         "lignes": "LILLE à LES FONTINETTES",
         "numero_ligne": 295000,
         "pk": "65,904",
-        "code": false
+        "code": false,
+        "armen": "74351921"
       },
       "geometry": {
         "type": "Point",
@@ -4765,7 +4970,8 @@
         "lignes": "LILLE à LES FONTINETTES",
         "numero_ligne": 295000,
         "pk": "67,182",
-        "code": false
+        "code": false,
+        "armen": "74351921"
       },
       "geometry": {
         "type": "Point",
@@ -4788,7 +4994,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "248,0200",
-        "code": false
+        "code": false,
+        "armen": "74351093"
       },
       "geometry": {
         "type": "Point",
@@ -4812,7 +5019,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "249,001",
-        "code": false
+        "code": false,
+        "armen": "171661264"
       },
       "geometry": {
         "type": "Point",
@@ -4836,7 +5044,8 @@
         "lignes": "CREIL à JEUMONT",
         "numero_ligne": 242000,
         "pk": "213,0812",
-        "code": false
+        "code": false,
+        "armen": "177960318"
       },
       "geometry": {
         "type": "Point",
@@ -4861,7 +5070,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "239,0366",
-        "code": true
+        "code": true,
+        "armen": "186328857"
       },
       "geometry": {
         "type": "Point",
@@ -4923,7 +5133,8 @@
         "lignes": "SAINT-JUST à DOUAI",
         "numero_ligne": "259000",
         "pk": "217,0016",
-        "code": false
+        "code": false,
+        "armen": "74354301"
       },
       "geometry": {
         "type": "Point",
@@ -4947,7 +5158,8 @@
         "lignes": "DOUAI à BLANC-MISSERON",
         "numero_ligne": "262000",
         "pk": "229,450",
-        "code": false
+        "code": false,
+        "armen": "173457892"
       },
       "geometry": {
         "type": "Point",
@@ -4971,7 +5183,8 @@
         "lignes": "LILLE à LES FONTINETTES",
         "numero_ligne": 295000,
         "pk": "27,544",
-        "code": true
+        "code": true,
+        "armen": "74354331"
       },
       "geometry": {
         "type": "Point",
@@ -4995,7 +5208,8 @@
         "lignes": "LILLE à LES FONTINETTES",
         "numero_ligne": 295000,
         "pk": "36,523",
-        "code": true
+        "code": true,
+        "armen": "74352417"
       },
       "geometry": {
         "type": "Point",
@@ -5019,7 +5233,8 @@
         "lignes": "LILLE à LES FONTINETTES",
         "numero_ligne": 295000,
         "pk": "36,745",
-        "code": false
+        "code": false,
+        "armen": "74352417"
       },
       "geometry": {
         "type": "Point",
@@ -5043,7 +5258,8 @@
         "lignes": "LILLE à LES FONTINETTES",
         "numero_ligne": 295000,
         "pk": "36,022",
-        "code": false
+        "code": false,
+        "armen": "74352417"
       },
       "geometry": {
         "type": "Point",
@@ -5067,7 +5283,11 @@
         "lignes": "CREIL à JEUMONT",
         "numero_ligne": 242000,
         "pk": "130,450",
-        "code": false
+        "code": false,
+        "armen": [
+          "171755053",
+          "74046864"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -5091,7 +5311,8 @@
         "lignes": "DOUAI à BLANC-MISSERON",
         "numero_ligne": "262000",
         "pk": "219,154",
-        "code": false
+        "code": false,
+        "armen": "74353207"
       },
       "geometry": {
         "type": "Point",
@@ -5115,7 +5336,8 @@
         "lignes": "ARRAS à DUNKERQUE",
         "numero_ligne": 301000,
         "pk": "253,0935",
-        "code": true
+        "code": true,
+        "armen": "74352441"
       },
       "geometry": {
         "type": "Point",
@@ -5140,7 +5362,8 @@
         "lignes": "FIVES à MOUSCRON",
         "numero_ligne": 278000,
         "pk": "13,090",
-        "code": true
+        "code": true,
+        "armen": "74351107"
       },
       "geometry": {
         "type": "Point",
@@ -5164,7 +5387,8 @@
         "lignes": "FIVES à MOUSCRON",
         "numero_ligne": 278000,
         "pk": "14,394",
-        "code": false
+        "code": false,
+        "armen": "74354375"
       },
       "geometry": {
         "type": "Point",
@@ -5188,7 +5412,8 @@
         "lignes": "BOULOGNE-VILLE à CALAIS MARITIME",
         "numero_ligne": 314000,
         "pk": "284,612",
-        "code": true
+        "code": true,
+        "armen": "74352465"
       },
       "geometry": {
         "type": "Point",
@@ -5230,7 +5455,8 @@
         "lignes": "FIVES à HIRSON",
         "numero_ligne": 267000,
         "pk": "45,854",
-        "code": false
+        "code": false,
+        "armen": "74352809"
       },
       "geometry": {
         "type": "Point",
@@ -5254,7 +5480,8 @@
         "lignes": "ARRAS à DUNKERQUE",
         "numero_ligne": 301000,
         "pk": "226,556",
-        "code": false
+        "code": false,
+        "armen": "74353253"
       },
       "geometry": {
         "type": "Point",
@@ -5278,7 +5505,8 @@
         "lignes": "ARRAS à DUNKERQUE",
         "numero_ligne": 301000,
         "pk": "269,607",
-        "code": false
+        "code": false,
+        "armen": "74352489"
       },
       "geometry": {
         "type": "Point",
@@ -5302,7 +5530,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "153,586",
-        "code": false
+        "code": false,
+        "armen": "74351505"
       },
       "geometry": {
         "type": "Point",
@@ -5325,7 +5554,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "208,699",
-        "code": false
+        "code": false,
+        "armen": "74351941"
       },
       "geometry": {
         "type": "Point",
@@ -5349,7 +5579,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "244,860",
-        "code": false
+        "code": false,
+        "armen": "74352513"
       },
       "geometry": {
         "type": "Point",
@@ -5373,7 +5604,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "96,684",
-        "code": false
+        "code": false,
+        "armen": "74351529"
       },
       "geometry": {
         "type": "Point",
@@ -5397,7 +5629,8 @@
         "lignes": "HIRSON à AMAGNE-LUCQUY",
         "numero_ligne": 212000,
         "pk": "22,516",
-        "code": false
+        "code": false,
+        "armen": "74103886"
       },
       "geometry": {
         "type": "Point",
@@ -5421,7 +5654,8 @@
         "lignes": "FRETIN à FRÉTHUN (LGV)",
         "numero_ligne": 216000,
         "pk": "3,850",
-        "code": false
+        "code": false,
+        "armen": "74351365"
       },
       "geometry": {
         "type": "Point",
@@ -5445,7 +5679,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "118,130",
-        "code": false
+        "code": false,
+        "armen": "74045150"
       },
       "geometry": {
         "type": "Point",
@@ -5468,7 +5703,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "110,0820",
-        "code": false
+        "code": false,
+        "armen": "74046440"
       },
       "geometry": {
         "type": "Point",
@@ -5491,7 +5727,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "128,150",
-        "code": false
+        "code": false,
+        "armen": "74046426"
       },
       "geometry": {
         "type": "Point",
@@ -5515,7 +5752,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "141,044",
-        "code": false
+        "code": false,
+        "armen": "74351437"
       },
       "geometry": {
         "type": "Point",
@@ -5538,7 +5776,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "87,500",
-        "code": false
+        "code": false,
+        "armen": "74046420"
       },
       "geometry": {
         "type": "Point",
@@ -5562,7 +5801,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "96,000",
-        "code": false
+        "code": false,
+        "armen": "74045172"
       },
       "geometry": {
         "type": "Point",
@@ -5585,7 +5825,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "143,321",
-        "code": false
+        "code": false,
+        "armen": "74351767"
       },
       "geometry": {
         "type": "Point",
@@ -5608,7 +5849,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "149,208",
-        "code": false
+        "code": false,
+        "armen": "74351781"
       },
       "geometry": {
         "type": "Point",
@@ -5631,7 +5873,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "167,482",
-        "code": false
+        "code": false,
+        "armen": "74351817"
       },
       "geometry": {
         "type": "Point",
@@ -5654,7 +5897,8 @@
         "lignes": "Saint-Roch à Darnétal-Bifurcation",
         "numero_ligne": 321000,
         "pk": "57,852",
-        "code": false
+        "code": false,
+        "armen": "74045812"
       },
       "geometry": {
         "type": "Point",
@@ -5677,7 +5921,8 @@
         "lignes": "Saint-Roch à Darnétal-Bifurcation",
         "numero_ligne": 321000,
         "pk": "50,500",
-        "code": false
+        "code": false,
+        "armen": "74046236"
       },
       "geometry": {
         "type": "Point",
@@ -5701,7 +5946,8 @@
         "lignes": "Saint-Roch à Darnétal-Bifurcation",
         "numero_ligne": 321000,
         "pk": "49,330",
-        "code": false
+        "code": false,
+        "armen": "74046236"
       },
       "geometry": {
         "type": "Point",
@@ -5725,7 +5971,8 @@
         "lignes": "Saint-Roch à Darnétal-Bifurcation",
         "numero_ligne": 321000,
         "pk": "51,457",
-        "code": false
+        "code": false,
+        "armen": "74046236"
       },
       "geometry": {
         "type": "Point",
@@ -5749,7 +5996,8 @@
         "lignes": "Saint-Roch à Darnétal-Bifurcation",
         "numero_ligne": 321000,
         "pk": "52,856",
-        "code": false
+        "code": false,
+        "armen": "74046236"
       },
       "geometry": {
         "type": "Point",
@@ -5773,7 +6021,8 @@
         "lignes": "Saint-Roch à Darnétal-Bifurcation",
         "numero_ligne": 321000,
         "pk": "0,090",
-        "code": false
+        "code": false,
+        "armen": "74046236"
       },
       "geometry": {
         "type": "Point",
@@ -5796,7 +6045,8 @@
         "lignes": "FIVES à HIRSON ",
         "numero_ligne": 267000,
         "pk": "003,0000",
-        "code": false
+        "code": false,
+        "armen": "171697102"
       },
       "geometry": {
         "type": "Point",
@@ -5820,7 +6070,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "242,999",
-        "code": false
+        "code": false,
+        "armen": "186328884"
       },
       "geometry": {
         "type": "Point",
@@ -5844,7 +6095,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "209,703",
-        "code": false
+        "code": false,
+        "armen": "74351747"
       },
       "geometry": {
         "type": "Point",
@@ -5868,7 +6120,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "207,301",
-        "code": false
+        "code": false,
+        "armen": "74351341"
       },
       "geometry": {
         "type": "Point",
@@ -5891,7 +6144,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "201,394",
-        "code": false
+        "code": false,
+        "armen": "171661964"
       },
       "geometry": {
         "type": "Point",
@@ -5916,7 +6170,8 @@
         "lignes": "CREIL à JEUMONT",
         "numero_ligne": 242000,
         "pk": "237,867",
-        "code": false
+        "code": false,
+        "armen": "74353941"
       },
       "geometry": {
         "type": "Point",
@@ -5939,7 +6194,8 @@
         "lignes": "CREIL à JEUMONT",
         "numero_ligne": 242000,
         "pk": "219,684",
-        "code": false
+        "code": false,
+        "armen": "74351055"
       },
       "geometry": {
         "type": "Point",
@@ -5963,7 +6219,8 @@
         "lignes": "FIVES à HIRSON ",
         "numero_ligne": 267000,
         "pk": "93,707",
-        "code": false
+        "code": false,
+        "armen": "74353481"
       },
       "geometry": {
         "type": "Point",
@@ -5986,7 +6243,8 @@
         "lignes": "CREIL à JEUMONT",
         "numero_ligne": 242000,
         "pk": "217,203",
-        "code": false
+        "code": false,
+        "armen": "74350975"
       },
       "geometry": {
         "type": "Point",
@@ -6010,7 +6268,8 @@
         "lignes": "CREIL à JEUMONT",
         "numero_ligne": 242000,
         "pk": "215,499",
-        "code": false
+        "code": false,
+        "armen": "74353525"
       },
       "geometry": {
         "type": "Point",
@@ -6034,7 +6293,8 @@
         "lignes": "CREIL à JEUMONT",
         "numero_ligne": 242000,
         "pk": "199,837",
-        "code": false
+        "code": false,
+        "armen": "74352203"
       },
       "geometry": {
         "type": "Point",
@@ -6057,7 +6317,8 @@
         "lignes": "FIVES à HIRSON ",
         "numero_ligne": 267000,
         "pk": "47,000",
-        "code": false
+        "code": false,
+        "armen": "74351125"
       },
       "geometry": {
         "type": "Point",
@@ -6081,7 +6342,8 @@
         "lignes": "CREIL à JEUMONT",
         "numero_ligne": 242000,
         "pk": "107,500",
-        "code": false
+        "code": false,
+        "armen": "74046296"
       },
       "geometry": {
         "type": "Point",
@@ -6105,7 +6367,8 @@
         "lignes": "CREIL à JEUMONT",
         "numero_ligne": 242000,
         "pk": "115,300",
-        "code": false
+        "code": false,
+        "armen": "74046218"
       },
       "geometry": {
         "type": "Point",
@@ -6129,7 +6392,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "80,500",
-        "code": false
+        "code": false,
+        "armen": "74046378"
       },
       "geometry": {
         "type": "Point",
@@ -6153,7 +6417,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "102,800",
-        "code": false
+        "code": false,
+        "armen": "74045844"
       },
       "geometry": {
         "type": "Point",
@@ -6177,7 +6442,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "111,160",
-        "code": false
+        "code": false,
+        "armen": "74046942"
       },
       "geometry": {
         "type": "Point",
@@ -6200,7 +6466,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "124,500",
-        "code": false
+        "code": false,
+        "armen": "74045032"
       },
       "geometry": {
         "type": "Point",
@@ -6224,7 +6491,8 @@
         "lignes": "CREIL à JEUMONT",
         "numero_ligne": 242000,
         "pk": "153,200",
-        "code": false
+        "code": false,
+        "armen": "74045082"
       },
       "geometry": {
         "type": "Point",
@@ -6248,7 +6516,8 @@
         "lignes": "CREIL à JEUMONT",
         "numero_ligne": 242000,
         "pk": "156,700",
-        "code": false
+        "code": false,
+        "armen": "74045962"
       },
       "geometry": {
         "type": "Point",
@@ -6272,7 +6541,8 @@
         "lignes": "CREIL à JEUMONT",
         "numero_ligne": 242000,
         "pk": "171,400",
-        "code": false
+        "code": false,
+        "armen": "74353789"
       },
       "geometry": {
         "type": "Point",
@@ -6296,7 +6566,8 @@
         "lignes": "BUSIGNY à SOMAIN",
         "numero_ligne": 250000,
         "pk": "212,185",
-        "code": false
+        "code": false,
+        "armen": "74352155"
       },
       "geometry": {
         "type": "Point",
@@ -6320,7 +6591,8 @@
         "lignes": "BUSIGNY à SOMAIN",
         "numero_ligne": 250000,
         "pk": "204,620",
-        "code": false
+        "code": false,
+        "armen": "173455733"
       },
       "geometry": {
         "type": "Point",
@@ -6344,7 +6616,8 @@
         "lignes": "BUSIGNY à SOMAIN",
         "numero_ligne": 250000,
         "pk": "205,892",
-        "code": false
+        "code": false,
+        "armen": "74353671"
       },
       "geometry": {
         "type": "Point",
@@ -6368,7 +6641,8 @@
         "lignes": "LOURCHES à VALENCIENNES",
         "numero_ligne": 254000,
         "pk": "224,242",
-        "code": false
+        "code": false,
+        "armen": "74354047"
       },
       "geometry": {
         "type": "Point",
@@ -6392,7 +6666,8 @@
         "lignes": "BUSIGNY à SOMAIN",
         "numero_ligne": 250000,
         "pk": "223,710",
-        "code": false
+        "code": false,
+        "armen": "173452829"
       },
       "geometry": {
         "type": "Point",
@@ -6416,7 +6691,8 @@
         "lignes": "BUSIGNY à SOMAIN",
         "numero_ligne": 250000,
         "pk": "222,850",
-        "code": false
+        "code": false,
+        "armen": "173452829"
       },
       "geometry": {
         "type": "Point",
@@ -6457,7 +6733,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "195,001",
-        "code": false
+        "code": false,
+        "armen": "171665034"
       },
       "geometry": {
         "type": "Point",
@@ -6481,7 +6758,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "195,000",
-        "code": false
+        "code": false,
+        "armen": "171664923"
       },
       "geometry": {
         "type": "Point",
@@ -6505,7 +6783,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "146,800",
-        "code": false
+        "code": false,
+        "armen": "74047216"
       },
       "geometry": {
         "type": "Point",
@@ -6529,7 +6808,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "232,557",
-        "code": false
+        "code": false,
+        "armen": "74352131"
       },
       "geometry": {
         "type": "Point",
@@ -6553,7 +6833,8 @@
         "lignes": "FIVES à HIRSON ",
         "numero_ligne": 267000,
         "pk": "48,000",
-        "code": false
+        "code": false,
+        "armen": "74353813"
       },
       "geometry": {
         "type": "Point",
@@ -6577,7 +6858,8 @@
         "lignes": "FIVES à HIRSON ",
         "numero_ligne": 267000,
         "pk": "65,890",
-        "code": false
+        "code": false,
+        "armen": "74354133"
       },
       "geometry": {
         "type": "Point",
@@ -6601,7 +6883,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "139,400",
-        "code": false
+        "code": false,
+        "armen": "74046250"
       },
       "geometry": {
         "type": "Point",
@@ -6625,7 +6908,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "159,0800",
-        "code": false
+        "code": false,
+        "armen": "74045686"
       },
       "geometry": {
         "type": "Point",
@@ -6649,7 +6933,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "159,258",
-        "code": false
+        "code": false,
+        "armen": "74045686"
       },
       "geometry": {
         "type": "Point",
@@ -6673,7 +6958,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "191,0912",
-        "code": false
+        "code": false,
+        "armen": "74353451"
       },
       "geometry": {
         "type": "Point",
@@ -6715,7 +7001,8 @@
         "lignes": "Saint-Roch à Darnétal-Bifurcation",
         "numero_ligne": 321000,
         "pk": "018,0400",
-        "code": false
+        "code": false,
+        "armen": "74045980"
       },
       "geometry": {
         "type": "Point",
@@ -6739,7 +7026,8 @@
         "lignes": "BUSIGNY à SOMAIN",
         "numero_ligne": 250000,
         "pk": "183,210",
-        "code": false
+        "code": false,
+        "armen": "177960336"
       },
       "geometry": {
         "type": "Point",
@@ -6763,7 +7051,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "129,900",
-        "code": false
+        "code": false,
+        "armen": "171621663"
       },
       "geometry": {
         "type": "Point",
@@ -6787,7 +7076,8 @@
         "lignes": "CREIL à JEUMONT",
         "numero_ligne": 242000,
         "pk": "143,900",
-        "code": false
+        "code": false,
+        "armen": "74047066"
       },
       "geometry": {
         "type": "Point",
@@ -6812,7 +7102,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "129,316",
-        "code": false
+        "code": false,
+        "armen": "182949272"
       },
       "geometry": {
         "type": "Point",
@@ -6836,7 +7127,8 @@
         "lignes": "PARIS-NORD à LILLE",
         "numero_ligne": 272000,
         "pk": "128,000",
-        "code": false
+        "code": false,
+        "armen": "182949272"
       },
       "geometry": {
         "type": "Point",
@@ -6860,7 +7152,8 @@
         "lignes": "Saint-Roch à Darnétal-Bifurcation",
         "numero_ligne": 321000,
         "pk": "30,300",
-        "code": false
+        "code": false,
+        "armen": "74047324"
       },
       "geometry": {
         "type": "Point",
@@ -6884,7 +7177,8 @@
         "lignes": "Saint-Roch à Darnétal-Bifurcation",
         "numero_ligne": 321000,
         "pk": "30,022",
-        "code": false
+        "code": false,
+        "armen": "74047324"
       },
       "geometry": {
         "type": "Point",
@@ -6909,7 +7203,8 @@
         "lignes": "Saint-Roch à Darnétal-Bifurcation",
         "numero_ligne": 321000,
         "pk": "1,900",
-        "code": false
+        "code": false,
+        "armen": "171490164"
       },
       "geometry": {
         "type": "Point",
@@ -6934,7 +7229,8 @@
         "lignes": "Saint-Roch à Darnétal-Bifurcation",
         "numero_ligne": 321000,
         "pk": "131,238",
-        "code": false
+        "code": false,
+        "armen": "171490164"
       },
       "geometry": {
         "type": "Point",
@@ -6959,7 +7255,8 @@
         "lignes": "CREIL à JEUMONT",
         "numero_ligne": 242000,
         "pk": "162,230",
-        "code": false
+        "code": false,
+        "armen": "74352733"
       },
       "geometry": {
         "type": "Point",
@@ -6984,7 +7281,8 @@
         "lignes": "SAINT-JUST à DOUAI",
         "numero_ligne": "259000",
         "pk": "200,525",
-        "code": false
+        "code": false,
+        "armen": "74351953"
       },
       "geometry": {
         "type": "Point",
@@ -7151,7 +7449,8 @@
         "lignes": "LONGUEAU à BOULOGNE-VILLE",
         "numero_ligne": 311000,
         "pk": "130,268",
-        "code": false
+        "code": false,
+        "armen": "74044954"
       },
       "geometry": {
         "type": "Point",
@@ -7174,7 +7473,8 @@
         "lignes": "LONGUEAU à BOULOGNE-VILLE",
         "numero_ligne": 311000,
         "pk": "130,021",
-        "code": false
+        "code": false,
+        "armen": "74044954"
       },
       "geometry": {
         "type": "Point",
@@ -7196,7 +7496,8 @@
         "numero_ligne": 301000,
         "pk": "263,303",
         "hors_patrimoine": true,
-        "code": false
+        "code": false,
+        "armen": "74353911"
       },
       "geometry": {
         "type": "Point",
@@ -7217,7 +7518,8 @@
         "lignes": "CREIL à JEUMONT",
         "numero_ligne": 242000,
         "pk": "174,0453",
-        "code": false
+        "code": false,
+        "armen": "74354429"
       },
       "geometry": {
         "type": "Point",
@@ -7241,7 +7543,8 @@
         "lignes": "Ligne de Saint-Just-en-Chaussée à Douai",
         "numero_ligne": 259000,
         "pk": "209,0034",
-        "code": false
+        "code": false,
+        "armen": "74351589"
       },
       "geometry": {
         "type": "Point",
@@ -7264,7 +7567,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "193,998",
-        "code": false
+        "code": false,
+        "armen": "74351739"
       },
       "geometry": {
         "type": "Point",
@@ -7288,7 +7592,8 @@
         "lignes": "GONESSE à LILLE-FRONTIERE (LGV)",
         "numero_ligne": 226000,
         "pk": "246,820",
-        "code": false
+        "code": false,
+        "armen": "74353623"
       },
       "geometry": {
         "type": "Point",
@@ -7311,7 +7616,8 @@
         "numero_ligne": "",
         "pk": "",
         "hors_patrimoine": true,
-        "code": false
+        "code": false,
+        "armen": "74354155"
       },
       "geometry": {
         "type": "Point",

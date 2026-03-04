@@ -802,6 +802,7 @@ function regrouperPostesParCoordonnees(geojson) {
       nom: propr.nom || "",
       type: propr.type || "",
       SAT: propr.SAT || "",
+      armen: Array.isArray(propr.armen) ? [...propr.armen] : propr.armen,
       acces: propr.acces || "",
       code: estCodeDisponible(propr.code),
       description: propr.description || "",

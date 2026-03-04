@@ -77,6 +77,7 @@
     let miniCarte = null;
     let miniCarteChargee = false;
     let miniCartePending = null;
+    let interactionDemarreeDansModal = false;
 
     function estOuverte() {
       return Boolean(modal?.classList.contains("est-visible"));
@@ -446,6 +447,7 @@
       if (!modal) {
         return;
       }
+      interactionDemarreeDansModal = false;
       modal.classList.remove("est-visible");
       modal.setAttribute("aria-hidden", "true");
       selectionDepart = null;
@@ -470,6 +472,7 @@
       if (!modal) {
         return;
       }
+      interactionDemarreeDansModal = false;
       modal.classList.add("est-visible");
       modal.setAttribute("aria-hidden", "false");
       fermerMenusGlobalement?.();
@@ -576,15 +579,32 @@
     brancherChamp(champDepart, listeDepart, "depart");
     brancherChamp(champArrivee, listeArrivee, "arrivee");
 
+    document.addEventListener(
+      "pointerdown",
+      (event) => {
+        if (!estOuverte()) {
+          return;
+        }
+        interactionDemarreeDansModal =
+          event.target instanceof Element && Boolean(event.target.closest(".modal-itineraire-carte"));
+      },
+      true
+    );
+
     document.addEventListener("click", (event) => {
       if (!estOuverte()) {
         return;
       }
       const clicDansModal = event.target instanceof Element && Boolean(event.target.closest(".modal-itineraire-carte"));
       if (!clicDansModal) {
+        if (interactionDemarreeDansModal) {
+          interactionDemarreeDansModal = false;
+          return;
+        }
         fermer();
         return;
       }
+      interactionDemarreeDansModal = false;
       const clicDansListeDepart = listeDepart?.contains(event.target);
       const clicDansListeArrivee = listeArrivee?.contains(event.target);
       const clicDansChampDepart = champDepart?.contains(event.target);

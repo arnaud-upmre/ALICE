@@ -5742,6 +5742,81 @@ async function ouvrirFicheDepuisParametreId() {
   }
 }
 
+async function ouvrirFicheDepuisParametreArmen() {
+  const params = new URLSearchParams(window.location.search);
+  const armenParam = String(params.get("armen") || "").trim();
+  if (!armenParam) {
+    return false;
+  }
+
+  const armenCible = (armenParam.match(/\d{6,}/) || [armenParam])[0];
+  if (!armenCible) {
+    return true;
+  }
+
+  try {
+    await Promise.all([chargerDonneesPostes(), chargerDonneesAppareils()]);
+    if (!carte.loaded()) {
+      await new Promise((resolve) => {
+        carte.once("load", resolve);
+      });
+    }
+
+    let cible = null;
+    for (const feature of donneesPostes?.features || []) {
+      const [longitude, latitude] = feature.geometry?.coordinates || [];
+      if (!Number.isFinite(longitude) || !Number.isFinite(latitude)) {
+        continue;
+      }
+      const postesListe = extraireListeDepuisFeature(feature, "postes_liste_json");
+      if (!postesListe.length) {
+        continue;
+      }
+      const posteTrouve = postesListe.find((poste) => normaliserCodesArmen(poste?.armen).includes(armenCible));
+      if (posteTrouve) {
+        cible = { longitude, latitude };
+        break;
+      }
+    }
+
+    if (!cible) {
+      console.warn(`Aucun poste trouvé pour le paramètre armen=${armenCible}`);
+      return true;
+    }
+
+    await activerFiltrePourType("postes");
+    appliquerCouchesDonnees();
+    remonterCouchesDonnees();
+
+    let popupOuverte = false;
+    const ouvrirPopup = () => {
+      if (popupOuverte) {
+        return;
+      }
+      popupOuverte = true;
+      if (estSurvolDesktopActif()) {
+        ouvrirPopupSurvolDepuisCoordonneesPourType("postes", cible.longitude, cible.latitude, { verrouiller: true });
+        return;
+      }
+      ouvrirPopupDepuisCoordonneesPourType("postes", cible.longitude, cible.latitude, {
+        fallbackGenerique: false,
+        cibleSatPoste: "Poste"
+      });
+    };
+
+    naviguerVersCoordonneesPuisOuvrirPopup(cible.longitude, cible.latitude, ouvrirPopup, {
+      forceZoom: true,
+      zoomMin: 14.4,
+      durationDouxMs: 430,
+      conserverPopupOuvert: !estSurvolDesktopActif()
+    });
+  } catch (erreur) {
+    console.error("Impossible d'ouvrir la fiche depuis le paramètre armen", erreur);
+  }
+
+  return true;
+}
+
 function estParametreUrlActif(valeur) {
   const texte = String(valeur || "")
     .trim()
@@ -7074,8 +7149,11 @@ if (boutonCtxAjoutAppareil) {
 async function initialiserNavigationDepuisUrl() {
   const fichePartageeOuverte = await ouvrirFichePartageeDepuisParametres();
   if (!fichePartageeOuverte) {
-    await ouvrirPositionPartageeDepuisParametres();
-    await ouvrirFicheDepuisParametreId();
+    const ficheArmenOuverte = await ouvrirFicheDepuisParametreArmen();
+    if (!ficheArmenOuverte) {
+      await ouvrirPositionPartageeDepuisParametres();
+      await ouvrirFicheDepuisParametreId();
+    }
   }
 }
 

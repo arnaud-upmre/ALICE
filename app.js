@@ -4900,26 +4900,30 @@ function trouverPostePrincipalDepuisPosteAssocie(posteAssocie = null) {
     return posteAssocie;
   }
 
-  let fallback = null;
+  const correspondants = [];
   for (const featurePostes of donneesPostes.features) {
     const postesListe = extraireListeDepuisFeature(featurePostes, "postes_liste_json");
     if (!postesListe.length) {
       continue;
     }
-    const correspondants = postesListe.filter((poste) => construireCleNomType(poste) === cleNomType);
-    if (!correspondants.length) {
-      continue;
-    }
-    const principal = trouverPostePrincipalDepuisListePostes(correspondants);
-    if (principal) {
-      return principal;
-    }
-    if (!fallback) {
-      fallback = correspondants[0];
+    for (const poste of postesListe) {
+      if (construireCleNomType(poste) === cleNomType) {
+        correspondants.push(poste);
+      }
     }
   }
 
-  return fallback || posteAssocie;
+  if (!correspondants.length) {
+    return posteAssocie;
+  }
+
+  const principal = correspondants.find((poste) => !normaliserTexteRecherche(champCompletOuVide(poste?.SAT)));
+  if (principal) {
+    return principal;
+  }
+
+  const avecArmen = correspondants.find((poste) => normaliserCodesArmen(poste?.armen).length > 0);
+  return avecArmen || correspondants[0] || posteAssocie;
 }
 
 function normaliserCodesArmen(valeur) {
@@ -5173,7 +5177,7 @@ function construirePopupDepuisFeatures(longitude, latitude, featurePostes, featu
   const activerSectionEquipements = Boolean(featurePostes || estVueAppareilsSeule);
   const actionsExplorerEquipements = [];
   const posteCibleFiche = estVuePosteSeule && featurePostes
-    ? trouverPostePrincipalDepuisListePostes(extraireListeDepuisFeature(featurePostes, "postes_liste_json"))
+    ? trouverPostePrincipalDepuisPosteAssocie(trouverPosteCibleDepuisFeaturePostes(featurePostes, cibleSatCourante))
     : estVueAppareilsSeule
       ? trouverPostePrincipalDepuisPosteAssocie(posteAssocieDepuisAppareil)
       : null;

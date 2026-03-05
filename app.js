@@ -988,6 +988,7 @@ const menuLegendeCarte = document.getElementById("menu-legende-carte");
 const boutonFermerLegende = document.getElementById("bouton-fermer-legende");
 const modalApropos = document.getElementById("modal-apropos");
 const boutonFermerModalApropos = document.getElementById("modal-apropos-fermer");
+const pillVersionApropos = document.getElementById("apropos-version-pill");
 const boutonInstallerPwa = document.getElementById("bouton-installer-pwa");
 const messageInstallerPwa = document.getElementById("message-installer-pwa");
 let modalFiche = document.getElementById("modal-fiche");
@@ -1008,6 +1009,28 @@ let promesseChargementModuleLocalisation = null;
 let rafMiseAJourPk = null;
 let marqueursPk = [];
 let evenementInstallationPwaDiffere = null;
+
+async function synchroniserVersionAproposDepuisHistorique() {
+  if (!pillVersionApropos) {
+    return;
+  }
+
+  try {
+    const reponse = await fetch("./versions.html", { cache: "no-store" });
+    if (!reponse.ok) {
+      return;
+    }
+    const html = await reponse.text();
+    const documentHistorique = new DOMParser().parseFromString(html, "text/html");
+    const versionRecente = documentHistorique.querySelector(".timeline .item .commit")?.textContent?.trim();
+    if (versionRecente) {
+      pillVersionApropos.textContent = versionRecente;
+    }
+  } catch {
+    // On conserve la version statique de secours.
+  }
+}
+synchroniserVersionAproposDepuisHistorique();
 
 class ControleActionsCarte {
   onAdd() {

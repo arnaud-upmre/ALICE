@@ -5794,10 +5794,6 @@ async function ouvrirFicheDepuisParametreArmen() {
         return;
       }
       popupOuverte = true;
-      if (estSurvolDesktopActif()) {
-        ouvrirPopupSurvolDepuisCoordonneesPourType("postes", cible.longitude, cible.latitude, { verrouiller: true });
-        return;
-      }
       ouvrirPopupDepuisCoordonneesPourType("postes", cible.longitude, cible.latitude, {
         fallbackGenerique: false,
         cibleSatPoste: "Poste"
@@ -5808,7 +5804,7 @@ async function ouvrirFicheDepuisParametreArmen() {
       forceZoom: true,
       zoomMin: 14.4,
       durationDouxMs: 430,
-      conserverPopupOuvert: !estSurvolDesktopActif()
+      conserverPopupOuvert: true
     });
   } catch (erreur) {
     console.error("Impossible d'ouvrir la fiche depuis le paramètre armen", erreur);

@@ -218,6 +218,33 @@ body {
   outline: none;
 }
 
+.notification-partage-copie {
+  position: fixed;
+  left: 50%;
+  bottom: calc(20px + env(safe-area-inset-bottom));
+  transform: translate(-50%, 18px);
+  z-index: 1200;
+  width: min(92vw, 560px);
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(22, 101, 52, 0.35);
+  background: rgba(22, 101, 52, 0.96);
+  color: #f0fdf4;
+  font-size: 0.95rem;
+  line-height: 1.35;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.notification-partage-copie.est-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
 .modal-itineraire-carte {
   position: relative;
   width: min(540px, calc(100vw - 28px));

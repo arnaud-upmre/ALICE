@@ -240,6 +240,8 @@ let contexteMenuPosition = {
   latitude: null
 };
 let contexteMenuFeature = null;
+let notificationPartageCopieElement = null;
+let minuterieNotificationPartageCopie = null;
 const DIAMETRE_ICONE_GROUPE_APPAREILS = 84;
 
 function clonerStyle(style) {
@@ -1339,6 +1341,28 @@ function construireUrlPartagePosition(latitude, longitude) {
   return `${location.origin}${location.pathname}?lat=${encodeURIComponent(latitude)}&lon=${encodeURIComponent(longitude)}&z=18&marker=true`;
 }
 
+function afficherNotificationPartageCopie(message) {
+  const texte = String(message || "").trim() || "Lien copié dans le presse-papiers. Vous pouvez le partager.";
+  if (!notificationPartageCopieElement) {
+    const element = document.createElement("div");
+    element.className = "notification-partage-copie";
+    element.setAttribute("role", "status");
+    element.setAttribute("aria-live", "polite");
+    notificationPartageCopieElement = element;
+  }
+  notificationPartageCopieElement.textContent = texte;
+  if (!notificationPartageCopieElement.isConnected) {
+    document.body.appendChild(notificationPartageCopieElement);
+  }
+  notificationPartageCopieElement.classList.add("est-visible");
+  if (minuterieNotificationPartageCopie) {
+    clearTimeout(minuterieNotificationPartageCopie);
+  }
+  minuterieNotificationPartageCopie = window.setTimeout(() => {
+    notificationPartageCopieElement?.classList.remove("est-visible");
+  }, 3600);
+}
+
 function normaliserTypePartageFiche(type) {
   const brut = String(type || "")
     .trim()
@@ -1404,6 +1428,7 @@ async function partagerFicheCourante() {
   if (navigator.clipboard?.writeText) {
     try {
       await navigator.clipboard.writeText(lien);
+      afficherNotificationPartageCopie("Lien copié dans le presse-papiers. Vous pouvez le partager.");
       return;
     } catch {
       // Fallback ultime plus bas.
@@ -2234,6 +2259,7 @@ async function partagerPositionContextuelle() {
   if (navigator.clipboard?.writeText) {
     try {
       await navigator.clipboard.writeText(lien);
+      afficherNotificationPartageCopie("Lien copié dans le presse-papiers. Vous pouvez le partager.");
       return;
     } catch {
       // Fallback ultime plus bas.

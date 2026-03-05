@@ -789,12 +789,19 @@ function regrouperPostesParCoordonnees(geojson) {
         longitude,
         latitude,
         postes: [],
-        nomsVus: new Set()
+        clesPostesVues: new Set()
       });
     }
 
     const groupe = groupes.get(cle);
-    if (nomNormalise && groupe.nomsVus.has(nomNormalise)) {
+    const typeNormalise = String(propr.type || "")
+      .trim()
+      .toLowerCase();
+    const satNormalise = String(propr.SAT || "")
+      .trim()
+      .toLowerCase();
+    const clePoste = [nomNormalise, typeNormalise, satNormalise].join("|");
+    if (clePoste && groupe.clesPostesVues.has(clePoste)) {
       continue;
     }
 
@@ -816,8 +823,8 @@ function regrouperPostesParCoordonnees(geojson) {
       special: estHorsPatrimoine(propr.special)
     };
 
-    if (nomNormalise) {
-      groupe.nomsVus.add(nomNormalise);
+    if (clePoste) {
+      groupe.clesPostesVues.add(clePoste);
     }
 
     groupe.postes.push(poste);

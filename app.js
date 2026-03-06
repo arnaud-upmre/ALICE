@@ -4377,7 +4377,31 @@ function construireSectionAppareilsAssociesDepuisPostes(postesListe, options = {
     return "";
   }
 
-  const clesPostesNomType = new Set(postesListe.map((poste) => construireCleNomType(poste)).filter(Boolean));
+  const clesNomTypeCibles = new Set(postesListe.map((poste) => construireCleNomType(poste)).filter(Boolean));
+  const postesListeReference = (() => {
+    if (!clesNomTypeCibles.size || !donneesPostes?.features?.length) {
+      return postesListe;
+    }
+
+    const uniques = new Map();
+    for (const featurePostes of donneesPostes.features) {
+      const liste = extraireListeDepuisFeature(featurePostes, "postes_liste_json");
+      for (const poste of liste) {
+        if (!clesNomTypeCibles.has(construireCleNomType(poste))) {
+          continue;
+        }
+        const cleUnique = construireCleNomTypeSat(poste);
+        if (!cleUnique || uniques.has(cleUnique)) {
+          continue;
+        }
+        uniques.set(cleUnique, poste);
+      }
+    }
+
+    return uniques.size ? Array.from(uniques.values()) : postesListe;
+  })();
+
+  const clesPostesNomType = new Set(postesListeReference.map((poste) => construireCleNomType(poste)).filter(Boolean));
   if (!clesPostesNomType.size) {
     return "";
   }
@@ -4455,7 +4479,7 @@ function construireSectionAppareilsAssociesDepuisPostes(postesListe, options = {
 
   // Si des appareils existent deja, proposer tous les lieux d'ajout issus des postes :
   // poste principal + SAT, meme s'ils n'ont pas encore d'appareil.
-  for (const poste of postesListe) {
+  for (const poste of postesListeReference) {
     const sat = champCompletOuVide(poste?.SAT) || "Poste";
     const cleSat = sat.toUpperCase();
     if (!groupes.has(cleSat)) {
@@ -4480,7 +4504,7 @@ function construireSectionAppareilsAssociesDepuisPostes(postesListe, options = {
             )
             .join(", ")
         : `<span class="popup-poste-appareils-vide">Aucun appareil</span>`;
-      const posteReference = postesListe[0] || null;
+      const posteReference = trouverPostePrincipalDepuisListePostes(postesListeReference) || postesListeReference[0] || null;
       const lienAjout = construireLienAjoutDepuisPoste(posteReference, groupe.label);
       const pillSatHtml =
         lienAjout

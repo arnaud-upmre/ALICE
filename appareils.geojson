@@ -14963,6 +14963,24 @@
         "appareil": "TC IA1",
         "description": ""
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.763667,
+          50.272306
+        ]
+      },
+      "properties": {
+        "nom": "Mercatel",
+        "type": "SP",
+        "SAT": "SAT3",
+        "acces": "",
+        "appareil": "S 42-128",
+        "description": ""
+      }
     }
   ]
 }

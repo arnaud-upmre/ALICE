@@ -14981,6 +14981,186 @@
         "appareil": "S 42-128",
         "description": ""
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.775423,
+          50.232038
+        ]
+      },
+      "properties": {
+        "nom": "Mercatel",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT40",
+        "description": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.775538,
+          50.231975
+        ]
+      },
+      "properties": {
+        "nom": "Mercatel",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TSA",
+        "description": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.775599,
+          50.231963
+        ]
+      },
+      "properties": {
+        "nom": "Mercatel",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SM1",
+        "description": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.775599,
+          50.231963
+        ]
+      },
+      "properties": {
+        "nom": "Mercatel",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IP1",
+        "description": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.775656,
+          50.231929
+        ]
+      },
+      "properties": {
+        "nom": "Mercatel",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IMP",
+        "description": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.7757,
+          50.231909
+        ]
+      },
+      "properties": {
+        "nom": "Mercatel",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SM2",
+        "description": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.775746,
+          50.231868
+        ]
+      },
+      "properties": {
+        "nom": "Mercatel",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IP2",
+        "description": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.776163,
+          50.231703
+        ]
+      },
+      "properties": {
+        "nom": "Mercatel",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT432",
+        "description": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.776031,
+          50.231655
+        ]
+      },
+      "properties": {
+        "nom": "Mercatel",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT431",
+        "description": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.7751,
+          50.232073
+        ]
+      },
+      "properties": {
+        "nom": "Mercatel",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT41",
+        "description": ""
+      }
     }
   ]
 }

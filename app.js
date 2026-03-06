@@ -4409,6 +4409,7 @@ function construireSectionAppareilsAssociesDepuisPostes(postesListe, options = {
   };
 
   const groupes = new Map();
+  let appareilAssocieTrouve = false;
   for (const feature of donneesAppareils.features) {
     const [longitudeFeature, latitudeFeature] = feature.geometry?.coordinates || [];
     if (!Number.isFinite(longitudeFeature) || !Number.isFinite(latitudeFeature)) {
@@ -4419,6 +4420,7 @@ function construireSectionAppareilsAssociesDepuisPostes(postesListe, options = {
       if (!clesPostesNomType.has(construireCleNomType(appareil))) {
         continue;
       }
+      appareilAssocieTrouve = true;
 
       const code = champCompletOuVide(appareil?.appareil);
       if (!code) {
@@ -4444,8 +4446,24 @@ function construireSectionAppareilsAssociesDepuisPostes(postesListe, options = {
     }
   }
 
-  if (!groupes.size) {
+  // Conserver le comportement actuel :
+  // s'il n'existe aucun appareil associe a ce poste, on n'affiche pas la vue
+  // "Afficher/Ajouter des appareils" et on garde uniquement le bouton d'ajout direct.
+  if (!appareilAssocieTrouve) {
     return "";
+  }
+
+  // Si des appareils existent deja, proposer tous les lieux d'ajout issus des postes :
+  // poste principal + SAT, meme s'ils n'ont pas encore d'appareil.
+  for (const poste of postesListe) {
+    const sat = champCompletOuVide(poste?.SAT) || "Poste";
+    const cleSat = sat.toUpperCase();
+    if (!groupes.has(cleSat)) {
+      groupes.set(cleSat, {
+        label: sat,
+        codes: new Map()
+      });
+    }
   }
 
   const lignes = Array.from(groupes.values())
@@ -4454,12 +4472,14 @@ function construireSectionAppareilsAssociesDepuisPostes(postesListe, options = {
       const codes = Array.from(groupe.codes.values()).sort((a, b) =>
         String(a.code).localeCompare(String(b.code), "fr", { numeric: true })
       );
-      const codesHtml = codes
-        .map(
-          (entree) =>
-            `<button class="popup-poste-appareil-lien" type="button" data-lng="${entree.longitude}" data-lat="${entree.latitude}">${echapperHtml(entree.code)}</button>`
-        )
-        .join(", ");
+      const codesHtml = codes.length
+        ? codes
+            .map(
+              (entree) =>
+                `<button class="popup-poste-appareil-lien" type="button" data-lng="${entree.longitude}" data-lat="${entree.latitude}">${echapperHtml(entree.code)}</button>`
+            )
+            .join(", ")
+        : `<span class="popup-poste-appareils-vide">Aucun appareil</span>`;
       const posteReference = postesListe[0] || null;
       const lienAjout = construireLienAjoutDepuisPoste(posteReference, groupe.label);
       const pillSatHtml =

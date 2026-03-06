@@ -898,28 +898,27 @@ carte.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-
 carte.addControl(new maplibregl.ScaleControl({ maxWidth: 120, unit: "metric" }), "bottom-left");
 
 const LIEN_SNCF_OPEN_DATA = "https://ressources.data.sncf.com/";
-const LIEN_EXTRA_PK = "https://github.com/nicolaswurtz/extras-opendata-sncf-reseau";
+const LIEN_MAPLIBRE = "https://maplibre.org/";
 const AFFICHER_MENTION_SNCF_PAR_DEFAUT = true;
+const VERSION_MAPLIBRE =
+  typeof maplibregl?.getVersion === "function"
+    ? maplibregl.getVersion()
+    : typeof maplibregl?.version === "string"
+      ? maplibregl.version
+      : null;
 
 function construireAttributionsDynamiquesCarte() {
   const attributions = [];
+  attributions.push(
+    `<a href="${LIEN_MAPLIBRE}" target="_blank" rel="noopener noreferrer">MapLibre GL JS${VERSION_MAPLIBRE ? ` v${VERSION_MAPLIBRE}` : ""}</a>`
+  );
   if (AFFICHER_MENTION_SNCF_PAR_DEFAUT) {
     attributions.push(
       `<a href="${LIEN_SNCF_OPEN_DATA}" target="_blank" rel="noopener noreferrer">SNCF Open Data</a>`
     );
   }
-  if (afficherPn) {
-    attributions.push(
-      `PN affichés : <a href="${LIEN_SNCF_OPEN_DATA}" target="_blank" rel="noopener noreferrer">SNCF Open Data</a>`
-    );
-  }
-  if (afficherPk) {
-    attributions.push(
-      `PK affichés : <a href="${LIEN_SNCF_OPEN_DATA}" target="_blank" rel="noopener noreferrer">SNCF Open Data</a> + <a href="${LIEN_EXTRA_PK}" target="_blank" rel="noopener noreferrer">extras-opendata-sncf-reseau</a>`
-    );
-  }
   if (afficherAppareils || afficherAcces || afficherPostes) {
-    attributions.push("© ALICE - Données internes : réutilisation interdite sans autorisation.");
+    attributions.push("© ALICE - réutilisation interdite sans autorisation.");
   }
   return attributions;
 }

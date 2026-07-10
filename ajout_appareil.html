@@ -1,0 +1,1764 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1726" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>ALICE - Demande d'ajout d'appareil</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./icons/icon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
+  <link rel="shortcut icon" href="./icons/icon-32.png" type="image/png" />
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" />
+  <link rel="stylesheet" href="./theme.css" />
+  <script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: var(--alice-bg-page-app-light);
+      --panel: var(--alice-panel-light);
+      --text: var(--alice-text-strong-light);
+      --muted: #5f738b;
+      --border: rgba(17, 24, 39, 0.08);
+      --border-strong: rgba(59, 130, 246, 0.24);
+      --shadow: var(--alice-shadow-app-light);
+      --blue: var(--alice-accent-blue-light);
+      --blue-soft: rgba(37, 99, 235, 0.1);
+      --danger: var(--alice-danger-light);
+      --danger-soft: rgba(220, 38, 38, 0.1);
+      --success: var(--alice-success-strong-light);
+      --success-soft: rgba(21, 128, 61, 0.1);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: var(--alice-bg-page-deep-dark);
+        --panel: rgba(10, 18, 31, 0.92);
+        --text: var(--alice-text-dark);
+        --muted: var(--alice-muted-dark);
+        --border: var(--alice-line-strong-dark);
+        --border-strong: rgba(96, 165, 250, 0.35);
+        --shadow: var(--alice-shadow-app-dark);
+        --blue: #60a5fa;
+        --blue-soft: rgba(96, 165, 250, 0.14);
+        --danger: var(--alice-danger-dark);
+        --danger-soft: rgba(248, 113, 113, 0.14);
+        --success: var(--alice-success-dark);
+        --success-soft: rgba(74, 222, 128, 0.12);
+      }
+
+      .header-card {
+        background: rgba(10, 18, 31, 0.96);
+      }
+
+      .close-button {
+        background: rgba(148, 163, 184, 0.14);
+        color: var(--text);
+      }
+
+      .close-button:hover,
+      .close-button:focus-visible {
+        background: rgba(148, 163, 184, 0.22);
+      }
+
+      .progress-bar {
+        background: rgba(148, 163, 184, 0.14);
+      }
+
+      .field-input,
+      .field-textarea,
+      .search-input {
+        background: rgba(148, 163, 184, 0.08);
+      }
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: calc(20px + env(safe-area-inset-top)) 14px calc(28px + env(safe-area-inset-bottom));
+      font-family: Inter, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(59, 130, 246, 0.08), transparent 28%),
+        radial-gradient(circle at top right, rgba(16, 185, 129, 0.06), transparent 24%),
+        var(--bg);
+    }
+
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .header-card,
+    .step-card {
+      position: relative;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .header-card {
+      position: sticky;
+      top: calc(8px + env(safe-area-inset-top));
+      z-index: 20;
+      padding: 20px 24px;
+      margin-bottom: 18px;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .close-button {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      z-index: 2;
+      width: 30px;
+      height: 30px;
+      border: 0;
+      border-radius: 999px;
+      background: #e5e7eb;
+      color: #111827;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .close-button:hover {
+      background: #d1d5db;
+    }
+
+    .close-button:focus-visible {
+      background: #d1d5db;
+      outline: none;
+    }
+
+    .header-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0;
+      padding-right: 42px;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      line-height: 1.1;
+    }
+
+    .header-logo {
+      width: auto;
+      height: 28px;
+      object-fit: contain;
+      flex: 0 0 auto;
+    }
+
+    .progress-wrap {
+      margin-top: 18px;
+    }
+
+    .progress-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .progress-bar {
+      height: 8px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(148, 163, 184, 0.18);
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--blue), #38bdf8);
+      transition: width 0.25s ease;
+    }
+
+    .step-card {
+      padding: 22px;
+    }
+
+    .step {
+      display: none;
+    }
+
+    .step.active {
+      display: block;
+    }
+
+    .step-kicker {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+    }
+
+    .step-title {
+      margin: 0 0 10px;
+      font-size: clamp(1.25rem, 3.6vw, 1.7rem);
+      line-height: 1.15;
+    }
+
+    .step-subtitle {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .field-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .field-input,
+    .field-textarea,
+    .search-input {
+      width: 100%;
+      border: 1px solid var(--border-strong);
+      border-radius: 18px;
+      padding: 15px 16px;
+      background: rgba(255, 255, 255, 0.35);
+      color: var(--text);
+      font: inherit;
+      outline: none;
+    }
+
+    .field-textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .field-input:focus,
+    .field-textarea:focus,
+    .search-input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px var(--blue-soft);
+    }
+
+    [data-appareil-input] {
+      text-transform: uppercase;
+    }
+
+    .field-error {
+      border-color: var(--danger) !important;
+      box-shadow: 0 0 0 4px var(--danger-soft) !important;
+    }
+
+    .field-stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .inline-note {
+      margin: 0 0 14px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .appareil-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto auto;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .appareil-row .field-input {
+      margin: 0;
+    }
+
+    .remove-btn {
+      border: 0;
+      border-radius: 14px;
+      padding: 13px 14px;
+      background: var(--danger-soft);
+      color: var(--danger);
+      font: inherit;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .hp-toggle {
+      border: 1px solid var(--border-strong);
+      border-radius: 999px;
+      padding: 12px 16px;
+      background: transparent;
+      color: var(--text);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: 0.2s ease;
+    }
+
+    .hp-toggle.active {
+      background: var(--danger-soft);
+      border-color: var(--danger);
+      color: var(--danger);
+    }
+
+    .choice-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .choice-btn {
+      border: 1px solid var(--border-strong);
+      border-radius: 999px;
+      padding: 12px 18px;
+      background: transparent;
+      color: var(--text);
+      font: inherit;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .choice-btn.active {
+      background: var(--blue-soft);
+      border-color: var(--blue);
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .meta-box,
+    .coords-box,
+    .summary-box,
+    .status-box {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 14px 16px;
+      background: rgba(148, 163, 184, 0.05);
+    }
+
+    .meta-box {
+      margin-top: 14px;
+      line-height: 1.55;
+    }
+
+    .coords-box {
+      margin-top: 14px;
+      color: var(--muted);
+    }
+
+    .search-wrap {
+      position: relative;
+    }
+
+    .search-results {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      z-index: 10;
+      display: none;
+      margin: 0;
+      padding: 8px;
+      list-style: none;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      max-height: 280px;
+      overflow: auto;
+    }
+
+    .search-result-btn {
+      width: 100%;
+      border: 0;
+      border-radius: 14px;
+      padding: 12px 14px;
+      background: transparent;
+      color: var(--text);
+      text-align: left;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .search-result-btn:hover {
+      background: var(--blue-soft);
+    }
+
+    .map-box {
+      height: 320px;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      margin-top: 8px;
+    }
+
+    .map-marker {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      border: 3px solid #ffffff;
+      background: linear-gradient(135deg, var(--blue), #38bdf8);
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .toolbar-btn,
+    .nav-btn,
+    .submit-btn {
+      border: 0;
+      border-radius: 16px;
+      padding: 13px 16px;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .toolbar-btn,
+    .nav-btn.secondary {
+      background: rgba(148, 163, 184, 0.14);
+      color: var(--text);
+    }
+
+    .nav-btn.primary,
+    .submit-btn {
+      background: linear-gradient(135deg, var(--blue), #38bdf8);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .nav-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .nav-row.single {
+      justify-content: flex-end;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .summary-box span {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .summary-box strong {
+      display: block;
+      line-height: 1.45;
+      word-break: break-word;
+    }
+
+    .summary-actions {
+      display: inline-flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .summary-link {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(9, 17, 29, 0.72);
+      backdrop-filter: blur(6px);
+    }
+
+    .overlay.active {
+      display: flex;
+    }
+
+    .overlay-card {
+      width: min(760px, 100%);
+      max-height: min(88vh, 900px);
+      overflow: hidden;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+
+    .overlay-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .overlay-title {
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .overlay-close {
+      border: 0;
+      border-radius: 999px;
+      width: 40px;
+      height: 40px;
+      background: rgba(148, 163, 184, 0.18);
+      color: var(--text);
+      font: inherit;
+      font-size: 1.6rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .overlay-body {
+      padding: 18px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .overlay-map {
+      height: min(62vh, 520px);
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .status-box {
+      margin-top: 18px;
+      display: none;
+      line-height: 1.45;
+    }
+
+    .status-box.error {
+      display: block;
+      border-color: var(--danger);
+      background: var(--danger-soft);
+      color: var(--danger);
+    }
+
+    .status-box.success {
+      display: block;
+      border-color: var(--success);
+      background: var(--success-soft);
+      color: var(--success);
+    }
+
+    @media (max-width: 640px) {
+      .header-card,
+      .step-card {
+        border-radius: 22px;
+      }
+
+      .header-card,
+      .step-card {
+        padding: 18px;
+      }
+
+      .header-card {
+        top: calc(10px + env(safe-area-inset-top));
+        padding-top: 18px;
+      }
+
+      .header-title {
+        font-size: 20px;
+      }
+
+      .map-box {
+        height: 270px;
+      }
+
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-row {
+        flex-direction: row;
+        align-items: stretch;
+      }
+
+      .nav-btn,
+      .submit-btn {
+        width: auto;
+        flex: 1 1 0;
+        min-width: 0;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background:
+          radial-gradient(circle at top left, rgba(96, 165, 250, 0.12), transparent 30%),
+          radial-gradient(circle at top right, rgba(45, 212, 191, 0.08), transparent 24%),
+          var(--bg);
+      }
+
+      .header-card {
+        background: rgba(10, 18, 31, 0.96);
+        border-color: rgba(148, 163, 184, 0.18);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.42);
+      }
+
+      .header-title {
+        color: var(--text);
+      }
+
+      .progress-top {
+        color: #bfd0e5;
+      }
+
+      .progress-bar {
+        background: rgba(148, 163, 184, 0.12);
+      }
+
+      .close-button {
+        background: rgba(148, 163, 184, 0.14);
+        color: var(--text);
+      }
+
+      .close-button:hover,
+      .close-button:focus-visible {
+        background: rgba(148, 163, 184, 0.24);
+      }
+
+      .step-card,
+      .overlay-card,
+      .search-results {
+        border-color: rgba(148, 163, 184, 0.14);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+      }
+
+      .field-input,
+      .field-textarea,
+      .search-input {
+        background: rgba(148, 163, 184, 0.08);
+        color: var(--text);
+      }
+
+      .field-input::placeholder,
+      .field-textarea::placeholder,
+      .search-input::placeholder {
+        color: rgba(191, 208, 229, 0.42);
+      }
+
+      .toolbar-btn,
+      .nav-btn.secondary {
+        background: rgba(148, 163, 184, 0.12);
+        color: var(--text);
+      }
+
+      .meta-box,
+      .coords-box,
+      .summary-box,
+      .status-box {
+        background: rgba(148, 163, 184, 0.06);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header-card">
+      <a class="close-button" href="./index.html" aria-label="Fermer">×</a>
+      <h1 class="header-title">
+        <img class="header-logo" src="./alice.webp" alt="ALICE" onerror="this.style.display='none';" />
+        Ajout d'appareil
+      </h1>
+      <div class="progress-wrap">
+        <div class="progress-top">
+          <span id="progress-label">Étape 1</span>
+          <span id="progress-count">0 %</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-bar-fill" id="progress-fill"></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="step-card">
+      <form id="request-form" novalidate>
+        <section class="step" id="step-poste">
+          <div class="step-kicker">Poste</div>
+          <h2 class="step-title">Choisir le poste</h2>
+          <div class="search-wrap">
+            <input class="search-input" id="poste-search" type="text" placeholder="Rechercher un poste" autocomplete="off" />
+            <ul class="search-results" id="poste-results"></ul>
+          </div>
+          <div class="meta-box hidden" id="poste-selected-box"></div>
+          <div class="nav-row">
+            <button class="nav-btn secondary" type="button" data-prev>Retour</button>
+            <button class="nav-btn primary" type="button" data-next>Suivant</button>
+          </div>
+        </section>
+
+        <section class="step" id="step-appareil">
+          <div class="step-kicker">Appareil</div>
+          <h2 class="step-title">Quels appareils faut-il ajouter ?</h2>
+          <p class="inline-note">Ajoute ici tous les appareils présents sur le même support.</p>
+          <p class="inline-note">Cochez <strong>HP</strong> pour un appareil hors patrimoine UP MRE.</p>
+          <div class="field-stack" id="appareil-list">
+            <div class="appareil-row" data-appareil-row>
+              <input class="field-input" type="text" placeholder="Ex : I7112" data-appareil-input />
+              <button class="hp-toggle" type="button" data-hp-toggle aria-pressed="false">HP</button>
+            </div>
+          </div>
+          <div class="toolbar">
+            <button class="toolbar-btn" id="add-appareil-btn" type="button">Ajouter un autre appareil</button>
+          </div>
+          <div class="nav-row">
+            <button class="nav-btn secondary" type="button" data-prev>Retour</button>
+            <button class="nav-btn primary" type="button" data-next>Suivant</button>
+          </div>
+        </section>
+
+        <section class="step" id="step-device-location">
+          <div class="step-kicker">Position appareil</div>
+          <h2 class="step-title" id="device-location-title">Localiser l'appareil</h2>
+          <p class="inline-note">Cliquez sur la carte pour placer le point, puis ajustez-le si besoin.</p>
+          <p class="inline-note">La géolocalisation est facultative. Seules les coordonnées du point validé sont envoyées avec la demande.</p>
+          <div id="device-gps-panel">
+            <div class="map-box" id="device-map"></div>
+            <div class="toolbar">
+              <button class="toolbar-btn" id="device-locate" type="button">Me localiser</button>
+              <button class="toolbar-btn" id="device-layer" type="button">Basculer plan / satellite</button>
+            </div>
+            <div class="coords-box" id="device-coords">Aucun point défini.</div>
+          </div>
+          <div class="nav-row">
+            <button class="nav-btn secondary" type="button" data-prev>Retour</button>
+            <button class="nav-btn primary" type="button" data-next>Suivant</button>
+          </div>
+        </section>
+
+        <section class="step" id="step-access-choice">
+          <div class="step-kicker">Accès routier</div>
+          <h2 class="step-title" id="access-choice-title">L'appareil a-t-il un accès routier spécifique ?</h2>
+          <div class="choice-row">
+            <button class="choice-btn active" type="button" data-access-choice="non">Non</button>
+            <button class="choice-btn" type="button" data-access-choice="oui">Oui</button>
+          </div>
+          <div class="nav-row">
+            <button class="nav-btn secondary" type="button" data-prev>Retour</button>
+            <button class="nav-btn primary" type="button" data-next>Suivant</button>
+          </div>
+        </section>
+
+        <section class="step" id="step-access-location">
+          <div class="step-kicker">Accès routier</div>
+          <h2 class="step-title">Localiser l'accès routier</h2>
+          <p class="inline-note">Cliquez sur la carte pour placer le point, puis ajustez-le si besoin.</p>
+          <p class="inline-note">La géolocalisation est facultative. Seules les coordonnées du point validé sont envoyées avec la demande.</p>
+          <div id="access-gps-panel">
+            <div class="map-box" id="access-map"></div>
+            <div class="toolbar">
+              <button class="toolbar-btn" id="access-locate" type="button">Me localiser</button>
+              <button class="toolbar-btn" id="access-layer" type="button">Basculer plan / satellite</button>
+            </div>
+            <div class="coords-box" id="access-coords">Aucun point défini.</div>
+          </div>
+          <div class="nav-row">
+            <button class="nav-btn secondary" type="button" data-prev>Retour</button>
+            <button class="nav-btn primary" type="button" data-next>Suivant</button>
+          </div>
+        </section>
+
+        <section class="step" id="step-description">
+          <div class="step-kicker">Description</div>
+          <h2 class="step-title">Ajouter des précisions</h2>
+          <p class="inline-note">Les descriptions sont réservées aux informations techniques. N'y saisissez aucune information personnelle, privée ou confidentielle.</p>
+          <label class="field-label" for="description-appareil">Description appareil</label>
+          <textarea class="field-textarea" id="description-appareil" placeholder="Précision utile sur le support, l'appareil, le contexte terrain..."></textarea>
+          <div id="description-acces-wrap" class="hidden">
+            <label class="field-label" for="description-acces">Description accès routier</label>
+            <textarea class="field-textarea" id="description-acces" placeholder="Portail, chemin d'accès, repère terrain, consigne utile..."></textarea>
+          </div>
+          <div class="nav-row">
+            <button class="nav-btn secondary" type="button" data-prev>Retour</button>
+            <button class="nav-btn primary" type="button" data-next>Suivant</button>
+          </div>
+        </section>
+
+        <section class="step" id="step-summary">
+          <div class="step-kicker">Récapitulatif</div>
+          <h2 class="step-title">Vérifier la demande</h2>
+          <div class="summary-grid" id="summary-grid"></div>
+          <div class="status-box" id="status-box" role="status" aria-live="polite"></div>
+          <div class="nav-row">
+            <button class="nav-btn secondary" type="button" data-prev>Retour</button>
+            <button class="submit-btn" id="submit-btn" type="submit">Envoyer pour validation</button>
+          </div>
+        </section>
+
+        <section class="step" id="step-confirmation">
+          <div class="step-kicker">Confirmation</div>
+          <h2 class="step-title">Demande envoyée</h2>
+          <p class="step-subtitle" id="confirmation-text">La demande a bien été transmise pour validation.</p>
+          <div class="meta-box hidden" id="confirmation-counter-box"></div>
+          <div class="nav-row">
+            <a class="nav-btn secondary" id="confirmation-return-link" href="./index.html" style="text-decoration:none;text-align:center;">Retour</a>
+            <button class="nav-btn primary" id="restart-btn" type="button">Nouvelle demande</button>
+          </div>
+        </section>
+
+        <input id="poste" type="hidden" />
+        <input id="type" type="hidden" />
+        <input id="sat" type="hidden" />
+      </form>
+    </main>
+  </div>
+
+  <div class="overlay" id="alice-preview-overlay" aria-hidden="true">
+    <div class="overlay-card">
+      <div class="overlay-head">
+        <h2 class="overlay-title" id="alice-preview-title">Voir sur ALICE</h2>
+        <button class="overlay-close" id="alice-preview-close" type="button" aria-label="Fermer">×</button>
+      </div>
+      <div class="overlay-body">
+        <div class="meta-box" id="alice-preview-coords"></div>
+        <div class="overlay-map" id="alice-preview-map"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const FORM_SUBMIT_URL = "https://script.google.com/macros/s/AKfycbxn35jGF3OBSJXwLZDuGONtoLy-HOGrZSfqkm3jFTAbgBAGxGnS_haz_JkyTYhlBh2yfA/exec";
+    const COUNTER_URL = "https://script.google.com/macros/s/AKfycbwSZ6PEcRuNYb-tyVgNnuStsAQgo_oXkbzuOh41ovRmiZMD30iJfyti6WvqdqMhKfuE/exec";
+    const DEFAULT_CENTER = [50.72384, 2.54924];
+    const DEFAULT_ZOOM = 13;
+
+    const state = {
+      mode: "manuel",
+      postes: [],
+      selectedPoste: null,
+      returnUrl: "./index.html",
+      accessChoice: "non",
+      devicePoint: null,
+      accessPoint: null,
+      steps: [],
+      currentIndex: 0
+    };
+
+    const maps = {};
+    const form = document.getElementById("request-form");
+    const statusBox = document.getElementById("status-box");
+    const summaryGrid = document.getElementById("summary-grid");
+    const confirmationCounterBox = document.getElementById("confirmation-counter-box");
+    const previewOverlay = document.getElementById("alice-preview-overlay");
+    const previewTitle = document.getElementById("alice-preview-title");
+    const previewCoords = document.getElementById("alice-preview-coords");
+
+    let previewMapInstance = null;
+
+    function $(id) {
+      return document.getElementById(id);
+    }
+
+    function escapeHtml(value) {
+      return String(value || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function setStatus(message, type) {
+      statusBox.className = "status-box";
+      statusBox.textContent = "";
+      if (!message) {
+        return;
+      }
+      statusBox.textContent = message;
+      statusBox.classList.add(type);
+    }
+
+    async function incrementCounterAndShowMessage() {
+      confirmationCounterBox.textContent = "Merci pour votre contribution.";
+      confirmationCounterBox.classList.remove("hidden");
+      try {
+        const response = await fetch(COUNTER_URL + "?increment=true");
+        const text = await response.text();
+        var count = Number(String(text || "").replace(/[^\d]/g, ""));
+        if (!Number.isFinite(count)) {
+          count = Number(String(text || "").trim());
+        }
+        if (Number.isFinite(count)) {
+          confirmationCounterBox.textContent = "Déjà " + count + " ajouts, merci pour vos contributions.";
+        }
+      } catch (_) {}
+    }
+
+    function syncDescriptionStep() {
+      const showAccessDescription = state.accessChoice === "oui";
+      $("description-acces-wrap").classList.toggle("hidden", !showAccessDescription);
+      if (!showAccessDescription) {
+        $("description-acces").value = "";
+      }
+    }
+
+    function formatPoint(point) {
+      if (!point) return "Non renseignée";
+      return `${point.lat.toFixed(6)}, ${point.lng.toFixed(6)}`;
+    }
+
+    function parseCoordsValue(value) {
+      const text = String(value || "").trim();
+      const match = text.match(/^\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*$/);
+      if (!match) {
+        return null;
+      }
+      const lat = Number(match[1]);
+      const lng = Number(match[2]);
+      if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
+        return null;
+      }
+      return { lat, lng };
+    }
+
+    function getAppareilInputs() {
+      return Array.from(document.querySelectorAll("[data-appareil-input]"));
+    }
+
+    function getAppareilRows() {
+      return Array.from(document.querySelectorAll("[data-appareil-row]"));
+    }
+
+    function getAppareils() {
+      return getAppareilInputs()
+        .map((input) => input.value.trim())
+        .filter(Boolean);
+    }
+
+    function getAppareilEntries() {
+      return getAppareilRows()
+        .map((row) => {
+          const input = row.querySelector("[data-appareil-input]");
+          const hpToggle = row.querySelector("[data-hp-toggle]");
+          const name = String(input ? input.value : "").trim();
+          return {
+            name: name,
+            horsPatrimoine: hpToggle ? hpToggle.classList.contains("active") : false
+          };
+        })
+        .filter((entry) => entry.name);
+    }
+
+    function isPlaceholderAppareilValue(value) {
+      const normalized = String(value || "").trim().toLowerCase();
+      return ["aucun", "aucune", "non", "ras", "n/a", "na", "none"].includes(normalized);
+    }
+
+    function createAppareilRow(value) {
+      const row = document.createElement("div");
+      row.className = "appareil-row";
+      row.setAttribute("data-appareil-row", "");
+
+      const input = document.createElement("input");
+      input.type = "text";
+      input.className = "field-input";
+      input.placeholder = "Ex : I7112";
+      input.setAttribute("data-appareil-input", "");
+      input.value = value || "";
+      row.appendChild(input);
+
+      const hpToggle = document.createElement("button");
+      hpToggle.type = "button";
+      hpToggle.className = "hp-toggle";
+      hpToggle.textContent = "HP";
+      hpToggle.setAttribute("data-hp-toggle", "");
+      hpToggle.setAttribute("aria-pressed", "false");
+      row.appendChild(hpToggle);
+
+      if (getAppareilInputs().length >= 1) {
+        const removeBtn = document.createElement("button");
+        removeBtn.type = "button";
+        removeBtn.className = "remove-btn";
+        removeBtn.textContent = "Supprimer";
+        removeBtn.addEventListener("click", () => {
+          row.remove();
+          syncAppareilRows();
+        });
+        row.appendChild(removeBtn);
+      }
+
+      return row;
+    }
+
+    function syncAppareilRows() {
+      const list = $("appareil-list");
+      const rows = Array.from(list.querySelectorAll("[data-appareil-row]"));
+      if (!rows.length) {
+        list.appendChild(createAppareilRow(""));
+      }
+      Array.from(list.querySelectorAll("[data-appareil-row]")).forEach((row, index, allRows) => {
+        const input = row.querySelector("[data-appareil-input]");
+        let hpToggle = row.querySelector("[data-hp-toggle]");
+        if (!hpToggle) {
+          hpToggle = document.createElement("button");
+          hpToggle.type = "button";
+          hpToggle.className = "hp-toggle";
+          hpToggle.textContent = "HP";
+          hpToggle.setAttribute("data-hp-toggle", "");
+          hpToggle.setAttribute("aria-pressed", "false");
+          if (input && input.nextSibling) {
+            row.insertBefore(hpToggle, input.nextSibling);
+          } else {
+            row.appendChild(hpToggle);
+          }
+        }
+        const existingRemove = row.querySelector(".remove-btn");
+        if (allRows.length === 1) {
+          if (existingRemove) {
+            existingRemove.remove();
+          }
+          return;
+        }
+        if (!existingRemove) {
+          const removeBtn = document.createElement("button");
+          removeBtn.type = "button";
+          removeBtn.className = "remove-btn";
+          removeBtn.textContent = "Supprimer";
+          removeBtn.addEventListener("click", () => {
+            row.remove();
+            syncAppareilRows();
+          });
+          row.appendChild(removeBtn);
+        }
+      });
+      updateAccessChoiceTitle();
+    }
+
+    function updateAccessChoiceTitle() {
+      const appareils = getAppareils();
+      $("access-choice-title").textContent = appareils.length > 1
+        ? "Ces appareils ont-ils un accès routier spécifique ?"
+        : "L'appareil a-t-il un accès routier spécifique ?";
+    }
+
+    function getDeviceLocationValue() {
+      if (state.mode === "carte" && state.devicePoint) {
+        return `${state.devicePoint.lat.toFixed(6)},${state.devicePoint.lng.toFixed(6)}`;
+      }
+      if (state.devicePoint) {
+        return `${state.devicePoint.lat.toFixed(6)},${state.devicePoint.lng.toFixed(6)}`;
+      }
+      return "";
+    }
+
+    function getAccessLocationValue() {
+      if (state.accessChoice !== "oui") {
+        return "";
+      }
+      if (state.accessPoint) {
+        return `${state.accessPoint.lat.toFixed(6)},${state.accessPoint.lng.toFixed(6)}`;
+      }
+      return "";
+    }
+
+    function clearErrors() {
+      document.querySelectorAll(".field-error").forEach((node) => node.classList.remove("field-error"));
+      setStatus("", "");
+    }
+
+    function markError(node) {
+      if (node) {
+        node.classList.add("field-error");
+      }
+    }
+
+    function buildPosteLabel(item) {
+      return item.sat ? `${item.nom} ${item.type} (${item.sat})` : `${item.nom} ${item.type}`.trim();
+    }
+
+    function buildReadableRequestId() {
+      const now = new Date();
+      const parts = [
+        now.getFullYear(),
+        String(now.getMonth() + 1).padStart(2, "0"),
+        String(now.getDate()).padStart(2, "0")
+      ];
+      const time = [
+        String(now.getHours()).padStart(2, "0"),
+        String(now.getMinutes()).padStart(2, "0"),
+        String(now.getSeconds()).padStart(2, "0")
+      ].join("");
+      return `DEM-${parts.join("")}-${time}`;
+    }
+
+    function centerMapsOnPoste(item) {
+      if (!item || !Number.isFinite(item.latitude) || !Number.isFinite(item.longitude)) {
+        return;
+      }
+      ["device", "access"].forEach((key) => {
+        const instance = maps[key];
+        if (!instance) {
+          return;
+        }
+        instance.map.easeTo({
+          center: [item.longitude, item.latitude],
+          zoom: 18
+        });
+      });
+    }
+
+    function buildVisibleSteps() {
+      const steps = [];
+      if (state.mode === "carte" || state.mode === "manuel") {
+        steps.push("step-poste");
+      }
+      steps.push("step-appareil");
+      if (state.mode !== "carte") {
+        steps.push("step-device-location");
+      }
+      steps.push("step-access-choice");
+      if (state.accessChoice === "oui") {
+        steps.push("step-access-location");
+      }
+      steps.push("step-description", "step-summary", "step-confirmation");
+      if (!steps.length) {
+        steps.push("step-appareil", "step-description", "step-summary", "step-confirmation");
+      }
+      state.steps = steps;
+    }
+
+    function updateProgress() {
+      const visibleCount = Math.max(state.steps.length - 1, 1);
+      const currentStepNumber = Math.min(state.currentIndex + 1, visibleCount);
+      $("progress-label").textContent = state.steps[state.currentIndex] === "step-confirmation" ? "Terminé" : `Étape ${currentStepNumber}`;
+      const percent = state.steps[state.currentIndex] === "step-confirmation"
+        ? 100
+        : Math.round((currentStepNumber / visibleCount) * 100);
+      $("progress-count").textContent = `${percent}%`;
+      $("progress-fill").style.width = `${percent}%`;
+    }
+
+    function showStep(index) {
+      buildVisibleSteps();
+      state.currentIndex = Math.max(0, Math.min(index, state.steps.length - 1));
+      while (state.mode === "fiche" && state.steps[state.currentIndex] === "step-poste" && state.currentIndex < state.steps.length - 1) {
+        state.currentIndex += 1;
+      }
+      document.querySelectorAll(".step").forEach((step) => step.classList.remove("active"));
+      $(state.steps[state.currentIndex]).classList.add("active");
+      if (state.steps[state.currentIndex] === "step-summary") {
+        renderSummary();
+      }
+      if (state.steps[state.currentIndex] === "step-device-location") {
+        syncLocationPanels("device");
+      }
+      if (state.steps[state.currentIndex] === "step-access-location") {
+        syncLocationPanels("access");
+      }
+      document.querySelectorAll("[data-prev]").forEach((button) => {
+        button.classList.toggle("hidden", state.currentIndex === 0);
+      });
+      updateProgress();
+    }
+
+    function nextStep() {
+      if (!validateCurrentStep()) {
+        return;
+      }
+      showStep(state.currentIndex + 1);
+    }
+
+    function prevStep() {
+      clearErrors();
+      showStep(state.currentIndex - 1);
+    }
+
+    function buildRasterStyle(tileUrl, attribution) {
+      return {
+        version: 8,
+        sources: {
+          raster: {
+            type: "raster",
+            tiles: [tileUrl],
+            tileSize: 256,
+            attribution: attribution
+          }
+        },
+        layers: [
+          {
+            id: "raster",
+            type: "raster",
+            source: "raster"
+          }
+        ]
+      };
+    }
+
+    const MAP_STYLE_PLAN = buildRasterStyle(
+      "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+      "© OpenStreetMap contributors"
+    );
+    const MAP_STYLE_SAT = buildRasterStyle(
+      "https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/jpeg&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}",
+      "© IGN"
+    );
+
+    function ensurePreviewMap() {
+      if (previewMapInstance) {
+        return previewMapInstance;
+      }
+
+      const map = new maplibregl.Map({
+        container: "alice-preview-map",
+        style: MAP_STYLE_SAT,
+        center: [DEFAULT_CENTER[1], DEFAULT_CENTER[0]],
+        zoom: DEFAULT_ZOOM
+      });
+
+      const markerElement = document.createElement("div");
+      markerElement.className = "map-marker";
+      const marker = new maplibregl.Marker({ element: markerElement })
+        .setLngLat([DEFAULT_CENTER[1], DEFAULT_CENTER[0]])
+        .addTo(map);
+
+      previewMapInstance = { map, marker };
+      return previewMapInstance;
+    }
+
+    function openPreviewMap(label, lat, lng) {
+      const instance = ensurePreviewMap();
+      previewTitle.textContent = "Voir sur ALICE";
+      previewCoords.textContent = String(label || "Coordonnées") + " : " + lat.toFixed(6) + ", " + lng.toFixed(6);
+      instance.marker.setLngLat([lng, lat]);
+      previewOverlay.classList.add("active");
+      previewOverlay.setAttribute("aria-hidden", "false");
+      setTimeout(() => {
+        instance.map.resize();
+        instance.map.easeTo({ center: [lng, lat], zoom: 18 });
+      }, 20);
+    }
+
+    function closePreviewMap() {
+      previewOverlay.classList.remove("active");
+      previewOverlay.setAttribute("aria-hidden", "true");
+    }
+
+    function initMap(key) {
+      if (maps[key]) {
+        return maps[key];
+      }
+
+      const mapId = key === "device" ? "device-map" : "access-map";
+      const coordsId = key === "device" ? "device-coords" : "access-coords";
+      const pointKey = key === "device" ? "devicePoint" : "accessPoint";
+
+      const map = new maplibregl.Map({
+        container: mapId,
+        style: MAP_STYLE_SAT,
+        center: [DEFAULT_CENTER[1], DEFAULT_CENTER[0]],
+        zoom: DEFAULT_ZOOM
+      });
+
+      const markerElement = document.createElement("div");
+      markerElement.className = "map-marker";
+      const marker = new maplibregl.Marker({ element: markerElement, draggable: true })
+        .setLngLat([DEFAULT_CENTER[1], DEFAULT_CENTER[0]])
+        .addTo(map);
+      marker.getElement().style.display = "none";
+
+      let satelliteActive = true;
+
+      function setPoint(lat, lng, center) {
+        state[pointKey] = { lat, lng };
+        marker.setLngLat([lng, lat]);
+        marker.getElement().style.display = "";
+        $(coordsId).innerHTML = `<strong>Coordonnées :</strong> ${lat.toFixed(6)}, ${lng.toFixed(6)}`;
+        if (center) {
+          map.easeTo({ center: [lng, lat], zoom: 18 });
+        }
+      }
+
+      map.on("click", (event) => {
+        setPoint(event.lngLat.lat, event.lngLat.lng, false);
+      });
+
+      marker.on("dragend", () => {
+        const position = marker.getLngLat();
+        setPoint(position.lat, position.lng, false);
+      });
+
+      $(key + "-layer").addEventListener("click", () => {
+        map.setStyle(satelliteActive ? MAP_STYLE_PLAN : MAP_STYLE_SAT);
+        satelliteActive = !satelliteActive;
+      });
+
+      $(key + "-locate").addEventListener("click", () => {
+        if (!navigator.geolocation) {
+          setStatus("La géolocalisation n'est pas disponible.", "error");
+          return;
+        }
+        navigator.geolocation.getCurrentPosition(
+          (position) => setPoint(position.coords.latitude, position.coords.longitude, true),
+          () => setStatus("Impossible de récupérer la position GPS.", "error"),
+          { enableHighAccuracy: true, timeout: 8000, maximumAge: 0 }
+        );
+      });
+
+      maps[key] = { map, marker, setPoint };
+      return maps[key];
+    }
+
+    function syncLocationPanels(kind) {
+      const isDevice = kind === "device";
+      $(kind + "-gps-panel").classList.remove("hidden");
+      const instance = initMap(kind);
+      setTimeout(() => {
+        instance.map.resize();
+        const existing = isDevice ? state.devicePoint : state.accessPoint;
+        if (existing) {
+          instance.setPoint(existing.lat, existing.lng, true);
+        } else if (state.selectedPoste && Number.isFinite(state.selectedPoste.latitude)) {
+          instance.map.easeTo({ center: [state.selectedPoste.longitude, state.selectedPoste.latitude], zoom: 18 });
+        }
+      }, 20);
+    }
+
+    function filterPostes(query) {
+      const q = String(query || "").trim().toLowerCase();
+      const results = q
+        ? state.postes.filter((item) => item.search.includes(q)).slice(0, 8)
+        : [];
+      const container = $("poste-results");
+      container.innerHTML = "";
+      if (!results.length) {
+        container.style.display = "none";
+        return;
+      }
+      results.forEach((item) => {
+        const li = document.createElement("li");
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "search-result-btn";
+        button.textContent = item.label;
+        button.addEventListener("click", () => {
+          state.selectedPoste = item;
+          $("poste").value = item.nom;
+          $("type").value = item.type;
+          $("sat").value = item.sat;
+          $("poste-search").value = item.label;
+          $("poste-selected-box").classList.remove("hidden");
+          $("poste-selected-box").innerHTML = `<strong>${escapeHtml(item.nom)}</strong><br>Type : ${escapeHtml(item.type || "")}<br>SAT : ${escapeHtml(item.sat || "") || "Non renseigné"}`;
+          centerMapsOnPoste(item);
+          container.style.display = "none";
+        });
+        li.appendChild(button);
+        container.appendChild(li);
+      });
+      container.style.display = "block";
+    }
+
+    function renderSummary() {
+      const appareils = getAppareilEntries();
+      const deviceLocation = getDeviceLocationValue();
+      const accessLocation = getAccessLocationValue();
+      const summaryItems = [
+        { label: "Poste", value: state.selectedPoste ? buildPosteLabel(state.selectedPoste) : "Non renseigné" },
+        {
+          label: "Appareil(x)",
+          value: appareils.length
+            ? appareils.map((entry) => (entry.horsPatrimoine ? `${entry.name} (HP)` : entry.name)).join(" | ")
+            : "Non renseigné"
+        },
+        {
+          label: "Localisation appareil",
+          value: renderLocationSummaryValue(deviceLocation, "Localisation appareil"),
+          isHtml: true
+        },
+        {
+          label: "Localisation accès",
+          value: accessLocation ? renderLocationSummaryValue(accessLocation, "Localisation accès") : "Aucun accès spécifique",
+          isHtml: Boolean(accessLocation)
+        },
+        { label: "Description appareil", value: $("description-appareil").value.trim() || "Aucune" }
+      ];
+      if (state.accessChoice === "oui") {
+        summaryItems.push({ label: "Description accès", value: $("description-acces").value.trim() || "Aucune" });
+      }
+      summaryGrid.innerHTML = summaryItems
+        .map(
+          ({ label, value, isHtml }) =>
+            `<div class="summary-box"><span>${escapeHtml(label)}</span><strong>${isHtml ? value : escapeHtml(value)}</strong></div>`
+        )
+        .join("");
+    }
+
+    function renderLocationSummaryValue(value, label) {
+      const text = String(value || "").trim();
+      const coords = parseCoordsValue(text);
+      if (!coords) {
+        return escapeHtml(text || "Non renseignée");
+      }
+      return [
+        `<div>${escapeHtml(text)}</div>`,
+        `<div class="summary-actions"><a class="summary-link" href="#" data-preview-map data-label="${escapeHtml(label)}" data-lat="${coords.lat}" data-lng="${coords.lng}">Voir sur ALICE</a></div>`
+      ].join("");
+    }
+
+    function validateCurrentStep() {
+      clearErrors();
+      const stepId = state.steps[state.currentIndex];
+      if (stepId === "step-poste") {
+        if (!state.selectedPoste) {
+          markError($("poste-search"));
+          return false;
+        }
+      }
+      if (stepId === "step-appareil") {
+        const appareils = getAppareils();
+        if (!appareils.length) {
+          const firstInput = getAppareilInputs()[0];
+          markError(firstInput);
+          return false;
+        }
+        if (getAppareilInputs().some((input) => !input.value.trim())) {
+          getAppareilInputs().filter((input) => !input.value.trim()).forEach(markError);
+          return false;
+        }
+        const invalidInputs = getAppareilInputs().filter((input) => isPlaceholderAppareilValue(input.value));
+        if (invalidInputs.length) {
+          invalidInputs.forEach(markError);
+          setStatus("Le nom de l'appareil doit etre un vrai code ou libelle, pas une valeur generique.", "error");
+          return false;
+        }
+      }
+      if (stepId === "step-device-location") {
+        if (!state.devicePoint) {
+          markError($("device-map"));
+          return false;
+        }
+      }
+      if (stepId === "step-access-location") {
+        if (!state.accessPoint) {
+          markError($("access-map"));
+          return false;
+        }
+      }
+      return true;
+    }
+
+    function hydrateFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const poste = String(params.get("poste") || "").trim();
+      const type = String(params.get("type") || "").trim();
+      const sat = String(params.get("sat") || "").trim();
+      const latParam = params.get("lat");
+      const lngParam = params.get("lng");
+      const lat = latParam === null || latParam === "" ? Number.NaN : Number(latParam);
+      const lng = lngParam === null || lngParam === "" ? Number.NaN : Number(lngParam);
+      const returnParam = String(params.get("return") || "").trim();
+
+      if (returnParam) {
+        state.returnUrl = returnParam;
+      } else if (document.referrer) {
+        state.returnUrl = document.referrer;
+      }
+
+      if (Number.isFinite(lat) && Number.isFinite(lng)) {
+        state.mode = "carte";
+        state.devicePoint = { lat, lng };
+      } else if (poste) {
+        state.mode = "fiche";
+      } else {
+        state.mode = "manuel";
+      }
+
+      if (poste) {
+        state.selectedPoste = {
+          nom: poste,
+          type,
+          sat,
+          label: sat ? `${poste} ${type} (${sat})` : `${poste} ${type}`.trim()
+        };
+        $("poste").value = poste;
+        $("type").value = type;
+        $("sat").value = sat;
+      }
+    }
+
+    async function loadPostesIfNeeded() {
+      const response = await fetch("./postes.geojson");
+      const data = await response.json();
+      state.postes = (data.features || []).map((feature) => {
+        const properties = feature.properties || {};
+        const coordinates = feature.geometry?.coordinates || [];
+        if (properties.special === true || properties.hors_patrimoine === true) {
+          return null;
+        }
+        const nom = String(properties.nom || "").trim();
+        const type = String(properties.type || "").trim();
+        const sat = String(properties.SAT || "").trim();
+        const label = sat ? `${nom} ${type} (${sat})` : `${nom} ${type}`.trim();
+        return {
+          nom,
+          type,
+          sat,
+          label,
+          search: label.toLowerCase(),
+          longitude: Number(coordinates[0]),
+          latitude: Number(coordinates[1])
+        };
+      }).filter((item) => item && item.nom);
+
+      if (state.selectedPoste && !Number.isFinite(state.selectedPoste.latitude)) {
+        const posteLie = state.postes.find((item) =>
+          item.nom === state.selectedPoste.nom &&
+          item.type === state.selectedPoste.type &&
+          item.sat === state.selectedPoste.sat
+        ) || state.postes.find((item) =>
+          item.nom === state.selectedPoste.nom &&
+          item.type === state.selectedPoste.type
+        ) || state.postes.find((item) => item.nom === state.selectedPoste.nom);
+
+        if (posteLie) {
+          state.selectedPoste = {
+            ...state.selectedPoste,
+            latitude: posteLie.latitude,
+            longitude: posteLie.longitude
+          };
+        }
+      }
+    }
+
+    async function submitForm(event) {
+      event.preventDefault();
+      clearErrors();
+      if (!validateCurrentStep()) {
+        return;
+      }
+      const submitBtn = $("submit-btn");
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Envoi en cours...";
+
+      const appareilEntries = getAppareilEntries();
+      const appareils = appareilEntries.map((entry) => entry.name);
+      const appareilsHp = appareilEntries.filter((entry) => entry.horsPatrimoine).map((entry) => entry.name);
+      const localisationAcces = getAccessLocationValue();
+      const params = new URLSearchParams();
+      params.append("id", buildReadableRequestId());
+      params.append("date", new Date().toISOString());
+      params.append("poste", $("poste").value.trim());
+      params.append("type", $("type").value.trim());
+      params.append("sat", $("sat").value.trim());
+      params.append("appareil", appareils.join(" | "));
+      params.append("hors_patrimoine", appareilsHp.join(" | "));
+      params.append("localisation_appareil", getDeviceLocationValue());
+      params.append("localisation_acces", localisationAcces);
+      params.append("description_appareil", $("description-appareil").value.trim());
+      params.append("description_acces", state.accessChoice === "oui" ? $("description-acces").value.trim() : "");
+      params.append("localisation", getDeviceLocationValue());
+      params.append("acces", localisationAcces);
+      params.append("notes", $("description-appareil").value.trim());
+
+      try {
+        const response = await fetch(FORM_SUBMIT_URL, { method: "POST", body: params });
+        const result = await response.json();
+        if (!response.ok || !result || result.status !== "success") {
+          throw new Error((result && result.message) || "Envoi impossible.");
+        }
+        $("confirmation-return-link").href = state.returnUrl || "./index.html";
+        $("confirmation-text").textContent = "Votre demande a bien été enregistrée. Vous pouvez prévenir Arnaud afin d’en faciliter la validation.";
+        showStep(state.steps.indexOf("step-confirmation"));
+        incrementCounterAndShowMessage();
+      } catch (error) {
+        setStatus(error && error.message ? error.message : "L'envoi a échoué. Réessayez.", "error");
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Envoyer pour validation";
+      }
+    }
+
+    function resetFormState() {
+      form.reset();
+      clearErrors();
+      setStatus("", "");
+      state.accessChoice = "non";
+      state.devicePoint = null;
+      state.accessPoint = null;
+      if (state.mode === "carte") {
+        state.mode = "manuel";
+      }
+      $("appareil-list").innerHTML = "";
+      $("appareil-list").appendChild(createAppareilRow(""));
+      syncAppareilRows();
+      document.querySelectorAll("[data-access-choice]").forEach((button) => {
+        button.classList.remove("active");
+      });
+      document.querySelector('[data-access-choice="non"]').classList.add("active");
+      $("confirmation-return-link").href = state.returnUrl || "./index.html";
+      $("confirmation-text").textContent = "Votre demande a bien été enregistrée. Vous pouvez prévenir Arnaud afin d’en faciliter la validation.";
+      confirmationCounterBox.textContent = "";
+      confirmationCounterBox.classList.add("hidden");
+      $("description-acces-wrap").classList.add("hidden");
+      $("poste-selected-box").classList.add("hidden");
+      if (state.selectedPoste && state.mode !== "fiche") {
+        state.selectedPoste = null;
+        $("poste").value = "";
+        $("type").value = "";
+        $("sat").value = "";
+      }
+      $("device-gps-panel").classList.add("hidden");
+      $("access-gps-panel").classList.add("hidden");
+      $("device-coords").textContent = "Aucun point défini.";
+      $("access-coords").textContent = "Aucun point défini.";
+      showStep(0);
+    }
+
+    function bindEvents() {
+      form.addEventListener("submit", submitForm);
+      document.querySelectorAll("[data-next]").forEach((button) => button.addEventListener("click", nextStep));
+      document.querySelectorAll("[data-prev]").forEach((button) => button.addEventListener("click", prevStep));
+      $("restart-btn").addEventListener("click", resetFormState);
+      $("add-appareil-btn").addEventListener("click", () => {
+        $("appareil-list").appendChild(createAppareilRow(""));
+        syncAppareilRows();
+      });
+      $("appareil-list").addEventListener("input", (event) => {
+        const appareilInput = event.target.closest("[data-appareil-input]");
+        if (appareilInput) {
+          const start = appareilInput.selectionStart;
+          const end = appareilInput.selectionEnd;
+          appareilInput.value = appareilInput.value.toUpperCase();
+          if (typeof start === "number" && typeof end === "number") {
+            appareilInput.setSelectionRange(start, end);
+          }
+        }
+        updateAccessChoiceTitle();
+      });
+      $("appareil-list").addEventListener("click", (event) => {
+        const hpToggle = event.target.closest("[data-hp-toggle]");
+        if (!hpToggle) {
+          return;
+        }
+        const active = hpToggle.classList.toggle("active");
+        hpToggle.setAttribute("aria-pressed", active ? "true" : "false");
+      });
+
+      document.querySelectorAll("[data-access-choice]").forEach((button) => {
+        button.addEventListener("click", () => {
+          state.accessChoice = button.dataset.accessChoice;
+          document.querySelectorAll("[data-access-choice]").forEach((node) => node.classList.toggle("active", node === button));
+          syncDescriptionStep();
+        });
+      });
+
+      $("poste-search").addEventListener("input", (event) => {
+        state.selectedPoste = null;
+        $("poste").value = "";
+        $("type").value = "";
+        $("sat").value = "";
+        $("poste-selected-box").classList.add("hidden");
+        filterPostes(event.target.value);
+      });
+
+      document.addEventListener("click", (event) => {
+        const previewLink = event.target.closest("[data-preview-map]");
+        if (previewLink) {
+          event.preventDefault();
+          openPreviewMap(
+            previewLink.dataset.label || "Coordonnées",
+            Number(previewLink.dataset.lat),
+            Number(previewLink.dataset.lng)
+          );
+          return;
+        }
+        if (!event.target.closest(".search-wrap")) {
+          $("poste-results").style.display = "none";
+        }
+      });
+
+      $("alice-preview-close").addEventListener("click", closePreviewMap);
+      previewOverlay.addEventListener("click", (event) => {
+        if (event.target === previewOverlay) {
+          closePreviewMap();
+        }
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && previewOverlay.classList.contains("active")) {
+          closePreviewMap();
+        }
+      });
+    }
+
+    async function init() {
+      hydrateFromUrl();
+      syncAppareilRows();
+      if (state.mode === "carte" && state.devicePoint) {
+        $("device-coords").textContent = `Coordonnées reprises : ${formatPoint(state.devicePoint)}`;
+      }
+      if (state.selectedPoste && state.mode === "fiche") {
+        $("poste").value = state.selectedPoste.nom;
+        $("type").value = state.selectedPoste.type;
+        $("sat").value = state.selectedPoste.sat;
+      }
+      syncDescriptionStep();
+      bindEvents();
+      try {
+        initMap("device");
+        initMap("access");
+      } catch {}
+      try {
+        await loadPostesIfNeeded();
+      } catch {
+        setStatus("Impossible de charger la liste des postes.", "error");
+      }
+      if (state.selectedPoste) {
+        centerMapsOnPoste(state.selectedPoste);
+      }
+      buildVisibleSteps();
+      showStep(0);
+    }
+
+    init();
+  </script>
+</body>
+</html>

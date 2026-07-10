@@ -1,0 +1,97 @@
+:root {
+  --alice-bg-page-light: #f3f6fb;
+  --alice-bg-page-alt-light: #e2e8f0;
+  --alice-bg-page-app-light: #f5f7fb;
+  --alice-panel-light: rgba(255, 255, 255, 0.96);
+  --alice-panel-strong-light: rgba(248, 250, 252, 0.98);
+  --alice-panel-soft-light: #ffffff;
+  --alice-panel-muted-light: #e2e8f0;
+  --alice-line-light: #dbe3ef;
+  --alice-line-soft-light: rgba(148, 163, 184, 0.24);
+  --alice-line-muted-light: rgba(148, 163, 184, 0.34);
+  --alice-text-light: #0f172a;
+  --alice-text-strong-light: #16324f;
+  --alice-text-soft-light: #253c5d;
+  --alice-muted-light: #64748b;
+  --alice-muted-strong-light: #516789;
+  --alice-accent-blue-light: #2563eb;
+  --alice-accent-blue-strong-light: #1d4ed8;
+  --alice-accent-blue-soft-light: rgba(59, 130, 246, 0.12);
+  --alice-accent-blue-soft-alt-light: #e8eef8;
+  --alice-accent-blue-soft-hover-light: #dbe6f6;
+  --alice-accent-teal-light: #0ea5a3;
+  --alice-success-light: #16a34a;
+  --alice-success-strong-light: #15803d;
+  --alice-warning-light: #f59e0b;
+  --alice-danger-light: #dc2626;
+  --alice-danger-strong-light: #c81e1e;
+  --alice-shadow-soft-light: 0 14px 32px rgba(15, 76, 129, 0.12);
+  --alice-shadow-app-light: 0 24px 60px rgba(15, 23, 42, 0.12);
+  --alice-ui-glass-bg-light: linear-gradient(
+    135deg,
+    rgba(245, 245, 245, 0.82) 0%,
+    rgba(238, 238, 238, 0.74) 100%
+  );
+  --alice-ui-glass-border-light: rgba(255, 255, 255, 0.55);
+  --alice-ui-glass-shadow-light:
+    inset 0 1px 4px rgba(255, 255, 255, 0.4),
+    0 8px 24px rgba(0, 0, 0, 0.24);
+  --alice-ui-tip-light: rgba(238, 238, 238, 0.88);
+  --alice-search-text-light: #1f2937;
+  --alice-search-placeholder-light: #6b7280;
+  --alice-search-pill-bg-light: rgba(255, 255, 255, 0.92);
+  --alice-search-pill-border-light: rgba(191, 219, 254, 0.95);
+  --alice-search-pill-text-light: #475569;
+  --alice-search-pill-hover-bg-light: #f8fbff;
+  --alice-search-pill-hover-border-light: rgba(147, 197, 253, 0.98);
+  --alice-search-pill-hover-text-light: #334155;
+  --alice-search-pill-active-bg-light: linear-gradient(180deg, rgba(219, 234, 254, 0.98), rgba(191, 219, 254, 0.9));
+  --alice-search-pill-active-border-light: rgba(96, 165, 250, 0.72);
+  --alice-search-pill-active-text-light: #1d4ed8;
+  --alice-version-pill-border-light: rgba(59, 130, 246, 0.35);
+  --alice-version-pill-bg-light: rgba(59, 130, 246, 0.12);
+  --alice-version-pill-text-light: #1d4ed8;
+  --alice-version-pill-hover-bg-light: rgba(59, 130, 246, 0.2);
+  --alice-version-pill-hover-border-light: rgba(37, 99, 235, 0.5);
+  --alice-page-glow-dark:
+    radial-gradient(circle at top left, rgba(96, 165, 250, 0.08), transparent 28%),
+    radial-gradient(circle at top right, rgba(45, 212, 191, 0.06), transparent 22%);
+  --alice-shadow-dark:
+    0 30px 64px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  --alice-shadow-app-dark: 0 24px 60px rgba(0, 0, 0, 0.35);
+  --alice-bg-page-dark: #0b1220;
+  --alice-bg-page-deep-dark: #09111d;
+  --alice-panel-dark: rgba(15, 23, 42, 0.94);
+  --alice-panel-strong-dark: rgba(12, 19, 32, 0.96);
+  --alice-panel-soft-dark: rgba(30, 41, 59, 0.48);
+  --alice-line-dark: rgba(148, 163, 184, 0.16);
+  --alice-line-strong-dark: rgba(148, 163, 184, 0.14);
+  --alice-text-dark: #eff6ff;
+  --alice-text-soft-dark: #d7e3f6;
+  --alice-muted-dark: #9fb0c3;
+  --alice-accent-blue-dark: #8fc2ff;
+  --alice-accent-blue-soft-dark: rgba(96, 165, 250, 0.18);
+  --alice-accent-blue-soft-alt-dark: rgba(96, 165, 250, 0.14);
+  --alice-accent-blue-soft-hover-dark: rgba(96, 165, 250, 0.16);
+  --alice-search-text-dark: #eff6ff;
+  --alice-search-placeholder-dark: rgba(239, 246, 255, 0.92);
+  --alice-search-pill-bg-dark: linear-gradient(180deg, rgba(22, 78, 99, 0.36), rgba(15, 118, 110, 0.22));
+  --alice-search-pill-border-dark: rgba(94, 234, 212, 0.18);
+  --alice-search-pill-text-dark: #dffcf7;
+  --alice-search-pill-hover-bg-dark: linear-gradient(180deg, rgba(15, 118, 110, 0.42), rgba(13, 148, 136, 0.26));
+  --alice-search-pill-hover-border-dark: rgba(94, 234, 212, 0.28);
+  --alice-search-pill-hover-text-dark: #ffffff;
+  --alice-search-pill-active-bg-dark: linear-gradient(180deg, rgba(20, 83, 45, 0.58), rgba(22, 101, 52, 0.4));
+  --alice-search-pill-active-border-dark: rgba(110, 231, 183, 0.34);
+  --alice-search-pill-active-text-dark: #ecfdf5;
+  --alice-version-pill-border-dark: rgba(96, 165, 250, 0.35);
+  --alice-version-pill-bg-dark: rgba(96, 165, 250, 0.14);
+  --alice-version-pill-text-dark: #bfdbfe;
+  --alice-version-pill-hover-bg-dark: rgba(96, 165, 250, 0.22);
+  --alice-version-pill-hover-border-dark: rgba(125, 211, 252, 0.46);
+  --alice-accent-teal-dark: #5eead4;
+  --alice-success-dark: #4ade80;
+  --alice-warning-dark: #fbbf24;
+  --alice-danger-dark: #f87171;
+}

@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+    <meta name="theme-color" content="#0b1726" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <title>ALICE</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./icons/icon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+    <link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./theme.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="map"></div>
+    <div class="controle-recherche" id="controle-recherche">
+      <label class="recherche-champ-wrap" for="champ-recherche">
+        <img src="./alice.webp" alt="Logo ALICE" class="recherche-logo" onerror="this.style.display='none';" />
+        <input
+          id="champ-recherche"
+          class="recherche-champ"
+          type="search"
+          autocomplete="off"
+          placeholder="Rechercher, un poste, appareil, accès, PN, *adresse..."
+          aria-label="Rechercher un poste, un appareil, un accès, un PN ou une adresse avec *"
+        />
+      </label>
+      <ul class="recherche-resultats" id="recherche-resultats" aria-label="Resultats de recherche"></ul>
+    </div>
+    <div class="info-pk" id="info-pk" aria-live="polite" aria-hidden="true">
+      🔍 Zoomez pour afficher les PK ou cliquez sur une ligne ferroviaire.
+    </div>
+    <div class="info-chargement-couche" id="info-chargement-couche" aria-live="polite" aria-hidden="true"></div>
+
+    <div class="controle-filtres" id="controle-filtres">
+      <button
+        class="bouton-filtres bouton-localisation-mobile"
+        id="bouton-localisation-mobile"
+        type="button"
+        aria-label="Me localiser"
+        title="Me localiser"
+      >
+        <svg class="icone-localisation-mobile" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 8.8A3.2 3.2 0 1 0 12 15.2 3.2 3.2 0 1 0 12 8.8z" />
+          <path d="M20.5 11h-1.64a6.94 6.94 0 0 0-5.86-5.86V3.5a1 1 0 1 0-2 0v1.64A6.94 6.94 0 0 0 5.14 11H3.5a1 1 0 1 0 0 2h1.64a6.94 6.94 0 0 0 5.86 5.86v1.64a1 1 0 1 0 2 0v-1.64A6.94 6.94 0 0 0 18.86 13h1.64a1 1 0 1 0 0-2zM12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10z" />
+        </svg>
+      </button>
+      <button
+        class="bouton-filtres bouton-itineraire"
+        id="bouton-itineraire"
+        type="button"
+        aria-label="Comparer deux postes"
+        title="Comparer 2 postes"
+      >
+        <span class="icone-itineraire" aria-hidden="true">&lt;&gt;</span>
+      </button>
+      <a
+        class="bouton-filtres bouton-tableau"
+        id="bouton-tableau"
+        href="./tableau.html"
+        aria-label="Ouvrir le tableau blanc"
+        title="Tableau blanc"
+      >
+        <svg class="icone-tableau" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 4h7v7H4V4zm9 0h7v7h-7V4zM4 13h7v7H4v-7zm9 0h7v7h-7v-7z" />
+        </svg>
+      </a>
+      <button
+        class="bouton-filtres"
+        id="bouton-filtres"
+        type="button"
+        aria-label="Afficher les filtres"
+        aria-expanded="false"
+      >
+        <svg class="icone-burger" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z" />
+        </svg>
+      </button>
+
+      <form class="menu-filtres" aria-label="Filtres de couches">
+        <label class="option-filtre">
+          <input type="checkbox" name="filtre-appareils" />
+          <span>Appareils <span class="filtre-compteur" id="compteur-appareils">(0)</span></span>
+        </label>
+        <label class="option-filtre">
+          <input type="checkbox" name="filtre-acces" />
+          <span>Acces voiture <span class="filtre-compteur" id="compteur-acces">(0)</span></span>
+        </label>
+        <label class="option-filtre">
+          <input type="checkbox" name="filtre-postes" />
+          <span>Postes &amp; SAT <span class="filtre-compteur" id="compteur-postes">(0)</span></span>
+        </label>
+        <label class="option-filtre">
+          <input type="checkbox" name="filtre-pk" />
+          <span>PK</span>
+        </label>
+        <label class="option-filtre">
+          <input type="checkbox" name="filtre-pn" />
+          <span>Passages a niveau <span class="filtre-compteur" id="compteur-pn">(0)</span></span>
+        </label>
+        <label class="option-filtre">
+          <input type="checkbox" name="filtre-lignes-osm" />
+          <span>Ligne ferroviaire</span>
+        </label>
+        <div class="menu-filtres-separateur" role="presentation"></div>
+        <button class="bouton-filtres-legende" id="bouton-legende-filtres" type="button">Légende</button>
+      </form>
+    </div>
+
+    <div class="controle-fonds" id="controle-fonds">
+      <button
+        class="bouton-fonds"
+        id="bouton-fonds"
+        type="button"
+        aria-label="Choisir le fond de carte"
+        aria-expanded="false"
+      >
+        <svg class="icone-couches" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2 1 7l11 5 11-5-11-5zm0 9L1 6v2l11 5 11-5V6l-11 5zm0 4L1 10v2l11 5 11-5v-2l-11 5z" />
+        </svg>
+      </button>
+
+      <form class="menu-fonds" role="radiogroup" aria-label="Fond de carte">
+        <label class="option-fond">
+          <input type="radio" name="fond" value="ignAuto" checked />
+          <span id="libelle-fond-auto-ign">Auto Voyager + Satellite IGN</span>
+        </label>
+        <label class="option-fond">
+          <input type="radio" name="fond" value="esriAuto" />
+          <span id="libelle-fond-auto-esri">Auto Voyager + Satellite ESRI</span>
+        </label>
+        <label class="option-fond">
+          <input type="radio" name="fond" value="positron" />
+          <span>Positron</span>
+        </label>
+        <label class="option-fond">
+          <input type="radio" name="fond" value="voyager" />
+          <span>Voyager</span>
+        </label>
+        <label class="option-fond">
+          <input type="radio" name="fond" value="darkMatter" />
+          <span>CARTO Dark Matter</span>
+        </label>
+        <label class="option-fond">
+          <input type="radio" name="fond" value="planIgn" />
+          <span>Plan IGN</span>
+        </label>
+        <label class="option-fond">
+          <input type="radio" name="fond" value="osm" />
+          <span>OSM Standard</span>
+        </label>
+        <div class="option-fond-beta">
+          <label class="option-fond">
+            <input type="radio" name="fond" value="satelliteIgn" />
+            <span>Satellite IGN</span>
+          </label>
+          <label class="option-ville">
+            <input type="checkbox" id="labels-ign" />
+            <span class="switch-ville" aria-hidden="true"></span>
+            <span class="option-ville-label">Ville</span>
+          </label>
+        </div>
+        <div class="option-fond-beta">
+          <label class="option-fond">
+            <input type="radio" name="fond" value="satelliteEsri" />
+            <span>Satellite ESRI</span>
+          </label>
+          <label class="option-ville">
+            <input type="checkbox" id="labels-esri" />
+            <span class="switch-ville" aria-hidden="true"></span>
+            <span class="option-ville-label">Ville</span>
+          </label>
+        </div>
+      </form>
+    </div>
+
+    <div class="panneau-mesure" id="panneau-mesure" aria-live="polite">
+      <pre class="panneau-mesure-texte" id="panneau-mesure-texte"></pre>
+    </div>
+    <button class="bouton-sortie-mesure" id="bouton-sortie-mesure" type="button">
+      ❌ Quitter le traçage
+    </button>
+    <div class="menu-legende-carte" id="menu-legende-carte" aria-hidden="true">
+      <div class="menu-legende-entete">
+        <h2 class="menu-legende-titre">Légende</h2>
+        <button class="menu-legende-fermer" id="bouton-fermer-legende" type="button" aria-label="Fermer la légende">
+          ×
+        </button>
+      </div>
+      <div class="menu-legende-section">
+        <p class="menu-legende-section-titre">Objets carte</p>
+        <ul class="menu-legende-liste">
+          <li class="menu-legende-item"><span class="menu-legende-pastille pastille-acces"></span>Accès voiture</li>
+          <li class="menu-legende-item"><span class="menu-legende-pastille pastille-poste"></span>Postes</li>
+          <li class="menu-legende-item"><span class="menu-legende-pastille pastille-poste-sat"></span>SAT</li>
+          <li class="menu-legende-item"><span class="menu-legende-pastille pastille-pn"></span>Passages à niveau</li>
+          <li class="menu-legende-item"><span class="menu-legende-pastille pastille-hp"></span>Hors patrimoine</li>
+        </ul>
+      </div>
+      <div class="menu-legende-section">
+        <p class="menu-legende-section-titre">Couleurs appareils</p>
+        <ul class="menu-legende-liste">
+          <li class="menu-legende-item"><span class="menu-legende-pastille pastille-app-du"></span>Dispositif d'urgence</li>
+          <li class="menu-legende-item"><span class="menu-legende-pastille pastille-app-si"></span>Interrupteur</li>
+          <li class="menu-legende-item"><span class="menu-legende-pastille pastille-app-tt"></span>Transformateur</li>
+          <li class="menu-legende-item"><span class="menu-legende-pastille pastille-app-t"></span>Sectionneur</li>
+          <li class="menu-legende-item"><span class="menu-legende-pastille pastille-app-alim"></span>Alimentation</li>
+          <li class="menu-legende-item"><span class="menu-legende-pastille pastille-app-autre"></span>Autres</li>
+        </ul>
+      </div>
+      <div class="menu-legende-section">
+        <p class="menu-legende-section-titre">Ligne ferroviaire</p>
+        <ul class="menu-legende-liste" id="liste-legende-lignes-osm"></ul>
+      </div>
+    </div>
+
+    <div class="menu-contextuel-carte" id="menu-contextuel-carte" role="menu" aria-hidden="true">
+      <button class="menu-contextuel-item menu-contextuel-coord" id="ctx-coord" type="button">📍 0.00000, 0.00000</button>
+      <button class="menu-contextuel-item menu-contextuel-adresse" id="ctx-address" type="button" hidden>🏠 Recherche de l'adresse...</button>
+      <button class="menu-contextuel-item" id="ctx-share" type="button">🔗 Partager la position</button>
+      <button class="menu-contextuel-item" id="ctx-itin" type="button">🚗 Itinéraire vers ici</button>
+      <div class="menu-contextuel-sousmenu" id="ctx-submenu-itin" aria-hidden="true">
+        <button class="menu-contextuel-sousitem" id="ctx-gmaps" type="button">🚙 Google Maps</button>
+        <button class="menu-contextuel-sousitem" id="ctx-waze" type="button">🚙 Waze</button>
+        <button class="menu-contextuel-sousitem" id="ctx-apple" type="button">🚙 Apple Plans</button>
+      </div>
+      <div class="menu-contextuel-separateur"></div>
+      <button class="menu-contextuel-item" id="ctx-regle" type="button">📏 Règle / Traçage</button>
+      <div class="menu-contextuel-separateur"></div>
+      <button class="menu-contextuel-item" id="ctx-gmaps-marker" type="button">📌 Google Maps</button>
+      <button class="menu-contextuel-item" id="ctx-street" type="button">🌍 Street View</button>
+      <button class="menu-contextuel-item" id="ctx-imajnet" type="button">🛣️ Imajnet</button>
+      <div class="menu-contextuel-separateur"></div>
+      <button class="menu-contextuel-item" id="ctx-add-appareil" type="button">📍 Ajouter un appareil ici</button>
+    </div>
+    <div
+      class="modal-itineraire"
+      id="modal-itineraire"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Calculer un trajet"
+      aria-hidden="true"
+    >
+      <div class="modal-itineraire-carte">
+        <div class="modal-itineraire-entete">
+          <button class="modal-itineraire-fermer" id="modal-itineraire-fermer" type="button" aria-label="Fermer le calcul trajet">×</button>
+          <h2 class="modal-itineraire-titre">Calculer un trajet</h2>
+          <p class="modal-itineraire-sous-titre">Ajoutez, supprimez et réorganisez les étapes</p>
+        </div>
+
+        <div class="modal-itineraire-champs" id="itineraire-etapes" aria-label="Étapes du trajet">
+        </div>
+        <div class="modal-itineraire-commandes-bas">
+          <button class="modal-itineraire-ajouter" id="itineraire-ajouter-etape" type="button">Ajouter une destination</button>
+          <button class="modal-itineraire-optimiser" id="itineraire-optimiser-etapes" type="button" hidden>Optimiser les étapes</button>
+        </div>
+
+        <div class="modal-itineraire-etat" id="itineraire-etat">Choisissez un départ et une arrivée.</div>
+
+        <section class="modal-itineraire-resume" id="itineraire-resume" aria-live="polite">
+          <div class="modal-itineraire-resume-tete">
+            <strong>Résumé du trajet</strong>
+            <span>Temps et distance estimés</span>
+          </div>
+          <div class="modal-itineraire-cartes">
+            <div class="modal-itineraire-carte-kpi">
+              <strong id="itineraire-distance">-</strong>
+              <span>Distance</span>
+            </div>
+            <div class="modal-itineraire-carte-kpi">
+              <strong id="itineraire-duree">-</strong>
+              <span>Temps estimé</span>
+            </div>
+          </div>
+        </section>
+
+        <div class="modal-itineraire-actions">
+          <a class="popup-bouton-itineraire" id="itineraire-google" href="#" target="_blank" rel="noopener noreferrer">🗺️ Google Maps</a>
+          <a class="popup-bouton-itineraire" id="itineraire-apple" href="#" target="_blank" rel="noopener noreferrer">🍎 Plans</a>
+          <a class="popup-bouton-itineraire" id="itineraire-waze" href="#" target="_blank" rel="noopener noreferrer">🚗 Waze</a>
+        </div>
+
+        <button class="modal-itineraire-toggle-carte" id="itineraire-toggle-carte" type="button" aria-expanded="false">
+          Afficher la carte
+        </button>
+        <div class="modal-itineraire-apercu" id="itineraire-apercu" aria-hidden="true">
+          <div id="itineraire-carte"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-fiche" id="modal-fiche" role="dialog" aria-modal="true" aria-label="Fiche" aria-hidden="true">
+      <div class="modal-fiche-carte">
+        <button class="modal-fiche-partager" id="modal-fiche-partager" type="button" aria-label="Partager la fiche">
+          <svg class="modal-fiche-partager-icone" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12" />
+            <path d="M8.5 6.5 12 3l3.5 3.5" />
+            <path d="M6 10.5v7a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-7" />
+          </svg>
+        </button>
+        <button class="modal-fiche-fermer" id="modal-fiche-fermer" type="button" aria-label="Fermer la fiche">×</button>
+        <div class="modal-fiche-contenu maplibregl-popup-content" id="modal-fiche-contenu"></div>
+      </div>
+    </div>
+    <div class="modal-apropos" id="modal-apropos" role="dialog" aria-modal="true" aria-label="À propos" aria-hidden="true">
+      <div class="modal-apropos-carte">
+        <div class="modal-apropos-entete">
+          <img src="./alice.webp" alt="Logo ALICE" class="modal-apropos-logo" onerror="this.style.display='none';" />
+          <h2 class="modal-apropos-titre">À propos d'ALICE</h2>
+          <a
+            id="apropos-version-pill"
+            class="modal-apropos-version-pill"
+            href="./versions.html"
+            title="Voir l'historique des versions"
+          ></a>
+          <button class="modal-apropos-fermer" id="modal-apropos-fermer" type="button" aria-label="Fermer la fenêtre À propos">×</button>
+        </div>
+        <p class="modal-apropos-texte">
+          ALICE est une <strong>A</strong>pplication interne de <strong>L</strong>ocalisation des <strong>I</strong>nstallations de <strong>C</strong>onduite <strong>E</strong>ALE, conçue pour faciliter le repérage, l’analyse et l’accès aux informations d’exploitation pour les équipes de maintenance, travaux, groupe technique, régulation et encadrement.
+        </p>
+        <p class="modal-apropos-texte">
+          Application développée par <a href="mailto:arnaud.debaecker+ALICE@gmail.com">A. Debaecker</a>.
+        </p>
+        <p class="modal-apropos-note">
+          ALICE est un projet expérimental en cours d'évaluation.
+        </p>
+        <h3 class="modal-apropos-sous-titre">Sources de données</h3>
+        <ul class="modal-apropos-liste">
+          <li>PN et lignes ferroviaires OSM locales: données OpenStreetMap contributors, licence ODbL 1.0.</li>
+          <li>PK complémentaires: SNCF Open Data / extras-opendata-sncf-reseau selon couches actives, licence ODbL-1.0.</li>
+          <li>Fond cartographique: CARTO, IGN, OpenStreetMap (selon fond/couches).</li>
+        </ul>
+        <h3 class="modal-apropos-sous-titre">Réutilisation</h3>
+        <p class="modal-apropos-texte">© ALICE – Données internes : réutilisation interdite sans autorisation.</p>
+        <p class="modal-apropos-note">
+          Les données Open Data tierces restent soumises à leurs licences respectives.
+        </p>
+<details class="modal-apropos-confidentialite">
+  <summary>Confidentialité et protection des données</summary>
+  <div class="modal-apropos-confidentialite-contenu">
+
+    <p class="modal-apropos-texte">ALICE est un outil expérimental développé à titre personnel par A. Debaecker et partagé avec un nombre limité d'utilisateurs. Il ne s'agit pas d'une application officielle.</p>
+
+    <h3 class="modal-apropos-sous-titre">Données transmises</h3>
+    <p class="modal-apropos-texte">Le formulaire de demande d'ajout d'appareil transmet uniquement les informations techniques nécessaires au traitement de votre demande : installation concernée, coordonnées GPS du point sélectionné et description.</p>
+    <p class="modal-apropos-texte">ALICE ne demande aucune donnée permettant d'identifier directement l'utilisateur. Aucun nom, prénom, adresse e-mail ou numéro de téléphone n'est demandé. Merci de ne saisir aucune information personnelle, privée ou confidentielle dans les descriptions.</p>
+
+    <h3 class="modal-apropos-sous-titre">Géolocalisation</h3>
+    <p class="modal-apropos-texte">La géolocalisation est facultative et s'active uniquement à la demande de l'utilisateur et après autorisation du navigateur.</p>
+    <p class="modal-apropos-texte">Sur la carte principale, votre position sert uniquement à afficher les installations proches. Elle n'est ni enregistrée par ALICE ni transmise à l'auteur. Aucun historique de déplacement n'est constitué.</p>
+    <p class="modal-apropos-texte">Lors de l'envoi d'une demande d'ajout d'appareil, seules les coordonnées GPS du point que vous avez sélectionné et confirmé sont transmises avec la demande. Ce point ne correspond pas nécessairement à la position réelle de l'utilisateur.</p>
+
+    <h3 class="modal-apropos-sous-titre">Prestataires techniques</h3>
+    <p class="modal-apropos-texte">ALICE est hébergé au moyen du service GitHub Pages. Le formulaire et certaines fonctionnalités utilisent des services Google. Ces prestataires peuvent traiter automatiquement des données techniques nécessaires au fonctionnement et à la sécurité de leurs services. L'auteur d'ALICE ne reçoit pas ces données techniques, n'y accède pas et ne les utilise pas pour identifier ou suivre les utilisateurs.</p>
+
+    <h3 class="modal-apropos-sous-titre">Traitement et conservation</h3>
+    <p class="modal-apropos-texte">Les demandes non retenues sont supprimées à la fin de leur étude. Les informations techniques validées sont intégrées au référentiel ALICE et conservées tant qu'elles restent utiles et à jour. Toute information personnelle transmise accidentellement est supprimée dès sa détection ou après signalement.</p>
+
+    <h3 class="modal-apropos-sous-titre">Traceurs</h3>
+    <p class="modal-apropos-texte">ALICE n'utilise aucun outil de mesure d'audience, aucun traceur publicitaire et aucun mécanisme de suivi des utilisateurs. Des informations strictement fonctionnelles peuvent être enregistrées dans le navigateur, notamment les recherches récentes, les notifications déjà consultées et certains choix d'affichage. Elles ne sont pas utilisées pour suivre la navigation ni mesurer l'audience.</p>
+
+    <h3 class="modal-apropos-sous-titre">Contact</h3>
+    <p class="modal-apropos-texte">Pour toute question relative à la confidentialité, ou pour demander l'accès, la rectification ou la suppression d'une information personnelle transmise accidentellement, vous pouvez <a href="mailto:arnaud.debaecker+ALICE@gmail.com">contacter l'auteur d'ALICE</a>. Si une difficulté concernant des données personnelles ne peut pas être résolue, vous pouvez également adresser une réclamation à la CNIL sur <a href="https://www.cnil.fr/">cnil.fr</a>.</p>
+
+  </div>
+</details>
+        <div class="modal-apropos-actions">
+          <button class="modal-apropos-bouton-install" id="bouton-installer-pwa" type="button">
+            Installer ALICE
+          </button>
+          <p class="modal-apropos-install-note" id="message-installer-pwa" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal-localisation"
+      id="modal-localisation"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Résultats autour de vous"
+      aria-hidden="true"
+    >
+      <div class="modal-localisation-carte">
+        <div class="modal-localisation-entete">
+          <button class="modal-localisation-fermer" id="modal-localisation-fermer" type="button" aria-label="Fermer la localisation">×</button>
+          <h2 class="modal-localisation-titre">Autour de vous</h2>
+          <p class="modal-localisation-sous-titre">Résultats proches de votre position actuelle</p>
+          <div class="modal-localisation-etat" id="localisation-etat" aria-live="polite">Appuyez sur "Me localiser".</div>
+        </div>
+        <ul class="modal-localisation-resultats" id="localisation-resultats" aria-label="Résultats autour de vous"></ul>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script>
+    <script src="./rss-numeros.js"></script>
+    <script src="./referentiel-lignes.js"></script>
+    <script src="./code.js"></script>
+    <script src="./recherche.js"></script>
+    <script src="./app.js"></script>
+    <script src="./notification.js"></script>
+    
+  </body>
+</html>

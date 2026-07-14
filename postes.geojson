@@ -9,7 +9,7 @@
         "description": "",
         "rss": "",
         "contact": "Répartiteur : 03 28 55 60 94",
-        "numero_ligne": 289000,
+        "numero_ligne": "289000",
         "code": false,
         "armen": "74354415"
       },
@@ -31,7 +31,7 @@
         "description": "",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 321000,
+        "numero_ligne": "321000",
         "code": false,
         "armen": "74046236"
       },
@@ -134,7 +134,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": false,
         "armen": "74046890"
       },
@@ -157,7 +157,7 @@
         "description_telecommande": "PAS900",
         "rss": "",
         "contact": "",
-        "numero_ligne": 250000,
+        "numero_ligne": "250000",
         "code": false,
         "armen": "74352677"
       },
@@ -180,7 +180,7 @@
         "description_telecommande": "90kV / PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": "74352829"
       },
@@ -350,7 +350,7 @@
         "description_telecommande": "ACS21",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": "74046942"
       },
@@ -375,7 +375,7 @@
         "technique_consigne": "",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 216000,
+        "numero_ligne": "216000",
         "code": false,
         "armen": "74351565"
       },
@@ -398,7 +398,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 216312,
+        "numero_ligne": "216312",
         "code": false
       },
       "geometry": {
@@ -441,7 +441,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 314000,
+        "numero_ligne": "314000",
         "code": false
       },
       "geometry": {
@@ -483,7 +483,7 @@
         "description": "",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 311000,
+        "numero_ligne": "311000",
         "code": false,
         "armen": "74044954"
       },
@@ -547,7 +547,7 @@
         "description_telecommande": "ACS21",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 261000,
+        "numero_ligne": "261000",
         "code": false,
         "armen": "182949272"
       },
@@ -571,7 +571,7 @@
         "rss": "C",
         "contact": "",
         "code": false,
-        "numero_ligne": 311000
+        "numero_ligne": "311000"
       },
       "geometry": {
         "type": "Point",
@@ -592,7 +592,7 @@
         "description_telecommande": "ACS21",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 212000,
+        "numero_ligne": "212000",
         "code": false,
         "armen": "74103886"
       },
@@ -615,7 +615,7 @@
         "description_telecommande": "ACS25",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 242000,
+        "numero_ligne": "242000",
         "code": false,
         "armen": "74046218"
       },
@@ -636,7 +636,7 @@
         "description_telecommande": "ACS25",
         "rss": "",
         "contact": "",
-        "numero_ligne": 295000,
+        "numero_ligne": "295000",
         "code": false,
         "armen": "74352693"
       },
@@ -657,7 +657,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 301000,
+        "numero_ligne": "301000",
         "code": false,
         "armen": "74353503"
       },
@@ -678,7 +678,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 295000,
+        "numero_ligne": "295000",
         "code": false,
         "armen": "74351269"
       },
@@ -701,7 +701,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": "74353451"
       },
@@ -724,7 +724,7 @@
         "description_telecommande": "",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 259000,
+        "numero_ligne": "259000",
         "code": false,
         "armen": "74351589"
       },
@@ -745,7 +745,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 295000,
+        "numero_ligne": "295000",
         "code": false,
         "armen": "74351719"
       },
@@ -768,7 +768,7 @@
         "description_telecommande": "PAS900",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 242000,
+        "numero_ligne": "242000",
         "code": false,
         "armen": "74353525"
       },
@@ -790,7 +790,7 @@
         "description": "",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": false,
         "armen": "74351739"
       },
@@ -813,7 +813,7 @@
         "description_telecommande": "ACS25",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": "74045686"
       },
@@ -857,7 +857,7 @@
         "description_telecommande": "PAS900",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 267000,
+        "numero_ligne": "267000",
         "code": false,
         "armen": "74353481"
       },
@@ -895,7 +895,7 @@
         "description": "",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 242000,
+        "numero_ligne": "242000",
         "code": false,
         "armen": "74350975"
       },
@@ -918,7 +918,7 @@
         "description_telecommande": "PAS900",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": false,
         "armen": "74351747"
       },
@@ -941,7 +941,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 301000,
+        "numero_ligne": "301000",
         "code": false,
         "armen": "74352059"
       },
@@ -964,7 +964,7 @@
         "description_telecommande": "PAS900",
         "rss": "",
         "contact": "",
-        "numero_ligne": 269000,
+        "numero_ligne": "269000",
         "code": false,
         "armen": "74353577"
       },
@@ -987,7 +987,7 @@
         "description_telecommande": "ACS25",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 267000,
+        "numero_ligne": "267000",
         "code": false,
         "armen": "74352035"
       },
@@ -1025,7 +1025,7 @@
         "description": "",
         "rss": "C",
         "contact": "Agent E : 03 21 57 31 72",
-        "numero_ligne": 301000,
+        "numero_ligne": "301000",
         "code": false,
         "armen": "74350961"
       },
@@ -1048,7 +1048,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 301000,
+        "numero_ligne": "301000",
         "code": false,
         "armen": "74353601"
       },
@@ -1071,7 +1071,7 @@
         "description_telecommande": "ACS21",
         "rss": "C",
         "contact": "Agent E : 03 21 57 31 72",
-        "numero_ligne": 301000,
+        "numero_ligne": "301000",
         "code": false,
         "armen": "171663592"
       },
@@ -1093,7 +1093,7 @@
         "description": "",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": false,
         "armen": "74351767"
       },
@@ -1116,7 +1116,7 @@
         "description_telecommande": "",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 267000,
+        "numero_ligne": "267000",
         "code": false,
         "armen": "74353623"
       },
@@ -1138,7 +1138,7 @@
         "description": "",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": false,
         "armen": "74046420"
       },
@@ -1161,7 +1161,7 @@
         "description_telecommande": "ACS21",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 289000,
+        "numero_ligne": "289000",
         "code": false,
         "armen": "171663675"
       },
@@ -1182,7 +1182,7 @@
         "description_telecommande": "IP / ACS21",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 304000,
+        "numero_ligne": "304000",
         "code": false,
         "armen": "179082618"
       },
@@ -1204,7 +1204,7 @@
         "description": "",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 304000,
+        "numero_ligne": "304000",
         "code": false,
         "armen": "176553536"
       },
@@ -1227,7 +1227,7 @@
         "description_telecommande": "ACS21",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 304000,
+        "numero_ligne": "304000",
         "code": false,
         "armen": "176553254"
       },
@@ -1250,7 +1250,7 @@
         "description_telecommande": "ACS21",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 284000,
+        "numero_ligne": "284000",
         "code": false,
         "armen": "74352083"
       },
@@ -1273,7 +1273,7 @@
         "description_telecommande": "ACS25",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 272301,
+        "numero_ligne": "272301",
         "code": false,
         "armen": "171665034"
       },
@@ -1296,7 +1296,7 @@
         "description_telecommande": "ACS25",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 272301,
+        "numero_ligne": "272301",
         "code": false,
         "armen": "171664923"
       },
@@ -1342,7 +1342,7 @@
         "description_telecommande": "ACS21",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 242000,
+        "numero_ligne": "242000",
         "code": false,
         "armen": "74354429"
       },
@@ -1365,7 +1365,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": "74353649"
       },
@@ -1428,7 +1428,7 @@
         "description_telecommande": "ACS21",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 301000,
+        "numero_ligne": "301000",
         "code": false,
         "armen": "171663746"
       },
@@ -1451,7 +1451,7 @@
         "description_telecommande": "ACS25",
         "rss": "",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": false,
         "armen": "74351293"
       },
@@ -1474,7 +1474,7 @@
         "description_telecommande": "IP / ACS21",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 304000,
+        "numero_ligne": "304000",
         "code": false,
         "armen": "179081676"
       },
@@ -1495,7 +1495,7 @@
         "description_telecommande": "ACS25",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 216000,
+        "numero_ligne": "216000",
         "code": false,
         "armen": "74352531"
       },
@@ -1516,7 +1516,7 @@
         "description_telecommande": "ACS25",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 216000,
+        "numero_ligne": "216000",
         "code": false,
         "armen": "74351317"
       },
@@ -1539,7 +1539,7 @@
         "description_telecommande": "63kV / PAS900",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 242000,
+        "numero_ligne": "242000",
         "code": true,
         "armen": "74352869"
       },
@@ -1596,7 +1596,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 314000,
+        "numero_ligne": "314000",
         "code": false,
         "armen": "74351603"
       },
@@ -1661,7 +1661,7 @@
         "description_telecommande": "ACS21",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 250000,
+        "numero_ligne": "250000",
         "code": false,
         "armen": "173455733"
       },
@@ -1684,7 +1684,7 @@
         "description_telecommande": "PAS900",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 250000,
+        "numero_ligne": "250000",
         "code": false,
         "armen": "74353671"
       },
@@ -1707,7 +1707,7 @@
         "description_telecommande": "PAS900",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 216308,
+        "numero_ligne": "216308",
         "code": false,
         "armen": "171663814"
       },
@@ -1751,7 +1751,7 @@
         "description_telecommande": "PAS900",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 301000,
+        "numero_ligne": "301000",
         "code": false
       },
       "geometry": {
@@ -1772,7 +1772,7 @@
         "description": "",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": false,
         "armen": "74046440"
       },
@@ -1794,7 +1794,7 @@
         "description": "",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": false,
         "armen": "74046426"
       },
@@ -1817,7 +1817,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 314000,
+        "numero_ligne": "314000",
         "code": false,
         "armen": "74351623"
       },
@@ -1945,7 +1945,7 @@
         "description_telecommande": "ACS25",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": "74046250"
       },
@@ -1966,7 +1966,7 @@
         "description_telecommande": "90kV / ACS25",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 301000,
+        "numero_ligne": "301000",
         "code": true,
         "armen": "74352925"
       },
@@ -2010,7 +2010,7 @@
         "description_telecommande": "90kV / ACS25",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 301306,
+        "numero_ligne": "301306",
         "code": false
       },
       "geometry": {
@@ -2032,7 +2032,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 295000,
+        "numero_ligne": "295000",
         "code": false,
         "armen": "74352559"
       },
@@ -2076,7 +2076,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 314000,
+        "numero_ligne": "314000",
         "code": false
       },
       "geometry": {
@@ -2098,7 +2098,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 314306,
+        "numero_ligne": "314306",
         "code": false
       },
       "geometry": {
@@ -2120,7 +2120,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 314306,
+        "numero_ligne": "314306",
         "code": false
       },
       "geometry": {
@@ -2141,7 +2141,7 @@
         "description": "",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 321000,
+        "numero_ligne": "321000",
         "code": false,
         "armen": "74045812"
       },
@@ -2163,7 +2163,7 @@
         "description": "",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": false,
         "armen": "74351781"
       },
@@ -2186,7 +2186,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 295000,
+        "numero_ligne": "295000",
         "code": false,
         "armen": "171663957"
       },
@@ -2209,7 +2209,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 314000,
+        "numero_ligne": "314000",
         "code": false
       },
       "geometry": {
@@ -2252,7 +2252,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 314000,
+        "numero_ligne": "314000",
         "code": false
       },
       "geometry": {
@@ -2274,7 +2274,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 314000,
+        "numero_ligne": "314000",
         "code": false
       },
       "geometry": {
@@ -2296,7 +2296,7 @@
         "description_telecommande": "ACS25",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": false,
         "armen": "74351341"
       },
@@ -2319,7 +2319,7 @@
         "description_telecommande": "ACS21",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 311000,
+        "numero_ligne": "311000",
         "code": false,
         "armen": "171663525"
       },
@@ -2342,7 +2342,7 @@
         "description_telecommande": "225kV / IP / ACS25",
         "rss": "B",
         "contact": "Agent E du poste 1 : 03 28 55 72 28   09 71 92 25 31",
-        "numero_ligne": 292000,
+        "numero_ligne": "292000",
         "code": true,
         "armen": "74352973"
       },
@@ -2365,7 +2365,7 @@
         "description_telecommande": "PAS900",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 254000,
+        "numero_ligne": "254000",
         "code": false,
         "armen": "74352107"
       },
@@ -2388,7 +2388,7 @@
         "description_telecommande": "ACS21",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 289000,
+        "numero_ligne": "289000",
         "code": false,
         "armen": "171664214"
       },
@@ -2432,7 +2432,7 @@
         "description_telecommande": "ACS21",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 286000,
+        "numero_ligne": "286000",
         "code": false
       },
       "geometry": {
@@ -2475,7 +2475,7 @@
         "description_telecommande": "ACS25",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": "74353697"
       },
@@ -2498,7 +2498,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "Agent E : 03 28 24 81 77",
-        "numero_ligne": 301000,
+        "numero_ligne": "301000",
         "code": false,
         "armen": "74353727"
       },
@@ -2518,7 +2518,7 @@
         "description": "",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 216000,
+        "numero_ligne": "216000",
         "code": false,
         "armen": "74351793"
       },
@@ -2541,7 +2541,7 @@
         "description_telecommande": "PAS900",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": "74352131"
       },
@@ -2564,7 +2564,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 301000,
+        "numero_ligne": "301000",
         "code": false,
         "armen": "74352755"
       },
@@ -2587,7 +2587,7 @@
         "description_telecommande": "ACS25",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 242000,
+        "numero_ligne": "242000",
         "code": false,
         "armen": "74047066"
       },
@@ -2610,7 +2610,7 @@
         "description_telecommande": "PAS900",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 242000,
+        "numero_ligne": "242000",
         "code": false,
         "armen": "74352733"
       },
@@ -2633,7 +2633,7 @@
         "description_telecommande": "ACS21",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 311000,
+        "numero_ligne": "311000",
         "code": false,
         "armen": "171663499"
       },
@@ -2696,7 +2696,7 @@
         "description_telecommande": "225kV / IP / ACS25",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": true,
         "armen": "74353299"
       },
@@ -2719,7 +2719,7 @@
         "description_telecommande": "ACS25",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 226309,
+        "numero_ligne": "226309",
         "code": false,
         "armen": "74351993"
       },
@@ -2742,7 +2742,7 @@
         "description_telecommande": "ACS25",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false
       },
       "geometry": {
@@ -2764,7 +2764,7 @@
         "description_telecommande": "ACS25",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false
       },
       "geometry": {
@@ -2786,7 +2786,7 @@
         "description_telecommande": "PAS900",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 267000,
+        "numero_ligne": "267000",
         "code": false,
         "armen": "74353813"
       },
@@ -2809,7 +2809,7 @@
         "description_telecommande": "PAS900",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": "171663127"
       },
@@ -2895,7 +2895,7 @@
         "description_telecommande": "PAS900",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 266300,
+        "numero_ligne": "266300",
         "code": true
       },
       "geometry": {
@@ -2917,7 +2917,7 @@
         "description_telecommande": "PAS900",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 267000,
+        "numero_ligne": "267000",
         "code": true
       },
       "geometry": {
@@ -2960,7 +2960,7 @@
         "description_telecommande": "225kV / IP / ACS25",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 216000,
+        "numero_ligne": "216000",
         "code": true,
         "armen": "74353343"
       },
@@ -2983,7 +2983,7 @@
         "description_telecommande": "90kV / ACS21",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 321000,
+        "numero_ligne": "321000",
         "code": false,
         "armen": [
           "171754128",
@@ -3009,7 +3009,7 @@
         "description_telecommande": "63kV / IP / ACS25",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 267000,
+        "numero_ligne": "267000",
         "code": false,
         "armen": "74353019"
       },
@@ -3032,7 +3032,7 @@
         "description_telecommande": "PAS900",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 242000,
+        "numero_ligne": "242000",
         "code": false,
         "armen": "74353789"
       },
@@ -3055,7 +3055,7 @@
         "description_telecommande": "PAS900",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": false,
         "armen": "74045150"
       },
@@ -3078,7 +3078,7 @@
         "description_telecommande": "ACS25",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 216000,
+        "numero_ligne": "216000",
         "code": false,
         "armen": "74351365"
       },
@@ -3101,7 +3101,7 @@
         "description_telecommande": "63kV / ACS21",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": [
           "171753097",
@@ -3126,7 +3126,7 @@
         "description": "Le DU se trouve au Poste 7",
         "rss": "C",
         "contact": "Agent E de Dunkerque 8 au 0328248177",
-        "numero_ligne": 304000,
+        "numero_ligne": "304000",
         "code": false,
         "armen": "74351017"
       },
@@ -3149,7 +3149,7 @@
         "description_telecommande": "IP / ACS21",
         "rss": "C",
         "contact": "Agent E  Fréthun 03 21 46 82 34",
-        "numero_ligne": 304000,
+        "numero_ligne": "304000",
         "code": false,
         "armen": "179082957"
       },
@@ -3235,7 +3235,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 216000,
+        "numero_ligne": "216000",
         "code": true,
         "armen": "74352591"
       },
@@ -3258,7 +3258,7 @@
         "description_telecommande": "ACS21",
         "rss": "B",
         "contact": "Agent E Dourges PIVOS : 0321695992",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": "74354433"
       },
@@ -3281,7 +3281,7 @@
         "description_telecommande": "ACS25",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 295000,
+        "numero_ligne": "295000",
         "code": false,
         "armen": "74353835"
       },
@@ -3304,7 +3304,7 @@
         "description_telecommande": "ACS25",
         "rss": "C",
         "contact": "Agent E : 03 91 90 13 17",
-        "numero_ligne": 314000,
+        "numero_ligne": "314000",
         "code": false,
         "armen": "74353887"
       },
@@ -3327,7 +3327,7 @@
         "description_telecommande": "ACS25",
         "rss": "C",
         "contact": "Agent E : 03 91 90 13 17",
-        "numero_ligne": 311000,
+        "numero_ligne": "311000",
         "code": false
       },
       "geometry": {
@@ -3349,7 +3349,7 @@
         "description_telecommande": "ACS25",
         "rss": "C",
         "contact": "Agent E : 03 91 90 13 17",
-        "numero_ligne": 311000,
+        "numero_ligne": "311000",
         "code": false
       },
       "geometry": {
@@ -3371,7 +3371,7 @@
         "description_telecommande": "ACS25",
         "rss": "C",
         "contact": "Agent E : 03 91 90 13 17",
-        "numero_ligne": 311000,
+        "numero_ligne": "311000",
         "code": false
       },
       "geometry": {
@@ -3393,7 +3393,7 @@
         "description_telecommande": "45kV / PAS900",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 242000,
+        "numero_ligne": "242000",
         "code": false,
         "armen": "74353069"
       },
@@ -3436,7 +3436,7 @@
         "particularites_pistes": "https://digidocplus.sncf.fr/fi/reference?ref=OP41198",
         "rss": "C",
         "contact": "Agent E : 03 28 43 77 57",
-        "numero_ligne": 301000,
+        "numero_ligne": "301000",
         "code": false,
         "armen": "74353911"
       },
@@ -3475,7 +3475,7 @@
         "description": "Plan de prevention et s'enregistrer à l'accueil.",
         "rss": "A",
         "contact": "Agent E du technicentre : 06 17 01 92 65",
-        "numero_ligne": 267000,
+        "numero_ligne": "267000",
         "code": false,
         "armen": "171697102"
       },
@@ -3498,7 +3498,7 @@
         "description_telecommande": "PAS900",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": false,
         "armen": "74352619"
       },
@@ -3521,7 +3521,7 @@
         "description_telecommande": "PAS900",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 212000,
+        "numero_ligne": "212000",
         "code": false,
         "armen": "74353863"
       },
@@ -3543,7 +3543,7 @@
         "description": "",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 216000,
+        "numero_ligne": "216000",
         "code": false,
         "armen": "74351805"
       },
@@ -3566,7 +3566,7 @@
         "description_telecommande": "ACS21",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 242000,
+        "numero_ligne": "242000",
         "code": false,
         "armen": "177960273"
       },
@@ -3589,7 +3589,7 @@
         "description_telecommande": "ACS25",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 250000,
+        "numero_ligne": "250000",
         "code": false,
         "armen": "74352155"
       },
@@ -3611,7 +3611,7 @@
         "description": "",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": false,
         "armen": "74351817"
       },
@@ -3634,7 +3634,7 @@
         "description_telecommande": "PAS900",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 242000,
+        "numero_ligne": "242000",
         "code": false,
         "armen": "74353941"
       },
@@ -3657,7 +3657,7 @@
         "description_telecommande": "PAS900",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 289000,
+        "numero_ligne": "289000",
         "code": false,
         "armen": "74354077"
       },
@@ -3701,7 +3701,7 @@
         "description_telecommande": "PAS900",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 273300,
+        "numero_ligne": "273300",
         "code": false
       },
       "geometry": {
@@ -3723,7 +3723,7 @@
         "description_telecommande": "ACS25",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": "74045844"
       },
@@ -3746,7 +3746,7 @@
         "description_telecommande": "PAS900",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 295000,
+        "numero_ligne": "295000",
         "code": false,
         "armen": "74351641"
       },
@@ -3811,7 +3811,7 @@
         "description_telecommande": "IP / ACS25",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 289000,
+        "numero_ligne": "289000",
         "code": false,
         "armen": "74354351"
       },
@@ -3834,7 +3834,7 @@
         "description_telecommande": "PAS900",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 216000,
+        "numero_ligne": "216000",
         "code": false,
         "armen": "74351413"
       },
@@ -3856,7 +3856,7 @@
         "description": "",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 216000,
+        "numero_ligne": "216000",
         "code": false,
         "armen": "74351829"
       },
@@ -3879,7 +3879,7 @@
         "description_telecommande": "PAS900",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 295000,
+        "numero_ligne": "295000",
         "code": false,
         "armen": "74353963"
       },
@@ -3944,7 +3944,7 @@
         "description_telecommande": "90kV / ACS25",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": [
           "171753744",
@@ -3970,7 +3970,7 @@
         "description_telecommande": "PAS900",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 242000,
+        "numero_ligne": "242000",
         "code": false,
         "armen": "74352203"
       },
@@ -3993,7 +3993,7 @@
         "description_telecommande": "PAS900",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 267000,
+        "numero_ligne": "267000",
         "code": false,
         "armen": "74354133"
       },
@@ -4016,7 +4016,7 @@
         "description_telecommande": "ACS25",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": false,
         "armen": "74352639"
       },
@@ -4039,7 +4039,7 @@
         "description_telecommande": "PAS900",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 216000,
+        "numero_ligne": "216000",
         "code": true,
         "armen": "74351389"
       },
@@ -4077,7 +4077,7 @@
         "description": "",
         "rss": "C",
         "contact": "Agent E :  03 21 79 73 54",
-        "numero_ligne": 301000,
+        "numero_ligne": "301000",
         "code": false,
         "armen": "74351041"
       },
@@ -4097,7 +4097,7 @@
         "description": "",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 301000,
+        "numero_ligne": "301000",
         "code": false,
         "armen": "74354155"
       },
@@ -4120,7 +4120,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 284000,
+        "numero_ligne": "284000",
         "code": false,
         "armen": "74354155"
       },
@@ -4143,7 +4143,7 @@
         "description_telecommande": "PAS900",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 267000,
+        "numero_ligne": "267000",
         "code": false,
         "armen": "74352249"
       },
@@ -4187,7 +4187,7 @@
         "description_telecommande": "PAS900",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": false,
         "armen": "74045172"
       },
@@ -4210,7 +4210,7 @@
         "description_telecommande": "ACS21",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 267000,
+        "numero_ligne": "267000",
         "code": false,
         "armen": "74352271"
       },
@@ -4233,7 +4233,7 @@
         "description_telecommande": "PAS900",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 216000,
+        "numero_ligne": "216000",
         "code": true,
         "armen": "74352017"
       },
@@ -4255,7 +4255,7 @@
         "description": "",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 216000,
+        "numero_ligne": "216000",
         "code": false,
         "armen": "74351841"
       },
@@ -4278,7 +4278,7 @@
         "description_telecommande": "ACS21",
         "rss": "A",
         "contact": "Agent E : 03 28 55 71 07",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": "74353993"
       },
@@ -4301,7 +4301,7 @@
         "description_telecommande": "IP / ACS25",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 289000,
+        "numero_ligne": "289000",
         "code": false,
         "armen": "212108910"
       },
@@ -4324,7 +4324,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 301000,
+        "numero_ligne": "301000",
         "code": false,
         "armen": "74354025"
       },
@@ -4347,7 +4347,7 @@
         "description_telecommande": "ACS25",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 278000,
+        "numero_ligne": "278000",
         "code": false,
         "armen": "74354109"
       },
@@ -4391,7 +4391,7 @@
         "description_telecommande": "ACS25",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 278306,
+        "numero_ligne": "278306",
         "code": false
       },
       "geometry": {
@@ -4436,7 +4436,7 @@
         "description_telecommande": "ACS25",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 292000,
+        "numero_ligne": "292000",
         "code": false,
         "armen": "74352227"
       },
@@ -4479,7 +4479,7 @@
         "description": "",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": "74045032"
       },
@@ -4502,7 +4502,7 @@
         "description_telecommande": "ACS21",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 250000,
+        "numero_ligne": "250000",
         "code": false,
         "armen": "173452829"
       },
@@ -4546,7 +4546,7 @@
         "description_telecommande": "PAS900",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 254000,
+        "numero_ligne": "254000",
         "code": false,
         "armen": "74354047"
       },
@@ -4569,7 +4569,7 @@
         "description_telecommande": "63kV / PAS900",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 267000,
+        "numero_ligne": "267000",
         "code": false,
         "armen": "74353117"
       },
@@ -4592,7 +4592,7 @@
         "description_telecommande": "ACS21",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 284000,
+        "numero_ligne": "284000",
         "code": false,
         "armen": "74354435"
       },
@@ -4615,7 +4615,7 @@
         "description_telecommande": "ACS21",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 284261,
+        "numero_ligne": "284261",
         "code": false
       },
       "geometry": {
@@ -4658,7 +4658,7 @@
         "description_telecommande": "ACS21",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 284260,
+        "numero_ligne": "284260",
         "code": false
       },
       "geometry": {
@@ -4764,7 +4764,7 @@
         "description_telecommande": "ACS21",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 250000,
+        "numero_ligne": "250000",
         "code": false,
         "armen": "177960336"
       },
@@ -4852,7 +4852,7 @@
         "description_telecommande": "ACS25",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false
       },
       "geometry": {
@@ -4874,7 +4874,7 @@
         "description_telecommande": "ACS25",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": "74047216"
       },
@@ -4897,7 +4897,7 @@
         "description_telecommande": "IP / ACS25",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 242000,
+        "numero_ligne": "242000",
         "code": false,
         "armen": "74045962"
       },
@@ -4920,7 +4920,7 @@
         "description_telecommande": "ACS25",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": false,
         "armen": "74351437"
       },
@@ -4943,7 +4943,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 216000,
+        "numero_ligne": "216000",
         "code": false,
         "armen": "74351657"
       },
@@ -4966,7 +4966,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 314000,
+        "numero_ligne": "314000",
         "code": false
       },
       "geometry": {
@@ -5072,7 +5072,7 @@
         "description_telecommande": "ACS25",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 321000,
+        "numero_ligne": "321000",
         "code": false,
         "armen": "74045980"
       },
@@ -5095,7 +5095,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 295000,
+        "numero_ligne": "295000",
         "code": false,
         "armen": "74351457"
       },
@@ -5118,7 +5118,7 @@
         "description_telecommande": "ACS25",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": false,
         "armen": "74351481"
       },
@@ -5141,7 +5141,7 @@
         "description_telecommande": "ACS25",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 242000,
+        "numero_ligne": "242000",
         "code": false,
         "armen": "74046296"
       },
@@ -5163,7 +5163,7 @@
         "description": "",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": false,
         "armen": "74351853"
       },
@@ -5186,7 +5186,7 @@
         "description_telecommande": "ACS25",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 267000,
+        "numero_ligne": "267000",
         "code": false,
         "armen": "74352325"
       },
@@ -5209,7 +5209,7 @@
         "description_telecommande": "ACS25",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": "74354205"
       },
@@ -5232,7 +5232,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 216000,
+        "numero_ligne": "216000",
         "code": false,
         "armen": "74351217"
       },
@@ -5276,7 +5276,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 314000,
+        "numero_ligne": "314000",
         "code": false
       },
       "geometry": {
@@ -5298,7 +5298,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 216312,
+        "numero_ligne": "216312",
         "code": false
       },
       "geometry": {
@@ -5320,7 +5320,7 @@
         "description_telecommande": "ACS25",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 304000,
+        "numero_ligne": "304000",
         "code": true,
         "armen": "182880265"
       },
@@ -5343,7 +5343,7 @@
         "description_telecommande": "ACS25",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 304000,
+        "numero_ligne": "304000",
         "code": true,
         "armen": "182880200"
       },
@@ -5366,7 +5366,7 @@
         "description_telecommande": "ACS25",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 304000,
+        "numero_ligne": "304000",
         "code": false,
         "armen": "182880274"
       },
@@ -5389,7 +5389,7 @@
         "description_telecommande": "ACS21",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": "74352349"
       },
@@ -5412,7 +5412,7 @@
         "description_telecommande": "ACS25",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 321000,
+        "numero_ligne": "321000",
         "code": false,
         "armen": "74047324"
       },
@@ -5456,7 +5456,7 @@
         "description_telecommande": "90kV / ACS25",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 311000,
+        "numero_ligne": "311000",
         "code": true,
         "armen": "74353161"
       },
@@ -5500,7 +5500,7 @@
         "description_telecommande": "ACS25",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 304000,
+        "numero_ligne": "304000",
         "code": false,
         "armen": "74354229"
       },
@@ -5545,7 +5545,7 @@
         "description": "",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 216000,
+        "numero_ligne": "216000",
         "code": false,
         "armen": "74351865"
       },
@@ -5568,7 +5568,7 @@
         "description_telecommande": "ACS21",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 311000,
+        "numero_ligne": "311000",
         "code": false,
         "armen": "74354437"
       },
@@ -5591,7 +5591,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 314000,
+        "numero_ligne": "314000",
         "code": false,
         "armen": "74354273"
       },
@@ -5634,7 +5634,7 @@
         "description": "TVP présent pour aller jusqu'au PRCI",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 216000,
+        "numero_ligne": "216000",
         "code": false,
         "armen": "74351877"
       },
@@ -5656,7 +5656,7 @@
         "description": "",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": false,
         "armen": "74351889"
       },
@@ -5679,7 +5679,7 @@
         "description_telecommande": "ACS21",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": "171662315"
       },
@@ -5702,7 +5702,7 @@
         "description_telecommande": "PAS900",
         "rss": "",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": "74351245"
       },
@@ -5746,7 +5746,7 @@
         "description_telecommande": "PAS900",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 278000,
+        "numero_ligne": "278000",
         "code": false,
         "armen": "74352795"
       },
@@ -5769,7 +5769,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 314000,
+        "numero_ligne": "314000",
         "code": false,
         "armen": "74351681"
       },
@@ -5897,7 +5897,7 @@
         "description_telecommande": "PAS900",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": false,
         "armen": "172033265"
       },
@@ -5920,7 +5920,7 @@
         "description_telecommande": "225kV /IP / ACS25",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 216000,
+        "numero_ligne": "216000",
         "code": true,
         "armen": "74353391"
       },
@@ -5942,7 +5942,7 @@
         "description": "",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": false,
         "armen": "171661964"
       },
@@ -5965,7 +5965,7 @@
         "description_telecommande": "IP / ACS25",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": "74352369"
       },
@@ -6009,7 +6009,7 @@
         "description_telecommande": "ACS25",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": "74046378"
       },
@@ -6032,7 +6032,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 295000,
+        "numero_ligne": "295000",
         "code": false,
         "armen": "74351921"
       },
@@ -6118,7 +6118,7 @@
         "description_telecommande": "ACS25",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 242000,
+        "numero_ligne": "242000",
         "code": false,
         "armen": "74045082"
       },
@@ -6141,7 +6141,7 @@
         "description_telecommande": "ACS25",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 321000,
+        "numero_ligne": "321000",
         "code": false,
         "armen": "171490164"
       },
@@ -6164,7 +6164,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 311000,
+        "numero_ligne": "311000",
         "code": false
       },
       "geometry": {
@@ -6185,7 +6185,7 @@
         "description": "Le 230V~ et le 24V= proviennent du SE (le 24 V alimente uniquement le coffret IA). Le 48V= est fourni par le SLAT. Le défaut SA= indique donc une absence de 48V, pas de 24V.",
         "rss": "A",
         "contact": "Agent E : 03 28 55 71 08",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": "74351093"
       },
@@ -6208,7 +6208,7 @@
         "description_telecommande": "PAS900",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": "171661264"
       },
@@ -6230,7 +6230,7 @@
         "description": "",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 242000,
+        "numero_ligne": "242000",
         "code": false,
         "armen": "74351055"
       },
@@ -6253,7 +6253,7 @@
         "description_telecommande": "ACS21",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 267306,
+        "numero_ligne": "267306",
         "code": false,
         "armen": "177960318"
       },
@@ -6276,7 +6276,7 @@
         "description_telecommande": "IP / ACS25",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": true,
         "armen": "186328857"
       },
@@ -6379,7 +6379,7 @@
         "description_telecommande": "ACS25",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 295000,
+        "numero_ligne": "295000",
         "code": true,
         "armen": "74354331"
       },
@@ -6402,7 +6402,7 @@
         "description_telecommande": "ACS21",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 295000,
+        "numero_ligne": "295000",
         "code": true,
         "armen": "74352417"
       },
@@ -6467,7 +6467,7 @@
         "description_telecommande": "IP / ACS25",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": "186328884"
       },
@@ -6490,7 +6490,7 @@
         "description_telecommande": "63kV / ACS25",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 242000,
+        "numero_ligne": "242000",
         "code": false,
         "armen": [
           "171755053",
@@ -6575,7 +6575,7 @@
         "description_telecommande": "ACS25",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 301000,
+        "numero_ligne": "301000",
         "code": true,
         "armen": "74352441"
       },
@@ -6598,7 +6598,7 @@
         "description_telecommande": "ACS25",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 278000,
+        "numero_ligne": "278000",
         "code": false,
         "armen": "74354375"
       },
@@ -6621,7 +6621,7 @@
         "description_telecommande": "PAS900",
         "rss": "A",
         "contact": "Agent E : 03 20 11 68 07  03 20 11 68 20",
-        "numero_ligne": 278000,
+        "numero_ligne": "278000",
         "code": true,
         "armen": "74351107"
       },
@@ -6644,7 +6644,7 @@
         "description_telecommande": "PAS900",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": false,
         "armen": "171621663"
       },
@@ -6667,7 +6667,7 @@
         "description_telecommande": "PAS900",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 314000,
+        "numero_ligne": "314000",
         "code": true,
         "armen": "74352465"
       },
@@ -6689,7 +6689,7 @@
         "description": "",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 267000,
+        "numero_ligne": "267000",
         "code": false,
         "armen": "74351125"
       },
@@ -6712,7 +6712,7 @@
         "description_telecommande": "PAS900",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 267000,
+        "numero_ligne": "267000",
         "code": false,
         "armen": "74352809"
       },
@@ -6752,7 +6752,7 @@
         "description_telecommande": "90kV / ACS25",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 301000,
+        "numero_ligne": "301000",
         "code": false,
         "armen": "74353253"
       },
@@ -6775,7 +6775,7 @@
         "description_telecommande": "ACS25",
         "rss": "C",
         "contact": "",
-        "numero_ligne": 301000,
+        "numero_ligne": "301000",
         "code": false,
         "armen": "74352489"
       },
@@ -6798,7 +6798,7 @@
         "description_telecommande": "ACS25",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": false,
         "armen": "74351505"
       },
@@ -6820,7 +6820,7 @@
         "description": "",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 226000,
+        "numero_ligne": "226000",
         "code": false,
         "armen": "74351941"
       },
@@ -6843,7 +6843,7 @@
         "description_telecommande": "PAS900",
         "rss": "B",
         "contact": "",
-        "numero_ligne": 272000,
+        "numero_ligne": "272000",
         "code": false,
         "armen": "74352513"
       },
@@ -6866,7 +6866,7 @@
         "description_telecommande": "PAS900",
         "rss": "A",
         "contact": "",
-        "numero_ligne": 216000,
+        "numero_ligne": "216000",
         "code": false,
         "armen": "74351529"
       },

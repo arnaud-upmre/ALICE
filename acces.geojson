@@ -4056,24 +4056,6 @@
       "properties": {
         "nom": "Lion d’or",
         "type": "SSP",
-        "SAT": "SAT2",
-        "acces": "",
-        "hors_patrimoine": false,
-        "code": false
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          3.10686,
-          50.65531
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "nom": "Lion d’or",
-        "type": "SSP",
         "SAT": "SAT1",
         "acces": "",
         "hors_patrimoine": false,
@@ -4084,6 +4066,24 @@
         "coordinates": [
           3.09628,
           50.65451
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lion d’or",
+        "type": "SSP",
+        "SAT": "SAT2",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.10686,
+          50.65531
         ]
       }
     },
@@ -4274,24 +4274,6 @@
         "type": "L-A",
         "SAT": "SAT1",
         "acces": "",
-        "hors_patrimoine": false,
-        "code": false
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.995531,
-          50.435645
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "nom": "Maison Rouge",
-        "type": "L-A",
-        "SAT": "SAT1",
-        "acces": "n°2",
         "hors_patrimoine": false,
         "code": false
       },
@@ -6017,24 +5999,6 @@
       "type": "Feature",
       "properties": {
         "nom": "Tergnier",
-        "type": "SST",
-        "SAT": "",
-        "acces": "",
-        "hors_patrimoine": false,
-        "code": true
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          3.29395,
-          49.65161
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "nom": "Tergnier",
         "type": "PREC + Station d'essais",
         "SAT": "",
         "acces": "Tergnier (Technicentre)",
@@ -6046,6 +6010,24 @@
         "coordinates": [
           3.2904722,
           49.6628056
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Tergnier",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.29395,
+          49.65161
         ]
       }
     },

@@ -4364,27 +4364,6 @@
       "properties": {
         "nom": "Lion d’or",
         "type": "SSP",
-        "SAT": "SAT2",
-        "acces": "",
-        "description": "",
-        "description_telecommande": "ACS25",
-        "rss": "A",
-        "contact": "",
-        "code": false
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          3.10427,
-          50.65303
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "nom": "Lion d’or",
-        "type": "SSP",
         "SAT": "SAT1",
         "acces": "",
         "description": "",
@@ -4399,6 +4378,27 @@
         "coordinates": [
           3.09663,
           50.65458
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Lion d’or",
+        "type": "SSP",
+        "SAT": "SAT2",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "ACS25",
+        "rss": "A",
+        "contact": "",
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.10427,
+          50.65303
         ]
       }
     },
@@ -4642,8 +4642,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.993821,
-          50.435204
+          2.993768,
+          50.435149
         ]
       }
     },
@@ -6483,6 +6483,24 @@
       "type": "Feature",
       "properties": {
         "nom": "Tergnier",
+        "type": "PREC",
+        "SAT": "",
+        "acces": "Tergnier (Technicentre)",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.2916111,
+          49.6649444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Tergnier",
         "type": "SST",
         "SAT": "",
         "acces": "",
@@ -6502,24 +6520,6 @@
         "coordinates": [
           3.29544,
           49.652965
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "nom": "Tergnier",
-        "type": "PREC",
-        "SAT": "",
-        "acces": "Tergnier (Technicentre)",
-        "hors_patrimoine": false,
-        "code": false
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          3.2916111,
-          49.6649444
         ]
       }
     },

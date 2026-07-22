@@ -568,11 +568,17 @@ function creerExpressionLargeurLigneOsm() {
 function creerExpressionCategorieLigneOrmVectorielle() {
   const usage = ["coalesce", ["get", "usage"], ""];
   const service = ["coalesce", ["get", "service"], ""];
-  const operateur = [
+  const identiteExploitant = [
     "downcase",
     [
-      "to-string",
-      ["coalesce", ["get", "operator"], ["get", "primary_operator"], ["get", "owner"], ""]
+      "concat",
+      ["to-string", ["coalesce", ["get", "operator"], ""]],
+      " ",
+      ["to-string", ["coalesce", ["get", "primary_operator"], ""]],
+      " ",
+      ["to-string", ["coalesce", ["get", "owner"], ""]],
+      " ",
+      ["to-string", ["coalesce", ["get", "name"], ""]]
     ]
   ];
   const typeLigne = ["coalesce", ["get", "feature"], "rail"];
@@ -581,7 +587,7 @@ function creerExpressionCategorieLigneOrmVectorielle() {
     "case",
     ["boolean", ["get", "highspeed"], false],
     "lgv",
-    ["==", operateur, "getlink"],
+    ["any", ["in", "getlink", identiteExploitant], ["in", "eurotunnel", identiteExploitant]],
     "getlink",
     ["==", usage, "tourism"],
     "tourism",

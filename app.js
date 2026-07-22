@@ -33,6 +33,8 @@ const COUCHE_LIGNES_OSM = "osm-rail-lines";
 const COUCHE_LIGNES_OSM_CONTOUR = "osm-rail-lines-outline";
 const COUCHE_LIGNES_OSM_LABELS = "osm-rail-labels";
 const COUCHE_LIGNES_OSM_VOIES = "osm-rail-track-refs";
+const SOURCE_LIGNES_ORM = "openrailwaymap-source";
+const COUCHE_LIGNES_ORM = "openrailwaymap-lignes";
 const SOURCE_LIGNE_RECHERCHE = "ligne-recherche-source";
 const COUCHE_LIGNE_RECHERCHE_CONTOUR = "ligne-recherche-highlight-outline";
 const COUCHE_LIGNE_RECHERCHE = "ligne-recherche-highlight";
@@ -660,6 +662,7 @@ let afficherPostes = true;
 let afficherPk = false;
 let afficherPn = false;
 let afficherLignesOsm = false;
+let afficherLignesOrm = false;
 let donneesAppareils = null;
 let donneesAcces = null;
 let donneesPostes = null;
@@ -1535,6 +1538,7 @@ const casePostes = document.querySelector('input[name="filtre-postes"]');
 const casePk = document.querySelector('input[name="filtre-pk"]');
 const casePn = document.querySelector('input[name="filtre-pn"]');
 const caseLignesOsm = document.querySelector('input[name="filtre-lignes-osm"]');
+const caseLignesOrm = document.querySelector('input[name="filtre-lignes-orm"]');
 const compteurAppareils = document.getElementById("compteur-appareils");
 const compteurAcces = document.getElementById("compteur-acces");
 const compteurPostes = document.getElementById("compteur-postes");
@@ -4928,6 +4932,31 @@ function appliquerCouchesDonnees() {
     return;
   }
 
+  if (!carte.getSource(SOURCE_LIGNES_ORM)) {
+    carte.addSource(SOURCE_LIGNES_ORM, {
+      type: "raster",
+      tiles: [
+        "https://a.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png",
+        "https://b.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png",
+        "https://c.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png"
+      ],
+      tileSize: 256,
+      maxzoom: 19,
+      attribution: "© OpenRailwayMap, © OpenStreetMap contributors"
+    });
+  }
+
+  if (!carte.getLayer(COUCHE_LIGNES_ORM)) {
+    carte.addLayer({
+      id: COUCHE_LIGNES_ORM,
+      type: "raster",
+      source: SOURCE_LIGNES_ORM,
+      paint: {
+        "raster-opacity": 0.92
+      }
+    });
+  }
+
   const doitAfficherLibellesVoies =
     afficherLignesOsm && Boolean(donneesLignesOsm?.features?.length) && carte.getZoom() >= LIGNES_OSM_VOIES_ZOOM_MIN;
 
@@ -5238,6 +5267,11 @@ function appliquerCouchesDonnees() {
     afficherPostes && donneesPostes ? "visible" : "none"
   );
   carte.setLayoutProperty(
+    COUCHE_LIGNES_ORM,
+    "visibility",
+    afficherLignesOrm ? "visible" : "none"
+  );
+  carte.setLayoutProperty(
     COUCHE_LIGNES_OSM_CONTOUR,
     "visibility",
     afficherLignesOsm && donneesLignesOsm ? "visible" : "none"
@@ -5284,12 +5318,19 @@ function restaurerEtatFiltres() {
   if (caseLignesOsm) {
     caseLignesOsm.checked = afficherLignesOsm;
   }
+  if (caseLignesOrm) {
+    caseLignesOrm.checked = afficherLignesOrm;
+  }
 
   mettreAJourCompteursFiltres();
   appliquerCouchesDonnees();
 }
 
 function remonterCouchesDonnees() {
+  if (carte.getLayer(COUCHE_LIGNES_ORM)) {
+    carte.moveLayer(COUCHE_LIGNES_ORM);
+  }
+
   if (carte.getLayer(COUCHE_LIGNES_OSM_CONTOUR)) {
     carte.moveLayer(COUCHE_LIGNES_OSM_CONTOUR);
   }
@@ -6459,6 +6500,10 @@ function attendreStabiliteCartePourLignesOsm() {
 
 async function activerLigneFerroviaire(options = {}) {
   const estAutomatique = options.automatique === true;
+  afficherLignesOrm = false;
+  if (caseLignesOrm) {
+    caseLignesOrm.checked = false;
+  }
   afficherLignesOsm = true;
   if (caseLignesOsm) {
     caseLignesOsm.checked = true;
@@ -6490,12 +6535,12 @@ async function activerLigneFerroviaire(options = {}) {
 }
 
 function planifierActivationAutoLigneFerroviaire() {
-  if (activationAutoLigneFerroviairePlanifiee || afficherLignesOsm) {
+  if (activationAutoLigneFerroviairePlanifiee || afficherLignesOsm || afficherLignesOrm) {
     return;
   }
   activationAutoLigneFerroviairePlanifiee = true;
   attendreStabiliteCartePourLignesOsm().then(() => {
-    if (afficherLignesOsm) {
+    if (afficherLignesOsm || afficherLignesOrm) {
       return;
     }
     activerLigneFerroviaire({ automatique: true }).catch((erreur) => {
@@ -10304,7 +10349,8 @@ carte.on("styledata", () => {
       afficherPostes ||
       afficherPk ||
       afficherPn ||
-      afficherLignesOsm
+      afficherLignesOsm ||
+      afficherLignesOrm
     )
   ) {
     return;
@@ -10552,6 +10598,24 @@ if (caseLignesOsm) {
       appliquerCouchesDonnees();
       remonterCouchesDonnees();
     }
+  });
+}
+
+if (caseLignesOrm) {
+  caseLignesOrm.addEventListener("change", () => {
+    afficherLignesOrm = caseLignesOrm.checked;
+    if (afficherLignesOrm) {
+      afficherLignesOsm = false;
+      if (caseLignesOsm) {
+        caseLignesOsm.checked = false;
+      }
+      masquerMessageChargementCouche();
+      fermerPopupLigneOsmInfo();
+    }
+
+    appliquerCouchesDonnees();
+    remonterCouchesDonnees();
+    forcerRafraichissementCarte({ tentativesDifferees: true });
   });
 }
 

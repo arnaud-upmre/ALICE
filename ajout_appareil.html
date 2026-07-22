@@ -15,9 +15,8 @@
   <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
   <link rel="shortcut icon" href="./icons/icon-32.png" type="image/png" />
   <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
-  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" />
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@6.0.0/dist/maplibre-gl.css" />
   <link rel="stylesheet" href="./theme.css" />
-  <script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script>
   <style>
     * {
       box-sizing: border-box;
@@ -866,7 +865,9 @@
     </div>
   </div>
 
-  <script>
+  <script type="module">
+    import * as maplibregl from "https://unpkg.com/maplibre-gl@6.0.0/dist/maplibre-gl.mjs";
+
     const FORM_SUBMIT_URL = "https://script.google.com/macros/s/AKfycbxn35jGF3OBSJXwLZDuGONtoLy-HOGrZSfqkm3jFTAbgBAGxGnS_haz_JkyTYhlBh2yfA/exec";
     const COUNTER_URL = "https://script.google.com/macros/s/AKfycbwSZ6PEcRuNYb-tyVgNnuStsAQgo_oXkbzuOh41ovRmiZMD30iJfyti6WvqdqMhKfuE/exec";
     const DEFAULT_CENTER = [50.72384, 2.54924];

@@ -19,7 +19,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./icons/icon-32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
     <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
-    <link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
+    <link href="https://unpkg.com/maplibre-gl@6.0.0/dist/maplibre-gl.css" rel="stylesheet" />
     <link rel="stylesheet" href="./theme.css" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -414,13 +414,30 @@
       </div>
     </div>
 
-    <script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script>
-    <script src="./rss-numeros.js"></script>
-    <script src="./referentiel-lignes.js"></script>
-    <script src="./code.js"></script>
-    <script src="./recherche.js"></script>
-    <script src="./app.js"></script>
-    <script src="./notification.js"></script>
+    <script type="module">
+      import * as maplibregl from "https://unpkg.com/maplibre-gl@6.0.0/dist/maplibre-gl.mjs";
+
+      window.maplibregl = maplibregl;
+
+      const scriptsAlice = [
+        "./rss-numeros.js",
+        "./referentiel-lignes.js",
+        "./code.js",
+        "./recherche.js",
+        "./app.js",
+        "./notification.js"
+      ];
+
+      for (const source of scriptsAlice) {
+        await new Promise((resolve, reject) => {
+          const script = document.createElement("script");
+          script.src = source;
+          script.onload = resolve;
+          script.onerror = reject;
+          document.body.appendChild(script);
+        });
+      }
+    </script>
     
   </body>
 </html>

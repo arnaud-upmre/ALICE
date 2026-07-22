@@ -744,6 +744,8 @@ const URL_TUILES_SATELLITE_IGN =
   "https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/jpeg&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}";
 const URL_TUILES_PLAN_IGN =
   "https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/png&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}";
+const URL_TUILES_CADASTRE_IGN =
+  "https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=CADASTRALPARCELS.PARCELLAIRE_EXPRESS&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/png&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}";
 const URL_TUILES_SATELLITE_ESRI =
   "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}";
 const URL_TUILES_LABELS_VILLES =
@@ -811,6 +813,80 @@ const stylePlanIgnRasterFallback = {
   ]
 };
 
+// Fond cadastral : Plan IGN pour le contexte, puis Parcellaire Express en
+// surimpression. Les numeros de parcelles sont fournis directement par l'IGN
+// et deviennent lisibles aux niveaux de zoom rapproches.
+const styleCadastreIgn = {
+  version: 8,
+  sources: {
+    planIgnCadastre: {
+      type: "raster",
+      tiles: [URL_TUILES_PLAN_IGN],
+      tileSize: 256,
+      maxzoom: 18,
+      attribution: "© IGN"
+    },
+    cadastreIgn: {
+      type: "raster",
+      tiles: [URL_TUILES_CADASTRE_IGN],
+      tileSize: 256,
+      maxzoom: 19,
+      attribution: "© IGN - Parcellaire Express (PCI)"
+    }
+  },
+  layers: [
+    {
+      id: "planIgnCadastre",
+      type: "raster",
+      source: "planIgnCadastre"
+    },
+    {
+      id: "cadastreIgn",
+      type: "raster",
+      source: "cadastreIgn",
+      paint: {
+        "raster-opacity": 0.86
+      }
+    }
+  ]
+};
+
+// Variante terrain : orthophotos IGN sous le parcellaire cadastral.
+const styleSatelliteCadastreIgn = {
+  version: 8,
+  sources: {
+    satelliteCadastreIgn: {
+      type: "raster",
+      tiles: [URL_TUILES_SATELLITE_IGN],
+      tileSize: 256,
+      maxzoom: 18,
+      attribution: "© IGN - Photographies aériennes"
+    },
+    cadastreSurSatelliteIgn: {
+      type: "raster",
+      tiles: [URL_TUILES_CADASTRE_IGN],
+      tileSize: 256,
+      maxzoom: 19,
+      attribution: "© IGN - Parcellaire Express (PCI)"
+    }
+  },
+  layers: [
+    {
+      id: "satelliteCadastreIgn",
+      type: "raster",
+      source: "satelliteCadastreIgn"
+    },
+    {
+      id: "cadastreSurSatelliteIgn",
+      type: "raster",
+      source: "cadastreSurSatelliteIgn",
+      paint: {
+        "raster-opacity": 0.72
+      }
+    }
+  ]
+};
+
 const URL_STYLE_POSITRON = "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json";
 const URL_STYLE_VOYAGER = "https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json";
 const URL_STYLE_DARK_MATTER = "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json";
@@ -838,6 +914,8 @@ const fondsCartographiques = {
   voyager: URL_STYLE_VOYAGER,
   darkMatter: URL_STYLE_DARK_MATTER,
   planIgn: URL_STYLE_PLAN_IGN,
+  cadastreIgn: styleCadastreIgn,
+  satelliteCadastreIgn: styleSatelliteCadastreIgn,
   osm: stylePlanOsm,
   satelliteIgn: styleSatelliteIgn,
   satelliteEsri: styleSatelliteEsri
@@ -2617,7 +2695,11 @@ function obtenirCoordonneesLigneMesure() {
 }
 
 function estFondSatellitePourMesure() {
-  if (fondActif === "satelliteIgn" || fondActif === "satelliteEsri") {
+  if (
+    fondActif === "satelliteIgn" ||
+    fondActif === "satelliteEsri" ||
+    fondActif === "satelliteCadastreIgn"
+  ) {
     return true;
   }
 

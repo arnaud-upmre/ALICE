@@ -2109,7 +2109,7 @@ body {
   position: absolute;
   right: calc(100% + 10px);
   bottom: 0;
-  width: min(220px, calc(100vw - 64px - env(safe-area-inset-left) - env(safe-area-inset-right)));
+  width: min(260px, calc(100vw - 64px - env(safe-area-inset-left) - env(safe-area-inset-right)));
   padding: 9px 11px;
   border-radius: 12px;
   border: 1px solid rgba(31, 41, 55, 0.1);
@@ -2135,6 +2135,26 @@ body {
 .filtre-compteur {
   color: #64748b;
   font-weight: 600;
+}
+
+.filtre-badge-beta {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 4px;
+  padding: 1px 5px;
+  border-radius: 999px;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 0.62rem;
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.libelle-filtre-beta {
+  white-space: nowrap;
 }
 
 .menu-filtres-separateur {

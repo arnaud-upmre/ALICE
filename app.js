@@ -209,7 +209,7 @@ const PALETTE_APPAREILS = Object.freeze({
   alim: "#8d99ae",
   autre: "#111111"
 });
-const PALETTE_LIGNES_OSM = Object.freeze({
+const PALETTE_LIGNES_FERROVIAIRES = Object.freeze({
   main: "#f59e0b",
   lgv: "#dc2626",
   getlink: "#1e3a8a",
@@ -221,7 +221,7 @@ const PALETTE_LIGNES_OSM = Object.freeze({
   tourism: "#14b8a6",
   other: "#000000"
 });
-const LEGENDE_LIGNES_OSM = Object.freeze([
+const LEGENDE_LIGNES_FERROVIAIRES = Object.freeze([
   { className: "trait-ligne-lgv", label: "Ligne grande vitesse" },
   { className: "trait-ligne-getlink", label: "Eurotunnel" },
   { className: "trait-ligne-main", label: "Ligne classique" },
@@ -472,34 +472,34 @@ function creerExpressionCategorieLigneOsm() {
   return ["coalesce", ["get", "alice_category"], "unknown"];
 }
 
-function creerExpressionCouleurCategorieLigneOsm() {
+function creerExpressionCouleurCategorieLigne(categorie = creerExpressionCategorieLigneOsm()) {
   return [
     "match",
-    creerExpressionCategorieLigneOsm(),
+    categorie,
     "lgv",
-    PALETTE_LIGNES_OSM.lgv,
+    PALETTE_LIGNES_FERROVIAIRES.lgv,
     "getlink",
-    PALETTE_LIGNES_OSM.getlink,
+    PALETTE_LIGNES_FERROVIAIRES.getlink,
     "main",
-    PALETTE_LIGNES_OSM.main,
+    PALETTE_LIGNES_FERROVIAIRES.main,
     "branch",
-    PALETTE_LIGNES_OSM.branch,
+    PALETTE_LIGNES_FERROVIAIRES.branch,
     "yard",
-    PALETTE_LIGNES_OSM.yard,
+    PALETTE_LIGNES_FERROVIAIRES.yard,
     "siding",
-    PALETTE_LIGNES_OSM.siding,
+    PALETTE_LIGNES_FERROVIAIRES.siding,
     "spur",
-    PALETTE_LIGNES_OSM.spur,
+    PALETTE_LIGNES_FERROVIAIRES.spur,
     "industrial",
-    PALETTE_LIGNES_OSM.industrial,
+    PALETTE_LIGNES_FERROVIAIRES.industrial,
     "tourism",
-    PALETTE_LIGNES_OSM.tourism,
-    PALETTE_LIGNES_OSM.other
+    PALETTE_LIGNES_FERROVIAIRES.tourism,
+    PALETTE_LIGNES_FERROVIAIRES.other
   ];
 }
 
 function creerExpressionCouleurLigneOsm() {
-  return creerExpressionCouleurCategorieLigneOsm();
+  return creerExpressionCouleurCategorieLigne();
 }
 
 function creerExpressionLargeurLigneOsm() {
@@ -546,37 +546,58 @@ function creerExpressionLargeurLigneOsm() {
   ];
 }
 
-function creerExpressionCouleurLigneOrmVectorielle() {
+function creerExpressionCategorieLigneOrmVectorielle() {
+  const usage = ["coalesce", ["get", "usage"], ""];
+  const service = ["coalesce", ["get", "service"], ""];
+  const operateur = [
+    "downcase",
+    [
+      "to-string",
+      ["coalesce", ["get", "operator"], ["get", "primary_operator"], ["get", "owner"], ""]
+    ]
+  ];
+  const typeLigne = ["coalesce", ["get", "feature"], "rail"];
+
   return [
     "case",
     ["boolean", ["get", "highspeed"], false],
-    "#ef4444",
+    "lgv",
+    ["==", operateur, "getlink"],
+    "getlink",
+    ["==", usage, "tourism"],
+    "tourism",
+    ["==", usage, "industrial"],
+    "industrial",
+    ["==", service, "yard"],
+    "yard",
+    ["==", service, "siding"],
+    "siding",
+    ["in", service, ["literal", ["spur", "crossover"]]],
+    "spur",
+    ["==", usage, "branch"],
+    "branch",
+    ["==", usage, "main"],
+    "main",
     [
       "match",
-      ["coalesce", ["get", "feature"], "rail"],
+      typeLigne,
       "tram",
-      "#2563eb",
+      "unknown",
       "light_rail",
-      "#0d9488",
+      "unknown",
       "subway",
-      "#7c3aed",
+      "unknown",
       "narrow_gauge",
-      "#65a30d",
+      "unknown",
       "funicular",
-      "#db2777",
-      [
-        "match",
-        ["coalesce", ["get", "usage"], ""],
-        "main",
-        "#f97316",
-        "branch",
-        "#eab308",
-        "industrial",
-        "#64748b",
-        "#f59e0b"
-      ]
+      "unknown",
+      "main"
     ]
   ];
+}
+
+function creerExpressionCouleurLigneOrmVectorielle() {
+  return creerExpressionCouleurCategorieLigne(creerExpressionCategorieLigneOrmVectorielle());
 }
 
 function creerExpressionOpaciteLigneOrmVectorielle() {
@@ -675,16 +696,16 @@ function appliquerPaletteCarteDansCss() {
   racine.style.setProperty("--color-app-t", PALETTE_APPAREILS.sectionneur);
   racine.style.setProperty("--color-app-alim", PALETTE_APPAREILS.alim);
   racine.style.setProperty("--color-app-autre", PALETTE_APPAREILS.autre);
-  racine.style.setProperty("--color-ligne-main", PALETTE_LIGNES_OSM.main);
-  racine.style.setProperty("--color-ligne-lgv", PALETTE_LIGNES_OSM.lgv);
-  racine.style.setProperty("--color-ligne-getlink", PALETTE_LIGNES_OSM.getlink);
-  racine.style.setProperty("--color-ligne-branch", PALETTE_LIGNES_OSM.branch);
-  racine.style.setProperty("--color-ligne-yard", PALETTE_LIGNES_OSM.yard);
-  racine.style.setProperty("--color-ligne-siding", PALETTE_LIGNES_OSM.siding);
-  racine.style.setProperty("--color-ligne-spur", PALETTE_LIGNES_OSM.spur);
-  racine.style.setProperty("--color-ligne-industrial", PALETTE_LIGNES_OSM.industrial);
-  racine.style.setProperty("--color-ligne-tourism", PALETTE_LIGNES_OSM.tourism);
-  racine.style.setProperty("--color-ligne-other", PALETTE_LIGNES_OSM.other);
+  racine.style.setProperty("--color-ligne-main", PALETTE_LIGNES_FERROVIAIRES.main);
+  racine.style.setProperty("--color-ligne-lgv", PALETTE_LIGNES_FERROVIAIRES.lgv);
+  racine.style.setProperty("--color-ligne-getlink", PALETTE_LIGNES_FERROVIAIRES.getlink);
+  racine.style.setProperty("--color-ligne-branch", PALETTE_LIGNES_FERROVIAIRES.branch);
+  racine.style.setProperty("--color-ligne-yard", PALETTE_LIGNES_FERROVIAIRES.yard);
+  racine.style.setProperty("--color-ligne-siding", PALETTE_LIGNES_FERROVIAIRES.siding);
+  racine.style.setProperty("--color-ligne-spur", PALETTE_LIGNES_FERROVIAIRES.spur);
+  racine.style.setProperty("--color-ligne-industrial", PALETTE_LIGNES_FERROVIAIRES.industrial);
+  racine.style.setProperty("--color-ligne-tourism", PALETTE_LIGNES_FERROVIAIRES.tourism);
+  racine.style.setProperty("--color-ligne-other", PALETTE_LIGNES_FERROVIAIRES.other);
   racine.style.setProperty("--badge-postes-fg", PALETTE_CARTE.posteSat);
   racine.style.setProperty("--badge-postes-bg", `color-mix(in srgb, ${PALETTE_CARTE.poste} 22%, transparent)`);
   racine.style.setProperty("--badge-acces-fg", PALETTE_CARTE.acces);
@@ -1761,7 +1782,7 @@ function rendreLegendeLignesOsm() {
   if (!listeLegendeLignesOsm) {
     return;
   }
-  listeLegendeLignesOsm.innerHTML = LEGENDE_LIGNES_OSM.map(
+  listeLegendeLignesOsm.innerHTML = LEGENDE_LIGNES_FERROVIAIRES.map(
     (item) =>
       `<li class="menu-legende-item"><span class="menu-legende-trait ${item.className}"></span>${echapperHtml(item.label)}</li>`
   ).join("");
@@ -11233,7 +11254,7 @@ moduleRechercheAlice =
         construireTitreNomTypeSatAcces,
         determinerCouleurAppareil,
         paletteCarte: PALETTE_CARTE,
-        paletteLignesOsm: PALETTE_LIGNES_OSM,
+        paletteLignesOsm: PALETTE_LIGNES_FERROVIAIRES,
         paletteAppareils: PALETTE_APPAREILS,
         extraireListeDepuisFeature,
         chargerDonneesPostes,

@@ -21,7 +21,7 @@
     <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
     <link href="https://unpkg.com/maplibre-gl@6.0.0/dist/maplibre-gl.css" rel="stylesheet" />
     <link rel="stylesheet" href="./theme.css" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=2.0.36" />
   </head>
   <body>
     <div id="map"></div>
@@ -116,11 +116,11 @@
         </label>
         <label class="option-filtre">
           <input type="checkbox" name="filtre-lignes-orm-png" />
-          <span>Ligne ORM PNG <span class="filtre-badge-beta">BETA</span></span>
+          <span class="libelle-filtre-beta">Ligne ORM PNG <span class="filtre-badge-beta">BETA</span></span>
         </label>
         <label class="option-filtre">
           <input type="checkbox" name="filtre-lignes-orm-vectorielles" />
-          <span>Ligne ORM vectorielle <span class="filtre-badge-beta">BETA</span></span>
+          <span class="libelle-filtre-beta">Ligne ORM vectorielle <span class="filtre-badge-beta">BETA</span></span>
         </label>
         <div class="menu-filtres-separateur" role="presentation"></div>
         <button class="bouton-filtres-legende" id="bouton-legende-filtres" type="button">Légende</button>
@@ -229,7 +229,7 @@
         </ul>
       </div>
       <div class="menu-legende-section">
-        <p class="menu-legende-section-titre">Ligne ferroviaire</p>
+        <p class="menu-legende-section-titre">Lignes ferroviaires OSM et ORM</p>
         <ul class="menu-legende-liste" id="liste-legende-lignes-osm"></ul>
       </div>
     </div>
@@ -433,7 +433,7 @@
         "./referentiel-lignes.js",
         "./code.js",
         "./recherche.js",
-        "./app.js",
+        "./app.js?v=2.0.36",
         "./notification.js"
       ];
 

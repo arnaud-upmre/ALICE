@@ -118,6 +118,8 @@ const COUCHE_LIGNES_ORM_VECTORIELLES_BASSE_INTERACTION = "openrailwaymap-vector-
 const COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE_CONTOUR = "openrailwaymap-vector-high-outline";
 const COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE = "openrailwaymap-vector-high-lines";
 const COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE_INTERACTION = "openrailwaymap-vector-high-hit";
+const COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE_LABELS = "openrailwaymap-vector-high-labels";
+const COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE_VOIES = "openrailwaymap-vector-high-track-refs";
 const SOURCE_LIGNE_RECHERCHE = "ligne-recherche-source";
 const COUCHE_LIGNE_RECHERCHE_CONTOUR = "ligne-recherche-highlight-outline";
 const COUCHE_LIGNE_RECHERCHE = "ligne-recherche-highlight";
@@ -636,6 +638,29 @@ function creerExpressionOpaciteLigneOrmVectorielle() {
     "disused",
     0.62,
     0.92
+  ];
+}
+
+function creerExpressionLibelleLigneOrmVectorielle() {
+  const reference = ["to-string", ["coalesce", ["get", "ref"], ""]];
+  const nom = ["to-string", ["coalesce", ["get", "name"], ""]];
+  const vitesse = ["to-string", ["coalesce", ["get", "maxspeed"], ""]];
+  const identite = [
+    "case",
+    ["!=", reference, ""],
+    ["case", ["!=", nom, ""], ["concat", reference, " - ", nom], reference],
+    nom
+  ];
+
+  return [
+    "case",
+    ["all", ["!=", identite, ""], ["!=", vitesse, ""]],
+    ["concat", identite, " | V", vitesse],
+    ["!=", identite, ""],
+    identite,
+    ["!=", vitesse, ""],
+    ["concat", "V", vitesse],
+    ""
   ];
 }
 
@@ -5347,6 +5372,62 @@ function appliquerCouchesDonnees() {
     }
   }
 
+  if (!carte.getLayer(COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE_LABELS)) {
+    carte.addLayer({
+      id: COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE_LABELS,
+      type: "symbol",
+      source: SOURCE_LIGNES_ORM_VECTORIELLES_HAUTE,
+      "source-layer": "railway_line_high",
+      minzoom: 10.5,
+      maxzoom: 20,
+      filter: creerFiltreZoneLignesOrmVectorielles(),
+      layout: {
+        "symbol-placement": "line",
+        "text-field": creerExpressionLibelleLigneOrmVectorielle(),
+        "text-font": ["Open Sans Bold"],
+        "text-size": 11,
+        "text-letter-spacing": 0.02,
+        "symbol-spacing": 560
+      },
+      paint: {
+        "text-color": "#ecfeff",
+        "text-halo-color": "#064e3b",
+        "text-halo-width": 1.2
+      }
+    });
+  }
+
+  if (!carte.getLayer(COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE_VOIES)) {
+    carte.addLayer({
+      id: COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE_VOIES,
+      type: "symbol",
+      source: SOURCE_LIGNES_ORM_VECTORIELLES_HAUTE,
+      "source-layer": "railway_line_high",
+      minzoom: LIGNES_OSM_VOIES_ZOOM_MIN,
+      maxzoom: 19,
+      filter: [
+        "all",
+        creerFiltreZoneLignesOrmVectorielles(),
+        ["!=", ["to-string", ["coalesce", ["get", "track_ref"], ""]], ""]
+      ],
+      layout: {
+        "symbol-placement": "line",
+        "text-field": ["to-string", ["get", "track_ref"]],
+        "text-font": ["Open Sans Bold"],
+        "text-size": 15,
+        "text-allow-overlap": true,
+        "text-ignore-placement": true,
+        "text-keep-upright": true,
+        "symbol-spacing": 180
+      },
+      paint: {
+        "text-color": "#1e40af",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 2.2
+      }
+    });
+  }
+
   const doitAfficherLibellesVoies =
     afficherLignesOsm && Boolean(donneesLignesOsm?.features?.length) && carte.getZoom() >= LIGNES_OSM_VOIES_ZOOM_MIN;
 
@@ -5673,6 +5754,18 @@ function appliquerCouchesDonnees() {
       carte.setLayoutProperty(idCouche, "visibility", afficherLignesOrmVectorielles ? "visible" : "none");
     }
   }
+  for (const idCouche of [
+    COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE_LABELS,
+    COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE_VOIES
+  ]) {
+    if (carte.getLayer(idCouche)) {
+      carte.setLayoutProperty(
+        idCouche,
+        "visibility",
+        afficherLignesOrmVectorielles || afficherLignesOrmPng ? "visible" : "none"
+      );
+    }
+  }
   carte.setLayoutProperty(
     COUCHE_LIGNES_OSM_CONTOUR,
     "visibility",
@@ -5744,7 +5837,9 @@ function remonterCouchesDonnees() {
     COUCHE_LIGNES_ORM_VECTORIELLES_BASSE_INTERACTION,
     COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE_CONTOUR,
     COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE,
-    COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE_INTERACTION
+    COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE_INTERACTION,
+    COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE_LABELS,
+    COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE_VOIES
   ]) {
     if (carte.getLayer(idCouche)) {
       carte.moveLayer(idCouche);
@@ -9839,6 +9934,7 @@ async function ouvrirFichePartageeDepuisParametres() {
   remonterCouchesDonnees();
 
   const cibleSat = String(params.get("sat") || "").trim();
+  const forcerFicheGestionnaire = estParametreUrlActif(params.get("gestionnaire"));
   let popupOuverte = false;
   const ouvrirPopup = () => {
     if (popupOuverte) {
@@ -9846,7 +9942,7 @@ async function ouvrirFichePartageeDepuisParametres() {
     }
     popupOuverte = true;
     demarrerClignotementLocalisation(longitude, latitude);
-    if (estSurvolDesktopActif()) {
+    if (estSurvolDesktopActif() && !forcerFicheGestionnaire) {
       ouvrirPopupSurvolDepuisCoordonneesPourType(type, longitude, latitude, { verrouiller: true });
       return;
     }

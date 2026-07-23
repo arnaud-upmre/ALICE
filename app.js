@@ -711,20 +711,48 @@ function creerFiltreGeographiqueOrm() {
 
 function normaliserFeatureLigneOrmVectorielle(feature) {
   const props = feature?.properties || {};
+  const normaliserValeurOrm = (valeur) => {
+    if (Array.isArray(valeur)) {
+      return valeur.map((element) => normaliserValeurOrm(element)).filter(Boolean).join(" / ");
+    }
+    const texte = String(valeur ?? "").trim();
+    if (!texte) {
+      return "";
+    }
+    try {
+      const valeurJson = JSON.parse(texte);
+      if (Array.isArray(valeurJson)) {
+        return valeurJson.map((element) => normaliserValeurOrm(element)).filter(Boolean).join(" / ");
+      }
+    } catch {
+      // Certaines tuiles ORM utilisent la notation d'ensemble {"valeur"}.
+    }
+    return texte
+      .replace(/^\{\s*/, "")
+      .replace(/\s*\}$/, "")
+      .split(/\s*[,;]\s*/)
+      .map((element) => element.replace(/^["']|["']$/g, "").trim())
+      .filter(Boolean)
+      .join(" / ");
+  };
+  const proprietesOrm = {
+    ...props,
+    alice_data_source: "orm-vector",
+    name: normaliserValeurOrm(props.name),
+    line_ref: normaliserValeurOrm(props.ref),
+    track_ref: normaliserValeurOrm(props.track_ref),
+    usage: normaliserValeurOrm(props.usage),
+    maxspeed: normaliserValeurOrm(props.maxspeed),
+    maxspeed_forward: normaliserValeurOrm(props.maxspeed_forward),
+    maxspeed_backward: normaliserValeurOrm(props.maxspeed_backward),
+    operator: normaliserValeurOrm(props.operator || props.primary_operator || props.owner),
+    service: normaliserValeurOrm(props.service),
+    osm_way_id: normaliserValeurOrm(props.osm_id || String(props.id || "").match(/^way-(\d+)$/i)?.[1])
+  };
+  proprietesOrm.alice_category = determinerCategorieLigneOsmDepuisProprietes(proprietesOrm);
   return {
     ...feature,
-    properties: normaliserProprietesLigneOsm({
-      ...props,
-      alice_data_source: "orm-vector",
-      name: props.name,
-      line_ref: props.ref,
-      track_ref: props.track_ref,
-      usage: props.usage,
-      maxspeed: props.maxspeed,
-      operator: props.operator || props.primary_operator || props.owner,
-      service: props.service,
-      osm_way_id: props.osm_id
-    })
+    properties: proprietesOrm
   };
 }
 
@@ -4777,35 +4805,39 @@ function determinerLibelleTypePnOrm(type) {
   return libelles[String(type || "").trim()] || "Passage à niveau";
 }
 
-const cachePkPnOrm = new Map();
+const cachePkOsmPnOrm = new Map();
 
-function formaterPositionPkOrm(valeur) {
-  const positions = Array.isArray(valeur) ? valeur : [valeur];
-  return positions
-    .map((position) => String(position ?? "").trim())
-    .filter(Boolean)
+function extrairePositionPkOsm(tags = {}) {
+  const clesPrioritaires = ["railway:position:exact", "railway:position"];
+  const clesComplementaires = Object.keys(tags).filter(
+    (cle) => /^railway:position(?::exact)?:.+/i.test(cle) && !clesPrioritaires.includes(cle)
+  );
+  const valeurs = [...clesPrioritaires, ...clesComplementaires]
+    .map((cle) => String(tags[cle] ?? "").trim())
+    .filter(Boolean);
+  return Array.from(new Set(valeurs))
+    .map((valeur) => formaterPkPnCompact(valeur) || valeur)
     .join(" / ");
 }
 
-async function chargerPkPnOrm(osmId) {
+async function chargerPkOsmPnOrm(osmId) {
   const id = String(osmId || "").trim();
-  if (!id) {
+  if (!/^\d+$/.test(id)) {
     return "";
   }
-  if (cachePkPnOrm.has(id)) {
-    return await cachePkPnOrm.get(id);
+  if (cachePkOsmPnOrm.has(id)) {
+    return await cachePkOsmPnOrm.get(id);
   }
 
   const promesse = (async () => {
     const controleur = new AbortController();
     const minuterie = window.setTimeout(() => controleur.abort(), 7000);
     try {
-      const url = `https://openrailwaymap.app/api/feature/openrailwaymap_standard/standard_railway_symbols/node-${encodeURIComponent(
-        id
-      )}`;
+      const requete = `[out:json][timeout:5];node(${id});out tags;`;
+      const url = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(requete)}`;
       const reponse = await fetch(url, {
         headers: { Accept: "application/json" },
-        cache: "no-store",
+        cache: "default",
         credentials: "omit",
         signal: controleur.signal
       });
@@ -4813,18 +4845,63 @@ async function chargerPkPnOrm(osmId) {
         throw new Error(`HTTP ${reponse.status}`);
       }
       const resultat = await reponse.json();
-      return formaterPositionPkOrm(resultat?.position);
+      return extrairePositionPkOsm(resultat?.elements?.[0]?.tags || {});
     } catch (erreur) {
-      console.warn("Position du PN indisponible depuis l’API ORM", erreur);
+      console.warn("PK exact du PN indisponible depuis OSM", erreur);
       return "";
     } finally {
       window.clearTimeout(minuterie);
     }
   })();
-  cachePkPnOrm.set(id, promesse);
+  cachePkOsmPnOrm.set(id, promesse);
   const valeur = await promesse;
-  cachePkPnOrm.set(id, valeur);
+  cachePkOsmPnOrm.set(id, valeur);
   return valeur;
+}
+
+function trouverLigneOrmAuDroitDuPn(longitude, latitude) {
+  if (!carte?.getLayer(COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE_INTERACTION)) {
+    return null;
+  }
+  const point = carte.project([longitude, latitude]);
+  if (!Number.isFinite(point?.x) || !Number.isFinite(point?.y)) {
+    return null;
+  }
+  const rayon = 18;
+  const lignes = carte.queryRenderedFeatures(
+    [
+      [point.x - rayon, point.y - rayon],
+      [point.x + rayon, point.y + rayon]
+    ],
+    { layers: [COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE_INTERACTION] }
+  );
+  const meilleureLigne = lignes
+    .map((ligne) => ({
+      ligne,
+      ancrage: calculerAncrageLigneDepuisPointEcran(ligne, point)
+    }))
+    .filter((candidat) => candidat.ancrage && candidat.ancrage.distancePx <= rayon)
+    .sort((a, b) => a.ancrage.distancePx - b.ancrage.distancePx)[0]?.ligne;
+  return meilleureLigne ? normaliserFeatureLigneOrmVectorielle(meilleureLigne) : null;
+}
+
+function chargerEtAfficherPkOsmPnOrm(signature, osmId) {
+  if (!osmId || !popupPnInfo || signaturePopupPnInfo !== signature) {
+    return;
+  }
+  const valeurPk = popupPnInfo.getElement()?.querySelector("[data-pk-osm]");
+  if (valeurPk) {
+    valeurPk.textContent = "Chargement…";
+  }
+  chargerPkOsmPnOrm(osmId).then((pkOsm) => {
+    if (!popupPnInfo || signaturePopupPnInfo !== signature) {
+      return;
+    }
+    const cible = popupPnInfo.getElement()?.querySelector("[data-pk-osm]");
+    if (cible) {
+      cible.textContent = pkOsm || "Non renseigné dans OSM";
+    }
+  });
 }
 
 function ouvrirPopupPnOrmInfo(feature, options = {}) {
@@ -4840,6 +4917,11 @@ function ouvrirPopupPnOrmInfo(feature, options = {}) {
   const signature = `orm|${longitude.toFixed(6)}|${latitude.toFixed(6)}|${idFeature}`;
   if (popupPnInfo && signaturePopupPnInfo === signature) {
     popupPnInfoEpinglee = epingler;
+    if (epingler) {
+      const osmIdExistant =
+        String(feature?.properties?.osm_id || "").trim() || idFeature.match(/^node-(\d+)$/i)?.[1] || "";
+      chargerEtAfficherPkOsmPnOrm(signature, osmIdExistant);
+    }
     return;
   }
 
@@ -4847,8 +4929,24 @@ function ouvrirPopupPnOrmInfo(feature, options = {}) {
   const reference = String(proprietes.ref || "").trim();
   const titre = reference ? normaliserNumeroPn(reference) : "Passage à niveau ORM";
   const type = determinerLibelleTypePnOrm(proprietes.feature);
-  const osmIdDepuisFeature = idFeature.match(/^node-(\d+)$/i)?.[1] || "";
+  const osmIdDepuisFeature =
+    String(proprietes.osm_id || "").trim() || idFeature.match(/^node-(\d+)$/i)?.[1] || "";
   const osmId = String(osmIdDepuisFeature).trim();
+  const ligneOrm = trouverLigneOrmAuDroitDuPn(longitude, latitude);
+  const proprietesLigne = ligneOrm?.properties || {};
+  const lignesOrmHtml = [
+    construireLigneInfoPopup("Numero de ligne", proprietesLigne.line_ref),
+    construireLigneInfoPopup("Nom de ligne", proprietesLigne.name),
+    construireLigneInfoPopup(
+      "Type de ligne",
+      proprietesLigne.alice_category
+        ? determinerLibelleCategorieLigneOsm(proprietesLigne.alice_category)
+        : ""
+    ),
+    construireLigneInfoPopup("Exploitant", proprietesLigne.operator),
+    construireLigneInfoPopup("Vitesse", proprietesLigne.maxspeed),
+    construireLigneInfoPopup("Voie", proprietesLigne.track_ref)
+  ].join("");
   const lienOsmConsultation = osmId ? `https://www.openstreetmap.org/node/${encodeURIComponent(osmId)}` : "";
   const lienOsmEdition = osmId ? `https://www.openstreetmap.org/edit?node=${encodeURIComponent(osmId)}` : "";
   const actionsOsm = osmId
@@ -4874,7 +4972,9 @@ function ouvrirPopupPnOrmInfo(feature, options = {}) {
       )}</strong></span><span class="filtre-badge-beta">BETA</span></p>${construireLigneInfoPopup(
         "Type ORM",
         type
-      )}<p><strong>PK ORM :</strong> <span data-pk-orm>${osmId ? "Chargement…" : "Non renseigné"}</span></p><p><strong>Source :</strong> OpenRailwayMap / OpenStreetMap</p>${actionsOsm}<div class="popup-itineraires popup-itineraires-poste-actions popup-pn-actions"><button class="popup-bouton-itineraire popup-pn-street-view" type="button" data-lng="${longitude}" data-lat="${latitude}">🌍 Street View</button><a class="popup-bouton-itineraire" href="${echapperHtml(
+      )}${lignesOrmHtml}<p><strong>PK exact OSM :</strong> <span data-pk-osm>${
+        osmId ? (epingler ? "Chargement…" : "Cliquer sur le PN") : "Non renseigné"
+      }</span></p><p><strong>Source :</strong> OpenRailwayMap (PN et ligne) · OpenStreetMap (PK exact)</p>${actionsOsm}<div class="popup-itineraires popup-itineraires-poste-actions popup-pn-actions"><button class="popup-bouton-itineraire popup-pn-street-view" type="button" data-lng="${longitude}" data-lat="${latitude}">🌍 Street View</button><a class="popup-bouton-itineraire" href="${echapperHtml(
         ligneImajnet
       )}" target="_blank" rel="noopener noreferrer">🛣️ Imajnet</a></div></div>`
     )
@@ -4892,16 +4992,8 @@ function ouvrirPopupPnOrmInfo(feature, options = {}) {
   elementPopup?.querySelector(".popup-pn-street-view")?.addEventListener("click", () => {
     ouvrirStreetViewEnSurimpression(longitude, latitude);
   });
-  if (osmId) {
-    chargerPkPnOrm(osmId).then((pkOrm) => {
-      if (!popupPnInfo || signaturePopupPnInfo !== signature) {
-        return;
-      }
-      const valeurPk = popupPnInfo.getElement()?.querySelector("[data-pk-orm]");
-      if (valeurPk) {
-        valeurPk.textContent = pkOrm || "Non renseigné";
-      }
-    });
+  if (osmId && epingler) {
+    chargerEtAfficherPkOsmPnOrm(signature, osmId);
   }
 }
 
@@ -6097,14 +6189,26 @@ function appliquerCouchesDonnees() {
   for (const idCouche of [
     COUCHE_LIGNES_ORM_VECTORIELLES_BASSE_CONTOUR,
     COUCHE_LIGNES_ORM_VECTORIELLES_BASSE,
-    COUCHE_LIGNES_ORM_VECTORIELLES_BASSE_INTERACTION,
     COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE_CONTOUR,
-    COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE,
-    COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE_INTERACTION
+    COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE
   ]) {
     if (carte.getLayer(idCouche)) {
       carte.setLayoutProperty(idCouche, "visibility", afficherLignesOrmVectorielles ? "visible" : "none");
     }
+  }
+  if (carte.getLayer(COUCHE_LIGNES_ORM_VECTORIELLES_BASSE_INTERACTION)) {
+    carte.setLayoutProperty(
+      COUCHE_LIGNES_ORM_VECTORIELLES_BASSE_INTERACTION,
+      "visibility",
+      afficherLignesOrmVectorielles ? "visible" : "none"
+    );
+  }
+  if (carte.getLayer(COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE_INTERACTION)) {
+    carte.setLayoutProperty(
+      COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE_INTERACTION,
+      "visibility",
+      afficherLignesOrmVectorielles || afficherPnOrm ? "visible" : "none"
+    );
   }
   for (const idCouche of [
     COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE_LABELS,

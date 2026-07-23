@@ -4890,8 +4890,12 @@ function chargerEtAfficherPkOsmPnOrm(signature, osmId) {
     return;
   }
   const valeurPk = popupPnInfo.getElement()?.querySelector("[data-pk-osm]");
+  if (valeurPk?.dataset.pkOsmEtat === "chargement" || valeurPk?.dataset.pkOsmEtat === "charge") {
+    return;
+  }
   if (valeurPk) {
     valeurPk.textContent = "Chargement…";
+    valeurPk.dataset.pkOsmEtat = "chargement";
   }
   chargerPkOsmPnOrm(osmId).then((pkOsm) => {
     if (!popupPnInfo || signaturePopupPnInfo !== signature) {
@@ -4900,6 +4904,7 @@ function chargerEtAfficherPkOsmPnOrm(signature, osmId) {
     const cible = popupPnInfo.getElement()?.querySelector("[data-pk-osm]");
     if (cible) {
       cible.textContent = pkOsm || "Non renseigné dans OSM";
+      cible.dataset.pkOsmEtat = "charge";
     }
   });
 }
@@ -4917,11 +4922,9 @@ function ouvrirPopupPnOrmInfo(feature, options = {}) {
   const signature = `orm|${longitude.toFixed(6)}|${latitude.toFixed(6)}|${idFeature}`;
   if (popupPnInfo && signaturePopupPnInfo === signature) {
     popupPnInfoEpinglee = epingler;
-    if (epingler) {
-      const osmIdExistant =
-        String(feature?.properties?.osm_id || "").trim() || idFeature.match(/^node-(\d+)$/i)?.[1] || "";
-      chargerEtAfficherPkOsmPnOrm(signature, osmIdExistant);
-    }
+    const osmIdExistant =
+      String(feature?.properties?.osm_id || "").trim() || idFeature.match(/^node-(\d+)$/i)?.[1] || "";
+    chargerEtAfficherPkOsmPnOrm(signature, osmIdExistant);
     return;
   }
 
@@ -4973,8 +4976,8 @@ function ouvrirPopupPnOrmInfo(feature, options = {}) {
         "Type ORM",
         type
       )}${lignesOrmHtml}<p><strong>PK exact OSM :</strong> <span data-pk-osm>${
-        osmId ? (epingler ? "Chargement…" : "Cliquer sur le PN") : "Non renseigné"
-      }</span></p><p><strong>Source :</strong> OpenRailwayMap (PN et ligne) · OpenStreetMap (PK exact)</p>${actionsOsm}<div class="popup-itineraires popup-itineraires-poste-actions popup-pn-actions"><button class="popup-bouton-itineraire popup-pn-street-view" type="button" data-lng="${longitude}" data-lat="${latitude}">🌍 Street View</button><a class="popup-bouton-itineraire" href="${echapperHtml(
+        osmId ? "Chargement…" : "Non renseigné"
+      }</span></p>${actionsOsm}<div class="popup-itineraires popup-itineraires-poste-actions popup-pn-actions"><button class="popup-bouton-itineraire popup-pn-street-view" type="button" data-lng="${longitude}" data-lat="${latitude}">🌍 Street View</button><a class="popup-bouton-itineraire" href="${echapperHtml(
         ligneImajnet
       )}" target="_blank" rel="noopener noreferrer">🛣️ Imajnet</a></div></div>`
     )
@@ -4992,7 +4995,7 @@ function ouvrirPopupPnOrmInfo(feature, options = {}) {
   elementPopup?.querySelector(".popup-pn-street-view")?.addEventListener("click", () => {
     ouvrirStreetViewEnSurimpression(longitude, latitude);
   });
-  if (osmId && epingler) {
+  if (osmId) {
     chargerEtAfficherPkOsmPnOrm(signature, osmId);
   }
 }

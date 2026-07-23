@@ -2132,6 +2132,12 @@ body {
   margin: 0;
 }
 
+.option-filtre-secondaire {
+  margin-left: 22px;
+  font-size: 0.84rem;
+  color: #475569;
+}
+
 .filtre-compteur {
   color: #64748b;
   font-weight: 600;

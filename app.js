@@ -27,6 +27,44 @@ const COUCHE_POSTES_GROUPES = "postes-groupes";
 const SOURCE_PK = "pk-source";
 const SOURCE_PN = "pn-source";
 const COUCHE_PN = "pn-points";
+const SOURCE_PN_ORM = "openrailwaymap-level-crossings-source";
+const COUCHE_PN_ORM = "openrailwaymap-level-crossings";
+const COUCHE_PN_ORM_LABELS = "openrailwaymap-level-crossings-labels";
+const SOURCES_GARES_ORM = Object.freeze([
+  {
+    id: "openrailwaymap-stations-low-source",
+    coucheSource: "standard_railway_text_stations_low",
+    url: "https://openrailwaymap.app/standard_railway_text_stations_low",
+    minzoom: 5,
+    maxzoom: 7
+  },
+  {
+    id: "openrailwaymap-stations-med-source",
+    coucheSource: "standard_railway_text_stations_med",
+    url: "https://openrailwaymap.app/standard_railway_text_stations_med",
+    minzoom: 7,
+    maxzoom: 8
+  },
+  {
+    id: "openrailwaymap-stations-high-source",
+    coucheSource: "standard_railway_text_stations",
+    url: "https://openrailwaymap.app/standard_railway_text_stations",
+    minzoom: 8,
+    maxzoom: 20
+  }
+]);
+const COUCHES_GARES_ORM = Object.freeze(
+  SOURCES_GARES_ORM.flatMap((source) => [
+    `${source.id}-points`,
+    `${source.id}-labels`
+  ])
+);
+const TYPES_PN_ORM = Object.freeze([
+  "general/level-crossing",
+  "general/level-crossing-light",
+  "general/level-crossing-barrier",
+  "general/level-crossing-light-barrier"
+]);
 const SOURCE_LIGNES_OSM = "osm-rail-lines-source";
 const SOURCE_LIGNES_OSM_VOIES = "osm-rail-track-refs-source";
 const COUCHE_LIGNES_OSM = "osm-rail-lines";
@@ -37,7 +75,6 @@ const SOURCE_LIGNES_ORM_PNG = "openrailwaymap-png-source";
 const COUCHE_LIGNES_ORM_PNG = "openrailwaymap-png-lignes";
 const SOURCE_LIGNES_ORM_VECTORIELLES_BASSE = "openrailwaymap-vector-low-source";
 const SOURCE_LIGNES_ORM_VECTORIELLES_HAUTE = "openrailwaymap-vector-high-source";
-const LIMITES_FRANCE_LIGNES_ORM_VECTORIELLES = [-5.3, 41.25, 9.65, 51.2];
 const CONTOUR_FRANCE_METROPOLITAINE = {
   type: "MultiPolygon",
   coordinates: [
@@ -112,6 +149,10 @@ const CONTOUR_FRANCE_METROPOLITAINE = {
     ]
   ]
 };
+const ZONE_GEOGRAPHIQUE_ORM = Object.freeze({
+  limites: [-5.3, 41.25, 9.65, 51.2],
+  contour: CONTOUR_FRANCE_METROPOLITAINE
+});
 const COUCHE_LIGNES_ORM_VECTORIELLES_BASSE_CONTOUR = "openrailwaymap-vector-low-outline";
 const COUCHE_LIGNES_ORM_VECTORIELLES_BASSE = "openrailwaymap-vector-low-lines";
 const COUCHE_LIGNES_ORM_VECTORIELLES_BASSE_INTERACTION = "openrailwaymap-vector-low-hit";
@@ -664,8 +705,8 @@ function creerExpressionLibelleLigneOrmVectorielle() {
   ];
 }
 
-function creerFiltreZoneLignesOrmVectorielles() {
-  return ["within", CONTOUR_FRANCE_METROPOLITAINE];
+function creerFiltreGeographiqueOrm() {
+  return ["within", ZONE_GEOGRAPHIQUE_ORM.contour];
 }
 
 function normaliserFeatureLigneOrmVectorielle(feature) {
@@ -961,9 +1002,11 @@ let afficherAcces = true;
 let afficherPostes = true;
 let afficherPk = false;
 let afficherPn = false;
+let afficherPnOrm = false;
 let afficherLignesOsm = false;
 let afficherLignesOrmPng = false;
 let afficherLignesOrmVectorielles = false;
+let afficherNomsGaresOrm = false;
 let donneesAppareils = null;
 let donneesAcces = null;
 let donneesPostes = null;
@@ -1797,6 +1840,11 @@ function construireAttributionsDynamiquesCarte() {
   if (afficherAppareils || afficherAcces || afficherPostes) {
     attributions.push("© ALICE - réutilisation interdite sans autorisation.");
   }
+  if (afficherPnOrm) {
+    attributions.push(
+      '<a href="https://openrailwaymap.app/" target="_blank" rel="noopener noreferrer">OpenRailwayMap</a> — © OpenStreetMap contributors'
+    );
+  }
   return attributions;
 }
 
@@ -1838,9 +1886,12 @@ const caseAcces = document.querySelector('input[name="filtre-acces"]');
 const casePostes = document.querySelector('input[name="filtre-postes"]');
 const casePk = document.querySelector('input[name="filtre-pk"]');
 const casePn = document.querySelector('input[name="filtre-pn"]');
+const casePnOrm = document.querySelector('input[name="filtre-pn-orm"]');
 const caseLignesOsm = document.querySelector('input[name="filtre-lignes-osm"]');
 const caseLignesOrmPng = document.querySelector('input[name="filtre-lignes-orm-png"]');
 const caseLignesOrmVectorielles = document.querySelector('input[name="filtre-lignes-orm-vectorielles"]');
+const caseNomsGaresOrm = document.querySelector('input[name="filtre-noms-gares-orm"]');
+const optionNomsGaresOrm = document.getElementById("option-noms-gares-orm");
 const compteurAppareils = document.getElementById("compteur-appareils");
 const compteurAcces = document.getElementById("compteur-acces");
 const compteurPostes = document.getElementById("compteur-postes");
@@ -4530,9 +4581,39 @@ function mettreAJourAffichagePn() {
   }
   const visible = afficherPn && Boolean(donneesPn?.features?.length);
   carte.setLayoutProperty(COUCHE_PN, "visibility", visible ? "visible" : "none");
-  if (!visible) {
+  if (!visible && !signaturePopupPnInfo.startsWith("orm|")) {
     fermerPopupPnInfo();
   }
+}
+
+function mettreAJourAffichagePnOrm() {
+  for (const idCouche of [COUCHE_PN_ORM, COUCHE_PN_ORM_LABELS]) {
+    if (carte.getLayer(idCouche)) {
+      carte.setLayoutProperty(idCouche, "visibility", afficherPnOrm ? "visible" : "none");
+    }
+  }
+  if (!afficherPnOrm && popupPnInfo && signaturePopupPnInfo.startsWith("orm|")) {
+    fermerPopupPnInfo();
+  }
+}
+
+function mettreAJourOptionNomsGaresOrm() {
+  if (optionNomsGaresOrm) {
+    optionNomsGaresOrm.hidden = !afficherLignesOrmVectorielles;
+  }
+  if (caseNomsGaresOrm) {
+    caseNomsGaresOrm.checked = afficherNomsGaresOrm;
+  }
+}
+
+function mettreAJourAffichageNomsGaresOrm() {
+  const visible = afficherLignesOrmVectorielles && afficherNomsGaresOrm;
+  for (const idCouche of COUCHES_GARES_ORM) {
+    if (carte.getLayer(idCouche)) {
+      carte.setLayoutProperty(idCouche, "visibility", visible ? "visible" : "none");
+    }
+  }
+  mettreAJourOptionNomsGaresOrm();
 }
 
 function normaliserTextePn(valeur) {
@@ -4682,6 +4763,157 @@ async function ouvrirPopupPnInfo(feature, options = {}) {
   if (boutonStreetView) {
     boutonStreetView.addEventListener("click", () => {
       ouvrirStreetViewEnSurimpression(longitude, latitude);
+    });
+  }
+}
+
+function determinerLibelleTypePnOrm(type) {
+  const libelles = {
+    "general/level-crossing": "Passage à niveau",
+    "general/level-crossing-light": "Passage à niveau avec feux",
+    "general/level-crossing-barrier": "Passage à niveau avec barrières",
+    "general/level-crossing-light-barrier": "Passage à niveau avec feux et barrières"
+  };
+  return libelles[String(type || "").trim()] || "Passage à niveau";
+}
+
+const cachePkPnOrm = new Map();
+
+function formaterPositionPkOrm(valeur) {
+  const texte = String(valeur ?? "").trim().replace(",", ".");
+  if (!texte) {
+    return "";
+  }
+  return Number.isFinite(Number(texte)) ? `${texte} km` : texte;
+}
+
+async function chargerPkPnOrm(osmId) {
+  const id = String(osmId || "").trim();
+  if (!id) {
+    return "";
+  }
+  if (cachePkPnOrm.has(id)) {
+    return await cachePkPnOrm.get(id);
+  }
+
+  const pnLocal = donneesPn?.features?.find(
+    (feature) => String(feature?.properties?.osm_id || "").trim() === id
+  );
+  const pkLocal = String(
+    pnLocal?.properties?.railway_position || pnLocal?.properties?.pk || ""
+  ).trim();
+  if (pkLocal) {
+    const valeur = formaterPositionPkOrm(pkLocal);
+    cachePkPnOrm.set(id, valeur);
+    return valeur;
+  }
+
+  const promesse = (async () => {
+    const requete = `[out:json];node(${id});out tags;`;
+    const controleur = new AbortController();
+    const minuterie = window.setTimeout(() => controleur.abort(), 7000);
+    try {
+      const url = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(requete)}`;
+      const reponse = await fetch(url, {
+        headers: { Accept: "application/json" },
+        cache: "no-store",
+        signal: controleur.signal
+      });
+      if (!reponse.ok) {
+        throw new Error(`HTTP ${reponse.status}`);
+      }
+      const resultat = await reponse.json();
+      const tags = resultat?.elements?.[0]?.tags || {};
+      return formaterPositionPkOrm(
+        tags["railway:position:exact"] || tags["railway:position"] || ""
+      );
+    } catch (erreur) {
+      console.warn("PK du PN ORM indisponible", erreur);
+      return "";
+    } finally {
+      window.clearTimeout(minuterie);
+    }
+  })();
+  cachePkPnOrm.set(id, promesse);
+  const valeur = await promesse;
+  cachePkPnOrm.set(id, valeur);
+  return valeur;
+}
+
+function ouvrirPopupPnOrmInfo(feature, options = {}) {
+  const coords = feature?.geometry?.coordinates || [];
+  const longitude = Number(coords[0]);
+  const latitude = Number(coords[1]);
+  if (!Number.isFinite(longitude) || !Number.isFinite(latitude)) {
+    return;
+  }
+
+  const epingler = options.epingler !== false;
+  const idFeature = String(feature?.properties?.id || feature?.id || "").trim();
+  const signature = `orm|${longitude.toFixed(6)}|${latitude.toFixed(6)}|${idFeature}`;
+  if (popupPnInfo && signaturePopupPnInfo === signature) {
+    popupPnInfoEpinglee = epingler;
+    return;
+  }
+
+  const proprietes = feature?.properties || {};
+  const reference = String(proprietes.ref || "").trim();
+  const titre = reference ? normaliserNumeroPn(reference) : "Passage à niveau ORM";
+  const type = determinerLibelleTypePnOrm(proprietes.feature);
+  const osmIdDepuisFeature = idFeature.match(/^node-(\d+)$/i)?.[1] || "";
+  const osmId = String(osmIdDepuisFeature).trim();
+  const lienOsmConsultation = osmId ? `https://www.openstreetmap.org/node/${encodeURIComponent(osmId)}` : "";
+  const lienOsmEdition = osmId ? `https://www.openstreetmap.org/edit?node=${encodeURIComponent(osmId)}` : "";
+  const actionsOsm = osmId
+    ? `<p class="popup-ligne-osm-ref">Ref OSM : ${echapperHtml(osmId)}</p><p class="popup-ligne-osm-actions">{<a href="${echapperHtml(
+        lienOsmEdition
+      )}" target="_blank" rel="noopener noreferrer">Modifier</a> / <a href="${echapperHtml(
+        lienOsmConsultation
+      )}" target="_blank" rel="noopener noreferrer">Consulter</a>}</p>`
+    : "";
+  const ligneImajnet = construireLienImajnet(longitude, latitude);
+
+  fermerPopupPnInfo();
+  popupPnInfo = new maplibregl.Popup({
+    closeButton: false,
+    closeOnClick: false,
+    className: "popup-pk-info",
+    offset: 10
+  })
+    .setLngLat([longitude, latitude])
+    .setHTML(
+      `<div class="popup-pk-info-contenu popup-pn-info-contenu"><p class="popup-pn-info-titre"><span class="popup-pn-info-titre-texte"><strong>${echapperHtml(
+        titre
+      )}</strong></span><span class="filtre-badge-beta">BETA</span></p>${construireLigneInfoPopup(
+        "Type ORM",
+        type
+      )}<p><strong>PK ORM :</strong> <span data-pk-orm>${osmId ? "Chargement…" : "Non renseigné"}</span></p><p><strong>Source :</strong> OpenRailwayMap / OpenStreetMap</p>${actionsOsm}<div class="popup-itineraires popup-itineraires-poste-actions popup-pn-actions"><button class="popup-bouton-itineraire popup-pn-street-view" type="button" data-lng="${longitude}" data-lat="${latitude}">🌍 Street View</button><a class="popup-bouton-itineraire" href="${echapperHtml(
+        ligneImajnet
+      )}" target="_blank" rel="noopener noreferrer">🛣️ Imajnet</a></div></div>`
+    )
+    .addTo(carte);
+  signaturePopupPnInfo = signature;
+  popupPnInfoEpinglee = epingler;
+
+  const elementPopup = popupPnInfo.getElement();
+  if (elementPopup) {
+    ["mousedown", "click", "dblclick"].forEach((nomEvenement) => {
+      elementPopup.addEventListener(nomEvenement, (event) => event.stopPropagation());
+    });
+    elementPopup.addEventListener("touchstart", (event) => event.stopPropagation(), { passive: true });
+  }
+  elementPopup?.querySelector(".popup-pn-street-view")?.addEventListener("click", () => {
+    ouvrirStreetViewEnSurimpression(longitude, latitude);
+  });
+  if (osmId) {
+    chargerPkPnOrm(osmId).then((pkOrm) => {
+      if (!popupPnInfo || signaturePopupPnInfo !== signature) {
+        return;
+      }
+      const valeurPk = popupPnInfo.getElement()?.querySelector("[data-pk-orm]");
+      if (valeurPk) {
+        valeurPk.textContent = pkOrm || "Non renseigné";
+      }
     });
   }
 }
@@ -5254,6 +5486,7 @@ function appliquerCouchesDonnees() {
       ],
       tileSize: 256,
       maxzoom: 19,
+      bounds: ZONE_GEOGRAPHIQUE_ORM.limites,
       attribution: "© OpenRailwayMap, © OpenStreetMap contributors"
     });
   }
@@ -5273,7 +5506,7 @@ function appliquerCouchesDonnees() {
     carte.addSource(SOURCE_LIGNES_ORM_VECTORIELLES_BASSE, {
       type: "vector",
       url: "https://openrailwaymap.app/standard_railway_line_low",
-      bounds: LIMITES_FRANCE_LIGNES_ORM_VECTORIELLES,
+      bounds: ZONE_GEOGRAPHIQUE_ORM.limites,
       attribution: "Data © OpenStreetMap contributors, service OpenRailwayMap-vector",
       promoteId: "id"
     });
@@ -5283,7 +5516,7 @@ function appliquerCouchesDonnees() {
     carte.addSource(SOURCE_LIGNES_ORM_VECTORIELLES_HAUTE, {
       type: "vector",
       url: "https://openrailwaymap.app/railway_line_high",
-      bounds: LIMITES_FRANCE_LIGNES_ORM_VECTORIELLES,
+      bounds: ZONE_GEOGRAPHIQUE_ORM.limites,
       attribution: "Data © OpenStreetMap contributors, service OpenRailwayMap-vector",
       promoteId: "id"
     });
@@ -5323,7 +5556,7 @@ function appliquerCouchesDonnees() {
         "source-layer": definition.sourceLayer,
         minzoom: definition.minzoom,
         maxzoom: definition.maxzoom,
-        filter: creerFiltreZoneLignesOrmVectorielles(),
+        filter: creerFiltreGeographiqueOrm(),
         layout: {
           "line-join": "round",
           "line-cap": "round"
@@ -5344,7 +5577,7 @@ function appliquerCouchesDonnees() {
         "source-layer": definition.sourceLayer,
         minzoom: definition.minzoom,
         maxzoom: definition.maxzoom,
-        filter: creerFiltreZoneLignesOrmVectorielles(),
+        filter: creerFiltreGeographiqueOrm(),
         layout: {
           "line-join": "round",
           "line-cap": "round"
@@ -5365,7 +5598,7 @@ function appliquerCouchesDonnees() {
         "source-layer": definition.sourceLayer,
         minzoom: definition.minzoom,
         maxzoom: definition.maxzoom,
-        filter: creerFiltreZoneLignesOrmVectorielles(),
+        filter: creerFiltreGeographiqueOrm(),
         layout: {
           "line-join": "round",
           "line-cap": "round"
@@ -5387,7 +5620,7 @@ function appliquerCouchesDonnees() {
       "source-layer": "railway_line_high",
       minzoom: 10.5,
       maxzoom: 20,
-      filter: creerFiltreZoneLignesOrmVectorielles(),
+      filter: creerFiltreGeographiqueOrm(),
       layout: {
         "symbol-placement": "line",
         "text-field": creerExpressionLibelleLigneOrmVectorielle(),
@@ -5414,7 +5647,7 @@ function appliquerCouchesDonnees() {
       maxzoom: 19,
       filter: [
         "all",
-        creerFiltreZoneLignesOrmVectorielles(),
+        creerFiltreGeographiqueOrm(),
         ["!=", ["to-string", ["coalesce", ["get", "track_ref"], ""]], ""]
       ],
       layout: {
@@ -5707,6 +5940,131 @@ function appliquerCouchesDonnees() {
     });
   }
 
+  if (!carte.getSource(SOURCE_PN_ORM)) {
+    carte.addSource(SOURCE_PN_ORM, {
+      type: "vector",
+      url: "https://openrailwaymap.app/standard_railway_symbols",
+      bounds: ZONE_GEOGRAPHIQUE_ORM.limites,
+      attribution: "Data © OpenStreetMap contributors, service OpenRailwayMap-vector",
+      promoteId: "id"
+    });
+  }
+
+  for (const sourceGare of SOURCES_GARES_ORM) {
+    if (!carte.getSource(sourceGare.id)) {
+      carte.addSource(sourceGare.id, {
+        type: "vector",
+        url: sourceGare.url,
+        bounds: ZONE_GEOGRAPHIQUE_ORM.limites,
+        attribution: "Data © OpenStreetMap contributors, service OpenRailwayMap-vector",
+        promoteId: "id"
+      });
+    }
+
+    const couchePoints = `${sourceGare.id}-points`;
+    if (!carte.getLayer(couchePoints)) {
+      carte.addLayer({
+        id: couchePoints,
+        type: "circle",
+        source: sourceGare.id,
+        "source-layer": sourceGare.coucheSource,
+        minzoom: sourceGare.minzoom,
+        maxzoom: sourceGare.maxzoom,
+        filter: creerFiltreGeographiqueOrm(),
+        paint: {
+          "circle-radius": 3,
+          "circle-color": "#ffffff",
+          "circle-stroke-color": "#0000ff",
+          "circle-stroke-width": 2
+        }
+      });
+    }
+
+    const coucheLabels = `${sourceGare.id}-labels`;
+    if (!carte.getLayer(coucheLabels)) {
+      carte.addLayer({
+        id: coucheLabels,
+        type: "symbol",
+        source: sourceGare.id,
+        "source-layer": sourceGare.coucheSource,
+        minzoom: sourceGare.minzoom,
+        maxzoom: sourceGare.maxzoom,
+        filter: creerFiltreGeographiqueOrm(),
+        layout: {
+          "text-field": [
+            "coalesce",
+            ["get", "localized_name"],
+            ["get", "label"],
+            ["get", "name"],
+            ""
+          ],
+          "text-font": ["Open Sans Bold"],
+          "text-size": 11,
+          "text-padding": 10,
+          "text-max-width": 8,
+          "text-optional": true,
+          "text-variable-anchor": ["top", "bottom", "left", "right"]
+        },
+        paint: {
+          "text-color": "#0000ff",
+          "text-halo-color": "#ffffff",
+          "text-halo-width": 1.5
+        }
+      });
+    }
+  }
+
+  const filtrePnOrm = [
+    "all",
+    creerFiltreGeographiqueOrm(),
+    ["in", ["get", "feature"], ["literal", TYPES_PN_ORM]]
+  ];
+  if (!carte.getLayer(COUCHE_PN_ORM)) {
+    carte.addLayer({
+      id: COUCHE_PN_ORM,
+      type: "circle",
+      source: SOURCE_PN_ORM,
+      "source-layer": "standard_railway_symbols",
+      minzoom: 12,
+      filter: filtrePnOrm,
+      paint: {
+        "circle-radius": ["interpolate", ["linear"], ["zoom"], 12, 4, 16, 6, 19, 8],
+        "circle-color": PALETTE_CARTE.pn,
+        "circle-stroke-color": PALETTE_CARTE.pnContour,
+        "circle-stroke-width": 1.5,
+        "circle-opacity": 0.92
+      }
+    });
+  }
+
+  if (!carte.getLayer(COUCHE_PN_ORM_LABELS)) {
+    carte.addLayer({
+      id: COUCHE_PN_ORM_LABELS,
+      type: "symbol",
+      source: SOURCE_PN_ORM,
+      "source-layer": "standard_railway_symbols",
+      minzoom: 15,
+      filter: [
+        "all",
+        filtrePnOrm,
+        ["!=", ["to-string", ["coalesce", ["get", "ref"], ""]], ""]
+      ],
+      layout: {
+        "text-field": ["concat", "PN ", ["to-string", ["get", "ref"]]],
+        "text-font": ["Open Sans Bold"],
+        "text-size": 11,
+        "text-offset": [0, 1.25],
+        "text-anchor": "top",
+        "text-allow-overlap": false
+      },
+      paint: {
+        "text-color": PALETTE_CARTE.pnContour,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1.5
+      }
+    });
+  }
+
   if (!carte.getLayer(COUCHE_PN)) {
     carte.addLayer({
       id: COUCHE_PN,
@@ -5800,6 +6158,8 @@ function appliquerCouchesDonnees() {
   }
   mettreAJourAffichagePk();
   mettreAJourAffichagePn();
+  mettreAJourAffichagePnOrm();
+  mettreAJourAffichageNomsGaresOrm();
   mettreAJourControleAttributionCarte();
 }
 
@@ -5819,6 +6179,9 @@ function restaurerEtatFiltres() {
   if (casePn) {
     casePn.checked = afficherPn;
   }
+  if (casePnOrm) {
+    casePnOrm.checked = afficherPnOrm;
+  }
   if (caseLignesOsm) {
     caseLignesOsm.checked = afficherLignesOsm;
   }
@@ -5828,6 +6191,7 @@ function restaurerEtatFiltres() {
   if (caseLignesOrmVectorielles) {
     caseLignesOrmVectorielles.checked = afficherLignesOrmVectorielles;
   }
+  mettreAJourOptionNomsGaresOrm();
 
   mettreAJourCompteursFiltres();
   appliquerCouchesDonnees();
@@ -5848,6 +6212,12 @@ function remonterCouchesDonnees() {
     COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE_LABELS,
     COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE_VOIES
   ]) {
+    if (carte.getLayer(idCouche)) {
+      carte.moveLayer(idCouche);
+    }
+  }
+
+  for (const idCouche of COUCHES_GARES_ORM) {
     if (carte.getLayer(idCouche)) {
       carte.moveLayer(idCouche);
     }
@@ -5895,6 +6265,14 @@ function remonterCouchesDonnees() {
 
   if (carte.getLayer(COUCHE_PN)) {
     carte.moveLayer(COUCHE_PN);
+  }
+
+  if (carte.getLayer(COUCHE_PN_ORM)) {
+    carte.moveLayer(COUCHE_PN_ORM);
+  }
+
+  if (carte.getLayer(COUCHE_PN_ORM_LABELS)) {
+    carte.moveLayer(COUCHE_PN_ORM_LABELS);
   }
 
 }
@@ -10133,6 +10511,21 @@ function activerInteractionsCarte() {
       }
     }
 
+    if (afficherPnOrm && carte.getLayer(COUCHE_PN_ORM)) {
+      const pnOrmObjets = interrogerObjetsDepuisTap(event.point, [COUCHE_PN_ORM]);
+      const meilleurPnOrm = choisirMeilleurObjetDepuisTap(pnOrmObjets, event.point);
+      if (meilleurPnOrm) {
+        if (popupSurvolInfoEstVerrouillee()) {
+          fermerPopupSurvolInfo();
+        }
+        ouvrirPopupPnOrmInfo(meilleurPnOrm, { epingler: true });
+        return;
+      }
+      if (signaturePopupPnInfo.startsWith("orm|")) {
+        fermerPopupPnInfo();
+      }
+    }
+
     if (afficherPn && carte.getLayer(COUCHE_PN)) {
       const pnObjets = interrogerObjetsDepuisTap(event.point, [COUCHE_PN]);
       const meilleurPn = choisirMeilleurObjetDepuisTap(pnObjets, event.point);
@@ -10280,6 +10673,24 @@ function activerInteractionsCarte() {
             fermerPopupPnInfo();
           }
           ouvrirPopupSurvolInfo(objetSurvole || objets[0], { verrouiller: false });
+          return;
+        }
+      }
+
+      if (afficherPnOrm && carte.getLayer(COUCHE_PN_ORM)) {
+        const pnOrmObjets = carte.queryRenderedFeatures(dernierPointCurseur, {
+          layers: [COUCHE_PN_ORM]
+        });
+        const meilleurPnOrm = choisirMeilleurObjetDepuisTap(pnOrmObjets, dernierPointCurseur);
+        if (meilleurPnOrm) {
+          carte.getCanvas().style.cursor = "pointer";
+          if (!popupLigneOsmInfoEstEpinglee()) {
+            fermerPopupLigneOsmInfo();
+          }
+          if (!popupSurvolInfoEstVerrouillee()) {
+            fermerPopupSurvolInfo();
+          }
+          ouvrirPopupPnOrmInfo(meilleurPnOrm, { epingler: false });
           return;
         }
       }
@@ -11095,6 +11506,10 @@ if (casePn) {
   casePn.addEventListener("change", async () => {
     afficherPn = casePn.checked;
     if (afficherPn) {
+      afficherPnOrm = false;
+      if (casePnOrm) {
+        casePnOrm.checked = false;
+      }
       casePn.disabled = true;
       afficherMessageChargementCouche("Chargement des PN en cours...");
       try {
@@ -11118,6 +11533,25 @@ if (casePn) {
     if (afficherPn) {
       masquerMessageChargementApresRenduCarte();
     }
+  });
+}
+
+if (casePnOrm) {
+  casePnOrm.addEventListener("change", () => {
+    afficherPnOrm = casePnOrm.checked;
+    if (afficherPnOrm) {
+      afficherPn = false;
+      if (casePn) {
+        casePn.checked = false;
+      }
+    }
+    if (!afficherPnOrm && signaturePopupPnInfo.startsWith("orm|")) {
+      fermerPopupPnInfo();
+    }
+    appliquerCouchesDonnees();
+    remonterCouchesDonnees();
+    mettreAJourControleAttributionCarte();
+    forcerRafraichissementCarte({ tentativesDifferees: true });
   });
 }
 
@@ -11150,6 +11584,7 @@ if (caseLignesOrmPng) {
       fermerPopupLigneOsmInfo();
     }
 
+    mettreAJourOptionNomsGaresOrm();
     appliquerCouchesDonnees();
     remonterCouchesDonnees();
     forcerRafraichissementCarte({ tentativesDifferees: true });
@@ -11171,7 +11606,17 @@ if (caseLignesOrmVectorielles) {
       masquerMessageChargementCouche();
     }
 
+    mettreAJourOptionNomsGaresOrm();
     appliquerCouchesDonnees();
+    remonterCouchesDonnees();
+    forcerRafraichissementCarte({ tentativesDifferees: true });
+  });
+}
+
+if (caseNomsGaresOrm) {
+  caseNomsGaresOrm.addEventListener("change", () => {
+    afficherNomsGaresOrm = caseNomsGaresOrm.checked;
+    mettreAJourAffichageNomsGaresOrm();
     remonterCouchesDonnees();
     forcerRafraichissementCarte({ tentativesDifferees: true });
   });

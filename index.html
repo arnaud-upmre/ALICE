@@ -111,6 +111,10 @@
           <span>Passages a niveau <span class="filtre-compteur" id="compteur-pn">(0)</span></span>
         </label>
         <label class="option-filtre">
+          <input type="checkbox" name="filtre-pn-orm" />
+          <span class="libelle-filtre-beta">Passages à niveau ORM <span class="filtre-badge-beta">BETA</span></span>
+        </label>
+        <label class="option-filtre">
           <input type="checkbox" name="filtre-lignes-osm" />
           <span>Ligne ferroviaire OSM</span>
         </label>
@@ -121,6 +125,10 @@
         <label class="option-filtre">
           <input type="checkbox" name="filtre-lignes-orm-vectorielles" />
           <span class="libelle-filtre-beta">Ligne ORM vectorielle <span class="filtre-badge-beta">BETA</span></span>
+        </label>
+        <label class="option-filtre option-filtre-secondaire" id="option-noms-gares-orm" hidden>
+          <input type="checkbox" name="filtre-noms-gares-orm" />
+          <span>Noms des gares ORM</span>
         </label>
         <div class="menu-filtres-separateur" role="presentation"></div>
         <button class="bouton-filtres-legende" id="bouton-legende-filtres" type="button">Légende</button>
@@ -441,7 +449,7 @@
         "./referentiel-lignes.js",
         "./code.js",
         "./recherche.js",
-        "./app.js?v=2.0.39",
+        "./app.js",
         "./notification.js"
       ];
 

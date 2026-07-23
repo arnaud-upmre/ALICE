@@ -4585,6 +4585,10 @@ function fermerPopupPnInfo() {
   popupPnInfoEpinglee = false;
 }
 
+function popupPnInfoEstEpinglee() {
+  return Boolean(popupPnInfo && popupPnInfoEpinglee);
+}
+
 function fermerPopupLigneOsmInfo() {
   if (!popupLigneOsmInfo) {
     popupLigneOsmInfoEpinglee = false;
@@ -4715,7 +4719,9 @@ async function ouvrirPopupPnInfo(feature, options = {}) {
     afficherPk ? "1" : "0"
   }`;
   if (popupPnInfo && signaturePopupPnInfo === signature) {
-    popupPnInfoEpinglee = epingler;
+    if (epingler) {
+      popupPnInfoEpinglee = true;
+    }
     return;
   }
   const pnNumero = normaliserTextePn(feature?.properties?.pn_numero);
@@ -4748,6 +4754,16 @@ async function ouvrirPopupPnInfo(feature, options = {}) {
       : "<p><strong>PK approximatif calculé :</strong> Indisponible</p>";
   }
   const lienImajnet = construireLienImajnet(longitude, latitude);
+
+  // Un survol et un clic peuvent lancer simultanément le calcul asynchrone du PK.
+  // Si le clic a déjà épinglé la popup entre-temps, le survol ne doit ni la
+  // recréer ni la repasser en mode temporaire.
+  if (popupPnInfo && signaturePopupPnInfo === signature) {
+    if (epingler) {
+      popupPnInfoEpinglee = true;
+    }
+    return;
+  }
 
   fermerPopupPnInfo();
   popupPnInfo = new maplibregl.Popup({
@@ -4921,7 +4937,9 @@ function ouvrirPopupPnOrmInfo(feature, options = {}) {
   const idFeature = String(feature?.properties?.id || feature?.id || "").trim();
   const signature = `orm|${longitude.toFixed(6)}|${latitude.toFixed(6)}|${idFeature}`;
   if (popupPnInfo && signaturePopupPnInfo === signature) {
-    popupPnInfoEpinglee = epingler;
+    if (epingler) {
+      popupPnInfoEpinglee = true;
+    }
     const osmIdExistant =
       String(feature?.properties?.osm_id || "").trim() || idFeature.match(/^node-(\d+)$/i)?.[1] || "";
     chargerEtAfficherPkOsmPnOrm(signature, osmIdExistant);
@@ -10737,6 +10755,9 @@ function activerInteractionsCarte() {
     if (popupLigneOsmInfoEstEpinglee()) {
       return;
     }
+    if (popupPnInfoEstEpinglee()) {
+      return;
+    }
 
     dernierPointCurseur = event.point;
     if (survolCurseurPlanifie) {
@@ -10745,6 +10766,10 @@ function activerInteractionsCarte() {
     survolCurseurPlanifie = true;
     window.requestAnimationFrame(() => {
       survolCurseurPlanifie = false;
+      if (popupPnInfoEstEpinglee()) {
+        carte.getCanvas().style.cursor = "";
+        return;
+      }
       const couchesDisponibles = couchesInteractives.filter((id) => Boolean(carte.getLayer(id)));
       if (!dernierPointCurseur) {
         carte.getCanvas().style.cursor = "";

@@ -14293,6 +14293,1013 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.412653,
+          49.886254
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "B/IS1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412681,
+          49.88625
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "B/IS2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412715,
+          49.886249
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "B/IS3",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412749,
+          49.886257
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "B/IS4",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412792,
+          49.886254
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "B/IS5",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412833,
+          49.886252
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "B/IS6",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412419,
+          49.8863
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "D1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412419,
+          49.886426
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "D2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.41273,
+          49.886301
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DC",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412717,
+          49.886421
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DL",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412711,
+          49.886356
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DP",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412703,
+          49.886301
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DT1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412654,
+          49.88642
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DT2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412624,
+          49.886293
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "GT1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412622,
+          49.886419
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "GT2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412653,
+          49.886254
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IS1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412681,
+          49.88625
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IS2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412715,
+          49.886249
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IS3",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412749,
+          49.886257
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IS4",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412792,
+          49.886254
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IS5",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412833,
+          49.886252
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IS6",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412328,
+          49.8863
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "S1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412324,
+          49.886416
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "S2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412668,
+          49.886325
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SBP1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412672,
+          49.886388
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SBP2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412757,
+          49.886332
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SC",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412703,
+          49.886301
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SDC",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412654,
+          49.88642
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SDL",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412672,
+          49.886359
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SDP",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412757,
+          49.886393
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SL",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412756,
+          49.886361
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SP",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412754,
+          49.886347
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SPC",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412755,
+          49.886377
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SPL",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412743,
+          49.886302
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TC DC",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412727,
+          49.886421
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TC DL",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412733,
+          49.886357
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TC DP",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412624,
+          49.886293
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TC MASSE 1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412622,
+          49.886419
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TC MASSE 2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412668,
+          49.886325
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TSA1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412792,
+          49.886254
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TSA2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412681,
+          49.88625
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT BIF DE CAMON AMIENS ARRIVEE",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412653,
+          49.886254
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT BIF DE CAMON AMIENS DEPART",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412743,
+          49.886302
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT DC",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412727,
+          49.886421
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT DL",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412733,
+          49.886357
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT DP",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412792,
+          49.886254
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT LAMOTTE CORBIE V1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412833,
+          49.886252
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT LAMOTTE CORBIE V2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412715,
+          49.886249
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT LAMOTTE LONGUEAU V1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412749,
+          49.886257
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT LAMOTTE LONGUEAU V2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412395,
+          49.886304
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TTTC11",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412401,
+          49.886289
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TTTC12",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412389,
+          49.886425
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TTTC21",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412395,
+          49.88641
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TTTC22",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.645701,
           50.250747
         ]

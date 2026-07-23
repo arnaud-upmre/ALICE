@@ -14293,6 +14293,44 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.412715,
+          49.886177
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "1",
+        "description": "Sectionneur",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.412708,
+          49.886072
+        ]
+      },
+      "properties": {
+        "nom": "Lamotte",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "2910BIS",
+        "description": "Sectionneur",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.412653,
           49.886254
         ]

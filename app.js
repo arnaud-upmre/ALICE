@@ -674,6 +674,7 @@ function normaliserFeatureLigneOrmVectorielle(feature) {
     ...feature,
     properties: normaliserProprietesLigneOsm({
       ...props,
+      alice_data_source: "orm-vector",
       name: props.name,
       line_ref: props.ref,
       track_ref: props.track_ref,
@@ -4692,14 +4693,20 @@ async function ouvrirPopupLigneOsmInfo(feature, lngLat, options = {}) {
     return;
   }
 
+  const estLigneOrmVectorielle = feature?.properties?.alice_data_source === "orm-vector";
   const numeroLigne = normaliserTexteLigneOsm(feature?.properties?.line_ref);
   const codeLigneBrut = String(feature?.properties?.line_ref || "").trim();
-  const nomLigne = retrouverNomLigneOsmParCode(codeLigneBrut);
-  const nomReferentielOsm = construireLibelleNomLigneOsmAvecVoie(
-    obtenirNomLigneOsmDepuisReferentiel(feature?.properties?.osm_way_id),
-    feature?.properties?.track_ref
-  );
-  const nomOsm = construireLibelleNomLigneOsmAvecVoie(feature?.properties?.name, feature?.properties?.track_ref);
+  const nomOrm = normaliserTexteLigneOsm(feature?.properties?.name);
+  const nomLigne = estLigneOrmVectorielle ? nomOrm : retrouverNomLigneOsmParCode(codeLigneBrut);
+  const nomReferentielOsm = estLigneOrmVectorielle
+    ? ""
+    : construireLibelleNomLigneOsmAvecVoie(
+        obtenirNomLigneOsmDepuisReferentiel(feature?.properties?.osm_way_id),
+        feature?.properties?.track_ref
+      );
+  const nomOsm = estLigneOrmVectorielle
+    ? nomOrm
+    : construireLibelleNomLigneOsmAvecVoie(feature?.properties?.name, feature?.properties?.track_ref);
   const vitesse = normaliserTexteLigneOsm(feature?.properties?.maxspeed);
   const voie = normaliserTexteLigneOsm(feature?.properties?.track_ref);
   const operateur = normaliserTexteLigneOsm(feature?.properties?.operator);

@@ -4780,11 +4780,11 @@ function determinerLibelleTypePnOrm(type) {
 const cachePkPnOrm = new Map();
 
 function formaterPositionPkOrm(valeur) {
-  const texte = String(valeur ?? "").trim().replace(",", ".");
-  if (!texte) {
-    return "";
-  }
-  return Number.isFinite(Number(texte)) ? `${texte} km` : texte;
+  const positions = Array.isArray(valeur) ? valeur : [valeur];
+  return positions
+    .map((position) => String(position ?? "").trim())
+    .filter(Boolean)
+    .join(" / ");
 }
 
 async function chargerPkPnOrm(osmId) {
@@ -4796,39 +4796,26 @@ async function chargerPkPnOrm(osmId) {
     return await cachePkPnOrm.get(id);
   }
 
-  const pnLocal = donneesPn?.features?.find(
-    (feature) => String(feature?.properties?.osm_id || "").trim() === id
-  );
-  const pkLocal = String(
-    pnLocal?.properties?.railway_position || pnLocal?.properties?.pk || ""
-  ).trim();
-  if (pkLocal) {
-    const valeur = formaterPositionPkOrm(pkLocal);
-    cachePkPnOrm.set(id, valeur);
-    return valeur;
-  }
-
   const promesse = (async () => {
-    const requete = `[out:json];node(${id});out tags;`;
     const controleur = new AbortController();
     const minuterie = window.setTimeout(() => controleur.abort(), 7000);
     try {
-      const url = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(requete)}`;
+      const url = `https://openrailwaymap.app/api/feature/openrailwaymap_standard/standard_railway_symbols/node-${encodeURIComponent(
+        id
+      )}`;
       const reponse = await fetch(url, {
         headers: { Accept: "application/json" },
         cache: "no-store",
+        credentials: "omit",
         signal: controleur.signal
       });
       if (!reponse.ok) {
         throw new Error(`HTTP ${reponse.status}`);
       }
       const resultat = await reponse.json();
-      const tags = resultat?.elements?.[0]?.tags || {};
-      return formaterPositionPkOrm(
-        tags["railway:position:exact"] || tags["railway:position"] || ""
-      );
+      return formaterPositionPkOrm(resultat?.position);
     } catch (erreur) {
-      console.warn("PK du PN ORM indisponible", erreur);
+      console.warn("Position du PN indisponible depuis l’API ORM", erreur);
       return "";
     } finally {
       window.clearTimeout(minuterie);

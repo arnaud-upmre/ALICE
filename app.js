@@ -75,6 +75,7 @@ const SOURCE_LIGNES_ORM_PNG = "openrailwaymap-png-source";
 const COUCHE_LIGNES_ORM_PNG = "openrailwaymap-png-lignes";
 const SOURCE_LIGNES_ORM_VECTORIELLES_BASSE = "openrailwaymap-vector-low-source";
 const SOURCE_LIGNES_ORM_VECTORIELLES_HAUTE = "openrailwaymap-vector-high-source";
+const MARGE_FRONTIERE_ORM_METRES = 15_000;
 const CONTOUR_FRANCE_METROPOLITAINE = {
   type: "MultiPolygon",
   coordinates: [
@@ -150,7 +151,7 @@ const CONTOUR_FRANCE_METROPOLITAINE = {
   ]
 };
 const ZONE_GEOGRAPHIQUE_ORM = Object.freeze({
-  limites: [-5.3, 41.25, 9.65, 51.2],
+  limites: [-5.3, 41.2, 9.75, 51.3],
   contour: CONTOUR_FRANCE_METROPOLITAINE
 });
 const COUCHE_LIGNES_ORM_VECTORIELLES_BASSE_CONTOUR = "openrailwaymap-vector-low-outline";
@@ -705,8 +706,15 @@ function creerExpressionLibelleLigneOrmVectorielle() {
   ];
 }
 
-function creerFiltreGeographiqueOrm() {
-  return ["within", ZONE_GEOGRAPHIQUE_ORM.contour];
+function creerFiltreGeographiqueOrm(margeMetres = 0) {
+  if (margeMetres <= 0) {
+    return ["within", ZONE_GEOGRAPHIQUE_ORM.contour];
+  }
+  return [
+    "<=",
+    ["distance", ZONE_GEOGRAPHIQUE_ORM.contour],
+    margeMetres
+  ];
 }
 
 function normaliserFeatureLigneOrmVectorielle(feature) {
@@ -4847,9 +4855,9 @@ async function chargerPkOsmPnOrm(osmId) {
 
   const promesse = (async () => {
     const controleur = new AbortController();
-    const minuterie = window.setTimeout(() => controleur.abort(), 7000);
+    const minuterie = window.setTimeout(() => controleur.abort(), 15000);
     try {
-      const requete = `[out:json][timeout:5];node(${id});out tags;`;
+      const requete = `[out:json][timeout:12];node(${id});out tags;`;
       const url = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(requete)}`;
       const reponse = await fetch(url, {
         headers: { Accept: "application/json" },
@@ -4864,14 +4872,18 @@ async function chargerPkOsmPnOrm(osmId) {
       return extrairePositionPkOsm(resultat?.elements?.[0]?.tags || {});
     } catch (erreur) {
       console.warn("PK exact du PN indisponible depuis OSM", erreur);
-      return "";
+      return null;
     } finally {
       window.clearTimeout(minuterie);
     }
   })();
   cachePkOsmPnOrm.set(id, promesse);
   const valeur = await promesse;
-  cachePkOsmPnOrm.set(id, valeur);
+  if (valeur === null) {
+    cachePkOsmPnOrm.delete(id);
+  } else {
+    cachePkOsmPnOrm.set(id, valeur);
+  }
   return valeur;
 }
 
@@ -4919,8 +4931,9 @@ function chargerEtAfficherPkOsmPnOrm(signature, osmId) {
     }
     const cible = popupPnInfo.getElement()?.querySelector("[data-pk-osm]");
     if (cible) {
-      cible.textContent = pkOsm || "Non renseigné dans OSM";
-      cible.dataset.pkOsmEtat = "charge";
+      cible.textContent =
+        pkOsm === null ? "Indisponible temporairement" : pkOsm || "Non renseigné dans OSM";
+      cible.dataset.pkOsmEtat = pkOsm === null ? "erreur" : "charge";
     }
   });
 }
@@ -4942,7 +4955,9 @@ function ouvrirPopupPnOrmInfo(feature, options = {}) {
     }
     const osmIdExistant =
       String(feature?.properties?.osm_id || "").trim() || idFeature.match(/^node-(\d+)$/i)?.[1] || "";
-    chargerEtAfficherPkOsmPnOrm(signature, osmIdExistant);
+    if (epingler) {
+      chargerEtAfficherPkOsmPnOrm(signature, osmIdExistant);
+    }
     return;
   }
 
@@ -4994,7 +5009,7 @@ function ouvrirPopupPnOrmInfo(feature, options = {}) {
         "Type ORM",
         type
       )}${lignesOrmHtml}<p><strong>PK exact OSM :</strong> <span data-pk-osm>${
-        osmId ? "Chargement…" : "Non renseigné"
+        osmId ? (epingler ? "Chargement…" : "Cliquer sur le PN pour charger") : "Non renseigné"
       }</span></p>${actionsOsm}<div class="popup-itineraires popup-itineraires-poste-actions popup-pn-actions"><button class="popup-bouton-itineraire popup-pn-street-view" type="button" data-lng="${longitude}" data-lat="${latitude}">🌍 Street View</button><a class="popup-bouton-itineraire" href="${echapperHtml(
         ligneImajnet
       )}" target="_blank" rel="noopener noreferrer">🛣️ Imajnet</a></div></div>`
@@ -5013,7 +5028,7 @@ function ouvrirPopupPnOrmInfo(feature, options = {}) {
   elementPopup?.querySelector(".popup-pn-street-view")?.addEventListener("click", () => {
     ouvrirStreetViewEnSurimpression(longitude, latitude);
   });
-  if (osmId) {
+  if (epingler && osmId) {
     chargerEtAfficherPkOsmPnOrm(signature, osmId);
   }
 }
@@ -5656,7 +5671,7 @@ function appliquerCouchesDonnees() {
         "source-layer": definition.sourceLayer,
         minzoom: definition.minzoom,
         maxzoom: definition.maxzoom,
-        filter: creerFiltreGeographiqueOrm(),
+        filter: creerFiltreGeographiqueOrm(MARGE_FRONTIERE_ORM_METRES),
         layout: {
           "line-join": "round",
           "line-cap": "round"
@@ -5677,7 +5692,7 @@ function appliquerCouchesDonnees() {
         "source-layer": definition.sourceLayer,
         minzoom: definition.minzoom,
         maxzoom: definition.maxzoom,
-        filter: creerFiltreGeographiqueOrm(),
+        filter: creerFiltreGeographiqueOrm(MARGE_FRONTIERE_ORM_METRES),
         layout: {
           "line-join": "round",
           "line-cap": "round"
@@ -5698,7 +5713,7 @@ function appliquerCouchesDonnees() {
         "source-layer": definition.sourceLayer,
         minzoom: definition.minzoom,
         maxzoom: definition.maxzoom,
-        filter: creerFiltreGeographiqueOrm(),
+        filter: creerFiltreGeographiqueOrm(MARGE_FRONTIERE_ORM_METRES),
         layout: {
           "line-join": "round",
           "line-cap": "round"
@@ -5720,7 +5735,7 @@ function appliquerCouchesDonnees() {
       "source-layer": "railway_line_high",
       minzoom: 10.5,
       maxzoom: 20,
-      filter: creerFiltreGeographiqueOrm(),
+      filter: creerFiltreGeographiqueOrm(MARGE_FRONTIERE_ORM_METRES),
       layout: {
         "symbol-placement": "line",
         "text-field": creerExpressionLibelleLigneOrmVectorielle(),
@@ -5747,7 +5762,7 @@ function appliquerCouchesDonnees() {
       maxzoom: 19,
       filter: [
         "all",
-        creerFiltreGeographiqueOrm(),
+        creerFiltreGeographiqueOrm(MARGE_FRONTIERE_ORM_METRES),
         ["!=", ["to-string", ["coalesce", ["get", "track_ref"], ""]], ""]
       ],
       layout: {

@@ -75,8 +75,7 @@ const SOURCE_LIGNES_ORM_PNG = "openrailwaymap-png-source";
 const COUCHE_LIGNES_ORM_PNG = "openrailwaymap-png-lignes";
 const SOURCE_LIGNES_ORM_VECTORIELLES_BASSE = "openrailwaymap-vector-low-source";
 const SOURCE_LIGNES_ORM_VECTORIELLES_HAUTE = "openrailwaymap-vector-high-source";
-const MARGE_FRONTIERE_ORM_METRES = 15_000;
-const CONTOUR_FRANCE_METROPOLITAINE = {
+const CONTOUR_FRANCE_METROPOLITAINE_SECOURS = {
   type: "MultiPolygon",
   coordinates: [
     [
@@ -150,8 +149,10 @@ const CONTOUR_FRANCE_METROPOLITAINE = {
     ]
   ]
 };
+const CONTOUR_FRANCE_METROPOLITAINE =
+  window.CONTOUR_FRANCE_METROPOLITAINE_PRECIS || CONTOUR_FRANCE_METROPOLITAINE_SECOURS;
 const ZONE_GEOGRAPHIQUE_ORM = Object.freeze({
-  limites: [-5.3, 41.2, 9.75, 51.3],
+  limites: [-5.3, 41.25, 9.65, 51.2],
   contour: CONTOUR_FRANCE_METROPOLITAINE
 });
 const COUCHE_LIGNES_ORM_VECTORIELLES_BASSE_CONTOUR = "openrailwaymap-vector-low-outline";
@@ -706,15 +707,8 @@ function creerExpressionLibelleLigneOrmVectorielle() {
   ];
 }
 
-function creerFiltreGeographiqueOrm(margeMetres = 0) {
-  if (margeMetres <= 0) {
-    return ["within", ZONE_GEOGRAPHIQUE_ORM.contour];
-  }
-  return [
-    "<=",
-    ["distance", ZONE_GEOGRAPHIQUE_ORM.contour],
-    margeMetres
-  ];
+function creerFiltreGeographiqueOrm() {
+  return ["within", ZONE_GEOGRAPHIQUE_ORM.contour];
 }
 
 function normaliserFeatureLigneOrmVectorielle(feature) {
@@ -5671,7 +5665,7 @@ function appliquerCouchesDonnees() {
         "source-layer": definition.sourceLayer,
         minzoom: definition.minzoom,
         maxzoom: definition.maxzoom,
-        filter: creerFiltreGeographiqueOrm(MARGE_FRONTIERE_ORM_METRES),
+        filter: creerFiltreGeographiqueOrm(),
         layout: {
           "line-join": "round",
           "line-cap": "round"
@@ -5692,7 +5686,7 @@ function appliquerCouchesDonnees() {
         "source-layer": definition.sourceLayer,
         minzoom: definition.minzoom,
         maxzoom: definition.maxzoom,
-        filter: creerFiltreGeographiqueOrm(MARGE_FRONTIERE_ORM_METRES),
+        filter: creerFiltreGeographiqueOrm(),
         layout: {
           "line-join": "round",
           "line-cap": "round"
@@ -5713,7 +5707,7 @@ function appliquerCouchesDonnees() {
         "source-layer": definition.sourceLayer,
         minzoom: definition.minzoom,
         maxzoom: definition.maxzoom,
-        filter: creerFiltreGeographiqueOrm(MARGE_FRONTIERE_ORM_METRES),
+        filter: creerFiltreGeographiqueOrm(),
         layout: {
           "line-join": "round",
           "line-cap": "round"
@@ -5735,7 +5729,7 @@ function appliquerCouchesDonnees() {
       "source-layer": "railway_line_high",
       minzoom: 10.5,
       maxzoom: 20,
-      filter: creerFiltreGeographiqueOrm(MARGE_FRONTIERE_ORM_METRES),
+      filter: creerFiltreGeographiqueOrm(),
       layout: {
         "symbol-placement": "line",
         "text-field": creerExpressionLibelleLigneOrmVectorielle(),
@@ -5762,7 +5756,7 @@ function appliquerCouchesDonnees() {
       maxzoom: 19,
       filter: [
         "all",
-        creerFiltreGeographiqueOrm(MARGE_FRONTIERE_ORM_METRES),
+        creerFiltreGeographiqueOrm(),
         ["!=", ["to-string", ["coalesce", ["get", "track_ref"], ""]], ""]
       ],
       layout: {

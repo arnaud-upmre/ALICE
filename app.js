@@ -1008,6 +1008,11 @@ let minuterieClignotementMarqueurClic = null;
 let minuterieSuppressionMarqueurClic = null;
 let coordonneesDerniereFiche = null;
 let contextePartageFiche = null;
+const NOMBRE_MAX_ONGLETS_FICHES = 3;
+let ongletsFiches = [];
+let idOngletFicheActif = null;
+let sequenceOngletFiche = 0;
+let changementOngletFicheEnCours = false;
 let marqueurLocalisation = null;
 let marqueurClicContextuel = null;
 let recadragePopupMobileEnCours = false;
@@ -1788,6 +1793,7 @@ let modalFicheContenu = document.getElementById("modal-fiche-contenu");
 let boutonFermerModalFiche = document.getElementById("modal-fiche-fermer");
 let boutonPartagerModalFiche = document.getElementById("modal-fiche-partager");
 let poigneeModalFiche = document.getElementById("modal-fiche-poignee");
+let conteneurOngletsModalFiche = document.getElementById("modal-fiche-onglets");
 let elementRetourFocusModalFiche = null;
 let elementRetourFocusModalApropos = null;
 let modalStreetViewContextuelle = null;
@@ -2058,6 +2064,7 @@ function assurerElementsModalFiche() {
     boutonFermerModalFiche = document.getElementById("modal-fiche-fermer");
     boutonPartagerModalFiche = document.getElementById("modal-fiche-partager");
     poigneeModalFiche = document.getElementById("modal-fiche-poignee");
+    conteneurOngletsModalFiche = document.getElementById("modal-fiche-onglets");
     return Boolean(modalFicheContenu && boutonFermerModalFiche && boutonPartagerModalFiche);
   }
 
@@ -2081,6 +2088,7 @@ function assurerElementsModalFiche() {
         </svg>
       </button>
       <button class="modal-fiche-fermer" id="modal-fiche-fermer" type="button" aria-label="Fermer la fiche">×</button>
+      <div class="modal-fiche-onglets" id="modal-fiche-onglets" role="tablist" aria-label="Fiches ouvertes"></div>
       <div class="modal-fiche-contenu maplibregl-popup-content" id="modal-fiche-contenu"></div>
     </div>
   `;
@@ -2091,6 +2099,7 @@ function assurerElementsModalFiche() {
   boutonFermerModalFiche = document.getElementById("modal-fiche-fermer");
   boutonPartagerModalFiche = document.getElementById("modal-fiche-partager");
   poigneeModalFiche = document.getElementById("modal-fiche-poignee");
+  conteneurOngletsModalFiche = document.getElementById("modal-fiche-onglets");
   return Boolean(modalFicheContenu && boutonFermerModalFiche && boutonPartagerModalFiche);
 }
 
@@ -2115,7 +2124,9 @@ function creerPopupFicheModale() {
     addTo() {
       if (modalFiche) {
         const hauteurVisibleAReprendre = hauteurVisiblePanneauFicheAReprendre;
+        const cranAReprendre = cranPanneauFicheAReprendre;
         hauteurVisiblePanneauFicheAReprendre = null;
+        cranPanneauFicheAReprendre = null;
         const actif = document.activeElement;
         if (actif instanceof HTMLElement && !modalFiche.contains(actif)) {
           elementRetourFocusModalFiche = actif;
@@ -2125,7 +2136,12 @@ function creerPopupFicheModale() {
         modalFiche.setAttribute("aria-hidden", "false");
         window.requestAnimationFrame(() => {
           mettreAJourCransPanneauFicheMobile({ conserverCran: false });
-          if (Number.isFinite(hauteurVisibleAReprendre)) {
+          if (Number.isFinite(cranAReprendre) && cranAReprendre > 0) {
+            placerPanneauFicheMobile(
+              Math.min(cranAReprendre, cransPanneauFicheMobile.length - 1),
+              { animer: false }
+            );
+          } else if (Number.isFinite(hauteurVisibleAReprendre)) {
             restaurerHauteurPanneauFicheMobile(hauteurVisibleAReprendre);
           } else {
             boutonFermerModalFiche?.focus({ preventScroll: true });
@@ -2178,6 +2194,224 @@ function creerPopupFicheModale() {
   };
 
   return instance;
+}
+
+function copierEtatFiche(valeur) {
+  if (valeur == null) {
+    return null;
+  }
+  try {
+    return structuredClone(valeur);
+  } catch {
+    return JSON.parse(JSON.stringify(valeur));
+  }
+}
+
+function obtenirCleOngletFiche(contexte = contextePartageFiche) {
+  if (!contexte) {
+    return "";
+  }
+  const latitude = Number(contexte.latitude);
+  const longitude = Number(contexte.longitude);
+  return [
+    String(contexte.type || "fiche"),
+    Number.isFinite(latitude) ? latitude.toFixed(6) : "",
+    Number.isFinite(longitude) ? longitude.toFixed(6) : "",
+    String(contexte.cibleSatPoste || "")
+  ].join("|");
+}
+
+function obtenirTitreOngletFiche(racine = modalFicheContenu) {
+  const selecteurs = [
+    ".popup-poste-entete-principal",
+    ".popup-acces-titre",
+    ".popup-appareil-code-ligne",
+    ".popup-appareil-titre"
+  ];
+  for (const selecteur of selecteurs) {
+    const texte = racine?.querySelector(selecteur)?.textContent?.trim();
+    if (texte) {
+      return texte.replace(/^[^\p{L}\p{N}]+/u, "").trim() || "Fiche";
+    }
+  }
+  return "Fiche";
+}
+
+function sauvegarderOngletFicheActif() {
+  if (!idOngletFicheActif || !modalFicheContenu?.children.length) {
+    return;
+  }
+  const onglet = ongletsFiches.find((item) => item.id === idOngletFicheActif);
+  if (!onglet) {
+    return;
+  }
+  onglet.titre = obtenirTitreOngletFiche();
+  onglet.html = modalFicheContenu.innerHTML;
+  onglet.contextePartage = copierEtatFiche(contextePartageFiche);
+  onglet.navigationInterne = copierEtatFiche(navigationInternePopup);
+  onglet.coordonnees = Array.isArray(coordonneesDerniereFiche)
+    ? [...coordonneesDerniereFiche]
+    : null;
+  const hauteurVisible = obtenirHauteurVisiblePanneauFicheMobile();
+  if (Number.isFinite(hauteurVisible)) {
+    onglet.hauteurVisible = hauteurVisible;
+  }
+  onglet.cran = indexCranPanneauFicheMobile > 0 ? indexCranPanneauFicheMobile : 0;
+}
+
+function rendreOngletsFiches() {
+  assurerElementsModalFiche();
+  const afficher = ongletsFiches.length > 1;
+  modalFiche?.classList.toggle("a-plusieurs-onglets", afficher);
+  if (!conteneurOngletsModalFiche) {
+    return;
+  }
+  conteneurOngletsModalFiche.innerHTML = afficher
+    ? ongletsFiches
+        .map((onglet) => {
+          const actif = onglet.id === idOngletFicheActif;
+          return `<div class="modal-fiche-onglet-groupe${actif ? " est-actif" : ""}">
+            <button class="modal-fiche-onglet" type="button" role="tab" aria-selected="${actif}" data-onglet-fiche="${echapperHtml(
+              onglet.id
+            )}" title="${echapperHtml(onglet.titre)}"><span>${echapperHtml(onglet.titre)}</span></button>
+            <button class="modal-fiche-onglet-fermer" type="button" data-fermer-onglet-fiche="${echapperHtml(
+              onglet.id
+            )}" aria-label="Fermer la fiche ${echapperHtml(onglet.titre)}">×</button>
+          </div>`;
+        })
+        .join("")
+    : "";
+  window.requestAnimationFrame(() => {
+    mettreAJourCransPanneauFicheMobile({
+      conserverCran: true,
+      appliquerCran: indexCranPanneauFicheMobile > 0
+    });
+  });
+}
+
+function installerRappelFermeturePopupFiche(instance) {
+  instance.on("close", () => {
+    if (popupCarte === instance) {
+      popupCarte = null;
+      navigationInternePopup = null;
+      coordonneesDerniereFiche = null;
+      contextePartageFiche = null;
+    }
+    modalFiche?.classList.remove("est-vue-appareils-associes");
+    if (boutonPartagerModalFiche) {
+      boutonPartagerModalFiche.hidden = false;
+      boutonPartagerModalFiche.style.display = "";
+    }
+  });
+}
+
+function enregistrerFicheCouranteCommeOnglet() {
+  if (!modalFicheContenu?.children.length || !contextePartageFiche) {
+    return;
+  }
+  const cle = obtenirCleOngletFiche();
+  const ongletExistant = ongletsFiches.find((onglet) => onglet.cle === cle);
+  const id = ongletExistant?.id || `fiche-${++sequenceOngletFiche}`;
+  if (ongletExistant) {
+    ongletsFiches = ongletsFiches.filter((onglet) => onglet.id !== id);
+  }
+  idOngletFicheActif = id;
+  ongletsFiches.push({
+    id,
+    cle,
+    titre: obtenirTitreOngletFiche(),
+    html: modalFicheContenu.innerHTML,
+    contextePartage: copierEtatFiche(contextePartageFiche),
+    navigationInterne: copierEtatFiche(navigationInternePopup),
+    coordonnees: Array.isArray(coordonneesDerniereFiche) ? [...coordonneesDerniereFiche] : null,
+    hauteurVisible: obtenirHauteurVisiblePanneauFicheMobile(),
+    cran: indexCranPanneauFicheMobile > 0 ? indexCranPanneauFicheMobile : 0
+  });
+  while (ongletsFiches.length > NOMBRE_MAX_ONGLETS_FICHES) {
+    ongletsFiches.shift();
+  }
+  rendreOngletsFiches();
+}
+
+function activerOngletFiche(idOnglet, options = {}) {
+  const onglet = ongletsFiches.find((item) => item.id === idOnglet);
+  if (!onglet || onglet.id === idOngletFicheActif || changementOngletFicheEnCours) {
+    return;
+  }
+  changementOngletFicheEnCours = true;
+  sauvegarderOngletFicheActif();
+  const hauteurPartagee =
+    obtenirHauteurVisiblePanneauFicheMobile() ??
+    ongletsFiches.find((item) => item.id === idOngletFicheActif)?.hauteurVisible ??
+    onglet.hauteurVisible;
+  const cranPartage =
+    indexCranPanneauFicheMobile > 0
+      ? indexCranPanneauFicheMobile
+      : ongletsFiches.find((item) => item.id === idOngletFicheActif)?.cran ?? onglet.cran;
+  fermerPopupCarte({ preserveNavigationLock: true });
+  idOngletFicheActif = onglet.id;
+  contextePartageFiche = copierEtatFiche(onglet.contextePartage);
+  navigationInternePopup = copierEtatFiche(onglet.navigationInterne);
+  coordonneesDerniereFiche = Array.isArray(onglet.coordonnees) ? [...onglet.coordonnees] : null;
+  hauteurVisiblePanneauFicheAReprendre = Number.isFinite(hauteurPartagee) ? hauteurPartagee : null;
+  cranPanneauFicheAReprendre = Number.isFinite(cranPartage) ? cranPartage : null;
+  popupCarte = creerPopupFicheModale().setHTML(onglet.html).addTo(carte);
+  installerRappelFermeturePopupFiche(popupCarte);
+  attacherActionsPopupInterne();
+  mettreAJourPkEstimePostesDansPopup(popupCarte.getElement());
+  rendreOngletsFiches();
+  changementOngletFicheEnCours = false;
+  if (options.focusOnglet !== false) {
+    window.requestAnimationFrame(() => {
+      conteneurOngletsModalFiche
+        ?.querySelector(`[data-onglet-fiche="${CSS.escape(onglet.id)}"]`)
+        ?.focus({ preventScroll: true });
+    });
+  }
+}
+
+function fermerOngletFiche(idOnglet, options = {}) {
+  const index = ongletsFiches.findIndex((onglet) => onglet.id === idOnglet);
+  if (index < 0) {
+    return;
+  }
+  const estActif = idOnglet === idOngletFicheActif;
+  if (!estActif) {
+    ongletsFiches.splice(index, 1);
+    rendreOngletsFiches();
+    return;
+  }
+
+  sauvegarderOngletFicheActif();
+  const hauteurPartagee = obtenirHauteurVisiblePanneauFicheMobile();
+  const cranPartage = indexCranPanneauFicheMobile > 0 ? indexCranPanneauFicheMobile : null;
+  ongletsFiches.splice(index, 1);
+  const ongletSuivant = ongletsFiches.at(-1) || null;
+  if (!ongletSuivant) {
+    idOngletFicheActif = null;
+    fermerPopupCarte(options);
+    rendreOngletsFiches();
+    return;
+  }
+
+  idOngletFicheActif = null;
+  if (Number.isFinite(hauteurPartagee)) {
+    ongletSuivant.hauteurVisible = hauteurPartagee;
+  }
+  if (Number.isFinite(cranPartage)) {
+    ongletSuivant.cran = cranPartage;
+  }
+  fermerPopupCarte({ preserveNavigationLock: true });
+  rendreOngletsFiches();
+  activerOngletFiche(ongletSuivant.id, { focusOnglet: false });
+}
+
+function fermerOngletFicheActifOuPopup(options = {}) {
+  if (idOngletFicheActif && ongletsFiches.some((onglet) => onglet.id === idOngletFicheActif)) {
+    fermerOngletFiche(idOngletFicheActif, options);
+    return;
+  }
+  fermerPopupCarte(options);
 }
 
 function chargerScriptMeteoEnDiffere() {
@@ -9066,9 +9300,13 @@ function construirePopupDepuisFeatures(longitude, latitude, featurePostes, featu
     contenuVueAppareils = `<div class="popup-carte">${sectionAppareilsAssociesPoste}<section class="popup-section popup-section-itineraires"><div class="popup-itineraires popup-itineraires-localiser"><button class="popup-bouton-itineraire" id="popup-retour-fiche-poste" type="button">📄 Retour à la fiche du poste</button></div></section></div>`;
   }
 
+  sauvegarderOngletFicheActif();
   const hauteurVisibleFichePrecedente = obtenirHauteurVisiblePanneauFicheMobile();
+  const cranFichePrecedente =
+    indexCranPanneauFicheMobile > 0 ? indexCranPanneauFicheMobile : null;
   fermerPopupCarte({ preserveNavigationLock: conserverFichePendantNavigation });
   hauteurVisiblePanneauFicheAReprendre = hauteurVisibleFichePrecedente;
+  cranPanneauFicheAReprendre = cranFichePrecedente;
   const typePartageFiche = estVueAccesSeule ? "acces" : estVueAppareilsSeule ? "appareils" : "postes";
   contextePartageFiche = {
     type: typePartageFiche,
@@ -9090,22 +9328,13 @@ function construirePopupDepuisFeatures(longitude, latitude, featurePostes, featu
     .addTo(carte);
   attacherActionsPopupInterne();
   mettreAJourPkEstimePostesDansPopup(popupCarte.getElement());
+  enregistrerFicheCouranteCommeOnglet();
   if (!options?.eviterRecentrageCarte) {
     setTimeout(() => {
       recadrerCartePourPopupMobile(longitude, latitude);
     }, 30);
   }
-  popupCarte.on("close", () => {
-    popupCarte = null;
-    navigationInternePopup = null;
-    coordonneesDerniereFiche = null;
-    contextePartageFiche = null;
-    modalFiche?.classList.remove("est-vue-appareils-associes");
-    if (boutonPartagerModalFiche) {
-      boutonPartagerModalFiche.hidden = false;
-      boutonPartagerModalFiche.style.display = "";
-    }
-  });
+  installerRappelFermeturePopupFiche(popupCarte);
 
   return true;
 }
@@ -10402,6 +10631,8 @@ let cransPanneauFicheMobile = [0];
 let indexCranPanneauFicheMobile = 0;
 let temporisationFermeturePanneauFiche = null;
 let hauteurVisiblePanneauFicheAReprendre = null;
+let cranPanneauFicheAReprendre = null;
+let bloquerClicApresGlissementFicheJusqua = 0;
 
 function obtenirCartePanneauFiche() {
   return modalFiche?.querySelector(".modal-fiche-carte") || null;
@@ -10427,6 +10658,8 @@ function mettreAJourCransPanneauFicheMobile(options = {}) {
     Number.parseFloat(
       getComputedStyle(carteFiche).getPropertyValue("--modal-fiche-chrome-intermediaire")
     ) || 56;
+  const hauteurGrandPanneau = Math.min(hauteurCarte * 0.86, 760);
+  const translationGrandPanneau = Math.max(0, hauteurCarte - hauteurGrandPanneau);
   const sections = Array.from(popupCarteFiche.children).filter(
     (element) =>
       element instanceof HTMLElement &&
@@ -10447,10 +10680,12 @@ function mettreAJourCransPanneauFicheMobile(options = {}) {
     .sort((a, b) => b - a)
     .filter((hauteur, index, liste) => index === 0 || Math.abs(liste[index - 1] - hauteur) >= 24);
 
-  cransPanneauFicheMobile = [
-    0,
-    ...hauteursSeparateurs.map((hauteurVisible) => Math.max(0, hauteurCarte - hauteurVisible))
-  ];
+  const translationsSections = hauteursSeparateurs
+    .map((hauteurVisible) => Math.max(0, hauteurCarte - hauteurVisible))
+    .filter((translation) => translation >= translationGrandPanneau + 24);
+  cransPanneauFicheMobile = [0, translationGrandPanneau, ...translationsSections]
+    .sort((a, b) => a - b)
+    .filter((translation, index, liste) => index === 0 || Math.abs(translation - liste[index - 1]) >= 24);
   indexCranPanneauFicheMobile = options.conserverCran
     ? Math.min(ancienIndex, cransPanneauFicheMobile.length - 1)
     : 0;
@@ -10579,7 +10814,7 @@ function placerPanneauFicheMobile(indexCran, options = {}) {
 function fermerPanneauFicheMobileParGlissement() {
   const carteFiche = obtenirCartePanneauFiche();
   if (!carteFiche || !modalFiche) {
-    fermerPopupCarte({ localiserPoint: true });
+    fermerOngletFicheActifOuPopup({ localiserPoint: true });
     return;
   }
 
@@ -10588,7 +10823,7 @@ function fermerPanneauFicheMobileParGlissement() {
   modalFiche.style.setProperty("--modal-fiche-scrim-opacity", "0");
   temporisationFermeturePanneauFiche = window.setTimeout(() => {
     temporisationFermeturePanneauFiche = null;
-    fermerPopupCarte({ localiserPoint: true });
+    fermerOngletFicheActifOuPopup({ localiserPoint: true });
   }, 220);
 }
 
@@ -10673,6 +10908,7 @@ function creerGestionnairePanneauFicheMobile() {
     const vitesse = distanceSignee / duree;
     ignorerProchainClic = gesteDeplace;
     if (gesteDeplace) {
+      bloquerClicApresGlissementFicheJusqua = performance.now() + 320;
       window.setTimeout(() => {
         ignorerProchainClic = false;
       }, 0);
@@ -10728,6 +10964,17 @@ poigneeModalFiche?.addEventListener("click", gestionGlissementFicheMobile.bascul
 window.addEventListener("pointermove", gestionGlissementFicheMobile.suivre, { passive: false });
 window.addEventListener("pointerup", gestionGlissementFicheMobile.terminer);
 window.addEventListener("pointercancel", gestionGlissementFicheMobile.terminer);
+document.addEventListener(
+  "click",
+  (event) => {
+    if (performance.now() >= bloquerClicApresGlissementFicheJusqua) {
+      return;
+    }
+    event.preventDefault();
+    event.stopImmediatePropagation();
+  },
+  true
+);
 
 if (modalFicheContenu && typeof MutationObserver === "function") {
   const observateurContenuFiche = new MutationObserver(() => {
@@ -11903,16 +12150,36 @@ if (doitAfficherModalAproposPremiereVisite()) {
 }
 
 document.addEventListener("click", (event) => {
+  const boutonFermerOnglet = event.target instanceof Element
+    ? event.target.closest("[data-fermer-onglet-fiche]")
+    : null;
+  if (boutonFermerOnglet) {
+    event.preventDefault();
+    event.stopPropagation();
+    fermerOngletFiche(boutonFermerOnglet.getAttribute("data-fermer-onglet-fiche"), {
+      localiserPoint: true
+    });
+    return;
+  }
+  const boutonOnglet = event.target instanceof Element
+    ? event.target.closest("[data-onglet-fiche]")
+    : null;
+  if (boutonOnglet) {
+    event.preventDefault();
+    event.stopPropagation();
+    activerOngletFiche(boutonOnglet.getAttribute("data-onglet-fiche"));
+    return;
+  }
   if (event.target instanceof Element && event.target.closest("#modal-fiche-partager")) {
     partagerFicheCourante();
     return;
   }
   if (event.target instanceof Element && event.target.closest("#modal-fiche-fermer")) {
-    fermerPopupCarte({ localiserPoint: true });
+    fermerOngletFicheActifOuPopup({ localiserPoint: true });
     return;
   }
   if (modalFiche && event.target === modalFiche) {
-    fermerPopupCarte({ localiserPoint: true });
+    fermerOngletFicheActifOuPopup({ localiserPoint: true });
   }
   if (modalApropos && event.target === modalApropos) {
     fermerModalApropos();
@@ -12142,7 +12409,7 @@ document.addEventListener("click", (event) => {
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     fermerModalApropos();
-    fermerPopupCarte();
+    fermerOngletFicheActifOuPopup();
     fermerMenuFonds();
     fermerMenuFiltres();
     fermerResultatsRecherche();

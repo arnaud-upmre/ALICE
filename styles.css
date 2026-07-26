@@ -6324,6 +6324,10 @@ body {
   display: none;
 }
 
+.modal-fiche-onglets {
+  display: none;
+}
+
 @media (max-width: 720px) {
   .modal-fiche {
     --modal-fiche-scrim-opacity: 0.32;
@@ -6415,6 +6419,89 @@ body {
     overflow-y: auto;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
+  }
+
+  .modal-fiche.a-plusieurs-onglets .modal-fiche-carte {
+    --modal-fiche-chrome-intermediaire: 98px;
+  }
+
+  .modal-fiche.a-plusieurs-onglets .modal-fiche-contenu.maplibregl-popup-content {
+    padding-top: 88px;
+  }
+
+  .modal-fiche-onglets {
+    position: absolute;
+    top: calc(47px + env(safe-area-inset-top));
+    right: 10px;
+    left: 10px;
+    z-index: 3;
+    min-width: 0;
+    height: 34px;
+    gap: 5px;
+    pointer-events: auto;
+  }
+
+  .modal-fiche.a-plusieurs-onglets .modal-fiche-onglets {
+    display: flex;
+  }
+
+  .modal-fiche.est-intermediaire .modal-fiche-onglets {
+    top: 47px;
+  }
+
+  .modal-fiche-onglet-groupe {
+    min-width: 0;
+    flex: 1 1 0;
+    display: flex;
+    overflow: hidden;
+    border: 1px solid rgba(71, 85, 105, 0.16);
+    border-radius: 11px;
+    background: rgba(241, 245, 249, 0.92);
+  }
+
+  .modal-fiche-onglet-groupe.est-actif {
+    border-color: rgba(37, 99, 235, 0.28);
+    background: #e8efff;
+    box-shadow: inset 0 -2px 0 #356fe0;
+  }
+
+  .modal-fiche-onglet,
+  .modal-fiche-onglet-fermer {
+    min-width: 0;
+    height: 32px;
+    border: 0;
+    color: #34445d;
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .modal-fiche-onglet {
+    flex: 1 1 auto;
+    padding: 0 3px 0 8px;
+    overflow: hidden;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-align: left;
+  }
+
+  .modal-fiche-onglet span {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .modal-fiche-onglet-fermer {
+    flex: 0 0 25px;
+    padding: 0 4px 1px 0;
+    color: #64748b;
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .modal-fiche-onglet-groupe.est-actif .modal-fiche-onglet {
+    color: #173f91;
   }
 
   .modal-fiche.est-intermediaire .modal-fiche-contenu.maplibregl-popup-content {

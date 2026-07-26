@@ -170,9 +170,6 @@
 
   global.URL_POWERAPPS_CODES = global.URL_POWERAPPS_CODES || DEFAULT_POWERAPPS_CODES_URL;
   global.estCodeDisponible = estCodeDisponible;
-  global.construireLienCodesAcces = construireLienCodesAcces;
-  global.construireChoixCodes = construireChoixCodes;
-  global.construireChoixCodesPostes = construireChoixCodesPostes;
   global.construireSectionBoutonCodes = construireSectionBoutonCodes;
   global.construireSectionBoutonCodesPostes = construireSectionBoutonCodesPostes;
 })(window);

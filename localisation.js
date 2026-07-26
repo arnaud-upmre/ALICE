@@ -188,7 +188,6 @@
       const sat = champCompletOuVide(entree?.SAT ?? entree?.sat);
       const acces = champCompletOuVide(entree?.acces);
       const appareil = champCompletOuVide(entree?.appareil);
-      const joindre = (segments) => segments.filter(Boolean).join(" / ");
       const joindreAvecEspaces = (segments) => segments.filter(Boolean).join(" ");
       const formaterAcces = (valeurAcces) => {
         const texte = champCompletOuVide(valeurAcces);

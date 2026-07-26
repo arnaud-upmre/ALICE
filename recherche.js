@@ -34,7 +34,7 @@
     };
 
     const obtenirNomLigneDepuisReferentiel = (numeroLigne) => {
-      const referentiel = window.REFERENTIEL_LIGNES || globalThis.REFERENTIEL_LIGNES || {};
+      const referentiel = window.REFERENTIEL_LIGNES || {};
       for (const code of construireCandidatsCodeLigneReferentiel(numeroLigne)) {
         const nom = String(referentiel[code] || "").trim();
         if (nom) {
@@ -1858,9 +1858,6 @@
         return;
       }
 
-      const listeVisibles = visibles.length
-        ? visibles.map(construireBoutonResultatGeographique).join("")
-        : '<li class="recherche-resultat-vide">Aucun resultat pour ce filtre</li>';
       const htmlVisibles = visibles.length
         ? visibles.map((resultat) => construireBoutonResultatGeographique(resultat, { modeRechercheLigne })).join("")
         : '<li class="recherche-resultat-vide">Aucun resultat pour ce filtre</li>';
@@ -2103,6 +2100,5 @@
     };
   }
 
-  window.creerMoteurRecherchePrincipal = creerMoteurRecherchePrincipal;
   window.creerModuleRechercheAlice = creerModuleRechercheAlice;
 })();

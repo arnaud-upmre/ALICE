@@ -192,21 +192,6 @@ const LIBELLES_CATEGORIES_LIGNES_OSM = Object.freeze({
   other: "Autre"
 });
 
-function chargerReferentielLignesSiNecessaire() {
-  if (window.REFERENTIEL_LIGNES || globalThis.REFERENTIEL_LIGNES) {
-    return;
-  }
-
-  const requete = new XMLHttpRequest();
-  requete.open("GET", "./referentiel-lignes.js", false);
-  requete.send(null);
-  if (requete.status >= 200 && requete.status < 300 && requete.responseText) {
-    Function(requete.responseText)();
-  }
-}
-
-chargerReferentielLignesSiNecessaire();
-
 function normaliserValeurLigneOsm(valeur) {
   return String(valeur || "").trim();
 }
@@ -235,11 +220,11 @@ function extraireVitessesNumeriquesLigneOsm(...valeurs) {
 }
 
 function obtenirReferentielLignes() {
-  return window.REFERENTIEL_LIGNES || globalThis.REFERENTIEL_LIGNES || {};
+  return window.REFERENTIEL_LIGNES || {};
 }
 
 function obtenirReferentielLignesOsm() {
-  return window.REFERENTIEL_LIGNES_OSM || globalThis.REFERENTIEL_LIGNES_OSM || {};
+  return window.REFERENTIEL_LIGNES_OSM || {};
 }
 
 function normaliserCodeLigneReferentiel(numeroLigne) {
@@ -922,6 +907,7 @@ let signaturePopupSurvolInfo = "";
 let popupSurvolInfoVerrouillee = false;
 let survolPopupVerrouilleJusqua = 0;
 let initialisationDonneesLancee = false;
+let assuranceDonneesCarteApresRetourEnCours = false;
 let totalAppareilsBrut = 0;
 let totalPostesBrut = 0;
 let moduleRechercheAlice = null;
@@ -980,93 +966,6 @@ async function chargerStyleJsonDepuisUrl(url) {
   return reponse.json();
 }
 
-function contientMotStyle(texte, mots) {
-  const normalise = String(texte || "").toLowerCase();
-  return mots.some((mot) => normalise.includes(mot));
-}
-
-function classifierCoucheStyleFond(couche) {
-  const id = String(couche?.id || "").toLowerCase();
-  const sourceLayer = String(couche?.["source-layer"] || "").toLowerCase();
-  const concat = `${id} ${sourceLayer}`;
-  const estLabel = couche?.type === "symbol";
-  const estRoute = contientMotStyle(concat, [
-    "road",
-    "street",
-    "highway",
-    "transportation",
-    "transport",
-    "path",
-    "track",
-    "motorway",
-    "trunk",
-    "primary",
-    "secondary",
-    "tertiary",
-    "residential",
-    "service"
-  ]);
-  const estRouteMineure = contientMotStyle(concat, [
-    "minor",
-    "residential",
-    "service",
-    "tertiary",
-    "living",
-    "pedestrian",
-    "footway",
-    "path",
-    "track",
-    "unclassified"
-  ]);
-  const estLabelRoute = estLabel && contientMotStyle(concat, ["road", "street", "highway", "transport"]);
-  const estPoi = contientMotStyle(concat, ["poi", "amenity", "landmark", "shop", "tourism", "leisure", "icon"]);
-  const estLabelLocal = estLabel && contientMotStyle(concat, ["neighbour", "neighborhood", "suburb", "quarter", "hamlet", "village"]);
-  return { estLabel, estRoute, estRouteMineure, estLabelRoute, estPoi, estLabelLocal };
-}
-
-function masquerCoucheStyleFond(couche) {
-  if (!couche.layout) {
-    couche.layout = {};
-  }
-  couche.layout.visibility = "none";
-}
-
-function releverMinZoomCoucheStyleFond(couche, minZoom) {
-  const minzoomCourant = Number.isFinite(couche.minzoom) ? couche.minzoom : 0;
-  couche.minzoom = Math.max(minzoomCourant, minZoom);
-}
-
-function appliquerPresetEquilibreStyleFond(styleJson) {
-  const style = clonerStyle(styleJson);
-  style.layers = (style.layers || []).map((couche) => {
-    const sortie = { ...couche };
-    const classe = classifierCoucheStyleFond(sortie);
-
-    // Variante "equilibre + labels villes":
-    // on masque les POI, mais on conserve une partie des labels de localites
-    // a zoom plus eleve pour eviter la surcharge.
-    if (classe.estPoi) {
-      masquerCoucheStyleFond(sortie);
-      return sortie;
-    }
-    if (classe.estLabelLocal) {
-      releverMinZoomCoucheStyleFond(sortie, 10.5);
-      return sortie;
-    }
-    if (classe.estRouteMineure) {
-      releverMinZoomCoucheStyleFond(sortie, 11);
-    }
-    if (classe.estLabelRoute) {
-      releverMinZoomCoucheStyleFond(sortie, 12);
-    }
-    if (classe.estRoute) {
-      releverMinZoomCoucheStyleFond(sortie, 8);
-    }
-    return sortie;
-  });
-  return style;
-}
-
 function corrigerAttributionsStyleFond(styleJson) {
   const style = clonerStyle(styleJson);
   const sources = style?.sources || {};
@@ -1116,30 +1015,7 @@ async function obtenirStyleFond(nomFond) {
     return clonerStyle(stylePrepare);
   }
 
-  if (nomFond !== "positron" && nomFond !== "voyager" && nomFond !== "darkMatter") {
-    return style;
-  }
-
-  if (stylesFondsVectorielsPrepares.has(nomFond)) {
-    return clonerStyle(stylesFondsVectorielsPrepares.get(nomFond));
-  }
-
-  if (!promessesStylesFondsVectoriels.has(nomFond)) {
-    const promesse = chargerStyleJsonDepuisUrl(style)
-      .then((styleJson) => {
-        const styleCorrige = corrigerAttributionsStyleFond(styleJson);
-        const stylePrepare = appliquerPresetEquilibreStyleFond(styleCorrige);
-        stylesFondsVectorielsPrepares.set(nomFond, stylePrepare);
-        return stylePrepare;
-      })
-      .finally(() => {
-        promessesStylesFondsVectoriels.delete(nomFond);
-      });
-    promessesStylesFondsVectoriels.set(nomFond, promesse);
-  }
-
-  const stylePrepare = await promessesStylesFondsVectoriels.get(nomFond);
-  return clonerStyle(stylePrepare);
+  return style;
 }
 
 function determinerCouleurAppareil(codeAppareil) {
@@ -10517,7 +10393,6 @@ function planifierMiseAJourTransitionFondIgnAuto() {
 
 function mettreAJourTransitionFondIgnAuto() {
   if (!carte.isStyleLoaded()) {
-    planifierMiseAJourTransitionFondIgnAuto();
     return;
   }
 
@@ -11013,7 +10888,6 @@ function lancerInitialisationDonneesSiNecessaire() {
     return;
   }
   initialisationDonneesLancee = true;
-  planifierActivationAutoLigneFerroviaire();
   const demarrer = () => {
     initialiserDonneesParDefaut().catch((erreur) => {
       console.error("Impossible d'initialiser les donnees au demarrage", erreur);
@@ -11062,29 +10936,42 @@ async function assurerDonneesCarteApresRetour() {
 }
 
 function planifierAssuranceDonneesCarteApresRetour() {
+  if (assuranceDonneesCarteApresRetourEnCours) {
+    return;
+  }
+  assuranceDonneesCarteApresRetourEnCours = true;
+
   const tentativesMax = 18;
   let tentative = 0;
 
   const essayer = async () => {
-    tentative += 1;
+    try {
+      tentative += 1;
 
-    if (!initialisationDonneesLancee) {
-      initialisationDonneesLancee = true;
-      try {
-        await initialiserDonneesParDefaut();
-      } catch (erreur) {
-        console.error("Impossible d'initialiser les donnees immediatement", erreur);
+      if (!initialisationDonneesLancee) {
+        initialisationDonneesLancee = true;
+        try {
+          await initialiserDonneesParDefaut();
+        } catch (erreur) {
+          console.error("Impossible d'initialiser les donnees immediatement", erreur);
+        }
       }
+
+      const termine = await assurerDonneesCarteApresRetour();
+      if (termine) {
+        assuranceDonneesCarteApresRetourEnCours = false;
+        return;
+      }
+
+      if (tentative < tentativesMax) {
+        window.setTimeout(essayer, tentative < 6 ? 90 : 180);
+        return;
+      }
+    } catch (erreur) {
+      console.error("Impossible de verifier les donnees de la carte apres retour", erreur);
     }
 
-    const termine = await assurerDonneesCarteApresRetour();
-    if (termine) {
-      return;
-    }
-
-    if (tentative < tentativesMax) {
-      window.setTimeout(essayer, tentative < 6 ? 90 : 180);
-    }
+    assuranceDonneesCarteApresRetourEnCours = false;
   };
 
   essayer();

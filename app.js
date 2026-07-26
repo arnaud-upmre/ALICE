@@ -2114,6 +2114,8 @@ function creerPopupFicheModale() {
     },
     addTo() {
       if (modalFiche) {
+        const hauteurVisibleAReprendre = hauteurVisiblePanneauFicheAReprendre;
+        hauteurVisiblePanneauFicheAReprendre = null;
         const actif = document.activeElement;
         if (actif instanceof HTMLElement && !modalFiche.contains(actif)) {
           elementRetourFocusModalFiche = actif;
@@ -2123,7 +2125,11 @@ function creerPopupFicheModale() {
         modalFiche.setAttribute("aria-hidden", "false");
         window.requestAnimationFrame(() => {
           mettreAJourCransPanneauFicheMobile({ conserverCran: false });
-          boutonFermerModalFiche?.focus({ preventScroll: true });
+          if (Number.isFinite(hauteurVisibleAReprendre)) {
+            restaurerHauteurPanneauFicheMobile(hauteurVisibleAReprendre);
+          } else {
+            boutonFermerModalFiche?.focus({ preventScroll: true });
+          }
         });
         chargerScriptMeteoEnDiffere().catch((erreur) => {
           console.error("Impossible de charger meteo.js", erreur);
@@ -9060,7 +9066,9 @@ function construirePopupDepuisFeatures(longitude, latitude, featurePostes, featu
     contenuVueAppareils = `<div class="popup-carte">${sectionAppareilsAssociesPoste}<section class="popup-section popup-section-itineraires"><div class="popup-itineraires popup-itineraires-localiser"><button class="popup-bouton-itineraire" id="popup-retour-fiche-poste" type="button">📄 Retour à la fiche du poste</button></div></section></div>`;
   }
 
+  const hauteurVisibleFichePrecedente = obtenirHauteurVisiblePanneauFicheMobile();
   fermerPopupCarte({ preserveNavigationLock: conserverFichePendantNavigation });
+  hauteurVisiblePanneauFicheAReprendre = hauteurVisibleFichePrecedente;
   const typePartageFiche = estVueAccesSeule ? "acces" : estVueAppareilsSeule ? "appareils" : "postes";
   contextePartageFiche = {
     type: typePartageFiche,
@@ -10393,6 +10401,7 @@ function creerGestionnairePanneauCoulissant({
 let cransPanneauFicheMobile = [0];
 let indexCranPanneauFicheMobile = 0;
 let temporisationFermeturePanneauFiche = null;
+let hauteurVisiblePanneauFicheAReprendre = null;
 
 function obtenirCartePanneauFiche() {
   return modalFiche?.querySelector(".modal-fiche-carte") || null;
@@ -10413,8 +10422,11 @@ function mettreAJourCransPanneauFicheMobile(options = {}) {
 
   const ancienIndex = indexCranPanneauFicheMobile;
   const hauteurCarte = Math.max(1, carteFiche.getBoundingClientRect().height);
-  const rectangleCarte = carteFiche.getBoundingClientRect();
-  const decalageDefilement = modalFicheContenu.scrollTop;
+  const rectanglePopupCarte = popupCarteFiche.getBoundingClientRect();
+  const hauteurChromeIntermediaire =
+    Number.parseFloat(
+      getComputedStyle(carteFiche).getPropertyValue("--modal-fiche-chrome-intermediaire")
+    ) || 56;
   const sections = Array.from(popupCarteFiche.children).filter(
     (element) =>
       element instanceof HTMLElement &&
@@ -10427,7 +10439,9 @@ function mettreAJourCransPanneauFicheMobile(options = {}) {
     .filter((section) => Number.parseFloat(getComputedStyle(section).borderTopWidth) > 0)
     .map((section) => {
       const rectangleSection = section.getBoundingClientRect();
-      return Math.round(rectangleSection.top - rectangleCarte.top + decalageDefilement + 1);
+      return Math.round(
+        hauteurChromeIntermediaire + rectangleSection.top - rectanglePopupCarte.top + 1
+      );
     })
     .filter((hauteur) => hauteur >= 64 && hauteur <= hauteurCarte - 44)
     .sort((a, b) => b - a)
@@ -10450,6 +10464,49 @@ function mettreAJourCransPanneauFicheMobile(options = {}) {
   }
 }
 
+function obtenirHauteurVisiblePanneauFicheMobile() {
+  if (
+    !interfacePanneauCoulissantEstMobile() ||
+    !modalFiche?.classList.contains("est-visible") ||
+    indexCranPanneauFicheMobile <= 0
+  ) {
+    return null;
+  }
+
+  const carteFiche = obtenirCartePanneauFiche();
+  if (!carteFiche) {
+    return null;
+  }
+  const hauteurCarte = carteFiche.getBoundingClientRect().height;
+  const translation = cransPanneauFicheMobile[indexCranPanneauFicheMobile] || 0;
+  return Math.max(1, hauteurCarte - translation);
+}
+
+function trouverCranPanneauFicheLePlusProche(translationCible) {
+  let indexProche = 0;
+  let distanceProche = Number.POSITIVE_INFINITY;
+  cransPanneauFicheMobile.forEach((translation, index) => {
+    const distance = Math.abs(translation - translationCible);
+    if (distance < distanceProche) {
+      distanceProche = distance;
+      indexProche = index;
+    }
+  });
+  return indexProche;
+}
+
+function restaurerHauteurPanneauFicheMobile(hauteurVisible) {
+  const carteFiche = obtenirCartePanneauFiche();
+  if (!carteFiche || !Number.isFinite(hauteurVisible)) {
+    return;
+  }
+  const hauteurCarte = carteFiche.getBoundingClientRect().height;
+  const translationCible = Math.max(0, hauteurCarte - hauteurVisible);
+  placerPanneauFicheMobile(trouverCranPanneauFicheLePlusProche(translationCible), {
+    animer: false
+  });
+}
+
 function reinitialiserPanneauFicheMobile() {
   if (temporisationFermeturePanneauFiche) {
     window.clearTimeout(temporisationFermeturePanneauFiche);
@@ -10460,6 +10517,7 @@ function reinitialiserPanneauFicheMobile() {
   indexCranPanneauFicheMobile = 0;
   modalFiche?.classList.remove("est-intermediaire", "est-glissee");
   modalFiche?.removeAttribute("data-niveaux-intermediaires");
+  modalFiche?.setAttribute("aria-modal", "true");
   modalFiche?.style.removeProperty("--modal-fiche-scrim-opacity");
   const carteFiche = obtenirCartePanneauFiche();
   carteFiche?.style.removeProperty("transform");
@@ -10489,6 +10547,7 @@ function placerPanneauFicheMobile(indexCran, options = {}) {
   const translation = cransPanneauFicheMobile[indexCranPanneauFicheMobile] || 0;
   const estIntermediaire = indexCranPanneauFicheMobile > 0;
   modalFiche.classList.toggle("est-intermediaire", estIntermediaire);
+  modalFiche.setAttribute("aria-modal", estIntermediaire ? "false" : "true");
   modalFiche.classList.remove("est-glissee");
   carteFiche.style.setProperty(
     "transition",
@@ -10603,9 +10662,13 @@ function creerGestionnairePanneauFicheMobile() {
       return;
     }
 
+    const carteFiche = obtenirCartePanneauFiche();
     glissementActif = false;
     pointeurGlissement = null;
     modalFiche?.classList.remove("est-glissee");
+    if (!carteFiche) {
+      return;
+    }
     const duree = Math.max(1, performance.now() - heureDepart);
     const vitesse = distanceSignee / duree;
     ignorerProchainClic = gesteDeplace;
@@ -10615,25 +10678,37 @@ function creerGestionnairePanneauFicheMobile() {
       }, 0);
     }
 
-    const doitDescendre = distanceSignee > 52 || (distanceSignee > 22 && vitesse > 0.5);
-    const doitMonter = distanceSignee < -46 || (distanceSignee < -20 && vitesse < -0.5);
+    if (!gesteDeplace) {
+      placerPanneauFicheMobile(indexCranPanneauFicheMobile);
+      return;
+    }
 
-    if (doitDescendre) {
-      const indexSuivant = indexCranPanneauFicheMobile + 1;
-      if (indexSuivant >= cransPanneauFicheMobile.length) {
-        fermerPanneauFicheMobileParGlissement();
-      } else {
-        placerPanneauFicheMobile(indexSuivant);
+    const hauteurCarte = Math.max(1, carteFiche.getBoundingClientRect().height);
+    const translationRelachee = Math.max(
+      0,
+      Math.min(hauteurCarte + 24, translationDepart + distanceSignee)
+    );
+    const inertie = Math.max(-48, Math.min(48, vitesse * 60));
+    const translationProjetee = Math.max(
+      0,
+      Math.min(hauteurCarte + 24, translationRelachee + inertie)
+    );
+    const cransAvecFermeture = [...cransPanneauFicheMobile, hauteurCarte + 24];
+    let indexCible = 0;
+    let distanceCible = Number.POSITIVE_INFINITY;
+    cransAvecFermeture.forEach((translation, index) => {
+      const distance = Math.abs(translation - translationProjetee);
+      if (distance < distanceCible) {
+        distanceCible = distance;
+        indexCible = index;
       }
+    });
+
+    if (indexCible === cransAvecFermeture.length - 1) {
+      fermerPanneauFicheMobileParGlissement();
       return;
     }
-
-    if (doitMonter) {
-      placerPanneauFicheMobile(Math.max(0, indexCranPanneauFicheMobile - 1));
-      return;
-    }
-
-    placerPanneauFicheMobile(indexCranPanneauFicheMobile);
+    placerPanneauFicheMobile(indexCible);
   }
 
   function basculer() {

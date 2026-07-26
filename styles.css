@@ -4009,6 +4009,7 @@ body {
   }
 
   .modal-fiche-carte {
+    --modal-fiche-chrome-intermediaire: 56px;
     width: 100vw;
     max-height: 100vh;
     border-radius: 0;
@@ -6351,8 +6352,15 @@ body {
   }
 
   .modal-fiche.est-intermediaire .modal-fiche-carte {
+    padding-top: 14px;
+    pointer-events: auto;
     border-top: 1px solid rgba(31, 41, 55, 0.12);
     border-radius: 25px 25px 0 0;
+  }
+
+  .modal-fiche.est-intermediaire {
+    pointer-events: none;
+    background: transparent;
   }
 
   .modal-fiche-poignee {

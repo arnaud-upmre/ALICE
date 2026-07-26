@@ -445,12 +445,42 @@
       }
     }
 
-    function afficherRecherchesRecentes() {
+    function afficherRecherchesRecentes(options = {}) {
       if (!listeResultatsRecherche) {
         return;
       }
-      const recentes = lireRecherchesRecentes().filter((item) => ["postes", "appareils", "acces"].includes(item?.type));
+      const exclusions = Array.isArray(options.exclusions) ? options.exclusions : [];
+      const estExclue = (item) =>
+        exclusions.some((exclusion) => {
+          const titreExclusion = String(exclusion?.titre || "").trim().toLocaleLowerCase("fr");
+          const titreItem = String(item?.titre || "").trim().toLocaleLowerCase("fr");
+          if (titreExclusion && titreItem && titreExclusion === titreItem) {
+            return true;
+          }
+          if (String(exclusion?.type || "") !== String(item?.type || "")) {
+            return false;
+          }
+          const memePosition =
+            Math.abs(Number(exclusion?.longitude) - Number(item?.longitude)) < 1e-6 &&
+            Math.abs(Number(exclusion?.latitude) - Number(item?.latitude)) < 1e-6;
+          if (!memePosition) {
+            return false;
+          }
+          return !titreExclusion || !titreItem || titreExclusion === titreItem;
+        });
+      const recentes = lireRecherchesRecentes().filter(
+        (item) =>
+          ["postes", "appareils", "acces"].includes(item?.type) &&
+          !estExclue(item)
+      );
       if (!recentes.length) {
+        if (options.afficherVide) {
+          listeResultatsRecherche.innerHTML =
+            '<li class="recherche-recents-entete"><div class="recherche-recents-entete-ligne"><span class="recherche-recents-titre">Récents</span></div><div class="recherche-recents-aide">Les fiches déjà ouvertes ne sont pas proposées.</div></li><li class="recherche-resultat-vide">Aucune autre fiche récente.</li>';
+          reinitialiserSelectionClavierResultats();
+          ouvrirResultatsRecherche();
+          return;
+        }
         viderResultatsRecherche();
         fermerResultatsRecherche();
         return;
@@ -2095,6 +2125,7 @@
 
     return {
       initialiser,
+      afficherRecherchesRecentes,
       fermerResultatsRecherche,
       reinitialiserEtatRecherche
     };

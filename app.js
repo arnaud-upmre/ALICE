@@ -1008,7 +1008,7 @@ let minuterieClignotementMarqueurClic = null;
 let minuterieSuppressionMarqueurClic = null;
 let coordonneesDerniereFiche = null;
 let contextePartageFiche = null;
-const NOMBRE_MAX_ONGLETS_FICHES = 3;
+const NOMBRE_MAX_ONGLETS_FICHES = 2;
 let ongletsFiches = [];
 let idOngletFicheActif = null;
 let sequenceOngletFiche = 0;
@@ -2133,6 +2133,7 @@ function creerPopupFicheModale() {
         }
         reinitialiserPanneauFicheMobile();
         modalFiche.classList.add("est-visible");
+        controleRecherche?.classList.add("au-premier-plan-fiche");
         modalFiche.setAttribute("aria-hidden", "false");
         window.requestAnimationFrame(() => {
           mettreAJourCransPanneauFicheMobile({ conserverCran: false });
@@ -2177,6 +2178,7 @@ function creerPopupFicheModale() {
           }
         }
         modalFiche.classList.remove("est-visible");
+        controleRecherche?.classList.remove("au-premier-plan-fiche");
         reinitialiserPanneauFicheMobile();
         modalFiche.setAttribute("aria-hidden", "true");
       }
@@ -2266,7 +2268,7 @@ function rendreOngletsFiches() {
   if (!conteneurOngletsModalFiche) {
     return;
   }
-  conteneurOngletsModalFiche.innerHTML = afficher
+  const ongletsHtml = afficher
     ? ongletsFiches
         .map((onglet) => {
           const actif = onglet.id === idOngletFicheActif;
@@ -2281,6 +2283,13 @@ function rendreOngletsFiches() {
         })
         .join("")
     : "";
+  const boutonRecentsHtml = afficher
+    ? `<button class="modal-fiche-onglet-recents" type="button" data-afficher-recents-fiches aria-label="Afficher les fiches récentes">
+        <span class="modal-fiche-onglet-recents-icone" aria-hidden="true">↺</span>
+        <span>Récents</span>
+      </button>`
+    : "";
+  conteneurOngletsModalFiche.innerHTML = `${ongletsHtml}${boutonRecentsHtml}`;
   window.requestAnimationFrame(() => {
     mettreAJourCransPanneauFicheMobile({
       conserverCran: true,
@@ -12150,6 +12159,24 @@ if (doitAfficherModalAproposPremiereVisite()) {
 }
 
 document.addEventListener("click", (event) => {
+  const boutonRecents = event.target instanceof Element
+    ? event.target.closest("[data-afficher-recents-fiches]")
+    : null;
+  if (boutonRecents) {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    const exclusions = ongletsFiches.map((onglet) => ({
+      type: onglet.contextePartage?.type,
+      longitude: onglet.contextePartage?.longitude,
+      latitude: onglet.contextePartage?.latitude,
+      titre: onglet.titre
+    }));
+    moduleRechercheAlice?.afficherRecherchesRecentes?.({
+      exclusions,
+      afficherVide: true
+    });
+    return;
+  }
   const boutonFermerOnglet = event.target instanceof Element
     ? event.target.closest("[data-fermer-onglet-fiche]")
     : null;

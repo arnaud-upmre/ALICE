@@ -1637,6 +1637,10 @@ body {
   display: block;
 }
 
+.controle-recherche.au-premier-plan-fiche.est-ouvert {
+  z-index: 30;
+}
+
 .recherche-resultat {
   width: 100%;
   margin: 0;
@@ -6422,11 +6426,11 @@ body {
   }
 
   .modal-fiche.a-plusieurs-onglets .modal-fiche-carte {
-    --modal-fiche-chrome-intermediaire: 98px;
+    --modal-fiche-chrome-intermediaire: 104px;
   }
 
   .modal-fiche.a-plusieurs-onglets .modal-fiche-contenu.maplibregl-popup-content {
-    padding-top: 88px;
+    padding-top: 94px;
   }
 
   .modal-fiche-onglets {
@@ -6436,8 +6440,15 @@ body {
     left: 10px;
     z-index: 3;
     min-width: 0;
-    height: 34px;
-    gap: 5px;
+    height: 40px;
+    gap: 3px;
+    padding: 3px;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    border-radius: 14px;
+    background: rgba(241, 245, 249, 0.78);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     pointer-events: auto;
   }
 
@@ -6454,19 +6465,20 @@ body {
     flex: 1 1 0;
     display: flex;
     overflow: hidden;
-    border: 1px solid rgba(71, 85, 105, 0.16);
-    border-radius: 11px;
-    background: rgba(241, 245, 249, 0.92);
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    transition: color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
   }
 
   .modal-fiche-onglet-groupe.est-actif {
-    border-color: rgba(37, 99, 235, 0.28);
-    background: #e8efff;
-    box-shadow: inset 0 -2px 0 #356fe0;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 2px 7px rgba(37, 99, 235, 0.14), inset 0 -2px 0 #4380ec;
   }
 
   .modal-fiche-onglet,
-  .modal-fiche-onglet-fermer {
+  .modal-fiche-onglet-fermer,
+  .modal-fiche-onglet-recents {
     min-width: 0;
     height: 32px;
     border: 0;
@@ -6478,10 +6490,10 @@ body {
 
   .modal-fiche-onglet {
     flex: 1 1 auto;
-    padding: 0 3px 0 8px;
+    padding: 0 2px 0 9px;
     overflow: hidden;
-    font-size: 0.72rem;
-    font-weight: 700;
+    font-size: 0.7rem;
+    font-weight: 750;
     text-align: left;
   }
 
@@ -6493,15 +6505,54 @@ body {
   }
 
   .modal-fiche-onglet-fermer {
-    flex: 0 0 25px;
-    padding: 0 4px 1px 0;
-    color: #64748b;
-    font-size: 1rem;
+    flex: 0 0 23px;
+    width: 23px;
+    height: 23px;
+    align-self: center;
+    margin-right: 3px;
+    padding: 0 0 1px;
+    border-radius: 999px;
+    color: #78869a;
+    font-size: 0.9rem;
     line-height: 1;
+  }
+
+  .modal-fiche-onglet-fermer:hover,
+  .modal-fiche-onglet-fermer:focus-visible {
+    color: #334155;
+    background: rgba(100, 116, 139, 0.13);
+    outline: none;
   }
 
   .modal-fiche-onglet-groupe.est-actif .modal-fiche-onglet {
     color: #173f91;
+  }
+
+  .modal-fiche-onglet-recents {
+    flex: 0 0 76px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 0 8px;
+    border-radius: 10px;
+    color: #2459a8;
+    background: rgba(219, 234, 254, 0.82);
+    font-size: 0.68rem;
+    font-weight: 800;
+  }
+
+  .modal-fiche-onglet-recents:hover,
+  .modal-fiche-onglet-recents:focus-visible {
+    color: #16468f;
+    background: #cfe1ff;
+    outline: 2px solid rgba(59, 130, 246, 0.24);
+    outline-offset: -2px;
+  }
+
+  .modal-fiche-onglet-recents-icone {
+    font-size: 0.94rem;
+    line-height: 1;
   }
 
   .modal-fiche.est-intermediaire .modal-fiche-contenu.maplibregl-popup-content {
@@ -6554,4 +6605,31 @@ body {
 .mode-sombre-carte .modal-fiche-poignee span {
   background: #6f7d8f;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+@media (max-width: 720px) {
+  .mode-sombre-carte .modal-fiche-onglets {
+    border-color: rgba(148, 163, 184, 0.16);
+    background: rgba(30, 41, 59, 0.78);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  }
+
+  .mode-sombre-carte .modal-fiche-onglet-groupe.est-actif {
+    background: rgba(51, 65, 85, 0.96);
+    box-shadow: 0 2px 7px rgba(2, 6, 23, 0.3), inset 0 -2px 0 #6ea0ff;
+  }
+
+  .mode-sombre-carte .modal-fiche-onglet,
+  .mode-sombre-carte .modal-fiche-onglet-fermer {
+    color: #cbd5e1;
+  }
+
+  .mode-sombre-carte .modal-fiche-onglet-groupe.est-actif .modal-fiche-onglet {
+    color: #dbeafe;
+  }
+
+  .mode-sombre-carte .modal-fiche-onglet-recents {
+    color: #bfdbfe;
+    background: rgba(30, 64, 175, 0.32);
+  }
 }

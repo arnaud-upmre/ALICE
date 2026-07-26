@@ -5660,10 +5660,11 @@ body {
 
 .option-filtre-ligne {
   position: relative;
+  height: 112px;
   min-width: 0;
   min-height: 112px;
   display: grid;
-  grid-template-rows: 38px minmax(38px, auto);
+  grid-template-rows: 38px minmax(0, 1fr);
   align-content: start;
   gap: 9px;
   padding: 9px;
@@ -5810,6 +5811,27 @@ body {
 .filtre-ligne-texte {
   min-width: 0;
   align-self: start;
+}
+
+.filtre-ligne-portee,
+.filtre-ligne-source {
+  display: block;
+  overflow: hidden;
+  color: #8a94a4;
+  font-size: 0.4rem;
+  line-height: 1.15;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.filtre-ligne-source {
+  margin-top: 2px;
+  color: #59677a;
+  font-weight: 750;
+}
+
+.filtre-ligne-portee {
+  margin-top: 0;
 }
 
 .option-filtre-ligne strong,
@@ -6044,6 +6066,8 @@ body {
   .filtres-aide,
   .filtre-texte small,
   .option-filtre-ligne small,
+  .filtre-ligne-portee,
+  .filtre-ligne-source,
   .bouton-filtres-legende small {
     color: #aab8ca;
   }
@@ -6090,6 +6114,8 @@ body {
 .mode-sombre-carte .filtres-aide,
 .mode-sombre-carte .filtre-texte small,
 .mode-sombre-carte .option-filtre-ligne small,
+.mode-sombre-carte .filtre-ligne-portee,
+.mode-sombre-carte .filtre-ligne-source,
 .mode-sombre-carte .bouton-filtres-legende small {
   color: #aab8ca;
 }

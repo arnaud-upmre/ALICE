@@ -1691,6 +1691,10 @@ const menuFonds = controleFonds?.querySelector(".menu-fonds");
 const enteteMenuFonds = controleFonds?.querySelector(".fonds-entete");
 const controleFiltres = document.getElementById("controle-filtres");
 const boutonFiltres = document.getElementById("bouton-filtres");
+const menuFiltres = controleFiltres?.querySelector(".menu-filtres");
+const filtresScrim = document.getElementById("filtres-scrim");
+const boutonFiltresFermer = document.getElementById("filtres-fermer");
+const resumeFiltres = document.getElementById("filtres-resume");
 const boutonItineraire = document.getElementById("bouton-itineraire");
 const boutonLocalisationMobile = document.getElementById("bouton-localisation-mobile");
 const boutonLegendeFiltres = document.getElementById("bouton-legende-filtres");
@@ -1702,6 +1706,7 @@ const casePn = document.querySelector('input[name="filtre-pn"]');
 const caseLignesOsm = document.querySelector('input[name="filtre-lignes-osm"]');
 const caseLignesOrmPng = document.querySelector('input[name="filtre-lignes-orm-png"]');
 const caseLignesOrmVectorielles = document.querySelector('input[name="filtre-lignes-orm-vectorielles"]');
+const aidePkFiltres = document.getElementById("filtre-pk-aide");
 const compteurAppareils = document.getElementById("compteur-appareils");
 const compteurAcces = document.getElementById("compteur-acces");
 const compteurPostes = document.getElementById("compteur-postes");
@@ -5589,9 +5594,11 @@ function appliquerCouchesDonnees() {
   if (!(afficherLignesOsm || afficherLignesOrmVectorielles)) {
     fermerPopupLigneOsmInfo();
   }
+  synchroniserDisponibilitePk();
   mettreAJourAffichagePk();
   mettreAJourAffichagePn();
   mettreAJourControleAttributionCarte();
+  mettreAJourResumeFiltres();
 }
 
 function restaurerEtatFiltres() {
@@ -9693,6 +9700,12 @@ async function activerFiltrePourType(type) {
   }
 
   if (type === "pk") {
+    if (!estTraceFerroviaireActif()) {
+      await activerLigneFerroviaire();
+    }
+    if (!estTraceFerroviaireActif()) {
+      return;
+    }
     afficherPk = true;
     if (casePk) {
       casePk.checked = true;
@@ -10305,11 +10318,51 @@ function terminerGlissementMenuFonds(event) {
 function fermerMenuFiltres() {
   controleFiltres.classList.remove("est-ouvert");
   boutonFiltres.setAttribute("aria-expanded", "false");
+  filtresScrim?.setAttribute("aria-hidden", "true");
+}
+
+function mettreAJourResumeFiltres() {
+  if (!resumeFiltres || !menuFiltres) {
+    return;
+  }
+
+  const nombreActif = menuFiltres.querySelectorAll('input[type="checkbox"]:checked').length;
+  const ligneActive = menuFiltres.querySelector(
+    'input[name^="filtre-lignes-"]:checked'
+  )?.closest(".option-filtre-ligne")?.querySelector("strong")?.childNodes?.[0]?.textContent?.trim();
+  const libelleCouches = `${nombreActif} ${nombreActif > 1 ? "couches actives" : "couche active"}`;
+  resumeFiltres.textContent = ligneActive ? `${libelleCouches} · Tracé ${ligneActive}` : libelleCouches;
+}
+
+function estTraceFerroviaireActif() {
+  return afficherLignesOsm || afficherLignesOrmPng || afficherLignesOrmVectorielles;
+}
+
+function synchroniserDisponibilitePk() {
+  const traceActif = estTraceFerroviaireActif();
+  if (!traceActif) {
+    afficherPk = false;
+    if (casePk) {
+      casePk.checked = false;
+    }
+  }
+
+  if (casePk) {
+    casePk.disabled = !traceActif;
+  }
+  if (aidePkFiltres) {
+    aidePkFiltres.textContent = traceActif
+      ? "Visibles selon le niveau de zoom"
+      : "Sélectionnez d’abord un tracé ferroviaire";
+  }
 }
 
 function ouvrirMenuFiltres() {
+  synchroniserDisponibilitePk();
+  mettreAJourResumeFiltres();
   controleFiltres.classList.add("est-ouvert");
   boutonFiltres.setAttribute("aria-expanded", "true");
+  filtresScrim?.setAttribute("aria-hidden", "false");
 }
 
 function basculerMenuFiltres() {
@@ -10912,6 +10965,14 @@ if (casePostes) {
 
 if (casePk) {
   casePk.addEventListener("change", async () => {
+    if (casePk.checked && !estTraceFerroviaireActif()) {
+      casePk.checked = false;
+      afficherPk = false;
+      synchroniserDisponibilitePk();
+      mettreAJourResumeFiltres();
+      return;
+    }
+
     afficherPk = casePk.checked;
     if (afficherPk) {
       casePk.disabled = true;
@@ -11205,6 +11266,12 @@ boutonFiltres.addEventListener("click", (event) => {
   event.stopPropagation();
   fermerMenuFonds();
   basculerMenuFiltres();
+});
+
+boutonFiltresFermer?.addEventListener("click", fermerMenuFiltres);
+filtresScrim?.addEventListener("click", fermerMenuFiltres);
+menuFiltres?.addEventListener("change", () => {
+  window.requestAnimationFrame(mettreAJourResumeFiltres);
 });
 
 if (boutonItineraire) {

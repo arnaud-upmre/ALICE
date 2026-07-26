@@ -21,7 +21,7 @@
     <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
     <link href="https://unpkg.com/maplibre-gl@6.0.0/dist/maplibre-gl.css" rel="stylesheet" />
     <link rel="stylesheet" href="./theme.css" />
-    <link rel="stylesheet" href="./styles.css?v=2.0.41" />
+    <link rel="stylesheet" href="./styles.css?v=2.0.43" />
   </head>
   <body>
     <div id="map"></div>
@@ -89,41 +89,94 @@
         </svg>
       </button>
 
-      <form class="menu-filtres" aria-label="Filtres de couches">
-        <label class="option-filtre">
-          <input type="checkbox" name="filtre-appareils" />
-          <span>Appareils <span class="filtre-compteur" id="compteur-appareils">(0)</span></span>
-        </label>
-        <label class="option-filtre">
-          <input type="checkbox" name="filtre-acces" />
-          <span>Acces voiture <span class="filtre-compteur" id="compteur-acces">(0)</span></span>
-        </label>
-        <label class="option-filtre">
-          <input type="checkbox" name="filtre-postes" />
-          <span>Postes &amp; SAT <span class="filtre-compteur" id="compteur-postes">(0)</span></span>
-        </label>
-        <label class="option-filtre">
-          <input type="checkbox" name="filtre-pk" />
-          <span>PK</span>
-        </label>
-        <label class="option-filtre">
-          <input type="checkbox" name="filtre-pn" />
-          <span>Passages a niveau <span class="filtre-compteur" id="compteur-pn">(0)</span></span>
-        </label>
-        <label class="option-filtre">
-          <input type="checkbox" name="filtre-lignes-osm" />
-          <span>Ligne ferroviaire OSM</span>
-        </label>
-        <label class="option-filtre">
-          <input type="checkbox" name="filtre-lignes-orm-png" />
-          <span class="libelle-filtre-beta">Ligne ORM PNG <span class="filtre-badge-beta">BETA</span></span>
-        </label>
-        <label class="option-filtre">
-          <input type="checkbox" name="filtre-lignes-orm-vectorielles" />
-          <span class="libelle-filtre-beta">Ligne ORM vectorielle <span class="filtre-badge-beta">BETA</span></span>
-        </label>
-        <div class="menu-filtres-separateur" role="presentation"></div>
-        <button class="bouton-filtres-legende" id="bouton-legende-filtres" type="button">Légende</button>
+      <div class="filtres-scrim" id="filtres-scrim" aria-hidden="true"></div>
+      <form class="menu-filtres" role="dialog" aria-modal="true" aria-labelledby="filtres-titre">
+        <header class="filtres-entete">
+          <div>
+            <h2 class="filtres-titre" id="filtres-titre">Affichage de la carte</h2>
+            <p class="filtres-resume" id="filtres-resume" aria-live="polite">0 couche active</p>
+          </div>
+          <button class="filtres-fermer" id="filtres-fermer" type="button" aria-label="Fermer les options d’affichage">×</button>
+        </header>
+
+        <div class="filtres-contenu">
+          <fieldset class="filtres-groupe">
+            <legend><span>Éléments de carte</span><small>À combiner librement</small></legend>
+            <div class="filtres-liste">
+              <label class="option-filtre">
+                <span class="filtre-repere filtre-repere-appareils" aria-hidden="true">
+                  <i></i><i></i><i></i><i></i>
+                </span>
+                <span class="filtre-texte"><strong>Appareils</strong><small>Équipements de traction</small></span>
+                <span class="filtre-compteur" id="compteur-appareils">(0)</span>
+                <input type="checkbox" name="filtre-appareils" />
+                <span class="filtre-switch" aria-hidden="true"></span>
+              </label>
+              <label class="option-filtre">
+                <span class="filtre-repere filtre-repere-acces" aria-hidden="true"><i></i></span>
+                <span class="filtre-texte"><strong>Accès voiture</strong><small>Points d’accès routiers</small></span>
+                <span class="filtre-compteur" id="compteur-acces">(0)</span>
+                <input type="checkbox" name="filtre-acces" />
+                <span class="filtre-switch" aria-hidden="true"></span>
+              </label>
+              <label class="option-filtre">
+                <span class="filtre-repere filtre-repere-postes" aria-hidden="true"><i></i><i></i></span>
+                <span class="filtre-texte"><strong>Postes &amp; SAT</strong><small>Installations et sous-stations</small></span>
+                <span class="filtre-compteur" id="compteur-postes">(0)</span>
+                <input type="checkbox" name="filtre-postes" />
+                <span class="filtre-switch" aria-hidden="true"></span>
+              </label>
+              <label class="option-filtre">
+                <span class="filtre-repere filtre-repere-pn" aria-hidden="true"><i></i></span>
+                <span class="filtre-texte"><strong>Passages à niveau</strong><small>Repères issus des données OSM</small></span>
+                <span class="filtre-compteur" id="compteur-pn">(0)</span>
+                <input type="checkbox" name="filtre-pn" />
+                <span class="filtre-switch" aria-hidden="true"></span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="filtres-groupe filtres-groupe-lignes">
+            <legend><span>Tracé ferroviaire</span><small>Un seul à la fois</small></legend>
+            <p class="filtres-aide">Choisissez un tracé, ou désactivez le tracé actif pour n’en afficher aucun.</p>
+            <div class="filtres-lignes">
+              <label class="option-filtre-ligne">
+                <input type="checkbox" name="filtre-lignes-osm" />
+                <span class="filtre-ligne-apercu filtre-ligne-osm" aria-hidden="true"></span>
+                <span><strong>OSM</strong><small>Rapide et lisible</small></span>
+                <i aria-hidden="true">✓</i>
+              </label>
+              <label class="option-filtre-ligne">
+                <input type="checkbox" name="filtre-lignes-orm-png" />
+                <span class="filtre-ligne-apercu filtre-ligne-png" aria-hidden="true"></span>
+                <span><strong>ORM PNG <em class="filtre-badge-beta">BETA</em></strong><small>Rendu cartographique</small></span>
+                <i aria-hidden="true">✓</i>
+              </label>
+              <label class="option-filtre-ligne">
+                <input type="checkbox" name="filtre-lignes-orm-vectorielles" />
+                <span class="filtre-ligne-apercu filtre-ligne-vectorielle" aria-hidden="true"></span>
+                <span><strong>ORM vectorielle <em class="filtre-badge-beta">BETA</em></strong><small>Détaillée et interactive</small></span>
+                <i aria-hidden="true">✓</i>
+              </label>
+            </div>
+            <label class="option-filtre filtre-option-pk">
+              <span class="filtre-repere filtre-repere-pk" aria-hidden="true"><i></i></span>
+              <span class="filtre-texte">
+                <strong>Afficher les points kilométriques</strong>
+                <small id="filtre-pk-aide">Visibles selon le niveau de zoom</small>
+              </span>
+              <input type="checkbox" name="filtre-pk" />
+              <span class="filtre-switch" aria-hidden="true"></span>
+            </label>
+          </fieldset>
+
+          <button class="bouton-filtres-legende" id="bouton-legende-filtres" type="button">
+            <span aria-hidden="true">i</span>
+            <strong>Consulter la légende</strong>
+            <small>Comprendre les couleurs et symboles</small>
+            <i aria-hidden="true">›</i>
+          </button>
+        </div>
       </form>
     </div>
 
@@ -486,7 +539,7 @@
         "./referentiel-lignes.js",
         "./code.js",
         "./recherche.js",
-        "./app.js?v=2.0.41",
+        "./app.js?v=2.0.43",
         "./notification.js"
       ];
 

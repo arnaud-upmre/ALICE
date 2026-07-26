@@ -833,6 +833,7 @@ const URL_STYLE_PLAN_IGN =
   "https://data.geopf.fr/annexes/ressources/vectorTiles/styles/PLAN.IGN/standard.json";
 const FOND_IGN_AUTOMATIQUE = "ignAuto";
 const FOND_ESRI_AUTOMATIQUE = "esriAuto";
+const FOND_BASE_AUTO_SYSTEME = "systeme";
 const FOND_BASE_AUTO_CLAIR = "voyager";
 const FOND_BASE_AUTO_SOMBRE = "darkMatter";
 const ZOOM_PASSAGE_SATELLITE_IGN = 13;
@@ -858,19 +859,26 @@ const fondsCartographiques = {
   satelliteEsri: styleSatelliteEsri
 };
 
-const CLE_STOCKAGE_FOND_CARTE = "alice-fond-carte-v2";
+const CLE_STOCKAGE_FOND_CARTE = "alice-fond-carte-v3";
 const FONDS_BASE_AUTOMATIQUES = ["positron", "voyager", "darkMatter", "planIgn", "osm"];
+const CHOIX_BASE_AUTOMATIQUES = [FOND_BASE_AUTO_SYSTEME, ...FONDS_BASE_AUTOMATIQUES];
 const FONDS_MANUELS = Object.keys(fondsCartographiques);
-const fondBaseAutomatiqueDefaut = window.matchMedia?.("(prefers-color-scheme: dark)")?.matches
-  ? FOND_BASE_AUTO_SOMBRE
-  : FOND_BASE_AUTO_CLAIR;
 const preferencesFondDefaut = {
   automatique: true,
-  baseAutomatique: fondBaseAutomatiqueDefaut,
+  baseAutomatique: FOND_BASE_AUTO_SYSTEME,
   satelliteAutomatique: FOND_IGN_AUTOMATIQUE,
   fondManuel: FOND_BASE_AUTO_CLAIR,
   labelsVilles: false
 };
+
+function resoudreFondBaseAutomatique(choixBase) {
+  if (choixBase === FOND_BASE_AUTO_SYSTEME) {
+    return window.matchMedia?.("(prefers-color-scheme: dark)")?.matches
+      ? FOND_BASE_AUTO_SOMBRE
+      : FOND_BASE_AUTO_CLAIR;
+  }
+  return FONDS_BASE_AUTOMATIQUES.includes(choixBase) ? choixBase : FOND_BASE_AUTO_CLAIR;
+}
 
 function chargerPreferencesFondCarte() {
   try {
@@ -880,7 +888,7 @@ function chargerPreferencesFondCarte() {
     }
     return {
       automatique: preferences.automatique !== false,
-      baseAutomatique: FONDS_BASE_AUTOMATIQUES.includes(preferences.baseAutomatique)
+      baseAutomatique: CHOIX_BASE_AUTOMATIQUES.includes(preferences.baseAutomatique)
         ? preferences.baseAutomatique
         : preferencesFondDefaut.baseAutomatique,
       satelliteAutomatique:
@@ -904,7 +912,9 @@ let compteurChangementFond = 0;
 
 let fondBaseAutoActif = preferencesFondInitiales.baseAutomatique;
 let fondManuelActif = preferencesFondInitiales.fondManuel;
-let fondActif = preferencesFondInitiales.automatique ? fondBaseAutoActif : fondManuelActif;
+let fondActif = preferencesFondInitiales.automatique
+  ? resoudreFondBaseAutomatique(fondBaseAutoActif)
+  : fondManuelActif;
 let ignAutomatiqueActif = preferencesFondInitiales.automatique;
 let modeAutoActif = preferencesFondInitiales.satelliteAutomatique;
 let labelsVillesActifs = preferencesFondInitiales.labelsVilles;
@@ -1671,12 +1681,14 @@ const boutonsFondAutoSatellite = Array.from(document.querySelectorAll("[data-fon
 const boutonsOngletsFonds = Array.from(document.querySelectorAll("[data-fonds-onglet]"));
 const panneauxOngletsFonds = Array.from(document.querySelectorAll("[data-fonds-panneau]"));
 const caseModeFondAuto = document.getElementById("mode-fond-auto");
-const caseLabelsVilles = document.getElementById("labels-villes");
+const casesLabelsVilles = Array.from(document.querySelectorAll(".labels-villes"));
 const reglagesFondAuto = document.getElementById("fonds-auto-reglages");
 const reglagesFondManuel = document.getElementById("fonds-manuel");
 const boutonFondsFermer = document.getElementById("fonds-fermer");
 const fondsScrim = document.getElementById("fonds-scrim");
 const boutonFondDefaut = document.getElementById("fonds-defaut");
+const menuFonds = controleFonds?.querySelector(".menu-fonds");
+const enteteMenuFonds = controleFonds?.querySelector(".fonds-entete");
 const controleFiltres = document.getElementById("controle-filtres");
 const boutonFiltres = document.getElementById("bouton-filtres");
 const boutonItineraire = document.getElementById("bouton-itineraire");
@@ -10107,7 +10119,7 @@ function mettreAJourSelection(nomFond) {
   if (caseModeFondAuto) {
     caseModeFondAuto.checked = ignAutomatiqueActif;
   }
-  if (caseLabelsVilles) {
+  for (const caseLabelsVilles of casesLabelsVilles) {
     caseLabelsVilles.checked = labelsVillesActifs;
   }
   if (reglagesFondAuto) {
@@ -10115,6 +10127,18 @@ function mettreAJourSelection(nomFond) {
   }
   if (reglagesFondManuel) {
     reglagesFondManuel.hidden = ignAutomatiqueActif;
+  }
+  mettreAJourThemeSelonFond();
+}
+
+function mettreAJourThemeSelonFond() {
+  const modeSombreCarte = ignAutomatiqueActif
+    ? resoudreFondBaseAutomatique(fondBaseAutoActif) === FOND_BASE_AUTO_SOMBRE
+    : fondManuelActif === FOND_BASE_AUTO_SOMBRE;
+  document.documentElement.classList.toggle("mode-sombre-carte", modeSombreCarte);
+  const metaTheme = document.querySelector('meta[name="theme-color"]');
+  if (metaTheme) {
+    metaTheme.setAttribute("content", modeSombreCarte ? "#0b1726" : "#f3f6fb");
   }
 }
 
@@ -10161,12 +10185,30 @@ function afficherOngletFonds(categorie) {
   }
 }
 
-function fermerMenuFonds() {
+let temporisationNettoyageGlissementFonds = null;
+
+function nettoyerGlissementMenuFonds() {
+  if (temporisationNettoyageGlissementFonds) {
+    window.clearTimeout(temporisationNettoyageGlissementFonds);
+    temporisationNettoyageGlissementFonds = null;
+  }
+  menuFonds?.classList.remove("est-glisse");
+  menuFonds?.style.removeProperty("transform");
+  menuFonds?.style.removeProperty("transition");
+  fondsScrim?.style.removeProperty("opacity");
+  enteteMenuFonds?.classList.remove("est-glissee");
+}
+
+function fermerMenuFonds(options = {}) {
   controleFonds.classList.remove("est-ouvert");
   boutonFonds.setAttribute("aria-expanded", "false");
+  if (!options.conserverAnimationGlissement) {
+    nettoyerGlissementMenuFonds();
+  }
 }
 
 function ouvrirMenuFonds() {
+  nettoyerGlissementMenuFonds();
   mettreAJourSelection(fondActif);
   afficherOngletFonds(categorieFondManuel(fondManuelActif));
   controleFonds.classList.add("est-ouvert");
@@ -10180,6 +10222,84 @@ function basculerMenuFonds() {
   }
 
   ouvrirMenuFonds();
+}
+
+let glissementFondsActif = false;
+let pointeurGlissementFonds = null;
+let positionDepartGlissementFonds = 0;
+let heureDepartGlissementFonds = 0;
+let distanceGlissementFonds = 0;
+
+function interfaceFondsEstMobile() {
+  return window.matchMedia?.("(max-width: 720px)")?.matches === true;
+}
+
+function commencerGlissementMenuFonds(event) {
+  if (
+    !interfaceFondsEstMobile() ||
+    !controleFonds.classList.contains("est-ouvert") ||
+    event.button !== 0 ||
+    event.target.closest(".fonds-fermer")
+  ) {
+    return;
+  }
+
+  glissementFondsActif = true;
+  pointeurGlissementFonds = event.pointerId;
+  positionDepartGlissementFonds = event.clientY;
+  heureDepartGlissementFonds = performance.now();
+  distanceGlissementFonds = 0;
+  menuFonds?.classList.add("est-glisse");
+  enteteMenuFonds?.classList.add("est-glissee");
+  menuFonds?.style.setProperty("transition", "none");
+  try {
+    enteteMenuFonds?.setPointerCapture(event.pointerId);
+  } catch (_erreur) {
+    // Le geste reste fonctionnel même si la capture du pointeur est indisponible.
+  }
+}
+
+function suivreGlissementMenuFonds(event) {
+  if (!glissementFondsActif || event.pointerId !== pointeurGlissementFonds || !menuFonds) {
+    return;
+  }
+  distanceGlissementFonds = Math.max(0, event.clientY - positionDepartGlissementFonds);
+  menuFonds.style.setProperty("transform", `translateY(${distanceGlissementFonds}px)`);
+  const hauteurPanneau = Math.max(1, menuFonds.getBoundingClientRect().height);
+  const progression = Math.min(1, distanceGlissementFonds / hauteurPanneau);
+  fondsScrim?.style.setProperty("opacity", String(Math.max(0, 1 - progression * 1.25)));
+  if (distanceGlissementFonds > 0) {
+    event.preventDefault();
+  }
+}
+
+function terminerGlissementMenuFonds(event) {
+  if (!glissementFondsActif || event.pointerId !== pointeurGlissementFonds || !menuFonds) {
+    return;
+  }
+
+  glissementFondsActif = false;
+  pointeurGlissementFonds = null;
+  enteteMenuFonds?.classList.remove("est-glissee");
+  const duree = Math.max(1, performance.now() - heureDepartGlissementFonds);
+  const vitesse = distanceGlissementFonds / duree;
+  const seuilDistance = Math.min(150, menuFonds.getBoundingClientRect().height * 0.24);
+  const doitFermer = distanceGlissementFonds >= seuilDistance || (distanceGlissementFonds > 44 && vitesse > 0.65);
+
+  menuFonds.style.setProperty("transition", "transform 220ms cubic-bezier(.22,.78,.22,1)");
+  if (doitFermer) {
+    menuFonds.style.setProperty("transform", "translateY(calc(100% + 24px))");
+    fondsScrim?.style.setProperty("opacity", "0");
+    temporisationNettoyageGlissementFonds = window.setTimeout(() => {
+      fermerMenuFonds({ conserverAnimationGlissement: true });
+      nettoyerGlissementMenuFonds();
+    }, 220);
+    return;
+  }
+
+  menuFonds.style.setProperty("transform", "translateY(0)");
+  fondsScrim?.style.setProperty("opacity", "1");
+  temporisationNettoyageGlissementFonds = window.setTimeout(nettoyerGlissementMenuFonds, 220);
 }
 
 function fermerMenuFiltres() {
@@ -10227,7 +10347,7 @@ async function changerFondCarte(nomFond, options = {}) {
 }
 
 function determinerFondIgnAutomatique() {
-  return fondBaseAutoActif;
+  return resoudreFondBaseAutomatique(fondBaseAutoActif);
 }
 
 function estFondBaseAutomatique(nomFond) {
@@ -10615,7 +10735,7 @@ for (const bouton of boutonsFondManuel) {
 for (const bouton of boutonsFondAutoBase) {
   bouton.addEventListener("click", () => {
     const fondChoisi = bouton.dataset.fondAutoBase;
-    if (!FONDS_BASE_AUTOMATIQUES.includes(fondChoisi)) {
+    if (!CHOIX_BASE_AUTOMATIQUES.includes(fondChoisi)) {
       return;
     }
     fondBaseAutoActif = fondChoisi;
@@ -10648,20 +10768,24 @@ caseModeFondAuto?.addEventListener("change", () => {
   afficherOngletFonds(categorieFondManuel(fondManuelActif));
 });
 
-caseLabelsVilles?.addEventListener("change", () => {
-  labelsVillesActifs = caseLabelsVilles.checked;
-  enregistrerPreferencesFondCarte();
-  mettreAJourLabelsVilles();
-});
+for (const caseLabelsVilles of casesLabelsVilles) {
+  caseLabelsVilles.addEventListener("change", () => {
+    labelsVillesActifs = caseLabelsVilles.checked;
+    for (const autreCase of casesLabelsVilles) {
+      autreCase.checked = labelsVillesActifs;
+    }
+    enregistrerPreferencesFondCarte();
+    mettreAJourLabelsVilles();
+  });
+}
 
 boutonFondDefaut?.addEventListener("click", () => {
-  const baseDefaut = mediaQueryModeSombre?.matches ? FOND_BASE_AUTO_SOMBRE : FOND_BASE_AUTO_CLAIR;
   try {
     localStorage.removeItem(CLE_STOCKAGE_FOND_CARTE);
   } catch (_erreur) {
     // Sans effet si le stockage local est indisponible.
   }
-  fondBaseAutoActif = baseDefaut;
+  fondBaseAutoActif = FOND_BASE_AUTO_SYSTEME;
   fondManuelActif = FOND_BASE_AUTO_CLAIR;
   modeAutoActif = FOND_IGN_AUTOMATIQUE;
   labelsVillesActifs = false;
@@ -10709,6 +10833,10 @@ boutonFonds.addEventListener("click", (event) => {
 
 boutonFondsFermer?.addEventListener("click", fermerMenuFonds);
 fondsScrim?.addEventListener("click", fermerMenuFonds);
+enteteMenuFonds?.addEventListener("pointerdown", commencerGlissementMenuFonds);
+window.addEventListener("pointermove", suivreGlissementMenuFonds, { passive: false });
+window.addEventListener("pointerup", terminerGlissementMenuFonds);
+window.addEventListener("pointercancel", terminerGlissementMenuFonds);
 
 if (caseAppareils) {
   caseAppareils.addEventListener("change", async () => {

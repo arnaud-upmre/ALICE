@@ -4996,6 +4996,13 @@ body {
   background: linear-gradient(28deg, transparent 44%, #ffffff 45% 51%, transparent 52%), #e9eeeb;
 }
 
+.apercu-systeme::before {
+  background:
+    linear-gradient(90deg, transparent 49%, rgba(255, 255, 255, 0.72) 50% 51%, transparent 52%),
+    linear-gradient(28deg, transparent 44%, #ffffff 45% 50%, transparent 51%),
+    linear-gradient(90deg, #dce9d8 0 50%, #1c2633 50%);
+}
+
 .apercu-voyager::before {
   background: linear-gradient(25deg, transparent 44%, #ffffff 45% 51%, transparent 52%), #dce9d8;
 }
@@ -5135,11 +5142,19 @@ body {
     max-height: min(86dvh, 760px);
     border-width: 1px 0 0;
     border-radius: 25px 25px 0 0;
+    will-change: transform;
   }
 
   .fonds-entete {
     position: relative;
     padding-top: 17px;
+    touch-action: none;
+    user-select: none;
+    cursor: grab;
+  }
+
+  .fonds-entete.est-glissee {
+    cursor: grabbing;
   }
 
   .fonds-entete::before {
@@ -5220,4 +5235,133 @@ body {
     color: #eff6ff;
     background: rgba(148, 163, 184, 0.18);
   }
+}
+
+/* Dark Matter applique aussi le thème nuit à toute l’interface ALICE. */
+:root.mode-sombre-carte {
+  color-scheme: dark;
+  --ui-glass-bg: linear-gradient(135deg, rgba(10, 18, 31, 0.94) 0%, rgba(15, 23, 42, 0.88) 100%);
+  --ui-glass-border: rgba(148, 163, 184, 0.18);
+  --ui-glass-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 20px 44px rgba(0, 0, 0, 0.4);
+  --ui-tip-color: var(--alice-panel-dark);
+  --ui-text-primary: var(--alice-text-dark);
+  --ui-text-secondary: #c7d5e6;
+  --ui-text-muted: #94a3b8;
+  --ui-text-on-glass: var(--alice-text-dark);
+  --ui-link-color: var(--alice-accent-blue-dark);
+  --ui-link-hover: #bfdbfe;
+}
+
+.mode-sombre-carte .modal-itineraire,
+.mode-sombre-carte .modal-fiche,
+.mode-sombre-carte .modal-localisation,
+.mode-sombre-carte .modal-apropos {
+  background: rgba(2, 6, 23, 0.62);
+}
+
+.mode-sombre-carte .modal-fiche-carte,
+.mode-sombre-carte .modal-itineraire-carte,
+.mode-sombre-carte .modal-localisation-carte,
+.mode-sombre-carte .modal-apropos-carte,
+.mode-sombre-carte .recherche-champ-wrap,
+.mode-sombre-carte .recherche-resultats,
+.mode-sombre-carte .menu-filtres,
+.mode-sombre-carte .menu-fonds,
+.mode-sombre-carte .bouton-filtres,
+.mode-sombre-carte .bouton-fonds,
+.mode-sombre-carte .maplibregl-ctrl-group button,
+.mode-sombre-carte .maplibregl-popup-content,
+.mode-sombre-carte .menu-contextuel-carte,
+.mode-sombre-carte .menu-legende-carte {
+  border-color: rgba(148, 163, 184, 0.16);
+  background: rgba(10, 18, 31, 0.94);
+  color: #eff6ff;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+}
+
+.mode-sombre-carte .recherche-champ,
+.mode-sombre-carte .recherche-resultat,
+.mode-sombre-carte .option-filtre,
+.mode-sombre-carte .bouton-filtres-legende,
+.mode-sombre-carte .menu-contextuel-item,
+.mode-sombre-carte .menu-contextuel-sousitem,
+.mode-sombre-carte .modal-apropos-titre,
+.mode-sombre-carte .modal-itineraire-titre,
+.mode-sombre-carte .modal-localisation-titre {
+  color: #eff6ff;
+}
+
+.mode-sombre-carte .recherche-champ::placeholder {
+  color: var(--alice-search-placeholder-dark);
+  opacity: 1;
+}
+
+.mode-sombre-carte .icone-burger,
+.mode-sombre-carte .icone-tableau,
+.mode-sombre-carte .icone-localisation-mobile,
+.mode-sombre-carte .icone-couches {
+  fill: #eff6ff;
+}
+
+.mode-sombre-carte .icone-itineraire {
+  color: #eff6ff;
+}
+
+.mode-sombre-carte .maplibregl-ctrl-group .maplibregl-ctrl-icon {
+  filter: brightness(0) invert(0.95);
+  opacity: 1;
+}
+
+.mode-sombre-carte .maplibregl-ctrl.maplibregl-ctrl-attrib {
+  background: rgba(10, 18, 31, 0.92);
+  color: #e5eefc;
+}
+
+.mode-sombre-carte .maplibregl-ctrl-attrib a {
+  color: #8fc2ff;
+}
+
+.mode-sombre-carte .fonds-entete {
+  border-bottom-color: rgba(148, 163, 184, 0.14);
+}
+
+.mode-sombre-carte .fonds-titre,
+.mode-sombre-carte .fonds-auto strong,
+.mode-sombre-carte .fonds-option-villes strong,
+.mode-sombre-carte .fonds-groupe legend {
+  color: #eff6ff;
+}
+
+.mode-sombre-carte .fonds-auto {
+  border-color: rgba(96, 165, 250, 0.22);
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.mode-sombre-carte .fonds-auto small,
+.mode-sombre-carte .fonds-option-villes small,
+.mode-sombre-carte .fonds-aide,
+.mode-sombre-carte .fonds-groupe legend span {
+  color: #aab8ca;
+}
+
+.mode-sombre-carte .fonds-fermer,
+.mode-sombre-carte .fonds-defaut {
+  border-color: rgba(148, 163, 184, 0.16);
+  color: #dbe8f7;
+  background: rgba(148, 163, 184, 0.12);
+}
+
+.mode-sombre-carte .fonds-onglets {
+  background: rgba(148, 163, 184, 0.12);
+}
+
+.mode-sombre-carte .fonds-onglets button {
+  color: #aab8ca;
+}
+
+.mode-sombre-carte .fonds-onglets button.est-selectionne {
+  color: #eff6ff;
+  background: rgba(148, 163, 184, 0.18);
 }

@@ -21,7 +21,7 @@
     <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
     <link href="https://unpkg.com/maplibre-gl@6.0.0/dist/maplibre-gl.css" rel="stylesheet" />
     <link rel="stylesheet" href="./theme.css" />
-    <link rel="stylesheet" href="./styles.css?v=2.0.37" />
+    <link rel="stylesheet" href="./styles.css?v=2.0.41" />
   </head>
   <body>
     <div id="map"></div>
@@ -158,11 +158,12 @@
           </label>
 
           <div class="fonds-auto-reglages" id="fonds-auto-reglages">
-            <p class="fonds-aide">La carte change progressivement à partir du zoom 13.</p>
-
             <fieldset class="fonds-groupe">
               <legend>Mon plan classique <span>Vue éloignée</span></legend>
               <div class="fonds-grille">
+                <button class="fonds-carte apercu-systeme" type="button" data-fond-auto-base="systeme">
+                  <span><strong>Selon l’appareil</strong><small>Voyager clair · Dark Matter nuit</small></span><i>✓</i>
+                </button>
                 <button class="fonds-carte apercu-positron" type="button" data-fond-auto-base="positron">
                   <span><strong>Positron</strong><small>Très épuré</small></span><i>✓</i>
                 </button>
@@ -191,6 +192,11 @@
                   <span><strong>Satellite ESRI</strong><small>Couverture mondiale</small></span><i>✓</i>
                 </button>
               </div>
+              <label class="fonds-option-villes">
+                <span><strong>Noms des villes</strong><small>Uniquement sur la vue satellite.</small></span>
+                <input class="labels-villes" type="checkbox" />
+                <span class="fonds-switch" aria-hidden="true"></span>
+              </label>
             </fieldset>
           </div>
 
@@ -216,6 +222,11 @@
                 <button class="fonds-carte apercu-satellite-ign" type="button" data-fond="satelliteIgn"><span><strong>Satellite IGN</strong><small>France · précision</small></span><i>✓</i></button>
                 <button class="fonds-carte apercu-satellite-esri" type="button" data-fond="satelliteEsri"><span><strong>Satellite ESRI</strong><small>Couverture mondiale</small></span><i>✓</i></button>
               </div>
+              <label class="fonds-option-villes">
+                <span><strong>Noms des villes</strong><small>Uniquement sur les fonds satellite.</small></span>
+                <input class="labels-villes" type="checkbox" />
+                <span class="fonds-switch" aria-hidden="true"></span>
+              </label>
             </div>
 
             <div class="fonds-groupe fonds-liste-manuelle" data-fonds-panneau="cadastre" hidden>
@@ -223,14 +234,13 @@
                 <button class="fonds-carte apercu-cadastre-plan" type="button" data-fond="cadastreIgn"><span><strong>Plan IGN + cadastre</strong><small>Parcelles sur le plan</small></span><i>✓</i></button>
                 <button class="fonds-carte apercu-cadastre-satellite" type="button" data-fond="satelliteCadastreIgn"><span><strong>Satellite IGN + cadastre</strong><small>Parcelles sur la photo</small></span><i>✓</i></button>
               </div>
+              <label class="fonds-option-villes">
+                <span><strong>Noms des villes</strong><small>Pour « Satellite IGN + cadastre » uniquement.</small></span>
+                <input class="labels-villes" type="checkbox" />
+                <span class="fonds-switch" aria-hidden="true"></span>
+              </label>
             </div>
           </div>
-
-          <label class="fonds-option-villes">
-            <span><strong>Noms des villes</strong><small>Ajoute les noms sur les vues satellite.</small></span>
-            <input type="checkbox" id="labels-villes" />
-            <span class="fonds-switch" aria-hidden="true"></span>
-          </label>
 
           <button class="fonds-defaut" id="fonds-defaut" type="button">Revenir au fond par défaut</button>
         </div>
@@ -476,7 +486,7 @@
         "./referentiel-lignes.js",
         "./code.js",
         "./recherche.js",
-        "./app.js",
+        "./app.js?v=2.0.41",
         "./notification.js"
       ];
 

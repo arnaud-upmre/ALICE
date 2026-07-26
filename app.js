@@ -1787,6 +1787,7 @@ let modalFiche = document.getElementById("modal-fiche");
 let modalFicheContenu = document.getElementById("modal-fiche-contenu");
 let boutonFermerModalFiche = document.getElementById("modal-fiche-fermer");
 let boutonPartagerModalFiche = document.getElementById("modal-fiche-partager");
+let poigneeModalFiche = document.getElementById("modal-fiche-poignee");
 let elementRetourFocusModalFiche = null;
 let elementRetourFocusModalApropos = null;
 let modalStreetViewContextuelle = null;
@@ -2056,6 +2057,7 @@ function assurerElementsModalFiche() {
     modalFicheContenu = document.getElementById("modal-fiche-contenu");
     boutonFermerModalFiche = document.getElementById("modal-fiche-fermer");
     boutonPartagerModalFiche = document.getElementById("modal-fiche-partager");
+    poigneeModalFiche = document.getElementById("modal-fiche-poignee");
     return Boolean(modalFicheContenu && boutonFermerModalFiche && boutonPartagerModalFiche);
   }
 
@@ -2068,6 +2070,9 @@ function assurerElementsModalFiche() {
   racine.setAttribute("aria-hidden", "true");
   racine.innerHTML = `
     <div class="modal-fiche-carte">
+      <button class="modal-fiche-poignee" id="modal-fiche-poignee" type="button" aria-label="Réduire ou agrandir la fiche">
+        <span aria-hidden="true"></span>
+      </button>
       <button class="modal-fiche-partager" id="modal-fiche-partager" type="button" aria-label="Partager la fiche">
         <svg class="modal-fiche-partager-icone" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M12 3v12" />
@@ -2085,6 +2090,7 @@ function assurerElementsModalFiche() {
   modalFicheContenu = document.getElementById("modal-fiche-contenu");
   boutonFermerModalFiche = document.getElementById("modal-fiche-fermer");
   boutonPartagerModalFiche = document.getElementById("modal-fiche-partager");
+  poigneeModalFiche = document.getElementById("modal-fiche-poignee");
   return Boolean(modalFicheContenu && boutonFermerModalFiche && boutonPartagerModalFiche);
 }
 
@@ -2101,6 +2107,9 @@ function creerPopupFicheModale() {
       if (modalFicheContenu) {
         modalFicheContenu.innerHTML = html;
       }
+      window.requestAnimationFrame(() => {
+        mettreAJourCransPanneauFicheMobile({ conserverCran: false });
+      });
       return instance;
     },
     addTo() {
@@ -2109,9 +2118,11 @@ function creerPopupFicheModale() {
         if (actif instanceof HTMLElement && !modalFiche.contains(actif)) {
           elementRetourFocusModalFiche = actif;
         }
+        reinitialiserPanneauFicheMobile();
         modalFiche.classList.add("est-visible");
         modalFiche.setAttribute("aria-hidden", "false");
         window.requestAnimationFrame(() => {
+          mettreAJourCransPanneauFicheMobile({ conserverCran: false });
           boutonFermerModalFiche?.focus({ preventScroll: true });
         });
         chargerScriptMeteoEnDiffere().catch((erreur) => {
@@ -2144,6 +2155,7 @@ function creerPopupFicheModale() {
           }
         }
         modalFiche.classList.remove("est-visible");
+        reinitialiserPanneauFicheMobile();
         modalFiche.setAttribute("aria-hidden", "true");
       }
       if (modalFicheContenu) {
@@ -10376,6 +10388,286 @@ function creerGestionnairePanneauCoulissant({
   }
 
   return { nettoyer, commencer, suivre, terminer };
+}
+
+let cransPanneauFicheMobile = [0];
+let indexCranPanneauFicheMobile = 0;
+let temporisationFermeturePanneauFiche = null;
+
+function obtenirCartePanneauFiche() {
+  return modalFiche?.querySelector(".modal-fiche-carte") || null;
+}
+
+function mettreAJourCransPanneauFicheMobile(options = {}) {
+  if (!interfacePanneauCoulissantEstMobile() || !modalFicheContenu) {
+    return;
+  }
+
+  const carteFiche = obtenirCartePanneauFiche();
+  const popupCarteFiche = modalFicheContenu.querySelector(".popup-carte");
+  if (!carteFiche || !popupCarteFiche) {
+    cransPanneauFicheMobile = [0];
+    indexCranPanneauFicheMobile = 0;
+    return;
+  }
+
+  const ancienIndex = indexCranPanneauFicheMobile;
+  const hauteurCarte = Math.max(1, carteFiche.getBoundingClientRect().height);
+  const rectangleCarte = carteFiche.getBoundingClientRect();
+  const decalageDefilement = modalFicheContenu.scrollTop;
+  const sections = Array.from(popupCarteFiche.children).filter(
+    (element) =>
+      element instanceof HTMLElement &&
+      element.classList.contains("popup-section") &&
+      getComputedStyle(element).display !== "none"
+  );
+
+  const hauteursSeparateurs = sections
+    .slice(1)
+    .filter((section) => Number.parseFloat(getComputedStyle(section).borderTopWidth) > 0)
+    .map((section) => {
+      const rectangleSection = section.getBoundingClientRect();
+      return Math.round(rectangleSection.top - rectangleCarte.top + decalageDefilement + 1);
+    })
+    .filter((hauteur) => hauteur >= 64 && hauteur <= hauteurCarte - 44)
+    .sort((a, b) => b - a)
+    .filter((hauteur, index, liste) => index === 0 || Math.abs(liste[index - 1] - hauteur) >= 24);
+
+  cransPanneauFicheMobile = [
+    0,
+    ...hauteursSeparateurs.map((hauteurVisible) => Math.max(0, hauteurCarte - hauteurVisible))
+  ];
+  indexCranPanneauFicheMobile = options.conserverCran
+    ? Math.min(ancienIndex, cransPanneauFicheMobile.length - 1)
+    : 0;
+  modalFiche?.setAttribute(
+    "data-niveaux-intermediaires",
+    String(Math.max(0, cransPanneauFicheMobile.length - 1))
+  );
+
+  if (options.appliquerCran) {
+    placerPanneauFicheMobile(indexCranPanneauFicheMobile, { animer: false });
+  }
+}
+
+function reinitialiserPanneauFicheMobile() {
+  if (temporisationFermeturePanneauFiche) {
+    window.clearTimeout(temporisationFermeturePanneauFiche);
+    temporisationFermeturePanneauFiche = null;
+  }
+
+  cransPanneauFicheMobile = [0];
+  indexCranPanneauFicheMobile = 0;
+  modalFiche?.classList.remove("est-intermediaire", "est-glissee");
+  modalFiche?.removeAttribute("data-niveaux-intermediaires");
+  modalFiche?.style.removeProperty("--modal-fiche-scrim-opacity");
+  const carteFiche = obtenirCartePanneauFiche();
+  carteFiche?.style.removeProperty("transform");
+  carteFiche?.style.removeProperty("transition");
+  if (modalFicheContenu) {
+    modalFicheContenu.scrollTop = 0;
+  }
+  poigneeModalFiche?.setAttribute("aria-expanded", "true");
+}
+
+function placerPanneauFicheMobile(indexCran, options = {}) {
+  if (!interfacePanneauCoulissantEstMobile()) {
+    reinitialiserPanneauFicheMobile();
+    return;
+  }
+
+  const carteFiche = obtenirCartePanneauFiche();
+  if (!carteFiche || !modalFiche) {
+    return;
+  }
+
+  const animer = options.animer !== false;
+  indexCranPanneauFicheMobile = Math.max(
+    0,
+    Math.min(Math.round(indexCran), cransPanneauFicheMobile.length - 1)
+  );
+  const translation = cransPanneauFicheMobile[indexCranPanneauFicheMobile] || 0;
+  const estIntermediaire = indexCranPanneauFicheMobile > 0;
+  modalFiche.classList.toggle("est-intermediaire", estIntermediaire);
+  modalFiche.classList.remove("est-glissee");
+  carteFiche.style.setProperty(
+    "transition",
+    animer ? "transform 240ms cubic-bezier(.22,.78,.22,1)" : "none"
+  );
+
+  if (estIntermediaire) {
+    modalFicheContenu.scrollTop = 0;
+    carteFiche.style.setProperty("transform", `translateY(${translation}px)`);
+    const progression = Math.min(1, translation / Math.max(1, carteFiche.getBoundingClientRect().height));
+    modalFiche.style.setProperty(
+      "--modal-fiche-scrim-opacity",
+      String(Math.max(0.08, 0.32 * (1 - progression)))
+    );
+    poigneeModalFiche?.setAttribute("aria-expanded", "false");
+    poigneeModalFiche?.setAttribute(
+      "aria-label",
+      `Régler la hauteur de la fiche, niveau ${indexCranPanneauFicheMobile} sur ${cransPanneauFicheMobile.length - 1}`
+    );
+    return;
+  }
+
+  carteFiche.style.setProperty("transform", "translateY(0)");
+  modalFiche.style.setProperty("--modal-fiche-scrim-opacity", "0.32");
+  poigneeModalFiche?.setAttribute("aria-expanded", "true");
+  poigneeModalFiche?.setAttribute("aria-label", "Réduire la fiche section par section");
+}
+
+function fermerPanneauFicheMobileParGlissement() {
+  const carteFiche = obtenirCartePanneauFiche();
+  if (!carteFiche || !modalFiche) {
+    fermerPopupCarte({ localiserPoint: true });
+    return;
+  }
+
+  carteFiche.style.setProperty("transition", "transform 220ms cubic-bezier(.22,.78,.22,1)");
+  carteFiche.style.setProperty("transform", "translateY(calc(100% + 24px))");
+  modalFiche.style.setProperty("--modal-fiche-scrim-opacity", "0");
+  temporisationFermeturePanneauFiche = window.setTimeout(() => {
+    temporisationFermeturePanneauFiche = null;
+    fermerPopupCarte({ localiserPoint: true });
+  }, 220);
+}
+
+function creerGestionnairePanneauFicheMobile() {
+  let glissementActif = false;
+  let pointeurGlissement = null;
+  let positionDepart = 0;
+  let heureDepart = 0;
+  let translationDepart = 0;
+  let distanceSignee = 0;
+  let gesteDeplace = false;
+  let ignorerProchainClic = false;
+
+  function commencer(event) {
+    if (
+      !interfacePanneauCoulissantEstMobile() ||
+      !modalFiche?.classList.contains("est-visible") ||
+      event.button !== 0
+    ) {
+      return;
+    }
+
+    const carteFiche = obtenirCartePanneauFiche();
+    if (!carteFiche) {
+      return;
+    }
+
+    mettreAJourCransPanneauFicheMobile({ conserverCran: true });
+
+    glissementActif = true;
+    pointeurGlissement = event.pointerId;
+    positionDepart = event.clientY;
+    heureDepart = performance.now();
+    distanceSignee = 0;
+    gesteDeplace = false;
+    translationDepart = cransPanneauFicheMobile[indexCranPanneauFicheMobile] || 0;
+    modalFiche.classList.add("est-glissee");
+    carteFiche.style.setProperty("transition", "none");
+    try {
+      poigneeModalFiche?.setPointerCapture(event.pointerId);
+    } catch (_erreur) {
+      // Le geste reste utilisable sans capture explicite du pointeur.
+    }
+  }
+
+  function suivre(event) {
+    if (!glissementActif || event.pointerId !== pointeurGlissement) {
+      return;
+    }
+
+    const carteFiche = obtenirCartePanneauFiche();
+    if (!carteFiche) {
+      return;
+    }
+
+    distanceSignee = event.clientY - positionDepart;
+    gesteDeplace ||= Math.abs(distanceSignee) > 7;
+    const hauteurCarte = Math.max(1, carteFiche.getBoundingClientRect().height);
+    const translation = Math.max(0, Math.min(hauteurCarte + 24, translationDepart + distanceSignee));
+    carteFiche.style.setProperty("transform", `translateY(${translation}px)`);
+    const progression = Math.min(1, translation / hauteurCarte);
+    modalFiche?.style.setProperty(
+      "--modal-fiche-scrim-opacity",
+      String(Math.max(0, 0.32 * (1 - progression)))
+    );
+    event.preventDefault();
+  }
+
+  function terminer(event) {
+    if (!glissementActif || event.pointerId !== pointeurGlissement) {
+      return;
+    }
+
+    glissementActif = false;
+    pointeurGlissement = null;
+    modalFiche?.classList.remove("est-glissee");
+    const duree = Math.max(1, performance.now() - heureDepart);
+    const vitesse = distanceSignee / duree;
+    ignorerProchainClic = gesteDeplace;
+    if (gesteDeplace) {
+      window.setTimeout(() => {
+        ignorerProchainClic = false;
+      }, 0);
+    }
+
+    const doitDescendre = distanceSignee > 52 || (distanceSignee > 22 && vitesse > 0.5);
+    const doitMonter = distanceSignee < -46 || (distanceSignee < -20 && vitesse < -0.5);
+
+    if (doitDescendre) {
+      const indexSuivant = indexCranPanneauFicheMobile + 1;
+      if (indexSuivant >= cransPanneauFicheMobile.length) {
+        fermerPanneauFicheMobileParGlissement();
+      } else {
+        placerPanneauFicheMobile(indexSuivant);
+      }
+      return;
+    }
+
+    if (doitMonter) {
+      placerPanneauFicheMobile(Math.max(0, indexCranPanneauFicheMobile - 1));
+      return;
+    }
+
+    placerPanneauFicheMobile(indexCranPanneauFicheMobile);
+  }
+
+  function basculer() {
+    if (ignorerProchainClic) {
+      ignorerProchainClic = false;
+      return;
+    }
+    placerPanneauFicheMobile(indexCranPanneauFicheMobile > 0 ? 0 : Math.min(1, cransPanneauFicheMobile.length - 1));
+  }
+
+  return { commencer, suivre, terminer, basculer };
+}
+
+const gestionGlissementFicheMobile = creerGestionnairePanneauFicheMobile();
+poigneeModalFiche?.addEventListener("pointerdown", gestionGlissementFicheMobile.commencer);
+poigneeModalFiche?.addEventListener("click", gestionGlissementFicheMobile.basculer);
+window.addEventListener("pointermove", gestionGlissementFicheMobile.suivre, { passive: false });
+window.addEventListener("pointerup", gestionGlissementFicheMobile.terminer);
+window.addEventListener("pointercancel", gestionGlissementFicheMobile.terminer);
+
+if (modalFicheContenu && typeof MutationObserver === "function") {
+  const observateurContenuFiche = new MutationObserver(() => {
+    window.requestAnimationFrame(() => {
+      mettreAJourCransPanneauFicheMobile({
+        conserverCran: true,
+        appliquerCran: indexCranPanneauFicheMobile > 0
+      });
+    });
+  });
+  observateurContenuFiche.observe(modalFicheContenu, {
+    childList: true,
+    subtree: true,
+    characterData: true
+  });
 }
 
 const gestionGlissementFonds = creerGestionnairePanneauCoulissant({

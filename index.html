@@ -21,7 +21,7 @@
     <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
     <link href="https://unpkg.com/maplibre-gl@6.0.0/dist/maplibre-gl.css" rel="stylesheet" />
     <link rel="stylesheet" href="./theme.css" />
-    <link rel="stylesheet" href="./styles.css?v=2.0.46" />
+    <link rel="stylesheet" href="./styles.css?v=2.0.49" />
   </head>
   <body>
     <div id="map"></div>
@@ -445,6 +445,9 @@
     </div>
     <div class="modal-fiche" id="modal-fiche" role="dialog" aria-modal="true" aria-label="Fiche" aria-hidden="true">
       <div class="modal-fiche-carte">
+        <button class="modal-fiche-poignee" id="modal-fiche-poignee" type="button" aria-label="Réduire ou agrandir la fiche">
+          <span aria-hidden="true"></span>
+        </button>
         <button class="modal-fiche-partager" id="modal-fiche-partager" type="button" aria-label="Partager la fiche">
           <svg class="modal-fiche-partager-icone" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 3v12" />
@@ -568,7 +571,7 @@
         "./referentiel-lignes.js",
         "./code.js",
         "./recherche.js",
-        "./app.js?v=2.0.46",
+        "./app.js?v=2.0.49",
         "./notification.js"
       ];
 

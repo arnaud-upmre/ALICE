@@ -6117,26 +6117,6 @@ body {
   cursor: not-allowed;
 }
 
-.filtres-defaut {
-  width: 100%;
-  min-height: 40px;
-  margin-top: 8px;
-  border: 0;
-  border-radius: 12px;
-  color: #68758a;
-  background: transparent;
-  font-size: 0.68rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.filtres-defaut:hover,
-.filtres-defaut:focus-visible {
-  color: #1f5fbf;
-  background: #f1f6fd;
-  outline: none;
-}
-
 .filtres-defaut:disabled {
   opacity: 0.58;
   cursor: wait;
@@ -6156,15 +6136,6 @@ body {
     background: rgba(148, 163, 184, 0.08);
   }
 
-  .filtres-defaut {
-    color: #aab8ca;
-  }
-
-  .filtres-defaut:hover,
-  .filtres-defaut:focus-visible {
-    color: #bfdbfe;
-    background: rgba(96, 165, 250, 0.1);
-  }
 }
 
 .mode-sombre-carte .filtre-repere,
@@ -6180,12 +6151,169 @@ body {
   background: rgba(148, 163, 184, 0.08);
 }
 
-.mode-sombre-carte .filtres-defaut {
-  color: #aab8ca;
+/* Navigation interne du panneau : affichage ↔ légende */
+.filtres-entete > div {
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
-.mode-sombre-carte .filtres-defaut:hover,
-.mode-sombre-carte .filtres-defaut:focus-visible {
-  color: #bfdbfe;
-  background: rgba(96, 165, 250, 0.1);
+.filtres-retour {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  padding: 0 0 3px;
+  border: 0;
+  border-radius: 999px;
+  color: #36506f;
+  background: #eef2f6;
+  font-size: 1.7rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.filtres-retour:hover,
+.filtres-retour:focus-visible {
+  color: #1468e8;
+  background: #e5efff;
+  outline: none;
+}
+
+.filtres-legende-contenu {
+  max-height: calc(100dvh - 94px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  padding: 14px 18px 18px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  animation: filtres-vue-entree 170ms ease both;
+}
+
+@keyframes filtres-vue-entree {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.filtres-legende-contenu .menu-legende-section {
+  margin: 0;
+  padding: 13px;
+  border: 1px solid #e1e6ed;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.filtres-legende-contenu .menu-legende-section + .menu-legende-section {
+  margin-top: 10px;
+}
+
+.filtres-legende-contenu .menu-legende-section-titre {
+  margin-bottom: 9px;
+  color: #293447;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+
+.filtres-legende-contenu .menu-legende-liste {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3px 12px;
+}
+
+.filtres-legende-contenu .menu-legende-item {
+  min-width: 0;
+  min-height: 27px;
+  color: #344054;
+  font-size: 0.69rem;
+  font-weight: 650;
+}
+
+.filtres-legende-contenu #liste-legende-lignes-filtres {
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 720px) {
+  .filtres-legende-contenu {
+    max-height: calc(min(88dvh, 780px) - 64px);
+    padding-bottom: max(18px, env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 370px) {
+  .filtres-legende-contenu {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .filtres-legende-contenu .menu-legende-liste {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .filtres-legende-contenu {
+    animation: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .filtres-retour {
+    color: #dbe8f7;
+    background: rgba(148, 163, 184, 0.12);
+  }
+
+  .filtres-legende-contenu .menu-legende-section {
+    border-color: rgba(148, 163, 184, 0.16);
+    background: rgba(148, 163, 184, 0.08);
+  }
+
+  .filtres-legende-contenu .menu-legende-section-titre,
+  .filtres-legende-contenu .menu-legende-item {
+    color: #eff6ff;
+  }
+}
+
+.mode-sombre-carte .filtres-retour {
+  color: #dbe8f7;
+  background: rgba(148, 163, 184, 0.12);
+}
+
+.mode-sombre-carte .filtres-legende-contenu .menu-legende-section {
+  border-color: rgba(148, 163, 184, 0.16);
+  background: rgba(148, 163, 184, 0.08);
+}
+
+.mode-sombre-carte .filtres-legende-contenu .menu-legende-section-titre,
+.mode-sombre-carte .filtres-legende-contenu .menu-legende-item {
+  color: #eff6ff;
+}
+
+/* Les deux feuilles mobiles partagent exactement le même gabarit visuel. */
+@media (max-width: 720px) {
+  .menu-fonds,
+  .menu-filtres {
+    max-height: min(86dvh, 760px);
+  }
+
+  .controle-filtres.est-ouvert .menu-filtres {
+    animation: none;
+  }
+
+  .fonds-entete,
+  .filtres-entete {
+    padding-top: 17px;
+  }
+
+  .fonds-contenu,
+  .filtres-contenu,
+  .filtres-legende-contenu {
+    max-height: calc(min(86dvh, 760px) - 58px);
+  }
 }

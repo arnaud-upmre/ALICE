@@ -1732,6 +1732,10 @@ const boutonFiltresFermer = document.getElementById("filtres-fermer");
 const boutonFiltresDefaut = document.getElementById("filtres-defaut");
 const resumeFiltres = document.getElementById("filtres-resume");
 const enteteMenuFiltres = controleFiltres?.querySelector(".filtres-entete");
+const titreMenuFiltres = document.getElementById("filtres-titre");
+const contenuPrincipalFiltres = controleFiltres?.querySelector(".filtres-contenu");
+const contenuLegendeFiltres = document.getElementById("filtres-legende-contenu");
+const boutonRetourFiltres = document.getElementById("filtres-retour");
 const boutonItineraire = document.getElementById("bouton-itineraire");
 const boutonLocalisationMobile = document.getElementById("bouton-localisation-mobile");
 const boutonLegendeFiltres = document.getElementById("bouton-legende-filtres");
@@ -1773,6 +1777,7 @@ const boutonSortieMesure = document.getElementById("bouton-sortie-mesure");
 const menuLegendeCarte = document.getElementById("menu-legende-carte");
 const boutonFermerLegende = document.getElementById("bouton-fermer-legende");
 const listeLegendeLignesOsm = document.getElementById("liste-legende-lignes-osm");
+const listeLegendeLignesFiltres = document.getElementById("liste-legende-lignes-filtres");
 const modalApropos = document.getElementById("modal-apropos");
 const boutonFermerModalApropos = document.getElementById("modal-apropos-fermer");
 const pillVersionApropos = document.getElementById("apropos-version-pill");
@@ -1793,13 +1798,16 @@ let moduleItineraire = null;
 let promesseChargementModuleItineraire = null;
 
 function rendreLegendeLignesOsm() {
-  if (!listeLegendeLignesOsm) {
-    return;
-  }
-  listeLegendeLignesOsm.innerHTML = LEGENDE_LIGNES_FERROVIAIRES.map(
+  const contenu = LEGENDE_LIGNES_FERROVIAIRES.map(
     (item) =>
       `<li class="menu-legende-item"><span class="menu-legende-trait ${item.className}"></span>${echapperHtml(item.label)}</li>`
   ).join("");
+  if (listeLegendeLignesOsm) {
+    listeLegendeLignesOsm.innerHTML = contenu;
+  }
+  if (listeLegendeLignesFiltres) {
+    listeLegendeLignesFiltres.innerHTML = contenu;
+  }
 }
 rendreLegendeLignesOsm();
 let moduleLocalisation = null;
@@ -10268,30 +10276,136 @@ function afficherOngletFonds(categorie) {
   }
 }
 
-let temporisationNettoyageGlissementFonds = null;
-
-function nettoyerGlissementMenuFonds() {
-  if (temporisationNettoyageGlissementFonds) {
-    window.clearTimeout(temporisationNettoyageGlissementFonds);
-    temporisationNettoyageGlissementFonds = null;
-  }
-  menuFonds?.classList.remove("est-glisse");
-  menuFonds?.style.removeProperty("transform");
-  menuFonds?.style.removeProperty("transition");
-  fondsScrim?.style.removeProperty("opacity");
-  enteteMenuFonds?.classList.remove("est-glissee");
+function interfacePanneauCoulissantEstMobile() {
+  return window.matchMedia?.("(max-width: 720px)")?.matches === true;
 }
+
+function creerGestionnairePanneauCoulissant({
+  controle,
+  panneau,
+  entete,
+  scrim,
+  selecteurActions,
+  fermer
+}) {
+  let temporisationNettoyage = null;
+  let glissementActif = false;
+  let pointeurGlissement = null;
+  let positionDepart = 0;
+  let heureDepart = 0;
+  let distanceGlissement = 0;
+
+  function nettoyer() {
+    if (temporisationNettoyage) {
+      window.clearTimeout(temporisationNettoyage);
+      temporisationNettoyage = null;
+    }
+    panneau?.classList.remove("est-glisse");
+    panneau?.style.removeProperty("transform");
+    panneau?.style.removeProperty("transition");
+    scrim?.style.removeProperty("opacity");
+    entete?.classList.remove("est-glissee");
+  }
+
+  function commencer(event) {
+    if (
+      !interfacePanneauCoulissantEstMobile() ||
+      !controle?.classList.contains("est-ouvert") ||
+      event.button !== 0 ||
+      (selecteurActions && event.target.closest(selecteurActions))
+    ) {
+      return;
+    }
+
+    glissementActif = true;
+    pointeurGlissement = event.pointerId;
+    positionDepart = event.clientY;
+    heureDepart = performance.now();
+    distanceGlissement = 0;
+    panneau?.classList.add("est-glisse");
+    entete?.classList.add("est-glissee");
+    panneau?.style.setProperty("transition", "none");
+    try {
+      entete?.setPointerCapture(event.pointerId);
+    } catch (_erreur) {
+      // Le geste reste fonctionnel même si la capture du pointeur est indisponible.
+    }
+  }
+
+  function suivre(event) {
+    if (!glissementActif || event.pointerId !== pointeurGlissement || !panneau) {
+      return;
+    }
+    distanceGlissement = Math.max(0, event.clientY - positionDepart);
+    panneau.style.setProperty("transform", `translateY(${distanceGlissement}px)`);
+    const hauteurPanneau = Math.max(1, panneau.getBoundingClientRect().height);
+    const progression = Math.min(1, distanceGlissement / hauteurPanneau);
+    scrim?.style.setProperty("opacity", String(Math.max(0, 1 - progression * 1.25)));
+    if (distanceGlissement > 0) {
+      event.preventDefault();
+    }
+  }
+
+  function terminer(event) {
+    if (!glissementActif || event.pointerId !== pointeurGlissement || !panneau) {
+      return;
+    }
+
+    glissementActif = false;
+    pointeurGlissement = null;
+    entete?.classList.remove("est-glissee");
+    const duree = Math.max(1, performance.now() - heureDepart);
+    const vitesse = distanceGlissement / duree;
+    const seuilDistance = Math.min(150, panneau.getBoundingClientRect().height * 0.24);
+    const doitFermer = distanceGlissement >= seuilDistance || (distanceGlissement > 44 && vitesse > 0.65);
+
+    panneau.style.setProperty("transition", "transform 220ms cubic-bezier(.22,.78,.22,1)");
+    if (doitFermer) {
+      panneau.style.setProperty("transform", "translateY(calc(100% + 24px))");
+      scrim?.style.setProperty("opacity", "0");
+      temporisationNettoyage = window.setTimeout(() => {
+        fermer();
+        nettoyer();
+      }, 220);
+      return;
+    }
+
+    panneau.style.setProperty("transform", "translateY(0)");
+    scrim?.style.setProperty("opacity", "1");
+    temporisationNettoyage = window.setTimeout(nettoyer, 220);
+  }
+
+  return { nettoyer, commencer, suivre, terminer };
+}
+
+const gestionGlissementFonds = creerGestionnairePanneauCoulissant({
+  controle: controleFonds,
+  panneau: menuFonds,
+  entete: enteteMenuFonds,
+  scrim: fondsScrim,
+  selecteurActions: ".fonds-fermer",
+  fermer: () => fermerMenuFonds({ conserverAnimationGlissement: true })
+});
+
+const gestionGlissementFiltres = creerGestionnairePanneauCoulissant({
+  controle: controleFiltres,
+  panneau: menuFiltres,
+  entete: enteteMenuFiltres,
+  scrim: filtresScrim,
+  selecteurActions: ".filtres-fermer, .filtres-retour",
+  fermer: () => fermerMenuFiltres({ conserverAnimationGlissement: true })
+});
 
 function fermerMenuFonds(options = {}) {
   controleFonds.classList.remove("est-ouvert");
   boutonFonds.setAttribute("aria-expanded", "false");
   if (!options.conserverAnimationGlissement) {
-    nettoyerGlissementMenuFonds();
+    gestionGlissementFonds.nettoyer();
   }
 }
 
 function ouvrirMenuFonds() {
-  nettoyerGlissementMenuFonds();
+  gestionGlissementFonds.nettoyer();
   mettreAJourSelection(fondActif);
   afficherOngletFonds(categorieFondManuel(fondManuelActif));
   controleFonds.classList.add("est-ouvert");
@@ -10307,114 +10421,21 @@ function basculerMenuFonds() {
   ouvrirMenuFonds();
 }
 
-let glissementFondsActif = false;
-let pointeurGlissementFonds = null;
-let positionDepartGlissementFonds = 0;
-let heureDepartGlissementFonds = 0;
-let distanceGlissementFonds = 0;
-
-function interfaceFondsEstMobile() {
-  return window.matchMedia?.("(max-width: 720px)")?.matches === true;
-}
-
-function commencerGlissementMenuFonds(event) {
-  if (
-    !interfaceFondsEstMobile() ||
-    !controleFonds.classList.contains("est-ouvert") ||
-    event.button !== 0 ||
-    event.target.closest(".fonds-fermer")
-  ) {
-    return;
-  }
-
-  glissementFondsActif = true;
-  pointeurGlissementFonds = event.pointerId;
-  positionDepartGlissementFonds = event.clientY;
-  heureDepartGlissementFonds = performance.now();
-  distanceGlissementFonds = 0;
-  menuFonds?.classList.add("est-glisse");
-  enteteMenuFonds?.classList.add("est-glissee");
-  menuFonds?.style.setProperty("transition", "none");
-  try {
-    enteteMenuFonds?.setPointerCapture(event.pointerId);
-  } catch (_erreur) {
-    // Le geste reste fonctionnel même si la capture du pointeur est indisponible.
-  }
-}
-
-function suivreGlissementMenuFonds(event) {
-  if (!glissementFondsActif || event.pointerId !== pointeurGlissementFonds || !menuFonds) {
-    return;
-  }
-  distanceGlissementFonds = Math.max(0, event.clientY - positionDepartGlissementFonds);
-  menuFonds.style.setProperty("transform", `translateY(${distanceGlissementFonds}px)`);
-  const hauteurPanneau = Math.max(1, menuFonds.getBoundingClientRect().height);
-  const progression = Math.min(1, distanceGlissementFonds / hauteurPanneau);
-  fondsScrim?.style.setProperty("opacity", String(Math.max(0, 1 - progression * 1.25)));
-  if (distanceGlissementFonds > 0) {
-    event.preventDefault();
-  }
-}
-
-function terminerGlissementMenuFonds(event) {
-  if (!glissementFondsActif || event.pointerId !== pointeurGlissementFonds || !menuFonds) {
-    return;
-  }
-
-  glissementFondsActif = false;
-  pointeurGlissementFonds = null;
-  enteteMenuFonds?.classList.remove("est-glissee");
-  const duree = Math.max(1, performance.now() - heureDepartGlissementFonds);
-  const vitesse = distanceGlissementFonds / duree;
-  const seuilDistance = Math.min(150, menuFonds.getBoundingClientRect().height * 0.24);
-  const doitFermer = distanceGlissementFonds >= seuilDistance || (distanceGlissementFonds > 44 && vitesse > 0.65);
-
-  menuFonds.style.setProperty("transition", "transform 220ms cubic-bezier(.22,.78,.22,1)");
-  if (doitFermer) {
-    menuFonds.style.setProperty("transform", "translateY(calc(100% + 24px))");
-    fondsScrim?.style.setProperty("opacity", "0");
-    temporisationNettoyageGlissementFonds = window.setTimeout(() => {
-      fermerMenuFonds({ conserverAnimationGlissement: true });
-      nettoyerGlissementMenuFonds();
-    }, 220);
-    return;
-  }
-
-  menuFonds.style.setProperty("transform", "translateY(0)");
-  fondsScrim?.style.setProperty("opacity", "1");
-  temporisationNettoyageGlissementFonds = window.setTimeout(nettoyerGlissementMenuFonds, 220);
-}
-
-let temporisationNettoyageGlissementFiltres = null;
-let glissementFiltresActif = false;
-let pointeurGlissementFiltres = null;
-let positionDepartGlissementFiltres = 0;
-let heureDepartGlissementFiltres = 0;
-let distanceGlissementFiltres = 0;
-
-function nettoyerGlissementMenuFiltres() {
-  if (temporisationNettoyageGlissementFiltres) {
-    window.clearTimeout(temporisationNettoyageGlissementFiltres);
-    temporisationNettoyageGlissementFiltres = null;
-  }
-  menuFiltres?.classList.remove("est-glisse");
-  menuFiltres?.style.removeProperty("transform");
-  menuFiltres?.style.removeProperty("transition");
-  filtresScrim?.style.removeProperty("opacity");
-  enteteMenuFiltres?.classList.remove("est-glissee");
-}
-
 function fermerMenuFiltres(options = {}) {
   controleFiltres.classList.remove("est-ouvert");
   boutonFiltres.setAttribute("aria-expanded", "false");
   filtresScrim?.setAttribute("aria-hidden", "true");
+  afficherVuePrincipaleFiltres();
   if (!options.conserverAnimationGlissement) {
-    nettoyerGlissementMenuFiltres();
+    gestionGlissementFiltres.nettoyer();
   }
 }
 
 function mettreAJourResumeFiltres() {
   if (!resumeFiltres || !menuFiltres) {
+    return;
+  }
+  if (contenuLegendeFiltres && !contenuLegendeFiltres.hidden) {
     return;
   }
 
@@ -10424,6 +10445,41 @@ function mettreAJourResumeFiltres() {
   )?.closest(".option-filtre-ligne")?.querySelector("strong")?.childNodes?.[0]?.textContent?.trim();
   const libelleCouches = `${nombreActif} ${nombreActif > 1 ? "couches actives" : "couche active"}`;
   resumeFiltres.textContent = ligneActive ? `${libelleCouches} · Tracé ${ligneActive}` : libelleCouches;
+}
+
+function afficherVuePrincipaleFiltres() {
+  if (contenuPrincipalFiltres) {
+    contenuPrincipalFiltres.hidden = false;
+  }
+  if (contenuLegendeFiltres) {
+    contenuLegendeFiltres.hidden = true;
+  }
+  if (boutonRetourFiltres) {
+    boutonRetourFiltres.hidden = true;
+  }
+  if (titreMenuFiltres) {
+    titreMenuFiltres.textContent = "Affichage de la carte";
+  }
+  mettreAJourResumeFiltres();
+}
+
+function afficherLegendeDansFiltres() {
+  if (contenuPrincipalFiltres) {
+    contenuPrincipalFiltres.hidden = true;
+  }
+  if (contenuLegendeFiltres) {
+    contenuLegendeFiltres.hidden = false;
+    contenuLegendeFiltres.scrollTop = 0;
+  }
+  if (boutonRetourFiltres) {
+    boutonRetourFiltres.hidden = false;
+  }
+  if (titreMenuFiltres) {
+    titreMenuFiltres.textContent = "Légende";
+  }
+  if (resumeFiltres) {
+    resumeFiltres.textContent = "Couleurs et symboles de la carte";
+  }
 }
 
 function estTraceFerroviaireActif() {
@@ -10454,81 +10510,13 @@ function synchroniserDisponibilitePk() {
 }
 
 function ouvrirMenuFiltres() {
-  nettoyerGlissementMenuFiltres();
+  gestionGlissementFiltres.nettoyer();
+  afficherVuePrincipaleFiltres();
   synchroniserDisponibilitePk();
   mettreAJourResumeFiltres();
   controleFiltres.classList.add("est-ouvert");
   boutonFiltres.setAttribute("aria-expanded", "true");
   filtresScrim?.setAttribute("aria-hidden", "false");
-}
-
-function commencerGlissementMenuFiltres(event) {
-  if (
-    !interfaceFondsEstMobile() ||
-    !controleFiltres.classList.contains("est-ouvert") ||
-    event.button !== 0 ||
-    event.target.closest(".filtres-fermer")
-  ) {
-    return;
-  }
-
-  glissementFiltresActif = true;
-  pointeurGlissementFiltres = event.pointerId;
-  positionDepartGlissementFiltres = event.clientY;
-  heureDepartGlissementFiltres = performance.now();
-  distanceGlissementFiltres = 0;
-  menuFiltres?.classList.add("est-glisse");
-  enteteMenuFiltres?.classList.add("est-glissee");
-  menuFiltres?.style.setProperty("transition", "none");
-  try {
-    enteteMenuFiltres?.setPointerCapture(event.pointerId);
-  } catch (_erreur) {
-    // Le geste reste fonctionnel même si la capture du pointeur est indisponible.
-  }
-}
-
-function suivreGlissementMenuFiltres(event) {
-  if (!glissementFiltresActif || event.pointerId !== pointeurGlissementFiltres || !menuFiltres) {
-    return;
-  }
-  distanceGlissementFiltres = Math.max(0, event.clientY - positionDepartGlissementFiltres);
-  menuFiltres.style.setProperty("transform", `translateY(${distanceGlissementFiltres}px)`);
-  const hauteurPanneau = Math.max(1, menuFiltres.getBoundingClientRect().height);
-  const progression = Math.min(1, distanceGlissementFiltres / hauteurPanneau);
-  filtresScrim?.style.setProperty("opacity", String(Math.max(0, 1 - progression * 1.25)));
-  if (distanceGlissementFiltres > 0) {
-    event.preventDefault();
-  }
-}
-
-function terminerGlissementMenuFiltres(event) {
-  if (!glissementFiltresActif || event.pointerId !== pointeurGlissementFiltres || !menuFiltres) {
-    return;
-  }
-
-  glissementFiltresActif = false;
-  pointeurGlissementFiltres = null;
-  enteteMenuFiltres?.classList.remove("est-glissee");
-  const duree = Math.max(1, performance.now() - heureDepartGlissementFiltres);
-  const vitesse = distanceGlissementFiltres / duree;
-  const seuilDistance = Math.min(150, menuFiltres.getBoundingClientRect().height * 0.24);
-  const doitFermer =
-    distanceGlissementFiltres >= seuilDistance || (distanceGlissementFiltres > 44 && vitesse > 0.65);
-
-  menuFiltres.style.setProperty("transition", "transform 220ms cubic-bezier(.22,.78,.22,1)");
-  if (doitFermer) {
-    menuFiltres.style.setProperty("transform", "translateY(calc(100% + 24px))");
-    filtresScrim?.style.setProperty("opacity", "0");
-    temporisationNettoyageGlissementFiltres = window.setTimeout(() => {
-      fermerMenuFiltres({ conserverAnimationGlissement: true });
-      nettoyerGlissementMenuFiltres();
-    }, 220);
-    return;
-  }
-
-  menuFiltres.style.setProperty("transform", "translateY(0)");
-  filtresScrim?.style.setProperty("opacity", "1");
-  temporisationNettoyageGlissementFiltres = window.setTimeout(nettoyerGlissementMenuFiltres, 220);
 }
 
 function basculerMenuFiltres() {
@@ -11052,10 +11040,10 @@ boutonFonds.addEventListener("click", (event) => {
 
 boutonFondsFermer?.addEventListener("click", fermerMenuFonds);
 fondsScrim?.addEventListener("click", fermerMenuFonds);
-enteteMenuFonds?.addEventListener("pointerdown", commencerGlissementMenuFonds);
-window.addEventListener("pointermove", suivreGlissementMenuFonds, { passive: false });
-window.addEventListener("pointerup", terminerGlissementMenuFonds);
-window.addEventListener("pointercancel", terminerGlissementMenuFonds);
+enteteMenuFonds?.addEventListener("pointerdown", gestionGlissementFonds.commencer);
+window.addEventListener("pointermove", gestionGlissementFonds.suivre, { passive: false });
+window.addEventListener("pointerup", gestionGlissementFonds.terminer);
+window.addEventListener("pointercancel", gestionGlissementFonds.terminer);
 
 if (caseAppareils) {
   caseAppareils.addEventListener("change", async () => {
@@ -11438,10 +11426,10 @@ boutonFiltres.addEventListener("click", (event) => {
 
 boutonFiltresFermer?.addEventListener("click", fermerMenuFiltres);
 filtresScrim?.addEventListener("click", fermerMenuFiltres);
-enteteMenuFiltres?.addEventListener("pointerdown", commencerGlissementMenuFiltres);
-window.addEventListener("pointermove", suivreGlissementMenuFiltres, { passive: false });
-window.addEventListener("pointerup", terminerGlissementMenuFiltres);
-window.addEventListener("pointercancel", terminerGlissementMenuFiltres);
+enteteMenuFiltres?.addEventListener("pointerdown", gestionGlissementFiltres.commencer);
+window.addEventListener("pointermove", gestionGlissementFiltres.suivre, { passive: false });
+window.addEventListener("pointerup", gestionGlissementFiltres.terminer);
+window.addEventListener("pointercancel", gestionGlissementFiltres.terminer);
 menuFiltres?.addEventListener("change", () => {
   window.requestAnimationFrame(mettreAJourResumeFiltres);
 });
@@ -11525,13 +11513,11 @@ if (boutonInfoCarte) {
 if (boutonLegendeFiltres) {
   boutonLegendeFiltres.addEventListener("click", (event) => {
     event.stopPropagation();
-    fermerMenuFonds();
-    fermerResultatsRecherche();
-    fermerMenuContextuel();
-    fermerMenuFiltres();
-    basculerMenuLegende();
+    afficherLegendeDansFiltres();
   });
 }
+
+boutonRetourFiltres?.addEventListener("click", afficherVuePrincipaleFiltres);
 
 if (boutonFermerLegende) {
   boutonFermerLegende.addEventListener("click", () => {

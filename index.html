@@ -21,7 +21,7 @@
     <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
     <link href="https://unpkg.com/maplibre-gl@6.0.0/dist/maplibre-gl.css" rel="stylesheet" />
     <link rel="stylesheet" href="./theme.css" />
-    <link rel="stylesheet" href="./styles.css?v=2.0.44" />
+    <link rel="stylesheet" href="./styles.css?v=2.0.46" />
   </head>
   <body>
     <div id="map"></div>
@@ -92,6 +92,7 @@
       <div class="filtres-scrim" id="filtres-scrim" aria-hidden="true"></div>
       <form class="menu-filtres" role="dialog" aria-modal="true" aria-labelledby="filtres-titre">
         <header class="filtres-entete">
+          <button class="filtres-retour" id="filtres-retour" type="button" aria-label="Retour à l’affichage de la carte" hidden>‹</button>
           <div>
             <h2 class="filtres-titre" id="filtres-titre">Affichage de la carte</h2>
             <p class="filtres-resume" id="filtres-resume" aria-live="polite">0 couche active</p>
@@ -175,9 +176,35 @@
             <small>Comprendre les couleurs et symboles</small>
             <i aria-hidden="true">›</i>
           </button>
-          <button class="filtres-defaut" id="filtres-defaut" type="button">
-            Réactiver les filtres par défaut
-          </button>
+          <button class="fonds-defaut filtres-defaut" id="filtres-defaut" type="button">Revenir par défaut</button>
+        </div>
+
+        <div class="filtres-legende-contenu" id="filtres-legende-contenu" hidden>
+          <section class="menu-legende-section">
+            <p class="menu-legende-section-titre">Objets carte</p>
+            <ul class="menu-legende-liste">
+              <li class="menu-legende-item"><span class="menu-legende-pastille pastille-acces"></span>Accès voiture</li>
+              <li class="menu-legende-item"><span class="menu-legende-pastille pastille-poste"></span>Postes</li>
+              <li class="menu-legende-item"><span class="menu-legende-pastille pastille-poste-sat"></span>SAT</li>
+              <li class="menu-legende-item"><span class="menu-legende-pastille pastille-pn"></span>Passages à niveau</li>
+              <li class="menu-legende-item"><span class="menu-legende-pastille pastille-hp"></span>Hors patrimoine</li>
+            </ul>
+          </section>
+          <section class="menu-legende-section">
+            <p class="menu-legende-section-titre">Couleurs appareils</p>
+            <ul class="menu-legende-liste">
+              <li class="menu-legende-item"><span class="menu-legende-pastille pastille-app-du"></span>Dispositif d’urgence</li>
+              <li class="menu-legende-item"><span class="menu-legende-pastille pastille-app-si"></span>Interrupteur</li>
+              <li class="menu-legende-item"><span class="menu-legende-pastille pastille-app-tt"></span>Transformateur</li>
+              <li class="menu-legende-item"><span class="menu-legende-pastille pastille-app-t"></span>Sectionneur</li>
+              <li class="menu-legende-item"><span class="menu-legende-pastille pastille-app-alim"></span>Alimentation</li>
+              <li class="menu-legende-item"><span class="menu-legende-pastille pastille-app-autre"></span>Autres</li>
+            </ul>
+          </section>
+          <section class="menu-legende-section">
+            <p class="menu-legende-section-titre">Lignes OSM et ORM vectorielles</p>
+            <ul class="menu-legende-liste" id="liste-legende-lignes-filtres"></ul>
+          </section>
         </div>
       </form>
     </div>
@@ -297,7 +324,7 @@
             </div>
           </div>
 
-          <button class="fonds-defaut" id="fonds-defaut" type="button">Revenir au fond par défaut</button>
+          <button class="fonds-defaut" id="fonds-defaut" type="button">Revenir par défaut</button>
         </div>
       </section>
     </div>
@@ -541,7 +568,7 @@
         "./referentiel-lignes.js",
         "./code.js",
         "./recherche.js",
-        "./app.js?v=2.0.44",
+        "./app.js?v=2.0.46",
         "./notification.js"
       ];
 

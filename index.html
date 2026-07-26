@@ -21,7 +21,7 @@
     <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
     <link href="https://unpkg.com/maplibre-gl@6.0.0/dist/maplibre-gl.css" rel="stylesheet" />
     <link rel="stylesheet" href="./theme.css" />
-    <link rel="stylesheet" href="./styles.css?v=2.0.36" />
+    <link rel="stylesheet" href="./styles.css?v=2.0.37" />
   </head>
   <body>
     <div id="map"></div>
@@ -140,66 +140,101 @@
         </svg>
       </button>
 
-      <form class="menu-fonds" role="radiogroup" aria-label="Fond de carte">
-        <label class="option-fond">
-          <input type="radio" name="fond" value="ignAuto" checked />
-          <span id="libelle-fond-auto-ign">Auto Voyager + Satellite IGN</span>
-        </label>
-        <label class="option-fond">
-          <input type="radio" name="fond" value="esriAuto" />
-          <span id="libelle-fond-auto-esri">Auto Voyager + Satellite ESRI</span>
-        </label>
-        <label class="option-fond">
-          <input type="radio" name="fond" value="positron" />
-          <span>Positron</span>
-        </label>
-        <label class="option-fond">
-          <input type="radio" name="fond" value="voyager" />
-          <span>Voyager</span>
-        </label>
-        <label class="option-fond">
-          <input type="radio" name="fond" value="darkMatter" />
-          <span>CARTO Dark Matter</span>
-        </label>
-        <label class="option-fond">
-          <input type="radio" name="fond" value="planIgn" />
-          <span>Plan IGN</span>
-        </label>
-        <label class="option-fond">
-          <input type="radio" name="fond" value="cadastreIgn" />
-          <span>Plan IGN + cadastre</span>
-        </label>
-        <label class="option-fond">
-          <input type="radio" name="fond" value="satelliteCadastreIgn" />
-          <span>Satellite IGN + cadastre</span>
-        </label>
-        <label class="option-fond">
-          <input type="radio" name="fond" value="osm" />
-          <span>OSM Standard</span>
-        </label>
-        <div class="option-fond-beta">
-          <label class="option-fond">
-            <input type="radio" name="fond" value="satelliteIgn" />
-            <span>Satellite IGN</span>
+      <div class="fonds-scrim" id="fonds-scrim" aria-hidden="true"></div>
+      <section class="menu-fonds" role="dialog" aria-modal="true" aria-label="Choisir le fond de carte">
+        <header class="fonds-entete">
+          <h2 class="fonds-titre">Fond de carte</h2>
+          <button class="fonds-fermer" id="fonds-fermer" type="button" aria-label="Fermer le choix du fond">×</button>
+        </header>
+
+        <div class="fonds-contenu">
+          <label class="fonds-auto">
+            <span>
+              <strong>Mode automatique</strong>
+              <small>Plan en vue générale, satellite en vue rapprochée.</small>
+            </span>
+            <input type="checkbox" id="mode-fond-auto" checked />
+            <span class="fonds-switch" aria-hidden="true"></span>
           </label>
-          <label class="option-ville">
-            <input type="checkbox" id="labels-ign" />
-            <span class="switch-ville" aria-hidden="true"></span>
-            <span class="option-ville-label">Ville</span>
+
+          <div class="fonds-auto-reglages" id="fonds-auto-reglages">
+            <p class="fonds-aide">La carte change progressivement à partir du zoom 13.</p>
+
+            <fieldset class="fonds-groupe">
+              <legend>Mon plan classique <span>Vue éloignée</span></legend>
+              <div class="fonds-grille">
+                <button class="fonds-carte apercu-positron" type="button" data-fond-auto-base="positron">
+                  <span><strong>Positron</strong><small>Très épuré</small></span><i>✓</i>
+                </button>
+                <button class="fonds-carte apercu-voyager" type="button" data-fond-auto-base="voyager">
+                  <span><strong>Voyager</strong><small>Clair et détaillé</small></span><i>✓</i>
+                </button>
+                <button class="fonds-carte apercu-sombre" type="button" data-fond-auto-base="darkMatter">
+                  <span><strong>Dark Matter</strong><small>Confort de nuit</small></span><i>✓</i>
+                </button>
+                <button class="fonds-carte apercu-plan-ign" type="button" data-fond-auto-base="planIgn">
+                  <span><strong>Plan IGN</strong><small>Référence française</small></span><i>✓</i>
+                </button>
+                <button class="fonds-carte apercu-osm" type="button" data-fond-auto-base="osm">
+                  <span><strong>OSM Standard</strong><small>Carte ouverte</small></span><i>✓</i>
+                </button>
+              </div>
+            </fieldset>
+
+            <fieldset class="fonds-groupe">
+              <legend>Mon satellite <span>Vue rapprochée</span></legend>
+              <div class="fonds-grille">
+                <button class="fonds-carte apercu-satellite-ign" type="button" data-fond-auto-satellite="ignAuto">
+                  <span><strong>Satellite IGN</strong><small>France · précision</small></span><i>✓</i>
+                </button>
+                <button class="fonds-carte apercu-satellite-esri" type="button" data-fond-auto-satellite="esriAuto">
+                  <span><strong>Satellite ESRI</strong><small>Couverture mondiale</small></span><i>✓</i>
+                </button>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="fonds-manuel" id="fonds-manuel" hidden>
+            <div class="fonds-onglets" role="tablist" aria-label="Famille de fonds">
+              <button class="est-selectionne" type="button" role="tab" aria-selected="true" data-fonds-onglet="plans">Plans</button>
+              <button type="button" role="tab" aria-selected="false" data-fonds-onglet="satellites">Satellites</button>
+              <button type="button" role="tab" aria-selected="false" data-fonds-onglet="cadastre">Cadastre</button>
+            </div>
+
+            <div class="fonds-groupe fonds-liste-manuelle" data-fonds-panneau="plans">
+              <div class="fonds-grille">
+                <button class="fonds-carte apercu-positron" type="button" data-fond="positron"><span><strong>Positron</strong><small>Très épuré</small></span><i>✓</i></button>
+                <button class="fonds-carte apercu-voyager" type="button" data-fond="voyager"><span><strong>Voyager</strong><small>Clair et détaillé</small></span><i>✓</i></button>
+                <button class="fonds-carte apercu-sombre" type="button" data-fond="darkMatter"><span><strong>Dark Matter</strong><small>Confort de nuit</small></span><i>✓</i></button>
+                <button class="fonds-carte apercu-plan-ign" type="button" data-fond="planIgn"><span><strong>Plan IGN</strong><small>Référence française</small></span><i>✓</i></button>
+                <button class="fonds-carte apercu-osm" type="button" data-fond="osm"><span><strong>OSM Standard</strong><small>Carte ouverte</small></span><i>✓</i></button>
+              </div>
+            </div>
+
+            <div class="fonds-groupe fonds-liste-manuelle" data-fonds-panneau="satellites" hidden>
+              <div class="fonds-grille">
+                <button class="fonds-carte apercu-satellite-ign" type="button" data-fond="satelliteIgn"><span><strong>Satellite IGN</strong><small>France · précision</small></span><i>✓</i></button>
+                <button class="fonds-carte apercu-satellite-esri" type="button" data-fond="satelliteEsri"><span><strong>Satellite ESRI</strong><small>Couverture mondiale</small></span><i>✓</i></button>
+              </div>
+            </div>
+
+            <div class="fonds-groupe fonds-liste-manuelle" data-fonds-panneau="cadastre" hidden>
+              <div class="fonds-grille">
+                <button class="fonds-carte apercu-cadastre-plan" type="button" data-fond="cadastreIgn"><span><strong>Plan IGN + cadastre</strong><small>Parcelles sur le plan</small></span><i>✓</i></button>
+                <button class="fonds-carte apercu-cadastre-satellite" type="button" data-fond="satelliteCadastreIgn"><span><strong>Satellite IGN + cadastre</strong><small>Parcelles sur la photo</small></span><i>✓</i></button>
+              </div>
+            </div>
+          </div>
+
+          <label class="fonds-option-villes">
+            <span><strong>Noms des villes</strong><small>Ajoute les noms sur les vues satellite.</small></span>
+            <input type="checkbox" id="labels-villes" />
+            <span class="fonds-switch" aria-hidden="true"></span>
           </label>
+
+          <button class="fonds-defaut" id="fonds-defaut" type="button">Revenir au fond par défaut</button>
         </div>
-        <div class="option-fond-beta">
-          <label class="option-fond">
-            <input type="radio" name="fond" value="satelliteEsri" />
-            <span>Satellite ESRI</span>
-          </label>
-          <label class="option-ville">
-            <input type="checkbox" id="labels-esri" />
-            <span class="switch-ville" aria-hidden="true"></span>
-            <span class="option-ville-label">Ville</span>
-          </label>
-        </div>
-      </form>
+      </section>
     </div>
 
     <div class="panneau-mesure" id="panneau-mesure" aria-live="polite">

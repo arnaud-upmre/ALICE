@@ -2132,12 +2132,6 @@ body {
   margin: 0;
 }
 
-.option-filtre-secondaire {
-  margin-left: 22px;
-  font-size: 0.84rem;
-  color: #475569;
-}
-
 .filtre-compteur {
   color: #64748b;
   font-weight: 600;
@@ -4727,5 +4721,503 @@ body {
 
   .menu-contextuel-sousmenu {
     background: rgba(148, 163, 184, 0.12);
+  }
+}
+
+/* Sélecteur de fonds de carte — interface organisée et tactile */
+[hidden] {
+  display: none !important;
+}
+
+.controle-fonds.est-ouvert {
+  z-index: 40;
+}
+
+.fonds-scrim {
+  position: fixed;
+  inset: 0;
+  display: none;
+  background: rgba(15, 23, 42, 0.28);
+  backdrop-filter: blur(2px);
+}
+
+.controle-fonds.est-ouvert .fonds-scrim {
+  display: block;
+}
+
+.menu-fonds {
+  top: 0;
+  right: calc(100% + 10px);
+  width: min(390px, calc(100vw - 72px - env(safe-area-inset-left) - env(safe-area-inset-right)));
+  max-height: calc(100dvh - 28px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  padding: 0;
+  overflow: hidden;
+  border-radius: 24px;
+  border-color: rgba(31, 41, 55, 0.12);
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 26px 58px rgba(15, 23, 42, 0.28);
+}
+
+.fonds-entete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 18px 13px;
+  border-bottom: 1px solid rgba(31, 41, 55, 0.09);
+}
+
+.fonds-titre {
+  margin: 0;
+  color: #172033;
+  font-size: 1.18rem;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+
+.fonds-fermer {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  border: 0;
+  border-radius: 999px;
+  background: #eef2f6;
+  color: #48566a;
+  font-size: 1.45rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.fonds-contenu {
+  max-height: calc(100dvh - 94px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  padding: 14px 18px 18px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.fonds-auto,
+.fonds-option-villes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  cursor: pointer;
+}
+
+.fonds-auto {
+  padding: 13px;
+  border: 1px solid #d9e5f8;
+  border-radius: 16px;
+  background: #f3f7fe;
+}
+
+.fonds-auto strong,
+.fonds-option-villes strong {
+  display: block;
+  color: #202b3c;
+  font-size: 0.87rem;
+}
+
+.fonds-auto small,
+.fonds-option-villes small {
+  display: block;
+  margin-top: 2px;
+  color: #6b7688;
+  font-size: 0.69rem;
+  line-height: 1.35;
+}
+
+.fonds-auto input,
+.fonds-option-villes input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fonds-switch {
+  position: relative;
+  width: 49px;
+  height: 29px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: #b8c3d0;
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.08);
+  transition: background 160ms ease;
+}
+
+.fonds-switch::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.24);
+  transition: transform 180ms ease;
+}
+
+.fonds-auto input:checked + .fonds-switch,
+.fonds-option-villes input:checked + .fonds-switch {
+  background: #1468e8;
+}
+
+.fonds-auto input:checked + .fonds-switch::after,
+.fonds-option-villes input:checked + .fonds-switch::after {
+  transform: translateX(20px);
+}
+
+.fonds-auto:focus-within .fonds-switch,
+.fonds-option-villes:focus-within .fonds-switch,
+.fonds-fermer:focus-visible,
+.fonds-carte:focus-visible,
+.fonds-onglets button:focus-visible,
+.fonds-defaut:focus-visible {
+  outline: 3px solid rgba(20, 104, 232, 0.3);
+  outline-offset: 2px;
+}
+
+.fonds-aide {
+  margin: 9px 2px 0;
+  color: #6b7688;
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+
+.fonds-groupe {
+  min-width: 0;
+  margin: 20px 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.fonds-groupe legend {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 9px;
+  padding: 0;
+  color: #293447;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+
+.fonds-groupe legend span {
+  color: #7a8595;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.fonds-grille {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.fonds-carte {
+  position: relative;
+  min-height: 72px;
+  display: flex;
+  align-items: flex-end;
+  padding: 9px;
+  overflow: hidden;
+  isolation: isolate;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  color: #172033;
+  background: #e7ece7;
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.fonds-carte::before,
+.fonds-carte::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.fonds-carte::after {
+  z-index: -1;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.08) 82%);
+}
+
+.fonds-carte strong {
+  display: block;
+  font-size: 0.73rem;
+  line-height: 1.2;
+}
+
+.fonds-carte small {
+  display: block;
+  margin-top: 2px;
+  opacity: 0.72;
+  font-size: 0.61rem;
+  line-height: 1.2;
+}
+
+.fonds-carte i {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 19px;
+  height: 19px;
+  display: none;
+  place-items: center;
+  border-radius: 50%;
+  color: #ffffff;
+  background: #1468e8;
+  font-size: 0.68rem;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.fonds-carte.est-selectionne {
+  border-color: #1468e8;
+  box-shadow: 0 0 0 2px #e7f0ff;
+}
+
+.fonds-carte.est-selectionne i {
+  display: grid;
+}
+
+.apercu-positron::before {
+  background: linear-gradient(28deg, transparent 44%, #ffffff 45% 51%, transparent 52%), #e9eeeb;
+}
+
+.apercu-voyager::before {
+  background: linear-gradient(25deg, transparent 44%, #ffffff 45% 51%, transparent 52%), #dce9d8;
+}
+
+.apercu-sombre,
+.apercu-satellite-ign,
+.apercu-satellite-esri,
+.apercu-cadastre-satellite {
+  color: #ffffff;
+}
+
+.apercu-sombre::before {
+  background: linear-gradient(28deg, transparent 44%, #53677d 45% 49%, transparent 50%), #1c2633;
+}
+
+.apercu-sombre::after {
+  background: linear-gradient(to top, rgba(13, 21, 31, 0.95), rgba(13, 21, 31, 0.05) 82%);
+}
+
+.apercu-plan-ign::before {
+  background: repeating-linear-gradient(115deg, transparent 0 20px, #ddb84c 21px 23px), #f1ecdf;
+}
+
+.apercu-osm::before {
+  background: linear-gradient(55deg, transparent 44%, #f4cf55 45% 51%, transparent 52%), #e2ecd9;
+}
+
+.apercu-satellite-ign::before {
+  background: radial-gradient(circle at 28% 38%, #91a879 0 18%, transparent 19%), #5f7855;
+}
+
+.apercu-satellite-esri::before {
+  background: radial-gradient(circle at 72% 28%, #a2ad7a 0 17%, transparent 18%), #526c53;
+}
+
+.apercu-satellite-ign::after,
+.apercu-satellite-esri::after,
+.apercu-cadastre-satellite::after {
+  background: linear-gradient(to top, rgba(12, 29, 20, 0.9), rgba(12, 29, 20, 0.04) 82%);
+}
+
+.apercu-cadastre-plan::before {
+  background:
+    repeating-linear-gradient(85deg, transparent 0 22px, rgba(218, 61, 61, 0.72) 23px 24px),
+    repeating-linear-gradient(5deg, transparent 0 18px, rgba(218, 61, 61, 0.72) 19px 20px),
+    #ede8da;
+}
+
+.apercu-cadastre-satellite::before {
+  background:
+    repeating-linear-gradient(85deg, transparent 0 22px, rgba(255, 232, 98, 0.76) 23px 24px),
+    repeating-linear-gradient(5deg, transparent 0 18px, rgba(255, 232, 98, 0.76) 19px 20px),
+    #596f50;
+}
+
+.fonds-manuel {
+  margin-top: 17px;
+}
+
+.fonds-onglets {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+  padding: 4px;
+  border-radius: 13px;
+  background: #edf1f5;
+}
+
+.fonds-onglets button {
+  min-height: 38px;
+  border: 0;
+  border-radius: 10px;
+  color: #677387;
+  background: transparent;
+  font-size: 0.72rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.fonds-onglets button.est-selectionne {
+  color: #172033;
+  background: #ffffff;
+  box-shadow: 0 2px 7px rgba(15, 23, 42, 0.1);
+}
+
+.fonds-liste-manuelle {
+  margin-top: 10px;
+}
+
+.fonds-option-villes {
+  margin-top: 14px;
+  padding: 12px 2px;
+}
+
+.fonds-option-villes .fonds-switch {
+  transform: scale(0.9);
+  transform-origin: right center;
+}
+
+.fonds-defaut {
+  width: 100%;
+  min-height: 42px;
+  margin-top: 8px;
+  border: 1px solid #d8dee7;
+  border-radius: 12px;
+  color: #536176;
+  background: #ffffff;
+  font-size: 0.73rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .controle-fonds.est-ouvert {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    pointer-events: none;
+  }
+
+  .controle-fonds.est-ouvert .bouton-fonds {
+    display: none;
+  }
+
+  .controle-fonds.est-ouvert .fonds-scrim,
+  .controle-fonds.est-ouvert .menu-fonds {
+    pointer-events: auto;
+  }
+
+  .menu-fonds {
+    position: fixed;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-height: min(86dvh, 760px);
+    border-width: 1px 0 0;
+    border-radius: 25px 25px 0 0;
+  }
+
+  .fonds-entete {
+    position: relative;
+    padding-top: 17px;
+  }
+
+  .fonds-entete::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    width: 40px;
+    height: 4px;
+    border-radius: 999px;
+    background: #d5dbe2;
+    transform: translateX(-50%);
+  }
+
+  .fonds-contenu {
+    max-height: calc(min(86dvh, 760px) - 58px);
+    padding-bottom: max(18px, env(safe-area-inset-bottom));
+  }
+
+  .fonds-carte {
+    min-height: 76px;
+  }
+}
+
+@media (max-width: 370px) {
+  .fonds-entete,
+  .fonds-contenu {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .menu-fonds {
+    border-color: rgba(148, 163, 184, 0.18);
+    background: rgba(10, 18, 31, 0.98);
+  }
+
+  .fonds-entete {
+    border-bottom-color: rgba(148, 163, 184, 0.14);
+  }
+
+  .fonds-titre,
+  .fonds-auto strong,
+  .fonds-option-villes strong,
+  .fonds-groupe legend {
+    color: #eff6ff;
+  }
+
+  .fonds-auto {
+    border-color: rgba(96, 165, 250, 0.22);
+    background: rgba(59, 130, 246, 0.1);
+  }
+
+  .fonds-auto small,
+  .fonds-option-villes small,
+  .fonds-aide,
+  .fonds-groupe legend span {
+    color: #aab8ca;
+  }
+
+  .fonds-fermer,
+  .fonds-defaut {
+    border-color: rgba(148, 163, 184, 0.16);
+    color: #dbe8f7;
+    background: rgba(148, 163, 184, 0.12);
+  }
+
+  .fonds-onglets {
+    background: rgba(148, 163, 184, 0.12);
+  }
+
+  .fonds-onglets button {
+    color: #aab8ca;
+  }
+
+  .fonds-onglets button.est-selectionne {
+    color: #eff6ff;
+    background: rgba(148, 163, 184, 0.18);
   }
 }

@@ -858,15 +858,56 @@ const fondsCartographiques = {
   satelliteEsri: styleSatelliteEsri
 };
 
+const CLE_STOCKAGE_FOND_CARTE = "alice-fond-carte-v2";
+const FONDS_BASE_AUTOMATIQUES = ["positron", "voyager", "darkMatter", "planIgn", "osm"];
+const FONDS_MANUELS = Object.keys(fondsCartographiques);
+const fondBaseAutomatiqueDefaut = window.matchMedia?.("(prefers-color-scheme: dark)")?.matches
+  ? FOND_BASE_AUTO_SOMBRE
+  : FOND_BASE_AUTO_CLAIR;
+const preferencesFondDefaut = {
+  automatique: true,
+  baseAutomatique: fondBaseAutomatiqueDefaut,
+  satelliteAutomatique: FOND_IGN_AUTOMATIQUE,
+  fondManuel: FOND_BASE_AUTO_CLAIR,
+  labelsVilles: false
+};
+
+function chargerPreferencesFondCarte() {
+  try {
+    const preferences = JSON.parse(localStorage.getItem(CLE_STOCKAGE_FOND_CARTE) || "null");
+    if (!preferences || typeof preferences !== "object") {
+      return { ...preferencesFondDefaut };
+    }
+    return {
+      automatique: preferences.automatique !== false,
+      baseAutomatique: FONDS_BASE_AUTOMATIQUES.includes(preferences.baseAutomatique)
+        ? preferences.baseAutomatique
+        : preferencesFondDefaut.baseAutomatique,
+      satelliteAutomatique:
+        preferences.satelliteAutomatique === FOND_ESRI_AUTOMATIQUE
+          ? FOND_ESRI_AUTOMATIQUE
+          : FOND_IGN_AUTOMATIQUE,
+      fondManuel: FONDS_MANUELS.includes(preferences.fondManuel)
+        ? preferences.fondManuel
+        : preferencesFondDefaut.fondManuel,
+      labelsVilles: preferences.labelsVilles === true
+    };
+  } catch (_erreur) {
+    return { ...preferencesFondDefaut };
+  }
+}
+
+const preferencesFondInitiales = chargerPreferencesFondCarte();
 const stylesFondsVectorielsPrepares = new Map();
 const promessesStylesFondsVectoriels = new Map();
 let compteurChangementFond = 0;
 
-let fondActif = window.matchMedia?.("(prefers-color-scheme: dark)")?.matches
-  ? FOND_BASE_AUTO_SOMBRE
-  : FOND_BASE_AUTO_CLAIR;
-let ignAutomatiqueActif = true;
-let modeAutoActif = FOND_IGN_AUTOMATIQUE;
+let fondBaseAutoActif = preferencesFondInitiales.baseAutomatique;
+let fondManuelActif = preferencesFondInitiales.fondManuel;
+let fondActif = preferencesFondInitiales.automatique ? fondBaseAutoActif : fondManuelActif;
+let ignAutomatiqueActif = preferencesFondInitiales.automatique;
+let modeAutoActif = preferencesFondInitiales.satelliteAutomatique;
+let labelsVillesActifs = preferencesFondInitiales.labelsVilles;
 let afficherAppareils = true;
 let afficherAcces = true;
 let afficherPostes = true;
@@ -1624,11 +1665,18 @@ mettreAJourControleAttributionCarte();
 
 const controleFonds = document.getElementById("controle-fonds");
 const boutonFonds = document.getElementById("bouton-fonds");
-const optionsFond = Array.from(document.querySelectorAll('input[name="fond"]'));
-const libelleFondAutoIgn = document.getElementById("libelle-fond-auto-ign");
-const libelleFondAutoEsri = document.getElementById("libelle-fond-auto-esri");
-const caseLabelsIgn = document.getElementById("labels-ign");
-const caseLabelsEsri = document.getElementById("labels-esri");
+const boutonsFondManuel = Array.from(document.querySelectorAll("[data-fond]"));
+const boutonsFondAutoBase = Array.from(document.querySelectorAll("[data-fond-auto-base]"));
+const boutonsFondAutoSatellite = Array.from(document.querySelectorAll("[data-fond-auto-satellite]"));
+const boutonsOngletsFonds = Array.from(document.querySelectorAll("[data-fonds-onglet]"));
+const panneauxOngletsFonds = Array.from(document.querySelectorAll("[data-fonds-panneau]"));
+const caseModeFondAuto = document.getElementById("mode-fond-auto");
+const caseLabelsVilles = document.getElementById("labels-villes");
+const reglagesFondAuto = document.getElementById("fonds-auto-reglages");
+const reglagesFondManuel = document.getElementById("fonds-manuel");
+const boutonFondsFermer = document.getElementById("fonds-fermer");
+const fondsScrim = document.getElementById("fonds-scrim");
+const boutonFondDefaut = document.getElementById("fonds-defaut");
 const controleFiltres = document.getElementById("controle-filtres");
 const boutonFiltres = document.getElementById("bouton-filtres");
 const boutonItineraire = document.getElementById("bouton-itineraire");
@@ -10041,50 +10089,76 @@ function activerInteractionsCarte() {
 }
 
 function mettreAJourSelection(nomFond) {
-  for (const option of optionsFond) {
-    option.checked = option.value === nomFond;
+  for (const bouton of boutonsFondManuel) {
+    const selectionne = bouton.dataset.fond === fondManuelActif && !ignAutomatiqueActif;
+    bouton.classList.toggle("est-selectionne", selectionne);
+    bouton.setAttribute("aria-pressed", String(selectionne));
   }
-  synchroniserSwitchsVillePourFond(nomFond);
+  for (const bouton of boutonsFondAutoBase) {
+    const selectionne = bouton.dataset.fondAutoBase === fondBaseAutoActif;
+    bouton.classList.toggle("est-selectionne", selectionne);
+    bouton.setAttribute("aria-pressed", String(selectionne));
+  }
+  for (const bouton of boutonsFondAutoSatellite) {
+    const selectionne = bouton.dataset.fondAutoSatellite === modeAutoActif;
+    bouton.classList.toggle("est-selectionne", selectionne);
+    bouton.setAttribute("aria-pressed", String(selectionne));
+  }
+  if (caseModeFondAuto) {
+    caseModeFondAuto.checked = ignAutomatiqueActif;
+  }
+  if (caseLabelsVilles) {
+    caseLabelsVilles.checked = labelsVillesActifs;
+  }
+  if (reglagesFondAuto) {
+    reglagesFondAuto.hidden = !ignAutomatiqueActif;
+  }
+  if (reglagesFondManuel) {
+    reglagesFondManuel.hidden = ignAutomatiqueActif;
+  }
 }
 
 function mettreAJourLibellesFondsAutomatiques() {
-  const baseAuto = determinerFondIgnAutomatique();
-  const libelleBase = baseAuto === FOND_BASE_AUTO_SOMBRE ? "Dark Matter" : "Voyager";
-  if (libelleFondAutoIgn) {
-    libelleFondAutoIgn.textContent = `Auto ${libelleBase} + Satellite IGN`;
-  }
-  if (libelleFondAutoEsri) {
-    libelleFondAutoEsri.textContent = `Auto ${libelleBase} + Satellite ESRI`;
+  mettreAJourSelection(fondActif);
+}
+
+function enregistrerPreferencesFondCarte() {
+  try {
+    localStorage.setItem(
+      CLE_STOCKAGE_FOND_CARTE,
+      JSON.stringify({
+        automatique: ignAutomatiqueActif,
+        baseAutomatique: fondBaseAutoActif,
+        satelliteAutomatique: modeAutoActif,
+        fondManuel: fondManuelActif,
+        labelsVilles: labelsVillesActifs
+      })
+    );
+  } catch (_erreur) {
+    // Le choix reste utilisable pour la session si le stockage local est indisponible.
   }
 }
 
-function synchroniserSwitchsVillePourFond(nomFond) {
-  if (!caseLabelsIgn || !caseLabelsEsri) {
-    return;
+function categorieFondManuel(nomFond) {
+  if (nomFond === "satelliteIgn" || nomFond === "satelliteEsri") {
+    return "satellites";
   }
-
-  if (nomFond === "satelliteIgn") {
-    caseLabelsEsri.checked = false;
-    return;
+  if (nomFond === "cadastreIgn" || nomFond === "satelliteCadastreIgn") {
+    return "cadastre";
   }
+  return "plans";
+}
 
-  if (nomFond === "satelliteEsri") {
-    caseLabelsIgn.checked = false;
-    return;
+function afficherOngletFonds(categorie) {
+  const categorieValide = ["plans", "satellites", "cadastre"].includes(categorie) ? categorie : "plans";
+  for (const bouton of boutonsOngletsFonds) {
+    const selectionne = bouton.dataset.fondsOnglet === categorieValide;
+    bouton.classList.toggle("est-selectionne", selectionne);
+    bouton.setAttribute("aria-selected", String(selectionne));
   }
-
-  if (nomFond === FOND_IGN_AUTOMATIQUE) {
-    caseLabelsEsri.checked = false;
-    return;
+  for (const panneau of panneauxOngletsFonds) {
+    panneau.hidden = panneau.dataset.fondsPanneau !== categorieValide;
   }
-
-  if (nomFond === FOND_ESRI_AUTOMATIQUE) {
-    caseLabelsIgn.checked = false;
-    return;
-  }
-
-  caseLabelsIgn.checked = false;
-  caseLabelsEsri.checked = false;
 }
 
 function fermerMenuFonds() {
@@ -10093,6 +10167,8 @@ function fermerMenuFonds() {
 }
 
 function ouvrirMenuFonds() {
+  mettreAJourSelection(fondActif);
+  afficherOngletFonds(categorieFondManuel(fondManuelActif));
   controleFonds.classList.add("est-ouvert");
   boutonFonds.setAttribute("aria-expanded", "true");
 }
@@ -10151,11 +10227,11 @@ async function changerFondCarte(nomFond, options = {}) {
 }
 
 function determinerFondIgnAutomatique() {
-  return mediaQueryModeSombre?.matches ? FOND_BASE_AUTO_SOMBRE : FOND_BASE_AUTO_CLAIR;
+  return fondBaseAutoActif;
 }
 
 function estFondBaseAutomatique(nomFond) {
-  return nomFond === FOND_BASE_AUTO_CLAIR || nomFond === FOND_BASE_AUTO_SOMBRE;
+  return FONDS_BASE_AUTOMATIQUES.includes(nomFond);
 }
 
 function calculerProgressionFonduIgnAuto(zoom) {
@@ -10369,13 +10445,15 @@ function mettreAJourLabelsVilles() {
     return;
   }
 
-  const afficherLabels =
-    (fondActif === "satelliteIgn" && caseLabelsIgn?.checked) ||
-    (fondActif === "satelliteEsri" && caseLabelsEsri?.checked) ||
-    (estFondBaseAutomatique(fondActif) &&
-      ignAutomatiqueActif &&
-      modeAutoActif === FOND_ESRI_AUTOMATIQUE &&
-      caseLabelsEsri?.checked);
+  const satelliteManuelActif =
+    fondActif === "satelliteIgn" ||
+    fondActif === "satelliteEsri" ||
+    fondActif === "satelliteCadastreIgn";
+  const satelliteAutomatiqueVisible =
+    ignAutomatiqueActif &&
+    estFondBaseAutomatique(fondActif) &&
+    calculerOpaciteSatelliteIgnAuto(carte.getZoom()) > 0.02;
+  const afficherLabels = labelsVillesActifs && (satelliteManuelActif || satelliteAutomatiqueVisible);
 
   carte.setLayoutProperty(COUCHE_LABELS_VILLES, "visibility", afficherLabels ? "visible" : "none");
 }
@@ -10466,40 +10544,23 @@ function appliquerFondIgnAutomatique() {
 }
 
 function choisirFondManuel(nomFond) {
+  if (!FONDS_MANUELS.includes(nomFond)) {
+    return;
+  }
   ignAutomatiqueActif = false;
+  fondManuelActif = nomFond;
   mettreAJourTransitionFondIgnAuto();
   changerFondCarte(nomFond);
   mettreAJourSelection(nomFond);
-}
-
-function activerSwitchVilleSatellite(typeSatellite) {
-  if (typeSatellite === "ign") {
-    if (caseLabelsIgn) {
-      caseLabelsIgn.checked = true;
-    }
-    if (caseLabelsEsri) {
-      caseLabelsEsri.checked = false;
-    }
-    choisirFondManuel("satelliteIgn");
-    return;
-  }
-
-  if (typeSatellite === "esri") {
-    if (caseLabelsEsri) {
-      caseLabelsEsri.checked = true;
-    }
-    if (caseLabelsIgn) {
-      caseLabelsIgn.checked = false;
-    }
-    choisirFondManuel("satelliteEsri");
-  }
+  enregistrerPreferencesFondCarte();
 }
 
 function activerFondAutomatique(modeFond) {
   ignAutomatiqueActif = true;
-  modeAutoActif = modeFond;
+  modeAutoActif = modeFond === FOND_ESRI_AUTOMATIQUE ? FOND_ESRI_AUTOMATIQUE : FOND_IGN_AUTOMATIQUE;
   mettreAJourSelection(modeFond);
   appliquerFondIgnAutomatique();
+  enregistrerPreferencesFondCarte();
 }
 
 function gererStyleCharge() {
@@ -10544,39 +10605,71 @@ if (mediaQueryModeSombre) {
   }
 }
 
-for (const option of optionsFond) {
-  option.addEventListener("change", () => {
-    if (!option.checked) {
-      return;
-    }
-
-    if (option.value === FOND_IGN_AUTOMATIQUE || option.value === FOND_ESRI_AUTOMATIQUE) {
-      activerFondAutomatique(option.value);
-      fermerMenuFonds();
-      return;
-    }
-
-    choisirFondManuel(option.value);
+for (const bouton of boutonsFondManuel) {
+  bouton.addEventListener("click", () => {
+    choisirFondManuel(bouton.dataset.fond);
     fermerMenuFonds();
   });
 }
 
-caseLabelsIgn?.addEventListener("change", () => {
-  if (caseLabelsIgn.checked) {
-    activerSwitchVilleSatellite("ign");
-    mettreAJourLabelsVilles();
+for (const bouton of boutonsFondAutoBase) {
+  bouton.addEventListener("click", () => {
+    const fondChoisi = bouton.dataset.fondAutoBase;
+    if (!FONDS_BASE_AUTOMATIQUES.includes(fondChoisi)) {
+      return;
+    }
+    fondBaseAutoActif = fondChoisi;
+    mettreAJourSelection(fondActif);
+    enregistrerPreferencesFondCarte();
+    if (ignAutomatiqueActif) {
+      appliquerFondIgnAutomatique();
+    }
+  });
+}
+
+for (const bouton of boutonsFondAutoSatellite) {
+  bouton.addEventListener("click", () => {
+    activerFondAutomatique(bouton.dataset.fondAutoSatellite);
+  });
+}
+
+for (const bouton of boutonsOngletsFonds) {
+  bouton.addEventListener("click", () => {
+    afficherOngletFonds(bouton.dataset.fondsOnglet);
+  });
+}
+
+caseModeFondAuto?.addEventListener("change", () => {
+  if (caseModeFondAuto.checked) {
+    activerFondAutomatique(modeAutoActif);
     return;
   }
+  choisirFondManuel(fondManuelActif);
+  afficherOngletFonds(categorieFondManuel(fondManuelActif));
+});
+
+caseLabelsVilles?.addEventListener("change", () => {
+  labelsVillesActifs = caseLabelsVilles.checked;
+  enregistrerPreferencesFondCarte();
   mettreAJourLabelsVilles();
 });
 
-caseLabelsEsri?.addEventListener("change", () => {
-  if (caseLabelsEsri.checked) {
-    activerSwitchVilleSatellite("esri");
-    mettreAJourLabelsVilles();
-    return;
+boutonFondDefaut?.addEventListener("click", () => {
+  const baseDefaut = mediaQueryModeSombre?.matches ? FOND_BASE_AUTO_SOMBRE : FOND_BASE_AUTO_CLAIR;
+  try {
+    localStorage.removeItem(CLE_STOCKAGE_FOND_CARTE);
+  } catch (_erreur) {
+    // Sans effet si le stockage local est indisponible.
   }
-  mettreAJourLabelsVilles();
+  fondBaseAutoActif = baseDefaut;
+  fondManuelActif = FOND_BASE_AUTO_CLAIR;
+  modeAutoActif = FOND_IGN_AUTOMATIQUE;
+  labelsVillesActifs = false;
+  ignAutomatiqueActif = true;
+  afficherOngletFonds("plans");
+  mettreAJourSelection(modeAutoActif);
+  appliquerFondIgnAutomatique();
+  enregistrerPreferencesFondCarte();
 });
 
 carte.on("zoomend", () => {
@@ -10613,6 +10706,9 @@ boutonFonds.addEventListener("click", (event) => {
   fermerMenuFiltres();
   basculerMenuFonds();
 });
+
+boutonFondsFermer?.addEventListener("click", fermerMenuFonds);
+fondsScrim?.addEventListener("click", fermerMenuFonds);
 
 if (caseAppareils) {
   caseAppareils.addEventListener("change", async () => {
@@ -10785,7 +10881,7 @@ if (caseLignesOrmVectorielles) {
         afficherLignesOrmVectorielles = false;
         caseLignesOrmVectorielles.checked = false;
         alert(
-          "La couche ORM vectorielle est indisponible : le serveur OpenRailwayMap n'autorise pas actuellement son chargement depuis un navigateur."
+          "Le tracé ferroviaire détaillé est temporairement indisponible. Veuillez réessayer plus tard."
         );
         return;
       }

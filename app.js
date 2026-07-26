@@ -860,6 +860,7 @@ const fondsCartographiques = {
 };
 
 const CLE_STOCKAGE_FOND_CARTE = "alice-fond-carte-v3";
+const CLE_STOCKAGE_FILTRES_CARTE = "alice-filtres-carte-v1";
 const FONDS_BASE_AUTOMATIQUES = ["positron", "voyager", "darkMatter", "planIgn", "osm"];
 const CHOIX_BASE_AUTOMATIQUES = [FOND_BASE_AUTO_SYSTEME, ...FONDS_BASE_AUTOMATIQUES];
 const FONDS_MANUELS = Object.keys(fondsCartographiques);
@@ -905,7 +906,40 @@ function chargerPreferencesFondCarte() {
   }
 }
 
+const preferencesFiltresDefaut = Object.freeze({
+  appareils: true,
+  acces: true,
+  postes: true,
+  pn: false,
+  pk: false,
+  trace: "osm"
+});
+const TRACES_FILTRES_VALIDES = ["osm", "ormPng", "ormVectoriel", "aucun"];
+
+function chargerPreferencesFiltresCarte() {
+  try {
+    const preferences = JSON.parse(localStorage.getItem(CLE_STOCKAGE_FILTRES_CARTE) || "null");
+    if (!preferences || typeof preferences !== "object") {
+      return { ...preferencesFiltresDefaut };
+    }
+    const trace = TRACES_FILTRES_VALIDES.includes(preferences.trace)
+      ? preferences.trace
+      : preferencesFiltresDefaut.trace;
+    return {
+      appareils: preferences.appareils !== false,
+      acces: preferences.acces !== false,
+      postes: preferences.postes !== false,
+      pn: preferences.pn === true,
+      pk: trace !== "aucun" && preferences.pk === true,
+      trace
+    };
+  } catch (_erreur) {
+    return { ...preferencesFiltresDefaut };
+  }
+}
+
 const preferencesFondInitiales = chargerPreferencesFondCarte();
+const preferencesFiltresInitiales = chargerPreferencesFiltresCarte();
 const stylesFondsVectorielsPrepares = new Map();
 const promessesStylesFondsVectoriels = new Map();
 let compteurChangementFond = 0;
@@ -918,14 +952,15 @@ let fondActif = preferencesFondInitiales.automatique
 let ignAutomatiqueActif = preferencesFondInitiales.automatique;
 let modeAutoActif = preferencesFondInitiales.satelliteAutomatique;
 let labelsVillesActifs = preferencesFondInitiales.labelsVilles;
-let afficherAppareils = true;
-let afficherAcces = true;
-let afficherPostes = true;
-let afficherPk = false;
-let afficherPn = false;
-let afficherLignesOsm = false;
-let afficherLignesOrmPng = false;
-let afficherLignesOrmVectorielles = false;
+let afficherAppareils = preferencesFiltresInitiales.appareils;
+let afficherAcces = preferencesFiltresInitiales.acces;
+let afficherPostes = preferencesFiltresInitiales.postes;
+let afficherPk = preferencesFiltresInitiales.pk;
+let afficherPn = preferencesFiltresInitiales.pn;
+let afficherLignesOsm = preferencesFiltresInitiales.trace === "osm";
+let afficherLignesOrmPng = preferencesFiltresInitiales.trace === "ormPng";
+let afficherLignesOrmVectorielles = preferencesFiltresInitiales.trace === "ormVectoriel";
+const traceFiltresInitialementAucun = preferencesFiltresInitiales.trace === "aucun";
 let donneesAppareils = null;
 let donneesAcces = null;
 let donneesPostes = null;
@@ -1694,7 +1729,9 @@ const boutonFiltres = document.getElementById("bouton-filtres");
 const menuFiltres = controleFiltres?.querySelector(".menu-filtres");
 const filtresScrim = document.getElementById("filtres-scrim");
 const boutonFiltresFermer = document.getElementById("filtres-fermer");
+const boutonFiltresDefaut = document.getElementById("filtres-defaut");
 const resumeFiltres = document.getElementById("filtres-resume");
+const enteteMenuFiltres = controleFiltres?.querySelector(".filtres-entete");
 const boutonItineraire = document.getElementById("bouton-itineraire");
 const boutonLocalisationMobile = document.getElementById("bouton-localisation-mobile");
 const boutonLegendeFiltres = document.getElementById("bouton-legende-filtres");
@@ -5599,6 +5636,7 @@ function appliquerCouchesDonnees() {
   mettreAJourAffichagePn();
   mettreAJourControleAttributionCarte();
   mettreAJourResumeFiltres();
+  enregistrerPreferencesFiltresCarte();
 }
 
 function restaurerEtatFiltres() {
@@ -6785,12 +6823,17 @@ async function activerLigneFerroviaire(options = {}) {
 }
 
 function planifierActivationAutoLigneFerroviaire() {
-  if (
-    activationAutoLigneFerroviairePlanifiee ||
-    afficherLignesOsm ||
-    afficherLignesOrmPng ||
-    afficherLignesOrmVectorielles
-  ) {
+  if (activationAutoLigneFerroviairePlanifiee) {
+    return;
+  }
+  if (afficherLignesOsm) {
+    activationAutoLigneFerroviairePlanifiee = true;
+    activerLigneFerroviaire({ automatique: true }).catch((erreur) => {
+      console.error("Impossible de restaurer la ligne ferroviaire", erreur);
+    });
+    return;
+  }
+  if (afficherLignesOrmPng || afficherLignesOrmVectorielles || traceFiltresInitialementAucun) {
     return;
   }
   activationAutoLigneFerroviairePlanifiee = true;
@@ -10176,6 +10219,33 @@ function enregistrerPreferencesFondCarte() {
   }
 }
 
+function enregistrerPreferencesFiltresCarte() {
+  let trace = "aucun";
+  if (afficherLignesOsm) {
+    trace = "osm";
+  } else if (afficherLignesOrmPng) {
+    trace = "ormPng";
+  } else if (afficherLignesOrmVectorielles) {
+    trace = "ormVectoriel";
+  }
+
+  try {
+    localStorage.setItem(
+      CLE_STOCKAGE_FILTRES_CARTE,
+      JSON.stringify({
+        appareils: afficherAppareils,
+        acces: afficherAcces,
+        postes: afficherPostes,
+        pn: afficherPn,
+        pk: afficherPk && trace !== "aucun",
+        trace
+      })
+    );
+  } catch (_erreur) {
+    // Les filtres restent utilisables pour la session si le stockage local est indisponible.
+  }
+}
+
 function categorieFondManuel(nomFond) {
   if (nomFond === "satelliteIgn" || nomFond === "satelliteEsri") {
     return "satellites";
@@ -10315,10 +10385,32 @@ function terminerGlissementMenuFonds(event) {
   temporisationNettoyageGlissementFonds = window.setTimeout(nettoyerGlissementMenuFonds, 220);
 }
 
-function fermerMenuFiltres() {
+let temporisationNettoyageGlissementFiltres = null;
+let glissementFiltresActif = false;
+let pointeurGlissementFiltres = null;
+let positionDepartGlissementFiltres = 0;
+let heureDepartGlissementFiltres = 0;
+let distanceGlissementFiltres = 0;
+
+function nettoyerGlissementMenuFiltres() {
+  if (temporisationNettoyageGlissementFiltres) {
+    window.clearTimeout(temporisationNettoyageGlissementFiltres);
+    temporisationNettoyageGlissementFiltres = null;
+  }
+  menuFiltres?.classList.remove("est-glisse");
+  menuFiltres?.style.removeProperty("transform");
+  menuFiltres?.style.removeProperty("transition");
+  filtresScrim?.style.removeProperty("opacity");
+  enteteMenuFiltres?.classList.remove("est-glissee");
+}
+
+function fermerMenuFiltres(options = {}) {
   controleFiltres.classList.remove("est-ouvert");
   boutonFiltres.setAttribute("aria-expanded", "false");
   filtresScrim?.setAttribute("aria-hidden", "true");
+  if (!options.conserverAnimationGlissement) {
+    nettoyerGlissementMenuFiltres();
+  }
 }
 
 function mettreAJourResumeFiltres() {
@@ -10340,6 +10432,7 @@ function estTraceFerroviaireActif() {
 
 function synchroniserDisponibilitePk() {
   const traceActif = estTraceFerroviaireActif();
+  const optionPk = casePk?.closest(".filtre-option-pk");
   if (!traceActif) {
     afficherPk = false;
     if (casePk) {
@@ -10350,19 +10443,92 @@ function synchroniserDisponibilitePk() {
   if (casePk) {
     casePk.disabled = !traceActif;
   }
+  if (optionPk) {
+    optionPk.hidden = false;
+  }
   if (aidePkFiltres) {
     aidePkFiltres.textContent = traceActif
       ? "Visibles selon le niveau de zoom"
-      : "Sélectionnez d’abord un tracé ferroviaire";
+      : "Disponible lorsqu’un tracé ferroviaire est affiché";
   }
 }
 
 function ouvrirMenuFiltres() {
+  nettoyerGlissementMenuFiltres();
   synchroniserDisponibilitePk();
   mettreAJourResumeFiltres();
   controleFiltres.classList.add("est-ouvert");
   boutonFiltres.setAttribute("aria-expanded", "true");
   filtresScrim?.setAttribute("aria-hidden", "false");
+}
+
+function commencerGlissementMenuFiltres(event) {
+  if (
+    !interfaceFondsEstMobile() ||
+    !controleFiltres.classList.contains("est-ouvert") ||
+    event.button !== 0 ||
+    event.target.closest(".filtres-fermer")
+  ) {
+    return;
+  }
+
+  glissementFiltresActif = true;
+  pointeurGlissementFiltres = event.pointerId;
+  positionDepartGlissementFiltres = event.clientY;
+  heureDepartGlissementFiltres = performance.now();
+  distanceGlissementFiltres = 0;
+  menuFiltres?.classList.add("est-glisse");
+  enteteMenuFiltres?.classList.add("est-glissee");
+  menuFiltres?.style.setProperty("transition", "none");
+  try {
+    enteteMenuFiltres?.setPointerCapture(event.pointerId);
+  } catch (_erreur) {
+    // Le geste reste fonctionnel même si la capture du pointeur est indisponible.
+  }
+}
+
+function suivreGlissementMenuFiltres(event) {
+  if (!glissementFiltresActif || event.pointerId !== pointeurGlissementFiltres || !menuFiltres) {
+    return;
+  }
+  distanceGlissementFiltres = Math.max(0, event.clientY - positionDepartGlissementFiltres);
+  menuFiltres.style.setProperty("transform", `translateY(${distanceGlissementFiltres}px)`);
+  const hauteurPanneau = Math.max(1, menuFiltres.getBoundingClientRect().height);
+  const progression = Math.min(1, distanceGlissementFiltres / hauteurPanneau);
+  filtresScrim?.style.setProperty("opacity", String(Math.max(0, 1 - progression * 1.25)));
+  if (distanceGlissementFiltres > 0) {
+    event.preventDefault();
+  }
+}
+
+function terminerGlissementMenuFiltres(event) {
+  if (!glissementFiltresActif || event.pointerId !== pointeurGlissementFiltres || !menuFiltres) {
+    return;
+  }
+
+  glissementFiltresActif = false;
+  pointeurGlissementFiltres = null;
+  enteteMenuFiltres?.classList.remove("est-glissee");
+  const duree = Math.max(1, performance.now() - heureDepartGlissementFiltres);
+  const vitesse = distanceGlissementFiltres / duree;
+  const seuilDistance = Math.min(150, menuFiltres.getBoundingClientRect().height * 0.24);
+  const doitFermer =
+    distanceGlissementFiltres >= seuilDistance || (distanceGlissementFiltres > 44 && vitesse > 0.65);
+
+  menuFiltres.style.setProperty("transition", "transform 220ms cubic-bezier(.22,.78,.22,1)");
+  if (doitFermer) {
+    menuFiltres.style.setProperty("transform", "translateY(calc(100% + 24px))");
+    filtresScrim?.style.setProperty("opacity", "0");
+    temporisationNettoyageGlissementFiltres = window.setTimeout(() => {
+      fermerMenuFiltres({ conserverAnimationGlissement: true });
+      nettoyerGlissementMenuFiltres();
+    }, 220);
+    return;
+  }
+
+  menuFiltres.style.setProperty("transform", "translateY(0)");
+  filtresScrim?.style.setProperty("opacity", "1");
+  temporisationNettoyageGlissementFiltres = window.setTimeout(nettoyerGlissementMenuFiltres, 220);
 }
 
 function basculerMenuFiltres() {
@@ -11072,6 +11238,8 @@ if (caseLignesOrmVectorielles) {
         alert(
           "Le tracé ferroviaire détaillé est temporairement indisponible. Veuillez réessayer plus tard."
         );
+        appliquerCouchesDonnees();
+        remonterCouchesDonnees();
         return;
       }
       afficherLignesOsm = false;
@@ -11270,8 +11438,43 @@ boutonFiltres.addEventListener("click", (event) => {
 
 boutonFiltresFermer?.addEventListener("click", fermerMenuFiltres);
 filtresScrim?.addEventListener("click", fermerMenuFiltres);
+enteteMenuFiltres?.addEventListener("pointerdown", commencerGlissementMenuFiltres);
+window.addEventListener("pointermove", suivreGlissementMenuFiltres, { passive: false });
+window.addEventListener("pointerup", terminerGlissementMenuFiltres);
+window.addEventListener("pointercancel", terminerGlissementMenuFiltres);
 menuFiltres?.addEventListener("change", () => {
   window.requestAnimationFrame(mettreAJourResumeFiltres);
+});
+
+boutonFiltresDefaut?.addEventListener("click", async () => {
+  const libelleInitial = boutonFiltresDefaut.textContent;
+  boutonFiltresDefaut.disabled = true;
+  boutonFiltresDefaut.textContent = "Réactivation en cours…";
+
+  afficherAppareils = preferencesFiltresDefaut.appareils;
+  afficherAcces = preferencesFiltresDefaut.acces;
+  afficherPostes = preferencesFiltresDefaut.postes;
+  afficherPn = preferencesFiltresDefaut.pn;
+  afficherPk = preferencesFiltresDefaut.pk;
+  afficherLignesOsm = true;
+  afficherLignesOrmPng = false;
+  afficherLignesOrmVectorielles = false;
+  restaurerEtatFiltres();
+
+  try {
+    await Promise.allSettled([
+      chargerDonneesAppareils(),
+      chargerDonneesAcces(),
+      chargerDonneesPostes()
+    ]);
+    await activerLigneFerroviaire();
+    restaurerEtatFiltres();
+    remonterCouchesDonnees();
+    forcerRafraichissementCarte({ tentativesDifferees: true });
+  } finally {
+    boutonFiltresDefaut.disabled = false;
+    boutonFiltresDefaut.textContent = libelleInitial;
+  }
 });
 
 if (boutonItineraire) {

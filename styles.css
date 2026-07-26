@@ -5830,6 +5830,7 @@ body {
     max-height: min(88dvh, 780px);
     border-width: 1px 0 0;
     border-radius: 25px 25px 0 0;
+    will-change: transform;
   }
 
   .controle-filtres.est-ouvert .menu-filtres {
@@ -5850,6 +5851,13 @@ body {
   .filtres-entete {
     position: relative;
     padding-top: 20px;
+    touch-action: none;
+    user-select: none;
+    cursor: grab;
+  }
+
+  .filtres-entete.est-glissee {
+    cursor: grabbing;
   }
 
   .filtres-entete::before {
@@ -6008,8 +6016,7 @@ body {
 }
 
 .filtre-repere-acces i,
-.filtre-repere-pn i,
-.filtre-repere-pk i {
+.filtre-repere-pn i {
   width: 13px;
   height: 13px;
 }
@@ -6029,14 +6036,6 @@ body {
 .filtre-repere-pn i {
   border-color: var(--color-pn-contour);
   background: var(--color-pn);
-}
-
-.filtre-repere-pk {
-  background: color-mix(in srgb, var(--color-pk) 13%, #ffffff);
-}
-
-.filtre-repere-pk i {
-  background: var(--color-pk);
 }
 
 .filtre-repere-postes i {
@@ -6096,8 +6095,9 @@ body {
 }
 
 .filtre-option-pk {
-  grid-template-columns: 34px minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   margin-top: 10px;
+  padding-left: 13px;
   border: 1px solid #dfe6ed;
   border-radius: 14px;
   background: #f8fafc;
@@ -6117,11 +6117,35 @@ body {
   cursor: not-allowed;
 }
 
+.filtres-defaut {
+  width: 100%;
+  min-height: 40px;
+  margin-top: 8px;
+  border: 0;
+  border-radius: 12px;
+  color: #68758a;
+  background: transparent;
+  font-size: 0.68rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.filtres-defaut:hover,
+.filtres-defaut:focus-visible {
+  color: #1f5fbf;
+  background: #f1f6fd;
+  outline: none;
+}
+
+.filtres-defaut:disabled {
+  opacity: 0.58;
+  cursor: wait;
+}
+
 @media (prefers-color-scheme: dark) {
   .filtre-repere,
   .filtre-repere-acces,
   .filtre-repere-pn,
-  .filtre-repere-pk,
   .filtre-repere-postes,
   .filtre-repere-appareils {
     background: rgba(148, 163, 184, 0.13);
@@ -6131,12 +6155,21 @@ body {
     border-color: rgba(148, 163, 184, 0.16);
     background: rgba(148, 163, 184, 0.08);
   }
+
+  .filtres-defaut {
+    color: #aab8ca;
+  }
+
+  .filtres-defaut:hover,
+  .filtres-defaut:focus-visible {
+    color: #bfdbfe;
+    background: rgba(96, 165, 250, 0.1);
+  }
 }
 
 .mode-sombre-carte .filtre-repere,
 .mode-sombre-carte .filtre-repere-acces,
 .mode-sombre-carte .filtre-repere-pn,
-.mode-sombre-carte .filtre-repere-pk,
 .mode-sombre-carte .filtre-repere-postes,
 .mode-sombre-carte .filtre-repere-appareils {
   background: rgba(148, 163, 184, 0.13);
@@ -6145,4 +6178,14 @@ body {
 .mode-sombre-carte .filtre-option-pk {
   border-color: rgba(148, 163, 184, 0.16);
   background: rgba(148, 163, 184, 0.08);
+}
+
+.mode-sombre-carte .filtres-defaut {
+  color: #aab8ca;
+}
+
+.mode-sombre-carte .filtres-defaut:hover,
+.mode-sombre-carte .filtres-defaut:focus-visible {
+  color: #bfdbfe;
+  background: rgba(96, 165, 250, 0.1);
 }

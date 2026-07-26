@@ -5661,11 +5661,11 @@ body {
 .option-filtre-ligne {
   position: relative;
   min-width: 0;
-  min-height: 103px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: 7px;
+  min-height: 112px;
+  display: grid;
+  grid-template-rows: 38px minmax(38px, auto);
+  align-content: start;
+  gap: 9px;
   padding: 9px;
   overflow: hidden;
   border: 2px solid transparent;
@@ -5674,6 +5674,11 @@ body {
   color: #202b3c;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
 }
 
 .option-filtre-ligne input {
@@ -5683,30 +5688,128 @@ body {
 }
 
 .filtre-ligne-apercu {
-  height: 30px;
+  position: relative;
+  height: 38px;
+  overflow: hidden;
   border-radius: 8px;
-  opacity: 0.9;
+  border: 1px solid rgba(32, 43, 60, 0.07);
+  opacity: 0.94;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.filtre-ligne-apercu::before,
+.filtre-ligne-apercu::after {
+  content: "";
+  position: absolute;
+}
+
+.filtre-ligne-apercu > b {
+  position: absolute;
+  right: 5px;
+  bottom: 4px;
+  z-index: 2;
+  display: none;
+  padding: 2px 5px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: #1468e8;
+  box-shadow: 0 2px 5px rgba(15, 23, 42, 0.22);
+  font-size: 0.42rem;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
 }
 
 .filtre-ligne-osm {
   background:
-    linear-gradient(151deg, transparent 43%, #6d28d9 44% 49%, transparent 50%),
-    linear-gradient(24deg, transparent 48%, #2563eb 49% 54%, transparent 55%),
-    #e6edf1;
+    linear-gradient(90deg, rgba(255, 255, 255, 0.72) 1px, transparent 1px) 0 0 / 18px 18px,
+    linear-gradient(rgba(255, 255, 255, 0.72) 1px, transparent 1px) 0 0 / 18px 18px,
+    #e7edf2;
+}
+
+.filtre-ligne-osm::before {
+  left: -7%;
+  top: 16px;
+  width: 114%;
+  height: 7px;
+  border-radius: 999px;
+  background: #3379dc;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.92);
+  transform: rotate(-8deg);
 }
 
 .filtre-ligne-png {
   background:
-    linear-gradient(151deg, transparent 43%, #e86100 44% 49%, transparent 50%),
-    linear-gradient(24deg, transparent 48%, #d7a610 49% 54%, transparent 55%),
-    #e8eadf;
+    linear-gradient(32deg, transparent 44%, rgba(255, 255, 255, 0.9) 45% 49%, transparent 50%),
+    linear-gradient(145deg, transparent 42%, rgba(255, 255, 255, 0.72) 43% 47%, transparent 48%),
+    repeating-linear-gradient(0deg, transparent 0 9px, rgba(90, 103, 116, 0.1) 10px 11px),
+    #e8e8dd;
+}
+
+.filtre-ligne-png::before {
+  left: -8%;
+  top: 17px;
+  width: 116%;
+  height: 5px;
+  border-radius: 999px;
+  background: #d96b20;
+  box-shadow:
+    0 -7px 0 -1px #d6a51a,
+    0 7px 0 -1px #77964c;
+  transform: rotate(-10deg);
+}
+
+.filtre-ligne-png::after {
+  left: 54%;
+  top: 4px;
+  width: 5px;
+  height: 5px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  background: #29384b;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.25);
 }
 
 .filtre-ligne-vectorielle {
   background:
-    linear-gradient(151deg, transparent 43%, #cf3b32 44% 47%, transparent 48%),
-    linear-gradient(24deg, transparent 48%, #2b7bce 49% 52%, transparent 53%),
-    #e5ebef;
+    radial-gradient(circle at 22% 66%, rgba(73, 127, 200, 0.14) 0 9px, transparent 10px),
+    radial-gradient(circle at 73% 31%, rgba(73, 127, 200, 0.14) 0 11px, transparent 12px),
+    #e4ebf1;
+}
+
+.filtre-ligne-vectorielle::before {
+  left: 8%;
+  top: 17px;
+  width: 84%;
+  height: 4px;
+  border-radius: 999px;
+  background: #3f82cc;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.75);
+  transform: rotate(-12deg);
+}
+
+.filtre-ligne-vectorielle::after {
+  left: 19%;
+  top: 20px;
+  width: 7px;
+  height: 7px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  background: #2e72bd;
+  box-shadow:
+    39px -8px 0 -2px #ffffff,
+    39px -8px 0 0 #2e72bd,
+    80px -17px 0 -2px #ffffff,
+    80px -17px 0 0 #2e72bd,
+    0 1px 3px rgba(15, 23, 42, 0.2);
+}
+
+.filtre-ligne-texte {
+  min-width: 0;
+  align-self: start;
 }
 
 .option-filtre-ligne strong,
@@ -5744,8 +5847,21 @@ body {
 
 .option-filtre-ligne:has(input:checked) {
   border-color: #1468e8;
-  background: #f4f8ff;
-  box-shadow: 0 0 0 2px #e7f0ff;
+  background: #ffffff;
+  box-shadow:
+    0 0 0 3px #e7f0ff,
+    0 8px 18px rgba(20, 104, 232, 0.14);
+  transform: translateY(-2px);
+}
+
+.option-filtre-ligne:has(input:checked) .filtre-ligne-apercu {
+  border-color: rgba(20, 104, 232, 0.5);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.75);
+  transform: scale(1.035);
+}
+
+.option-filtre-ligne:has(input:checked) .filtre-ligne-apercu > b {
+  display: block;
 }
 
 .option-filtre-ligne:has(input:checked) > i {

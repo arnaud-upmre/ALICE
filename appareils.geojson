@@ -16102,6 +16102,23 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.846135,
+          50.416363
+        ]
+      },
+      "properties": {
+        "nom": "Lens",
+        "type": "SSPA",
+        "appareil": "TT IMP",
+        "hors_patrimoine": false,
+        "SAT": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.1098366,
           50.6012358
         ]

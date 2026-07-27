@@ -39,10 +39,6 @@ const SOURCE_LIGNES_ORM_VECTORIELLES_BASSE = "openrailwaymap-vector-low-source";
 const SOURCE_LIGNES_ORM_VECTORIELLES_HAUTE = "openrailwaymap-vector-high-source";
 const URL_SOURCE_LIGNES_ORM_VECTORIELLES_BASSE = "https://openrailwaymap.app/standard_railway_line_low";
 const URL_SOURCE_LIGNES_ORM_VECTORIELLES_HAUTE = "https://openrailwaymap.app/railway_line_high";
-const ZONE_GEOGRAPHIQUE_ORM = Object.freeze({
-  limites: [-5.3, 41.25, 9.65, 51.2]
-});
-const MARGE_INSTALLATIONS_ORM_METRES = 500;
 const COUCHE_LIGNES_ORM_VECTORIELLES_BASSE = "openrailwaymap-vector-low-lines";
 const COUCHE_LIGNES_ORM_VECTORIELLES_BASSE_INTERACTION = "openrailwaymap-vector-low-hit";
 const COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE = "openrailwaymap-vector-high-lines";
@@ -943,10 +939,7 @@ const preferencesFondInitiales = chargerPreferencesFondCarte();
 const preferencesFiltresInitiales = chargerPreferencesFiltresCarte();
 const stylesFondsVectorielsPrepares = new Map();
 const promessesStylesFondsVectoriels = new Map();
-const descriptionsSourcesOrmVectorielles = new Map();
-const promessesDescriptionsSourcesOrmVectorielles = new Map();
 let compteurChangementFond = 0;
-let promessePreparationZoneOrmVectorielle = null;
 
 let fondBaseAutoActif = preferencesFondInitiales.baseAutomatique;
 let fondManuelActif = preferencesFondInitiales.fondManuel;
@@ -5582,109 +5575,6 @@ function appliquerCoucheOrmPng() {
   carte.setLayoutProperty(COUCHE_LIGNES_ORM_PNG, "visibility", "visible");
 }
 
-function calculerLimitesOrmVectorielles() {
-  const [ouestFrance, sudFrance, estFrance, nordFrance] = ZONE_GEOGRAPHIQUE_ORM.limites;
-  let ouest = ouestFrance;
-  let sud = sudFrance;
-  let est = estFrance;
-  let nord = nordFrance;
-
-  for (const collection of [donneesPostes, donneesAppareils]) {
-    for (const feature of collection?.features || []) {
-      const coordonnees = feature?.geometry?.coordinates;
-      const longitude = Number(coordonnees?.[0]);
-      const latitude = Number(coordonnees?.[1]);
-      if (
-        !Number.isFinite(longitude) ||
-        !Number.isFinite(latitude) ||
-        (longitude === 0 && latitude === 0)
-      ) {
-        continue;
-      }
-
-      const estHorsFrance =
-        longitude < ouestFrance ||
-        longitude > estFrance ||
-        latitude < sudFrance ||
-        latitude > nordFrance;
-      if (!estHorsFrance) {
-        continue;
-      }
-
-      const margeLatitude = MARGE_INSTALLATIONS_ORM_METRES / 111320;
-      const cosinusLatitude = Math.max(Math.cos((latitude * Math.PI) / 180), 0.01);
-      const margeLongitude = MARGE_INSTALLATIONS_ORM_METRES / (111320 * cosinusLatitude);
-      ouest = Math.min(ouest, longitude - margeLongitude);
-      sud = Math.min(sud, latitude - margeLatitude);
-      est = Math.max(est, longitude + margeLongitude);
-      nord = Math.max(nord, latitude + margeLatitude);
-    }
-  }
-
-  return [ouest, sud, est, nord];
-}
-
-async function chargerDescriptionSourceOrmVectorielle(url, options = {}) {
-  if (descriptionsSourcesOrmVectorielles.has(url)) {
-    return descriptionsSourcesOrmVectorielles.get(url);
-  }
-  if (promessesDescriptionsSourcesOrmVectorielles.has(url)) {
-    return promessesDescriptionsSourcesOrmVectorielles.get(url);
-  }
-
-  const promesse = fetch(url, {
-    cache: "no-store",
-    mode: "cors",
-    signal: options.signal
-  })
-    .then((reponse) => {
-      if (!reponse.ok) {
-        throw new Error(`HTTP ${reponse.status}`);
-      }
-      return reponse.json();
-    })
-    .then((description) => {
-      if (!Array.isArray(description?.tiles) || !description.tiles.length) {
-        throw new Error("Description de tuiles ORM invalide");
-      }
-      descriptionsSourcesOrmVectorielles.set(url, description);
-      return description;
-    })
-    .finally(() => {
-      promessesDescriptionsSourcesOrmVectorielles.delete(url);
-    });
-
-  promessesDescriptionsSourcesOrmVectorielles.set(url, promesse);
-  return promesse;
-}
-
-function preparerZoneOrmVectorielle() {
-  if (promessePreparationZoneOrmVectorielle) {
-    return promessePreparationZoneOrmVectorielle;
-  }
-
-  promessePreparationZoneOrmVectorielle = Promise.all([
-    chargerDonneesPostes(),
-    chargerDonneesAppareils(),
-    chargerDescriptionSourceOrmVectorielle(URL_SOURCE_LIGNES_ORM_VECTORIELLES_BASSE),
-    chargerDescriptionSourceOrmVectorielle(URL_SOURCE_LIGNES_ORM_VECTORIELLES_HAUTE)
-  ])
-    .then(() => {
-      if (afficherLignesOrmVectorielles && carte.isStyleLoaded()) {
-        appliquerCoucheOrmVectorielle();
-        remonterCouchesDonnees();
-      }
-    })
-    .catch((erreur) => {
-      console.error("Impossible de préparer la zone ORM vectorielle", erreur);
-    })
-    .finally(() => {
-      promessePreparationZoneOrmVectorielle = null;
-    });
-
-  return promessePreparationZoneOrmVectorielle;
-}
-
 function appliquerCoucheOrmVectorielle() {
   const definitions = [
     {
@@ -5720,26 +5610,11 @@ function appliquerCoucheOrmVectorielle() {
     return;
   }
 
-  const donneesZoneDisponibles = Boolean(donneesPostes && donneesAppareils);
-  const descriptionsDisponibles = definitions.every((definition) =>
-    descriptionsSourcesOrmVectorielles.has(definition.url)
-  );
-  if (!donneesZoneDisponibles || !descriptionsDisponibles) {
-    preparerZoneOrmVectorielle();
-    return;
-  }
-
-  const limites = calculerLimitesOrmVectorielles();
   for (const definition of definitions) {
     if (!carte.getSource(definition.source)) {
-      const description = descriptionsSourcesOrmVectorielles.get(definition.url);
       carte.addSource(definition.source, {
         type: "vector",
-        tiles: description.tiles,
-        minzoom: description.minzoom,
-        maxzoom: description.maxzoom,
-        scheme: description.scheme || "xyz",
-        bounds: limites,
+        url: definition.url,
         attribution: "Data © OpenStreetMap contributors, service OpenRailwayMap-vector",
         promoteId: "id"
       });
@@ -5795,7 +5670,14 @@ async function verifierDisponibiliteCoucheOrmVectorielle() {
   const temporisation = window.setTimeout(() => controleur.abort(), 5000);
   try {
     for (const url of [URL_SOURCE_LIGNES_ORM_VECTORIELLES_BASSE, URL_SOURCE_LIGNES_ORM_VECTORIELLES_HAUTE]) {
-      await chargerDescriptionSourceOrmVectorielle(url, { signal: controleur.signal });
+      const reponse = await fetch(url, { cache: "no-store", mode: "cors", signal: controleur.signal });
+      if (!reponse.ok) {
+        return false;
+      }
+      const description = await reponse.json();
+      if (!Array.isArray(description?.tiles) || !description.tiles.length) {
+        return false;
+      }
     }
     return true;
   } catch {

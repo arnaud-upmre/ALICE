@@ -39,6 +39,9 @@ const SOURCE_LIGNES_ORM_VECTORIELLES_BASSE = "openrailwaymap-vector-low-source";
 const SOURCE_LIGNES_ORM_VECTORIELLES_HAUTE = "openrailwaymap-vector-high-source";
 const URL_SOURCE_LIGNES_ORM_VECTORIELLES_BASSE = "https://openrailwaymap.app/standard_railway_line_low";
 const URL_SOURCE_LIGNES_ORM_VECTORIELLES_HAUTE = "https://openrailwaymap.app/railway_line_high";
+const ZONE_GEOGRAPHIQUE_ORM = Object.freeze({
+  limites: [-5.3, 41.25, 9.65, 51.2]
+});
 const COUCHE_LIGNES_ORM_VECTORIELLES_BASSE = "openrailwaymap-vector-low-lines";
 const COUCHE_LIGNES_ORM_VECTORIELLES_BASSE_INTERACTION = "openrailwaymap-vector-low-hit";
 const COUCHE_LIGNES_ORM_VECTORIELLES_HAUTE = "openrailwaymap-vector-high-lines";
@@ -5558,6 +5561,7 @@ function appliquerCoucheOrmPng() {
       ],
       tileSize: 256,
       maxzoom: 19,
+      bounds: ZONE_GEOGRAPHIQUE_ORM.limites,
       attribution: "© OpenRailwayMap, © OpenStreetMap contributors"
     });
   }
@@ -5615,6 +5619,7 @@ function appliquerCoucheOrmVectorielle() {
       carte.addSource(definition.source, {
         type: "vector",
         url: definition.url,
+        bounds: ZONE_GEOGRAPHIQUE_ORM.limites,
         attribution: "Data © OpenStreetMap contributors, service OpenRailwayMap-vector",
         promoteId: "id"
       });

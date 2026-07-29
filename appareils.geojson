@@ -14149,6 +14149,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          3.02213,
+          50.660247
+        ]
+      },
+      "properties": {
+        "nom": "Lambersart",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT LAMBERSART ARMENTIERES V2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.0242546,
           50.6595275
         ]

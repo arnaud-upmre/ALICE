@@ -13771,6 +13771,215 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.97586,
+          50.599722
+        ]
+      },
+      "properties": {
+        "nom": "La Tortue",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "B/IMP",
+        "description": "",
+        "hors_patrimoine": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.975893,
+          50.599664
+        ]
+      },
+      "properties": {
+        "nom": "La Tortue",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IL1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.975765,
+          50.599701
+        ]
+      },
+      "properties": {
+        "nom": "La Tortue",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IL2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.975893,
+          50.599664
+        ]
+      },
+      "properties": {
+        "nom": "La Tortue",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IL3",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.975765,
+          50.599701
+        ]
+      },
+      "properties": {
+        "nom": "La Tortue",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IL4",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.975922,
+          50.599696
+        ]
+      },
+      "properties": {
+        "nom": "La Tortue",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IL5",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.975801,
+          50.599742
+        ]
+      },
+      "properties": {
+        "nom": "La Tortue",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IL6",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.97586,
+          50.599722
+        ]
+      },
+      "properties": {
+        "nom": "La Tortue",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IMP",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.97586,
+          50.599722
+        ]
+      },
+      "properties": {
+        "nom": "La Tortue",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT IMPAIR",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.97586,
+          50.599722
+        ]
+      },
+      "properties": {
+        "nom": "La Tortue",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT PAIR",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.975801,
+          50.599742
+        ]
+      },
+      "properties": {
+        "nom": "La Tortue",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT6",
+        "description": "TT6 - SEL73506 - SSR La Tortue - Lille Sud V2",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.0238698,
           50.6596357
         ]

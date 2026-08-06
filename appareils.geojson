@@ -10875,6 +10875,44 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.896713,
+          50.645641
+        ]
+      },
+      "properties": {
+        "nom": "Flamengrie",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TC CT1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.896764,
+          50.645613
+        ]
+      },
+      "properties": {
+        "nom": "Flamengrie",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TC CT2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.8985,
           50.64576
         ]
@@ -10901,6 +10939,44 @@
         "SAT": "",
         "acces": "",
         "appareil": "TC DIFF K",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.89673,
+          50.645633
+        ]
+      },
+      "properties": {
+        "nom": "Flamengrie",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TC FT1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.896781,
+          50.645605
+        ]
+      },
+      "properties": {
+        "nom": "Flamengrie",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TC FT2",
         "description": "",
         "hors_patrimoine": false
       }
@@ -10986,44 +11062,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.89654,
-          50.645582
-        ]
-      },
-      "properties": {
-        "nom": "Flamengrie",
-        "type": "SST",
-        "SAT": "",
-        "acces": "",
-        "appareil": "TCCT1",
-        "description": "",
-        "hors_patrimoine": false
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.896374,
-          50.645663
-        ]
-      },
-      "properties": {
-        "nom": "Flamengrie",
-        "type": "SST",
-        "SAT": "",
-        "acces": "",
-        "appareil": "TCCT2",
-        "description": "",
-        "hors_patrimoine": false
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           2.896958,
           50.645507
         ]
@@ -11072,44 +11110,6 @@
         "SAT": "",
         "acces": "",
         "appareil": "TCFP2",
-        "description": "",
-        "hors_patrimoine": false
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.89654,
-          50.645582
-        ]
-      },
-      "properties": {
-        "nom": "Flamengrie",
-        "type": "SST",
-        "SAT": "",
-        "acces": "",
-        "appareil": "TCFT1",
-        "description": "",
-        "hors_patrimoine": false
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.896374,
-          50.645663
-        ]
-      },
-      "properties": {
-        "nom": "Flamengrie",
-        "type": "SST",
-        "SAT": "",
-        "acces": "",
-        "appareil": "TCFT2",
         "description": "",
         "hors_patrimoine": false
       }

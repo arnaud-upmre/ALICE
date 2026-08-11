@@ -2433,7 +2433,7 @@
         "rss": "B",
         "contact": "",
         "numero_ligne": "286000",
-        "code": false
+        "code": true
       },
       "geometry": {
         "type": "Point",

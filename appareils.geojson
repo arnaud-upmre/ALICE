@@ -9195,6 +9195,63 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.882401,
+          50.300128
+        ]
+      },
+      "properties": {
+        "nom": "Fampoux",
+        "type": "S",
+        "SAT": "",
+        "acces": "",
+        "appareil": "I23",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.882994,
+          50.300376
+        ]
+      },
+      "properties": {
+        "nom": "Fampoux",
+        "type": "S",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IP1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.882946,
+          50.300352
+        ]
+      },
+      "properties": {
+        "nom": "Fampoux",
+        "type": "S",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SM",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.8773,
           50.29821
         ]
@@ -23327,6 +23384,25 @@
         "SAT": "",
         "acces": "",
         "appareil": "IL7",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.110745,
+          50.357336
+        ]
+      },
+      "properties": {
+        "nom": "Sin le noble",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "n°1",
+        "appareil": "SI36504/40",
         "description": "",
         "hors_patrimoine": false
       }

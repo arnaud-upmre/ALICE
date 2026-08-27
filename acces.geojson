@@ -5889,6 +5889,24 @@
     },
     {
       "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.112344,
+          50.356661
+        ]
+      },
+      "properties": {
+        "nom": "Sin le noble",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "SI36504/40",
+        "hors_patrimoine": false,
+        "code": false
+      }
+    },
+    {
+      "type": "Feature",
       "properties": {
         "nom": "Somain",
         "type": "A",

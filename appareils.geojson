@@ -594,7 +594,7 @@
         "nom": "Alleux",
         "type": "SP",
         "SAT": "SAT2",
-        "accès": "",
+        "acces": "",
         "appareil": "I7111",
         "description": ""
       }
@@ -612,7 +612,7 @@
         "nom": "Alleux",
         "type": "SP",
         "SAT": "SAT2",
-        "accès": "",
+        "acces": "",
         "appareil": "I7114",
         "description": ""
       }
@@ -630,7 +630,7 @@
         "nom": "Alleux",
         "type": "SP",
         "SAT": "SAT2",
-        "accès": "",
+        "acces": "",
         "appareil": "T11",
         "description": "",
         "hors_patrimoine": true
@@ -649,7 +649,7 @@
         "nom": "Alleux",
         "type": "SP",
         "SAT": "SAT2",
-        "accès": "",
+        "acces": "",
         "appareil": "T14",
         "description": "",
         "hors_patrimoine": true

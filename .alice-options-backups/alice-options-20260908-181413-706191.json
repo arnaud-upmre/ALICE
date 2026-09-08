@@ -1,0 +1,183 @@
+{
+  "version": 1,
+  "groups": [
+    {
+      "id": "notifications",
+      "label": "Notifications affichées dans ALICE",
+      "description": "Règle la durée, l’animation et les couleurs des bandeaux d’information visibles en haut de l’application.",
+      "options": [
+        { "id": "notifications.displayDurationMs", "label": "Temps d’affichage", "type": "number", "unit": "ms", "value": 7000, "default": 7000, "min": 1000, "max": 60000, "step": 500 },
+        { "id": "notifications.transitionDurationMs", "label": "Durée de disparition", "type": "number", "unit": "ms", "value": 220, "default": 220, "min": 0, "max": 3000, "step": 10 },
+        { "id": "colors.notification.info", "label": "Couleur des informations", "type": "color", "value": "#1d4ed8", "default": "#1d4ed8" },
+        { "id": "colors.notification.warning", "label": "Couleur des avertissements", "type": "color", "value": "#b45309", "default": "#b45309" },
+        { "id": "colors.notification.critical", "label": "Couleur des alertes critiques", "type": "color", "value": "#b91c1c", "default": "#b91c1c" }
+      ]
+    },
+    {
+      "id": "map",
+      "label": "Carte principale : démarrage et niveaux de zoom",
+      "description": "Détermine la zone affichée à l’ouverture et le moment où les informations ferroviaires apparaissent sur la carte.",
+      "options": [
+        { "id": "map.initialLongitude", "label": "Longitude de départ", "type": "number", "unit": "°", "value": 2.35, "default": 2.35, "min": -180, "max": 180, "step": 0.01 },
+        { "id": "map.initialLatitude", "label": "Latitude de départ", "type": "number", "unit": "°", "value": 48.85, "default": 48.85, "min": -85, "max": 85, "step": 0.01 },
+        { "id": "map.initialZoom", "label": "Zoom initial", "type": "number", "unit": "niveau", "value": 6, "default": 6, "min": 2, "max": 19, "step": 0.1 },
+        { "id": "map.maximumZoom", "label": "Zoom maximal", "type": "number", "unit": "niveau", "value": 19, "default": 19, "min": 10, "max": 24, "step": 0.1 },
+        { "id": "map.startFitMaximumZoom", "label": "Zoom maximal du cadrage de départ", "type": "number", "unit": "niveau", "value": 10.8, "default": 10.8, "min": 2, "max": 19, "step": 0.1 },
+        { "id": "map.pkMinimumZoom", "label": "Zoom d’apparition des PK", "type": "number", "unit": "niveau", "value": 11, "default": 11, "min": 2, "max": 19, "step": 0.1 },
+        { "id": "map.pkSearchZoom", "label": "Zoom lors d’une recherche PK", "type": "number", "unit": "niveau", "value": 17.15, "default": 17.15, "min": 2, "max": 19, "step": 0.05 },
+        { "id": "map.trackLabelsMinimumZoom", "label": "Zoom d’apparition des numéros de voie", "type": "number", "unit": "niveau", "value": 15.5, "default": 15.5, "min": 2, "max": 19, "step": 0.1 },
+        { "id": "map.ignSatelliteSwitchZoom", "label": "Passage automatique au satellite IGN", "type": "number", "unit": "niveau", "value": 13, "default": 13, "min": 2, "max": 19, "step": 0.1 },
+        { "id": "map.ignSatelliteFadeEndZoom", "label": "Fin du fondu satellite IGN", "type": "number", "unit": "niveau", "value": 16, "default": 16, "min": 2, "max": 19, "step": 0.1 },
+        { "id": "map.ignSatelliteMaximumOpacity", "label": "Opacité maximale du satellite IGN", "type": "number", "unit": "%", "value": 100, "default": 100, "min": 0, "max": 100, "step": 5 }
+      ]
+    },
+    {
+      "id": "display",
+      "label": "Carte principale : tailles et dimensions",
+      "description": "Règle la taille des éléments manipulés sur la carte et le nombre de fiches pouvant rester ouvertes.",
+      "options": [
+        { "id": "display.measureSelectionRadiusPx", "label": "Rayon de sélection des points de mesure", "type": "number", "unit": "px", "value": 18, "default": 18, "min": 4, "max": 60, "step": 1 },
+        { "id": "display.measureLabelSpacingPx", "label": "Espacement des graduations de mesure", "type": "number", "unit": "px", "value": 90, "default": 90, "min": 20, "max": 300, "step": 5 },
+        { "id": "display.apparatusGroupIconDiameterPx", "label": "Diamètre des groupes d’appareils", "type": "number", "unit": "px", "value": 84, "default": 84, "min": 24, "max": 180, "step": 2 },
+        { "id": "display.maximumOpenSheets", "label": "Nombre maximal de fiches ouvertes", "type": "number", "unit": "fiches", "value": 2, "default": 2, "min": 1, "max": 10, "step": 1 }
+      ]
+    },
+    {
+      "id": "interaction",
+      "label": "Utilisation de la carte : gestes et délais",
+      "description": "Règle les appuis longs, les délais de chargement, le suivi GPS et la durée des mises en évidence.",
+      "options": [
+        { "id": "interaction.longPressDurationMs", "label": "Durée de l’appui long", "type": "number", "unit": "ms", "value": 800, "default": 800, "min": 250, "max": 3000, "step": 50 },
+        { "id": "interaction.dataStartupDelayMs", "label": "Délai de chargement initial des données", "type": "number", "unit": "ms", "value": 220, "default": 220, "min": 0, "max": 5000, "step": 10 },
+        { "id": "interaction.locationFollowPauseMs", "label": "Suspension du suivi après déplacement", "type": "number", "unit": "ms", "value": 5000, "default": 5000, "min": 0, "max": 60000, "step": 500 },
+        { "id": "interaction.pnSearchHighlightMs", "label": "Temps de mise en évidence d’un PN recherché", "type": "number", "unit": "ms", "value": 20000, "default": 20000, "min": 1000, "max": 120000, "step": 1000 },
+        { "id": "interaction.pendingApparatusHours", "label": "Conservation d’un appareil en attente", "type": "number", "unit": "h", "value": 24, "default": 24, "min": 1, "max": 720, "step": 1 },
+        { "id": "interaction.minimumPkGapMeters", "label": "Écart signalé entre deux plages PK", "type": "number", "unit": "m", "value": 1000, "default": 1000, "min": 10, "max": 10000, "step": 10 }
+      ]
+    },
+    {
+      "id": "themeColors",
+      "label": "Interface principale : thèmes clair et sombre",
+      "description": "Modifie les couleurs générales des fonds, panneaux, textes, boutons et messages d’état de l’application.",
+      "options": [
+        { "id": "css.--alice-bg-page-app-light", "label": "Fond général clair", "type": "color", "value": "#f5f7fb", "default": "#f5f7fb" },
+        { "id": "css.--alice-panel-soft-light", "label": "Fond des panneaux clairs", "type": "color", "value": "#ffffff", "default": "#ffffff" },
+        { "id": "css.--alice-text-light", "label": "Texte principal clair", "type": "color", "value": "#0f172a", "default": "#0f172a" },
+        { "id": "css.--alice-text-strong-light", "label": "Texte renforcé clair", "type": "color", "value": "#16324f", "default": "#16324f" },
+        { "id": "css.--alice-text-soft-light", "label": "Texte secondaire clair", "type": "color", "value": "#253c5d", "default": "#253c5d" },
+        { "id": "css.--alice-muted-light", "label": "Texte discret clair", "type": "color", "value": "#64748b", "default": "#64748b" },
+        { "id": "css.--alice-accent-blue-light", "label": "Accent bleu clair", "type": "color", "value": "#2563eb", "default": "#2563eb" },
+        { "id": "css.--alice-accent-blue-strong-light", "label": "Accent bleu renforcé clair", "type": "color", "value": "#1d4ed8", "default": "#1d4ed8" },
+        { "id": "css.--alice-success-strong-light", "label": "Succès clair", "type": "color", "value": "#15803d", "default": "#15803d" },
+        { "id": "css.--alice-danger-light", "label": "Danger clair", "type": "color", "value": "#dc2626", "default": "#dc2626" },
+        { "id": "css.--alice-bg-page-dark", "label": "Fond général sombre", "type": "color", "value": "#0b1220", "default": "#0b1220" },
+        { "id": "css.--alice-bg-page-deep-dark", "label": "Fond profond sombre", "type": "color", "value": "#09111d", "default": "#09111d" },
+        { "id": "css.--alice-text-dark", "label": "Texte principal sombre", "type": "color", "value": "#eff6ff", "default": "#eff6ff" },
+        { "id": "css.--alice-text-soft-dark", "label": "Texte secondaire sombre", "type": "color", "value": "#d7e3f6", "default": "#d7e3f6" },
+        { "id": "css.--alice-muted-dark", "label": "Texte discret sombre", "type": "color", "value": "#9fb0c3", "default": "#9fb0c3" },
+        { "id": "css.--alice-accent-blue-dark", "label": "Accent bleu sombre", "type": "color", "value": "#8fc2ff", "default": "#8fc2ff" },
+        { "id": "css.--alice-success-dark", "label": "Succès sombre", "type": "color", "value": "#4ade80", "default": "#4ade80" },
+        { "id": "css.--alice-danger-dark", "label": "Danger sombre", "type": "color", "value": "#f87171", "default": "#f87171" }
+      ]
+    },
+    {
+      "id": "tableauColors",
+      "label": "Tableau blanc : couleurs d’affichage",
+      "description": "Modifie les cartes de postes, pastilles SAT, appareils hors patrimoine, textes et commandes du tableau blanc.",
+      "options": [
+        { "id": "css.--tableau-text-light", "label": "Texte du tableau clair", "type": "color", "value": "#3c3732", "default": "#3c3732" },
+        { "id": "css.--tableau-pill-bg-light", "label": "Fond des pastilles du tableau clair", "type": "color", "value": "#eaf4fb", "default": "#eaf4fb" },
+        { "id": "css.--tableau-pill-text-light", "label": "Texte des pastilles du tableau clair", "type": "color", "value": "#264fc4", "default": "#264fc4" },
+        { "id": "css.--tableau-sat-bg-light", "label": "Fond des SAT du tableau clair", "type": "color", "value": "#f6e4b5", "default": "#f6e4b5" },
+        { "id": "css.--tableau-sat-text-light", "label": "Texte des SAT du tableau clair", "type": "color", "value": "#de511d", "default": "#de511d" },
+        { "id": "css.--tableau-hp-text-light", "label": "Hors patrimoine du tableau clair", "type": "color", "value": "#c80e0e", "default": "#c80e0e" },
+        { "id": "css.--tableau-accent-light", "label": "Accent du tableau clair", "type": "color", "value": "#5068f5", "default": "#5068f5" },
+        { "id": "css.--tableau-border-light", "label": "Bordures du tableau clair", "type": "color", "value": "#b0cc93", "default": "#b0cc93" },
+        { "id": "css.--tableau-pill-text-dark", "label": "Texte des pastilles du tableau sombre", "type": "color", "value": "#8fc2ff", "default": "#8fc2ff" },
+        { "id": "css.--tableau-sat-text-dark", "label": "Texte des SAT du tableau sombre", "type": "color", "value": "#ffd38a", "default": "#ffd38a" },
+        { "id": "css.--tableau-hp-text-dark", "label": "Hors patrimoine du tableau sombre", "type": "color", "value": "#fca5a5", "default": "#fca5a5" },
+        { "id": "css.--tableau-accent-dark", "label": "Accent du tableau sombre", "type": "color", "value": "#60a5fa", "default": "#60a5fa" }
+      ]
+    },
+    {
+      "id": "apparatusColors",
+      "label": "Appareils : couleurs par famille",
+      "description": "Chaque couleur est reprise pour la pastille sur la carte, les groupes, la recherche, la fiche et la légende de la même famille.",
+      "options": [
+        { "id": "colors.apparatus.general", "label": "Appareil général", "type": "color", "value": "#1d4ed8", "default": "#1d4ed8" },
+        { "id": "colors.apparatus.emergency", "label": "Dispositif d’urgence", "type": "color", "value": "#d90429", "default": "#d90429" },
+        { "id": "colors.apparatus.switch", "label": "Interrupteur", "type": "color", "value": "#f77f00", "default": "#f77f00" },
+        { "id": "colors.apparatus.transformer", "label": "Transformateur", "type": "color", "value": "#ffd60a", "default": "#ffd60a" },
+        { "id": "colors.apparatus.disconnector", "label": "Sectionneur", "type": "color", "value": "#2a9d8f", "default": "#2a9d8f" },
+        { "id": "colors.apparatus.supply", "label": "Alimentation", "type": "color", "value": "#8d99ae", "default": "#8d99ae" },
+        { "id": "colors.apparatus.other", "label": "Autre appareil", "type": "color", "value": "#111111", "default": "#111111" },
+        { "id": "colors.apparatus.outsideAssets", "label": "Hors patrimoine", "type": "color", "value": "#ef4444", "default": "#ef4444" }
+      ]
+    },
+    {
+      "id": "mapColors",
+      "label": "Carte principale : couleurs des repères",
+      "description": "Modifie les couleurs des postes, SAT, accès, passages à niveau, PK et autres repères sur la carte et dans la recherche.",
+      "options": [
+        { "id": "colors.map.access", "label": "Accès", "type": "color", "value": "#7c3aed", "default": "#7c3aed" },
+        { "id": "colors.map.accessGroup", "label": "Groupe d’accès", "type": "color", "value": "#8b5cf6", "default": "#8b5cf6" },
+        { "id": "colors.map.station", "label": "Poste", "type": "color", "value": "#60a5fa", "default": "#60a5fa" },
+        { "id": "colors.map.stationGroup", "label": "Groupe de postes", "type": "color", "value": "#93c5fd", "default": "#93c5fd" },
+        { "id": "colors.map.sat", "label": "SAT", "type": "color", "value": "#1d4ed8", "default": "#1d4ed8" },
+        { "id": "colors.map.satGroup", "label": "Groupe de SAT", "type": "color", "value": "#60a5fa", "default": "#60a5fa" },
+        { "id": "colors.map.levelCrossing", "label": "Passage à niveau", "type": "color", "value": "#06b6d4", "default": "#06b6d4" },
+        { "id": "colors.map.levelCrossingOutline", "label": "Contour de passage à niveau", "type": "color", "value": "#164e63", "default": "#164e63" },
+        { "id": "colors.map.pk", "label": "Point kilométrique", "type": "color", "value": "#0f766e", "default": "#0f766e" },
+        { "id": "colors.map.address", "label": "Adresse recherchée", "type": "color", "value": "#be185d", "default": "#be185d" },
+        { "id": "colors.map.route", "label": "Itinéraire", "type": "color", "value": "#b45309", "default": "#b45309" },
+        { "id": "colors.map.otherStation", "label": "Autre poste", "type": "color", "value": "#64748b", "default": "#64748b" },
+        { "id": "colors.map.contextMarker", "label": "Repère posé sur la carte", "type": "color", "value": "#ef4444", "default": "#ef4444" },
+        { "id": "colors.map.location", "label": "Position de l’utilisateur", "type": "color", "value": "#1d9bf0", "default": "#1d9bf0" },
+        { "id": "colors.map.railSearchHighlight", "label": "Ligne ferroviaire recherchée", "type": "color", "value": "#2563eb", "default": "#2563eb" },
+        { "id": "colors.map.outsideAssetsGroup", "label": "Groupe hors patrimoine", "type": "color", "value": "#f87171", "default": "#f87171" }
+      ]
+    },
+    {
+      "id": "railColors",
+      "label": "Carte principale : couleurs des lignes ferroviaires",
+      "description": "Modifie les tracés et légendes des lignes selon leur catégorie ou leur état : classique, LGV, abandonnée, déposée, etc.",
+      "options": [
+        { "id": "colors.rail.main", "label": "Ligne classique", "type": "color", "value": "#f59e0b", "default": "#f59e0b" },
+        { "id": "colors.rail.highSpeed", "label": "Ligne à grande vitesse", "type": "color", "value": "#dc2626", "default": "#dc2626" },
+        { "id": "colors.rail.getlink", "label": "Eurotunnel", "type": "color", "value": "#1e3a8a", "default": "#1e3a8a" },
+        { "id": "colors.rail.branch", "label": "Ligne secondaire", "type": "color", "value": "#60a5fa", "default": "#60a5fa" },
+        { "id": "colors.rail.yard", "label": "Faisceau", "type": "color", "value": "#94a3b8", "default": "#94a3b8" },
+        { "id": "colors.rail.siding", "label": "Voie de garage", "type": "color", "value": "#64748b", "default": "#64748b" },
+        { "id": "colors.rail.spur", "label": "Voie de service", "type": "color", "value": "#c084fc", "default": "#c084fc" },
+        { "id": "colors.rail.industrial", "label": "Ligne industrielle", "type": "color", "value": "#87491d", "default": "#87491d" },
+        { "id": "colors.rail.tourism", "label": "Ligne touristique", "type": "color", "value": "#14b8a6", "default": "#14b8a6" },
+        { "id": "colors.rail.other", "label": "Autre ligne", "type": "color", "value": "#000000", "default": "#000000" },
+        { "id": "colors.rail.disused", "label": "Ligne non utilisée", "type": "color", "value": "#64748b", "default": "#64748b" },
+        { "id": "colors.rail.abandoned", "label": "Ligne abandonnée", "type": "color", "value": "#94a3b8", "default": "#94a3b8" },
+        { "id": "colors.rail.razed", "label": "Ligne déposée", "type": "color", "value": "#cbd5e1", "default": "#cbd5e1" }
+      ]
+    },
+    {
+      "id": "routeColors",
+      "label": "Fonctionnalité : itinéraire entre postes",
+      "description": "Modifie les couleurs du trajet, du départ, des étapes intermédiaires et de l’arrivée dans la fenêtre et sur la mini-carte.",
+      "options": [
+        { "id": "colors.route.line", "label": "Tracé de l’itinéraire", "type": "color", "value": "#2563eb", "default": "#2563eb" },
+        { "id": "colors.route.departure", "label": "Départ de l’itinéraire", "type": "color", "value": "#16a34a", "default": "#16a34a" },
+        { "id": "colors.route.stop", "label": "Étape intermédiaire", "type": "color", "value": "#f59e0b", "default": "#f59e0b" },
+        { "id": "colors.route.arrival", "label": "Arrivée de l’itinéraire", "type": "color", "value": "#dc2626", "default": "#dc2626" }
+      ]
+    },
+    {
+      "id": "measureColors",
+      "label": "Fonctionnalité : mesurer une distance ou une surface",
+      "description": "Modifie les couleurs des traits, points, surfaces, lettres et graduations de l’outil de mesure, sur plan comme sur satellite.",
+      "options": [
+        { "id": "colors.measure.satelliteMain", "label": "Mesure principale sur satellite", "type": "color", "value": "#ffffff", "default": "#ffffff" },
+        { "id": "colors.measure.satelliteContrast", "label": "Contraste de mesure sur satellite", "type": "color", "value": "#111111", "default": "#111111" },
+        { "id": "colors.measure.mapMain", "label": "Mesure principale sur plan", "type": "color", "value": "#111111", "default": "#111111" },
+        { "id": "colors.measure.mapContrast", "label": "Contraste de mesure sur plan", "type": "color", "value": "#ffffff", "default": "#ffffff" }
+      ]
+    }
+  ]
+}

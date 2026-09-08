@@ -1,0 +1,990 @@
+{
+  "version": 1,
+  "groups": [
+    {
+      "id": "notifications",
+      "label": "Notifications affichées dans ALICE",
+      "description": "Règle la durée, l’animation et les couleurs des bandeaux d’information visibles en haut de l’application.",
+      "options": [
+        {
+          "id": "notifications.displayDurationMs",
+          "label": "Notification — temps avant sa fermeture automatique",
+          "type": "number",
+          "unit": "ms",
+          "value": 7000,
+          "default": 7000,
+          "min": 1000,
+          "max": 60000,
+          "step": 500
+        },
+        {
+          "id": "notifications.transitionDurationMs",
+          "label": "Notification — vitesse de l’animation d’apparition et de fermeture",
+          "type": "number",
+          "unit": "ms",
+          "value": 220,
+          "default": 220,
+          "min": 0,
+          "max": 3000,
+          "step": 10
+        },
+        {
+          "id": "colors.notification.info",
+          "label": "Couleur de base",
+          "type": "color",
+          "value": "#1d4ed8",
+          "default": "#1d4ed8"
+        },
+        {
+          "id": "notifications.infoBackgroundLightPercent",
+          "label": "Intensité du fond en mode clair",
+          "type": "number",
+          "unit": "%",
+          "value": 11,
+          "default": 11,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "id": "notifications.infoBackgroundDarkPercent",
+          "label": "Intensité du fond en mode sombre",
+          "type": "number",
+          "unit": "%",
+          "value": 15,
+          "default": 15,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "id": "colors.notification.warning",
+          "label": "Couleur de base",
+          "type": "color",
+          "value": "#b45309",
+          "default": "#b45309"
+        },
+        {
+          "id": "notifications.warningBackgroundLightPercent",
+          "label": "Intensité du fond en mode clair",
+          "type": "number",
+          "unit": "%",
+          "value": 12,
+          "default": 12,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "id": "notifications.warningBackgroundDarkPercent",
+          "label": "Intensité du fond en mode sombre",
+          "type": "number",
+          "unit": "%",
+          "value": 72,
+          "default": 72,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "id": "colors.notification.critical",
+          "label": "Couleur de base",
+          "type": "color",
+          "value": "#b91c1c",
+          "default": "#b91c1c"
+        },
+        {
+          "id": "notifications.criticalBackgroundLightPercent",
+          "label": "Intensité du fond en mode clair",
+          "type": "number",
+          "unit": "%",
+          "value": 12,
+          "default": 12,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "id": "notifications.criticalBackgroundDarkPercent",
+          "label": "Intensité du fond en mode sombre",
+          "type": "number",
+          "unit": "%",
+          "value": 72,
+          "default": 72,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "map",
+      "label": "Carte principale : démarrage et niveaux de zoom",
+      "description": "Détermine la zone affichée à l’ouverture et le moment où les informations ferroviaires apparaissent sur la carte.",
+      "options": [
+        {
+          "id": "map.initialLongitude",
+          "label": "Carte au démarrage — position vers l’est ou l’ouest",
+          "type": "number",
+          "unit": "°",
+          "value": 2.35,
+          "default": 2.35,
+          "min": -180,
+          "max": 180,
+          "step": 0.01
+        },
+        {
+          "id": "map.initialLatitude",
+          "label": "Carte au démarrage — position vers le nord ou le sud",
+          "type": "number",
+          "unit": "°",
+          "value": 48.85,
+          "default": 48.85,
+          "min": -85,
+          "max": 85,
+          "step": 0.01
+        },
+        {
+          "id": "map.initialZoom",
+          "label": "Carte au démarrage — niveau de rapprochement initial",
+          "type": "number",
+          "unit": "niveau",
+          "value": 6,
+          "default": 6,
+          "min": 2,
+          "max": 19,
+          "step": 0.1
+        },
+        {
+          "id": "map.maximumZoom",
+          "label": "Carte — rapprochement maximal autorisé",
+          "type": "number",
+          "unit": "niveau",
+          "value": 20,
+          "default": 19,
+          "min": 10,
+          "max": 24,
+          "step": 0.1
+        },
+        {
+          "id": "map.startFitMaximumZoom",
+          "label": "Carte au démarrage — limite du cadrage automatique du réseau",
+          "type": "number",
+          "unit": "niveau",
+          "value": 10.8,
+          "default": 10.8,
+          "min": 2,
+          "max": 19,
+          "step": 0.1
+        },
+        {
+          "id": "map.pkMinimumZoom",
+          "label": "Carte — apparition des points kilométriques",
+          "type": "number",
+          "unit": "niveau",
+          "value": 11,
+          "default": 11,
+          "min": 2,
+          "max": 19,
+          "step": 0.1
+        },
+        {
+          "id": "map.pkSearchZoom",
+          "label": "Recherche d’un PK — rapprochement appliqué sur la carte",
+          "type": "number",
+          "unit": "niveau",
+          "value": 17.15,
+          "default": 17.15,
+          "min": 2,
+          "max": 19,
+          "step": 0.05
+        },
+        {
+          "id": "map.trackLabelsMinimumZoom",
+          "label": "Carte — apparition des numéros de voie",
+          "type": "number",
+          "unit": "niveau",
+          "value": 15.5,
+          "default": 15.5,
+          "min": 2,
+          "max": 19,
+          "step": 0.1
+        },
+        {
+          "id": "map.ignSatelliteSwitchZoom",
+          "label": "Fond automatique — début de l’apparition des images satellite IGN",
+          "type": "number",
+          "unit": "niveau",
+          "value": 13,
+          "default": 13,
+          "min": 2,
+          "max": 19,
+          "step": 0.1
+        },
+        {
+          "id": "map.ignSatelliteFadeEndZoom",
+          "label": "Fond automatique — affichage complet des images satellite IGN",
+          "type": "number",
+          "unit": "niveau",
+          "value": 16,
+          "default": 16,
+          "min": 2,
+          "max": 19,
+          "step": 0.1
+        },
+        {
+          "id": "map.ignSatelliteMaximumOpacity",
+          "label": "Images satellite IGN — visibilité maximale",
+          "type": "number",
+          "unit": "%",
+          "value": 100,
+          "default": 100,
+          "min": 0,
+          "max": 100,
+          "step": 5
+        }
+      ]
+    },
+    {
+      "id": "display",
+      "label": "Carte principale : tailles et dimensions",
+      "description": "Règle la taille des éléments manipulés sur la carte et le nombre de fiches pouvant rester ouvertes.",
+      "options": [
+        {
+          "id": "display.measureSelectionRadiusPx",
+          "label": "Outil Mesurer — zone cliquable autour d’un point",
+          "type": "number",
+          "unit": "px",
+          "value": 18,
+          "default": 18,
+          "min": 4,
+          "max": 60,
+          "step": 1
+        },
+        {
+          "id": "display.measureLabelSpacingPx",
+          "label": "Outil Mesurer — espace entre les graduations",
+          "type": "number",
+          "unit": "px",
+          "value": 90,
+          "default": 90,
+          "min": 20,
+          "max": 300,
+          "step": 5
+        },
+        {
+          "id": "display.apparatusGroupIconDiameterPx",
+          "label": "Carte — taille d’une pastille regroupant plusieurs appareils",
+          "type": "number",
+          "unit": "px",
+          "value": 84,
+          "default": 84,
+          "min": 24,
+          "max": 180,
+          "step": 2
+        },
+        {
+          "id": "display.maximumOpenSheets",
+          "label": "Fiches — nombre pouvant rester ouvertes en même temps",
+          "type": "number",
+          "unit": "fiches",
+          "value": 2,
+          "default": 2,
+          "min": 1,
+          "max": 10,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "interaction",
+      "label": "Utilisation de la carte : gestes et délais",
+      "description": "Règle les appuis longs, les délais de chargement, le suivi GPS et la durée des mises en évidence.",
+      "options": [
+        {
+          "id": "interaction.longPressDurationMs",
+          "label": "Carte tactile — temps avant le déclenchement d’un appui long",
+          "type": "number",
+          "unit": "ms",
+          "value": 800,
+          "default": 800,
+          "min": 250,
+          "max": 3000,
+          "step": 50
+        },
+        {
+          "id": "interaction.dataStartupDelayMs",
+          "label": "Ouverture d’ALICE — attente avant le chargement des données",
+          "type": "number",
+          "unit": "ms",
+          "value": 220,
+          "default": 220,
+          "min": 0,
+          "max": 5000,
+          "step": 10
+        },
+        {
+          "id": "interaction.locationFollowPauseMs",
+          "label": "Suivi GPS — temps d’arrêt après avoir déplacé la carte",
+          "type": "number",
+          "unit": "ms",
+          "value": 5000,
+          "default": 5000,
+          "min": 0,
+          "max": 60000,
+          "step": 500
+        },
+        {
+          "id": "interaction.pnSearchHighlightMs",
+          "label": "Recherche d’un passage à niveau — durée de son repérage sur la carte",
+          "type": "number",
+          "unit": "ms",
+          "value": 20000,
+          "default": 20000,
+          "min": 1000,
+          "max": 120000,
+          "step": 1000
+        },
+        {
+          "id": "interaction.pendingApparatusHours",
+          "label": "Appareil ajouté — durée d’affichage avant sa validation",
+          "type": "number",
+          "unit": "h",
+          "value": 24,
+          "default": 24,
+          "min": 1,
+          "max": 720,
+          "step": 1
+        },
+        {
+          "id": "interaction.minimumPkGapMeters",
+          "label": "Contrôle des PK — distance minimale signalée comme une coupure",
+          "type": "number",
+          "unit": "m",
+          "value": 1000,
+          "default": 1000,
+          "min": 10,
+          "max": 10000,
+          "step": 10
+        }
+      ]
+    },
+    {
+      "id": "lightColors",
+      "label": "Mode clair : couleurs visibles dans ALICE",
+      "description": "Toutes les couleurs de cette rubrique s’appliquent uniquement lorsque le téléphone ou l’ordinateur utilise le mode clair.",
+      "options": [
+        {
+          "id": "css.--alice-bg-page-app-light",
+          "label": "Page Ajouter un appareil — fond autour du formulaire",
+          "type": "color",
+          "value": "#f5f7fb",
+          "default": "#f5f7fb"
+        },
+        {
+          "id": "css.--alice-panel-soft-light",
+          "label": "Tableau blanc et page Versions — fond des cartes et des lignes",
+          "type": "color",
+          "value": "#ffffff",
+          "default": "#ffffff"
+        },
+        {
+          "id": "css.--alice-text-light",
+          "label": "Carte principale et page Versions — titres et textes principaux",
+          "type": "color",
+          "value": "#0f172a",
+          "default": "#0f172a"
+        },
+        {
+          "id": "css.--alice-text-strong-light",
+          "label": "Page Ajouter un appareil — titres et texte du formulaire",
+          "type": "color",
+          "value": "#16324f",
+          "default": "#16324f"
+        },
+        {
+          "id": "css.--alice-text-soft-light",
+          "label": "Fiches et page Versions — descriptions et textes secondaires",
+          "type": "color",
+          "value": "#253c5d",
+          "default": "#253c5d"
+        },
+        {
+          "id": "css.--alice-muted-light",
+          "label": "Carte principale et tableau blanc — textes gris secondaires",
+          "type": "color",
+          "value": "#64748b",
+          "default": "#64748b"
+        },
+        {
+          "id": "css.--alice-accent-blue-light",
+          "label": "Ajouter un appareil et Versions — boutons et repères mis en avant",
+          "type": "color",
+          "value": "#2563eb",
+          "default": "#2563eb"
+        },
+        {
+          "id": "css.--alice-accent-blue-strong-light",
+          "label": "Carte principale et Versions — liens et étiquettes mis en avant",
+          "type": "color",
+          "value": "#1d4ed8",
+          "default": "#1d4ed8"
+        },
+        {
+          "id": "css.--alice-success-strong-light",
+          "label": "Page Ajouter un appareil — message de réussite",
+          "type": "color",
+          "value": "#15803d",
+          "default": "#15803d"
+        },
+        {
+          "id": "css.--alice-danger-light",
+          "label": "Ajouter un appareil et itinéraire — messages d’erreur",
+          "type": "color",
+          "value": "#dc2626",
+          "default": "#dc2626"
+        },
+        {
+          "id": "css.--tableau-text-light",
+          "label": "Tableau blanc — noms des postes et texte principal",
+          "type": "color",
+          "value": "#3c3732",
+          "default": "#3c3732"
+        },
+        {
+          "id": "css.--tableau-pill-bg-light",
+          "label": "Couleur du fond",
+          "type": "color",
+          "value": "#eaf4fb",
+          "default": "#eaf4fb"
+        },
+        {
+          "id": "css.--tableau-pill-text-light",
+          "label": "Couleur du texte",
+          "type": "color",
+          "value": "#264fc4",
+          "default": "#264fc4"
+        },
+        {
+          "id": "css.--tableau-sat-bg-light",
+          "label": "Couleur du fond",
+          "type": "color",
+          "value": "#f6e4b5",
+          "default": "#f6e4b5"
+        },
+        {
+          "id": "css.--tableau-sat-text-light",
+          "label": "Couleur du texte",
+          "type": "color",
+          "value": "#de511d",
+          "default": "#de511d"
+        },
+        {
+          "id": "css.--tableau-hp-text-light",
+          "label": "Tableau blanc — texte des appareils hors patrimoine",
+          "type": "color",
+          "value": "#c80e0e",
+          "default": "#c80e0e"
+        },
+        {
+          "id": "css.--tableau-accent-light",
+          "label": "Tableau blanc — numéros de ligne et contours de sélection",
+          "type": "color",
+          "value": "#5068f5",
+          "default": "#5068f5"
+        },
+        {
+          "id": "css.--tableau-border-light",
+          "label": "Tableau blanc — bordures des cartes, de la recherche et des filtres",
+          "type": "color",
+          "value": "#b0cc93",
+          "default": "#b0cc93"
+        },
+        {
+          "id": "colors.filter.apparatusTileLight",
+          "label": "Menu Filtres — carré contenant les quatre couleurs devant « Appareils »",
+          "type": "color",
+          "value": "#1d4ed8",
+          "default": "#1d4ed8"
+        }
+      ]
+    },
+    {
+      "id": "darkColors",
+      "label": "Mode sombre : couleurs visibles dans ALICE",
+      "description": "Toutes les couleurs de cette rubrique s’appliquent uniquement lorsque le téléphone ou l’ordinateur utilise le mode sombre.",
+      "options": [
+        {
+          "id": "css.--alice-bg-page-dark",
+          "label": "Page Versions — fond général de la page",
+          "type": "color",
+          "value": "#0b1220",
+          "default": "#0b1220"
+        },
+        {
+          "id": "css.--alice-bg-page-deep-dark",
+          "label": "Tableau blanc et Ajouter un appareil — fond général des pages",
+          "type": "color",
+          "value": "#09111d",
+          "default": "#09111d"
+        },
+        {
+          "id": "css.--alice-text-dark",
+          "label": "Carte, tableau blanc, Ajouter un appareil et Versions — titres et textes principaux",
+          "type": "color",
+          "value": "#eff6ff",
+          "default": "#eff6ff"
+        },
+        {
+          "id": "css.--alice-text-soft-dark",
+          "label": "Page Versions — texte des listes de modifications",
+          "type": "color",
+          "value": "#d7e3f6",
+          "default": "#d7e3f6"
+        },
+        {
+          "id": "css.--alice-muted-dark",
+          "label": "Tableau blanc, Ajouter un appareil et Versions — textes gris secondaires",
+          "type": "color",
+          "value": "#9fb0c3",
+          "default": "#9fb0c3"
+        },
+        {
+          "id": "css.--alice-accent-blue-dark",
+          "label": "Carte principale et Versions — liens et repères mis en avant",
+          "type": "color",
+          "value": "#8fc2ff",
+          "default": "#8fc2ff"
+        },
+        {
+          "id": "css.--alice-success-dark",
+          "label": "Page Ajouter un appareil — message de réussite",
+          "type": "color",
+          "value": "#4ade80",
+          "default": "#4ade80"
+        },
+        {
+          "id": "css.--alice-danger-dark",
+          "label": "Page Ajouter un appareil — message d’erreur",
+          "type": "color",
+          "value": "#f87171",
+          "default": "#f87171"
+        },
+        {
+          "id": "css.--tableau-pill-text-dark",
+          "label": "Tableau blanc — texte des pastilles contenant les codes d’appareils",
+          "type": "color",
+          "value": "#8fc2ff",
+          "default": "#8fc2ff"
+        },
+        {
+          "id": "css.--tableau-sat-text-dark",
+          "label": "Tableau blanc — texte des pastilles SAT et Poste principal",
+          "type": "color",
+          "value": "#ffd38a",
+          "default": "#ffd38a"
+        },
+        {
+          "id": "css.--tableau-hp-text-dark",
+          "label": "Tableau blanc — texte des appareils hors patrimoine",
+          "type": "color",
+          "value": "#fca5a5",
+          "default": "#fca5a5"
+        },
+        {
+          "id": "css.--tableau-accent-dark",
+          "label": "Tableau blanc — numéros de ligne et contours de sélection",
+          "type": "color",
+          "value": "#60a5fa",
+          "default": "#60a5fa"
+        },
+        {
+          "id": "colors.filter.apparatusTileDark",
+          "label": "Menu Filtres — carré contenant les quatre couleurs devant « Appareils »",
+          "type": "color",
+          "value": "#94a3b8",
+          "default": "#94a3b8"
+        }
+      ]
+    },
+    {
+      "id": "apparatusColors",
+      "label": "Carte et fiches : couleurs des appareils",
+      "description": "Chaque réglage indique les codes concernés et les endroits où leur couleur apparaît : carte, groupe, recherche, fiche ou légende.",
+      "options": [
+        {
+          "id": "colors.apparatus.remoteControlBadge",
+          "label": "Fiches de postes — pastilles contenant les codes de télécommande",
+          "type": "color",
+          "value": "#1d4ed8",
+          "default": "#1d4ed8"
+        },
+        {
+          "id": "colors.apparatus.emergency",
+          "label": "Pastilles des appareils DU (dispositifs d’urgence)",
+          "type": "color",
+          "value": "#d90429",
+          "default": "#d90429"
+        },
+        {
+          "id": "colors.apparatus.switch",
+          "label": "Pastilles des appareils SI, I et D (interrupteurs)",
+          "type": "color",
+          "value": "#f77f00",
+          "default": "#f77f00"
+        },
+        {
+          "id": "colors.apparatus.transformer",
+          "label": "Pastilles des appareils TT, TSA, TC, TRA, B1 à B3, GT et AT (transformateurs)",
+          "type": "color",
+          "value": "#ffd60a",
+          "default": "#ffd60a"
+        },
+        {
+          "id": "colors.apparatus.disconnector",
+          "label": "Pastilles des appareils T, S, ST, F, FB, P et B (sectionneurs)",
+          "type": "color",
+          "value": "#2a9d8f",
+          "default": "#2a9d8f"
+        },
+        {
+          "id": "colors.apparatus.supply",
+          "label": "Pastilles des appareils dont le code commence par ALIM",
+          "type": "color",
+          "value": "#8d99ae",
+          "default": "#8d99ae"
+        },
+        {
+          "id": "colors.apparatus.other",
+          "label": "Pastilles des appareils PF ou dont le code n’est pas reconnu",
+          "type": "color",
+          "value": "#111111",
+          "default": "#111111"
+        },
+        {
+          "id": "colors.apparatus.outsideAssets",
+          "label": "Pastilles des appareils hors patrimoine",
+          "type": "color",
+          "value": "#ef4444",
+          "default": "#ef4444"
+        }
+      ]
+    },
+    {
+      "id": "sheetTitleColors",
+      "label": "Fiches : pastilles « Terrain », « Explorer les équipements » et « Itinéraire… »",
+      "description": "Règle ensemble la couleur et la force du fond des trois pastilles de titre visibles dans les fiches.",
+      "options": [
+        {
+          "id": "colors.map.route",
+          "label": "Couleur du texte et couleur de base du fond",
+          "type": "color",
+          "value": "#b45309",
+          "default": "#b45309"
+        },
+        {
+          "id": "display.sheetTitleBackgroundLightPercent",
+          "label": "Intensité du fond en mode clair",
+          "type": "number",
+          "unit": "%",
+          "value": 22,
+          "default": 22,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "id": "display.sheetTitleBackgroundDarkPercent",
+          "label": "Intensité du fond en mode sombre",
+          "type": "number",
+          "unit": "%",
+          "value": 28,
+          "default": 28,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "mapColors",
+      "label": "Carte, recherche et fiches : pastilles et repères",
+      "description": "Règle les couleurs des symboles visibles sur la carte, dans les résultats de recherche, le menu Filtres et certaines fiches.",
+      "options": [
+        {
+          "id": "colors.map.access",
+          "label": "Carte — pastille d’un accès routier",
+          "type": "color",
+          "value": "#7c3aed",
+          "default": "#7c3aed"
+        },
+        {
+          "id": "colors.map.accessGroup",
+          "label": "Carte — grande pastille regroupant plusieurs accès routiers",
+          "type": "color",
+          "value": "#8b5cf6",
+          "default": "#8b5cf6"
+        },
+        {
+          "id": "colors.map.station",
+          "label": "Carte — pastille d’un poste",
+          "type": "color",
+          "value": "#60a5fa",
+          "default": "#60a5fa"
+        },
+        {
+          "id": "colors.map.stationGroup",
+          "label": "Carte — grande pastille regroupant plusieurs postes",
+          "type": "color",
+          "value": "#93c5fd",
+          "default": "#93c5fd"
+        },
+        {
+          "id": "colors.map.sat",
+          "label": "Carte — pastille d’un SAT",
+          "type": "color",
+          "value": "#1d4ed8",
+          "default": "#1d4ed8"
+        },
+        {
+          "id": "colors.map.satGroup",
+          "label": "Carte — grande pastille regroupant plusieurs postes dont au moins un SAT",
+          "type": "color",
+          "value": "#60a5fa",
+          "default": "#60a5fa"
+        },
+        {
+          "id": "colors.map.levelCrossing",
+          "label": "Couleur intérieure du point",
+          "type": "color",
+          "value": "#06b6d4",
+          "default": "#06b6d4"
+        },
+        {
+          "id": "colors.map.levelCrossingOutline",
+          "label": "Couleur du contour",
+          "type": "color",
+          "value": "#164e63",
+          "default": "#164e63"
+        },
+        {
+          "id": "colors.map.pk",
+          "label": "Recherche et menu Filtres — point associé aux PK",
+          "type": "color",
+          "value": "#0f766e",
+          "default": "#0f766e"
+        },
+        {
+          "id": "colors.map.address",
+          "label": "Résultats de recherche — point placé devant une adresse",
+          "type": "color",
+          "value": "#be185d",
+          "default": "#be185d"
+        },
+        {
+          "id": "colors.map.otherStation",
+          "label": "Carte — pastille d’un élément classé « Autre »",
+          "type": "color",
+          "value": "#64748b",
+          "default": "#64748b"
+        },
+        {
+          "id": "colors.map.contextMarker",
+          "label": "Carte — cible temporaire posée après un appui long",
+          "type": "color",
+          "value": "#ef4444",
+          "default": "#ef4444"
+        },
+        {
+          "id": "colors.map.location",
+          "label": "Carte — point indiquant votre position GPS",
+          "type": "color",
+          "value": "#1d9bf0",
+          "default": "#1d9bf0"
+        },
+        {
+          "id": "colors.map.railSearchHighlight",
+          "label": "Carte — ligne ferroviaire mise en évidence après une recherche",
+          "type": "color",
+          "value": "#2563eb",
+          "default": "#2563eb"
+        },
+        {
+          "id": "colors.map.outsideAssetsGroup",
+          "label": "Carte — groupes contenant au moins un élément hors patrimoine",
+          "type": "color",
+          "value": "#f87171",
+          "default": "#f87171"
+        }
+      ]
+    },
+    {
+      "id": "railColors",
+      "label": "Carte principale : traits des lignes ferroviaires",
+      "description": "Chaque couleur s’applique au trait de la catégorie correspondante sur la carte et à son exemple dans la légende.",
+      "options": [
+        {
+          "id": "colors.rail.main",
+          "label": "Trait d’une ligne ferroviaire classique",
+          "type": "color",
+          "value": "#f59e0b",
+          "default": "#f59e0b"
+        },
+        {
+          "id": "colors.rail.highSpeed",
+          "label": "Trait d’une ligne à grande vitesse",
+          "type": "color",
+          "value": "#dc2626",
+          "default": "#dc2626"
+        },
+        {
+          "id": "colors.rail.getlink",
+          "label": "Trait de la liaison Eurotunnel",
+          "type": "color",
+          "value": "#1e3a8a",
+          "default": "#1e3a8a"
+        },
+        {
+          "id": "colors.rail.branch",
+          "label": "Trait d’une ligne secondaire",
+          "type": "color",
+          "value": "#60a5fa",
+          "default": "#60a5fa"
+        },
+        {
+          "id": "colors.rail.yard",
+          "label": "Trait d’une voie de faisceau",
+          "type": "color",
+          "value": "#94a3b8",
+          "default": "#94a3b8"
+        },
+        {
+          "id": "colors.rail.siding",
+          "label": "Trait d’une voie de garage",
+          "type": "color",
+          "value": "#64748b",
+          "default": "#64748b"
+        },
+        {
+          "id": "colors.rail.spur",
+          "label": "Trait d’une voie de service",
+          "type": "color",
+          "value": "#c084fc",
+          "default": "#c084fc"
+        },
+        {
+          "id": "colors.rail.industrial",
+          "label": "Trait d’une ligne industrielle",
+          "type": "color",
+          "value": "#87491d",
+          "default": "#87491d"
+        },
+        {
+          "id": "colors.rail.tourism",
+          "label": "Trait d’une ligne touristique",
+          "type": "color",
+          "value": "#14b8a6",
+          "default": "#14b8a6"
+        },
+        {
+          "id": "colors.rail.other",
+          "label": "Trait d’une ligne sans catégorie connue",
+          "type": "color",
+          "value": "#000000",
+          "default": "#000000"
+        },
+        {
+          "id": "colors.rail.disused",
+          "label": "Trait d’une ligne indiquée comme non utilisée",
+          "type": "color",
+          "value": "#64748b",
+          "default": "#64748b"
+        },
+        {
+          "id": "colors.rail.abandoned",
+          "label": "Trait d’une ligne indiquée comme abandonnée",
+          "type": "color",
+          "value": "#94a3b8",
+          "default": "#94a3b8"
+        },
+        {
+          "id": "colors.rail.razed",
+          "label": "Trait d’une ligne dont les voies sont déposées",
+          "type": "color",
+          "value": "#cbd5e1",
+          "default": "#cbd5e1"
+        }
+      ]
+    },
+    {
+      "id": "routeColors",
+      "label": "Fonctionnalité : itinéraire entre postes",
+      "description": "Modifie les couleurs du trajet, du départ, des étapes intermédiaires et de l’arrivée dans la fenêtre et sur la mini-carte.",
+      "options": [
+        {
+          "id": "colors.route.line",
+          "label": "Fenêtre Itinéraire entre postes — trait reliant les étapes",
+          "type": "color",
+          "value": "#2563eb",
+          "default": "#2563eb"
+        },
+        {
+          "id": "colors.route.departure",
+          "label": "Fenêtre Itinéraire entre postes — cercle et lettre du départ",
+          "type": "color",
+          "value": "#16a34a",
+          "default": "#16a34a"
+        },
+        {
+          "id": "colors.route.stop",
+          "label": "Fenêtre Itinéraire entre postes — cercles et lettres des étapes",
+          "type": "color",
+          "value": "#f59e0b",
+          "default": "#f59e0b"
+        },
+        {
+          "id": "colors.route.arrival",
+          "label": "Fenêtre Itinéraire entre postes — cercle et lettre de l’arrivée",
+          "type": "color",
+          "value": "#dc2626",
+          "default": "#dc2626"
+        }
+      ]
+    },
+    {
+      "id": "measureColors",
+      "label": "Fonctionnalité : mesurer une distance ou une surface",
+      "description": "Modifie les couleurs des traits, points, surfaces, lettres et graduations de l’outil de mesure, sur plan comme sur satellite.",
+      "options": [
+        {
+          "id": "colors.measure.satelliteMain",
+          "label": "Outil Mesurer sur satellite — traits, graduations, points et surface",
+          "type": "color",
+          "value": "#ffffff",
+          "default": "#ffffff"
+        },
+        {
+          "id": "colors.measure.satelliteContrast",
+          "label": "Outil Mesurer sur satellite — contours et texte à l’intérieur des points",
+          "type": "color",
+          "value": "#111111",
+          "default": "#111111"
+        },
+        {
+          "id": "colors.measure.mapMain",
+          "label": "Outil Mesurer sur plan — traits, graduations, points et surface",
+          "type": "color",
+          "value": "#111111",
+          "default": "#111111"
+        },
+        {
+          "id": "colors.measure.mapContrast",
+          "label": "Outil Mesurer sur plan — contours et texte à l’intérieur des points",
+          "type": "color",
+          "value": "#ffffff",
+          "default": "#ffffff"
+        }
+      ]
+    }
+  ]
+}

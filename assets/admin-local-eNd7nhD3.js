@@ -1,0 +1,1 @@
+document.readyState===`loading`&&document.addEventListener(`DOMContentLoaded`,()=>{},{once:!0});

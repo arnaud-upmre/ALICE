@@ -181,7 +181,11 @@
 body {
   font-family: Inter, sans-serif;
   margin: 0;
-  padding: 20px;
+  padding:
+    calc(20px + env(safe-area-inset-top))
+    calc(20px + env(safe-area-inset-right))
+    calc(20px + env(safe-area-inset-bottom))
+    calc(20px + env(safe-area-inset-left));
   background: var(--bg);
   color: var(--text);
 }
@@ -395,7 +399,7 @@ body {
 /* Filtres */
 .filters {
   position: sticky;
-  top: var(--board-header-sticky-offset, 0px);
+  top: calc(var(--board-header-sticky-offset, 0px) + env(safe-area-inset-top));
   z-index: 49;
   display: flex;
   gap: 10px;
@@ -443,7 +447,7 @@ body {
 /* Header container */
 .board-header {
   position: sticky;
-  top: 0;
+  top: env(safe-area-inset-top);
   z-index: 50;
   margin-bottom: 16px;
   padding: 14px;

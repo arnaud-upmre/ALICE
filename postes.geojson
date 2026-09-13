@@ -634,11 +634,12 @@
         "type": "SS",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "",
+        "rss": "A",
         "contact": "",
         "numero_ligne": "295000",
         "code": false,
-        "armen": "74352693"
+        "armen": "74352693",
+        "ordre_ligne": 7
       },
       "geometry": {
         "type": "Point",

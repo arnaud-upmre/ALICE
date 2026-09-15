@@ -15348,24 +15348,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.0230046,
-          50.6595771
-        ]
-      },
-      "properties": {
-        "nom": "Lambersart",
-        "type": "SSP",
-        "SAT": "",
-        "acces": "",
-        "appareil": "TT Bif de Lambersart",
-        "description": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           3.0220019,
           50.6601978
         ]
@@ -15432,6 +15414,24 @@
         "acces": "",
         "appareil": "TT Lambersart Lion d'or V2",
         "description": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0230046,
+          50.6595771
+        ]
+      },
+      "properties": {
+        "nom": "Lambersart",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT5707",
+        "description": "TT Bif de Lambersart"
       }
     },
     {
@@ -25372,8 +25372,8 @@
         "type": "SP",
         "SAT": "",
         "acces": "",
-        "appareil": "TT SSR ARNEKE - VOLCK VELD - CASSEL V2",
-        "description": "",
+        "appareil": "TT2",
+        "description": "TT SSR ARNEKE - VOLCK VELD - CASSEL V2",
         "hors_patrimoine": false
       }
     },
@@ -25391,27 +25391,8 @@
         "type": "SP",
         "SAT": "",
         "acces": "",
-        "appareil": "TT SSR ARNEKE - VOLCK VELD V1",
-        "description": "",
-        "hors_patrimoine": false
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.500973,
-          50.738392
-        ]
-      },
-      "properties": {
-        "nom": "Volck Veld",
-        "type": "SP",
-        "SAT": "",
-        "acces": "",
-        "appareil": "TT SSR HAUTE LOGE - VOLCK VELD V1",
-        "description": "",
+        "appareil": "TT3",
+        "description": "TT SSR ARNEKE - VOLCK VELD V1",
         "hors_patrimoine": false
       }
     },
@@ -25429,8 +25410,27 @@
         "type": "SP",
         "SAT": "",
         "acces": "",
-        "appareil": "TT SSR HAZEBROUCK VOLCK VELD V2",
-        "description": "",
+        "appareil": "TT38",
+        "description": "TT SSR HAZEBROUCK VOLCK VELD V2",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.500973,
+          50.738392
+        ]
+      },
+      "properties": {
+        "nom": "Volck Veld",
+        "type": "SP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT43",
+        "description": "TT SSR HAUTE-LOGE - VOLCK VELD V1",
         "hors_patrimoine": false
       }
     },

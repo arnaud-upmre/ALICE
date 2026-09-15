@@ -15348,6 +15348,24 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          3.0230046,
+          50.6595771
+        ]
+      },
+      "properties": {
+        "nom": "Lambersart",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT Bif de Lambersart",
+        "description": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.0220019,
           50.6601978
         ]
@@ -15414,24 +15432,6 @@
         "acces": "",
         "appareil": "TT Lambersart Lion d'or V2",
         "description": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          3.0230046,
-          50.6595771
-        ]
-      },
-      "properties": {
-        "nom": "Lambersart",
-        "type": "SSP",
-        "SAT": "",
-        "acces": "",
-        "appareil": "TT5707",
-        "description": "TT Bif de Lambersart"
       }
     },
     {

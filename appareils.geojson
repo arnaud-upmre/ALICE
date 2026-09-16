@@ -8777,6 +8777,63 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.905196,
+          50.325716
+        ]
+      },
+      "properties": {
+        "nom": "Etinchelle",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "T2",
+        "description": "",
+        "hors_patrimoine": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.905308,
+          50.32581
+        ]
+      },
+      "properties": {
+        "nom": "Etinchelle",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "T3",
+        "description": "",
+        "hors_patrimoine": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.905281,
+          50.325787
+        ]
+      },
+      "properties": {
+        "nom": "Etinchelle",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "T4",
+        "description": "",
+        "hors_patrimoine": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.905177,
           50.325891
         ]
@@ -9091,6 +9148,82 @@
         "SAT": "",
         "acces": "",
         "appareil": "TT 20",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.905281,
+          50.325787
+        ]
+      },
+      "properties": {
+        "nom": "Etinchelle",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT ETINCHELLE RIEZ V2 F442",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.905281,
+          50.325787
+        ]
+      },
+      "properties": {
+        "nom": "Etinchelle",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT ETINCHELLE RIEZ V2 SEL 442",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.905196,
+          50.325716
+        ]
+      },
+      "properties": {
+        "nom": "Etinchelle",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT ETINCHELLE TRANSLOY V2 SEL 408",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.905196,
+          50.325716
+        ]
+      },
+      "properties": {
+        "nom": "Etinchelle",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT ETINCHELLE TRANSLOY V2 SEL F408",
         "description": "",
         "hors_patrimoine": false
       }

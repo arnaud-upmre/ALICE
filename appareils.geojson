@@ -1654,7 +1654,7 @@
         "nom": "Bailleul Sir Bethoult",
         "type": "SP",
         "SAT": "SAT1",
-        "acces": "SM1",
+        "acces": "",
         "appareil": "SM1",
         "description": "",
         "hors_patrimoine": false
@@ -1673,7 +1673,7 @@
         "nom": "Bailleul Sir Bethoult",
         "type": "SP",
         "SAT": "SAT2",
-        "acces": "SM2",
+        "acces": "",
         "appareil": "SM2",
         "description": "",
         "hors_patrimoine": false

@@ -8321,6 +8321,22 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.904774,
+          50.326072
+        ]
+      },
+      "properties": {
+        "nom": "Etinchelle",
+        "type": "SST",
+        "appareil": "S1",
+        "SAT": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.904479,
           50.326234
         ]
@@ -8568,8 +8584,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.904976,
-          50.325783
+          2.904953,
+          50.325795
         ]
       },
       "properties": {

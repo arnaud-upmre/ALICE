@@ -1646,6 +1646,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.82668,
+          50.325101
+        ]
+      },
+      "properties": {
+        "nom": "Bailleul Sir Bethoult",
+        "type": "SP",
+        "SAT": "SAT2",
+        "acces": "SM2",
+        "appareil": "SM2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.26339,
           50.61741
         ]

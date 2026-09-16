@@ -974,6 +974,25 @@
     },
     {
       "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0,
+          0.0
+        ]
+      },
+      "properties": {
+        "nom": "Bailleul Sir Bethoult",
+        "type": "SP",
+        "SAT": "SM2",
+        "rss": "3",
+        "contact": "3",
+        "numero_ligne": "301000",
+        "ordre_ligne": 20
+      }
+    },
+    {
+      "type": "Feature",
       "properties": {
         "nom": "Baisieux",
         "type": "SSP",

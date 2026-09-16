@@ -966,10 +966,10 @@
       "properties": {
         "nom": "Bailleul Sir Bethoult",
         "type": "SP",
-        "SAT": "SM1",
+        "SAT": "SAT1",
         "rss": "3",
         "numero_ligne": "301000",
-        "ordre_ligne": 19
+        "ordre_ligne": 3
       }
     },
     {
@@ -984,11 +984,11 @@
       "properties": {
         "nom": "Bailleul Sir Bethoult",
         "type": "SP",
-        "SAT": "SM2",
+        "SAT": "SAT2",
         "rss": "3",
         "contact": "3",
         "numero_ligne": "301000",
-        "ordre_ligne": 20
+        "ordre_ligne": 1
       }
     },
     {

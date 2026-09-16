@@ -842,7 +842,7 @@
         "nom": "Bailleul Sir Bethoult",
         "type": "SP",
         "SAT": "SAT1",
-        "acces": "SM1",
+        "acces": "",
         "hors_patrimoine": false,
         "code": false
       }
@@ -860,7 +860,7 @@
         "nom": "Bailleul Sir Bethoult",
         "type": "SP",
         "SAT": "SAT2",
-        "acces": "SM2",
+        "acces": "",
         "hors_patrimoine": false,
         "code": false
       }

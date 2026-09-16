@@ -939,12 +939,13 @@
         "SAT": "",
         "acces": "",
         "description": "⚡️Sectionneurs à manœuvrer à Avion pour les consignations (208-16 et 209-3) ",
-        "description_telecommande": "PAS900",
+        "description_telecommande": "ACSYOM",
         "rss": "C",
         "contact": "",
         "numero_ligne": "301000",
         "code": false,
-        "armen": "74352059"
+        "armen": "74352059",
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",

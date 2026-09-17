@@ -24891,32 +24891,13 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.19431,
-          50.721302
-        ]
-      },
-      "properties": {
-        "nom": "Tourcoing Frontière",
-        "type": "SSP",
-        "SAT": "",
-        "acces": "",
-        "appareil": "6",
-        "description": "",
-        "hors_patrimoine": true
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           3.194273,
           50.721271
         ]
       },
       "properties": {
         "nom": "Tourcoing Frontière",
-        "type": "SSP",
+        "type": "P",
         "SAT": "",
         "acces": "",
         "appareil": "F1",
@@ -24935,7 +24916,7 @@
       },
       "properties": {
         "nom": "Tourcoing Frontière",
-        "type": "SSP",
+        "type": "P",
         "SAT": "",
         "acces": "",
         "appareil": "F2",
@@ -24954,7 +24935,7 @@
       },
       "properties": {
         "nom": "Tourcoing Frontière",
-        "type": "SSP",
+        "type": "P",
         "SAT": "",
         "acces": "",
         "appareil": "F3",
@@ -24973,7 +24954,7 @@
       },
       "properties": {
         "nom": "Tourcoing Frontière",
-        "type": "SSP",
+        "type": "P",
         "SAT": "",
         "acces": "",
         "appareil": "F4",
@@ -24992,7 +24973,26 @@
       },
       "properties": {
         "nom": "Tourcoing Frontière",
-        "type": "SSP",
+        "type": "P",
+        "SAT": "",
+        "acces": "",
+        "appareil": "F6",
+        "description": "",
+        "hors_patrimoine": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.19431,
+          50.721302
+        ]
+      },
+      "properties": {
+        "nom": "Tourcoing Frontière",
+        "type": "P",
         "SAT": "",
         "acces": "",
         "appareil": "I5049",
@@ -25011,7 +25011,7 @@
       },
       "properties": {
         "nom": "Tourcoing Frontière",
-        "type": "SSP",
+        "type": "P",
         "SAT": "",
         "acces": "",
         "appareil": "I5052",
@@ -25030,12 +25030,28 @@
       },
       "properties": {
         "nom": "Tourcoing Frontière",
-        "type": "SSP",
+        "type": "P",
         "SAT": "",
         "acces": "",
         "appareil": "IMP",
         "description": "",
         "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.19431,
+          50.721302
+        ]
+      },
+      "properties": {
+        "nom": "Tourcoing Frontière",
+        "type": "P",
+        "appareil": "TC1",
+        "SAT": ""
       }
     },
     {
@@ -25049,7 +25065,7 @@
       },
       "properties": {
         "nom": "Tourcoing Frontière",
-        "type": "SSP",
+        "type": "P",
         "SAT": "",
         "acces": "",
         "appareil": "TC2",
@@ -25068,7 +25084,7 @@
       },
       "properties": {
         "nom": "Tourcoing Frontière",
-        "type": "SSP",
+        "type": "P",
         "SAT": "",
         "acces": "",
         "appareil": "TSA",
@@ -25087,11 +25103,11 @@
       },
       "properties": {
         "nom": "Tourcoing Frontière",
-        "type": "SSP",
+        "type": "P",
         "SAT": "",
         "acces": "",
-        "appareil": "TT13",
-        "description": "SEL 5049",
+        "appareil": "TT3 SEL5049",
+        "description": "SSR Lion d'or - Tourcoing Frontiere V1",
         "hors_patrimoine": false
       }
     },
@@ -25106,11 +25122,11 @@
       },
       "properties": {
         "nom": "Tourcoing Frontière",
-        "type": "SSP",
+        "type": "P",
         "SAT": "",
         "acces": "",
-        "appareil": "TT4",
-        "description": "SEL 5052",
+        "appareil": "TT4 SEL5052",
+        "description": "SSR Lion d'or - Tourcoing Frontiere V2",
         "hors_patrimoine": false
       }
     },

@@ -6630,7 +6630,7 @@
       "type": "Feature",
       "properties": {
         "nom": "Tourcoing Frontière",
-        "type": "SSP",
+        "type": "P",
         "SAT": "",
         "acces": "",
         "description": "",
@@ -6639,7 +6639,8 @@
         "contact": "",
         "numero_ligne": "278000",
         "code": false,
-        "armen": "74354375"
+        "armen": "74354375",
+        "ordre_ligne": 5
       },
       "geometry": {
         "type": "Point",

@@ -6197,7 +6197,7 @@
       "type": "Feature",
       "properties": {
         "nom": "Tourcoing Frontière",
-        "type": "SSP",
+        "type": "P",
         "SAT": "",
         "acces": "",
         "hors_patrimoine": false,

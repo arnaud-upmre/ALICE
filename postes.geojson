@@ -3087,16 +3087,17 @@
       "type": "Feature",
       "properties": {
         "nom": "Frise",
-        "type": "SP",
+        "type": "P",
         "SAT": "",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226000",
         "code": false,
-        "armen": "74045150"
+        "armen": "74045150",
+        "ordre_ligne": 5
       },
       "geometry": {
         "type": "Point",
@@ -3473,11 +3474,12 @@
         "particularites_consigne": "https://digidocplus.sncf.fr/fi/reference?ref=OP40967",
         "particularites_vitesses": "https://digidocplus.sncf.fr/fi/reference?ref=OP40945",
         "particularites_pistes": "https://digidocplus.sncf.fr/fi/reference?ref=OP41198",
-        "rss": "C",
+        "rss": "3",
         "contact": "Agent E : 03 28 43 77 57",
         "numero_ligne": "301000",
         "code": false,
-        "armen": "74353911"
+        "armen": "74353911",
+        "ordre_ligne": 13
       },
       "geometry": {
         "type": "Point",

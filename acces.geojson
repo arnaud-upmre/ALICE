@@ -2705,7 +2705,7 @@
       "type": "Feature",
       "properties": {
         "nom": "Frise",
-        "type": "SP",
+        "type": "P",
         "SAT": "",
         "acces": "",
         "hors_patrimoine": false,

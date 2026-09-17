@@ -25081,6 +25081,44 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          3.194245,
+          50.721262
+        ]
+      },
+      "properties": {
+        "nom": "Tourcoing Frontière",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT13",
+        "description": "SEL 5049",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.194397,
+          50.721224
+        ]
+      },
+      "properties": {
+        "nom": "Tourcoing Frontière",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT4",
+        "description": "SEL 5052",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.17563,
           50.71793
         ]

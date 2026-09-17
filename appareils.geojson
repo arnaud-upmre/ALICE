@@ -24891,6 +24891,196 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          3.19431,
+          50.721302
+        ]
+      },
+      "properties": {
+        "nom": "Tourcoing Frontière",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "6",
+        "description": "",
+        "hors_patrimoine": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.194273,
+          50.721271
+        ]
+      },
+      "properties": {
+        "nom": "Tourcoing Frontière",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "F1",
+        "description": "",
+        "hors_patrimoine": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.194367,
+          50.721323
+        ]
+      },
+      "properties": {
+        "nom": "Tourcoing Frontière",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "F2",
+        "description": "",
+        "hors_patrimoine": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.194245,
+          50.721262
+        ]
+      },
+      "properties": {
+        "nom": "Tourcoing Frontière",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "F3",
+        "description": "",
+        "hors_patrimoine": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.194367,
+          50.721323
+        ]
+      },
+      "properties": {
+        "nom": "Tourcoing Frontière",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "F4",
+        "description": "",
+        "hors_patrimoine": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.19431,
+          50.721302
+        ]
+      },
+      "properties": {
+        "nom": "Tourcoing Frontière",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "I5049",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.194367,
+          50.721323
+        ]
+      },
+      "properties": {
+        "nom": "Tourcoing Frontière",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "I5052",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.19431,
+          50.721302
+        ]
+      },
+      "properties": {
+        "nom": "Tourcoing Frontière",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IMP",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.194367,
+          50.721323
+        ]
+      },
+      "properties": {
+        "nom": "Tourcoing Frontière",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TC2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.194273,
+          50.721271
+        ]
+      },
+      "properties": {
+        "nom": "Tourcoing Frontière",
+        "type": "SSP",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TSA",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.17563,
           50.71793
         ]

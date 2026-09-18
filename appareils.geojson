@@ -21492,6 +21492,481 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          1.844785,
+          50.931596
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IA3",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.84473,
+          50.931565
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IA4",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.844928,
+          50.931674
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IL1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.844637,
+          50.931459
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IL2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.844887,
+          50.93165
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IL3",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.844584,
+          50.931433
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IL4",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.844832,
+          50.93162
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IL5",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.844834,
+          50.931556
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SB1",
+        "description": "",
+        "hors_patrimoine": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.844834,
+          50.931556
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SB2",
+        "description": "",
+        "hors_patrimoine": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.844928,
+          50.931674
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "T1",
+        "description": "",
+        "hors_patrimoine": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.844564,
+          50.931502
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "T2",
+        "description": "",
+        "hors_patrimoine": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.844887,
+          50.93165
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "T3",
+        "description": "",
+        "hors_patrimoine": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.84453,
+          50.931483
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "T4",
+        "description": "",
+        "hors_patrimoine": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.844832,
+          50.93162
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "T5",
+        "description": "",
+        "hors_patrimoine": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.84473,
+          50.931565
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "T6",
+        "description": "",
+        "hors_patrimoine": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.844785,
+          50.931596
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "T7",
+        "description": "",
+        "hors_patrimoine": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.844785,
+          50.931596
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TC IA3",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.84473,
+          50.931565
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TC IA4",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.844785,
+          50.931596
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT FRETHUN - DEPOT",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.84473,
+          50.931565
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT IA4",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.84453,
+          50.931483
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT7226",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.844812,
+          50.931745
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT7227",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.844564,
+          50.931502
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT7228",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.844812,
+          50.931745
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT7229",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.844774,
+          50.931719
+        ]
+      },
+      "properties": {
+        "nom": "Riviere",
+        "type": "SSPA",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT7317",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           1.8461716,
           50.9329114
         ]

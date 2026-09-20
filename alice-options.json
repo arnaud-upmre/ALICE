@@ -32,8 +32,8 @@
           "id": "colors.notification.info",
           "label": "Couleur de base",
           "type": "color",
-          "value": "#1d4ed8",
-          "default": "#1d4ed8"
+          "value": "#264fc4",
+          "default": "#264fc4"
         },
         {
           "id": "notifications.infoBackgroundLightPercent",
@@ -61,8 +61,8 @@
           "id": "colors.notification.warning",
           "label": "Couleur de base",
           "type": "color",
-          "value": "#b45309",
-          "default": "#b45309"
+          "value": "#de511d",
+          "default": "#de511d"
         },
         {
           "id": "notifications.warningBackgroundLightPercent",
@@ -90,8 +90,8 @@
           "id": "colors.notification.critical",
           "label": "Couleur de base",
           "type": "color",
-          "value": "#b91c1c",
-          "default": "#b91c1c"
+          "value": "#c80e0e",
+          "default": "#c80e0e"
         },
         {
           "id": "notifications.criticalBackgroundLightPercent",
@@ -247,8 +247,8 @@
     },
     {
       "id": "display",
-      "label": "Carte principale : tailles et dimensions",
-      "description": "Règle la taille des éléments manipulés sur la carte et le nombre de fiches pouvant rester ouvertes.",
+      "label": "Carte principale : tailles et apparence",
+      "description": "Règle la taille et l’apparence des éléments manipulés sur la carte, ainsi que le nombre de fiches pouvant rester ouvertes.",
       "options": [
         {
           "id": "display.measureSelectionRadiusPx",
@@ -284,15 +284,363 @@
           "step": 2
         },
         {
+          "id": "display.apparatusGroupOpacityPercent",
+          "label": "Carte — opacité d’une pastille regroupant plusieurs appareils",
+          "type": "number",
+          "unit": "%",
+          "value": 75,
+          "default": 25,
+          "min": 5,
+          "max": 100,
+          "step": 5
+        },
+        {
+          "id": "display.dataPointScalePercent",
+          "label": "Carte — taille des pastilles d’appareils, d’accès, de postes et de passages à niveau",
+          "type": "number",
+          "unit": "%",
+          "value": 100,
+          "default": 100,
+          "min": 50,
+          "max": 200,
+          "step": 5
+        },
+        {
+          "id": "display.railLineWidthPercent",
+          "label": "Carte — épaisseur des traits de lignes ferroviaires",
+          "type": "number",
+          "unit": "%",
+          "value": 100,
+          "default": 100,
+          "min": 50,
+          "max": 200,
+          "step": 5
+        },
+        {
           "id": "display.maximumOpenSheets",
-          "label": "Fiches — nombre pouvant rester ouvertes en même temps",
+          "label": "Fiches — nombre pouvant rester ouvertes en même temps (PC)",
           "type": "number",
           "unit": "fiches",
-          "value": 2,
-          "default": 2,
+          "value": 3,
+          "default": 3,
           "min": 1,
           "max": 10,
           "step": 1
+        }
+      ]
+    },
+    {
+      "id": "pointModes",
+      "label": "Carte principale : zone de chaleur et clusters",
+      "description": "Règle le passage aux points normaux, le regroupement des points et le rendu de la zone de chaleur.",
+      "options": [
+        {
+          "id": "pointModes.clusterNormalPointsZoom",
+          "label": "Clusters et zone de chaleur — niveau de zoom auquel seuls les points normaux restent affichés",
+          "type": "number",
+          "unit": "niveau",
+          "value": 17,
+          "default": 17,
+          "min": 5,
+          "max": 19,
+          "step": 0.5
+        },
+        {
+          "id": "pointModes.clusterRadiusPx",
+          "label": "Clusters — distance de regroupement autour d’un point",
+          "type": "number",
+          "unit": "px",
+          "value": 58,
+          "default": 58,
+          "min": 10,
+          "max": 160,
+          "step": 2
+        },
+        {
+          "id": "pointModes.clusterExpansionDurationMs",
+          "label": "Clusters — durée du zoom après un clic",
+          "type": "number",
+          "unit": "ms",
+          "value": 420,
+          "default": 420,
+          "min": 0,
+          "max": 2000,
+          "step": 20
+        },
+        {
+          "id": "pointModes.clusterMediumFromCount",
+          "label": "Clusters — nombre de points à partir du niveau moyen",
+          "type": "number",
+          "unit": "points",
+          "value": 10,
+          "default": 10,
+          "min": 2,
+          "max": 500,
+          "step": 1
+        },
+        {
+          "id": "pointModes.clusterHighFromCount",
+          "label": "Clusters — nombre de points à partir du niveau élevé",
+          "type": "number",
+          "unit": "points",
+          "value": 30,
+          "default": 30,
+          "min": 3,
+          "max": 1000,
+          "step": 1
+        },
+        {
+          "id": "pointModes.clusterVeryHighFromCount",
+          "label": "Clusters — nombre de points à partir du niveau très élevé",
+          "type": "number",
+          "unit": "points",
+          "value": 100,
+          "default": 100,
+          "min": 4,
+          "max": 5000,
+          "step": 1
+        },
+        {
+          "id": "pointModes.clusterSmallDiameterPx",
+          "label": "Clusters — diamètre d’un petit regroupement",
+          "type": "number",
+          "unit": "px",
+          "value": 34,
+          "default": 34,
+          "min": 16,
+          "max": 100,
+          "step": 2
+        },
+        {
+          "id": "pointModes.clusterMediumDiameterPx",
+          "label": "Clusters — diamètre d’un regroupement moyen",
+          "type": "number",
+          "unit": "px",
+          "value": 42,
+          "default": 42,
+          "min": 18,
+          "max": 120,
+          "step": 2
+        },
+        {
+          "id": "pointModes.clusterLargeDiameterPx",
+          "label": "Clusters — diamètre d’un grand regroupement",
+          "type": "number",
+          "unit": "px",
+          "value": 52,
+          "default": 52,
+          "min": 20,
+          "max": 140,
+          "step": 2
+        },
+        {
+          "id": "pointModes.clusterVeryLargeDiameterPx",
+          "label": "Clusters — diamètre d’un très grand regroupement",
+          "type": "number",
+          "unit": "px",
+          "value": 64,
+          "default": 64,
+          "min": 22,
+          "max": 180,
+          "step": 2
+        },
+        {
+          "id": "pointModes.clusterOpacityPercent",
+          "label": "Clusters — opacité des regroupements",
+          "type": "number",
+          "unit": "%",
+          "value": 90,
+          "default": 90,
+          "min": 10,
+          "max": 100,
+          "step": 5
+        },
+        {
+          "id": "pointModes.clusterOutlineWidthPx",
+          "label": "Clusters — épaisseur du contour",
+          "type": "number",
+          "unit": "px",
+          "value": 2,
+          "default": 2,
+          "min": 0,
+          "max": 8,
+          "step": 0.5
+        },
+        {
+          "id": "pointModes.clusterCountTextSizePx",
+          "label": "Clusters — taille du nombre de points",
+          "type": "number",
+          "unit": "px",
+          "value": 12,
+          "default": 12,
+          "min": 8,
+          "max": 24,
+          "step": 1
+        },
+        {
+          "id": "pointModes.heatmapLowZoomRadiusPx",
+          "label": "Zone de chaleur — rayon à faible zoom",
+          "type": "number",
+          "unit": "px",
+          "value": 15,
+          "default": 15,
+          "min": 4,
+          "max": 80,
+          "step": 1
+        },
+        {
+          "id": "pointModes.heatmapMediumZoomRadiusPx",
+          "label": "Zone de chaleur — rayon à zoom intermédiaire",
+          "type": "number",
+          "unit": "px",
+          "value": 28,
+          "default": 28,
+          "min": 4,
+          "max": 120,
+          "step": 1
+        },
+        {
+          "id": "pointModes.heatmapHighZoomRadiusPx",
+          "label": "Zone de chaleur — rayon à fort zoom",
+          "type": "number",
+          "unit": "px",
+          "value": 42,
+          "default": 42,
+          "min": 4,
+          "max": 180,
+          "step": 1
+        },
+        {
+          "id": "pointModes.heatmapLowZoomIntensityPercent",
+          "label": "Zone de chaleur — intensité à faible zoom",
+          "type": "number",
+          "unit": "%",
+          "value": 65,
+          "default": 65,
+          "min": 10,
+          "max": 300,
+          "step": 5
+        },
+        {
+          "id": "pointModes.heatmapMediumZoomIntensityPercent",
+          "label": "Zone de chaleur — intensité à zoom intermédiaire",
+          "type": "number",
+          "unit": "%",
+          "value": 125,
+          "default": 125,
+          "min": 10,
+          "max": 400,
+          "step": 5
+        },
+        {
+          "id": "pointModes.heatmapHighZoomIntensityPercent",
+          "label": "Zone de chaleur — intensité à fort zoom",
+          "type": "number",
+          "unit": "%",
+          "value": 170,
+          "default": 170,
+          "min": 10,
+          "max": 500,
+          "step": 5
+        },
+        {
+          "id": "pointModes.heatmapOpacityPercent",
+          "label": "Zone de chaleur — opacité générale",
+          "type": "number",
+          "unit": "%",
+          "value": 88,
+          "default": 88,
+          "min": 5,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "id": "pointModes.heatmapTransitionZoomLevels",
+          "label": "Zone de chaleur — nombre de niveaux de zoom pour faire apparaître progressivement les points normaux",
+          "type": "number",
+          "unit": "niveaux",
+          "value": 2,
+          "default": 2,
+          "min": 0.5,
+          "max": 8,
+          "step": 0.5
+        },
+        {
+          "id": "colors.pointModes.clusterLow",
+          "label": "Clusters — couleur d’un petit regroupement",
+          "type": "color",
+          "value": "#5068f5",
+          "default": "#5068f5"
+        },
+        {
+          "id": "colors.pointModes.clusterMedium",
+          "label": "Clusters — couleur d’un regroupement moyen",
+          "type": "color",
+          "value": "#7a57d1",
+          "default": "#7a57d1"
+        },
+        {
+          "id": "colors.pointModes.clusterHigh",
+          "label": "Clusters — couleur d’un grand regroupement",
+          "type": "color",
+          "value": "#d55e55",
+          "default": "#d55e55"
+        },
+        {
+          "id": "colors.pointModes.clusterVeryHigh",
+          "label": "Clusters — couleur d’un très grand regroupement",
+          "type": "color",
+          "value": "#b42318",
+          "default": "#b42318"
+        },
+        {
+          "id": "colors.pointModes.clusterOutline",
+          "label": "Clusters — couleur du contour",
+          "type": "color",
+          "value": "#ffffff",
+          "default": "#ffffff"
+        },
+        {
+          "id": "colors.pointModes.clusterText",
+          "label": "Clusters — couleur du nombre de points",
+          "type": "color",
+          "value": "#ffffff",
+          "default": "#ffffff"
+        },
+        {
+          "id": "colors.pointModes.heatmapCool",
+          "label": "Zone de chaleur — couleur de faible densité",
+          "type": "color",
+          "value": "#2c7be5",
+          "default": "#2c7be5"
+        },
+        {
+          "id": "colors.pointModes.heatmapMild",
+          "label": "Zone de chaleur — couleur de densité modérée",
+          "type": "color",
+          "value": "#43c4ac",
+          "default": "#43c4ac"
+        },
+        {
+          "id": "colors.pointModes.heatmapWarm",
+          "label": "Zone de chaleur — couleur de densité moyenne",
+          "type": "color",
+          "value": "#fed976",
+          "default": "#fed976"
+        },
+        {
+          "id": "colors.pointModes.heatmapHot",
+          "label": "Zone de chaleur — couleur de forte densité",
+          "type": "color",
+          "value": "#fd8d3c",
+          "default": "#fd8d3c"
+        },
+        {
+          "id": "colors.pointModes.heatmapVeryHot",
+          "label": "Zone de chaleur — couleur de très forte densité",
+          "type": "color",
+          "value": "#d73027",
+          "default": "#d73027"
         }
       ]
     },
@@ -311,17 +659,6 @@
           "min": 250,
           "max": 3000,
           "step": 50
-        },
-        {
-          "id": "interaction.dataStartupDelayMs",
-          "label": "Ouverture d’ALICE — attente avant le chargement des données",
-          "type": "number",
-          "unit": "ms",
-          "value": 220,
-          "default": 220,
-          "min": 0,
-          "max": 5000,
-          "step": 10
         },
         {
           "id": "interaction.locationFollowPauseMs",
@@ -420,29 +757,29 @@
           "id": "css.--alice-accent-blue-light",
           "label": "Ajouter un appareil et Versions — boutons et repères mis en avant",
           "type": "color",
-          "value": "#2563eb",
-          "default": "#2563eb"
+          "value": "#264fc4",
+          "default": "#264fc4"
         },
         {
           "id": "css.--alice-accent-blue-strong-light",
           "label": "Carte principale et Versions — liens et étiquettes mis en avant",
           "type": "color",
-          "value": "#1d4ed8",
-          "default": "#1d4ed8"
+          "value": "#264fc4",
+          "default": "#264fc4"
         },
         {
           "id": "css.--alice-success-strong-light",
           "label": "Page Ajouter un appareil — message de réussite",
           "type": "color",
-          "value": "#15803d",
-          "default": "#15803d"
+          "value": "#008056",
+          "default": "#008056"
         },
         {
           "id": "css.--alice-danger-light",
           "label": "Ajouter un appareil et itinéraire — messages d’erreur",
           "type": "color",
-          "value": "#dc2626",
-          "default": "#dc2626"
+          "value": "#c80e0e",
+          "default": "#c80e0e"
         },
         {
           "id": "css.--tableau-text-light",
@@ -504,8 +841,8 @@
           "id": "colors.filter.apparatusTileLight",
           "label": "Menu Filtres — carré contenant les quatre couleurs devant « Appareils »",
           "type": "color",
-          "value": "#1d4ed8",
-          "default": "#1d4ed8"
+          "value": "#264fc4",
+          "default": "#264fc4"
         }
       ]
     },
@@ -553,57 +890,57 @@
           "id": "css.--alice-accent-blue-dark",
           "label": "Carte principale et Versions — liens et repères mis en avant",
           "type": "color",
-          "value": "#8fc2ff",
-          "default": "#8fc2ff"
+          "value": "#97c7ec",
+          "default": "#97c7ec"
         },
         {
           "id": "css.--alice-success-dark",
           "label": "Page Ajouter un appareil — message de réussite",
           "type": "color",
-          "value": "#4ade80",
-          "default": "#4ade80"
+          "value": "#00cb83",
+          "default": "#00cb83"
         },
         {
           "id": "css.--alice-danger-dark",
           "label": "Page Ajouter un appareil — message d’erreur",
           "type": "color",
-          "value": "#f87171",
-          "default": "#f87171"
+          "value": "#f08992",
+          "default": "#f08992"
         },
         {
           "id": "css.--tableau-pill-text-dark",
           "label": "Tableau blanc — texte des pastilles contenant les codes d’appareils",
           "type": "color",
-          "value": "#8fc2ff",
-          "default": "#8fc2ff"
+          "value": "#97c7ec",
+          "default": "#97c7ec"
         },
         {
           "id": "css.--tableau-sat-text-dark",
           "label": "Tableau blanc — texte des pastilles SAT et Poste principal",
           "type": "color",
-          "value": "#ffd38a",
-          "default": "#ffd38a"
+          "value": "#f1d18a",
+          "default": "#f1d18a"
         },
         {
           "id": "css.--tableau-hp-text-dark",
           "label": "Tableau blanc — texte des appareils hors patrimoine",
           "type": "color",
-          "value": "#fca5a5",
-          "default": "#fca5a5"
+          "value": "#f08992",
+          "default": "#f08992"
         },
         {
           "id": "css.--tableau-accent-dark",
           "label": "Tableau blanc — numéros de ligne et contours de sélection",
           "type": "color",
-          "value": "#60a5fa",
-          "default": "#60a5fa"
+          "value": "#97c7ec",
+          "default": "#97c7ec"
         },
         {
           "id": "colors.filter.apparatusTileDark",
           "label": "Menu Filtres — carré contenant les quatre couleurs devant « Appareils »",
           "type": "color",
-          "value": "#94a3b8",
-          "default": "#94a3b8"
+          "value": "#97c7ec",
+          "default": "#97c7ec"
         }
       ]
     },
@@ -616,57 +953,64 @@
           "id": "colors.apparatus.remoteControlBadge",
           "label": "Fiches de postes — pastilles contenant les codes de télécommande",
           "type": "color",
-          "value": "#1d4ed8",
-          "default": "#1d4ed8"
+          "value": "#264fc4",
+          "default": "#264fc4"
         },
         {
           "id": "colors.apparatus.emergency",
           "label": "Pastilles des appareils DU (dispositifs d’urgence)",
           "type": "color",
-          "value": "#d90429",
-          "default": "#d90429"
+          "value": "#c80e0e",
+          "default": "#c80e0e"
         },
         {
           "id": "colors.apparatus.switch",
           "label": "Pastilles des appareils SI, I et D (interrupteurs)",
           "type": "color",
-          "value": "#f77f00",
-          "default": "#f77f00"
+          "value": "#e05606",
+          "default": "#de511d"
         },
         {
           "id": "colors.apparatus.transformer",
           "label": "Pastilles des appareils TT, TSA, TC, TRA, B1 à B3, GT et AT (transformateurs)",
           "type": "color",
-          "value": "#ffd60a",
-          "default": "#ffd60a"
+          "value": "#ffb100",
+          "default": "#ffb100"
         },
         {
           "id": "colors.apparatus.disconnector",
           "label": "Pastilles des appareils T, S, ST, F, FB, P et B (sectionneurs)",
           "type": "color",
-          "value": "#2a9d8f",
-          "default": "#2a9d8f"
+          "value": "#008056",
+          "default": "#008056"
         },
         {
           "id": "colors.apparatus.supply",
           "label": "Pastilles des appareils dont le code commence par ALIM",
           "type": "color",
-          "value": "#8d99ae",
-          "default": "#8d99ae"
+          "value": "#00afb5",
+          "default": "#00afb5"
         },
         {
           "id": "colors.apparatus.other",
           "label": "Pastilles des appareils PF ou dont le code n’est pas reconnu",
           "type": "color",
-          "value": "#111111",
-          "default": "#111111"
+          "value": "#000000",
+          "default": "#000000"
         },
         {
           "id": "colors.apparatus.outsideAssets",
           "label": "Pastilles des appareils hors patrimoine",
           "type": "color",
-          "value": "#ef4444",
-          "default": "#ef4444"
+          "value": "#c80e0e",
+          "default": "#c80e0e"
+        },
+        {
+          "id": "colors.apparatus.mixedSupport",
+          "label": "Fiches d’appareils — en-tête d’un support portant plusieurs couleurs d’appareils",
+          "type": "color",
+          "value": "#ef7c1f",
+          "default": "#ef7c1f"
         }
       ]
     },
@@ -679,8 +1023,8 @@
           "id": "colors.map.route",
           "label": "Couleur du texte et couleur de base du fond",
           "type": "color",
-          "value": "#b45309",
-          "default": "#b45309"
+          "value": "#de511d",
+          "default": "#de511d"
         },
         {
           "id": "display.sheetTitleBackgroundLightPercent",
@@ -715,176 +1059,204 @@
           "id": "colors.map.access",
           "label": "Carte — pastille d’un accès routier",
           "type": "color",
-          "value": "#7c3aed",
-          "default": "#7c3aed"
+          "value": "#9024fa",
+          "default": "#9024fa"
         },
         {
           "id": "colors.map.accessGroup",
           "label": "Carte — grande pastille regroupant plusieurs accès routiers",
           "type": "color",
-          "value": "#8b5cf6",
-          "default": "#8b5cf6"
+          "value": "#af80f2",
+          "default": "#af80f2"
         },
         {
           "id": "colors.map.station",
           "label": "Carte — pastille d’un poste",
           "type": "color",
-          "value": "#60a5fa",
-          "default": "#60a5fa"
+          "value": "#97c7ec",
+          "default": "#97c7ec"
         },
         {
           "id": "colors.map.stationGroup",
           "label": "Carte — grande pastille regroupant plusieurs postes",
           "type": "color",
-          "value": "#93c5fd",
-          "default": "#93c5fd"
+          "value": "#5068f5",
+          "default": "#5068f5"
         },
         {
           "id": "colors.map.sat",
           "label": "Carte — pastille d’un SAT",
           "type": "color",
-          "value": "#1d4ed8",
-          "default": "#1d4ed8"
+          "value": "#264fc4",
+          "default": "#264fc4"
         },
         {
           "id": "colors.map.satGroup",
           "label": "Carte — grande pastille regroupant plusieurs postes dont au moins un SAT",
           "type": "color",
-          "value": "#60a5fa",
-          "default": "#60a5fa"
+          "value": "#508ecc",
+          "default": "#508ecc"
+        },
+        {
+          "id": "colors.map.missingData",
+          "label": "Carte — contour d’un poste ou SAT avec des données à compléter",
+          "type": "color",
+          "value": "#de511d",
+          "default": "#de511d"
         },
         {
           "id": "colors.map.levelCrossing",
           "label": "Couleur intérieure du point",
           "type": "color",
-          "value": "#06b6d4",
-          "default": "#06b6d4"
+          "value": "#00afb5",
+          "default": "#00afb5"
         },
         {
           "id": "colors.map.levelCrossingOutline",
           "label": "Couleur du contour",
           "type": "color",
-          "value": "#164e63",
-          "default": "#164e63"
+          "value": "#015147",
+          "default": "#015147"
         },
         {
           "id": "colors.map.pk",
           "label": "Recherche et menu Filtres — point associé aux PK",
           "type": "color",
-          "value": "#0f766e",
-          "default": "#0f766e"
+          "value": "#015147",
+          "default": "#015147"
         },
         {
           "id": "colors.map.address",
           "label": "Résultats de recherche — point placé devant une adresse",
           "type": "color",
-          "value": "#be185d",
-          "default": "#be185d"
+          "value": "#c30067",
+          "default": "#c30067"
         },
         {
           "id": "colors.map.otherStation",
           "label": "Carte — pastille d’un élément classé « Autre »",
           "type": "color",
-          "value": "#64748b",
-          "default": "#64748b"
+          "value": "#015147",
+          "default": "#015147"
         },
         {
           "id": "colors.map.contextMarker",
           "label": "Carte — cible temporaire posée après un appui long",
           "type": "color",
-          "value": "#ef4444",
-          "default": "#ef4444"
+          "value": "#c80e0e",
+          "default": "#c80e0e"
         },
         {
           "id": "colors.map.location",
           "label": "Carte — point indiquant votre position GPS",
           "type": "color",
-          "value": "#1d9bf0",
-          "default": "#1d9bf0"
+          "value": "#00afb5",
+          "default": "#00afb5"
         },
         {
           "id": "colors.map.railSearchHighlight",
           "label": "Carte — ligne ferroviaire mise en évidence après une recherche",
           "type": "color",
-          "value": "#2563eb",
-          "default": "#2563eb"
+          "value": "#5068f5",
+          "default": "#5068f5"
         },
         {
           "id": "colors.map.outsideAssetsGroup",
           "label": "Carte — groupes contenant au moins un élément hors patrimoine",
           "type": "color",
-          "value": "#f87171",
-          "default": "#f87171"
+          "value": "#f08992",
+          "default": "#f08992"
         }
       ]
     },
     {
       "id": "railColors",
       "label": "Carte principale : traits des lignes ferroviaires",
-      "description": "Chaque couleur s’applique au trait de la catégorie correspondante sur la carte et à son exemple dans la légende.",
+      "description": "Règle les couleurs des catégories ferroviaires et des repères d’équipe.",
       "options": [
+        {
+          "id": "colors.teams.hazebrouck",
+          "label": "Équipe — Hazebrouck",
+          "type": "color",
+          "value": "#4b76c5",
+          "default": "#4b76c5"
+        },
+        {
+          "id": "colors.teams.valenciennes",
+          "label": "Équipe — Valenciennes",
+          "type": "color",
+          "value": "#ff0000",
+          "default": "#ff0000"
+        },
+        {
+          "id": "colors.teams.amiens",
+          "label": "Équipe — Amiens",
+          "type": "color",
+          "value": "#70b247",
+          "default": "#70b247"
+        },
         {
           "id": "colors.rail.main",
           "label": "Trait d’une ligne ferroviaire classique",
           "type": "color",
-          "value": "#f59e0b",
-          "default": "#f59e0b"
+          "value": "#ffb100",
+          "default": "#ffb100"
         },
         {
           "id": "colors.rail.highSpeed",
           "label": "Trait d’une ligne à grande vitesse",
           "type": "color",
-          "value": "#dc2626",
-          "default": "#dc2626"
+          "value": "#c80e0e",
+          "default": "#c80e0e"
         },
         {
           "id": "colors.rail.getlink",
           "label": "Trait de la liaison Eurotunnel",
           "type": "color",
-          "value": "#1e3a8a",
-          "default": "#1e3a8a"
+          "value": "#264fc4",
+          "default": "#264fc4"
         },
         {
           "id": "colors.rail.branch",
           "label": "Trait d’une ligne secondaire",
           "type": "color",
-          "value": "#60a5fa",
-          "default": "#60a5fa"
+          "value": "#5068f5",
+          "default": "#5068f5"
         },
         {
           "id": "colors.rail.yard",
           "label": "Trait d’une voie de faisceau",
           "type": "color",
-          "value": "#94a3b8",
-          "default": "#94a3b8"
+          "value": "#91c0bf",
+          "default": "#91c0bf"
         },
         {
           "id": "colors.rail.siding",
           "label": "Trait d’une voie de garage",
           "type": "color",
-          "value": "#64748b",
-          "default": "#64748b"
+          "value": "#015147",
+          "default": "#015147"
         },
         {
           "id": "colors.rail.spur",
           "label": "Trait d’une voie de service",
           "type": "color",
-          "value": "#c084fc",
-          "default": "#c084fc"
+          "value": "#9024fa",
+          "default": "#9024fa"
         },
         {
           "id": "colors.rail.industrial",
           "label": "Trait d’une ligne industrielle",
           "type": "color",
-          "value": "#87491d",
-          "default": "#87491d"
+          "value": "#de511d",
+          "default": "#de511d"
         },
         {
           "id": "colors.rail.tourism",
           "label": "Trait d’une ligne touristique",
           "type": "color",
-          "value": "#14b8a6",
-          "default": "#14b8a6"
+          "value": "#008056",
+          "default": "#008056"
         },
         {
           "id": "colors.rail.other",
@@ -897,22 +1269,22 @@
           "id": "colors.rail.disused",
           "label": "Trait d’une ligne indiquée comme non utilisée",
           "type": "color",
-          "value": "#64748b",
-          "default": "#64748b"
+          "value": "#28a092",
+          "default": "#28a092"
         },
         {
           "id": "colors.rail.abandoned",
           "label": "Trait d’une ligne indiquée comme abandonnée",
           "type": "color",
-          "value": "#94a3b8",
-          "default": "#94a3b8"
+          "value": "#91c0bf",
+          "default": "#91c0bf"
         },
         {
           "id": "colors.rail.razed",
           "label": "Trait d’une ligne dont les voies sont déposées",
           "type": "color",
-          "value": "#cbd5e1",
-          "default": "#cbd5e1"
+          "value": "#b0cc93",
+          "default": "#b0cc93"
         }
       ]
     },
@@ -925,29 +1297,29 @@
           "id": "colors.route.line",
           "label": "Fenêtre Itinéraire entre postes — trait reliant les étapes",
           "type": "color",
-          "value": "#2563eb",
-          "default": "#2563eb"
+          "value": "#5068f5",
+          "default": "#5068f5"
         },
         {
           "id": "colors.route.departure",
           "label": "Fenêtre Itinéraire entre postes — cercle et lettre du départ",
           "type": "color",
-          "value": "#16a34a",
-          "default": "#16a34a"
+          "value": "#008056",
+          "default": "#008056"
         },
         {
           "id": "colors.route.stop",
           "label": "Fenêtre Itinéraire entre postes — cercles et lettres des étapes",
           "type": "color",
-          "value": "#f59e0b",
-          "default": "#f59e0b"
+          "value": "#ffb100",
+          "default": "#ffb100"
         },
         {
           "id": "colors.route.arrival",
           "label": "Fenêtre Itinéraire entre postes — cercle et lettre de l’arrivée",
           "type": "color",
-          "value": "#dc2626",
-          "default": "#dc2626"
+          "value": "#c80e0e",
+          "default": "#c80e0e"
         }
       ]
     },
@@ -983,6 +1355,121 @@
           "type": "color",
           "value": "#ffffff",
           "default": "#ffffff"
+        }
+      ]
+    },
+    {
+      "id": "metroBoard",
+      "label": "Tableau blanc : vue Métro",
+      "description": "Règle la taille des noms d’arrêts, l’écartement du rail et la mise en évidence de la recherche, dans la vue Métro du tableau blanc.",
+      "options": [
+        {
+          "id": "css.--metro-tableau-taille-nom",
+          "label": "Vue Métro du tableau blanc — taille du nom des arrêts",
+          "type": "number",
+          "unit": "px",
+          "value": 12,
+          "default": 12,
+          "min": 8,
+          "max": 20,
+          "step": 0.5
+        },
+        {
+          "id": "css.--metro-tableau-taille-type",
+          "label": "Vue Métro du tableau blanc — taille du type et du poste parent",
+          "type": "number",
+          "unit": "px",
+          "value": 11,
+          "default": 11,
+          "min": 7,
+          "max": 18,
+          "step": 0.5
+        },
+        {
+          "id": "tableau.metro.minStopGapPx",
+          "label": "Vue Métro du tableau blanc — écart minimal entre deux arrêts",
+          "type": "number",
+          "unit": "px",
+          "value": 36,
+          "default": 36,
+          "min": 24,
+          "max": 120,
+          "step": 1
+        },
+        {
+          "id": "tableau.metro.maxStopGapPx",
+          "label": "Vue Métro du tableau blanc — écart maximal entre deux arrêts",
+          "type": "number",
+          "unit": "px",
+          "value": 200,
+          "default": 200,
+          "min": 60,
+          "max": 600,
+          "step": 10
+        },
+        {
+          "id": "css.--metro-tableau-recherche-clair",
+          "label": "Vue Métro du tableau blanc — couleur de l’arrêt trouvé, en mode clair",
+          "type": "color",
+          "value": "#5068f5",
+          "default": "#5068f5"
+        },
+        {
+          "id": "css.--metro-tableau-recherche-sombre",
+          "label": "Vue Métro du tableau blanc — couleur de l’arrêt trouvé, en mode sombre",
+          "type": "color",
+          "value": "#97c7ec",
+          "default": "#97c7ec"
+        },
+        {
+          "id": "tableau.metro.searchBlinkMs",
+          "label": "Vue Métro du tableau blanc — durée du clignotement des arrêts trouvés",
+          "type": "number",
+          "unit": "ms",
+          "value": 4000,
+          "default": 4000,
+          "min": 0,
+          "max": 20000,
+          "step": 500
+        }
+      ]
+    },
+    {
+      "id": "metroSheet",
+      "label": "Carte : vue Métro d’une ligne (volet de fiche)",
+      "description": "Règle la taille des noms d’arrêts et le rapprochement de la carte dans la vue Métro qui s’ouvre depuis la recherche d’une ligne. Sans rapport avec la vue Métro du tableau blanc, qui a sa propre rubrique.",
+      "options": [
+        {
+          "id": "css.--metro-fiche-taille-nom",
+          "label": "Vue Métro d’une fiche — taille du nom des arrêts",
+          "type": "number",
+          "unit": "px",
+          "value": 14,
+          "default": 14,
+          "min": 9,
+          "max": 22,
+          "step": 0.5
+        },
+        {
+          "id": "css.--metro-fiche-taille-type",
+          "label": "Vue Métro d’une fiche — taille du type et du poste parent",
+          "type": "number",
+          "unit": "px",
+          "value": 12,
+          "default": 12,
+          "min": 7,
+          "max": 18,
+          "step": 0.5
+        },
+        {
+          "id": "vueMetro.stopZoom",
+          "label": "Vue Métro d’une fiche — rapprochement de la carte au clic sur un arrêt",
+          "type": "number",
+          "value": 14.2,
+          "default": 14.2,
+          "min": 8,
+          "max": 19,
+          "step": 0.1
         }
       ]
     }

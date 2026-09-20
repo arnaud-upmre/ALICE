@@ -43,6 +43,11 @@
   --hp-bg: rgba(200, 14, 14, 0.12);
   --hp-text: var(--tableau-hp-text-light, #c80e0e);
 
+  /* Vue Metro — reglages du gestionnaire (groupe « Vue Metro du tableau
+     blanc »). Les tailles sont des nombres sans unite : le fichier d'options
+     ne sait ecrire qu'un nombre, le `* 1px` est fait dans la regle. */
+  --metro-recherche: var(--metro-tableau-recherche-clair, #5068f5);
+
   /* Accent / bordure / ombre */
   --accent: var(--tableau-accent-light, #5068f5);
   --border: var(--tableau-border-light, #b0cc93);
@@ -58,16 +63,18 @@
     --text: var(--alice-text-dark);
     --muted: var(--alice-muted-dark);
 
-    --pill-bg: rgba(96, 165, 250, 0.14);
-    --pill-text: var(--tableau-pill-text-dark, #8fc2ff);
+    --pill-bg: color-mix(in srgb, #97c7ec 14%, transparent);
+    --pill-text: var(--tableau-pill-text-dark, #97c7ec);
 
-    --sat-bg: rgba(251, 191, 36, 0.14);
-    --sat-text: var(--tableau-sat-text-dark, #ffd38a);
+    --sat-bg: color-mix(in srgb, #f1d18a 14%, transparent);
+    --sat-text: var(--tableau-sat-text-dark, #f1d18a);
 
-    --hp-bg: rgba(248, 113, 113, 0.14);
-    --hp-text: var(--tableau-hp-text-dark, #fca5a5);
+    --hp-bg: color-mix(in srgb, #f08992 14%, transparent);
+    --hp-text: var(--tableau-hp-text-dark, #f08992);
 
-    --accent: var(--tableau-accent-dark, #60a5fa);
+    --metro-recherche: var(--metro-tableau-recherche-sombre, #97c7ec);
+
+    --accent: var(--tableau-accent-dark, #97c7ec);
     --border: var(--alice-line-strong-dark);
     --shadow: rgba(0, 0, 0, 0.35);
   }
@@ -283,8 +290,8 @@ body {
 }
 
 .card.hp-poste{
-  background: linear-gradient(135deg, #fff1f1, #ffe4e4);
-  border: 1px solid #ef9a9a;
+  background: linear-gradient(135deg, color-mix(in srgb, #f08992 12%, #ffffff), color-mix(in srgb, #f08992 22%, #ffffff));
+  border: 1px solid #f08992;
   box-shadow: 0 6px 16px rgba(200, 14, 14, 0.18);
 }
 
@@ -430,7 +437,7 @@ body {
 }
 
 .filters button.activeFilter {
-  background: linear-gradient(135deg, #5b6eff, #5068f5);
+  background: linear-gradient(135deg, #5068f5, #264fc4);
   color: #ffffff;
   border-color: #5068f5;
   box-shadow: 0 6px 18px rgba(80, 104, 245, 0.35);
@@ -534,13 +541,385 @@ body {
   }
 }
 
+
+/* =========================Vue Metro=========================
+   Une ligne par rangee : le rail est horizontal (l'inverse de la vue
+   Metro du volet de fiche, verticale) et les noms montent a 45° au-dessus
+   du rail, comme sur un plan de metro papier.
+
+   C'est la rotation qui permet des arrets etroits : a l'horizontale il
+   fallait 104 px par arret et presque toutes les lignes defilaient ; a 45°
+   il en faut 36, et le nom se deploie dans la hauteur.
+   ============================================================ */
+
+.post-container.mode-metro {
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.ligne-card {
+  /* Reserves recalculees carte par carte en JS
+     (`ajusterHauteursLibellesMetro`) : ces valeurs ne servent qu'au
+     premier rendu, avant la mesure. */
+  --metro-largeur-arret: 36px;
+  --metro-largeur-libelle: 152px;
+  --metro-hauteur-libelles: 124px;
+  --metro-reserve-libelle: 120px;
+  --color-ligne-metro: var(--accent);
+
+  position: relative;
+  min-width: 0;
+  padding: 12px 14px;
+}
+
+.ligne-entete {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 2px;
+  /* Place du bouton de sens, qui est hors du flux. */
+  padding-right: 40px;
+}
+
+.ligne-code {
+  flex: 0 0 auto;
+  border-radius: 999px;
+  padding: 3px 9px;
+  font-size: 11px;
+  font-weight: 700;
+  background: color-mix(in srgb, var(--color-ligne-metro) 12%, transparent);
+  color: var(--color-ligne-metro);
+}
+
+.ligne-nom {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.ligne-compteur {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Bascule de sens, une par ligne : le sens de lecture depend du bout de
+   la ligne d'ou part l'agent. Memorise (voir CLE_SENS_METRO_TABLEAU). */
+.ligne-inverser {
+  position: absolute;
+  top: 11px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  min-height: 26px;
+  padding: 2px 8px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--muted);
+  font: inherit;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.ligne-inverser:hover {
+  border-color: var(--color-ligne-metro);
+  color: var(--color-ligne-metro);
+}
+
+.ligne-inverser[aria-pressed="true"] {
+  border-color: var(--color-ligne-metro);
+  background: color-mix(in srgb, var(--color-ligne-metro) 12%, transparent);
+  color: var(--color-ligne-metro);
+}
+
+.ligne-inverser:focus-visible {
+  outline: 2px solid var(--color-ligne-metro);
+  outline-offset: 2px;
+}
+
+/* Le defilement est porte par un conteneur separe : un rail absolu dans
+   l'element qui defile lui-meme resterait colle au bord visible au lieu
+   de suivre les arrets. */
+.metro-defilement {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 2px;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--color-ligne-metro) 35%, transparent) transparent;
+}
+
+.metro-defilement::-webkit-scrollbar {
+  height: 6px;
+}
+
+.metro-defilement::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.metro-defilement::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-ligne-metro) 30%, transparent);
+}
+
+/* Les marqueurs sont en bas, les libelles montent dans le retrait haut.
+   Le retrait droit accueille le dernier libelle, qui part vers la droite :
+   sans lui il serait coupe par le bord du conteneur de defilement. */
+.metro-rail {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  width: max-content;
+  margin: 0;
+  padding: var(--metro-hauteur-libelles) var(--metro-reserve-libelle) 4px 0;
+  list-style: none;
+}
+
+/* Le rail court derriere les arrets, du premier marqueur au dernier.
+   `--metro-largeur-arret` est l'ecart entre deux marqueurs, mesure par carte
+   (`ajusterHauteursLibellesMetro`) pour que toutes les lignes occupent la meme
+   largeur. Le marqueur est cale a GAUCHE de sa boite : le premier tombe au
+   bord du rectangle quel que soit l'ecart, sinon chaque ligne demarrait a un
+   retrait different (la moitie de son propre ecart). */
+.metro-rail::before {
+  content: "";
+  position: absolute;
+  bottom: 12px;
+  left: 8px;
+  right: calc(var(--metro-reserve-libelle) + 8px);
+  height: 3px;
+  margin-bottom: -1.5px;
+  border-radius: 2px;
+  background: var(--color-ligne-metro);
+  opacity: 0.35;
+}
+
+.metro-stop {
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  width: var(--metro-largeur-arret);
+}
+
+/* Le dernier arret ne porte pas d'ecart : sans ca, le rail se terminerait un
+   ecart entier avant le bord droit. */
+.metro-stop:last-child {
+  width: 16px;
+}
+
+/* Attache du marqueur vers son libelle, 13 px a 45°. */
+.metro-stop::before {
+  content: "";
+  position: absolute;
+  bottom: 12px;
+  left: 8px;
+  width: 13px;
+  height: 1px;
+  background: var(--muted);
+  opacity: 0.5;
+  transform-origin: 0 50%;
+  transform: rotate(-45deg);
+}
+
+/* Boite de taille fixe : les marqueurs de tailles differentes
+   (poste, SAT) restent centres sur le meme rail. */
+.metro-stop-marqueur {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+.metro-stop-marqueur::before {
+  content: "";
+  width: 11px;
+  height: 11px;
+  border: 2.5px solid var(--color-ligne-metro);
+  border-radius: 50%;
+  background: var(--card-bg);
+}
+
+/* Le libelle pivote autour de son coin bas-gauche, pose au bout de
+   l'attache. Absolu : il ne doit pas elargir l'arret. */
+.metro-stop-texte {
+  position: absolute;
+  bottom: 21px;
+  left: 17px;
+  max-width: var(--metro-largeur-libelle);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transform-origin: 0 100%;
+  transform: rotate(-45deg);
+  font-size: calc(var(--metro-tableau-taille-nom, 12) * 1px);
+  line-height: 1.15;
+  /* Les libelles voisins se chevauchent : sans ca, ils intercepteraient
+     le survol destine au marqueur (qui porte l'infobulle du nom complet). */
+  pointer-events: none;
+}
+
+.metro-stop-nom {
+  font-weight: 650;
+}
+
+.metro-stop-type,
+.metro-stop-parent {
+  margin-left: 3px;
+  font-size: calc(var(--metro-tableau-taille-type, 11) * 1px);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+}
+
+/* L'arret entier est la cible du survol : la bande qui va d'un marqueur au
+   suivant. Le marqueur seul (16 px) serait trop petit au doigt. */
+.metro-stop[data-arret] {
+  cursor: help;
+}
+
+/* SAT : meme rail, marqueur plus petit */
+.metro-stop.est-sat .metro-stop-marqueur::before {
+  width: 7px;
+  height: 7px;
+  border-width: 2px;
+  border-color: var(--sat-text);
+}
+
+.metro-stop.est-sat .metro-stop-nom {
+  color: var(--sat-text);
+}
+
+/* Hors patrimoine */
+.metro-stop.est-hp .metro-stop-marqueur::before {
+  border-color: var(--hp-text);
+}
+
+.metro-stop.est-hp .metro-stop-nom {
+  color: var(--hp-text);
+}
+
+/* Installations hors EALE (Atelier, Agent E...) */
+.metro-stop.est-autre .metro-stop-marqueur::before {
+  border-color: var(--muted);
+}
+
+/* Correspondance : le poste est desservi par plusieurs lignes. Double anneau,
+   comme sur un plan de metro ; l'infobulle du marqueur liste les autres
+   lignes. Les SAT en sont exclus (ils appartiennent a leur poste parent). */
+.metro-stop.est-correspondance .metro-stop-marqueur::before {
+  width: 9px;
+  height: 9px;
+  border-width: 2px;
+}
+
+.metro-stop.est-correspondance .metro-stop-marqueur::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--color-ligne-metro);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+/* Le marqueur SAT est plus petit : son anneau l'est aussi. */
+.metro-stop.est-correspondance.est-sat .metro-stop-marqueur::before {
+  width: 7px;
+  height: 7px;
+}
+
+.metro-stop.est-correspondance.est-sat .metro-stop-marqueur::after {
+  width: 13px;
+  height: 13px;
+  border-color: var(--sat-text);
+}
+
+.metro-stop.est-correspondance.est-hp .metro-stop-marqueur::after {
+  border-color: var(--hp-text);
+}
+
+.metro-stop.est-correspondance.est-autre .metro-stop-marqueur::after {
+  border-color: var(--muted);
+}
+
+/* Arret retenu par la recherche : marqueur plein et agrandi, halo, libelle en
+   couleur de recherche. La ligne est amenee dessus au rendu
+   (`centrerPremierArretTrouveMetro`). */
+.metro-stop.est-trouve .metro-stop-marqueur::before {
+  width: 13px;
+  height: 13px;
+  border-color: var(--metro-recherche);
+  background: var(--metro-recherche);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--metro-recherche) 28%, transparent);
+  /* Quelques secondes de clignotement au moment de la recherche, puis
+     l'arret reste simplement marque : `--metro-clignotements` est calcule en
+     JS depuis la duree reglee dans le gestionnaire (0 = pas d'animation). */
+  animation: metro-clignote 900ms ease-in-out var(--metro-clignotements, 4);
+}
+
+.metro-stop.est-trouve.est-sat .metro-stop-marqueur::before {
+  width: 9px;
+  height: 9px;
+}
+
+.metro-stop.est-trouve .metro-stop-marqueur::after {
+  border-color: var(--metro-recherche);
+  opacity: 1;
+}
+
+.metro-stop.est-trouve::before {
+  background: var(--metro-recherche);
+  opacity: 0.8;
+}
+
+.metro-stop.est-trouve .metro-stop-nom,
+.metro-stop.est-trouve .metro-stop-type,
+.metro-stop.est-trouve .metro-stop-parent {
+  color: var(--metro-recherche);
+  font-weight: 700;
+}
+
+@keyframes metro-clignote {
+  0%, 100% {
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--metro-recherche) 28%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 8px color-mix(in srgb, var(--metro-recherche) 34%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .metro-stop.est-trouve .metro-stop-marqueur::before {
+    animation: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .ligne-card {
+    --metro-largeur-arret: 32px;
+    --metro-largeur-libelle: 118px;
+  }
+}
+
 </style>
 
-  <script type="module" crossorigin src="/ALICE/assets/tableau-Byo1Mcwu.js"></script>
+  <script type="module" crossorigin src="/ALICE/assets/tableau-DDaYezCq.js"></script>
   <link rel="modulepreload" crossorigin href="/ALICE/assets/modulepreload-polyfill-Dezn_h7o.js">
-  <link rel="modulepreload" crossorigin href="/ALICE/assets/options-DJrdM6n_.js">
-  <link rel="modulepreload" crossorigin href="/ALICE/assets/pk-pmtiles-4CJlUipw.js">
-  <link rel="stylesheet" crossorigin href="/ALICE/assets/theme-B_hedudO.css">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/options-DYPHlPyK.js">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/utils-DT1X4BcH.js">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/styles-lignes-Dn2w7v1i.js">
+  <link rel="stylesheet" crossorigin href="/ALICE/assets/theme-C2-iqRuc.css">
 </head>
 <body>
 <div class="board-header">
@@ -565,6 +944,8 @@ body {
 <div class="filters">
       <button type="button" data-tableau-tri-critere="alphabet" aria-pressed="true">A → Z</button>
       <button type="button" data-tableau-tri-critere="appareils" aria-pressed="false">+ appareils</button>
+      <button type="button" data-tableau-vue="metro" aria-pressed="false" title="Afficher les lignes en vue Métro">MÉTRO</button>
+      <button type="button" data-tableau-filtre="sat" aria-pressed="false" title="Afficher les SAT sur les lignes" hidden>SAT</button>
 </div>
 
 <div id="postesZone" class="post-container"></div>

@@ -27,14 +27,14 @@
       --text: var(--alice-text-strong-light);
       --muted: #5f738b;
       --border: rgba(17, 24, 39, 0.08);
-      --border-strong: rgba(59, 130, 246, 0.24);
+      --border-strong: color-mix(in srgb, var(--alice-accent-blue-light) 24%, transparent);
       --shadow: var(--alice-shadow-app-light);
       --blue: var(--alice-accent-blue-light);
-      --blue-soft: rgba(37, 99, 235, 0.1);
+      --blue-soft: color-mix(in srgb, var(--alice-accent-blue-light) 10%, transparent);
       --danger: var(--alice-danger-light);
-      --danger-soft: rgba(220, 38, 38, 0.1);
+      --danger-soft: color-mix(in srgb, var(--alice-danger-light) 10%, transparent);
       --success: var(--alice-success-strong-light);
-      --success-soft: rgba(21, 128, 61, 0.1);
+      --success-soft: color-mix(in srgb, var(--alice-success-strong-light) 10%, transparent);
     }
 
     @media (prefers-color-scheme: dark) {
@@ -44,39 +44,16 @@
         --text: var(--alice-text-dark);
         --muted: var(--alice-muted-dark);
         --border: var(--alice-line-strong-dark);
-        --border-strong: rgba(96, 165, 250, 0.35);
+        --border-strong: color-mix(in srgb, var(--alice-accent-blue-dark) 35%, transparent);
         --shadow: var(--alice-shadow-app-dark);
-        --blue: #60a5fa;
-        --blue-soft: rgba(96, 165, 250, 0.14);
+        --blue: var(--alice-accent-blue-dark);
+        --blue-soft: color-mix(in srgb, var(--alice-accent-blue-dark) 14%, transparent);
         --danger: var(--alice-danger-dark);
-        --danger-soft: rgba(248, 113, 113, 0.14);
+        --danger-soft: color-mix(in srgb, var(--alice-danger-dark) 14%, transparent);
         --success: var(--alice-success-dark);
-        --success-soft: rgba(74, 222, 128, 0.12);
+        --success-soft: color-mix(in srgb, var(--alice-success-dark) 12%, transparent);
       }
 
-      .header-card {
-        background: rgba(10, 18, 31, 0.96);
-      }
-
-      .close-button {
-        background: rgba(148, 163, 184, 0.14);
-        color: var(--text);
-      }
-
-      .close-button:hover,
-      .close-button:focus-visible {
-        background: rgba(148, 163, 184, 0.22);
-      }
-
-      .progress-bar {
-        background: rgba(148, 163, 184, 0.14);
-      }
-
-      .field-input,
-      .field-textarea,
-      .search-input {
-        background: rgba(148, 163, 184, 0.08);
-      }
     }
 
     body {
@@ -189,7 +166,7 @@
     .progress-bar-fill {
       height: 100%;
       width: 0%;
-      background: linear-gradient(90deg, var(--blue), #38bdf8);
+      background: linear-gradient(90deg, var(--blue), #97c7ec);
       transition: width 0.25s ease;
     }
 
@@ -417,8 +394,8 @@
       height: 18px;
       border-radius: 999px;
       border: 3px solid #ffffff;
-      background: linear-gradient(135deg, var(--blue), #38bdf8);
-      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+      background: linear-gradient(135deg, var(--blue), #97c7ec);
+      box-shadow: 0 6px 18px color-mix(in srgb, var(--blue) 35%, transparent);
     }
 
     .toolbar {
@@ -446,7 +423,7 @@
 
     .nav-btn.primary,
     .submit-btn {
-      background: linear-gradient(135deg, var(--blue), #38bdf8);
+      background: linear-gradient(135deg, var(--blue), #97c7ec);
       color: #fff;
       font-weight: 700;
     }
@@ -720,11 +697,13 @@
       }
     }
   </style>
-  <script type="module" crossorigin src="/ALICE/assets/ajoutAppareil-B2u4gzJz.js"></script>
+  <script type="module" crossorigin src="/ALICE/assets/ajoutAppareil-BewGynFR.js"></script>
   <link rel="modulepreload" crossorigin href="/ALICE/assets/modulepreload-polyfill-Dezn_h7o.js">
-  <link rel="modulepreload" crossorigin href="/ALICE/assets/options-DJrdM6n_.js">
-  <link rel="modulepreload" crossorigin href="/ALICE/assets/appareils-9lawRWzk.js">
-  <link rel="stylesheet" crossorigin href="/ALICE/assets/theme-B_hedudO.css">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/options-DYPHlPyK.js">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/preload-helper-CoS762Vi.js">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/utils-DT1X4BcH.js">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/appareils-en-attente-yhppySKY.js">
+  <link rel="stylesheet" crossorigin href="/ALICE/assets/theme-C2-iqRuc.css">
 </head>
 <body>
   <div class="page">

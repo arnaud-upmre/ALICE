@@ -6,12 +6,14 @@
       "properties": {
         "nom": "A2000",
         "type": "Atelier",
+        "Eq": "H",
         "description": "",
         "rss": "",
         "contact": "Répartiteur : 03 28 55 60 94",
         "numero_ligne": "289000",
         "code": false,
-        "armen": "74354415"
+        "armen": "74354415",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -27,13 +29,15 @@
         "nom": "Abancourt",
         "type": "L",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "321000",
         "code": false,
-        "armen": "74046236"
+        "armen": "74046236",
+        "ordre_ligne": 7
       },
       "geometry": {
         "type": "Point",
@@ -51,9 +55,11 @@
         "SAT": "SATa",
         "acces": "",
         "description": "1 bon km pâture !",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "321000",
+        "ordre_ligne": 6
       },
       "geometry": {
         "type": "Point",
@@ -71,9 +77,11 @@
         "SAT": "SATb",
         "acces": "",
         "description": "",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "321000",
+        "ordre_ligne": 9
       },
       "geometry": {
         "type": "Point",
@@ -91,9 +99,11 @@
         "SAT": "SATc",
         "acces": "",
         "description": "",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "321000",
+        "ordre_ligne": 10
       },
       "geometry": {
         "type": "Point",
@@ -111,9 +121,11 @@
         "SAT": "SATd",
         "acces": "",
         "description": "",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "321000",
+        "ordre_ligne": 8
       },
       "geometry": {
         "type": "Point",
@@ -129,14 +141,16 @@
         "nom": "Ablaincourt-Pressoir",
         "type": "SST",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "226000",
         "code": false,
-        "armen": "74046890"
+        "armen": "74046890",
+        "ordre_ligne": 3
       },
       "geometry": {
         "type": "Point",
@@ -152,14 +166,16 @@
         "nom": "Abscon",
         "type": "SS",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "250000",
         "code": false,
-        "armen": "74352677"
+        "armen": "74352677",
+        "ordre_ligne": 7
       },
       "geometry": {
         "type": "Point",
@@ -175,14 +191,16 @@
         "nom": "Achiet",
         "type": "SST",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "90kV / PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "272000",
         "code": false,
-        "armen": "74352829"
+        "armen": "74352829",
+        "ordre_ligne": 12
       },
       "geometry": {
         "type": "Point",
@@ -201,9 +219,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "90kV / PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": true
+        "code": true,
+        "numero_ligne": "272000",
+        "ordre_ligne": 11
       },
       "geometry": {
         "type": "Point",
@@ -345,14 +365,16 @@
         "nom": "Ailly sur Noye",
         "type": "SSP",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "272000",
         "code": false,
-        "armen": "74046942"
+        "armen": "74046942",
+        "ordre_ligne": 4
       },
       "geometry": {
         "type": "Point",
@@ -368,16 +390,18 @@
         "nom": "Alleux",
         "type": "SP",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
         "technique_schema": "https://sncf.sharepoint.com/:f:/r/sites/InfrapleNord-PasdeCalaisGrpO365/Documents%20partages/UP%20MRE/GROUPE%20TECHNIQUE%20ET%20PATRIMOINE/SCHEMAS%20ELECTRIQUES/Sch%C3%A9mas%20%C3%A9lectriques%20UP%20EALE%20Lille/ALLEUX%20%23?csf=1&web=1&e=MCADex",
         "technique_consigne": "",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "216000",
         "code": false,
-        "armen": "74351565"
+        "armen": "74351565",
+        "ordre_ligne": 26
       },
       "geometry": {
         "type": "Point",
@@ -396,10 +420,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "216312",
-        "code": false
+        "code": false,
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -418,9 +443,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "216000",
+        "ordre_ligne": 25
       },
       "geometry": {
         "type": "Point",
@@ -439,10 +466,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "314000",
-        "code": false
+        "code": false,
+        "ordre_ligne": 11
       },
       "geometry": {
         "type": "Point",
@@ -461,9 +489,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "216000",
+        "ordre_ligne": 27
       },
       "geometry": {
         "type": "Point",
@@ -479,13 +509,15 @@
         "nom": "Amiens",
         "type": "SSPA",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "311000",
         "code": false,
-        "armen": "74044954"
+        "armen": "74044954",
+        "ordre_ligne": 3
       },
       "geometry": {
         "type": "Point",
@@ -503,9 +535,11 @@
         "SAT": "SAT",
         "acces": "",
         "description": "",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "311000",
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -542,14 +576,16 @@
         "nom": "Amiens CU",
         "type": "L",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "Alim SE Poste 1 amiens",
         "description_telecommande": "ACS21",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "261000",
         "code": false,
-        "armen": "182949272"
+        "armen": "182949272",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -568,10 +604,11 @@
         "acces": "",
         "description": "Alim SE - Coffret support 1434 proximité coffret Tr Ra",
         "description_telecommande": "ACS21",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "code": false,
-        "numero_ligne": "311000"
+        "numero_ligne": "311000",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -587,14 +624,16 @@
         "nom": "Aouste",
         "type": "SP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "212000",
         "code": false,
-        "armen": "74103886"
+        "armen": "74103886",
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -610,14 +649,16 @@
         "nom": "Appilly",
         "type": "SSP",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "242000",
         "code": false,
-        "armen": "74046218"
+        "armen": "74046218",
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -632,9 +673,10 @@
       "properties": {
         "nom": "Armentières",
         "type": "SS",
+        "Eq": "H",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "295000",
         "code": false,
@@ -654,13 +696,15 @@
       "properties": {
         "nom": "Arneke",
         "type": "SSP",
+        "Eq": "H",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "301000",
         "code": false,
-        "armen": "74353503"
+        "armen": "74353503",
+        "ordre_ligne": 16
       },
       "geometry": {
         "type": "Point",
@@ -675,13 +719,15 @@
       "properties": {
         "nom": "Arques",
         "type": "P",
+        "Eq": "H",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "295000",
         "code": false,
-        "armen": "74351269"
+        "armen": "74351269",
+        "ordre_ligne": 13
       },
       "geometry": {
         "type": "Point",
@@ -697,14 +743,16 @@
         "nom": "Arras",
         "type": "SSPA",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "272000",
         "code": false,
-        "armen": "74353451"
+        "armen": "74353451",
+        "ordre_ligne": 17
       },
       "geometry": {
         "type": "Point",
@@ -720,14 +768,16 @@
         "nom": "Aubigny Au Bac",
         "type": "L",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "259000",
         "code": false,
-        "armen": "74351589"
+        "armen": "74351589",
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -742,13 +792,15 @@
       "properties": {
         "nom": "Audruicq",
         "type": "L",
+        "Eq": "H",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "295000",
         "code": false,
-        "armen": "74351719"
+        "armen": "74351719",
+        "ordre_ligne": 18
       },
       "geometry": {
         "type": "Point",
@@ -764,14 +816,16 @@
         "nom": "Aulnoye",
         "type": "SSPA",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "242000",
         "code": false,
-        "armen": "74353525"
+        "armen": "74353525",
+        "ordre_ligne": 16
       },
       "geometry": {
         "type": "Point",
@@ -787,13 +841,15 @@
         "nom": "Avelin",
         "type": "PRCI",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226000",
         "code": false,
-        "armen": "74351739"
+        "armen": "74351739",
+        "ordre_ligne": 19
       },
       "geometry": {
         "type": "Point",
@@ -809,14 +865,16 @@
         "nom": "Aveluy",
         "type": "SP",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "272000",
         "code": false,
-        "armen": "74045686"
+        "armen": "74045686",
+        "ordre_ligne": 10
       },
       "geometry": {
         "type": "Point",
@@ -835,9 +893,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "272000",
+        "ordre_ligne": 9
       },
       "geometry": {
         "type": "Point",
@@ -853,14 +913,16 @@
         "nom": "Avesnes",
         "type": "SSP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "267000",
         "code": false,
-        "armen": "74353481"
+        "armen": "74353481",
+        "ordre_ligne": 13
       },
       "geometry": {
         "type": "Point",
@@ -876,7 +938,7 @@
         "nom": "Avion",
         "acces": "",
         "description": "Sectionneur à manœuvrer pour les consignations C de Bailleul sir Berthoult",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "hors_patrimoine": true,
         "code": false
@@ -892,13 +954,15 @@
         "nom": "Bachant",
         "type": "A",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "242000",
         "code": false,
-        "armen": "74350975"
+        "armen": "74350975",
+        "ordre_ligne": 17
       },
       "geometry": {
         "type": "Point",
@@ -914,14 +978,16 @@
         "nom": "Bachy",
         "type": "L",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226000",
         "code": false,
-        "armen": "74351747"
+        "armen": "74351747",
+        "ordre_ligne": 23
       },
       "geometry": {
         "type": "Point",
@@ -937,6 +1003,7 @@
         "nom": "Bailleul Sir Bethoult",
         "type": "SP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "⚡️Sectionneurs à manœuvrer à Avion pour les consignations (208-16 et 209-3) \n⚠️ Poste en régénération",
         "description_telecommande": "ACSYOM",
@@ -998,14 +1065,16 @@
         "nom": "Baisieux",
         "type": "SSP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "➡️ PA sur TT <br> Débouclage de IMP Froyen et IL1 sur Max I manque U TT5235 et débouclage de IMP Froyen et IL2 sur Max I manque U TT A",
         "description_telecommande": "PAS900",
-        "rss": "",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "269000",
         "code": false,
-        "armen": "74353577"
+        "armen": "74353577",
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -1021,14 +1090,16 @@
         "nom": "Berlaimont",
         "type": "SP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "267000",
         "code": false,
-        "armen": "74352035"
+        "armen": "74352035",
+        "ordre_ligne": 11
       },
       "geometry": {
         "type": "Point",
@@ -1044,7 +1115,7 @@
         "nom": "Bethune",
         "acces": "230-37A",
         "description": "A manœuvrer lors de consignation du TT l'IA de Bethune à la demande du RSS",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "hors_patrimoine": true,
         "code": false
@@ -1060,13 +1131,15 @@
         "nom": "Bethune",
         "type": "A",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
-        "rss": "C",
+        "rss": "3",
         "contact": "Agent E : 03 21 57 31 72",
         "numero_ligne": "301000",
         "code": false,
-        "armen": "74350961"
+        "armen": "74350961",
+        "ordre_ligne": 9
       },
       "geometry": {
         "type": "Point",
@@ -1082,14 +1155,16 @@
         "nom": "Bethune",
         "type": "SSP",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "301000",
         "code": false,
-        "armen": "74353601"
+        "armen": "74353601",
+        "ordre_ligne": 10
       },
       "geometry": {
         "type": "Point",
@@ -1105,14 +1180,16 @@
         "nom": "Bethune SUD",
         "type": "SS",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "C",
+        "rss": "3",
         "contact": "Agent E : 03 21 57 31 72",
         "numero_ligne": "301000",
         "code": false,
-        "armen": "171663592"
+        "armen": "171663592",
+        "ordre_ligne": 8
       },
       "geometry": {
         "type": "Point",
@@ -1128,13 +1205,15 @@
         "nom": "Beugnatre",
         "type": "PRCI",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226000",
         "code": false,
-        "armen": "74351767"
+        "armen": "74351767",
+        "ordre_ligne": 9
       },
       "geometry": {
         "type": "Point",
@@ -1150,14 +1229,16 @@
         "nom": "Beuvrages",
         "type": "SSP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "267000",
         "code": false,
-        "armen": "74353623"
+        "armen": "74353623",
+        "ordre_ligne": 5
       },
       "geometry": {
         "type": "Point",
@@ -1173,13 +1254,15 @@
         "nom": "Beuvraignes",
         "type": "PRCI",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226000",
         "code": false,
-        "armen": "74046420"
+        "armen": "74046420",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -1195,14 +1278,16 @@
         "nom": "Beuvry",
         "type": "SP",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "289000",
         "code": false,
-        "armen": "171663675"
+        "armen": "171663675",
+        "ordre_ligne": 9
       },
       "geometry": {
         "type": "Point",
@@ -1217,13 +1302,15 @@
       "properties": {
         "nom": "Bif coulogne",
         "type": "L",
+        "Eq": "H",
         "description": "",
         "description_telecommande": "IP / ACS21",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "304000",
         "code": false,
-        "armen": "179082618"
+        "armen": "179082618",
+        "ordre_ligne": 13
       },
       "geometry": {
         "type": "Point",
@@ -1239,13 +1326,15 @@
         "nom": "Bif Coupvent",
         "type": "A",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "304000",
         "code": false,
-        "armen": "176553536"
+        "armen": "176553536",
+        "ordre_ligne": 7
       },
       "geometry": {
         "type": "Point",
@@ -1261,14 +1350,16 @@
         "nom": "Bif puyt houck ouest",
         "type": "L",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "304000",
         "code": false,
-        "armen": "176553254"
+        "armen": "176553254",
+        "ordre_ligne": 4
       },
       "geometry": {
         "type": "Point",
@@ -1284,14 +1375,16 @@
         "nom": "Billy",
         "type": "SP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "284000",
         "code": false,
-        "armen": "74352083"
+        "armen": "74352083",
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -1307,14 +1400,16 @@
         "nom": "Blangy Est",
         "type": "L",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "272301",
         "code": false,
-        "armen": "171665034"
+        "armen": "171665034",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -1330,14 +1425,16 @@
         "nom": "Blangy Nord",
         "type": "L",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "272301",
         "code": false,
-        "armen": "171664923"
+        "armen": "171664923",
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -1353,14 +1450,16 @@
         "nom": "Blecourt",
         "type": "S",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": " ",
         "description_telecommande": "PAS900",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "259000",
         "code": false,
-        "armen": "74351953"
+        "armen": "74351953",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -1376,14 +1475,16 @@
         "nom": "Bohain",
         "type": "type?",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "242000",
         "code": false,
-        "armen": "74354429"
+        "armen": "74354429",
+        "ordre_ligne": 11
       },
       "geometry": {
         "type": "Point",
@@ -1399,14 +1500,16 @@
         "nom": "Boisleux",
         "type": "SSP",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "272000",
         "code": false,
-        "armen": "74353649"
+        "armen": "74353649",
+        "ordre_ligne": 14
       },
       "geometry": {
         "type": "Point",
@@ -1425,9 +1528,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "272000",
+        "ordre_ligne": 15
       },
       "geometry": {
         "type": "Point",
@@ -1446,9 +1551,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "272000",
+        "ordre_ligne": 13
       },
       "geometry": {
         "type": "Point",
@@ -1463,13 +1570,15 @@
       "properties": {
         "nom": "Bollaert",
         "type": "SSP",
+        "Eq": "H",
         "description": "⚙️ Fonction RAP",
         "description_telecommande": "ACS21",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "301000",
         "code": false,
-        "armen": "171663746"
+        "armen": "171663746",
+        "ordre_ligne": 6
       },
       "geometry": {
         "type": "Point",
@@ -1485,14 +1594,16 @@
         "nom": "Botiaux",
         "type": "P",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226000",
         "code": false,
-        "armen": "74351293"
+        "armen": "74351293",
+        "ordre_ligne": 17
       },
       "geometry": {
         "type": "Point",
@@ -1508,14 +1619,16 @@
         "nom": "Bourbourg",
         "type": "S",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "IP / ACS21",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "304000",
         "code": false,
-        "armen": "179081676"
+        "armen": "179081676",
+        "ordre_ligne": 8
       },
       "geometry": {
         "type": "Point",
@@ -1530,13 +1643,15 @@
       "properties": {
         "nom": "Brearde",
         "type": "SP",
+        "Eq": "H",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "216000",
         "code": false,
-        "armen": "74352531"
+        "armen": "74352531",
+        "ordre_ligne": 10
       },
       "geometry": {
         "type": "Point",
@@ -1551,13 +1666,15 @@
       "properties": {
         "nom": "Broxeele",
         "type": "P",
+        "Eq": "H",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "216000",
         "code": false,
-        "armen": "74351317"
+        "armen": "74351317",
+        "ordre_ligne": 12
       },
       "geometry": {
         "type": "Point",
@@ -1573,14 +1690,16 @@
         "nom": "Busigny",
         "type": "SST",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "63kV / PAS900",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "242000",
         "code": true,
-        "armen": "74352869"
+        "armen": "74352869",
+        "ordre_ligne": 12
       },
       "geometry": {
         "type": "Point",
@@ -1630,14 +1749,16 @@
         "nom": "Caffiers",
         "type": "L",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "314000",
         "code": false,
-        "armen": "74351603"
+        "armen": "74351603",
+        "ordre_ligne": 5
       },
       "geometry": {
         "type": "Point",
@@ -1656,9 +1777,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "314000",
+        "ordre_ligne": 6
       },
       "geometry": {
         "type": "Point",
@@ -1677,9 +1800,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "314000",
+        "ordre_ligne": 7
       },
       "geometry": {
         "type": "Point",
@@ -1695,14 +1820,16 @@
         "nom": "Cambrai",
         "type": "L",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "250000",
         "code": false,
-        "armen": "173455733"
+        "armen": "173455733",
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -1718,14 +1845,16 @@
         "nom": "Cambrai",
         "type": "SSP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "250000",
         "code": false,
-        "armen": "74353671"
+        "armen": "74353671",
+        "ordre_ligne": 3
       },
       "geometry": {
         "type": "Point",
@@ -1741,14 +1870,16 @@
         "nom": "Cassel",
         "type": "S",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "216308",
         "code": false,
-        "armen": "171663814"
+        "armen": "171663814",
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -1767,9 +1898,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "216308",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -1788,10 +1921,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "301000",
-        "code": false
+        "code": false,
+        "ordre_ligne": 15
       },
       "geometry": {
         "type": "Point",
@@ -1807,13 +1941,15 @@
         "nom": "Chaulnes",
         "type": "PRCI",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226000",
         "code": false,
-        "armen": "74046440"
+        "armen": "74046440",
+        "ordre_ligne": 4
       },
       "geometry": {
         "type": "Point",
@@ -1829,13 +1965,15 @@
         "nom": "Combles",
         "type": "PRCI",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226000",
         "code": false,
-        "armen": "74046426"
+        "armen": "74046426",
+        "ordre_ligne": 6
       },
       "geometry": {
         "type": "Point",
@@ -1851,14 +1989,16 @@
         "nom": "Coquelles",
         "type": "L",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "314000",
         "code": false,
-        "armen": "74351623"
+        "armen": "74351623",
+        "ordre_ligne": 21
       },
       "geometry": {
         "type": "Point",
@@ -1877,9 +2017,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "314000",
+        "ordre_ligne": 18
       },
       "geometry": {
         "type": "Point",
@@ -1898,9 +2040,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "314000",
+        "ordre_ligne": 19
       },
       "geometry": {
         "type": "Point",
@@ -1919,9 +2063,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "314000",
+        "ordre_ligne": 20
       },
       "geometry": {
         "type": "Point",
@@ -1940,9 +2086,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "314000",
+        "ordre_ligne": 23
       },
       "geometry": {
         "type": "Point",
@@ -1961,9 +2109,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "314000",
+        "ordre_ligne": 22
       },
       "geometry": {
         "type": "Point",
@@ -1979,14 +2129,16 @@
         "nom": "Corbie",
         "type": "SS",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "272000",
         "code": false,
-        "armen": "74046250"
+        "armen": "74046250",
+        "ordre_ligne": 7
       },
       "geometry": {
         "type": "Point",
@@ -2001,13 +2153,15 @@
       "properties": {
         "nom": "Coudekerque",
         "type": "SST",
+        "Eq": "H",
         "description": "",
         "description_telecommande": "90kV / ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "301000",
         "code": true,
-        "armen": "74352925"
+        "armen": "74352925",
+        "ordre_ligne": 18
       },
       "geometry": {
         "type": "Point",
@@ -2026,9 +2180,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "90kV / ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "301000",
+        "ordre_ligne": 19
       },
       "geometry": {
         "type": "Point",
@@ -2047,10 +2203,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "90kV / ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "301306",
-        "code": false
+        "code": false,
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -2066,14 +2223,16 @@
         "nom": "Coulogne",
         "type": "SP",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "Alim du SAT1 dans le poste",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "295000",
         "code": false,
-        "armen": "74352559"
+        "armen": "74352559",
+        "ordre_ligne": 21
       },
       "geometry": {
         "type": "Point",
@@ -2092,9 +2251,11 @@
         "acces": "",
         "description": "Alim du SAT1 dans le poste",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "295000",
+        "ordre_ligne": 20
       },
       "geometry": {
         "type": "Point",
@@ -2113,10 +2274,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "314000",
-        "code": false
+        "code": false,
+        "ordre_ligne": 26
       },
       "geometry": {
         "type": "Point",
@@ -2135,10 +2297,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "314306",
-        "code": false
+        "code": false,
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -2157,10 +2320,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "314306",
-        "code": false
+        "code": false,
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -2176,13 +2340,15 @@
         "nom": "Criquiers",
         "type": "SSP",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "321000",
         "code": false,
-        "armen": "74045812"
+        "armen": "74045812",
+        "ordre_ligne": 11
       },
       "geometry": {
         "type": "Point",
@@ -2198,13 +2364,15 @@
         "nom": "Croisilles",
         "type": "PRCI",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226000",
         "code": false,
-        "armen": "74351781"
+        "armen": "74351781",
+        "ordre_ligne": 10
       },
       "geometry": {
         "type": "Point",
@@ -2220,14 +2388,16 @@
         "nom": "Curie",
         "type": "SSP",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "295000",
         "code": false,
-        "armen": "171663957"
+        "armen": "171663957",
+        "ordre_ligne": 22
       },
       "geometry": {
         "type": "Point",
@@ -2246,10 +2416,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "314000",
-        "code": false
+        "code": false,
+        "ordre_ligne": 27
       },
       "geometry": {
         "type": "Point",
@@ -2268,9 +2439,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "295000",
+        "ordre_ligne": 23
       },
       "geometry": {
         "type": "Point",
@@ -2289,10 +2462,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "314000",
-        "code": false
+        "code": false,
+        "ordre_ligne": 28
       },
       "geometry": {
         "type": "Point",
@@ -2311,10 +2485,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "314000",
-        "code": false
+        "code": false,
+        "ordre_ligne": 29
       },
       "geometry": {
         "type": "Point",
@@ -2330,14 +2505,16 @@
         "nom": "Cysoing",
         "type": "P",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226000",
         "code": false,
-        "armen": "74351341"
+        "armen": "74351341",
+        "ordre_ligne": 21
       },
       "geometry": {
         "type": "Point",
@@ -2353,14 +2530,16 @@
         "nom": "Dannes",
         "type": "SSP",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "311000",
         "code": false,
-        "armen": "171663525"
+        "armen": "171663525",
+        "ordre_ligne": 9
       },
       "geometry": {
         "type": "Point",
@@ -2376,14 +2555,16 @@
         "nom": "Delivrance",
         "type": "SST",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "225kV / IP / ACS25",
-        "rss": "B",
+        "rss": "2",
         "contact": "Agent E du poste 1 : 03 28 55 72 28   09 71 92 25 31",
         "numero_ligne": "292000",
         "code": true,
-        "armen": "74352973"
+        "armen": "74352973",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -2399,14 +2580,16 @@
         "nom": "Denain",
         "type": "SP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "254000",
         "code": false,
-        "armen": "74352107"
+        "armen": "74352107",
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -2422,14 +2605,16 @@
         "nom": "Don Sainghin",
         "type": "SS",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "289000",
         "code": false,
-        "armen": "171664214"
+        "armen": "171664214",
+        "ordre_ligne": 7
       },
       "geometry": {
         "type": "Point",
@@ -2448,9 +2633,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "289000",
+        "ordre_ligne": 8
       },
       "geometry": {
         "type": "Point",
@@ -2469,10 +2656,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "286000",
-        "code": true
+        "code": true,
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -2491,9 +2679,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "289000",
+        "ordre_ligne": 6
       },
       "geometry": {
         "type": "Point",
@@ -2509,14 +2699,16 @@
         "nom": "Douai",
         "type": "SSPA",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "272000",
         "code": false,
-        "armen": "74353697"
+        "armen": "74353697",
+        "ordre_ligne": 23
       },
       "geometry": {
         "type": "Point",
@@ -2532,14 +2724,16 @@
         "nom": "Dunkerque",
         "type": "SSPA",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "Agent E : 03 28 24 81 77",
         "numero_ligne": "301000",
         "code": false,
-        "armen": "74353727"
+        "armen": "74353727",
+        "ordre_ligne": 20
       },
       "geometry": {
         "type": "Point",
@@ -2554,12 +2748,14 @@
       "properties": {
         "nom": "Erquinghem",
         "type": "PRCI",
+        "Eq": "H",
         "description": "",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "216000",
         "code": false,
-        "armen": "74351793"
+        "armen": "74351793",
+        "ordre_ligne": 8
       },
       "geometry": {
         "type": "Point",
@@ -2575,14 +2771,16 @@
         "nom": "Erre",
         "type": "SP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "262000",
         "code": false,
-        "armen": "74352131"
+        "armen": "74352131",
+        "ordre_ligne": 3
       },
       "geometry": {
         "type": "Point",
@@ -2598,14 +2796,16 @@
         "nom": "Esquelbecq",
         "type": "SS",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "301000",
         "code": false,
-        "armen": "74352755"
+        "armen": "74352755",
+        "ordre_ligne": 17
       },
       "geometry": {
         "type": "Point",
@@ -2621,14 +2821,16 @@
         "nom": "Essigny Le Grand",
         "type": "SSP",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "242000",
         "code": false,
-        "armen": "74047066"
+        "armen": "74047066",
+        "ordre_ligne": 6
       },
       "geometry": {
         "type": "Point",
@@ -2644,14 +2846,16 @@
         "nom": "Essigny le Petit",
         "type": "SS",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "242000",
         "code": false,
-        "armen": "74352733"
+        "armen": "74352733",
+        "ordre_ligne": 9
       },
       "geometry": {
         "type": "Point",
@@ -2667,14 +2871,16 @@
         "nom": "Etaples",
         "type": "SSP",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "311000",
         "code": false,
-        "armen": "171663499"
+        "armen": "171663499",
+        "ordre_ligne": 8
       },
       "geometry": {
         "type": "Point",
@@ -2693,9 +2899,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "311000",
+        "ordre_ligne": 6
       },
       "geometry": {
         "type": "Point",
@@ -2714,9 +2922,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "311000",
+        "ordre_ligne": 7
       },
       "geometry": {
         "type": "Point",
@@ -2731,13 +2941,15 @@
       "properties": {
         "nom": "Etinchelle",
         "type": "SST",
+        "Eq": "H",
         "description": "",
         "description_telecommande": "225kV / IP / ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226000",
         "code": true,
-        "armen": "74353299"
+        "armen": "74353299",
+        "ordre_ligne": 13
       },
       "geometry": {
         "type": "Point",
@@ -2753,14 +2965,16 @@
         "nom": "Fampoux",
         "type": "S",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226309",
         "code": false,
-        "armen": "74351993"
+        "armen": "74351993",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -2779,10 +2993,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "272000",
-        "code": false
+        "code": false,
+        "ordre_ligne": 19
       },
       "geometry": {
         "type": "Point",
@@ -2801,10 +3016,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "272000",
-        "code": false
+        "code": false,
+        "ordre_ligne": 18
       },
       "geometry": {
         "type": "Point",
@@ -2820,14 +3036,16 @@
         "nom": "Faubourg",
         "type": "SSP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "267000",
         "code": false,
-        "armen": "74353813"
+        "armen": "74353813",
+        "ordre_ligne": 8
       },
       "geometry": {
         "type": "Point",
@@ -2843,14 +3061,16 @@
         "nom": "Fives",
         "type": "SSPA",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "272000",
         "code": false,
-        "armen": "171663127"
+        "armen": "171663127",
+        "ordre_ligne": 34
       },
       "geometry": {
         "type": "Point",
@@ -2869,9 +3089,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "272000",
+        "ordre_ligne": 33
       },
       "geometry": {
         "type": "Point",
@@ -2890,9 +3112,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "272000",
+        "ordre_ligne": 35
       },
       "geometry": {
         "type": "Point",
@@ -2911,9 +3135,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "272000",
+        "ordre_ligne": 37
       },
       "geometry": {
         "type": "Point",
@@ -2932,10 +3158,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "266300",
-        "code": true
+        "code": true,
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -2954,10 +3181,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "267000",
-        "code": true
+        "code": true,
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -2976,9 +3204,11 @@
         "acces": "",
         "description": "IA5 voir avec Agent E",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "Agent E Lille :  03 28 55 71 07",
-        "code": false
+        "code": false,
+        "numero_ligne": "272000",
+        "ordre_ligne": 38
       },
       "geometry": {
         "type": "Point",
@@ -2994,14 +3224,16 @@
         "nom": "Flamengrie",
         "type": "SST",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "225kV / IP / ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "216000",
         "code": true,
-        "armen": "74353343"
+        "armen": "74353343",
+        "ordre_ligne": 7
       },
       "geometry": {
         "type": "Point",
@@ -3017,17 +3249,19 @@
         "nom": "Fouilloy",
         "type": "SST",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "90kV / ACS21",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "321000",
         "code": false,
         "armen": [
           "171754128",
           "74046608"
-        ]
+        ],
+        "ordre_ligne": 5
       },
       "geometry": {
         "type": "Point",
@@ -3043,14 +3277,16 @@
         "nom": "Fourmies",
         "type": "SST",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "63kV / IP / ACS25",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "267000",
         "code": false,
-        "armen": "74353019"
+        "armen": "74353019",
+        "ordre_ligne": 14
       },
       "geometry": {
         "type": "Point",
@@ -3066,14 +3302,16 @@
         "nom": "Fresnoy le grand",
         "type": "SSP",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "242000",
         "code": false,
-        "armen": "74353789"
+        "armen": "74353789",
+        "ordre_ligne": 10
       },
       "geometry": {
         "type": "Point",
@@ -3089,6 +3327,7 @@
         "nom": "Frise",
         "type": "P",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
@@ -3113,14 +3352,16 @@
         "nom": "Gamand",
         "type": "P",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "216000",
         "code": false,
-        "armen": "74351365"
+        "armen": "74351365",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -3136,17 +3377,19 @@
         "nom": "Gannes",
         "type": "SST",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "63kV / ACS21",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "272000",
         "code": false,
         "armen": [
           "171753097",
           "74046634"
-        ]
+        ],
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -3162,13 +3405,15 @@
         "nom": "Grande Synthe IA2",
         "type": "A",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "Le DU se trouve au Poste 7",
-        "rss": "C",
+        "rss": "3",
         "contact": "Agent E de Dunkerque 8 au 0328248177",
         "numero_ligne": "304000",
         "code": false,
-        "armen": "74351017"
+        "armen": "74351017",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -3184,14 +3429,16 @@
         "nom": "Gravelines",
         "type": "L",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "IP / ACS21",
-        "rss": "C",
+        "rss": "3",
         "contact": "Agent E  Fréthun 03 21 46 82 34",
         "numero_ligne": "304000",
         "code": false,
-        "armen": "179082957"
+        "armen": "179082957",
+        "ordre_ligne": 10
       },
       "geometry": {
         "type": "Point",
@@ -3210,9 +3457,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "IP / ACS21",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "304000",
+        "ordre_ligne": 9
       },
       "geometry": {
         "type": "Point",
@@ -3231,9 +3480,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "IP / ACS21",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "304000",
+        "ordre_ligne": 11
       },
       "geometry": {
         "type": "Point",
@@ -3252,9 +3503,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "IP / ACS21",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "304000",
+        "ordre_ligne": 12
       },
       "geometry": {
         "type": "Point",
@@ -3270,14 +3523,16 @@
         "nom": "Guines",
         "type": "SP",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "216000",
         "code": true,
-        "armen": "74352591"
+        "armen": "74352591",
+        "ordre_ligne": 17
       },
       "geometry": {
         "type": "Point",
@@ -3293,14 +3548,16 @@
         "nom": "Harponlieu",
         "type": "L-A",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "B",
+        "rss": "2",
         "contact": "Agent E Dourges PIVOS : 0321695992",
         "numero_ligne": "272000",
         "code": false,
-        "armen": "74354433"
+        "armen": "74354433",
+        "ordre_ligne": 25
       },
       "geometry": {
         "type": "Point",
@@ -3316,14 +3573,16 @@
         "nom": "Haute Loge",
         "type": "SSP",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "295000",
         "code": false,
-        "armen": "74353835"
+        "armen": "74353835",
+        "ordre_ligne": 12
       },
       "geometry": {
         "type": "Point",
@@ -3339,14 +3598,16 @@
         "nom": "Hauteville",
         "type": "SSPA",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "Agent E : 03 91 90 13 17",
         "numero_ligne": "314000",
         "code": false,
-        "armen": "74353887"
+        "armen": "74353887",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -3365,10 +3626,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "Agent E : 03 91 90 13 17",
         "numero_ligne": "311000",
-        "code": false
+        "code": false,
+        "ordre_ligne": 12
       },
       "geometry": {
         "type": "Point",
@@ -3387,10 +3649,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "Agent E : 03 91 90 13 17",
         "numero_ligne": "311000",
-        "code": false
+        "code": false,
+        "ordre_ligne": 13
       },
       "geometry": {
         "type": "Point",
@@ -3409,10 +3672,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "Agent E : 03 91 90 13 17",
         "numero_ligne": "311000",
-        "code": false
+        "code": false,
+        "ordre_ligne": 14
       },
       "geometry": {
         "type": "Point",
@@ -3428,14 +3692,16 @@
         "nom": "Hautmont",
         "type": "SST",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "45kV / PAS900",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "242000",
         "code": false,
-        "armen": "74353069"
+        "armen": "74353069",
+        "ordre_ligne": 19
       },
       "geometry": {
         "type": "Point",
@@ -3451,7 +3717,7 @@
         "nom": "Hazebrouck",
         "acces": "263-16",
         "description": "👤 À la demande du régulateur, appareil à manœuvrer pour les consignations C de Thiennes.",
-        "rss": "",
+        "rss": "3",
         "contact": "",
         "hors_patrimoine": true,
         "code": false
@@ -3466,6 +3732,7 @@
       "properties": {
         "nom": "Hazebrouck",
         "type": "SSPA",
+        "Eq": "H",
         "description": "⚠️ Il faut traverser les voies ADF pour acceder au poste (attention circulation)",
         "description_telecommande": "ACS25",
         "technique_schema": "https://sncf.sharepoint.com/:f:/r/sites/InfrapleNord-PasdeCalaisGrpO365/Documents%20partages/UP%20MRE/GROUPE%20TECHNIQUE%20ET%20PATRIMOINE/SCHEMAS%20ELECTRIQUES/Sch%C3%A9mas%20%C3%A9lectriques%20UP%20EALE%20Lille/HAZEBROUCK%20%23?csf=1&web=1&e=XT7ybU",
@@ -3512,13 +3779,15 @@
         "nom": "Hellemmes",
         "type": "Atelier",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "Plan de prevention et s'enregistrer à l'accueil.",
-        "rss": "A",
+        "rss": "1",
         "contact": "Agent E du technicentre : 06 17 01 92 65",
         "numero_ligne": "269000",
         "code": false,
-        "armen": "171697102"
+        "armen": "171697102",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -3534,14 +3803,16 @@
         "nom": "Hellu",
         "type": "SP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "216000",
         "code": false,
-        "armen": "74352619"
+        "armen": "74352619",
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -3557,14 +3828,16 @@
         "nom": "Hirson",
         "type": "SSPA",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "212000",
         "code": false,
-        "armen": "74353863"
+        "armen": "74353863",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -3580,13 +3853,15 @@
         "nom": "Hondeghem",
         "type": "PRCI",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "216000",
         "code": false,
-        "armen": "74351805"
+        "armen": "74351805",
+        "ordre_ligne": 11
       },
       "geometry": {
         "type": "Point",
@@ -3602,14 +3877,16 @@
         "nom": "Honnechy",
         "type": "L",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "242000",
         "code": false,
-        "armen": "177960273"
+        "armen": "177960273",
+        "ordre_ligne": 13
       },
       "geometry": {
         "type": "Point",
@@ -3625,14 +3902,16 @@
         "nom": "Iwuy",
         "type": "SP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "250000",
         "code": false,
-        "armen": "74352155"
+        "armen": "74352155",
+        "ordre_ligne": 4
       },
       "geometry": {
         "type": "Point",
@@ -3648,13 +3927,15 @@
         "nom": "Izel",
         "type": "PRCI",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226000",
         "code": false,
-        "armen": "74351817"
+        "armen": "74351817",
+        "ordre_ligne": 14
       },
       "geometry": {
         "type": "Point",
@@ -3670,14 +3951,16 @@
         "nom": "Jeumont",
         "type": "SSPA",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "242000",
         "code": false,
-        "armen": "74353941"
+        "armen": "74353941",
+        "ordre_ligne": 20
       },
       "geometry": {
         "type": "Point",
@@ -3693,14 +3976,16 @@
         "nom": "Justice",
         "type": "SSP",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "289000",
         "code": false,
-        "armen": "74354077"
+        "armen": "74354077",
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -3719,9 +4004,11 @@
         "acces": "",
         "description": "Alimentation SE",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "289000",
+        "ordre_ligne": 3
       },
       "geometry": {
         "type": "Point",
@@ -3740,10 +4027,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "273300",
-        "code": false
+        "code": false,
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -3759,14 +4047,16 @@
         "nom": "La Faloise",
         "type": "SP",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "272000",
         "code": false,
-        "armen": "74045844"
+        "armen": "74045844",
+        "ordre_ligne": 3
       },
       "geometry": {
         "type": "Point",
@@ -3782,14 +4072,16 @@
         "nom": "La madeleine",
         "type": "L",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "295000",
         "code": false,
-        "armen": "74351641"
+        "armen": "74351641",
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -3808,9 +4100,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "295000",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -3829,9 +4123,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "295000",
+        "ordre_ligne": 3
       },
       "geometry": {
         "type": "Point",
@@ -3847,14 +4143,16 @@
         "nom": "La Tortue",
         "type": "SSP",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "IP / ACS25",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "289000",
         "code": false,
-        "armen": "74354351"
+        "armen": "74354351",
+        "ordre_ligne": 5
       },
       "geometry": {
         "type": "Point",
@@ -3870,14 +4168,16 @@
         "nom": "Lambersart",
         "type": "LGV",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "216000",
         "code": false,
-        "armen": "74351413"
+        "armen": "74351413",
+        "ordre_ligne": 6
       },
       "geometry": {
         "type": "Point",
@@ -3893,13 +4193,15 @@
         "nom": "Lambersart",
         "type": "PRCI",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "216000",
         "code": false,
-        "armen": "74351829"
+        "armen": "74351829",
+        "ordre_ligne": 5
       },
       "geometry": {
         "type": "Point",
@@ -3915,14 +4217,16 @@
         "nom": "Lambersart",
         "type": "SSP",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "295000",
         "code": false,
-        "armen": "74353963"
+        "armen": "74353963",
+        "ordre_ligne": 5
       },
       "geometry": {
         "type": "Point",
@@ -3941,9 +4245,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "295000",
+        "ordre_ligne": 4
       },
       "geometry": {
         "type": "Point",
@@ -3962,9 +4268,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "295000",
+        "ordre_ligne": 6
       },
       "geometry": {
         "type": "Point",
@@ -3980,17 +4288,19 @@
         "nom": "Lamotte",
         "type": "SST",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "90kV / ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "272000",
         "code": false,
         "armen": [
           "171753744",
           "74046738"
-        ]
+        ],
+        "ordre_ligne": 6
       },
       "geometry": {
         "type": "Point",
@@ -4006,14 +4316,16 @@
         "nom": "Landrecies",
         "type": "SP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "242000",
         "code": false,
-        "armen": "74352203"
+        "armen": "74352203",
+        "ordre_ligne": 14
       },
       "geometry": {
         "type": "Point",
@@ -4029,14 +4341,16 @@
         "nom": "Le Quesnoy",
         "type": "SSP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "267000",
         "code": false,
-        "armen": "74354133"
+        "armen": "74354133",
+        "ordre_ligne": 10
       },
       "geometry": {
         "type": "Point",
@@ -4052,14 +4366,16 @@
         "nom": "Le Riez",
         "type": "SP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226000",
         "code": false,
-        "armen": "74352639"
+        "armen": "74352639",
+        "ordre_ligne": 18
       },
       "geometry": {
         "type": "Point",
@@ -4075,14 +4391,16 @@
         "nom": "Leet",
         "type": "P",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "216000",
         "code": true,
-        "armen": "74351389"
+        "armen": "74351389",
+        "ordre_ligne": 9
       },
       "geometry": {
         "type": "Point",
@@ -4098,7 +4416,7 @@
         "nom": "Lens",
         "acces": "sectionneur",
         "description": "Sectionneur 210-50 et 210-55A à manœuvrer pour les consignations C de Bollaert",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "hors_patrimoine": true,
         "code": false
@@ -4114,13 +4432,15 @@
         "nom": "Lens",
         "type": "A",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
-        "rss": "C",
+        "rss": "3",
         "contact": "Agent E :  03 21 79 73 54",
         "numero_ligne": "301000",
         "code": false,
-        "armen": "74351041"
+        "armen": "74351041",
+        "ordre_ligne": 5
       },
       "geometry": {
         "type": "Point",
@@ -4135,12 +4455,14 @@
       "properties": {
         "nom": "Lens",
         "type": "Atelier",
+        "Eq": "H",
         "description": "",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "301000",
         "code": false,
-        "armen": "74354155"
+        "armen": "74354155",
+        "ordre_ligne": 4
       },
       "geometry": {
         "type": "Point",
@@ -4156,14 +4478,16 @@
         "nom": "Lens",
         "type": "SSPA",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "284000",
         "code": false,
-        "armen": "74354155"
+        "armen": "74354155",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -4179,14 +4503,16 @@
         "nom": "Lesquin",
         "type": "SP",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "267000",
         "code": false,
-        "armen": "74352249"
+        "armen": "74352249",
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -4205,9 +4531,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "267000",
+        "ordre_ligne": 3
       },
       "geometry": {
         "type": "Point",
@@ -4223,14 +4551,16 @@
         "nom": "Lessart",
         "type": "P",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226000",
         "code": false,
-        "armen": "74045172"
+        "armen": "74045172",
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -4246,14 +4576,16 @@
         "nom": "Leval",
         "type": "SP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "267000",
         "code": false,
-        "armen": "74352271"
+        "armen": "74352271",
+        "ordre_ligne": 12
       },
       "geometry": {
         "type": "Point",
@@ -4269,14 +4601,16 @@
         "nom": "Lille",
         "type": "VR GP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "216000",
         "code": true,
-        "armen": "74352017"
+        "armen": "74352017",
+        "ordre_ligne": 3
       },
       "geometry": {
         "type": "Point",
@@ -4292,13 +4626,15 @@
         "nom": "Lille Europe",
         "type": "PRCI",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "216000",
         "code": false,
-        "armen": "74351841"
+        "armen": "74351841",
+        "ordre_ligne": 4
       },
       "geometry": {
         "type": "Point",
@@ -4314,14 +4650,16 @@
         "nom": "Lille Gare",
         "type": "SSPA",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "A",
+        "rss": "1",
         "contact": "Agent E : 03 28 55 71 07",
         "numero_ligne": "272000",
         "code": false,
-        "armen": "74353993"
+        "armen": "74353993",
+        "ordre_ligne": 39
       },
       "geometry": {
         "type": "Point",
@@ -4337,14 +4675,16 @@
         "nom": "Lille Sud",
         "type": "S",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "IP / ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "289000",
         "code": false,
-        "armen": "212108910"
+        "armen": "212108910",
+        "ordre_ligne": 4
       },
       "geometry": {
         "type": "Point",
@@ -4360,14 +4700,16 @@
         "nom": "Lillers",
         "type": "SSP",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "⚠️ Un accident du travail a eu lieu sur le puit de terre, assurez-vous de la stabilité du couvercle avant d'intervenir.",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "301000",
         "code": false,
-        "armen": "74354025"
+        "armen": "74354025",
+        "ordre_ligne": 11
       },
       "geometry": {
         "type": "Point",
@@ -4383,14 +4725,16 @@
         "nom": "Lion d’or",
         "type": "SSP",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "278000",
         "code": false,
-        "armen": "74354109"
+        "armen": "74354109",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -4409,10 +4753,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "278306",
-        "code": false
+        "code": false,
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -4431,9 +4776,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "278000",
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -4449,14 +4796,16 @@
         "nom": "Loison",
         "type": "SP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "IP / ACS25",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "286000",
         "code": false,
-        "armen": "74352179"
+        "armen": "74352179",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -4472,14 +4821,16 @@
         "nom": "Lomme",
         "type": "SP",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "292000",
         "code": false,
-        "armen": "74352227"
+        "armen": "74352227",
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -4498,9 +4849,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "292000",
+        "ordre_ligne": 3
       },
       "geometry": {
         "type": "Point",
@@ -4516,13 +4869,15 @@
         "nom": "Longueau",
         "type": "SA",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "272000",
         "code": false,
-        "armen": "74045032"
+        "armen": "74045032",
+        "ordre_ligne": 5
       },
       "geometry": {
         "type": "Point",
@@ -4538,14 +4893,16 @@
         "nom": "Lourches",
         "type": "L",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "250000",
         "code": false,
-        "armen": "173452829"
+        "armen": "173452829",
+        "ordre_ligne": 6
       },
       "geometry": {
         "type": "Point",
@@ -4564,9 +4921,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "250000",
+        "ordre_ligne": 5
       },
       "geometry": {
         "type": "Point",
@@ -4582,14 +4941,16 @@
         "nom": "Lourches",
         "type": "SSPA",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "254000",
         "code": false,
-        "armen": "74354047"
+        "armen": "74354047",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -4605,14 +4966,16 @@
         "nom": "Maing",
         "type": "SST",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "63kV / PAS900",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "267000",
         "code": false,
-        "armen": "74353117"
+        "armen": "74353117",
+        "ordre_ligne": 9
       },
       "geometry": {
         "type": "Point",
@@ -4628,14 +4991,16 @@
         "nom": "Maison Rouge",
         "type": "L-A",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "284000",
         "code": false,
-        "armen": "74354435"
+        "armen": "74354435",
+        "ordre_ligne": 4
       },
       "geometry": {
         "type": "Point",
@@ -4654,10 +5019,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "284261",
-        "code": false
+        "code": false,
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -4676,9 +5042,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "284000",
+        "ordre_ligne": 3
       },
       "geometry": {
         "type": "Point",
@@ -4697,10 +5065,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "284260",
-        "code": false
+        "code": false,
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -4719,9 +5088,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "284000",
+        "ordre_ligne": 5
       },
       "geometry": {
         "type": "Point",
@@ -4736,13 +5107,15 @@
       "properties": {
         "nom": "Marquise",
         "type": "SSP",
+        "Eq": "H",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "314000",
         "code": false,
-        "armen": "74354181"
+        "armen": "74354181",
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -4761,9 +5134,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "314000",
+        "ordre_ligne": 3
       },
       "geometry": {
         "type": "Point",
@@ -4782,9 +5157,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "314000",
+        "ordre_ligne": 4
       },
       "geometry": {
         "type": "Point",
@@ -4800,14 +5177,16 @@
         "nom": "Maurois",
         "type": "L",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "250000",
         "code": false,
-        "armen": "177960336"
+        "armen": "177960336",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -4823,14 +5202,16 @@
         "nom": "Mercatel",
         "type": "SP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226306",
         "code": false,
-        "armen": "74352293"
+        "armen": "74352293",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -4849,9 +5230,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "226306",
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -4870,9 +5253,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "226306",
+        "ordre_ligne": 3
       },
       "geometry": {
         "type": "Point",
@@ -4891,10 +5276,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "272000",
-        "code": false
+        "code": false,
+        "ordre_ligne": 16
       },
       "geometry": {
         "type": "Point",
@@ -4910,14 +5296,16 @@
         "nom": "Mericourt",
         "type": "SSP",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "272000",
         "code": false,
-        "armen": "74047216"
+        "armen": "74047216",
+        "ordre_ligne": 8
       },
       "geometry": {
         "type": "Point",
@@ -4933,14 +5321,16 @@
         "nom": "Morcourt",
         "type": "SP",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "IP / ACS25",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "242000",
         "code": false,
-        "armen": "74045962"
+        "armen": "74045962",
+        "ordre_ligne": 8
       },
       "geometry": {
         "type": "Point",
@@ -4956,14 +5346,16 @@
         "nom": "Mory",
         "type": "P",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226000",
         "code": false,
-        "armen": "74351437"
+        "armen": "74351437",
+        "ordre_ligne": 8
       },
       "geometry": {
         "type": "Point",
@@ -4979,14 +5371,16 @@
         "nom": "Moulin",
         "type": "S",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "216000",
         "code": false,
-        "armen": "74351657"
+        "armen": "74351657",
+        "ordre_ligne": 21
       },
       "geometry": {
         "type": "Point",
@@ -5005,10 +5399,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "314000",
-        "code": false
+        "code": false,
+        "ordre_ligne": 9
       },
       "geometry": {
         "type": "Point",
@@ -5027,9 +5422,11 @@
         "acces": "",
         "description": "  ",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "216000",
+        "ordre_ligne": 19
       },
       "geometry": {
         "type": "Point",
@@ -5048,9 +5445,11 @@
         "acces": "V1",
         "description": "  ",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "216000",
+        "ordre_ligne": 20
       },
       "geometry": {
         "type": "Point",
@@ -5069,9 +5468,11 @@
         "acces": "V2",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "216000",
+        "ordre_ligne": 18
       },
       "geometry": {
         "type": "Point",
@@ -5090,9 +5491,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "216000",
+        "ordre_ligne": 22
       },
       "geometry": {
         "type": "Point",
@@ -5108,14 +5511,16 @@
         "nom": "Namps",
         "type": "SP",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "321000",
         "code": false,
-        "armen": "74045980"
+        "armen": "74045980",
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -5131,14 +5536,16 @@
         "nom": "Nortkerque",
         "type": "P",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "295000",
         "code": false,
-        "armen": "74351457"
+        "armen": "74351457",
+        "ordre_ligne": 19
       },
       "geometry": {
         "type": "Point",
@@ -5154,14 +5561,16 @@
         "nom": "Noyelles",
         "type": "P",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226000",
         "code": false,
-        "armen": "74351481"
+        "armen": "74351481",
+        "ordre_ligne": 15
       },
       "geometry": {
         "type": "Point",
@@ -5177,14 +5586,16 @@
         "nom": "Noyon",
         "type": "SS",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "242000",
         "code": false,
-        "armen": "74046296"
+        "armen": "74046296",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -5200,13 +5611,15 @@
         "nom": "Oignies",
         "type": "PRCI",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226000",
         "code": false,
-        "armen": "74351853"
+        "armen": "74351853",
+        "ordre_ligne": 16
       },
       "geometry": {
         "type": "Point",
@@ -5222,14 +5635,16 @@
         "nom": "Orchies",
         "type": "SP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "267000",
         "code": false,
-        "armen": "74352325"
+        "armen": "74352325",
+        "ordre_ligne": 4
       },
       "geometry": {
         "type": "Point",
@@ -5245,14 +5660,16 @@
         "nom": "Ostricourt",
         "type": "SSP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "272000",
         "code": false,
-        "armen": "74354205"
+        "armen": "74354205",
+        "ordre_ligne": 24
       },
       "geometry": {
         "type": "Point",
@@ -5268,14 +5685,16 @@
         "nom": "Pays Blanc",
         "type": "P",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "216000",
         "code": false,
-        "armen": "74351217"
+        "armen": "74351217",
+        "ordre_ligne": 24
       },
       "geometry": {
         "type": "Point",
@@ -5294,9 +5713,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "216000",
+        "ordre_ligne": 23
       },
       "geometry": {
         "type": "Point",
@@ -5315,10 +5736,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "314000",
-        "code": false
+        "code": false,
+        "ordre_ligne": 10
       },
       "geometry": {
         "type": "Point",
@@ -5337,10 +5759,11 @@
         "acces": "",
         "description": "   ",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "216312",
-        "code": false
+        "code": false,
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -5356,14 +5779,16 @@
         "nom": "PE3 Bif Coupvent",
         "type": "A",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "304000",
         "code": true,
-        "armen": "182880265"
+        "armen": "182880265",
+        "ordre_ligne": 6
       },
       "geometry": {
         "type": "Point",
@@ -5379,14 +5804,16 @@
         "nom": "PE4 Pondereux",
         "type": "A",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "304000",
         "code": true,
-        "armen": "182880200"
+        "armen": "182880200",
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -5402,14 +5829,16 @@
         "nom": "PE5 Mardyck",
         "type": "A",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "304000",
         "code": false,
-        "armen": "182880274"
+        "armen": "182880274",
+        "ordre_ligne": 5
       },
       "geometry": {
         "type": "Point",
@@ -5425,14 +5854,16 @@
         "nom": "Phalempin",
         "type": "SP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "272000",
         "code": false,
-        "armen": "74352349"
+        "armen": "74352349",
+        "ordre_ligne": 26
       },
       "geometry": {
         "type": "Point",
@@ -5448,14 +5879,16 @@
         "nom": "Poix",
         "type": "SSP",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "321000",
         "code": false,
-        "armen": "74047324"
+        "armen": "74047324",
+        "ordre_ligne": 4
       },
       "geometry": {
         "type": "Point",
@@ -5474,9 +5907,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "321000",
+        "ordre_ligne": 3
       },
       "geometry": {
         "type": "Point",
@@ -5492,14 +5927,16 @@
         "nom": "Pont de briques",
         "type": "SST",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "90kV / ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "311000",
         "code": true,
-        "armen": "74353161"
+        "armen": "74353161",
+        "ordre_ligne": 10
       },
       "geometry": {
         "type": "Point",
@@ -5518,9 +5955,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "90kV / ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "311000",
+        "ordre_ligne": 11
       },
       "geometry": {
         "type": "Point",
@@ -5536,14 +5975,16 @@
         "nom": "Puyt Houck",
         "type": "SSPA",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "304000",
         "code": false,
-        "armen": "74354229"
+        "armen": "74354229",
+        "ordre_ligne": 3
       },
       "geometry": {
         "type": "Point",
@@ -5559,14 +6000,16 @@
         "nom": "Quevy",
         "type": "SSPA",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "247000",
         "code": false,
-        "armen": "74354251"
+        "armen": "74354251",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -5582,13 +6025,15 @@
         "nom": "Quilleval",
         "type": "PRCI",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "216000",
         "code": false,
-        "armen": "74351865"
+        "armen": "74351865",
+        "ordre_ligne": 14
       },
       "geometry": {
         "type": "Point",
@@ -5604,14 +6049,16 @@
         "nom": "Rang",
         "type": "SSP",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "311000",
         "code": false,
-        "armen": "74354437"
+        "armen": "74354437",
+        "ordre_ligne": 5
       },
       "geometry": {
         "type": "Point",
@@ -5627,14 +6074,16 @@
         "nom": "Riviere",
         "type": "SSPA",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "314000",
         "code": false,
-        "armen": "74354273"
+        "armen": "74354273",
+        "ordre_ligne": 25
       },
       "geometry": {
         "type": "Point",
@@ -5653,9 +6102,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "314000",
+        "ordre_ligne": 24
       },
       "geometry": {
         "type": "Point",
@@ -5671,13 +6122,15 @@
         "nom": "Rodelinghem",
         "type": "PRCI",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "TVP présent pour aller jusqu'au PRCI",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "216000",
         "code": false,
-        "armen": "74351877"
+        "armen": "74351877",
+        "ordre_ligne": 16
       },
       "geometry": {
         "type": "Point",
@@ -5693,13 +6146,15 @@
         "nom": "Roeux",
         "type": "PRCI",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226000",
         "code": false,
-        "armen": "74351889"
+        "armen": "74351889",
+        "ordre_ligne": 12
       },
       "geometry": {
         "type": "Point",
@@ -5715,14 +6170,16 @@
         "nom": "Roeux",
         "type": "SP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "Alimentation SE",
         "description_telecommande": "ACS21",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "272000",
         "code": false,
-        "armen": "171662315"
+        "armen": "171662315",
+        "ordre_ligne": 20
       },
       "geometry": {
         "type": "Point",
@@ -5738,14 +6195,16 @@
         "nom": "Ronchin",
         "type": "P",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "272000",
         "code": false,
-        "armen": "74351245"
+        "armen": "74351245",
+        "ordre_ligne": 30
       },
       "geometry": {
         "type": "Point",
@@ -5764,9 +6223,11 @@
         "acces": "",
         "description": "  ",
         "description_telecommande": "PAS900",
-        "rss": "",
+        "rss": "1",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "272000",
+        "ordre_ligne": 31
       },
       "geometry": {
         "type": "Point",
@@ -5782,14 +6243,16 @@
         "nom": "Roubaix",
         "type": "L",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "278000",
         "code": false,
-        "armen": "74352795"
+        "armen": "74352795",
+        "ordre_ligne": 3
       },
       "geometry": {
         "type": "Point",
@@ -5805,14 +6268,16 @@
         "nom": "Rue verte",
         "type": "L",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "314000",
         "code": false,
-        "armen": "74351681"
+        "armen": "74351681",
+        "ordre_ligne": 14
       },
       "geometry": {
         "type": "Point",
@@ -5831,9 +6296,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "314000",
+        "ordre_ligne": 12
       },
       "geometry": {
         "type": "Point",
@@ -5852,9 +6319,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "314000",
+        "ordre_ligne": 13
       },
       "geometry": {
         "type": "Point",
@@ -5873,9 +6342,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "314000",
+        "ordre_ligne": 15
       },
       "geometry": {
         "type": "Point",
@@ -5894,9 +6365,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "314000",
+        "ordre_ligne": 16
       },
       "geometry": {
         "type": "Point",
@@ -5915,9 +6388,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "314000",
+        "ordre_ligne": 17
       },
       "geometry": {
         "type": "Point",
@@ -5933,14 +6408,16 @@
         "nom": "Rumes",
         "type": "SP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226000",
         "code": false,
-        "armen": "172033265"
+        "armen": "172033265",
+        "ordre_ligne": 24
       },
       "geometry": {
         "type": "Point",
@@ -5956,14 +6433,16 @@
         "nom": "Ruminghem",
         "type": "SST",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "225kV /IP / ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "216000",
         "code": true,
-        "armen": "74353391"
+        "armen": "74353391",
+        "ordre_ligne": 13
       },
       "geometry": {
         "type": "Point",
@@ -5979,13 +6458,15 @@
         "nom": "Sainghin",
         "type": "PRCI",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226000",
         "code": false,
-        "armen": "171661964"
+        "armen": "171661964",
+        "ordre_ligne": 20
       },
       "geometry": {
         "type": "Point",
@@ -6001,14 +6482,16 @@
         "nom": "Saint Eloi",
         "type": "SSP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "IP / ACS25",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "272000",
         "code": false,
-        "armen": "74352369"
+        "armen": "74352369",
+        "ordre_ligne": 22
       },
       "geometry": {
         "type": "Point",
@@ -6027,9 +6510,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "IP / ACS25",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "272000",
+        "ordre_ligne": 21
       },
       "geometry": {
         "type": "Point",
@@ -6045,14 +6530,16 @@
         "nom": "Saint Just",
         "type": "SSP",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "272000",
         "code": false,
-        "armen": "74046378"
+        "armen": "74046378",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -6068,14 +6555,16 @@
         "nom": "Saint Omer",
         "type": "L",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "295000",
         "code": false,
-        "armen": "74351921"
+        "armen": "74351921",
+        "ordre_ligne": 16
       },
       "geometry": {
         "type": "Point",
@@ -6094,9 +6583,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "295000",
+        "ordre_ligne": 14
       },
       "geometry": {
         "type": "Point",
@@ -6115,9 +6606,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "295000",
+        "ordre_ligne": 15
       },
       "geometry": {
         "type": "Point",
@@ -6136,9 +6629,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "295000",
+        "ordre_ligne": 17
       },
       "geometry": {
         "type": "Point",
@@ -6154,14 +6649,16 @@
         "nom": "Saint Quentin",
         "type": "SSPA",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "242000",
         "code": false,
-        "armen": "74045082"
+        "armen": "74045082",
+        "ordre_ligne": 7
       },
       "geometry": {
         "type": "Point",
@@ -6177,14 +6674,16 @@
         "nom": "Saint Roch",
         "type": "SSP",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "321000",
         "code": false,
-        "armen": "171490164"
+        "armen": "171490164",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -6203,10 +6702,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "311000",
-        "code": false
+        "code": false,
+        "ordre_ligne": 4
       },
       "geometry": {
         "type": "Point",
@@ -6222,13 +6722,15 @@
         "nom": "Saint Sauveur",
         "type": "A",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "Le 230V~ et le 24V= proviennent du SE (le 24 V alimente uniquement le coffret IA). Le 48V= est fourni par le SLAT. Le défaut SA= indique donc une absence de 48V, pas de 24V.",
-        "rss": "A",
+        "rss": "1",
         "contact": "Agent E : 03 28 55 71 08",
         "numero_ligne": "272000",
         "code": false,
-        "armen": "74351093"
+        "armen": "74351093",
+        "ordre_ligne": 32
       },
       "geometry": {
         "type": "Point",
@@ -6244,14 +6746,16 @@
         "nom": "Saint Sauveur",
         "type": "L",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "272000",
         "code": false,
-        "armen": "171661264"
+        "armen": "171661264",
+        "ordre_ligne": 36
       },
       "geometry": {
         "type": "Point",
@@ -6267,13 +6771,15 @@
         "nom": "Sambre",
         "type": "A",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "242000",
         "code": false,
-        "armen": "74351055"
+        "armen": "74351055",
+        "ordre_ligne": 18
       },
       "geometry": {
         "type": "Point",
@@ -6289,14 +6795,16 @@
         "nom": "Sassegnies",
         "type": "L",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "242000",
         "code": false,
-        "armen": "177960318"
+        "armen": "177960318",
+        "ordre_ligne": 15
       },
       "geometry": {
         "type": "Point",
@@ -6312,14 +6820,16 @@
         "nom": "Seclin",
         "type": "L",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "IP / ACS25",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "272000",
         "code": true,
-        "armen": "186328857"
+        "armen": "186328857",
+        "ordre_ligne": 27
       },
       "geometry": {
         "type": "Point",
@@ -6369,14 +6879,16 @@
         "nom": "Sin le noble",
         "type": "SSP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "259000",
         "code": false,
-        "armen": "74354301"
+        "armen": "74354301",
+        "ordre_ligne": 3
       },
       "geometry": {
         "type": "Point",
@@ -6392,14 +6904,16 @@
         "nom": "Somain",
         "type": "A",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "262000",
         "code": false,
-        "armen": "173457892"
+        "armen": "173457892",
+        "ordre_ligne": 2
       },
       "geometry": {
         "type": "Point",
@@ -6415,14 +6929,16 @@
         "nom": "Steenwerck",
         "type": "SSP",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "295000",
         "code": true,
-        "armen": "74354331"
+        "armen": "74354331",
+        "ordre_ligne": 8
       },
       "geometry": {
         "type": "Point",
@@ -6438,14 +6954,16 @@
         "nom": "Strazeele",
         "type": "SP",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "295000",
         "code": true,
-        "armen": "74352417"
+        "armen": "74352417",
+        "ordre_ligne": 10
       },
       "geometry": {
         "type": "Point",
@@ -6464,9 +6982,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "295000",
+        "ordre_ligne": 11
       },
       "geometry": {
         "type": "Point",
@@ -6485,9 +7005,11 @@
         "acces": "",
         "description": "",
         "description_telecommande": "ACS21",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
-        "code": false
+        "code": false,
+        "numero_ligne": "295000",
+        "ordre_ligne": 9
       },
       "geometry": {
         "type": "Point",
@@ -6503,14 +7025,16 @@
         "nom": "Templemars",
         "type": "L",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "IP / ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "272000",
         "code": false,
-        "armen": "186328884"
+        "armen": "186328884",
+        "ordre_ligne": 28
       },
       "geometry": {
         "type": "Point",
@@ -6526,9 +7050,12 @@
         "nom": "Tergnier",
         "type": "PREC",
         "SAT": "",
+        "Eq": "A",
         "acces": "Tergnier (Technicentre)",
         "hors_patrimoine": false,
-        "code": false
+        "code": false,
+        "numero_ligne": "242000",
+        "ordre_ligne": 5
       },
       "geometry": {
         "type": "Point",
@@ -6544,17 +7071,19 @@
         "nom": "Tergnier",
         "type": "SST",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "63kV / ACS25",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "242000",
         "code": false,
         "armen": [
           "171755053",
           "74046864"
-        ]
+        ],
+        "ordre_ligne": 3
       },
       "geometry": {
         "type": "Point",
@@ -6570,9 +7099,12 @@
         "nom": "Tergnier",
         "type": "Station d'essai",
         "SAT": "",
+        "Eq": "A",
         "acces": "Tergnier (Technicentre)",
         "hors_patrimoine": false,
-        "code": false
+        "code": false,
+        "numero_ligne": "242000",
+        "ordre_ligne": 4
       },
       "geometry": {
         "type": "Point",
@@ -6588,14 +7120,16 @@
         "nom": "Terres Noires",
         "type": "SST",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "225kV / ACS21",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "262000",
         "code": false,
-        "armen": "74353207"
+        "armen": "74353207",
+        "ordre_ligne": 1
       },
       "geometry": {
         "type": "Point",
@@ -6611,14 +7145,16 @@
         "nom": "Thiennes",
         "type": "SP",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "⚡️ Sectionneur 263-16 (se situe à Hazebrouck) à manœuvrer sur demande du régulateur pour les consignations C",
         "description_telecommande": "ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "301000",
         "code": true,
-        "armen": "74352441"
+        "armen": "74352441",
+        "ordre_ligne": 12
       },
       "geometry": {
         "type": "Point",
@@ -6634,10 +7170,11 @@
         "nom": "Tourcoing Frontière",
         "type": "P",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "278000",
         "code": false,
@@ -6658,14 +7195,16 @@
         "nom": "Tourcoing Gare",
         "type": "L-A",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "Agent E : 03 20 11 68 07  03 20 11 68 20",
         "numero_ligne": "278000",
         "code": true,
-        "armen": "74351107"
+        "armen": "74351107",
+        "ordre_ligne": 4
       },
       "geometry": {
         "type": "Point",
@@ -6681,14 +7220,16 @@
         "nom": "Transloy",
         "type": "SP",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226000",
         "code": false,
-        "armen": "171621663"
+        "armen": "171621663",
+        "ordre_ligne": 7
       },
       "geometry": {
         "type": "Point",
@@ -6704,14 +7245,16 @@
         "nom": "Tricat",
         "type": "SP",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "314000",
         "code": true,
-        "armen": "74352465"
+        "armen": "74352465",
+        "ordre_ligne": 8
       },
       "geometry": {
         "type": "Point",
@@ -6727,13 +7270,15 @@
         "nom": "Valenciennes",
         "type": "A",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "267000",
         "code": false,
-        "armen": "74351125"
+        "armen": "74351125",
+        "ordre_ligne": 7
       },
       "geometry": {
         "type": "Point",
@@ -6749,14 +7294,16 @@
         "nom": "Valenciennes",
         "type": "SS",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "267000",
         "code": false,
-        "armen": "74352809"
+        "armen": "74352809",
+        "ordre_ligne": 6
       },
       "geometry": {
         "type": "Point",
@@ -6789,14 +7336,16 @@
         "nom": "Verquigneul",
         "type": "SST",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "90kV / ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "301000",
         "code": false,
-        "armen": "74353253"
+        "armen": "74353253",
+        "ordre_ligne": 7
       },
       "geometry": {
         "type": "Point",
@@ -6812,14 +7361,16 @@
         "nom": "Volck Veld",
         "type": "SP",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "🗝️ Historique : mise en service du postes en juillet 1962",
         "description_telecommande": "ACS25",
-        "rss": "C",
+        "rss": "3",
         "contact": "",
         "numero_ligne": "301000",
         "code": false,
-        "armen": "74352489"
+        "armen": "74352489",
+        "ordre_ligne": 14
       },
       "geometry": {
         "type": "Point",
@@ -6835,14 +7386,16 @@
         "nom": "Wancourt",
         "type": "P",
         "SAT": "",
+        "Eq": "A",
         "acces": "",
         "description": "",
         "description_telecommande": "ACS25",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226000",
         "code": false,
-        "armen": "74351505"
+        "armen": "74351505",
+        "ordre_ligne": 11
       },
       "geometry": {
         "type": "Point",
@@ -6858,13 +7411,15 @@
         "nom": "Wannehain",
         "type": "PRCI",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "226000",
         "code": false,
-        "armen": "74351941"
+        "armen": "74351941",
+        "ordre_ligne": 22
       },
       "geometry": {
         "type": "Point",
@@ -6880,14 +7435,16 @@
         "nom": "Wattignies",
         "type": "SP",
         "SAT": "",
+        "Eq": "V",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "B",
+        "rss": "2",
         "contact": "",
         "numero_ligne": "272000",
         "code": false,
-        "armen": "74352513"
+        "armen": "74352513",
+        "ordre_ligne": 29
       },
       "geometry": {
         "type": "Point",
@@ -6903,14 +7460,16 @@
         "nom": "Yeuse",
         "type": "P",
         "SAT": "",
+        "Eq": "H",
         "acces": "",
         "description": "",
         "description_telecommande": "PAS900",
-        "rss": "A",
+        "rss": "1",
         "contact": "",
         "numero_ligne": "216000",
         "code": false,
-        "armen": "74351529"
+        "armen": "74351529",
+        "ordre_ligne": 15
       },
       "geometry": {
         "type": "Point",

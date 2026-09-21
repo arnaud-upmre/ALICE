@@ -1,0 +1,1 @@
+import{c as e,i as t,l as n}from"./appareils-BMaRbaTF.js";export{t as PALETTE_APPAREILS,e as determinerCouleurAppareil,n as determinerCouleurCarteAppareil};

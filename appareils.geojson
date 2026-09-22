@@ -24732,6 +24732,63 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          3.282268,
+          50.355657
+        ]
+      },
+      "properties": {
+        "nom": "Somain",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "appareil": "I80509",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.281133,
+          50.355598
+        ]
+      },
+      "properties": {
+        "nom": "Somain",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "appareil": "I80514",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.282676,
+          50.355643
+        ]
+      },
+      "properties": {
+        "nom": "Somain",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "appareil": "I80516",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.78631,
           50.71336
         ]

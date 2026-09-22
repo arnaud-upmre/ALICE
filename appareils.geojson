@@ -24743,7 +24743,7 @@
         "nom": "Somain",
         "type": "L-A",
         "SAT": "IA",
-        "acces": "",
+        "acces": "IA",
         "appareil": "IA1",
         "description": "FSK"
       }

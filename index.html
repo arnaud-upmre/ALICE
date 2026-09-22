@@ -38,12 +38,12 @@
         );
       })();
     </script>
-    <script type="module" crossorigin src="/ALICE/assets/accueil-CWF4tr28.js"></script>
+    <script type="module" crossorigin src="/ALICE/assets/accueil-CgOzQxmf.js"></script>
     <link rel="modulepreload" crossorigin href="/ALICE/assets/modulepreload-polyfill-Dezn_h7o.js">
     <link rel="modulepreload" crossorigin href="/ALICE/assets/options-DYPHlPyK.js">
     <link rel="modulepreload" crossorigin href="/ALICE/assets/preload-helper-CoS762Vi.js">
-    <link rel="stylesheet" crossorigin href="/ALICE/assets/accueil-DSl5IJYX.css">
-    <link rel="modulepreload" crossorigin href="/ALICE/assets/main-zEGMKdTE.js">
+    <link rel="stylesheet" crossorigin href="/ALICE/assets/accueil-CW9noObw.css">
+    <link rel="modulepreload" crossorigin href="/ALICE/assets/main-0CaTKgCq.js">
     <link rel="modulepreload" crossorigin href="/ALICE/assets/maplibre-Bde3JgdO.js">
   </head>
   <body>
@@ -202,6 +202,11 @@
 
           <div class="modal-itineraire-etat" id="itineraire-etat">Choisissez un départ et une arrivée.</div>
 
+          <!-- Repere de cran permanent : delimite la taille normale d'ouverture
+               (en-tete + etapes + etat), meme quand resume/variantes/actions
+               sont encore masques (aucun trajet calcule). -->
+          <div class="modal-itineraire-cran-normal" data-panneau-cran aria-hidden="true"></div>
+
           <section class="modal-itineraire-resume" id="itineraire-resume" aria-live="polite" data-panneau-cran>
             <div class="modal-itineraire-resume-tete">
               <strong>Résumé du trajet</strong>
@@ -244,12 +249,12 @@
             <p class="modal-localisation-sous-titre">Résultats proches de votre position actuelle</p>
             <div class="modal-localisation-etat" id="localisation-etat" aria-live="polite">Appuyez sur "Me localiser".</div>
           </div>
-          <ul class="modal-localisation-resultats" id="localisation-resultats" aria-label="Résultats autour de vous"></ul>
+          <ul class="modal-localisation-resultats" id="localisation-resultats" aria-label="Résultats autour de vous" data-panneau-cran></ul>
         </div>
     </div>
 
     <div id="reserve-filtres" hidden>
-        <form class="panneau-reglages-defilant" id="volet-filtres-contenu" role="dialog" aria-modal="false" aria-labelledby="filtres-titre">
+        <form class="panneau-reglages-defilant" id="volet-filtres-contenu" data-panneau-crans role="dialog" aria-modal="false" aria-labelledby="filtres-titre">
           <header class="filtres-entete panneau-entete-deplacable">
             <button class="filtres-retour" id="filtres-retour" type="button" aria-label="Retour à l’affichage de la carte" hidden>‹</button>
             <div>
@@ -259,7 +264,7 @@
           </header>
 
           <div class="filtres-contenu">
-            <section class="filtres-groupe" data-panneau-section="equipes" data-panneau-section-repliee="true" aria-labelledby="titre-section-equipes">
+            <section class="filtres-groupe" data-panneau-section="equipes" data-panneau-section-repliee="true" data-panneau-cran aria-labelledby="titre-section-equipes">
               <div class="panneau-section-entete"><span class="panneau-section-titre" id="titre-section-equipes"><strong>Équipe</strong></span></div>
               <div class="filtres-liste">
                 <label class="option-filtre">
@@ -283,7 +288,7 @@
               </div>
             </section>
 
-            <section class="filtres-groupe" data-panneau-section="affichage" data-panneau-section-repliee="true" aria-labelledby="titre-section-affichage">
+            <section class="filtres-groupe" data-panneau-section="affichage" data-panneau-section-repliee="true" data-panneau-cran aria-labelledby="titre-section-affichage">
               <div class="panneau-section-entete"><span class="panneau-section-titre" id="titre-section-affichage"><strong>Mode de carte</strong></span></div>
               <div class="filtres-liste" role="radiogroup" aria-label="Mode d’affichage des points">
                 <label class="option-filtre option-mode-affichage">
@@ -307,7 +312,7 @@
               </div>
             </section>
 
-            <section class="filtres-groupe" data-panneau-section="equipements-eale" aria-labelledby="titre-section-equipements-eale">
+            <section class="filtres-groupe" data-panneau-section="equipements-eale" data-panneau-cran aria-labelledby="titre-section-equipements-eale">
               <div class="panneau-section-entete"><span class="panneau-section-titre" id="titre-section-equipements-eale"><strong>Équipements EALE</strong></span></div>
               <div class="filtres-liste">
                 <label class="option-filtre">
@@ -364,7 +369,7 @@
               </div>
             </section>
 
-            <section class="filtres-groupe" data-panneau-section="installations-complementaires" aria-labelledby="titre-section-installations-complementaires">
+            <section class="filtres-groupe" data-panneau-section="installations-complementaires" data-panneau-cran aria-labelledby="titre-section-installations-complementaires">
               <div class="panneau-section-entete"><span class="panneau-section-titre" id="titre-section-installations-complementaires"><strong>Installations complémentaires</strong></span></div>
               <div class="filtres-liste">
                 <label class="option-filtre">
@@ -376,7 +381,7 @@
               </div>
             </section>
 
-            <section class="filtres-groupe" data-panneau-section="elements-reseau" aria-labelledby="titre-section-elements-reseau">
+            <section class="filtres-groupe" data-panneau-section="elements-reseau" data-panneau-cran aria-labelledby="titre-section-elements-reseau">
               <div class="panneau-section-entete"><span class="panneau-section-titre" id="titre-section-elements-reseau"><strong>Éléments du réseau</strong></span></div>
               <div class="filtres-liste">
                 <label class="option-filtre">
@@ -419,7 +424,7 @@
               </div>
             </section>
 
-            <section class="filtres-groupe" data-panneau-section="trace-ferroviaire" aria-labelledby="titre-section-trace-ferroviaire">
+            <section class="filtres-groupe" data-panneau-section="trace-ferroviaire" data-panneau-cran aria-labelledby="titre-section-trace-ferroviaire">
               <div class="panneau-section-entete"><span class="panneau-section-titre" id="titre-section-trace-ferroviaire"><strong>Tracé ferroviaire</strong></span></div>
               <div class="filtres-lignes">
                 <label class="option-filtre-ligne">
@@ -457,16 +462,16 @@
             </button>
           </div>
           <div class="options-locales-contenu" id="options-lignes-locales" hidden>
-            <section data-panneau-section="regions-locales"><div class="panneau-section-entete"><span class="panneau-section-titre"><strong>Régions disponibles</strong></span></div><div class="options-locales-liste options-locales-regions">
+            <section data-panneau-section="regions-locales" data-panneau-cran><div class="panneau-section-entete"><span class="panneau-section-titre"><strong>Régions disponibles</strong></span></div><div class="options-locales-liste options-locales-regions">
               <label class="option-locale"><span><strong>Hauts-de-France</strong><small>Région principale</small></span><input type="checkbox" name="local-region-hdf" checked disabled><i></i></label>
               <label class="option-locale"><span><strong>Normandie</strong></span><input type="checkbox" name="local-region-normandie"><i></i></label>
               <label class="option-locale"><span><strong>Grand Est</strong></span><input type="checkbox" name="local-region-grand-est"><i></i></label>
               <label class="option-locale"><span><strong>Île-de-France</strong></span><input type="checkbox" name="local-region-idf"><i></i></label>
             </div></section>
-            <section data-panneau-section="selection-reseau-local"><div class="panneau-section-entete"><span class="panneau-section-titre"><strong>Sélection du réseau</strong></span></div><div class="options-locales-liste">
+            <section data-panneau-section="selection-reseau-local" data-panneau-cran><div class="panneau-section-entete"><span class="panneau-section-titre"><strong>Sélection du réseau</strong></span></div><div class="options-locales-liste">
               <label class="option-locale"><span><strong>Lignes avec équipement EALE</strong><small>Au moins un équipement EALE présent</small></span><input type="checkbox" name="local-lignes-equipees"><i></i></label>
             </div></section>
-            <section data-panneau-section="types-voies-locales"><div class="panneau-section-entete"><span class="panneau-section-titre"><strong>Types de voies</strong></span></div><div class="options-locales-liste options-locales-categories">
+            <section data-panneau-section="types-voies-locales" data-panneau-cran><div class="panneau-section-entete"><span class="panneau-section-titre"><strong>Types de voies</strong></span></div><div class="options-locales-liste options-locales-categories">
               <label class="option-locale"><b class="apercu-categorie trait-ligne-main"></b><span><strong>Lignes classiques</strong></span><input type="checkbox" name="local-categorie" value="main" checked><i></i></label>
               <label class="option-locale"><b class="apercu-categorie trait-ligne-lgv"></b><span><strong>LGV</strong></span><input type="checkbox" name="local-categorie" value="lgv" checked><i></i></label>
               <label class="option-locale"><b class="apercu-categorie trait-ligne-branch"></b><span><strong>Lignes secondaires</strong></span><input type="checkbox" name="local-categorie" value="branch" checked><i></i></label>
@@ -478,7 +483,7 @@
               <label class="option-locale"><b class="apercu-categorie trait-ligne-getlink"></b><span><strong>GetLink</strong></span><input type="checkbox" name="local-categorie" value="getlink" checked><i></i></label>
               <label class="option-locale"><b class="apercu-categorie trait-ligne-autre"></b><span><strong>Autres</strong></span><input type="checkbox" name="local-categorie" value="unknown" checked><i></i></label>
             </div></section>
-            <section data-panneau-section="etats-voies-locales"><div class="panneau-section-entete"><span class="panneau-section-titre"><strong>État des voies</strong></span></div><div class="options-locales-liste options-locales-categories">
+            <section data-panneau-section="etats-voies-locales" data-panneau-cran><div class="panneau-section-entete"><span class="panneau-section-titre"><strong>État des voies</strong></span></div><div class="options-locales-liste options-locales-categories">
               <label class="option-locale"><b class="apercu-categorie trait-etat-present"></b><span><strong>En service</strong></span><input type="checkbox" name="local-etat" value="present" checked><i></i></label>
               <label class="option-locale"><b class="apercu-categorie trait-etat-disused"></b><span><strong>Désaffectées</strong></span><input type="checkbox" name="local-etat" value="disused"><i></i></label>
               <label class="option-locale"><b class="apercu-categorie trait-etat-abandoned"></b><span><strong>Abandonnées</strong></span><input type="checkbox" name="local-etat" value="abandoned"><i></i></label>
@@ -489,14 +494,14 @@
     </div>
 
     <div id="reserve-fonds" hidden>
-        <section class="panneau-reglages-defilant" id="volet-fonds-contenu" role="dialog" aria-modal="false" aria-label="Choisir le fond de carte">
+        <section class="panneau-reglages-defilant" id="volet-fonds-contenu" data-panneau-crans role="dialog" aria-modal="false" aria-label="Choisir le fond de carte">
           <header class="fonds-entete panneau-entete-deplacable">
             <h2 class="fonds-titre">Fond de carte</h2>
           </header>
 
           <div class="fonds-contenu">
             <div class="fonds-auto-reglages" id="fonds-auto-reglages">
-              <section class="fonds-groupe fonds-mode-automatique" data-panneau-section="mode-automatique" data-panneau-section-repliable="false" aria-labelledby="titre-section-mode-automatique">
+              <section class="fonds-groupe fonds-mode-automatique" data-panneau-section="mode-automatique" data-panneau-section-repliable="false" data-panneau-cran aria-labelledby="titre-section-mode-automatique">
                 <div class="panneau-section-entete">
                   <span class="panneau-section-titre">
                     <strong id="titre-section-mode-automatique">Mode automatique</strong>
@@ -512,7 +517,7 @@
                 </div>
               </section>
 
-              <section class="fonds-groupe" data-panneau-section="plan-classique" aria-labelledby="titre-section-plan-classique">
+              <section class="fonds-groupe" data-panneau-section="plan-classique" data-panneau-cran aria-labelledby="titre-section-plan-classique">
                 <div class="panneau-section-entete"><span class="panneau-section-titre" id="titre-section-plan-classique"><strong>Plans</strong></span></div>
                 <div class="fonds-grille">
                   <button class="fonds-carte apercu-systeme" type="button" data-fond-auto-base="systeme">
@@ -536,7 +541,7 @@
                 </div>
               </section>
 
-              <section class="fonds-groupe" data-panneau-section="satellite" aria-labelledby="titre-section-satellite">
+              <section class="fonds-groupe" data-panneau-section="satellite" data-panneau-cran aria-labelledby="titre-section-satellite">
                 <div class="panneau-section-entete"><span class="panneau-section-titre" id="titre-section-satellite"><strong>Satellites</strong></span></div>
                 <div class="fonds-grille">
                   <button class="fonds-carte apercu-satellite-ign" type="button" data-fond-auto-satellite="ignAuto">

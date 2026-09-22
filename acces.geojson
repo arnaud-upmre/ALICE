@@ -6033,6 +6033,20 @@
     },
     {
       "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.280081,
+          50.355657
+        ]
+      },
+      "properties": {
+        "nom": "Somain",
+        "type": "L"
+      }
+    },
+    {
+      "type": "Feature",
       "properties": {
         "nom": "Steenwerck",
         "type": "SSP",

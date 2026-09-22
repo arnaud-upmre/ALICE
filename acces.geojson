@@ -6032,8 +6032,8 @@
       "properties": {
         "nom": "Somain",
         "type": "L-A",
-        "SAT": "IA",
-        "acces": "SAT IA",
+        "SAT": "SAT IA",
+        "acces": "IA",
         "hors_patrimoine": false,
         "code": false
       },

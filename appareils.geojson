@@ -24742,27 +24742,9 @@
       "properties": {
         "nom": "Somain",
         "type": "L-A",
-        "SAT": "IA",
-        "acces": "",
-        "appareil": "TC IA1",
-        "description": "FSK"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          3.261817,
-          50.35516
-        ]
-      },
-      "properties": {
-        "nom": "Somain",
-        "type": "L-A",
-        "SAT": "IA",
-        "acces": "",
-        "appareil": "TT IA1",
+        "SAT": "SAT IA",
+        "acces": "IA",
+        "appareil": "IA1",
         "description": "FSK"
       }
     },
@@ -24780,7 +24762,25 @@
         "type": "L-A",
         "SAT": "SAT IA",
         "acces": "IA",
-        "appareil": "IA1",
+        "appareil": "TC IA1",
+        "description": "FSK"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.261817,
+          50.35516
+        ]
+      },
+      "properties": {
+        "nom": "Somain",
+        "type": "L-A",
+        "SAT": "SAT IA",
+        "acces": "IA",
+        "appareil": "TT IA1",
         "description": "FSK"
       }
     },

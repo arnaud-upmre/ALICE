@@ -6033,7 +6033,7 @@
         "nom": "Somain",
         "type": "L-A",
         "SAT": "IA",
-        "acces": "IA",
+        "acces": "SAT IA",
         "hors_patrimoine": false,
         "code": false
       },

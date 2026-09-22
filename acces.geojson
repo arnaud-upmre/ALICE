@@ -6024,14 +6024,14 @@
       },
       "properties": {
         "nom": "Somain",
-        "type": "L"
+        "type": "L-A"
       }
     },
     {
       "type": "Feature",
       "properties": {
         "nom": "Somain",
-        "type": "L",
+        "type": "L-A",
         "SAT": "IA",
         "acces": "",
         "hors_patrimoine": false,

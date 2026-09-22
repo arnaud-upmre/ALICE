@@ -6015,24 +6015,6 @@
     },
     {
       "type": "Feature",
-      "properties": {
-        "nom": "Somain",
-        "type": "A",
-        "SAT": "",
-        "acces": "",
-        "hors_patrimoine": false,
-        "code": false
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          3.263358,
-          50.35537
-        ]
-      }
-    },
-    {
-      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -6043,6 +6025,24 @@
       "properties": {
         "nom": "Somain",
         "type": "L"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Somain",
+        "type": "L",
+        "SAT": "IA",
+        "acces": "",
+        "hors_patrimoine": false,
+        "code": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.263358,
+          50.35537
+        ]
       }
     },
     {

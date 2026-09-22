@@ -6900,31 +6900,6 @@
     },
     {
       "type": "Feature",
-      "properties": {
-        "nom": "Somain",
-        "type": "A",
-        "SAT": "",
-        "Eq": "V",
-        "acces": "",
-        "description": "",
-        "description_telecommande": "",
-        "rss": "2",
-        "contact": "",
-        "numero_ligne": "262000",
-        "code": false,
-        "armen": "173457892",
-        "ordre_ligne": 2
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          3.26171,
-          50.3551676
-        ]
-      }
-    },
-    {
-      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -6939,7 +6914,32 @@
         "rss": "2",
         "numero_ligne": "262000",
         "ordre_ligne": 3,
-        "description_telecommande": "ACS21"
+        "description_telecommande": "ACS21",
+        "armen": "173457892"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nom": "Somain",
+        "type": "L",
+        "SAT": "IA",
+        "acces": "",
+        "description": "",
+        "description_telecommande": "",
+        "rss": "2",
+        "contact": "",
+        "numero_ligne": "262000",
+        "code": false,
+        "armen": "",
+        "ordre_ligne": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.26171,
+          50.3551676
+        ]
       }
     },
     {

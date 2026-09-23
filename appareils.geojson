@@ -24031,44 +24031,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.195135,
-          50.844472
-        ]
-      },
-      "properties": {
-        "nom": "Ruminghem",
-        "type": "SST",
-        "SAT": "",
-        "acces": "",
-        "appareil": "TC CT1",
-        "description": "",
-        "hors_patrimoine": false
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.195253,
-          50.844566
-        ]
-      },
-      "properties": {
-        "nom": "Ruminghem",
-        "type": "SST",
-        "SAT": "",
-        "acces": "",
-        "appareil": "TC CT2",
-        "description": "",
-        "hors_patrimoine": false
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           2.19504,
           50.84461
         ]
@@ -24126,8 +24088,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.195135,
-          50.844472
+          2.195469,
+          50.844576
         ]
       },
       "properties": {
@@ -24135,7 +24097,7 @@
         "type": "SST",
         "SAT": "",
         "acces": "",
-        "appareil": "TC FT1",
+        "appareil": "TCCT1",
         "description": "",
         "hors_patrimoine": false
       }
@@ -24145,8 +24107,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.195253,
-          50.844566
+          2.195293,
+          50.844476
         ]
       },
       "properties": {
@@ -24154,7 +24116,45 @@
         "type": "SST",
         "SAT": "",
         "acces": "",
-        "appareil": "TC FT2",
+        "appareil": "TCCT2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195469,
+          50.844576
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TCFT1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195058,
+          50.844474
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TCFT2",
         "description": "",
         "hors_patrimoine": false
       }

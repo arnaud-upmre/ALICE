@@ -19395,6 +19395,44 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          3.343146,
+          50.311793
+        ]
+      },
+      "properties": {
+        "nom": "Lourches",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "appareil": "I80526",
+        "description": "FSKII",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.343359,
+          50.311817
+        ]
+      },
+      "properties": {
+        "nom": "Lourches",
+        "type": "L",
+        "SAT": "",
+        "acces": "",
+        "appareil": "I80528",
+        "description": "FSKII",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           1.72813,
           50.80572
         ]
@@ -22656,6 +22694,158 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.195443,
+          50.844746
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "D1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195238,
+          50.844727
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "D2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195035,
+          50.844632
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DC",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.194958,
+          50.844629
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DL",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195217,
+          50.84445
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DP1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195303,
+          50.844457
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DP2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.19514,
+          50.844446
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DT1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195062,
+          50.844446
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DT2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.19546,
           50.84462
         ]
@@ -22685,6 +22875,82 @@
         "acces": "",
         "appareil": "GT2",
         "description": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.194945,
+          50.844797
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IS1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.194936,
+          50.844837
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IS2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.194926,
+          50.844933
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IS3",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.194932,
+          50.844897
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IS4",
+        "description": "",
+        "hors_patrimoine": false
       }
     },
     {
@@ -22757,6 +23023,519 @@
         "acces": "",
         "appareil": "P4",
         "description": "Herse LC"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195424,
+          50.844726
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "PF14",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.19548,
+          50.844726
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "PF18",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195207,
+          50.844712
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "PF20",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195273,
+          50.844712
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "PF24",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195461,
+          50.844786
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "S1-0",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195405,
+          50.844783
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "S1-4",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195502,
+          50.844788
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "S1-8",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.19547,
+          50.845022
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "S11",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195231,
+          50.844767
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "S2-0",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195286,
+          50.844769
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "S2-4",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195174,
+          50.844767
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "S2-8",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195257,
+          50.845015
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "S21",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195426,
+          50.844906
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SBP1-0",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195359,
+          50.844945
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SBP1-4",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195291,
+          50.844956
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SBP2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195049,
+          50.844563
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SDC1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.194916,
+          50.844979
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SDC2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.194966,
+          50.844562
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SDL1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.194948,
+          50.844746
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SDL2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195215,
+          50.844509
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SDP1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.19529,
+          50.844515
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SDP2",
+        "description": "Local",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195138,
+          50.844511
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SDT1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195061,
+          50.844508
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SDT2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.194966,
+          50.844562
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SLC1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195049,
+          50.844563
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SLC2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.194936,
+          50.844837
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SLC3",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.194932,
+          50.844897
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SLC4",
+        "description": "",
+        "hors_patrimoine": false
       }
     },
     {
@@ -22854,6 +23633,139 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.195488,
+          50.84487
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SPB1-8",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195061,
+          50.844508
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SPL1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.194976,
+          50.844506
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SPL2",
+        "description": "Local",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195215,
+          50.844509
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SPT1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195138,
+          50.844511
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SPT2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195438,
+          50.844546
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SRB1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195096,
+          50.844566
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SRB2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.1951,
           50.84421
         ]
@@ -22865,6 +23777,44 @@
         "acces": "",
         "appareil": "ST",
         "description": "Herse LGV"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.19547,
+          50.845022
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "ST11",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195257,
+          50.845015
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "ST21",
+        "description": "",
+        "hors_patrimoine": false
       }
     },
     {
@@ -23024,6 +23974,234 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.19504,
+          50.84461
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TC CC",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.194959,
+          50.844609
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TC CL",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.19521,
+          50.844474
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TC CP1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195135,
+          50.844472
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TC CT1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195253,
+          50.844566
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TC CT2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.19504,
+          50.84461
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TC FC",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.194959,
+          50.844609
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TC FL",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.19521,
+          50.844474
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TC FP1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195135,
+          50.844472
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TC FT1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195253,
+          50.844566
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TC FT2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195438,
+          50.844546
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TSA",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195096,
+          50.844566
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TSA 2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.19526,
           50.84422
         ]
@@ -23168,6 +24346,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.195253,
+          50.844566
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT CT2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.19526,
           50.84422
         ]
@@ -23305,6 +24502,63 @@
         "acces": "",
         "appareil": "TT F8",
         "description": "Herse LC"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195253,
+          50.844566
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT FT2",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195409,
+          50.845068
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT10",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.195202,
+          50.845059
+        ]
+      },
+      "properties": {
+        "nom": "Ruminghem",
+        "type": "SST",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT20",
+        "description": "",
+        "hors_patrimoine": false
       }
     },
     {

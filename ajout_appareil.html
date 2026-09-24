@@ -381,6 +381,24 @@
       background: var(--blue-soft);
     }
 
+    .search-result-tag {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 0.8em;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .access-or {
+      margin: 16px 0 4px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
     .map-box {
       height: 320px;
       border-radius: 22px;
@@ -697,12 +715,12 @@
       }
     }
   </style>
-  <script type="module" crossorigin src="/ALICE/assets/ajoutAppareil-DgnqV2-q.js"></script>
+  <script type="module" crossorigin src="/ALICE/assets/ajoutAppareil-Dj63X0-Z.js"></script>
   <link rel="modulepreload" crossorigin href="/ALICE/assets/modulepreload-polyfill-Dezn_h7o.js">
   <link rel="modulepreload" crossorigin href="/ALICE/assets/options-DYPHlPyK.js">
   <link rel="modulepreload" crossorigin href="/ALICE/assets/preload-helper-CoS762Vi.js">
   <link rel="modulepreload" crossorigin href="/ALICE/assets/utils-Bsp5QMWj.js">
-  <link rel="modulepreload" crossorigin href="/ALICE/assets/appareils-en-attente-53dKBOWO.js">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/appareils-en-attente-DFAYY1WK.js">
   <link rel="stylesheet" crossorigin href="/ALICE/assets/theme-BE47aISw.css">
 </head>
 <body>
@@ -795,6 +813,11 @@
         <section class="step" id="step-access-location">
           <div class="step-kicker">Accès routier</div>
           <h2 class="step-title">Localiser l'accès routier</h2>
+          <div class="search-wrap">
+            <input class="search-input" id="acces-search" type="text" placeholder="Rechercher un accès existant" autocomplete="off" />
+            <ul class="search-results" id="acces-results"></ul>
+          </div>
+          <p class="access-or">ou placer un point sur la carte</p>
           <p class="inline-note">Cliquez sur la carte pour placer le point, puis ajustez-le si besoin.</p>
           <p class="inline-note">La géolocalisation est facultative. Seules les coordonnées du point validé sont envoyées avec la demande.</p>
           <div id="access-gps-panel">
@@ -815,8 +838,7 @@
           <div class="step-kicker">Description</div>
           <h2 class="step-title">Ajouter des précisions</h2>
           <p class="inline-note">Les descriptions sont réservées aux informations techniques. N'y saisissez aucune information personnelle, privée ou confidentielle.</p>
-          <label class="field-label" for="description-appareil">Description appareil</label>
-          <textarea class="field-textarea" id="description-appareil" placeholder="Précision utile sur le support, l'appareil, le contexte terrain..."></textarea>
+          <div id="descriptions-appareils"></div>
           <div id="description-acces-wrap" class="hidden">
             <label class="field-label" for="description-acces">Description accès routier</label>
             <textarea class="field-textarea" id="description-acces" placeholder="Portail, chemin d'accès, repère terrain, consigne utile..."></textarea>

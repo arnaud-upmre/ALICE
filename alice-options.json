@@ -1,8 +1,46 @@
 {
   "version": 1,
+  "categories": [
+    {
+      "id": "notifications",
+      "label": "Notifications",
+      "description": "Bandeaux d’information affichés dans ALICE."
+    },
+    {
+      "id": "carte",
+      "label": "Carte et points",
+      "description": "Démarrage, zoom, affichage, interactions, voies et mesure."
+    },
+    {
+      "id": "apparence",
+      "label": "Apparence générale",
+      "description": "Couleurs des modes clair et sombre."
+    },
+    {
+      "id": "fiches",
+      "label": "Fiches",
+      "description": "Appareils, titres et vue Métro dans les fiches."
+    },
+    {
+      "id": "itineraires",
+      "label": "Itinéraires",
+      "description": "Couleurs du trajet entre postes."
+    },
+    {
+      "id": "tableau",
+      "label": "Tableau blanc",
+      "description": "Vue Métro du tableau blanc."
+    },
+    {
+      "id": "jeu",
+      "label": "JEU",
+      "description": "Règles, durée, points, carte et postes proposés dans le défi."
+    }
+  ],
   "groups": [
     {
       "id": "notifications",
+      "category": "notifications",
       "label": "Notifications affichées dans ALICE",
       "description": "Règle la durée, l’animation et les couleurs des bandeaux d’information visibles en haut de l’application.",
       "options": [
@@ -119,42 +157,10 @@
     },
     {
       "id": "map",
-      "label": "Carte principale : démarrage et niveaux de zoom",
-      "description": "Détermine la zone affichée à l’ouverture et le moment où les informations ferroviaires apparaissent sur la carte.",
+      "category": "carte",
+      "label": "Carte principale : niveaux de zoom",
+      "description": "Règle le zoom maximal et les niveaux d’apparition des informations ferroviaires. Le cadrage initial du réseau est fixé par la carte.",
       "options": [
-        {
-          "id": "map.initialLongitude",
-          "label": "Carte au démarrage — position vers l’est ou l’ouest",
-          "type": "number",
-          "unit": "°",
-          "value": 2.35,
-          "default": 2.35,
-          "min": -180,
-          "max": 180,
-          "step": 0.01
-        },
-        {
-          "id": "map.initialLatitude",
-          "label": "Carte au démarrage — position vers le nord ou le sud",
-          "type": "number",
-          "unit": "°",
-          "value": 48.85,
-          "default": 48.85,
-          "min": -85,
-          "max": 85,
-          "step": 0.01
-        },
-        {
-          "id": "map.initialZoom",
-          "label": "Carte au démarrage — niveau de rapprochement initial",
-          "type": "number",
-          "unit": "niveau",
-          "value": 6,
-          "default": 6,
-          "min": 2,
-          "max": 19,
-          "step": 0.1
-        },
         {
           "id": "map.maximumZoom",
           "label": "Carte — rapprochement maximal autorisé",
@@ -164,17 +170,6 @@
           "default": 19,
           "min": 10,
           "max": 24,
-          "step": 0.1
-        },
-        {
-          "id": "map.startFitMaximumZoom",
-          "label": "Carte au démarrage — limite du cadrage automatique du réseau",
-          "type": "number",
-          "unit": "niveau",
-          "value": 10.8,
-          "default": 10.8,
-          "min": 2,
-          "max": 19,
           "step": 0.1
         },
         {
@@ -247,6 +242,7 @@
     },
     {
       "id": "display",
+      "category": "carte",
       "label": "Carte principale : tailles et apparence",
       "description": "Règle la taille et l’apparence des éléments manipulés sur la carte, ainsi que le nombre de fiches pouvant rester ouvertes.",
       "options": [
@@ -331,6 +327,7 @@
     },
     {
       "id": "pointModes",
+      "category": "carte",
       "label": "Carte principale : zone de chaleur et clusters",
       "description": "Règle le passage aux points normaux, le regroupement des points et le rendu de la zone de chaleur.",
       "options": [
@@ -646,6 +643,7 @@
     },
     {
       "id": "interaction",
+      "category": "carte",
       "label": "Utilisation de la carte : gestes et délais",
       "description": "Règle les appuis longs, les délais de chargement, le suivi GPS et la durée des mises en évidence.",
       "options": [
@@ -708,8 +706,9 @@
     },
     {
       "id": "lightColors",
+      "category": "apparence",
       "label": "Mode clair : couleurs visibles dans ALICE",
-      "description": "Toutes les couleurs de cette rubrique s’appliquent uniquement lorsque le téléphone ou l’ordinateur utilise le mode clair.",
+      "description": "Ces couleurs s’appliquent lorsque la page concernée est affichée en mode clair.",
       "options": [
         {
           "id": "css.--alice-bg-page-app-light",
@@ -848,8 +847,9 @@
     },
     {
       "id": "darkColors",
+      "category": "apparence",
       "label": "Mode sombre : couleurs visibles dans ALICE",
-      "description": "Toutes les couleurs de cette rubrique s’appliquent uniquement lorsque le téléphone ou l’ordinateur utilise le mode sombre.",
+      "description": "Ces couleurs s’appliquent lorsque la page concernée est affichée en mode sombre.",
       "options": [
         {
           "id": "css.--alice-bg-page-dark",
@@ -946,6 +946,7 @@
     },
     {
       "id": "apparatusColors",
+      "category": "fiches",
       "label": "Carte et fiches : couleurs des appareils",
       "description": "Chaque réglage indique les codes concernés et les endroits où leur couleur apparaît : carte, groupe, recherche, fiche ou légende.",
       "options": [
@@ -1016,8 +1017,9 @@
     },
     {
       "id": "sheetTitleColors",
-      "label": "Fiches : pastilles « Terrain », « Explorer les équipements » et « Itinéraire… »",
-      "description": "Règle ensemble la couleur et la force du fond des trois pastilles de titre visibles dans les fiches.",
+      "category": "fiches",
+      "label": "Fiches : pastille « Espace sécurisé »",
+      "description": "Règle la couleur du texte et l’intensité du fond de la pastille « Espace sécurisé ». Les pastilles Poste/SAT utilisent la couleur SAT de la carte.",
       "options": [
         {
           "id": "colors.map.route",
@@ -1052,6 +1054,7 @@
     },
     {
       "id": "mapColors",
+      "category": "carte",
       "label": "Carte, recherche et fiches : pastilles et repères",
       "description": "Règle les couleurs des symboles visibles sur la carte, dans les résultats de recherche, le menu Filtres et certaines fiches.",
       "options": [
@@ -1171,8 +1174,9 @@
     },
     {
       "id": "railColors",
-      "label": "Carte principale : traits des lignes ferroviaires",
-      "description": "Règle les couleurs des catégories ferroviaires et des repères d’équipe.",
+      "category": "carte",
+      "label": "Lignes ferroviaires : carte et vue Métro",
+      "description": "Règle les couleurs des voies sur la carte. Dans la vue Métro du tableau blanc, chaque ligne reprend la couleur de sa catégorie ferroviaire lorsqu’elle y est représentée. Les trois couleurs d’équipe règlent les repères du menu Filtres.",
       "options": [
         {
           "id": "colors.teams.hazebrouck",
@@ -1290,6 +1294,7 @@
     },
     {
       "id": "routeColors",
+      "category": "itineraires",
       "label": "Fonctionnalité : itinéraire entre postes",
       "description": "Modifie les couleurs du trajet, du départ, des étapes intermédiaires et de l’arrivée dans la fenêtre et sur la mini-carte.",
       "options": [
@@ -1325,6 +1330,7 @@
     },
     {
       "id": "measureColors",
+      "category": "carte",
       "label": "Fonctionnalité : mesurer une distance ou une surface",
       "description": "Modifie les couleurs des traits, points, surfaces, lettres et graduations de l’outil de mesure, sur plan comme sur satellite.",
       "options": [
@@ -1360,8 +1366,9 @@
     },
     {
       "id": "metroBoard",
+      "category": "tableau",
       "label": "Tableau blanc : vue Métro",
-      "description": "Règle la taille des noms d’arrêts, l’écartement du rail et la mise en évidence de la recherche, dans la vue Métro du tableau blanc.",
+      "description": "Règle la taille des noms d’arrêts, l’écartement du rail et la durée de mise en évidence des résultats de recherche. La couleur des arrêts suit celle de leur ligne.",
       "options": [
         {
           "id": "css.--metro-tableau-taille-nom",
@@ -1408,20 +1415,6 @@
           "step": 10
         },
         {
-          "id": "css.--metro-tableau-recherche-clair",
-          "label": "Vue Métro du tableau blanc — couleur de l’arrêt trouvé, en mode clair",
-          "type": "color",
-          "value": "#5068f5",
-          "default": "#5068f5"
-        },
-        {
-          "id": "css.--metro-tableau-recherche-sombre",
-          "label": "Vue Métro du tableau blanc — couleur de l’arrêt trouvé, en mode sombre",
-          "type": "color",
-          "value": "#97c7ec",
-          "default": "#97c7ec"
-        },
-        {
           "id": "tableau.metro.searchBlinkMs",
           "label": "Vue Métro du tableau blanc — durée du clignotement des arrêts trouvés",
           "type": "number",
@@ -1436,6 +1429,7 @@
     },
     {
       "id": "metroSheet",
+      "category": "fiches",
       "label": "Carte : vue Métro d’une ligne (volet de fiche)",
       "description": "Règle la taille des noms d’arrêts et le rapprochement de la carte dans la vue Métro qui s’ouvre depuis la recherche d’une ligne. Sans rapport avec la vue Métro du tableau blanc, qui a sa propre rubrique.",
       "options": [
@@ -1470,6 +1464,502 @@
           "min": 8,
           "max": 19,
           "step": 0.1
+        }
+      ]
+    },
+    {
+      "id": "game-general",
+      "category": "jeu",
+      "label": "Règles communes",
+      "description": "Paramètres appliqués aux quatre modes du défi.",
+      "options": [
+        {
+          "id": "game.roundCount",
+          "label": "Nombre de manches par partie",
+          "type": "number",
+          "value": 3,
+          "default": 3,
+          "min": 1,
+          "max": 5,
+          "step": 1
+        },
+        {
+          "id": "game.countdownSeconds",
+          "label": "Compte à rebours avant chaque manche",
+          "type": "number",
+          "value": 3,
+          "default": 3,
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "unit": "s"
+        },
+        {
+          "id": "game.pointsPerRound",
+          "label": "Points maximum par manche",
+          "type": "number",
+          "value": 5000,
+          "default": 5000,
+          "min": 100,
+          "max": 20000,
+          "step": 100,
+          "unit": "pts"
+        },
+        {
+          "id": "game.perfectDistanceMeters",
+          "label": "Distance pour le score maximal",
+          "type": "number",
+          "value": 3,
+          "default": 3,
+          "min": 0,
+          "max": 1000,
+          "step": 1,
+          "unit": "m"
+        },
+        {
+          "id": "game.bestScoresCount",
+          "label": "Nombre de meilleurs scores affichés et partagés",
+          "type": "number",
+          "value": 3,
+          "default": 3,
+          "min": 1,
+          "max": 10,
+          "step": 1
+        },
+        {
+          "id": "game.tieBreakByTime",
+          "label": "Départager les scores égaux par le temps le plus court",
+          "type": "boolean",
+          "value": true,
+          "default": true
+        },
+        {
+          "id": "game.mapZoom",
+          "label": "Zoom maximal du cadrage, commun aux quatre modes",
+          "type": "number",
+          "value": 8.8,
+          "default": 8.8,
+          "min": 4,
+          "max": 14,
+          "step": 0.1
+        },
+        {
+          "id": "game.revealZoom",
+          "label": "Zoom sur le poste après chaque réponse",
+          "type": "number",
+          "value": 11,
+          "default": 11,
+          "min": 5,
+          "max": 18,
+          "step": 0.1
+        }
+      ]
+    },
+    {
+      "id": "game.decouverte",
+      "category": "jeu",
+      "label": "Mode Découverte",
+      "description": "Règles, chronomètre et fond de carte du mode Découverte.",
+      "options": [
+        {
+          "id": "game.decouverte.timeSeconds",
+          "label": "Durée du chrono (0 = sans limite)",
+          "type": "number",
+          "value": 0,
+          "default": 0,
+          "min": 0,
+          "max": 600,
+          "step": 1,
+          "unit": "s"
+        },
+        {
+          "id": "game.decouverte.sharedTimer",
+          "label": "Un seul chrono pour toute la partie",
+          "type": "boolean",
+          "value": false,
+          "default": false
+        },
+        {
+          "id": "game.decouverte.distanceMaxMeters",
+          "label": "Distance à laquelle une réponse vaut zéro point",
+          "type": "number",
+          "value": 25000,
+          "default": 25000,
+          "min": 100,
+          "max": 100000,
+          "step": 100,
+          "unit": "m"
+        },
+        {
+          "id": "game.decouverte.cityLabels",
+          "label": "Afficher les noms de villes sur la carte",
+          "type": "boolean",
+          "value": true,
+          "default": true
+        },
+        {
+          "id": "game.decouverte.warningSeconds",
+          "label": "Afficher l’alerte rouge dans les dernières secondes",
+          "type": "number",
+          "value": 0,
+          "default": 0,
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "unit": "s"
+        },
+        {
+          "id": "game.decouverte.includeSat",
+          "label": "Inclure les SAT dans le tirage",
+          "type": "boolean",
+          "value": true,
+          "default": true
+        }
+      ]
+    },
+    {
+      "id": "game.challenge",
+      "category": "jeu",
+      "label": "Mode Challenge",
+      "description": "Règles, chronomètre et fond de carte du mode Challenge.",
+      "options": [
+        {
+          "id": "game.challenge.timeSeconds",
+          "label": "Durée du chrono (0 = sans limite)",
+          "type": "number",
+          "value": 90,
+          "default": 90,
+          "min": 0,
+          "max": 600,
+          "step": 1,
+          "unit": "s"
+        },
+        {
+          "id": "game.challenge.sharedTimer",
+          "label": "Un seul chrono pour toute la partie",
+          "type": "boolean",
+          "value": true,
+          "default": true
+        },
+        {
+          "id": "game.challenge.distanceMaxMeters",
+          "label": "Distance à laquelle une réponse vaut zéro point",
+          "type": "number",
+          "value": 10000,
+          "default": 10000,
+          "min": 100,
+          "max": 100000,
+          "step": 100,
+          "unit": "m"
+        },
+        {
+          "id": "game.challenge.cityLabels",
+          "label": "Afficher les noms de villes sur la carte",
+          "type": "boolean",
+          "value": true,
+          "default": true
+        },
+        {
+          "id": "game.challenge.warningSeconds",
+          "label": "Afficher l’alerte rouge dans les dernières secondes",
+          "type": "number",
+          "value": 10,
+          "default": 10,
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "unit": "s"
+        },
+        {
+          "id": "game.challenge.includeSat",
+          "label": "Inclure les SAT dans le tirage",
+          "type": "boolean",
+          "value": true,
+          "default": true
+        }
+      ]
+    },
+    {
+      "id": "game.expert",
+      "category": "jeu",
+      "label": "Mode Expert",
+      "description": "Règles, chronomètre et fond de carte du mode Expert.",
+      "options": [
+        {
+          "id": "game.expert.timeSeconds",
+          "label": "Durée du chrono (0 = sans limite)",
+          "type": "number",
+          "value": 20,
+          "default": 20,
+          "min": 0,
+          "max": 600,
+          "step": 1,
+          "unit": "s"
+        },
+        {
+          "id": "game.expert.sharedTimer",
+          "label": "Un seul chrono pour toute la partie",
+          "type": "boolean",
+          "value": false,
+          "default": false
+        },
+        {
+          "id": "game.expert.distanceMaxMeters",
+          "label": "Distance à laquelle une réponse vaut zéro point",
+          "type": "number",
+          "value": 5000,
+          "default": 5000,
+          "min": 100,
+          "max": 100000,
+          "step": 100,
+          "unit": "m"
+        },
+        {
+          "id": "game.expert.cityLabels",
+          "label": "Afficher les noms de villes sur la carte",
+          "type": "boolean",
+          "value": false,
+          "default": false
+        },
+        {
+          "id": "game.expert.warningSeconds",
+          "label": "Afficher l’alerte rouge dans les dernières secondes",
+          "type": "number",
+          "value": 5,
+          "default": 5,
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "unit": "s"
+        },
+        {
+          "id": "game.expert.includeSat",
+          "label": "Inclure les SAT dans le tirage",
+          "type": "boolean",
+          "value": true,
+          "default": true
+        }
+      ]
+    },
+    {
+      "id": "game.arcade",
+      "category": "jeu",
+      "label": "Mode Arcade",
+      "description": "Règles, chronomètre et fond de carte du mode Arcade.",
+      "options": [
+        {
+          "id": "game.arcade.timeSeconds",
+          "label": "Durée du chrono (0 = sans limite)",
+          "type": "number",
+          "value": 75,
+          "default": 75,
+          "min": 0,
+          "max": 600,
+          "step": 1,
+          "unit": "s"
+        },
+        {
+          "id": "game.arcade.sharedTimer",
+          "label": "Un seul chrono pour toute la partie",
+          "type": "boolean",
+          "value": true,
+          "default": true
+        },
+        {
+          "id": "game.arcade.distanceMaxMeters",
+          "label": "Distance à laquelle une réponse vaut zéro point",
+          "type": "number",
+          "value": 5000,
+          "default": 5000,
+          "min": 100,
+          "max": 100000,
+          "step": 100,
+          "unit": "m"
+        },
+        {
+          "id": "game.arcade.cityLabels",
+          "label": "Afficher les noms de villes sur la carte",
+          "type": "boolean",
+          "value": true,
+          "default": true
+        },
+        {
+          "id": "game.arcade.warningSeconds",
+          "label": "Afficher l’alerte rouge dans les dernières secondes",
+          "type": "number",
+          "value": 10,
+          "default": 10,
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "unit": "s"
+        },
+        {
+          "id": "game.arcade.includeSat",
+          "label": "Inclure les SAT dans le tirage",
+          "type": "boolean",
+          "value": true,
+          "default": true
+        }
+      ]
+    },
+    {
+      "id": "game-arcade-bonus",
+      "category": "jeu",
+      "label": "Bonus Arcade",
+      "description": "Montants et conditions des bonus à rouleaux.",
+      "options": [
+        {
+          "id": "game.arcade.timeBonusPerSecond",
+          "label": "Bonus par seconde restante",
+          "type": "number",
+          "value": 100,
+          "default": 100,
+          "min": 0,
+          "max": 1000,
+          "step": 10,
+          "unit": "pts"
+        },
+        {
+          "id": "game.arcade.timeBonusCap",
+          "label": "Plafond du bonus temps",
+          "type": "number",
+          "value": 2500,
+          "default": 2500,
+          "min": 0,
+          "max": 20000,
+          "step": 100,
+          "unit": "pts"
+        },
+        {
+          "id": "game.arcade.allRoundsBonus",
+          "label": "Bonus si toutes les manches sont réussies dans le temps",
+          "type": "number",
+          "value": 500,
+          "default": 500,
+          "min": 0,
+          "max": 10000,
+          "step": 100,
+          "unit": "pts"
+        },
+        {
+          "id": "game.arcade.perfectRoundBonus",
+          "label": "Bonus pour une manche au score maximal",
+          "type": "number",
+          "value": 500,
+          "default": 500,
+          "min": 0,
+          "max": 10000,
+          "step": 100,
+          "unit": "pts"
+        },
+        {
+          "id": "game.arcade.fastRoundSeconds",
+          "label": "Durée maximale d’une manche rapide",
+          "type": "number",
+          "value": 5,
+          "default": 5,
+          "min": 1,
+          "max": 60,
+          "step": 1,
+          "unit": "s"
+        },
+        {
+          "id": "game.arcade.fastRoundBonus",
+          "label": "Bonus pour une manche rapide",
+          "type": "number",
+          "value": 500,
+          "default": 500,
+          "min": 0,
+          "max": 10000,
+          "step": 100,
+          "unit": "pts"
+        },
+        {
+          "id": "game.arcade.highScoreThreshold",
+          "label": "Seuil de points par manche pour le bonus série",
+          "type": "number",
+          "value": 4500,
+          "default": 4500,
+          "min": 0,
+          "max": 20000,
+          "step": 100,
+          "unit": "pts"
+        },
+        {
+          "id": "game.arcade.allHighScoresBonus",
+          "label": "Bonus si toutes les manches dépassent ce seuil",
+          "type": "number",
+          "value": 1000,
+          "default": 1000,
+          "min": 0,
+          "max": 20000,
+          "step": 100,
+          "unit": "pts"
+        },
+        {
+          "id": "game.arcade.requirePositiveScoreForBonuses",
+          "label": "Accorder les bonus seulement si une manche rapporte des points",
+          "type": "boolean",
+          "value": true,
+          "default": true
+        }
+      ]
+    },
+    {
+      "id": "game-targets",
+      "category": "jeu",
+      "label": "Postes et SAT du tirage",
+      "description": "Incluez ou excluez chaque cible issue de postes.geojson sans modifier le GeoJSON.",
+      "options": [
+        {
+          "id": "game.excludedTargets",
+          "label": "Postes et SAT exclus du jeu",
+          "type": "targets",
+          "value": [
+            "[\"Agent E (Delivrance)\",\"\",\"\"]",
+            "[\"Agent E (Dunkerque P8)\",\"\",\"\"]",
+            "[\"Agent E (Frethun)\",\"\",\"\"]",
+            "[\"Agent E (Hazebrouck)\",\"\",\"\"]",
+            "[\"Agent E (Hellemmes)\",\"\",\"\"]",
+            "[\"Agent E (Saint Sauveur)\",\"\",\"\"]",
+            "[\"Agent E (Tourcoing)\",\"\",\"\"]",
+            "[\"Amiens (Équipe)\",\"\",\"\"]",
+            "[\"Avion\",\"\",\"\"]",
+            "[\"Bethune\",\"\",\"\"]",
+            "[\"C2MI\",\"\",\"\"]",
+            "[\"Cabinet Medical de Dunkerque\",\"\",\"\"]",
+            "[\"Hazebrouck\",\"\",\"\"]",
+            "[\"Hazebrouck (Équipe)\",\"\",\"\"]",
+            "[\"Lens\",\"\",\"\"]",
+            "[\"Quevy\",\"SSPA\",\"\"]",
+            "[\"Rumes\",\"SP\",\"\"]",
+            "[\"Siege Exploitation Eurotunnel\",\"\",\"\"]",
+            "[\"Siège UP\",\"\",\"\"]",
+            "[\"Valenciennes (Équipe)\",\"\",\"\"]"
+          ],
+          "default": [
+            "[\"Agent E (Delivrance)\",\"\",\"\"]",
+            "[\"Agent E (Dunkerque P8)\",\"\",\"\"]",
+            "[\"Agent E (Frethun)\",\"\",\"\"]",
+            "[\"Agent E (Hazebrouck)\",\"\",\"\"]",
+            "[\"Agent E (Hellemmes)\",\"\",\"\"]",
+            "[\"Agent E (Saint Sauveur)\",\"\",\"\"]",
+            "[\"Agent E (Tourcoing)\",\"\",\"\"]",
+            "[\"Amiens (Équipe)\",\"\",\"\"]",
+            "[\"Avion\",\"\",\"\"]",
+            "[\"Bethune\",\"\",\"\"]",
+            "[\"C2MI\",\"\",\"\"]",
+            "[\"Cabinet Medical de Dunkerque\",\"\",\"\"]",
+            "[\"Hazebrouck\",\"\",\"\"]",
+            "[\"Hazebrouck (Équipe)\",\"\",\"\"]",
+            "[\"Lens\",\"\",\"\"]",
+            "[\"Quevy\",\"SSPA\",\"\"]",
+            "[\"Rumes\",\"SP\",\"\"]",
+            "[\"Siege Exploitation Eurotunnel\",\"\",\"\"]",
+            "[\"Siège UP\",\"\",\"\"]",
+            "[\"Valenciennes (Équipe)\",\"\",\"\"]"
+          ]
         }
       ]
     }

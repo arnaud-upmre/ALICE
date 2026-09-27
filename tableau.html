@@ -46,7 +46,6 @@
   /* Vue Metro — reglages du gestionnaire (groupe « Vue Metro du tableau
      blanc »). Les tailles sont des nombres sans unite : le fichier d'options
      ne sait ecrire qu'un nombre, le `* 1px` est fait dans la regle. */
-  --metro-recherche: var(--metro-tableau-recherche-clair, #5068f5);
 
   /* Accent / bordure / ombre */
   --accent: var(--tableau-accent-light, #5068f5);
@@ -72,7 +71,6 @@
     --hp-bg: color-mix(in srgb, #f08992 14%, transparent);
     --hp-text: var(--tableau-hp-text-dark, #f08992);
 
-    --metro-recherche: var(--metro-tableau-recherche-sombre, #97c7ec);
 
     --accent: var(--tableau-accent-dark, #97c7ec);
     --border: var(--alice-line-strong-dark);
@@ -854,14 +852,14 @@ body {
 }
 
 /* Arret retenu par la recherche : marqueur plein et agrandi, halo, libelle en
-   couleur de recherche. La ligne est amenee dessus au rendu
+   couleur de sa ligne. La ligne est amenee dessus au rendu
    (`centrerPremierArretTrouveMetro`). */
 .metro-stop.est-trouve .metro-stop-marqueur::before {
   width: 13px;
   height: 13px;
-  border-color: var(--metro-recherche);
-  background: var(--metro-recherche);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--metro-recherche) 28%, transparent);
+  border-color: var(--color-ligne-metro);
+  background: var(--color-ligne-metro);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-ligne-metro) 28%, transparent);
   /* Quelques secondes de clignotement au moment de la recherche, puis
      l'arret reste simplement marque : `--metro-clignotements` est calcule en
      JS depuis la duree reglee dans le gestionnaire (0 = pas d'animation). */
@@ -874,28 +872,28 @@ body {
 }
 
 .metro-stop.est-trouve .metro-stop-marqueur::after {
-  border-color: var(--metro-recherche);
+  border-color: var(--color-ligne-metro);
   opacity: 1;
 }
 
 .metro-stop.est-trouve::before {
-  background: var(--metro-recherche);
+  background: var(--color-ligne-metro);
   opacity: 0.8;
 }
 
 .metro-stop.est-trouve .metro-stop-nom,
 .metro-stop.est-trouve .metro-stop-type,
 .metro-stop.est-trouve .metro-stop-parent {
-  color: var(--metro-recherche);
+  color: var(--color-ligne-metro);
   font-weight: 700;
 }
 
 @keyframes metro-clignote {
   0%, 100% {
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--metro-recherche) 28%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-ligne-metro) 28%, transparent);
   }
   50% {
-    box-shadow: 0 0 0 8px color-mix(in srgb, var(--metro-recherche) 34%, transparent);
+    box-shadow: 0 0 0 8px color-mix(in srgb, var(--color-ligne-metro) 34%, transparent);
   }
 }
 

@@ -10,7 +10,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
-    
+
     <title>ALICE</title>
     <link rel="manifest" href="/ALICE/manifest.webmanifest" />
     <link rel="icon" type="image/png" sizes="32x32" href="/ALICE/icons/icon-32.png" />
@@ -28,7 +28,6 @@
               : preferences.baseAutomatique === "darkMatter";
           }
         } catch {
-          // Une preference illisible ne doit jamais bloquer le premier rendu.
         }
         const themeInitial = modeSombreSysteme || modeSombreCarte ? "dark" : "light";
         document.documentElement.dataset.theme = themeInitial;
@@ -182,12 +181,8 @@
         <div class="modal-fiche-contenu maplibregl-popup-content" id="modal-fiche-contenu"></div>
       </div>
     </div>
-    <!-- À propos : le contenu vit ici hors flux et n'est déplacé dans le panneau
-         de fiche qu'à l'ouverture. Les éléments (pastille de version, bouton
-         d'installation PWA) gardent ainsi leurs écouteurs posés au chargement. -->
-    <!-- Contenus du volet unique : deplaces dans #modal-fiche-contenu a
-         l'ouverture, ranges ici a la fermeture. Voir ouvrirVoletContenu()
-         dans src/app/modules/fiche-panneau.js. -->
+
+
     <div id="reserve-itineraire" hidden>
         <div class="modal-itineraire-carte" id="volet-itineraire-contenu" data-panneau-crans>
           <div class="modal-itineraire-entete panneau-entete-deplacable" data-panneau-cran>
@@ -204,9 +199,7 @@
 
           <div class="modal-itineraire-etat" id="itineraire-etat">Choisissez un départ et une arrivée.</div>
 
-          <!-- Repere de cran permanent : delimite la taille normale d'ouverture
-               (en-tete + etapes + etat), meme quand resume/variantes/actions
-               sont encore masques (aucun trajet calcule). -->
+
           <div class="modal-itineraire-cran-normal" data-panneau-cran aria-hidden="true"></div>
 
           <section class="modal-itineraire-resume" id="itineraire-resume" aria-live="polite" data-panneau-cran>
@@ -720,6 +713,6 @@
       </div>
     </div>
 
-    
+
   </body>
 </html>

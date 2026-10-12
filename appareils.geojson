@@ -2969,6 +2969,101 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.184151,
+          50.953065
+        ]
+      },
+      "properties": {
+        "nom": "Bourbourg",
+        "type": "S",
+        "SAT": "",
+        "acces": "",
+        "appareil": "IP",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.18426,
+          50.953006
+        ]
+      },
+      "properties": {
+        "nom": "Bourbourg",
+        "type": "S",
+        "SAT": "",
+        "acces": "",
+        "appareil": "SM",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.184209,
+          50.953027
+        ]
+      },
+      "properties": {
+        "nom": "Bourbourg",
+        "type": "S",
+        "SAT": "",
+        "acces": "",
+        "appareil": "T1",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.184209,
+          50.953027
+        ]
+      },
+      "properties": {
+        "nom": "Bourbourg",
+        "type": "S",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT33",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.18426,
+          50.953006
+        ]
+      },
+      "properties": {
+        "nom": "Bourbourg",
+        "type": "S",
+        "SAT": "",
+        "acces": "",
+        "appareil": "TT7245",
+        "description": "",
+        "hors_patrimoine": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.548109,
           50.7579
         ]

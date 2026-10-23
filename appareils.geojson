@@ -22925,8 +22925,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.835129,
-          50.18604
+          3.83515,
+          50.18601
         ]
       },
       "properties": {
@@ -22939,7 +22939,7 @@
         "id": "AP-DK8GYS43",
         "poste_id": "PO-46A1TGAY",
         "acces_id": "AC-CGQN8T4Z",
-        "pk": "0+943",
+        "pk": "0+946",
         "numero_ligne": "267306"
       }
     },

@@ -1,0 +1,1 @@
+function e(){if(!(`serviceWorker`in navigator))return;let e=()=>{navigator.serviceWorker.register(new URL(`sw.js`,window.location.href)).catch(e=>{console.warn(`Mode hors ligne indisponible :`,e)})};document.readyState===`complete`?e():window.addEventListener(`load`,e,{once:!0})}export{e as activerHorsLigne};

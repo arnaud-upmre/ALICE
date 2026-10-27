@@ -2,11 +2,12 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+
 <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <title>ALICE - Application de Localisation des Installations de Conduite des EALE.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#0b1726">
+<meta name="theme-color" content="#f3f6fb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#293247" media="(prefers-color-scheme: dark)">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -41,12 +42,19 @@
   --accent: var(--tableau-accent-light, #5068f5);
   --border: var(--tableau-border-light, #b0cc93);
   --shadow: rgba(0, 0, 0, 0.1);
+
+  --type-pill-bg: #e6ecef;
+  --type-pill-text: #3c3732;
+  --type-pill-border: #b0cc93;
+  --close-bg: #e5e7eb;
+  --close-bg-hover: #d1d5db;
+  --close-text: #111827;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: var(--alice-bg-page-deep-dark);
-    --card-bg: rgba(10, 18, 31, 0.92);
+    --card-bg: color-mix(in srgb, var(--alice-fiord-800) 92%, transparent);
 
     --text: var(--alice-text-dark);
     --muted: var(--alice-muted-dark);
@@ -64,17 +72,18 @@
     --accent: var(--tableau-accent-dark, #97c7ec);
     --border: var(--alice-line-strong-dark);
     --shadow: rgba(0, 0, 0, 0.35);
+
+    --type-pill-bg: rgba(148, 163, 184, 0.12);
+    --type-pill-text: var(--text);
+    --type-pill-border: var(--border);
+    --close-bg: rgba(148, 163, 184, 0.14);
+    --close-bg-hover: rgba(148, 163, 184, 0.24);
+    --close-text: var(--text);
   }
 
   .board-header {
-    background: rgba(10, 18, 31, 0.96);
+    background: color-mix(in srgb, var(--alice-fiord-800) 96%, transparent);
     border: 1px solid var(--border);
-  }
-
-  .type-pill {
-    background: rgba(148, 163, 184, 0.12);
-    color: var(--text);
-    border-color: var(--border);
   }
 
   .ville-card {
@@ -82,15 +91,6 @@
     border: 1px solid var(--border);
   }
 
-  .board-close {
-    background: rgba(148, 163, 184, 0.14);
-    color: var(--text);
-  }
-
-  .board-close:hover,
-  .board-close:focus-visible {
-    background: rgba(148, 163, 184, 0.24);
-  }
 
 }
 
@@ -119,20 +119,17 @@
   height: 30px;
   border-radius: 999px;
   border: 0;
-  background: #e5e7eb;
-  color: #111827;
+  background: var(--close-bg);
+  color: var(--close-text);
   text-decoration: none;
   font-size: 1.2rem;
   line-height: 1;
   cursor: pointer;
 }
 
-.board-close:hover {
-  background: #d1d5db;
-}
-
+.board-close:hover,
 .board-close:focus-visible {
-  background: #d1d5db;
+  background: var(--close-bg-hover);
   outline: none;
 }
 
@@ -227,9 +224,9 @@ body {
 }
 
 .type-pill {
-  background: #e6ecef;
-  color: #3c3732;
-  border: 1px solid #b0cc93;
+  background: var(--type-pill-bg);
+  color: var(--type-pill-text);
+  border: 1px solid var(--type-pill-border);
   padding: 3px 10px;
   border-radius: 8px;
   font-size: 11px;
@@ -351,7 +348,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
   .app-tooltip {
-    background: rgba(17, 24, 39, 0.96);
+    background: color-mix(in srgb, var(--alice-fiord-800) 96%, transparent);
     border-color: rgba(148, 163, 184, 0.35);
   }
 }
@@ -395,14 +392,12 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  background: color-mix(in srgb, var(--bg) 90%, transparent);
-  backdrop-filter: blur(10px);
 }
 
 .filters button {
   padding: 8px 16px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--card-bg);
   border: 1px solid var(--border);
   cursor: pointer;
   font-weight: 600;
@@ -455,7 +450,7 @@ body {
   }
 
   .filters button {
-    background: rgba(148, 163, 184, 0.12);
+    background: var(--alice-fiord-700);
   }
 
 }
@@ -840,12 +835,18 @@ body {
 
 </style>
 
-  <script type="module" crossorigin src="/ALICE/assets/tableau-CHr8rdb-.js"></script>
+  <script type="module" crossorigin src="/ALICE/assets/tableau-DuTF4vK7.js"></script>
   <link rel="modulepreload" crossorigin href="/ALICE/assets/modulepreload-polyfill-Dezn_h7o.js">
-  <link rel="modulepreload" crossorigin href="/ALICE/assets/options-DYPHlPyK.js">
-  <link rel="modulepreload" crossorigin href="/ALICE/assets/utils-Bsp5QMWj.js">
-  <link rel="modulepreload" crossorigin href="/ALICE/assets/styles-lignes-Cb9iUqkZ.js">
-  <link rel="stylesheet" crossorigin href="/ALICE/assets/theme-BE47aISw.css">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/options-BxjK8IFl.js">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/runtime-MAv7J5AF.js">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/utils-BfNzFbbz.js">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/preload-helper-CoS762Vi.js">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/appareils-en-attente-D8SGJaW4.js">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/esm-fD4mxcOd.js">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/appareils-DEBJeg2K.js">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/styles-lignes-Bm4nbpVD.js">
+  <link rel="stylesheet" crossorigin href="/ALICE/assets/theme-DrqXryAM.css">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 </head>
 <body>
 <div class="board-header">

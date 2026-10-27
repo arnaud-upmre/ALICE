@@ -3,15 +3,16 @@
   <head>
     <meta charset="UTF-8" />
 
-    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+    
     <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
-    <meta name="theme-color" content="#0b1726" />
+    <meta name="theme-color" content="#293247" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
 
     <title>ALICE</title>
+    <link rel="preconnect" href="https://tiles.openfreemap.org" crossorigin />
     <link rel="manifest" href="/ALICE/manifest.webmanifest" />
     <link rel="icon" type="image/png" sizes="32x32" href="/ALICE/icons/icon-32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/ALICE/icons/icon-192.png" />
@@ -24,8 +25,8 @@
           const preferences = JSON.parse(localStorage.getItem("alice-fond-carte-v3") || "null");
           if (preferences && typeof preferences === "object") {
             modeSombreCarte = preferences.automatique === false
-              ? preferences.fondManuel === "darkMatter"
-              : preferences.baseAutomatique === "darkMatter";
+              ? preferences.fondManuel === "fiord"
+              : preferences.baseAutomatique === "fiord";
           }
         } catch {
         }
@@ -33,17 +34,19 @@
         document.documentElement.dataset.theme = themeInitial;
         document.querySelector('meta[name="theme-color"]')?.setAttribute(
           "content",
-          themeInitial === "dark" ? "#0b1726" : "#f3f6fb",
+          themeInitial === "dark" ? "#293247" : "#f3f6fb",
         );
       })();
     </script>
-    <script type="module" crossorigin src="/ALICE/assets/accueil-NEXQ2udJ.js"></script>
+    <script type="module" crossorigin src="/ALICE/assets/accueil-DMl37GoC.js"></script>
     <link rel="modulepreload" crossorigin href="/ALICE/assets/modulepreload-polyfill-Dezn_h7o.js">
-    <link rel="modulepreload" crossorigin href="/ALICE/assets/options-DYPHlPyK.js">
+    <link rel="modulepreload" crossorigin href="/ALICE/assets/options-BxjK8IFl.js">
     <link rel="modulepreload" crossorigin href="/ALICE/assets/preload-helper-CoS762Vi.js">
-    <link rel="stylesheet" crossorigin href="/ALICE/assets/accueil-nujyRD2h.css">
-    <link rel="modulepreload" crossorigin href="/ALICE/assets/main-DO6ebh9-.js">
-    <link rel="modulepreload" crossorigin href="/ALICE/assets/maplibre-Bde3JgdO.js">
+    <link rel="stylesheet" crossorigin href="/ALICE/assets/accueil-D899zP7f.css">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <link rel="modulepreload" crossorigin href="/ALICE/assets/main-DAV4wYXJ.js">
+    <link rel="modulepreload" crossorigin href="/ALICE/assets/maplibre-BNf9TRJ1.js">
+    <link rel="modulepreload" crossorigin href="/ALICE/assets/maplibre-runtime-CMaPxaMj.js">
   </head>
   <body>
     <div id="map"></div>
@@ -56,7 +59,7 @@
             class="recherche-champ"
             type="search"
             autocomplete="off"
-            placeholder="Rechercher, un poste, appareil, accès, PN, *adresse..."
+            placeholder="Rechercher un poste, appareil, accès, PN, *adresse..."
             aria-label="Rechercher un poste, un appareil, un accès, un PN ou une adresse avec *"
           />
           <span id="recherche-suggestion" class="recherche-suggestion" aria-hidden="true" hidden></span>
@@ -64,7 +67,7 @@
           <button id="recherche-ligne-pk" class="recherche-pk-aide recherche-ligne-pk-aide" type="button" hidden>Ajouter une ligne</button>
         </span>
       </div>
-      <ul class="recherche-resultats" id="recherche-resultats" aria-label="Resultats de recherche"></ul>
+      <ul class="recherche-resultats" id="recherche-resultats" aria-label="Résultats de recherche"></ul>
     </div>
     <div class="info-chargement-couche" id="info-chargement-couche" aria-live="polite" aria-hidden="true"></div>
     <div class="action-mode-carte" id="action-mode-carte" role="status" hidden>
@@ -128,8 +131,8 @@
         aria-label="Choisir le fond de carte"
         aria-expanded="false"
       >
-        <svg class="icone-couches" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2 1 7l11 5 11-5-11-5zm0 9L1 6v2l11 5 11-5V6l-11 5zm0 4L1 10v2l11 5 11-5v-2l-11 5z" />
+        <svg class="icone-couches" viewBox="0 0 24 24" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3.2 20.6 7.4 12 11.6 3.4 7.4z M3.4 11.6l1.9-.95L12 13.9l6.7-3.25 1.9.95L12 15.8z M3.4 15.9l1.9-.95L12 18.2l6.7-3.25 1.9.95L12 20.1z" />
         </svg>
       </button>
 
@@ -261,49 +264,41 @@
           <div class="filtres-contenu">
             <section class="filtres-groupe" data-panneau-section="equipes" data-panneau-section-repliee="true" data-panneau-cran aria-labelledby="titre-section-equipes">
               <div class="panneau-section-entete"><span class="panneau-section-titre" id="titre-section-equipes"><strong>Équipe</strong></span></div>
-              <div class="filtres-liste">
-                <label class="option-filtre">
-                  <span class="filtre-repere filtre-repere-equipe" aria-hidden="true">H</span>
-                  <span class="filtre-texte"><strong>Hazebrouck</strong><small id="compteur-equipe-H">…</small></span>
+              <div class="selecteur-mode selecteur-multiple" role="group" aria-label="Équipes affichées">
+                <label class="selecteur-mode-choix">
                   <input type="checkbox" name="filtre-equipe" value="H" checked />
-                  <span class="filtre-switch" aria-hidden="true"></span>
+                  <span>Hazebrouck</span>
                 </label>
-                <label class="option-filtre">
-                  <span class="filtre-repere filtre-repere-equipe" aria-hidden="true">V</span>
-                  <span class="filtre-texte"><strong>Valenciennes</strong><small id="compteur-equipe-V">…</small></span>
+                <label class="selecteur-mode-choix">
                   <input type="checkbox" name="filtre-equipe" value="V" checked />
-                  <span class="filtre-switch" aria-hidden="true"></span>
+                  <span>Valenciennes</span>
                 </label>
-                <label class="option-filtre">
-                  <span class="filtre-repere filtre-repere-equipe" aria-hidden="true">A</span>
-                  <span class="filtre-texte"><strong>Amiens</strong><small id="compteur-equipe-A">…</small></span>
+                <label class="selecteur-mode-choix">
                   <input type="checkbox" name="filtre-equipe" value="A" checked />
-                  <span class="filtre-switch" aria-hidden="true"></span>
+                  <span>Amiens</span>
                 </label>
               </div>
             </section>
 
             <section class="filtres-groupe" data-panneau-section="affichage" data-panneau-section-repliee="true" data-panneau-cran aria-labelledby="titre-section-affichage">
               <div class="panneau-section-entete"><span class="panneau-section-titre" id="titre-section-affichage"><strong>Mode de carte</strong></span></div>
-              <div class="filtres-liste" role="radiogroup" aria-label="Mode d’affichage des points">
-                <label class="option-filtre option-mode-affichage">
-                  <span class="filtre-repere filtre-repere-mode filtre-repere-mode-normal" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <span class="filtre-texte"><strong>Normal</strong><small>Affichage actuel des points</small></span>
-                  <input type="radio" name="mode-affichage-points" value="normal" checked />
-                  <span class="mode-affichage-coche" aria-hidden="true"></span>
-                </label>
-                <label class="option-filtre option-mode-affichage">
-                  <span class="filtre-repere filtre-repere-mode filtre-repere-mode-chaleur" aria-hidden="true"><i></i></span>
-                  <span class="filtre-texte"><strong>Zone de chaleur</strong><small>Visualiser la densité des points</small></span>
+              <div class="selecteur-mode" role="radiogroup" aria-label="Mode d’affichage des points">
+                <label class="selecteur-mode-choix">
                   <input type="radio" name="mode-affichage-points" value="chaleur" />
-                  <span class="mode-affichage-coche" aria-hidden="true"></span>
+                  <span class="filtre-repere filtre-repere-mode filtre-repere-mode-chaleur" aria-hidden="true"><i></i></span>
+                  <span>Chaleur</span>
                 </label>
-                <label class="option-filtre option-mode-affichage">
+                <label class="selecteur-mode-choix">
+                  <input type="radio" name="mode-affichage-points" value="cluster" checked />
                   <span class="filtre-repere filtre-repere-mode filtre-repere-mode-cluster" aria-hidden="true"><i>12</i><i></i><i></i></span>
-                  <span class="filtre-texte"><strong>Clusters</strong><small>Regrouper les points selon le zoom</small></span>
-                  <input type="radio" name="mode-affichage-points" value="cluster" />
-                  <span class="mode-affichage-coche" aria-hidden="true"></span>
+                  <span>Clusters</span>
                 </label>
+                <label class="selecteur-mode-choix">
+                  <input type="radio" name="mode-affichage-points" value="normal" />
+                  <span class="filtre-repere filtre-repere-mode filtre-repere-mode-normal" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span>Points</span>
+                </label>
+                <span class="selecteur-mode-curseur" aria-hidden="true"></span>
               </div>
             </section>
 
@@ -424,7 +419,6 @@
               <div class="filtres-lignes">
                 <label class="option-filtre-ligne">
                   <input type="checkbox" name="filtre-lignes-osm" />
-                  <span class="filtre-ligne-apercu filtre-ligne-osm" aria-hidden="true"><b>ACTIF</b></span>
                   <span class="filtre-ligne-texte">
                     <strong>LOCAL</strong>
                     <small><em>Rapide, fiable · Conseillé</em></small>
@@ -433,7 +427,6 @@
                 </label>
                 <label class="option-filtre-ligne">
                   <input type="checkbox" name="filtre-lignes-orm-vectorielles" />
-                  <span class="filtre-ligne-apercu filtre-ligne-vectorielle" aria-hidden="true"><b>ACTIF</b></span>
                   <span class="filtre-ligne-texte">
                     <strong>ORM</strong>
                     <small><em>Alternative OpenRailwayMap</em></small>
@@ -451,7 +444,7 @@
               </button>
             </section>
 
-            <button class="fonds-defaut filtres-defaut panneau-sections-reinitialiser est-masque" id="filtres-defaut" type="button" aria-hidden="true" tabindex="-1">
+            <button class="filtres-defaut panneau-sections-reinitialiser est-masque" id="filtres-defaut" type="button" aria-hidden="true" tabindex="-1">
               <svg class="popup-icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
               <span>Réinitialiser</span>
             </button>
@@ -514,94 +507,98 @@
 
               <section class="fonds-groupe" data-panneau-section="plan-classique" data-panneau-cran aria-labelledby="titre-section-plan-classique">
                 <div class="panneau-section-entete"><span class="panneau-section-titre" id="titre-section-plan-classique"><strong>Plans</strong></span></div>
-                <div class="fonds-grille">
+                <div class="fonds-grille filtres-liste">
                   <button class="fonds-carte apercu-systeme" type="button" data-fond-auto-base="systeme">
-                    <span><strong>Selon l’appareil</strong><small>Voyager clair · Dark Matter nuit</small></span><i>✓</i>
+                    <span><strong>Selon l’appareil</strong><small>Liberty clair · Fiord nuit</small></span><i aria-hidden="true"></i>
                   </button>
                   <button class="fonds-carte apercu-positron" type="button" data-fond-auto-base="positron">
-                    <span><strong>Positron</strong><small>Très épuré</small></span><i>✓</i>
+                    <span><strong>Positron</strong><small>Très épuré</small></span><i aria-hidden="true"></i>
                   </button>
-                  <button class="fonds-carte apercu-voyager" type="button" data-fond-auto-base="voyager">
-                    <span><strong>Voyager</strong><small>Clair et détaillé</small></span><i>✓</i>
+                  <button class="fonds-carte apercu-liberty" type="button" data-fond-auto-base="liberty">
+                    <span><strong>Liberty</strong><small>Clair et détaillé</small></span><i aria-hidden="true"></i>
                   </button>
-                  <button class="fonds-carte apercu-sombre" type="button" data-fond-auto-base="darkMatter">
-                    <span><strong>Dark Matter</strong><small>Confort de nuit</small></span><i>✓</i>
+                  <button class="fonds-carte apercu-sombre" type="button" data-fond-auto-base="fiord">
+                    <span><strong>Fiord</strong><small>Confort de nuit</small></span><i aria-hidden="true"></i>
                   </button>
                   <button class="fonds-carte apercu-plan-ign" type="button" data-fond-auto-base="planIgn">
-                    <span><strong>Plan IGN</strong><small>Référence française</small></span><i>✓</i>
+                    <span><strong>Plan IGN</strong><small>Référence française</small></span><i aria-hidden="true"></i>
                   </button>
                   <button class="fonds-carte apercu-osm" type="button" data-fond-auto-base="osm">
-                    <span><strong>OSM Standard</strong><small>Carte ouverte</small></span><i>✓</i>
+                    <span><strong>OSM Standard</strong><small>Carte ouverte</small></span><i aria-hidden="true"></i>
                   </button>
                 </div>
               </section>
 
               <section class="fonds-groupe" data-panneau-section="satellite" data-panneau-cran aria-labelledby="titre-section-satellite">
                 <div class="panneau-section-entete"><span class="panneau-section-titre" id="titre-section-satellite"><strong>Satellites</strong></span></div>
-                <div class="fonds-grille">
+                <div class="fonds-grille filtres-liste">
                   <button class="fonds-carte apercu-satellite-ign" type="button" data-fond-auto-satellite="ignAuto">
-                    <span><strong>Satellite IGN</strong><small>France · précision</small></span><i>✓</i>
+                    <span><strong>Satellite IGN</strong><small>France · précision</small></span><i aria-hidden="true"></i>
                   </button>
                   <button class="fonds-carte apercu-satellite-esri" type="button" data-fond-auto-satellite="esriAuto">
-                    <span><strong>Satellite ESRI</strong><small>Couverture mondiale</small></span><i>✓</i>
+                    <span><strong>Satellite ESRI</strong><small>Couverture mondiale</small></span><i aria-hidden="true"></i>
                   </button>
                 </div>
-                <label class="fonds-option-villes">
-                  <span><strong>Cadastre</strong><small>Parcelles sur la vue rapprochée.</small></span>
-                  <input class="cadastre-auto" type="checkbox" />
-                  <span class="fonds-switch" aria-hidden="true"></span>
-                </label>
-                <label class="fonds-option-villes">
-                  <span><strong>Noms des villes</strong><small>Uniquement sur la vue satellite.</small></span>
-                  <input class="labels-villes" type="checkbox" />
-                  <span class="fonds-switch" aria-hidden="true"></span>
-                </label>
+                <div class="fonds-options filtres-liste">
+                  <label class="fonds-option-villes">
+                    <span><strong>Cadastre</strong><small>Parcelles sur la vue rapprochée.</small></span>
+                    <input class="case-cadastre" type="checkbox" data-cadastre="auto" />
+                    <span class="fonds-switch" aria-hidden="true"></span>
+                  </label>
+                  <label class="fonds-option-villes">
+                    <span><strong>Noms des villes</strong><small>Uniquement sur la vue satellite.</small></span>
+                    <input class="labels-villes" type="checkbox" />
+                    <span class="fonds-switch" aria-hidden="true"></span>
+                  </label>
+                </div>
               </section>
             </div>
 
             <div class="fonds-manuel" id="fonds-manuel" hidden>
-              <div class="fonds-onglets" role="tablist" aria-label="Famille de fonds">
-                <button class="est-selectionne" type="button" role="tab" aria-selected="true" data-fonds-onglet="plans">Plans</button>
-                <button type="button" role="tab" aria-selected="false" data-fonds-onglet="satellites">Satellites</button>
-                <button type="button" role="tab" aria-selected="false" data-fonds-onglet="cadastre">Cadastre</button>
+              <div class="selecteur-mode fonds-onglets" role="tablist" aria-label="Famille de fonds">
+                <button class="selecteur-mode-choix est-selectionne" type="button" role="tab" aria-selected="true" data-fonds-onglet="plans">Plans</button>
+                <button class="selecteur-mode-choix" type="button" role="tab" aria-selected="false" data-fonds-onglet="satellites">Satellites</button>
+                <span class="selecteur-mode-curseur" aria-hidden="true"></span>
               </div>
 
               <div class="fonds-groupe fonds-liste-manuelle" data-fonds-panneau="plans">
-                <div class="fonds-grille">
-                  <button class="fonds-carte apercu-positron" type="button" data-fond="positron"><span><strong>Positron</strong><small>Très épuré</small></span><i>✓</i></button>
-                  <button class="fonds-carte apercu-voyager" type="button" data-fond="voyager"><span><strong>Voyager</strong><small>Clair et détaillé</small></span><i>✓</i></button>
-                  <button class="fonds-carte apercu-sombre" type="button" data-fond="darkMatter"><span><strong>Dark Matter</strong><small>Confort de nuit</small></span><i>✓</i></button>
-                  <button class="fonds-carte apercu-plan-ign" type="button" data-fond="planIgn"><span><strong>Plan IGN</strong><small>Référence française</small></span><i>✓</i></button>
-                  <button class="fonds-carte apercu-osm" type="button" data-fond="osm"><span><strong>OSM Standard</strong><small>Carte ouverte</small></span><i>✓</i></button>
+                <div class="fonds-grille filtres-liste">
+                  <button class="fonds-carte apercu-positron" type="button" data-fond="positron"><span><strong>Positron</strong><small>Très épuré</small></span><i aria-hidden="true"></i></button>
+                  <button class="fonds-carte apercu-liberty" type="button" data-fond="liberty"><span><strong>Liberty</strong><small>Clair et détaillé</small></span><i aria-hidden="true"></i></button>
+                  <button class="fonds-carte apercu-sombre" type="button" data-fond="fiord"><span><strong>Fiord</strong><small>Confort de nuit</small></span><i aria-hidden="true"></i></button>
+                  <button class="fonds-carte apercu-plan-ign" type="button" data-fond="planIgn"><span><strong>Plan IGN</strong><small>Référence française</small></span><i aria-hidden="true"></i></button>
+                  <button class="fonds-carte apercu-osm" type="button" data-fond="osm"><span><strong>OSM Standard</strong><small>Carte ouverte</small></span><i aria-hidden="true"></i></button>
+                </div>
+                <div class="fonds-options filtres-liste">
+                  <label class="fonds-option-villes">
+                    <span><strong>Cadastre</strong><small>Parcelles sur le plan.</small></span>
+                    <input class="case-cadastre" type="checkbox" data-cadastre="plans" />
+                    <span class="fonds-switch" aria-hidden="true"></span>
+                  </label>
                 </div>
               </div>
 
               <div class="fonds-groupe fonds-liste-manuelle" data-fonds-panneau="satellites" hidden>
-                <div class="fonds-grille">
-                  <button class="fonds-carte apercu-satellite-ign" type="button" data-fond="satelliteIgn"><span><strong>Satellite IGN</strong><small>France · précision</small></span><i>✓</i></button>
-                  <button class="fonds-carte apercu-satellite-esri" type="button" data-fond="satelliteEsri"><span><strong>Satellite ESRI</strong><small>Couverture mondiale</small></span><i>✓</i></button>
+                <div class="fonds-grille filtres-liste">
+                  <button class="fonds-carte apercu-satellite-ign" type="button" data-fond="satelliteIgn"><span><strong>Satellite IGN</strong><small>France · précision</small></span><i aria-hidden="true"></i></button>
+                  <button class="fonds-carte apercu-satellite-esri" type="button" data-fond="satelliteEsri"><span><strong>Satellite ESRI</strong><small>Couverture mondiale</small></span><i aria-hidden="true"></i></button>
                 </div>
-                <label class="fonds-option-villes">
-                  <span><strong>Noms des villes</strong><small>Uniquement sur les fonds satellite.</small></span>
-                  <input class="labels-villes" type="checkbox" />
-                  <span class="fonds-switch" aria-hidden="true"></span>
-                </label>
-              </div>
-
-              <div class="fonds-groupe fonds-liste-manuelle" data-fonds-panneau="cadastre" hidden>
-                <div class="fonds-grille">
-                  <button class="fonds-carte apercu-cadastre-plan" type="button" data-fond="cadastreIgn"><span><strong>Plan IGN + cadastre</strong><small>Parcelles sur le plan</small></span><i>✓</i></button>
-                  <button class="fonds-carte apercu-cadastre-satellite" type="button" data-fond="satelliteCadastreIgn"><span><strong>Satellite IGN + cadastre</strong><small>Parcelles sur la photo</small></span><i>✓</i></button>
+                <div class="fonds-options filtres-liste">
+                  <label class="fonds-option-villes">
+                    <span><strong>Cadastre</strong><small>Parcelles sur la photo.</small></span>
+                    <input class="case-cadastre" type="checkbox" data-cadastre="satellites" />
+                    <span class="fonds-switch" aria-hidden="true"></span>
+                  </label>
+                  <label class="fonds-option-villes">
+                    <span><strong>Noms des villes</strong><small>Uniquement sur les fonds satellite.</small></span>
+                    <input class="labels-villes" type="checkbox" />
+                    <span class="fonds-switch" aria-hidden="true"></span>
+                  </label>
                 </div>
-                <label class="fonds-option-villes">
-                  <span><strong>Noms des villes</strong><small>Pour « Satellite IGN + cadastre » uniquement.</small></span>
-                  <input class="labels-villes" type="checkbox" />
-                  <span class="fonds-switch" aria-hidden="true"></span>
-                </label>
               </div>
             </div>
 
-            <button class="fonds-defaut panneau-sections-reinitialiser est-masque" id="fonds-defaut" type="button" aria-hidden="true" tabindex="-1">
+            <button class="panneau-sections-reinitialiser est-masque" id="fonds-defaut" type="button" aria-hidden="true" tabindex="-1">
               <svg class="popup-icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
               <span>Réinitialiser</span>
             </button>
@@ -618,7 +615,7 @@
           </div>
           <div class="popup-poste-ligne-titre">
             <span>Application de Localisation des Installations de Conduite EALE</span>
-            <a id="apropos-version-pill" class="fiche-apropos-version-pill" href="./versions.html" title="Voir l'historique des versions"></a>
+            <a id="apropos-version-pill" class="fiche-apropos-version-pill" href="./versions.html" title="Voir l'historique des versions">V2.2.3</a>
           </div>
         </section>
 
@@ -655,7 +652,7 @@
             <li>PN et lignes ferroviaires OSM locales : données OpenStreetMap contributors, licence ODbL 1.0.</li>
             <li>Couche ferroviaire ORM vectorielle : données © OpenStreetMap contributors, licence ODbL 1.0 ; rendu et service OpenRailwayMap-vector.</li>
             <li>PK complémentaires : d'après SNCF Open Data / extras-opendata-sncf-reseau, licence ODbL 1.0 — <strong>données modifiées</strong> : de nombreuses coordonnées ont été ajustées manuellement par l'auteur. Les PK affichés ne constituent pas une reprise fidèle de la source d'origine et n'ont aucune valeur de référence.</li>
-            <li>Fond cartographique : CARTO, IGN, OpenStreetMap (selon fond/couches).</li>
+            <li>Fond cartographique : OpenFreeMap (© OpenMapTiles, données OpenStreetMap), IGN, Esri, OpenStreetMap (selon fond/couches).</li>
           </ul>
           <h3 class="fiche-apropos-sous-titre">Réutilisation</h3>
           <p class="fiche-apropos-texte">© ALICE – Données internes : réutilisation interdite sans autorisation.</p>

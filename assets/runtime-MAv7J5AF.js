@@ -1,0 +1,1 @@
+var e=Object.create(null);export{e as t};

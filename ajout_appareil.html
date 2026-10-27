@@ -2,10 +2,11 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+  
   <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <meta name="theme-color" content="#0b1726" />
+  <meta name="theme-color" content="#f3f6fb" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#293247" media="(prefers-color-scheme: dark)" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -15,7 +16,6 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/ALICE/icons/icon-192.png" />
   <link rel="shortcut icon" href="/ALICE/icons/icon-32.png" type="image/png" />
   <link rel="apple-touch-icon" href="/ALICE/icons/apple-touch-icon.png" />
-  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@6.0.0/dist/maplibre-gl.css" />
   <style>
     * {
       box-sizing: border-box;
@@ -40,7 +40,7 @@
     @media (prefers-color-scheme: dark) {
       :root {
         --bg: var(--alice-bg-page-deep-dark);
-        --panel: rgba(10, 18, 31, 0.92);
+        --panel: color-mix(in srgb, var(--alice-fiord-800) 92%, transparent);
         --text: var(--alice-text-dark);
         --muted: var(--alice-muted-dark);
         --border: var(--alice-line-strong-dark);
@@ -652,13 +652,12 @@
     @media (prefers-color-scheme: dark) {
       body {
         background:
-          radial-gradient(circle at top left, rgba(96, 165, 250, 0.12), transparent 30%),
-          radial-gradient(circle at top right, rgba(45, 212, 191, 0.08), transparent 24%),
+          var(--alice-page-glow-dark),
           var(--bg);
       }
 
       .header-card {
-        background: rgba(10, 18, 31, 0.96);
+        background: color-mix(in srgb, var(--alice-fiord-800) 96%, transparent);
         border-color: rgba(148, 163, 184, 0.18);
         box-shadow: 0 24px 60px rgba(0, 0, 0, 0.42);
       }
@@ -719,13 +718,15 @@
       }
     }
   </style>
-  <script type="module" crossorigin src="/ALICE/assets/ajoutAppareil-Dzqlf1Wq.js"></script>
+  <script type="module" crossorigin src="/ALICE/assets/ajoutAppareil-CcTjfTX1.js"></script>
   <link rel="modulepreload" crossorigin href="/ALICE/assets/modulepreload-polyfill-Dezn_h7o.js">
-  <link rel="modulepreload" crossorigin href="/ALICE/assets/options-DYPHlPyK.js">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/options-BxjK8IFl.js">
   <link rel="modulepreload" crossorigin href="/ALICE/assets/preload-helper-CoS762Vi.js">
-  <link rel="modulepreload" crossorigin href="/ALICE/assets/utils-Bsp5QMWj.js">
-  <link rel="modulepreload" crossorigin href="/ALICE/assets/appareils-en-attente-CEMV2b6k.js">
-  <link rel="stylesheet" crossorigin href="/ALICE/assets/theme-BE47aISw.css">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/runtime-MAv7J5AF.js">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/utils-BfNzFbbz.js">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/appareils-en-attente-D8SGJaW4.js">
+  <link rel="stylesheet" crossorigin href="/ALICE/assets/theme-DrqXryAM.css">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 </head>
 <body>
   <div class="page">

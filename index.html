@@ -38,13 +38,13 @@
         );
       })();
     </script>
-    <script type="module" crossorigin src="/ALICE/assets/accueil-Dfxh13TW.js"></script>
+    <script type="module" crossorigin src="/ALICE/assets/accueil-D25oYcLS.js"></script>
     <link rel="modulepreload" crossorigin href="/ALICE/assets/modulepreload-polyfill-Dezn_h7o.js">
     <link rel="modulepreload" crossorigin href="/ALICE/assets/options-DdIWWyal.js">
     <link rel="modulepreload" crossorigin href="/ALICE/assets/preload-helper-CoS762Vi.js">
-    <link rel="stylesheet" crossorigin href="/ALICE/assets/accueil-BD3Cevpn.css">
+    <link rel="stylesheet" crossorigin href="/ALICE/assets/accueil-VUM5K3aD.css">
     <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
-    <link rel="modulepreload" crossorigin href="/ALICE/assets/main-BvI0WAvF.js">
+    <link rel="modulepreload" crossorigin href="/ALICE/assets/main-Db0T1nwb.js">
     <link rel="modulepreload" crossorigin href="/ALICE/assets/maplibre-BNf9TRJ1.js">
     <link rel="modulepreload" crossorigin href="/ALICE/assets/maplibre-runtime-CMaPxaMj.js">
   </head>
@@ -262,24 +262,6 @@
           </header>
 
           <div class="filtres-contenu">
-            <section class="filtres-groupe" data-panneau-section="equipes" data-panneau-section-repliee="true" data-panneau-cran aria-labelledby="titre-section-equipes">
-              <div class="panneau-section-entete"><span class="panneau-section-titre" id="titre-section-equipes"><strong>Équipe</strong></span></div>
-              <div class="selecteur-mode selecteur-multiple" role="group" aria-label="Équipes affichées">
-                <label class="selecteur-mode-choix">
-                  <input type="checkbox" name="filtre-equipe" value="H" checked />
-                  <span>Hazebrouck</span>
-                </label>
-                <label class="selecteur-mode-choix">
-                  <input type="checkbox" name="filtre-equipe" value="V" checked />
-                  <span>Valenciennes</span>
-                </label>
-                <label class="selecteur-mode-choix">
-                  <input type="checkbox" name="filtre-equipe" value="A" checked />
-                  <span>Amiens</span>
-                </label>
-              </div>
-            </section>
-
             <section class="filtres-groupe" data-panneau-section="affichage" data-panneau-section-repliee="true" data-panneau-cran aria-labelledby="titre-section-affichage">
               <div class="panneau-section-entete"><span class="panneau-section-titre" id="titre-section-affichage"><strong>Mode de carte</strong></span></div>
               <div class="selecteur-mode" role="radiogroup" aria-label="Mode d’affichage des points">
@@ -302,8 +284,25 @@
               </div>
             </section>
 
-            <section class="filtres-groupe" data-panneau-section="equipements-eale" data-panneau-cran aria-labelledby="titre-section-equipements-eale">
-              <div class="panneau-section-entete"><span class="panneau-section-titre" id="titre-section-equipements-eale"><strong>Équipements EALE</strong></span></div>
+            <section class="filtres-groupe" data-panneau-section="patrimoine-eale" data-panneau-cran aria-labelledby="titre-section-patrimoine-eale">
+              <div class="panneau-section-entete"><span class="panneau-section-titre" id="titre-section-patrimoine-eale"><strong>Patrimoine EALE</strong></span></div>
+              <div class="filtres-equipes">
+                <span class="filtres-equipes-titre" aria-hidden="true">Équipe</span>
+                <div class="selecteur-mode selecteur-multiple" role="group" aria-label="Équipes affichées">
+                  <label class="selecteur-mode-choix">
+                    <input type="checkbox" name="filtre-equipe" value="H" checked />
+                    <span>Hazebrouck</span>
+                  </label>
+                  <label class="selecteur-mode-choix">
+                    <input type="checkbox" name="filtre-equipe" value="V" checked />
+                    <span>Valenciennes</span>
+                  </label>
+                  <label class="selecteur-mode-choix">
+                    <input type="checkbox" name="filtre-equipe" value="A" checked />
+                    <span>Amiens</span>
+                  </label>
+                </div>
+              </div>
               <div class="filtres-liste">
                 <label class="option-filtre">
                   <span class="filtre-repere filtre-repere-appareils" aria-hidden="true">
@@ -325,7 +324,7 @@
                     <label class="option-categorie-appareil"><input type="checkbox" name="filtre-categorie-appareil" value="sectionneurs" checked /><span class="categorie-appareil-coche" aria-hidden="true"></span><span class="categorie-appareil-pastille categorie-appareil-sectionneurs" aria-hidden="true"></span><span>Sectionneurs</span><small id="compteur-categorie-appareil-sectionneurs">0</small></label>
                     <label class="option-categorie-appareil"><input type="checkbox" name="filtre-categorie-appareil" value="alimentations" checked /><span class="categorie-appareil-coche" aria-hidden="true"></span><span class="categorie-appareil-pastille categorie-appareil-alimentations" aria-hidden="true"></span><span>Alimentations</span><small id="compteur-categorie-appareil-alimentations">0</small></label>
                     <label class="option-categorie-appareil"><input type="checkbox" name="filtre-categorie-appareil" value="autres" checked /><span class="categorie-appareil-coche" aria-hidden="true"></span><span class="categorie-appareil-pastille categorie-appareil-autres" aria-hidden="true"></span><span>Autres</span><small id="compteur-categorie-appareil-autres">0</small></label>
-                    <label class="option-categorie-appareil option-categorie-appareil-large"><input type="checkbox" name="filtre-categorie-appareil" value="hp" checked /><span class="categorie-appareil-coche" aria-hidden="true"></span><span class="categorie-appareil-pastille categorie-appareil-hp" aria-hidden="true"></span><span>Hors patrimoine</span><small id="compteur-categorie-appareil-hp">0</small></label>
+                    <label class="option-categorie-appareil option-categorie-appareil-hp"><input type="checkbox" name="filtre-categorie-appareil" value="hp" checked /><span class="categorie-appareil-coche" aria-hidden="true"></span><span class="categorie-appareil-pastille categorie-appareil-hp" aria-hidden="true"></span><span>Hors patrimoine</span><small id="compteur-categorie-appareil-hp">0</small></label>
                   </div>
                 </div>
                 <label class="option-filtre">
@@ -364,7 +363,7 @@
               <div class="filtres-liste">
                 <label class="option-filtre">
                   <span class="filtre-repere filtre-repere-autres" aria-hidden="true"><i></i></span>
-                  <span class="filtre-texte"><strong>Autres</strong><small>Équipes, Agent E, Formation…</small></span>
+                  <span class="filtre-texte"><strong>Équipes, Agent E, Formation…</strong><small>Sites hors patrimoine, sans équipe EALE</small></span>
                   <input type="checkbox" name="filtre-autres" />
                   <span class="filtre-switch" aria-hidden="true"></span>
                 </label>
@@ -615,7 +614,7 @@
           </div>
           <div class="popup-poste-ligne-titre">
             <span>Application de Localisation des Installations de Conduite EALE</span>
-            <a id="apropos-version-pill" class="fiche-apropos-version-pill" href="./versions.html" title="Voir l'historique des versions">V2.2.3</a>
+            <a id="apropos-version-pill" class="fiche-apropos-version-pill" href="./versions.html" title="Voir l'historique des versions">V2.2.4</a>
           </div>
         </section>
 

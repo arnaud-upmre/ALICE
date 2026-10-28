@@ -1,1 +1,0 @@
-import{t as e}from"./palette-carte-DaGb84pw.js";export{e as PALETTE_CARTE};

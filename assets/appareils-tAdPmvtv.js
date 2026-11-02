@@ -1,0 +1,1 @@
+import{c as e,r as t,s as n}from"./appareils-CC6tg59Z.js";export{t as PALETTE_APPAREILS,n as determinerCouleurAppareil,e as determinerCouleurCarteAppareil};

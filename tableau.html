@@ -23,8 +23,8 @@
 }
 
 :root {
-  --bg: var(--alice-panel-soft-light);
-  --card-bg: var(--alice-panel-soft-light);
+  --bg: var(--alice-window-bg);
+  --card-bg: var(--alice-window-bg);
 
   --text: var(--tableau-text-light, #3c3732);
   --muted: var(--alice-muted-light);
@@ -46,15 +46,12 @@
   --type-pill-bg: #e6ecef;
   --type-pill-text: #3c3732;
   --type-pill-border: #b0cc93;
-  --close-bg: #e5e7eb;
-  --close-bg-hover: #d1d5db;
-  --close-text: #111827;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: var(--alice-bg-page-deep-dark);
-    --card-bg: color-mix(in srgb, var(--alice-fiord-800) 92%, transparent);
+    --bg: var(--alice-window-bg);
+    --card-bg: var(--alice-window-bg);
 
     --text: var(--alice-text-dark);
     --muted: var(--alice-muted-dark);
@@ -76,13 +73,10 @@
     --type-pill-bg: rgba(148, 163, 184, 0.12);
     --type-pill-text: var(--text);
     --type-pill-border: var(--border);
-    --close-bg: rgba(148, 163, 184, 0.14);
-    --close-bg-hover: rgba(148, 163, 184, 0.24);
-    --close-text: var(--text);
   }
 
   .board-header {
-    background: color-mix(in srgb, var(--alice-fiord-800) 96%, transparent);
+    background: var(--card-bg);
     border: 1px solid var(--border);
   }
 
@@ -109,28 +103,9 @@
 
 .board-close {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 10px;
+  right: 10px;
   z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 999px;
-  border: 0;
-  background: var(--close-bg);
-  color: var(--close-text);
-  text-decoration: none;
-  font-size: 1.2rem;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.board-close:hover,
-.board-close:focus-visible {
-  background: var(--close-bg-hover);
-  outline: none;
 }
 
 .board-title {
@@ -181,7 +156,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
   body {
-    background: var(--alice-page-glow-dark), var(--bg);
+    background: var(--bg);
   }
 }
 
@@ -835,22 +810,22 @@ body {
 
 </style>
 
-  <script type="module" crossorigin src="/ALICE/assets/tableau-C2E5KrUC.js"></script>
+  <script type="module" crossorigin src="/ALICE/assets/tableau-CubFcwUo.js"></script>
   <link rel="modulepreload" crossorigin href="/ALICE/assets/modulepreload-polyfill-Dezn_h7o.js">
-  <link rel="modulepreload" crossorigin href="/ALICE/assets/options-DdIWWyal.js">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/options-DuShF8o3.js">
   <link rel="modulepreload" crossorigin href="/ALICE/assets/runtime-MAv7J5AF.js">
-  <link rel="modulepreload" crossorigin href="/ALICE/assets/utils-BfNzFbbz.js">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/utils-CqXYLB8A.js">
   <link rel="modulepreload" crossorigin href="/ALICE/assets/preload-helper-CoS762Vi.js">
-  <link rel="modulepreload" crossorigin href="/ALICE/assets/appareils-en-attente-BK-8wm61.js">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/appareils-en-attente-CFjlhAPd.js">
   <link rel="modulepreload" crossorigin href="/ALICE/assets/esm-fD4mxcOd.js">
-  <link rel="modulepreload" crossorigin href="/ALICE/assets/appareils-DBQNEsfK.js">
-  <link rel="modulepreload" crossorigin href="/ALICE/assets/styles-lignes-BpNZsKon.js">
-  <link rel="stylesheet" crossorigin href="/ALICE/assets/theme-DrqXryAM.css">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/appareils-CC6tg59Z.js">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/styles-lignes-DdpDFMbB.js">
+  <link rel="stylesheet" crossorigin href="/ALICE/assets/theme-BQYAIBqf.css">
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 </head>
 <body>
 <div class="board-header">
-  <a class="board-close" href="index.html" aria-label="Fermer le tableau blanc et revenir à la page principale" title="Fermer">×</a>
+  <a class="board-close bouton-fermer" href="index.html" aria-label="Fermer le tableau blanc et revenir à la page principale" title="Fermer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></a>
   <div class="board-title-wrap">
     <div class="board-main-row">
       <div class="board-title">

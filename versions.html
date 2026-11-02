@@ -4,224 +4,203 @@
     <meta charset="UTF-8" />
     
     <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ALICE - Chronologie versions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>ALICE - Historique des versions</title>
     <style>
       :root {
-        --bg: var(--alice-bg-page-alt-light);
-        --card: var(--alice-panel-strong-light);
-        --line: var(--alice-line-muted-light);
-        --text: var(--alice-text-light);
-        --muted: var(--alice-muted-strong-light);
-        --accent: var(--alice-accent-blue-light);
-        --head-bg: rgba(248, 250, 252, 0.92);
-        --item-bg: var(--alice-panel-soft-light);
-        --btn-bg: var(--alice-panel-muted-light);
-        --btn-bg-hover: #cbd5e1;
-        --chip-bg: var(--alice-accent-blue-soft-light);
-        --chip-text: var(--alice-accent-blue-strong-light);
-        --soft-btn-bg: var(--alice-accent-blue-soft-alt-light);
-        --soft-btn-bg-hover: var(--alice-accent-blue-soft-hover-light);
-        --soft-btn-text: #334155;
-        --item-line: var(--alice-line-soft-light);
-        --text-list: var(--alice-text-soft-light);
+        color-scheme: light;
+        --bg: var(--alice-bg-page-app-light);
+        --card: var(--alice-window-bg);
+        --line: rgba(35, 59, 97, 0.13);
+        --text: var(--fenetre-config-text-light, #17263d);
+        --muted: var(--fenetre-config-secondary-light, #536379);
+        --accent: var(--alice-accent-blue-strong-light);
+        --selection: color-mix(in srgb, var(--accent) 9%, transparent);
+        --surface: rgba(255, 255, 255, 0.18);
       }
       @media (prefers-color-scheme: dark) {
         :root {
+          color-scheme: dark;
           --bg: var(--alice-bg-page-dark);
-          --card: linear-gradient(180deg, color-mix(in srgb, var(--alice-fiord-800) 97%, transparent), color-mix(in srgb, var(--alice-fiord-800) 95%, transparent));
-          --line: var(--alice-line-dark);
+          --line: rgba(215, 225, 245, 0.14);
           --text: var(--alice-text-dark);
-          --muted: var(--alice-muted-dark);
+          --muted: var(--fenetre-config-secondary-dark, #b7c4d9);
           --accent: var(--alice-accent-blue-dark);
-          --head-bg: color-mix(in srgb, var(--alice-fiord-800) 76%, transparent);
-          --item-bg: var(--alice-panel-soft-dark);
-          --btn-bg: rgba(148, 163, 184, 0.14);
-          --btn-bg-hover: rgba(148, 163, 184, 0.24);
-          --chip-bg: var(--alice-accent-blue-soft-dark);
-          --chip-text: #bfdbfe;
-          --soft-btn-bg: rgba(148, 163, 184, 0.1);
-          --soft-btn-bg-hover: var(--alice-accent-blue-soft-hover-dark);
-          --soft-btn-text: #e2e8f0;
-          --item-line: var(--alice-line-dark);
-          --text-list: var(--alice-text-soft-dark);
+          --selection: color-mix(in srgb, var(--accent) 12%, transparent);
+          --surface: rgba(255, 255, 255, 0.035);
         }
       }
       * { box-sizing: border-box; }
       body {
         margin: 0;
-        font-family: "Manrope", "Segoe UI", sans-serif;
-        background: var(--bg);
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+        font-size: 0.875rem;
+        line-height: 1.6;
         color: var(--text);
+        background: var(--bg);
       }
-      @media (prefers-color-scheme: dark) {
-        body {
-          background: var(--alice-page-glow-dark), var(--bg);
-        }
-      }
+      button { font-family: inherit; }
       .page {
-        min-height: 100vh;
-        padding: 24px 14px;
+        min-height: 100dvh;
+        padding: calc(20px + env(safe-area-inset-top)) max(14px, env(safe-area-inset-right)) calc(28px + env(safe-area-inset-bottom)) max(14px, env(safe-area-inset-left));
       }
       .panel {
-        max-width: 1180px;
+        max-width: 960px;
         margin: 0 auto;
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 28px;
-        box-shadow: 0 18px 38px rgba(15, 23, 42, 0.18);
         position: relative;
-        overflow: visible;
-      }
-      @media (prefers-color-scheme: dark) {
-        .panel {
-          box-shadow:
-            var(--alice-shadow-dark);
-        }
-      }
-      .close-btn {
-        width: 36px;
-        height: 36px;
-        border-radius: 999px;
         border: 0;
-        background: var(--btn-bg);
+        border-radius: 18px;
         color: var(--text);
-        font-size: 1.45rem;
-        line-height: 1;
-        cursor: pointer;
-        margin-left: auto;
-        flex: 0 0 36px;
+        background: var(--card);
+        box-shadow: 0 16px 48px rgba(12, 24, 35, 0.2), 0 2px 8px rgba(12, 24, 35, 0.1);
+        -webkit-backdrop-filter: var(--alice-window-filter);
+        backdrop-filter: var(--alice-window-filter);
       }
-      .close-btn:hover { background: var(--btn-bg-hover); }
-
       .head {
-        padding: 22px 24px 10px;
-        border-bottom: 1px solid var(--line);
         position: sticky;
         top: 0;
         z-index: 20;
-        background: var(--head-bg);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        border-top-left-radius: 28px;
-        border-top-right-radius: 28px;
+        padding: 20px 24px 16px;
+        border-bottom: 1px solid var(--line);
+        border-radius: 18px 18px 0 0;
+        background: var(--card);
+        -webkit-backdrop-filter: var(--alice-window-filter);
+        backdrop-filter: var(--alice-window-filter);
       }
       .head-title {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 12px;
+        min-width: 0;
       }
       .head-logo {
-        width: 48px;
-        height: 48px;
+        width: auto;
+        height: 28px;
+        max-width: 88px;
         object-fit: contain;
-        object-position: center;
         flex: 0 0 auto;
-      }
-      .timeline-actions {
-        margin-top: 10px;
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-      }
-      .action-btn {
-        border: 0;
-        border-radius: 999px;
-        background: var(--soft-btn-bg);
-        color: var(--soft-btn-text);
-        font-size: 0.8rem;
-        font-weight: 800;
-        padding: 6px 10px;
-        cursor: pointer;
-      }
-      .action-btn:hover {
-        background: var(--soft-btn-bg-hover);
       }
       h1 {
         margin: 0;
-        font-size: clamp(1.35rem, 2.6vw, 2rem);
-        letter-spacing: 0.01em;
+        font-size: 1.35rem;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -0.025em;
       }
-
+      .head-title .close-btn {
+        margin-left: auto;
+        align-self: flex-start;
+        flex: 0 0 auto;
+      }
+      .timeline-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 16px;
+      }
+      .action-btn,
+      .toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 32px;
+        padding: 5px 10px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        color: var(--muted);
+        background: var(--surface);
+        font-size: 0.8rem;
+        font-weight: 500;
+        line-height: 1.3;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .action-btn:hover,
+      .toggle:hover {
+        color: var(--accent);
+        background: var(--selection);
+      }
+      .action-btn:focus-visible,
+      .toggle:focus-visible,
+      .item a:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
       .timeline {
         list-style: none;
         margin: 0;
-        padding: 18px 22px 24px;
-        display: grid;
-        gap: 12px;
+        padding: 0 24px 12px;
       }
       .item {
-        background: var(--item-bg);
-        border: 1px solid var(--item-line);
-        border-radius: 16px;
-        padding: 12px 14px;
+        padding: 18px 0;
+        border-bottom: 1px solid var(--line);
       }
+      .item:last-child { border-bottom: 0; }
       .item-head {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         gap: 8px;
-        margin-bottom: 8px;
+        margin-bottom: 12px;
         cursor: pointer;
       }
       .date {
-        font-weight: 800;
-        font-size: 1.02rem;
+        font-weight: 600;
+        font-size: 0.95rem;
       }
       .commit {
         display: inline-flex;
         align-items: center;
-        padding: 4px 8px;
-        border-radius: 999px;
-        background: var(--chip-bg);
-        color: var(--chip-text);
-        font-weight: 800;
-        font-size: 0.76rem;
-      }
-      .item ul {
-        margin: 0;
-        padding-left: 18px;
-      }
-      .item li {
-        margin: 4px 0;
-        color: var(--text-list);
+        padding: 3px 7px;
+        border-radius: 6px;
+        color: var(--accent);
+        background: var(--selection);
+        font-size: 0.72rem;
+        font-weight: 600;
+        line-height: 1.4;
       }
       .toggle {
         margin-left: auto;
-        border: 0;
-        border-radius: 999px;
-        background: var(--soft-btn-bg);
-        color: var(--soft-btn-text);
-        font-size: 0.72rem;
-        font-weight: 800;
-        padding: 4px 8px;
-        cursor: pointer;
+        font-size: 0.75rem;
       }
-      .item.is-collapsed ul {
-        display: none;
+      .item ul {
+        margin: 0;
+        padding-left: 20px;
       }
-      .item.is-collapsed .item-head {
-        margin-bottom: 0;
-      }
-
-      .footer {
-        padding: 0 24px 18px;
+      .item li { margin: 8px 0; }
+      .item li:first-child { margin-top: 0; }
+      .item li:last-child { margin-bottom: 0; }
+      .item p { margin: 0; }
+      .item strong { font-weight: 600; }
+      .item a { color: var(--accent); }
+      .version-note {
+        display: block;
+        margin-top: 3px;
         color: var(--muted);
-        font-size: 0.84rem;
+        font-size: 0.86em;
+        line-height: 1.45;
       }
+      .item.is-collapsed ul { display: none; }
+      .item.is-collapsed .item-head { margin-bottom: 0; }
+      .footer:empty { display: none; }
 
       @media (max-width: 640px) {
-        .panel { border-radius: 18px; }
-        .head { padding: 18px 14px 10px; }
-        .head-logo { width: 42px; height: 42px; }
-        .timeline { padding: 14px 12px 16px; }
-        .footer { padding: 0 14px 14px; }
+        .page { padding-top: calc(10px + env(safe-area-inset-top)); }
+        .head { padding: 18px 16px 14px; }
+        .head-title { gap: 8px; }
+        .head-logo { height: 24px; max-width: 58px; }
+        h1 { font-size: 1.15rem; }
+        .timeline { padding: 0 16px 8px; }
+        .item { padding: 16px 0; }
+        .date { font-size: 0.875rem; }
+        .action-btn,
+        .toggle { min-height: 36px; }
       }
     </style>
-    <script type="module" crossorigin src="/ALICE/assets/versions-DRJ77HgH.js"></script>
+    <script type="module" crossorigin src="/ALICE/assets/versions-DKt8RCjN.js"></script>
     <link rel="modulepreload" crossorigin href="/ALICE/assets/modulepreload-polyfill-Dezn_h7o.js">
-    <link rel="modulepreload" crossorigin href="/ALICE/assets/options-DdIWWyal.js">
-    <link rel="stylesheet" crossorigin href="/ALICE/assets/theme-DrqXryAM.css">
+    <link rel="modulepreload" crossorigin href="/ALICE/assets/options-DuShF8o3.js">
+    <link rel="stylesheet" crossorigin href="/ALICE/assets/theme-BQYAIBqf.css">
     <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
   </head>
   <body>
@@ -230,8 +209,8 @@
         <header class="head">
           <div class="head-title">
             <img class="head-logo" src="/ALICE/alice.webp" alt="Logo ALICE" onerror="this.style.display='none';" />
-            <h1>Historique de version</h1>
-            <button class="close-btn" type="button" aria-label="Fermer" id="btn-close">×</button>
+            <h1>Historique des versions</h1>
+            <button class="close-btn bouton-fermer" type="button" aria-label="Fermer l’historique des versions" id="btn-close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
           </div>
           <div class="timeline-actions">
             <button class="action-btn" type="button" id="btn-expand-all">Tout déplier</button>
@@ -240,6 +219,20 @@
         </header>
         
         <ol class="timeline">
+          <li class="item" data-date="2026-11-02">
+            <div class="item-head">
+              <span class="date">2 novembre 2026</span>
+              <span class="commit">V2.2.5</span>
+              <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
+            </div>
+            <ul>
+              <li>✨ <strong>Les fiches font peau neuve :</strong> une présentation plus sobre, plus claire et mieux structurée pour retrouver rapidement les informations utiles.</li>
+              <li>🗂️ <strong>Des informations mieux réparties :</strong> les rubriques Infos, Appareils et Ligne facilitent la lecture et la navigation entre les installations.</li>
+              <li>📍 <strong>Les actions essentielles à portée de main :</strong> itinéraires, contacts RSS et codes d’accès sont regroupés en tête de fiche, selon les informations disponibles.</li>
+              <li>🔜 <strong>Des fiches prêtes à évoluer :</strong> cette refonte prépare l’arrivée de nouvelles fonctionnalités.</li>
+            </ul>
+          </li>
+
           <li class="item" data-date="2026-10-29">
             <div class="item-head">
               <span class="date">29 octobre 2026</span>
@@ -281,7 +274,7 @@
               <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
             </div>
             <ul>
-              <li>🌱 <strong>ALICE V2.2.1 : des ajustements pour une navigation plus fluide, surtout sur mobile.</strong></li><li>📍 <strong>Ajout d’appareil amélioré :</strong> choix d’un accès routier existant dans une liste et description propre à chaque appareil. Un accès que vous venez de proposer apparaît aussi dans cette liste, même s’il est encore en attente de validation : vous pouvez donc le réutiliser pour l’appareil suivant.</li><li>📱 <strong>Fiches plus agréables sur mobile :</strong> une fiche garde la taille que vous lui avez donnée quand vous passez d’un point à l’autre, et le passage au poste suivant ou à un accès est instantané.</li><li>⚡ <strong>Plus de réactivité :</strong> une fiche se ferme immédiatement, sans attendre la fin de l’affichage des informations.</li><li>🚏 <strong>Fiches accès plus claires :</strong> le PK n’y est plus affiché, pour éviter toute confusion avec l’emplacement de l’accès.</li><li>🧩 <strong>Filtre « Données à compléter » :</strong> fonctionne désormais aussi en mode zone de chaleur et Clusters.</li><li>🍔 <strong>Menu :</strong> affichage plus stable des filtres d’installations complémentaires.</li>
+              <li>🌱 <strong>ALICE V2.2.1 : des ajustements pour une navigation plus fluide, surtout sur mobile.</strong></li><li>📍 <strong>Ajout d’appareil amélioré :</strong> choix d’un accès routier existant dans une liste et description propre à chaque appareil. Un accès que vous venez de proposer apparaît aussi dans cette liste, même s’il est encore en attente de validation : vous pouvez donc le réutiliser pour l’appareil suivant.</li><li>📱 <strong>Fiches plus agréables sur mobile :</strong> <s>une fiche garde la taille que vous lui avez donnée quand vous passez d’un point à l’autre</s>, et le passage au poste suivant ou à un accès est instantané.<small class="version-note"><em>Fonction supprimée lors d’une mise à jour ultérieure.</em></small></li><li>⚡ <strong>Plus de réactivité :</strong> une fiche se ferme immédiatement, sans attendre la fin de l’affichage des informations.</li><li>🚏 <strong>Fiches accès plus claires :</strong> le PK n’y est plus affiché, pour éviter toute confusion avec l’emplacement de l’accès.</li><li>🧩 <strong>Filtre « Données à compléter » :</strong> fonctionne désormais aussi en mode zone de chaleur et Clusters.</li><li>🍔 <strong>Menu :</strong> affichage plus stable des filtres d’installations complémentaires.</li>
             </ul>
           </li>
 
@@ -292,7 +285,7 @@
               <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
             </div>
             <ul>
-              <li>🚀 <strong>ALICE V2.2 : une carte plus lisible et plus personnalisable.</strong></li><li>🎛️ <strong>Plus de personnalisation :</strong> ALICE s’adapte davantage à vos préférences : affichage de la carte, fiches, appareils, lignes ferroviaires, itinéraires, vues Métro etc.</li><li>🗺️ <strong>Nouveaux modes d’affichage des points :</strong> en plus du mode normal, la carte propose désormais une <strong>zone de chaleur</strong> pour visualiser la densité des équipements et un mode <strong>Clusters</strong> qui regroupe les points selon le niveau de zoom. Un clic sur un regroupement rapproche automatiquement la carte pour en afficher le détail.</li><li>🪟 <strong>Nouveau bandeau dynamique :</strong> le volet latéral s’adapte automatiquement à son contenu : fiches de postes et d’appareils, fonds de carte, filtres, itinéraires… Sur PC, il peut être placé à gauche ou à droite et les sections d’une fiche peuvent être repliées ou réorganisées par glisser-déposer. Chaque préférence est mémorisée en local sur votre ordinateur.</li><li>🧩 <strong>Nouveau filtre « Données à compléter » :</strong> affiche les postes et satellites pour lesquels aucun appareil n’est encore renseigné dans ALICE.</li><li>👥 <strong>Filtre par équipe :</strong> affichez ou masquez les équipements des équipes d’Hazebrouck, Valenciennes et Amiens pour concentrer la carte sur votre périmètre.</li><li>🌙 <strong>Mode sombre amélioré :</strong> plusieurs corrections d’affichage et ajustements visuels renforcent le confort de lecture.</li><li>⚡ <strong>Chargement de la carte optimisé :</strong> les postes et les lignes apparaissent désormais sans attendre le chargement complet du fond de carte.</li><li>🔎 <strong>Recherche et lignes :</strong> les résultats d’une ligne peuvent être triés alphabétiquement ou selon leur position sur la ligne.</li><li>🚇 <strong>Nouvelle vue « Métro » :</strong> disponible depuis le Tableau blanc, elle présente les lignes sous forme schématique. Depuis la recherche, un clic sur une ligne ouvre directement la vue Métro de la ligne concernée, tout en la mettant en surbrillance sur la carte.</li>
+              <li>🚀 <strong>ALICE V2.2 : une carte plus lisible et plus personnalisable.</strong></li><li>🎛️ <strong>Plus de personnalisation :</strong> ALICE s’adapte davantage à vos préférences : affichage de la carte, fiches, appareils, lignes ferroviaires, itinéraires, vues Métro etc.</li><li>🗺️ <strong>Nouveaux modes d’affichage des points :</strong> en plus du mode normal, la carte propose désormais une <strong>zone de chaleur</strong> pour visualiser la densité des équipements et un mode <strong>Clusters</strong> qui regroupe les points selon le niveau de zoom. Un clic sur un regroupement rapproche automatiquement la carte pour en afficher le détail.</li><li>🪟 <strong>Nouveau bandeau dynamique :</strong> le volet latéral s’adapte automatiquement à son contenu : fiches de postes et d’appareils, fonds de carte, filtres, itinéraires… Sur PC, il peut être placé à gauche ou à droite et <s>les sections d’une fiche peuvent être repliées ou réorganisées par glisser-déposer</s>. Chaque préférence est mémorisée en local sur votre ordinateur.<small class="version-note"><em>Fonction supprimée lors d’une mise à jour ultérieure.</em></small></li><li>🧩 <strong>Nouveau filtre « Données à compléter » :</strong> affiche les postes et satellites pour lesquels aucun appareil n’est encore renseigné dans ALICE.</li><li>👥 <strong>Filtre par équipe :</strong> affichez ou masquez les équipements des équipes d’Hazebrouck, Valenciennes et Amiens pour concentrer la carte sur votre périmètre.</li><li>🌙 <strong>Mode sombre amélioré :</strong> plusieurs corrections d’affichage et ajustements visuels renforcent le confort de lecture.</li><li>⚡ <strong>Chargement de la carte optimisé :</strong> les postes et les lignes apparaissent désormais sans attendre le chargement complet du fond de carte.</li><li>🔎 <strong>Recherche et lignes :</strong> les résultats d’une ligne peuvent être triés alphabétiquement ou selon leur position sur la ligne.</li><li>🚇 <strong>Nouvelle vue « Métro » :</strong> disponible depuis le Tableau blanc, elle présente les lignes sous forme schématique. Depuis la recherche, un clic sur une ligne ouvre directement la vue Métro de la ligne concernée, tout en la mettant en surbrillance sur la carte.</li>
             </ul>
           </li>
 
@@ -327,7 +320,7 @@
             <ul>
               <li>🗺️ Le panneau des fonds de carte a été entièrement repensé pour être plus agréable et plus intuitif. Choisissez le fond qui vous convient : votre préférence est enregistrée sur l’appareil et automatiquement restaurée lors de vos prochaines visites.</li>
                                                                                                                               <li>🎛️ Le menu d’affichage de la carte a été retravaillé pour offrir une interface plus claire et cohérente avec le panneau des fonds de carte. Les filtres choisis sont désormais mémorisés sur l’appareil et restaurés automatiquement pour une navigation plus confortable.</li>
-                                                                                                                              <li>📱 Sur mobile, la hauteur des fiches peut désormais être ajustée pour accéder facilement à la carte et lancer une nouvelle recherche. Un système d’onglets permet également de basculer rapidement entre plusieurs fiches ouvertes ou récentes.</li>
+                                                                                                                              <li>📱 <s>Sur mobile, la hauteur des fiches peut désormais être ajustée pour accéder facilement à la carte et lancer une nouvelle recherche.</s> <s>Un système d’onglets permet également de basculer rapidement entre plusieurs fiches ouvertes ou récentes.</s><small class="version-note"><em>Fonction supprimée lors d’une mise à jour ultérieure.</em></small></li>
                                                                                                                               <li>⚙️ Amélioration de la restauration des données lors du retour dans l’application et corrections générales de stabilité.</li>
             </ul>
           </li>
@@ -342,7 +335,7 @@
               <li>🗺️ Passage de la carte à MapLibre GL JS v6 (carte plus rapide et plus fluide, mémoire mieux gérée, affichage des lignes, des images et des étiquettes amélioré, relief 3D optimisé et stabilité renforcée).</li>
                                                                                                                               <li>🚆 Mise à jour des lignes ferroviaires OSM et des passages à niveau (PN).</li>
                                                                                                                               <li>🧪 Ajout en version BETA du filtre « Ligne ORM vectorielle » sur toute la France métropolitaine. La version vectorielle reprend le code couleur et la légende des lignes OSM.</li>
-                                                                                                                              <li>🗺️ Ajout de deux fonds cadastraux IGN : « Plan IGN + cadastre » et « Satellite IGN + cadastre », permettant d’afficher les limites et les numéros de parcelles en zoom rapproché.</li>
+                                                                                                                              <li>🗺️ <s>Ajout de deux fonds cadastraux IGN : « Plan IGN + cadastre » et « Satellite IGN + cadastre », permettant d’afficher les limites et les numéros de parcelles en zoom rapproché.</s><small class="version-note"><em>Fonds remplacés par une option Cadastre dans les réglages des fonds de carte.</em></small></li>
                                                                                                                               <li>⚙️ Corrections mineures et améliorations de stabilité.</li>
             </ul>
           </li>
@@ -511,7 +504,7 @@
               <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
             </div>
             <ul>
-              <li>🧭 L’affichage des lignes et vitesses ORM utilise désormais l’adresse publique directe d’OpenRailwayMap, à la place des anciens sous-domaines.</li>
+              <li>🧭 <s>L’affichage des lignes et vitesses ORM utilise désormais l’adresse publique directe d’OpenRailwayMap, à la place des anciens sous-domaines.</s><small class="version-note"><em>Ancien affichage remplacé par la couche ORM vectorielle. La couche dédiée aux vitesses n’est plus proposée.</em></small></li>
                                                                                                                               <li>🛠️ Les boutons et retours de la page d’ajout d’appareil ont été retravaillés pour améliorer la lisibilité et la cohérence de navigation.</li>
                                                                                                                               <li>🗺️ Le bouton « Localiser sur la carte » s’enrichit : il peut désormais proposer de localiser le poste, l’accès, l’appareil ou le SAT selon le contexte de consultation.</li>
             </ul>
@@ -526,7 +519,7 @@
             <ul>
               <li>🔎 Les PN font désormais partie de la recherche : en tapant par exemple « PN13 », la liste correspondante s’affiche.</li>
                                                                                                                               <li>📱 Sur mobile, un appui sur un PN ouvre maintenant correctement la popup, comme sur PC : ce bug est désormais corrigé.</li>
-                                                                                                                              <li>🗂️ Rappel : les PN sont issus de l’Open Data SNCF.</li>
+                                                                                                                              <li>🗂️ <s>Rappel : les PN sont issus de l’Open Data SNCF.</s><small class="version-note"><em>Source remplacée par les données OpenStreetMap lors d’une mise à jour ultérieure.</em></small></li>
             </ul>
           </li>
 
@@ -552,7 +545,7 @@
             </div>
             <ul>
               <li>✨ La recherche évolue avec des sous-filtres dynamiques, un historique local des derniers éléments consultés et une navigation clavier plus pratique sur PC.</li>
-                                                                                                                              <li>💻 Sur PC, le filtre par défaut passe à "Tous", tandis que sur mobile il reste sur "Accès".</li>
+                                                                                                                              <li>💻 Sur PC, le filtre par défaut passe à "Tous", <s>tandis que sur mobile il reste sur "Accès"</s>.<small class="version-note"><em>Fonction supprimée lors d’une mise à jour ultérieure.</em></small></li>
                                                                                                                               <li>🧭 Le calcul d’itinéraire est plus propre : les actions et la carte ne s’affichent que lorsque le départ et l’arrivée sont renseignés.</li>
                                                                                                                               <li>📱 Sur mobile, l’ouverture d’une fiche depuis la recherche est plus fluide et l’écran d’ajout d’appareil a été mieux ajusté.</li>
                                                                                                                               <li>🗺️ Les déplacements et zooms sur la carte ont été affinés sur PC pour un rendu plus rapide et plus agréable.</li>
@@ -674,7 +667,7 @@
             <ul>
               <li>🔗 Accès Patrimoine SPOT amélioré, en étroite collaboration avec l’Assistant M : ouverture directe sur le bon poste.</li>
                                                                                                                               <li>🧭 La fermeture involontaire de "Calculer un trajet" lors d’un clic en dehors de la fenêtre a été corrigée (mode sélection).</li>
-                                                                                                                              <li>🎯 À la demande des agents, le filtre "Accès" est désormais activé par défaut dans la recherche.</li>
+                                                                                                                              <li>🎯 <s>À la demande des agents, le filtre "Accès" est désormais activé par défaut dans la recherche.</s><small class="version-note"><em>Fonction supprimée lors d’une mise à jour ultérieure.</em></small></li>
                                                                                                                               <li>📝 Mise en ligne de l'historique de version.</li>
             </ul>
           </li>
@@ -762,7 +755,7 @@
               <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
             </div>
             <ul>
-              <li>🧭 Un bouton "Légende" a été ajouté pour comprendre rapidement les couleurs et les symboles.</li>
+              <li>🧭 <s>Un bouton "Légende" a été ajouté pour comprendre rapidement les couleurs et les symboles.</s><small class="version-note"><em>Fonction supprimée lors d’une mise à jour ultérieure.</em></small></li>
                                                                                                                               <li>ℹ️ Une fenêtre "À propos" a été ajoutée avec les informations utiles sur ALICE.</li>
                                                                                                                               <li>🚧 Les passages à niveau (PN) sont maintenant intégrés dans les données.</li>
             </ul>
@@ -1029,7 +1022,7 @@
             </div>
             <ul>
               <li>🔁 Migration des tracés ferroviaires vers OpenRailwayMap.</li>
-                                                                                                                              <li>🎛️ Ajout des indicateurs de télécommande sur la carte et amélioration de la lisibilité des clusters.</li>
+                                                                                                                              <li>🎛️ <s>Ajout des indicateurs de télécommande sur la carte</s> et amélioration de la lisibilité des clusters.<small class="version-note"><em>Fonction supprimée lors d’une mise à jour ultérieure.</em></small></li>
             </ul>
           </li>
 
@@ -1052,7 +1045,7 @@
               <button class="toggle" type="button" aria-label="Replier ou déplier">Replier</button>
             </div>
             <ul>
-              <li>📡 Ajout des pills télécommande.</li>
+              <li>📡 <s>Ajout des pills télécommande.</s><small class="version-note"><em>Fonction supprimée lors d’une mise à jour ultérieure.</em></small></li>
                                                                                                                               <li>🗂️ Refonte interne de la base (séparation postes/accès) et correction d'affichage de certaines fiches.</li>
             </ul>
           </li>

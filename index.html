@@ -38,13 +38,13 @@
         );
       })();
     </script>
-    <script type="module" crossorigin src="/ALICE/assets/accueil-D25oYcLS.js"></script>
+    <script type="module" crossorigin src="/ALICE/assets/accueil-ChIKMtr1.js"></script>
     <link rel="modulepreload" crossorigin href="/ALICE/assets/modulepreload-polyfill-Dezn_h7o.js">
-    <link rel="modulepreload" crossorigin href="/ALICE/assets/options-DdIWWyal.js">
+    <link rel="modulepreload" crossorigin href="/ALICE/assets/options-DuShF8o3.js">
     <link rel="modulepreload" crossorigin href="/ALICE/assets/preload-helper-CoS762Vi.js">
-    <link rel="stylesheet" crossorigin href="/ALICE/assets/accueil-VUM5K3aD.css">
+    <link rel="stylesheet" crossorigin href="/ALICE/assets/accueil-fgGAm-qU.css">
     <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
-    <link rel="modulepreload" crossorigin href="/ALICE/assets/main-Db0T1nwb.js">
+    <link rel="modulepreload" crossorigin href="/ALICE/assets/main-2xaLqZRZ.js">
     <link rel="modulepreload" crossorigin href="/ALICE/assets/maplibre-BNf9TRJ1.js">
     <link rel="modulepreload" crossorigin href="/ALICE/assets/maplibre-runtime-CMaPxaMj.js">
   </head>
@@ -142,44 +142,60 @@
       <pre class="panneau-mesure-texte" id="panneau-mesure-texte"></pre>
     </div>
     <div class="menu-contextuel-carte" id="menu-contextuel-carte" role="menu" aria-hidden="true">
-      <button class="menu-contextuel-item menu-contextuel-coord" id="ctx-coord" type="button">📍 0.00000, 0.00000</button>
-      <button class="menu-contextuel-item menu-contextuel-adresse" id="ctx-address" type="button" hidden>🏠 Recherche de l'adresse...</button>
-      <button class="menu-contextuel-item" id="ctx-share" type="button">🔗 Partager la position</button>
-      <button class="menu-contextuel-item" id="ctx-itin" type="button">🚗 Itinéraire vers ici</button>
+      <button class="menu-contextuel-item menu-contextuel-coord" id="ctx-coord" type="button">
+        <svg class="menu-contextuel-icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span class="menu-contextuel-libelle">0.00000, 0.00000</span>
+      </button>
+      <button class="menu-contextuel-item menu-contextuel-adresse" id="ctx-address" type="button" hidden>
+        <svg class="menu-contextuel-icone" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></svg>
+        <span class="menu-contextuel-libelle">Recherche de l'adresse...</span>
+      </button>
+      <button class="menu-contextuel-item" id="ctx-share" type="button">
+        <svg class="menu-contextuel-icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M8.5 6.5 12 3l3.5 3.5M6 10.5v7a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-7"/></svg>
+        <span class="menu-contextuel-libelle">Partager la position</span>
+      </button>
+      <button class="menu-contextuel-item" id="ctx-itin" type="button" aria-controls="ctx-submenu-itin" aria-expanded="false">
+        <svg class="menu-contextuel-icone" viewBox="0 0 24 24" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+        <span class="menu-contextuel-libelle">Itinéraire vers ici</span>
+      </button>
       <div class="menu-contextuel-sousmenu" id="ctx-submenu-itin" aria-hidden="true">
-        <button class="menu-contextuel-sousitem" id="ctx-gmaps" type="button">🚙 Google Maps</button>
-        <button class="menu-contextuel-sousitem" id="ctx-waze" type="button">🚙 Waze</button>
-        <button class="menu-contextuel-sousitem" id="ctx-apple" type="button">🚙 Apple Plans</button>
+        <button class="menu-contextuel-sousitem" id="ctx-gmaps" type="button">Google Maps</button>
+        <button class="menu-contextuel-sousitem" id="ctx-waze" type="button">Waze</button>
+        <button class="menu-contextuel-sousitem" id="ctx-apple" type="button">Apple Plans</button>
       </div>
       <div class="menu-contextuel-separateur"></div>
-      <button class="menu-contextuel-item" id="ctx-regle" type="button">📏 Règle / Traçage</button>
+      <button class="menu-contextuel-item" id="ctx-regle" type="button">
+        <svg class="menu-contextuel-icone" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 3 6 6L9 21l-6-6ZM12 6l3 3M9 9l2 2M6 12l3 3"/></svg>
+        <span class="menu-contextuel-libelle">Règle / Traçage</span>
+      </button>
       <div class="menu-contextuel-separateur"></div>
-      <button class="menu-contextuel-item" id="ctx-gmaps-marker" type="button">📌 Google Maps</button>
-      <button class="menu-contextuel-item" id="ctx-street" type="button">🌍 Street View</button>
-      <button class="menu-contextuel-item" id="ctx-imajnet" type="button">🛣️ Imajnet</button>
+      <button class="menu-contextuel-item" id="ctx-gmaps-marker" type="button">
+        <svg class="menu-contextuel-icone" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3ZM9 3v15M15 6v15"/></svg>
+        <span class="menu-contextuel-libelle">Google Maps</span>
+      </button>
+      <button class="menu-contextuel-item" id="ctx-street" type="button">
+        <svg class="menu-contextuel-icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 10h4M19 7V4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3M20 21a2 2 0 0 0 2-2v-4c0-2-2-3-2-5V8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v11a2 2 0 0 0 2 2ZM22 16H2M4 21a2 2 0 0 1-2-2v-4c0-2 2-3 2-5V8a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v11a2 2 0 0 1-2 2ZM9 7V4a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v3"/></svg>
+        <span class="menu-contextuel-libelle">Street View</span>
+      </button>
+      <button class="menu-contextuel-item" id="ctx-imajnet" type="button">
+        <svg class="menu-contextuel-icone" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-4-4L6 21"/></svg>
+        <span class="menu-contextuel-libelle">Imajnet</span>
+      </button>
       <div class="menu-contextuel-separateur"></div>
-      <button class="menu-contextuel-item" id="ctx-add-appareil" type="button">📍 Ajouter un appareil ici</button>
+      <button class="menu-contextuel-item" id="ctx-add-appareil" type="button">
+        <svg class="menu-contextuel-icone" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M8 12h8M12 8v8"/></svg>
+        <span class="menu-contextuel-libelle">Ajouter un appareil ici</span>
+      </button>
       <div class="menu-contextuel-separateur"></div>
-      <button class="menu-contextuel-item" id="ctx-jeu-alice" type="button">🎯 Le défi d’ALICE</button>
+      <button class="menu-contextuel-item" id="ctx-jeu-alice" type="button">
+        <svg class="menu-contextuel-icone" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>
+        <span class="menu-contextuel-libelle">Le défi d’ALICE</span>
+      </button>
     </div>
-    <div class="modal-fiche" id="modal-fiche" role="dialog" aria-modal="true" aria-label="Fiche" aria-hidden="true">
+    <div class="modal-fiche" id="modal-fiche" role="dialog" aria-modal="false" aria-label="Fiche" aria-hidden="true">
       <div class="modal-fiche-carte">
-        <button class="modal-fiche-redimensionner" type="button" aria-label="Redimensionner la fiche" title="Faire glisser pour redimensionner"></button>
-        <button class="modal-fiche-poignee" id="modal-fiche-poignee" type="button" aria-label="Réduire ou agrandir la fiche">
-          <span aria-hidden="true"></span>
-        </button>
-        <button class="modal-fiche-partager" id="modal-fiche-partager" type="button" aria-label="Partager la fiche">
-          <svg class="modal-fiche-partager-icone" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 3v12" />
-            <path d="M8.5 6.5 12 3l3.5 3.5" />
-            <path d="M6 10.5v7a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-7" />
-          </svg>
-        </button>
-        <button class="modal-fiche-fermer" id="modal-fiche-fermer" type="button" aria-label="Fermer le panneau">
-          <svg class="modal-fiche-fermer-icone" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="m6 6 12 12" />
-            <path d="M18 6 6 18" />
-          </svg>
+        <button class="modal-fiche-redimensionner" type="button" aria-label="Redimensionner la fenêtre" title="Faire glisser pour redimensionner"></button>
+        <button class="modal-fiche-fermer bouton-fermer" id="modal-fiche-fermer" type="button" aria-label="Fermer le panneau"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
         </button>
         <div class="modal-fiche-contenu maplibregl-popup-content" id="modal-fiche-contenu"></div>
       </div>
@@ -187,12 +203,13 @@
 
 
     <div id="reserve-itineraire" hidden>
-        <div class="modal-itineraire-carte" id="volet-itineraire-contenu" data-panneau-crans>
-          <div class="modal-itineraire-entete panneau-entete-deplacable" data-panneau-cran>
+        <div class="modal-itineraire-carte fenetre-outil" id="volet-itineraire-contenu">
+          <div class="modal-itineraire-entete panneau-entete-deplacable">
             <h2 class="modal-itineraire-titre">Calculer un trajet</h2>
             <p class="modal-itineraire-sous-titre">Ajoutez, supprimez et réorganisez les étapes</p>
           </div>
 
+          <div class="fenetre-outil-corps">
           <div class="modal-itineraire-champs" id="itineraire-etapes" aria-label="Étapes du trajet">
           </div>
           <div class="modal-itineraire-commandes-bas">
@@ -203,9 +220,8 @@
           <div class="modal-itineraire-etat" id="itineraire-etat">Choisissez un départ et une arrivée.</div>
 
 
-          <div class="modal-itineraire-cran-normal" data-panneau-cran aria-hidden="true"></div>
 
-          <section class="modal-itineraire-resume" id="itineraire-resume" aria-live="polite" data-panneau-cran>
+          <section class="modal-itineraire-resume" id="itineraire-resume" aria-live="polite">
             <div class="modal-itineraire-resume-tete">
               <strong>Résumé du trajet</strong>
               <span>Temps et distance estimés</span>
@@ -222,7 +238,7 @@
             </div>
           </section>
 
-          <section class="modal-itineraire-variantes" id="itineraire-variantes" hidden aria-label="Itinéraires proposés" data-panneau-cran>
+          <section class="modal-itineraire-variantes" id="itineraire-variantes" hidden aria-label="Itinéraires proposés">
             <div class="modal-itineraire-variantes-entete">
               <strong>Itinéraires possibles</strong>
               <span id="itineraire-variantes-compteur"></span>
@@ -231,28 +247,28 @@
             <small class="modal-itineraire-variantes-note">Péages indiqués selon les données routières disponibles.</small>
           </section>
 
-          <div class="modal-itineraire-actions" data-panneau-cran>
+          <div class="modal-itineraire-actions">
             <a class="popup-bouton-itineraire" id="itineraire-google" href="#" target="_blank" rel="noopener noreferrer">🗺️ Google Maps</a>
             <a class="popup-bouton-itineraire" id="itineraire-apple" href="#" target="_blank" rel="noopener noreferrer">🍎 Plans</a>
             <a class="popup-bouton-itineraire" id="itineraire-waze" href="#" target="_blank" rel="noopener noreferrer">🚗 Waze</a>
           </div>
-
+          </div>
         </div>
     </div>
 
     <div id="reserve-localisation" hidden>
-        <div class="modal-localisation-carte" id="volet-localisation-contenu" data-panneau-crans>
-          <div class="modal-localisation-entete panneau-entete-deplacable" data-panneau-cran>
+        <div class="modal-localisation-carte fenetre-outil" id="volet-localisation-contenu">
+          <div class="modal-localisation-entete panneau-entete-deplacable">
             <h2 class="modal-localisation-titre">Autour de vous</h2>
             <p class="modal-localisation-sous-titre">Résultats proches de votre position actuelle</p>
             <div class="modal-localisation-etat" id="localisation-etat" aria-live="polite">Appuyez sur "Me localiser".</div>
           </div>
-          <ul class="modal-localisation-resultats" id="localisation-resultats" aria-label="Résultats autour de vous" data-panneau-cran></ul>
+          <div class="fenetre-outil-corps"><ul class="modal-localisation-resultats" id="localisation-resultats" aria-label="Résultats autour de vous"></ul></div>
         </div>
     </div>
 
     <div id="reserve-filtres" hidden>
-        <form class="panneau-reglages-defilant" id="volet-filtres-contenu" data-panneau-crans role="dialog" aria-modal="false" aria-labelledby="filtres-titre">
+        <form class="panneau-reglages-defilant" id="volet-filtres-contenu" aria-labelledby="filtres-titre">
           <header class="filtres-entete panneau-entete-deplacable">
             <button class="filtres-retour" id="filtres-retour" type="button" aria-label="Retour à l’affichage de la carte" hidden>‹</button>
             <div>
@@ -262,7 +278,7 @@
           </header>
 
           <div class="filtres-contenu">
-            <section class="filtres-groupe" data-panneau-section="affichage" data-panneau-section-repliee="true" data-panneau-cran aria-labelledby="titre-section-affichage">
+            <section class="filtres-groupe" data-panneau-section="affichage" data-panneau-section-repliee="true" aria-labelledby="titre-section-affichage">
               <div class="panneau-section-entete"><span class="panneau-section-titre" id="titre-section-affichage"><strong>Mode de carte</strong></span></div>
               <div class="selecteur-mode" role="radiogroup" aria-label="Mode d’affichage des points">
                 <label class="selecteur-mode-choix">
@@ -284,7 +300,7 @@
               </div>
             </section>
 
-            <section class="filtres-groupe" data-panneau-section="patrimoine-eale" data-panneau-cran aria-labelledby="titre-section-patrimoine-eale">
+            <section class="filtres-groupe" data-panneau-section="patrimoine-eale" aria-labelledby="titre-section-patrimoine-eale">
               <div class="panneau-section-entete"><span class="panneau-section-titre" id="titre-section-patrimoine-eale"><strong>Patrimoine EALE</strong></span></div>
               <div class="filtres-equipes">
                 <span class="filtres-equipes-titre" aria-hidden="true">Équipe</span>
@@ -358,7 +374,7 @@
               </div>
             </section>
 
-            <section class="filtres-groupe" data-panneau-section="installations-complementaires" data-panneau-cran aria-labelledby="titre-section-installations-complementaires">
+            <section class="filtres-groupe" data-panneau-section="installations-complementaires" data-panneau-section-repliee="true" aria-labelledby="titre-section-installations-complementaires">
               <div class="panneau-section-entete"><span class="panneau-section-titre" id="titre-section-installations-complementaires"><strong>Installations complémentaires</strong></span></div>
               <div class="filtres-liste">
                 <label class="option-filtre">
@@ -370,7 +386,7 @@
               </div>
             </section>
 
-            <section class="filtres-groupe" data-panneau-section="elements-reseau" data-panneau-cran aria-labelledby="titre-section-elements-reseau">
+            <section class="filtres-groupe" data-panneau-section="elements-reseau" data-panneau-section-repliee="true" aria-labelledby="titre-section-elements-reseau">
               <div class="panneau-section-entete"><span class="panneau-section-titre" id="titre-section-elements-reseau"><strong>Éléments du réseau</strong></span></div>
               <div class="filtres-liste">
                 <label class="option-filtre">
@@ -413,7 +429,7 @@
               </div>
             </section>
 
-            <section class="filtres-groupe" data-panneau-section="trace-ferroviaire" data-panneau-cran aria-labelledby="titre-section-trace-ferroviaire">
+            <section class="filtres-groupe" data-panneau-section="trace-ferroviaire" data-panneau-section-repliee="true" aria-labelledby="titre-section-trace-ferroviaire">
               <div class="panneau-section-entete"><span class="panneau-section-titre" id="titre-section-trace-ferroviaire"><strong>Tracé ferroviaire</strong></span></div>
               <div class="filtres-lignes">
                 <label class="option-filtre-ligne">
@@ -449,16 +465,16 @@
             </button>
           </div>
           <div class="options-locales-contenu" id="options-lignes-locales" hidden>
-            <section data-panneau-section="regions-locales" data-panneau-cran><div class="panneau-section-entete"><span class="panneau-section-titre"><strong>Régions disponibles</strong></span></div><div class="options-locales-liste options-locales-regions">
+            <section data-panneau-section="regions-locales"><div class="panneau-section-entete"><span class="panneau-section-titre"><strong>Régions disponibles</strong></span></div><div class="options-locales-liste options-locales-regions">
               <label class="option-locale"><span><strong>Hauts-de-France</strong><small>Région principale</small></span><input type="checkbox" name="local-region-hdf" checked disabled><i></i></label>
               <label class="option-locale"><span><strong>Normandie</strong></span><input type="checkbox" name="local-region-normandie"><i></i></label>
               <label class="option-locale"><span><strong>Grand Est</strong></span><input type="checkbox" name="local-region-grand-est"><i></i></label>
               <label class="option-locale"><span><strong>Île-de-France</strong></span><input type="checkbox" name="local-region-idf"><i></i></label>
             </div></section>
-            <section data-panneau-section="selection-reseau-local" data-panneau-cran><div class="panneau-section-entete"><span class="panneau-section-titre"><strong>Sélection du réseau</strong></span></div><div class="options-locales-liste">
+            <section data-panneau-section="selection-reseau-local"><div class="panneau-section-entete"><span class="panneau-section-titre"><strong>Sélection du réseau</strong></span></div><div class="options-locales-liste">
               <label class="option-locale"><span><strong>Lignes avec équipement EALE</strong><small>Au moins un équipement EALE présent</small></span><input type="checkbox" name="local-lignes-equipees"><i></i></label>
             </div></section>
-            <section data-panneau-section="types-voies-locales" data-panneau-cran><div class="panneau-section-entete"><span class="panneau-section-titre"><strong>Types de voies</strong></span></div><div class="options-locales-liste options-locales-categories">
+            <section data-panneau-section="types-voies-locales"><div class="panneau-section-entete"><span class="panneau-section-titre"><strong>Types de voies</strong></span></div><div class="options-locales-liste options-locales-categories">
               <label class="option-locale"><b class="apercu-categorie trait-ligne-main"></b><span><strong>Lignes classiques</strong></span><input type="checkbox" name="local-categorie" value="main" checked><i></i></label>
               <label class="option-locale"><b class="apercu-categorie trait-ligne-lgv"></b><span><strong>LGV</strong></span><input type="checkbox" name="local-categorie" value="lgv" checked><i></i></label>
               <label class="option-locale"><b class="apercu-categorie trait-ligne-branch"></b><span><strong>Lignes secondaires</strong></span><input type="checkbox" name="local-categorie" value="branch" checked><i></i></label>
@@ -470,7 +486,7 @@
               <label class="option-locale"><b class="apercu-categorie trait-ligne-getlink"></b><span><strong>GetLink</strong></span><input type="checkbox" name="local-categorie" value="getlink" checked><i></i></label>
               <label class="option-locale"><b class="apercu-categorie trait-ligne-autre"></b><span><strong>Autres</strong></span><input type="checkbox" name="local-categorie" value="unknown" checked><i></i></label>
             </div></section>
-            <section data-panneau-section="etats-voies-locales" data-panneau-cran><div class="panneau-section-entete"><span class="panneau-section-titre"><strong>État des voies</strong></span></div><div class="options-locales-liste options-locales-categories">
+            <section data-panneau-section="etats-voies-locales"><div class="panneau-section-entete"><span class="panneau-section-titre"><strong>État des voies</strong></span></div><div class="options-locales-liste options-locales-categories">
               <label class="option-locale"><b class="apercu-categorie trait-etat-present"></b><span><strong>En service</strong></span><input type="checkbox" name="local-etat" value="present" checked><i></i></label>
               <label class="option-locale"><b class="apercu-categorie trait-etat-disused"></b><span><strong>Désaffectées</strong></span><input type="checkbox" name="local-etat" value="disused"><i></i></label>
               <label class="option-locale"><b class="apercu-categorie trait-etat-abandoned"></b><span><strong>Abandonnées</strong></span><input type="checkbox" name="local-etat" value="abandoned"><i></i></label>
@@ -481,14 +497,14 @@
     </div>
 
     <div id="reserve-fonds" hidden>
-        <section class="panneau-reglages-defilant" id="volet-fonds-contenu" data-panneau-crans role="dialog" aria-modal="false" aria-label="Choisir le fond de carte">
+        <section class="panneau-reglages-defilant" id="volet-fonds-contenu" aria-label="Choisir le fond de carte">
           <header class="fonds-entete panneau-entete-deplacable">
             <h2 class="fonds-titre">Fond de carte</h2>
           </header>
 
           <div class="fonds-contenu">
             <div class="fonds-auto-reglages" id="fonds-auto-reglages">
-              <section class="fonds-groupe fonds-mode-automatique" data-panneau-section="mode-automatique" data-panneau-section-repliable="false" data-panneau-cran aria-labelledby="titre-section-mode-automatique">
+              <section class="fonds-groupe fonds-mode-automatique" data-panneau-section="mode-automatique" data-panneau-section-repliable="false" aria-labelledby="titre-section-mode-automatique">
                 <div class="panneau-section-entete">
                   <span class="panneau-section-titre">
                     <strong id="titre-section-mode-automatique">Mode automatique</strong>
@@ -504,7 +520,7 @@
                 </div>
               </section>
 
-              <section class="fonds-groupe" data-panneau-section="plan-classique" data-panneau-cran aria-labelledby="titre-section-plan-classique">
+              <section class="fonds-groupe" data-panneau-section="plan-classique" aria-labelledby="titre-section-plan-classique">
                 <div class="panneau-section-entete"><span class="panneau-section-titre" id="titre-section-plan-classique"><strong>Plans</strong></span></div>
                 <div class="fonds-grille filtres-liste">
                   <button class="fonds-carte apercu-systeme" type="button" data-fond-auto-base="systeme">
@@ -528,7 +544,7 @@
                 </div>
               </section>
 
-              <section class="fonds-groupe" data-panneau-section="satellite" data-panneau-cran aria-labelledby="titre-section-satellite">
+              <section class="fonds-groupe" data-panneau-section="satellite" aria-labelledby="titre-section-satellite">
                 <div class="panneau-section-entete"><span class="panneau-section-titre" id="titre-section-satellite"><strong>Satellites</strong></span></div>
                 <div class="fonds-grille filtres-liste">
                   <button class="fonds-carte apercu-satellite-ign" type="button" data-fond-auto-satellite="ignAuto">
@@ -606,7 +622,7 @@
     </div>
 
     <div class="reserve-apropos" id="reserve-apropos" hidden>
-      <div class="popup-carte popup-carte-poste-acces popup-carte-origine-apropos" id="apropos-contenu">
+      <div class="popup-carte popup-carte-poste-acces popup-carte-origine-apropos fenetre-outil" id="apropos-contenu">
         <section class="popup-section popup-fiche-entete popup-fiche-entete-apropos panneau-entete-deplacable">
           <div class="popup-fiche-identite">
             <img src="/ALICE/alice.webp" alt="" class="popup-fiche-logo-apropos" width="118" height="50" onerror="this.style.display='none';" />
@@ -614,10 +630,11 @@
           </div>
           <div class="popup-poste-ligne-titre">
             <span>Application de Localisation des Installations de Conduite EALE</span>
-            <a id="apropos-version-pill" class="fiche-apropos-version-pill" href="./versions.html" title="Voir l'historique des versions">V2.2.4</a>
+            <a id="apropos-version-pill" class="fiche-apropos-version-pill" href="./versions.html" title="Voir l'historique des versions">V2.2.5</a>
           </div>
         </section>
 
+        <div class="fenetre-outil-corps">
         <section class="popup-section popup-fiche-carte">
           <div class="popup-section-titre popup-section-titre-gauche">
             <span class="popup-fiche-section-icone"><svg class="popup-icone" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></span>
@@ -706,6 +723,7 @@
             <p class="fiche-apropos-install-note" id="message-installer-pwa" aria-live="polite"></p>
           </div>
         </section>
+        </div>
       </div>
     </div>
 

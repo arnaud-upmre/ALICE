@@ -4100,7 +4100,7 @@
         "Eq": "H",
         "description": "⚠️ Il faut traverser les voies ADF pour acceder au poste (attention circulation)",
         "description_telecommande": "ACS25",
-        "technique_schema": "https://sncf.sharepoint.com/:f:/r/sites/InfrapleNord-PasdeCalaisGrpO365/Documents%20partages/UP%20MRE/GROUPE%20TECHNIQUE%20ET%20PATRIMOINE/SCHEMAS%20ELECTRIQUES/Sch%C3%A9mas%20%C3%A9lectriques%20UP%20EALE%20Lille/HAZEBROUCK%20%23?csf=1&web=1&e=XT7ybU",
+        "technique_schema": "",
         "technique_consigne": "",
         "technique_s11": "https://digidocplus.sncf.fr/fi/reference?ref=EIC HDF IN70529",
         "particularites_consigne": "https://digidocplus.sncf.fr/fi/reference?ref=OP40967",

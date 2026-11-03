@@ -38,13 +38,51 @@
         );
       })();
     </script>
-    <script type="module" crossorigin src="/ALICE/assets/accueil-Misk3iJz.js"></script>
+    <script>
+      // Démarrage qui se répare seul : si le programme d'ALICE ne se charge pas (page gardée en mémoire après une
+      // mise à jour), la page est relue depuis le serveur et relancée une fois ; sinon un message propose de recharger.
+      (() => {
+        const CLE = "alice:reparation-demarrage";
+        let demarree = false;
+        document.addEventListener("alice:demarree", () => {
+          demarree = true;
+          try { sessionStorage.removeItem(CLE); } catch {}
+        }, { once: true });
+        const relire = () => fetch(location.href, { cache: "reload" }).catch(() => {});
+        const expliquer = () => {
+          if (document.querySelector(".alice-demarrage-echec")) return;
+          const message = document.createElement("div");
+          message.className = "alice-demarrage-echec";
+          message.setAttribute("role", "alert");
+          message.innerHTML = "<strong>ALICE n’a pas pu démarrer</strong><p>Une ancienne version est peut-être restée en mémoire, ou la connexion est coupée.</p><button type=\"button\">Recharger</button>";
+          message.querySelector("button").addEventListener("click", () => relire().then(() => location.reload()));
+          document.body.append(message);
+        };
+        window.addEventListener("error", (evenement) => {
+          if (demarree) return;
+          const adresse = evenement.target?.tagName === "SCRIPT" ? evenement.target.src : evenement.filename;
+          try {
+            if (!adresse || new URL(adresse, location.href).origin !== location.origin) return;
+          } catch {
+            return;
+          }
+          let dejaRepare = true;
+          try {
+            dejaRepare = sessionStorage.getItem(CLE) === "1";
+            sessionStorage.setItem(CLE, "1");
+          } catch {}
+          if (dejaRepare) expliquer();
+          else relire().then(() => { if (!demarree) location.reload(); });
+        }, true);
+      })();
+    </script>
+    <script type="module" crossorigin src="/ALICE/assets/accueil-CdoQeK3q.js"></script>
     <link rel="modulepreload" crossorigin href="/ALICE/assets/modulepreload-polyfill-Dezn_h7o.js">
     <link rel="modulepreload" crossorigin href="/ALICE/assets/options-DuShF8o3.js">
     <link rel="modulepreload" crossorigin href="/ALICE/assets/preload-helper-CoS762Vi.js">
-    <link rel="stylesheet" crossorigin href="/ALICE/assets/accueil-DnvJ1EQ6.css">
+    <link rel="stylesheet" crossorigin href="/ALICE/assets/accueil-DF-BxS36.css">
     <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
-    <link rel="modulepreload" crossorigin href="/ALICE/assets/main-2xaLqZRZ.js">
+    <link rel="modulepreload" crossorigin href="/ALICE/assets/main-CNZj3OTF.js">
     <link rel="modulepreload" crossorigin href="/ALICE/assets/maplibre-BNf9TRJ1.js">
     <link rel="modulepreload" crossorigin href="/ALICE/assets/maplibre-runtime-CMaPxaMj.js">
   </head>
@@ -630,7 +668,7 @@
           </div>
           <div class="popup-poste-ligne-titre">
             <span>Application de Localisation des Installations de Conduite EALE</span>
-            <a id="apropos-version-pill" class="fiche-apropos-version-pill" href="./versions.html" title="Voir l'historique des versions">V2.2.5</a>
+            <a id="apropos-version-pill" class="fiche-apropos-version-pill" href="./versions.html" title="Voir l'historique des versions">V2.2.6</a>
           </div>
         </section>
 

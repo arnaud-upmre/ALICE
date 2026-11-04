@@ -1,5 +1,6 @@
 
 const VERSION = "52bb28ba56a4";
+const FICHIERS_APPLI = ["assets/accueil-CdoQeK3q.js","assets/accueil-DF-BxS36.css","assets/admin-local-cJ49qo9c.js","assets/ajoutAppareil-z2R1PPsr.js","assets/appareils-CC6tg59Z.js","assets/appareils-en-attente-CFjlhAPd.js","assets/appareils-tAdPmvtv.js","assets/esm-fD4mxcOd.js","assets/fiche-rendu-D5OznbAx.js","assets/form-map-runtime-D399gd5X.js","assets/form-map-runtime-qvkd0SPb.css","assets/hors-ligne-MIPJbnxb.js","assets/itineraire-chargeur-Dp3k3jiM.js","assets/jeu-Bwf9euYH.js","assets/jeu-tDb1XQvK.css","assets/localisation-CXxSYQIJ.js","assets/main-CNZj3OTF.js","assets/manrope-variable-latin-DHIcAJRg.woff2","assets/maplibre-BNf9TRJ1.js","assets/maplibre-gl-worker-CiTviJac.js","assets/maplibre-runtime-CMaPxaMj.js","assets/modulepreload-polyfill-Dezn_h7o.js","assets/notification-amlIC2ZG.js","assets/options-DuShF8o3.js","assets/palette-carte-0b5IYTgV.js","assets/palette-carte-RSE0LPFT.js","assets/preload-helper-CoS762Vi.js","assets/recherche-configuration-Cv6H3B9n.js","assets/runtime-MAv7J5AF.js","assets/styles-lignes-DdpDFMbB.js","assets/tableau-CubFcwUo.js","assets/theme-BQYAIBqf.css","assets/utils-CqXYLB8A.js","assets/versions-DKt8RCjN.js","assets/vue-metro-Tm0_0XDd.js"];
 const PORTEE = new URL(self.registration.scope).pathname;
 const PREFIXE = `alice:${PORTEE}:`;
 const CACHE_APPLI = `${PREFIXE}appli:${VERSION}`;
@@ -10,16 +11,22 @@ const MAX_ENTREES_FONDS = 4000;
 
 const HOTES_FONDS = [/^tiles\.openfreemap\.org$/, /^data\.geopf\.fr$/, /^services\.arcgisonline\.com$/, /^tile\.openstreetmap\.org$/, /(^|\.)openrailwaymap\.app$/];
 
-self.addEventListener("install", () => {
-  self.skipWaiting();
+// Toutes les parties de l'appli (recherche, fiche, itinéraire…) sont téléchargées
+// dès l'installation d'une version, pas au premier usage.
+self.addEventListener("install", (evenement) => {
+  evenement.waitUntil((async () => {
+    const cache = await caches.open(CACHE_APPLI);
+    await cache.addAll(FICHIERS_APPLI.map((fichier) => `${PORTEE}${fichier}`));
+    await self.skipWaiting();
+  })());
 });
 
 self.addEventListener("activate", (evenement) => {
   evenement.waitUntil((async () => {
-    for (const nom of await caches.keys()) {
-      if (nom.startsWith(`${PREFIXE}appli:`) && nom !== CACHE_APPLI) {
-        await caches.delete(nom);
-      }
+    // La version précédente est gardée : une page encore ouverte dessus continue de fonctionner.
+    const anciennes = (await caches.keys()).filter((nom) => nom.startsWith(`${PREFIXE}appli:`) && nom !== CACHE_APPLI);
+    for (const nom of anciennes.slice(0, -1)) {
+      await caches.delete(nom);
     }
     await self.clients.claim();
   })());
@@ -69,7 +76,7 @@ function cleSansParametres(requete, options) {
 }
 
 async function copieLocaleDAbord(evenement, requete, nomCache) {
-  const copie = await caches.match(requete, { cacheName: nomCache });
+  const copie = await caches.match(requete);
   if (copie) return copie;
   const reponse = await fetch(requete);
   if (reponse.ok && reponse.status === 200) {

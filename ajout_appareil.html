@@ -336,10 +336,26 @@
       list-style: none;
       border: 1px solid var(--border);
       border-radius: 20px;
-      background: var(--panel);
+      /* Fond opaque : la liste passe au-dessus des boutons de l'étape, rien ne doit se voir à travers. */
+      background: var(--fond-opaque);
       box-shadow: var(--shadow);
       max-height: 280px;
       overflow: auto;
+    }
+
+    /* Fond plein des éléments posés au-dessus du reste (liste de recherche, fenêtre « Voir sur ALICE »). */
+    :root {
+      --fond-opaque: #ffffff;
+    }
+
+    :root[data-theme="dark"] {
+      --fond-opaque: #1f2838;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme]) {
+        --fond-opaque: #1f2838;
+      }
     }
 
     .search-result-btn {
@@ -459,6 +475,10 @@
       grid-column: 1 / -1;
     }
 
+    .choice-row-modif {
+      flex-wrap: wrap;
+    }
+
     .hidden {
       display: none !important;
     }
@@ -517,7 +537,7 @@
       width: min(760px, 100%);
       max-height: min(88vh, 900px);
       overflow: hidden;
-      background: var(--panel);
+      background: var(--fond-opaque);
       border: 1px solid var(--border);
       border-radius: 24px;
       box-shadow: var(--shadow);
@@ -673,13 +693,13 @@
       }
     }
   </style>
-  <script type="module" crossorigin src="/ALICE/assets/ajoutAppareil-NAyjPxOL.js"></script>
+  <script type="module" crossorigin src="/ALICE/assets/ajoutAppareil-Ddtfff2J.js"></script>
   <link rel="modulepreload" crossorigin href="/ALICE/assets/modulepreload-polyfill-Dezn_h7o.js">
   <link rel="modulepreload" crossorigin href="/ALICE/assets/options-DuShF8o3.js">
   <link rel="modulepreload" crossorigin href="/ALICE/assets/preload-helper-CoS762Vi.js">
   <link rel="modulepreload" crossorigin href="/ALICE/assets/runtime-MAv7J5AF.js">
   <link rel="modulepreload" crossorigin href="/ALICE/assets/utils-CqXYLB8A.js">
-  <link rel="modulepreload" crossorigin href="/ALICE/assets/appareils-en-attente-CFjlhAPd.js">
+  <link rel="modulepreload" crossorigin href="/ALICE/assets/modifications-en-attente-CiL5biKm.js">
   <link rel="stylesheet" crossorigin href="/ALICE/assets/theme-5jWKNeq_.css">
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 </head>
@@ -689,7 +709,7 @@
       <a class="close-button bouton-fermer" href="./index.html" aria-label="Fermer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></a>
       <h1 class="header-title">
         <img class="alice-logo header-logo" src="/ALICE/alice.webp" alt="ALICE" onerror="this.style.display='none';" />
-        Ajout d'appareil
+        <span id="header-title-text">Ajout d'appareil</span>
       </h1>
       <div class="progress-wrap">
         <div class="progress-top">
@@ -718,18 +738,34 @@
           </div>
         </section>
 
+        <section class="step" id="step-modif-choix">
+          <div class="step-kicker">Modification</div>
+          <h2 class="step-title">Que voulez-vous modifier ?</h2>
+          <div class="meta-box" id="modif-appareil-box"></div>
+          <p class="inline-note">Sélectionnez les éléments à corriger.</p>
+          <div class="choice-row choice-row-modif">
+            <button class="choice-btn" type="button" data-modif-choix="nom" aria-pressed="false">Nom</button>
+            <button class="choice-btn" type="button" data-modif-choix="position" aria-pressed="false">Position</button>
+            <button class="choice-btn" type="button" data-modif-choix="description" aria-pressed="false">Description</button>
+          </div>
+          <div class="nav-row">
+            <button class="nav-btn secondary" type="button" data-prev>Retour</button>
+            <button class="nav-btn primary" type="button" data-next>Suivant</button>
+          </div>
+        </section>
+
         <section class="step" id="step-appareil">
           <div class="step-kicker">Appareil</div>
-          <h2 class="step-title">Quels appareils faut-il ajouter ?</h2>
-          <p class="inline-note">Ajoute ici tous les appareils présents sur le même support.</p>
-          <p class="inline-note">Cochez <strong>HP</strong> pour un appareil hors patrimoine UP MRE.</p>
+          <h2 class="step-title" id="appareil-step-title">Quels appareils faut-il ajouter ?</h2>
+          <p class="inline-note" data-ajout-seulement>Ajoute ici tous les appareils présents sur le même support.</p>
+          <p class="inline-note" data-ajout-seulement>Cochez <strong>HP</strong> pour un appareil hors patrimoine UP MRE.</p>
           <div class="field-stack" id="appareil-list">
             <div class="appareil-row" data-appareil-row>
               <input class="field-input" type="text" placeholder="Ex : I7112" data-appareil-input />
               <button class="hp-toggle" type="button" data-hp-toggle aria-pressed="false">HP</button>
             </div>
           </div>
-          <div class="toolbar">
+          <div class="toolbar" data-ajout-seulement>
             <button class="toolbar-btn" id="add-appareil-btn" type="button">Ajouter un autre appareil</button>
           </div>
           <div class="nav-row">
@@ -742,7 +778,6 @@
           <div class="step-kicker">Position appareil</div>
           <h2 class="step-title">Localiser l'appareil</h2>
           <p class="inline-note">Cliquez sur la carte pour placer le point, puis ajustez-le si besoin.</p>
-          <p class="inline-note">La géolocalisation est facultative. Seules les coordonnées du point validé sont envoyées avec la demande.</p>
           <div id="device-gps-panel">
             <div class="map-box" id="device-map"></div>
             <div class="toolbar">
@@ -750,6 +785,13 @@
               <button class="toolbar-btn" id="device-layer" type="button">Basculer plan / satellite</button>
             </div>
             <div class="coords-box" id="device-coords">Aucun point défini.</div>
+          </div>
+          <div class="hidden" id="groupe-deplacement">
+            <p class="inline-note" id="groupe-deplacement-texte"></p>
+            <div class="choice-row">
+              <button class="choice-btn active" type="button" data-deplacer-groupe="tous">Tous les appareils de ce point</button>
+              <button class="choice-btn" type="button" data-deplacer-groupe="seul" id="deplacer-seul-btn">Uniquement cet appareil</button>
+            </div>
           </div>
           <div class="nav-row">
             <button class="nav-btn secondary" type="button" data-prev>Retour</button>
@@ -780,7 +822,6 @@
           <button class="toolbar-btn access-last-btn hidden" id="acces-dernier" type="button">Reprendre le dernier accès ajouté à ce poste</button>
           <p class="access-or">ou placer un point sur la carte</p>
           <p class="inline-note">Cliquez sur la carte pour placer le point, puis ajustez-le si besoin.</p>
-          <p class="inline-note">La géolocalisation est facultative. Seules les coordonnées du point validé sont envoyées avec la demande.</p>
           <div id="access-gps-panel">
             <div class="map-box" id="access-map"></div>
             <div class="toolbar">

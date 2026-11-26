@@ -6,6 +6,314 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          3.087612,
+          50.621079
+        ]
+      },
+      "properties": {
+        "nom": "A2000",
+        "type": "Atelier",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°1",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-BR4ZW1F7",
+        "id": "AP-VSXRQ9QC",
+        "acces_id": "AC-H326GVQX"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.088782,
+          50.616994
+        ]
+      },
+      "properties": {
+        "nom": "A2000",
+        "type": "Atelier",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°10",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-BR4ZW1F7",
+        "id": "AP-DJEXTY95",
+        "acces_id": "AC-H326GVQX"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.088608,
+          50.617662
+        ]
+      },
+      "properties": {
+        "nom": "A2000",
+        "type": "Atelier",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°11",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-BR4ZW1F7",
+        "id": "AP-X254W4D6",
+        "acces_id": "AC-H326GVQX"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.088272,
+          50.619651
+        ]
+      },
+      "properties": {
+        "nom": "A2000",
+        "type": "Atelier",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°12",
+        "description": "Dernière armoire",
+        "hors_patrimoine": false,
+        "poste_id": "PO-BR4ZW1F7",
+        "id": "AP-QGNR8D30",
+        "acces_id": "AC-H326GVQX"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.088123,
+          50.619917
+        ]
+      },
+      "properties": {
+        "nom": "A2000",
+        "type": "Atelier",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°13",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-BR4ZW1F7",
+        "id": "AP-JG93XDZW",
+        "acces_id": "AC-H326GVQX"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.088049,
+          50.619924
+        ]
+      },
+      "properties": {
+        "nom": "A2000",
+        "type": "Atelier",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°14",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-BR4ZW1F7",
+        "id": "AP-H76BC0VC",
+        "acces_id": "AC-H326GVQX"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.088665,
+          50.617958
+        ]
+      },
+      "properties": {
+        "nom": "A2000",
+        "type": "Atelier",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°2",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-BR4ZW1F7",
+        "id": "AP-ZKWDK7QP",
+        "acces_id": "AC-H326GVQX"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.089043,
+          50.617841
+        ]
+      },
+      "properties": {
+        "nom": "A2000",
+        "type": "Atelier",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°3",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-BR4ZW1F7",
+        "id": "AP-XNB4A8C7",
+        "acces_id": "AC-H326GVQX"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.088986,
+          50.617696
+        ]
+      },
+      "properties": {
+        "nom": "A2000",
+        "type": "Atelier",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°4",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-BR4ZW1F7",
+        "id": "AP-V6RFK13B",
+        "acces_id": "AC-H326GVQX"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.089079,
+          50.617699
+        ]
+      },
+      "properties": {
+        "nom": "A2000",
+        "type": "Atelier",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°5",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-BR4ZW1F7",
+        "id": "AP-VHV20ZNA",
+        "acces_id": "AC-H326GVQX"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.089177,
+          50.617371
+        ]
+      },
+      "properties": {
+        "nom": "A2000",
+        "type": "Atelier",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°6",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-BR4ZW1F7",
+        "id": "AP-TSKYW2ZE",
+        "acces_id": "AC-H326GVQX"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.089277,
+          50.616868
+        ]
+      },
+      "properties": {
+        "nom": "A2000",
+        "type": "Atelier",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°7",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-BR4ZW1F7",
+        "id": "AP-T94K96YM",
+        "acces_id": "AC-H326GVQX"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.089305,
+          50.61635
+        ]
+      },
+      "properties": {
+        "nom": "A2000",
+        "type": "Atelier",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°8",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-BR4ZW1F7",
+        "id": "AP-J7849PYH",
+        "acces_id": "AC-H326GVQX"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.088946,
+          50.616319
+        ]
+      },
+      "properties": {
+        "nom": "A2000",
+        "type": "Atelier",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°9",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-BR4ZW1F7",
+        "id": "AP-QQNSMC07",
+        "acces_id": "AC-H326GVQX"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.780158,
           50.127977
         ]
@@ -32685,6 +32993,248 @@
         "acces_id": "AC-W1N5FF0N",
         "pk": "3+028",
         "numero_ligne": "289000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.087917,
+          50.620467
+        ]
+      },
+      "properties": {
+        "nom": "Saint Sauveur",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°1",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-CFMDGMW1",
+        "id": "AP-7NX5AV0S",
+        "acces_id": "AC-JMBXSXP5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.088054,
+          50.620503
+        ]
+      },
+      "properties": {
+        "nom": "Saint Sauveur",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°10",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-CFMDGMW1",
+        "id": "AP-GP3QE1A9",
+        "acces_id": "AC-JMBXSXP5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.088239,
+          50.619103
+        ]
+      },
+      "properties": {
+        "nom": "Saint Sauveur",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°2",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-CFMDGMW1",
+        "id": "AP-8SFK4NCB",
+        "acces_id": "AC-JMBXSXP5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.088331,
+          50.619116
+        ]
+      },
+      "properties": {
+        "nom": "Saint Sauveur",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°3",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-CFMDGMW1",
+        "id": "AP-Y3B82MHS",
+        "acces_id": "AC-JMBXSXP5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08817,
+          50.619017
+        ]
+      },
+      "properties": {
+        "nom": "Saint Sauveur",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°4",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-CFMDGMW1",
+        "id": "AP-VED0RFR0",
+        "acces_id": "AC-JMBXSXP5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.088983,
+          50.617708
+        ]
+      },
+      "properties": {
+        "nom": "Saint Sauveur",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°5",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-CFMDGMW1",
+        "id": "AP-2G7R1B60",
+        "acces_id": "AC-JMBXSXP5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08907,
+          50.617696
+        ]
+      },
+      "properties": {
+        "nom": "Saint Sauveur",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°6",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-CFMDGMW1",
+        "id": "AP-5FNPCND3",
+        "acces_id": "AC-JMBXSXP5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.089315,
+          50.616351
+        ]
+      },
+      "properties": {
+        "nom": "Saint Sauveur",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°7",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-CFMDGMW1",
+        "id": "AP-ED1W9SEY",
+        "acces_id": "AC-JMBXSXP5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.089288,
+          50.617746
+        ]
+      },
+      "properties": {
+        "nom": "Saint Sauveur",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°8",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-CFMDGMW1",
+        "id": "AP-YS113471",
+        "acces_id": "AC-JMBXSXP5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.089596,
+          50.616881
+        ]
+      },
+      "properties": {
+        "nom": "Saint Sauveur",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°9",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-CFMDGMW1",
+        "id": "AP-WYDHJM32",
+        "acces_id": "AC-JMBXSXP5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.088408,
+          50.61908
+        ]
+      },
+      "properties": {
+        "nom": "Saint Sauveur",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°9",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-CFMDGMW1",
+        "id": "AP-PTRMVT8N",
+        "acces_id": "AC-JMBXSXP5"
       }
     },
     {

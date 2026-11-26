@@ -1,0 +1,1 @@
+import{t as e}from"./palette-carte-3-JGJDag.js";export{e as PALETTE_CARTE};

@@ -72,8 +72,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.088272,
-          50.619651
+          3.088202,
+          50.619926
         ]
       },
       "properties": {
@@ -130,6 +130,28 @@
         "hors_patrimoine": false,
         "poste_id": "PO-BR4ZW1F7",
         "id": "AP-H76BC0VC",
+        "acces_id": "AC-H326GVQX"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.088029,
+          50.621158
+        ]
+      },
+      "properties": {
+        "nom": "A2000",
+        "type": "Atelier",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°15",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-BR4ZW1F7",
+        "id": "AP-7C29K5P3",
         "acces_id": "AC-H326GVQX"
       }
     },
@@ -33114,6 +33136,28 @@
         "id": "AP-PTRMVT8N",
         "acces_id": "AC-W1N5FF0N",
         "tension": "25"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.087771,
+          50.620801
+        ]
+      },
+      "properties": {
+        "nom": "Saint Sauveur",
+        "type": "A",
+        "SAT": "",
+        "acces": "",
+        "appareil": "DU N°14",
+        "description": "",
+        "hors_patrimoine": false,
+        "poste_id": "PO-AFS1K4RS",
+        "id": "AP-BHTTP2V0",
+        "acces_id": "AC-W1N5FF0N"
       }
     },
     {
